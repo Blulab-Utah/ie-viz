@@ -12,6 +12,9 @@ public class OntologyConstants {
 	public static final String ABR_LABEL = SO_PM + "#abrLabel";
 	public static final String SUBJ_EXP_LABEL = SO_PM + "#subjExpLabel";
 	public static final String REGEX = SO_PM + "#regex";
-	public static final String PREF_CUI = SO_PM + "#prefCUI";
+	public static final String PREF_CUI = MO_PM + "#prefCUI";
 	public static final String ALT_CUI = SO_PM + "#altCUI";
+	public static final String SEC_HEADING = SO_PM + "#sectionHeader";
+	public static final String DOC_TYPE = SO_PM + "#documentType";
+	public static final String WINDOW = SO_PM + "#windowSize";
 }

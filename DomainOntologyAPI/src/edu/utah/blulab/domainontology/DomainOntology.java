@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.Set;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
@@ -86,19 +88,19 @@ public class DomainOntology {
 		}
 		
 		//Set alternate CUIs for variable concept
-				Set<OWLAnnotation> altCUIs = cls.getAnnotations(ontology, 
-						factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)));
-				if(!altCUIs.isEmpty()){
-					Iterator<OWLAnnotation> iter = altCUIs.iterator();
-					labelSet = var.getAltCUIs();
-					while(iter.hasNext()){
-						OWLAnnotation altCUI = iter.next();
-						String temp = altCUI.getValue().toString();
-						temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-						labelSet.add(temp);
-					}
-					var.setAltCUIs(labelSet);
-				}
+		Set<OWLAnnotation> altCUIs = cls.getAnnotations(ontology, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)));
+		if(!altCUIs.isEmpty()){
+			Iterator<OWLAnnotation> iter = altCUIs.iterator();
+			labelSet = var.getAltCUIs();
+			while(iter.hasNext()){
+				OWLAnnotation altCUI = iter.next();
+				String temp = altCUI.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				labelSet.add(temp);
+			}
+			var.setAltCUIs(labelSet);
+		}
 		
 		//Set alternate labels
 		Set<OWLAnnotation> altLabels = cls.getAnnotations(ontology, 
@@ -159,6 +161,78 @@ public class DomainOntology {
 			}
 			var.setSubjExpLabels(labelSet);
 		}
+		
+		//Set regex
+		Set<OWLAnnotation> regex = cls.getAnnotations(ontology, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX)));
+		if(!regex.isEmpty()){
+			Iterator<OWLAnnotation> iter = regex.iterator();
+			labelSet = var.getRegex();
+			while(iter.hasNext()){
+				OWLAnnotation exp = iter.next();
+				String temp = exp.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				labelSet.add(temp);
+			}
+			var.setRegex(labelSet);
+		}
+		
+		//Set section headings
+		Set<OWLAnnotation> headings = cls.getAnnotations(ontology, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SEC_HEADING)));
+		if(!headings.isEmpty()){
+			Iterator<OWLAnnotation> iter = headings.iterator();
+			labelSet = var.getSectionHeadings();
+			while(iter.hasNext()){
+				OWLAnnotation exp = iter.next();
+				String temp = exp.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				labelSet.add(temp);
+			}
+			var.setSectionHeadings(labelSet);
+		}
+		
+		//Set document types
+		Set<OWLAnnotation> docTypes = cls.getAnnotations(ontology, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.DOC_TYPE)));
+		if(!docTypes.isEmpty()){
+			Iterator<OWLAnnotation> iter = docTypes.iterator();
+			labelSet = var.getReportTypes();
+			while(iter.hasNext()){
+				OWLAnnotation exp = iter.next();
+				String temp = exp.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				labelSet.add(temp);
+			}
+			var.setReportTypes(labelSet);
+		}
+		
+		//Get semantic categories of class
+		ArrayList<String> cats = new ArrayList<String>();
+		Set<OWLClassExpression> parents = cls.getSuperClasses(ontology);
+		for(OWLClassExpression parentCls : parents){
+			//System.out.println("TYPE: " + parentCls.getClassExpressionType().getName() + "   "  + parentCls.getClassExpressionType().compareTo(ClassExpressionType.OWL_CLASS));
+			if(parentCls.getClassExpressionType().compareTo(ClassExpressionType.OWL_CLASS) == 0){
+				cats.add(parentCls.toString());
+			}
+		}
+		var.setSemanticCategories(cats);
+		
+		//Set window size if different from default, else leave window size = 6
+		Set<OWLAnnotation> window = cls.getAnnotations(ontology, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.WINDOW)));
+		if(!window.isEmpty()){
+			Iterator<OWLAnnotation> iter = window.iterator();
+			while(iter.hasNext()){
+				OWLAnnotation winsize = iter.next();
+				String temp = winsize.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				
+				var.setWindowSize(Integer.parseInt(temp));
+				break;
+			}
+		}
+		
 		
 		System.out.println(var);
 		return var;

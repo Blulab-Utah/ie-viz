@@ -187,7 +187,7 @@ public class Variable {
 				+ ", relationships=" + relationships + ", rules=" + rules
 				+ ", modifiers=" + modifiers + ", regex=" + regex
 				+ ", reportTypes=" + reportTypes + ", sectionHeadings="
-				+ sectionHeadings + "windowSize=" + windowSize + "categories=" + semanticCategories + "]";
+				+ sectionHeadings + ", windowSize=" + windowSize + ", categories=" + semanticCategories + "]";
 	}
 	
 	
