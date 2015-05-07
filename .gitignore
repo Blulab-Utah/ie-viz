@@ -4,3 +4,11 @@
 DomainOntologyAPI/.svn/format
 
 DomainOntologyAPI/.svn/entries
+
+*.db
+
+*.prefs
+
+DomainOntologyAPI/.project
+
+DomainOntologyAPI/.classpath
