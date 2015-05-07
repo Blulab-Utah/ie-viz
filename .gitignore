@@ -12,3 +12,7 @@ DomainOntologyAPI/.svn/entries
 DomainOntologyAPI/.project
 
 DomainOntologyAPI/.classpath
+
+*.class
+
+*.class
