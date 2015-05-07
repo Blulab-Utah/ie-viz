@@ -1,0 +1,6 @@
+
+*.svn-base
+
+DomainOntologyAPI/.svn/format
+
+DomainOntologyAPI/.svn/entries
