@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -16,8 +17,11 @@ import org.semanticweb.owlapi.model.OWLAnonymousIndividual;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
 import org.semanticweb.owlapi.model.OWLException;
 import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
@@ -203,9 +207,43 @@ public class DomainOntology {
 		return str;
 	}
 	
+	private static String getAnnotationString(OWLIndividual ind, OWLAnnotationProperty annotationProperty,
+			OWLOntologyManager manager, OWLDataFactory factory, OWLOntology ontology){
+		String str = "";
+		Set<OWLAnnotation> labels = ind.asOWLNamedIndividual().getAnnotations(ontology, annotationProperty);
+		if(!labels.isEmpty()){
+			Iterator<OWLAnnotation> iter = labels.iterator();
+			while(iter.hasNext()){
+				OWLAnnotation label = iter.next();
+				String temp = label.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				str = temp;
+				break;
+			}
+			
+		}
+		return str;
+	}
+	
 	private static ArrayList<String> getAnnotationList(OWLClass cls, OWLAnnotationProperty annotationProperty){
 		ArrayList<String> labelSet = new ArrayList<String>();
 		Set<OWLAnnotation> annotations = cls.getAnnotations(ontology, annotationProperty);
+		if(!annotations.isEmpty()){
+			Iterator<OWLAnnotation> iter = annotations.iterator();
+			while(iter.hasNext()){
+				OWLAnnotation ann = iter.next();
+				String temp = ann.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				labelSet.add(temp);
+			}
+		}
+		return labelSet;
+	}
+	
+	private static ArrayList<String> getAnnotationList(OWLIndividual ind, 
+			OWLAnnotationProperty annotationProperty, OWLOntologyManager manager, OWLDataFactory factory, OWLOntology ontology){
+		ArrayList<String> labelSet = new ArrayList<String>();
+		Set<OWLAnnotation> annotations = ind.asOWLNamedIndividual().getAnnotations(ontology, annotationProperty);
 		if(!annotations.isEmpty()){
 			Iterator<OWLAnnotation> iter = annotations.iterator();
 			while(iter.hasNext()){
@@ -228,17 +266,40 @@ public class DomainOntology {
 		OWLClass modifier = factory.getOWLClass(IRI.create(modifierURI));
 		Set<OWLIndividual> lexicalVariants = modifier.getIndividuals(mo);
 		for(OWLIndividual ind : lexicalVariants){
-			System.out.println(ind.toString());
+			//System.out.println(ind.toString());
+			LexicalItem variant = getLexicalItem(ind, manMO, factMO, mo);
+			variants.add(variant);
 		}
 		
 		return variants;
 	}
 	
-	private static LexicalItem getLexcialItem(OWLIndividual lexicalItem){
+	private static LexicalItem getLexicalItem(OWLIndividual lexicalItem, OWLOntologyManager manager, 
+			OWLDataFactory factory, OWLOntology ontology){
 		LexicalItem variant = new LexicalItem();
-		
+		//Set uri of lexical variant
+		variant.setUri(lexicalItem.toString());
+		//Set pretty display name of lexical variant
+		variant.setItemName(getAnnotationString(lexicalItem, factory.getRDFSLabel(), manager, factory, ontology));
+		//Set creators
+		variant.setCreator(getAnnotationList(lexicalItem, factory.getOWLAnnotationProperty(
+						IRI.create(OntologyConstants.CREATOR)),manager, factory, ontology));
+		//Set sources
+		variant.setSource(getAnnotationList(lexicalItem, factory.getOWLAnnotationProperty(
+				IRI.create(OntologyConstants.SOURCE)),manager, factory, ontology));
+		//Set creation date
+		variant.setItemName(getAnnotationString(lexicalItem, factory.getOWLAnnotationProperty(
+				IRI.create(OntologyConstants.DATE)), manager, factory, ontology));
+		//Get list of data properties associated with individual and assign to proper list
+		Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataProps = lexicalItem.getDataPropertyValues(ontology);
+		//Get list of prefTerms
+		Set<OWLLiteral> propValues = dataProps.get((OWLDataPropertyExpression) factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_TERM)));
+		for(OWLLiteral lit : propValues){
+			System.out.println("Langauge: " + lit.getLang() + " Literal: " + lit.getLiteral());
+		}
+		//System.out.println(variant.toString());
 		return variant;
 	}
-
+	
 	
 }

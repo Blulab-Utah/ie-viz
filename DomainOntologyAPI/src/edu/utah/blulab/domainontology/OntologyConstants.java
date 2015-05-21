@@ -26,7 +26,17 @@ public class OntologyConstants {
 	public static final String DE_REGEX = MO_PM + "#hasDeRegEx";
 	public static final String SV_REGEX = MO_PM + "#hasSvRegEx";
 	public static final String TERMINATION = MO_PM + "#hasTermination";
+	public static final String CREATOR = MO_PM + "#creator";
+	public static final String SOURCE = MO_PM + "#source";
+	public static final String DATE = MO_PM + "#date";
+	
 	
 	public static final String HAS_SEM_ATTRIBUTE = SO_PM + "#hasSemAttribute";
+	
+	public static final String FORWARD_ACTION = "forward";
+	public static final String BACKWARD_ACTION = "backward";
+	public static final String BIDIRECTIONAL_ACTION = "bidirectional";
+	public static final String DISCONTINUOUS_ACTION = "discontinuous";
+	public static final String TERMINATE_ACTION = "terminate";
 	
 }

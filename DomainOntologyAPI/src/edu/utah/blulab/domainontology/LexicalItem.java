@@ -2,11 +2,12 @@ package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class LexicalItem {
-	private String itemName, uri,  actionEn, actionSv, actionDe, creator, prefTermEn, prefTermSv, prefTermDe;
-	private ArrayList<String> source, prefTerm, altTerm, regEx;
-	//private HashMap<String, String> prefTerm, altTerm, regEx;
+	private String itemName, uri,  actionEn, actionSv, actionDe; //prefTermEn, prefTermSv, prefTermDe
+	private ArrayList<String> source, creator; //altTermEn, altTermSv, altTermDe, regEx,
+	private HashMap<String, Set<String>> prefTerm, altTerm, regEx;
 	
 	public LexicalItem(){
 		
@@ -52,36 +53,12 @@ public class LexicalItem {
 		this.actionDe = actionDe;
 	}
 
-	public String getCreator() {
+	public ArrayList<String> getCreator() {
 		return creator;
 	}
 
-	public void setCreator(String creator) {
+	public void setCreator(ArrayList<String> creator) {
 		this.creator = creator;
-	}
-
-	public String getPrefTermEn() {
-		return prefTermEn;
-	}
-
-	public void setPrefTermEn(String prefTermEn) {
-		this.prefTermEn = prefTermEn;
-	}
-
-	public String getPrefTermSv() {
-		return prefTermSv;
-	}
-
-	public void setPrefTermSv(String prefTermSv) {
-		this.prefTermSv = prefTermSv;
-	}
-
-	public String getPrefTermDe() {
-		return prefTermDe;
-	}
-
-	public void setPrefTermDe(String prefTermDe) {
-		this.prefTermDe = prefTermDe;
 	}
 
 	public ArrayList<String> getSource() {
@@ -91,29 +68,39 @@ public class LexicalItem {
 	public void setSource(ArrayList<String> source) {
 		this.source = source;
 	}
-
-	public ArrayList<String> getPrefTerm() {
-		return prefTerm;
-	}
-
-	public void setPrefTerm(ArrayList<String> prefTerm) {
-		this.prefTerm = prefTerm;
-	}
-
-	public ArrayList<String> getAltTerm() {
+	
+	public HashMap<String, Set<String>> getAltTerm(){
 		return altTerm;
 	}
-
-	public void setAltTerm(ArrayList<String> altTerm) {
+	
+	public void setAltTerm(HashMap<String, Set<String>> altTerm){
 		this.altTerm = altTerm;
 	}
-
-	public ArrayList<String> getRegEx() {
+	
+	public HashMap<String, Set<String>> getPrefTerm(){
+		return prefTerm;
+	}
+	
+	public void setPrefTerm(HashMap<String, Set<String>> prefTerm){
+		this.prefTerm = prefTerm;
+	}
+	
+	public HashMap<String, Set<String>> getRegEx(){
 		return regEx;
 	}
-
-	public void setRegEx(ArrayList<String> regEx) {
+	
+	public void setRegEx(HashMap<String, Set<String>> regEx){
 		this.regEx = regEx;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "LexicalItem [itemName=" + itemName + ", uri=" + uri
+				+ ", actionEn=" + actionEn + ", creator=" + creator
+				+ ", prefTermEn=" + prefTerm + ", source=" + source + ", altTerm=" + altTerm
+				+ ", regEx=" + regEx + "]";
 	}
 	
 	
