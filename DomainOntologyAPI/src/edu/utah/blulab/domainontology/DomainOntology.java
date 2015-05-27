@@ -146,16 +146,151 @@ public class DomainOntology {
 		return var;
 	}
 	
-	public List<Variable> getAllVariables() {
-		ArrayList<Variable> variables = new ArrayList<Variable>();
+	public Variable getVariable(OWLClass cls){
+		Variable var = new Variable();
+		Term term = new Term();
 		
+		
+		
+		//Set variable ID (aka URI)
+		var.setVarID(cls.getIRI().toString());
+		
+		//Set variable name using RDF:label
+		var.setVarName(getAnnotationString(cls, factory.getRDFSLabel()));
+		
+		//Set preferred label for variable concept
+		term.setPrefTerm(getAnnotationString(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL))));
+		
+		//Set preferred CUIs for variable concept
+		term.setPrefCode(getAnnotationString(cls,
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI))));
+		
+		//Set alternate CUIs for variable concept
+		term.setAltCode(getAnnotationList(cls,
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI))));
+		
+		//Set alternate labels
+		term.setSynonym(getAnnotationList(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL))));
+		
+		//Set hidden labels
+		term.setMisspelling(getAnnotationList(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL))));
+		
+		//Set abbreviation labels
+		term.setAbbreviation(getAnnotationList(cls,
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL))));
+		
+		//Set subjective expression labels
+		term.setSubjExp(getAnnotationList(cls,
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL))));
+		
+		//Set regex
+		term.setRegex(getAnnotationList(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
+		
+		//Add concept to variable and concept dictionary
+		var.setTerm(term);
+		conceptDictionary.add(term);
+		//Set section headings
+		var.setSectionHeadings(getAnnotationList(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SEC_HEADING))));
+		
+		//Set document types
+		var.setReportTypes(getAnnotationList(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.DOC_TYPE))));
+		
+		//Get semantic categories of class
+		ArrayList<String> cats = new ArrayList<String>();
+		Set<OWLClassExpression> parents = cls.getSuperClasses(ontology);
+		for(OWLClassExpression parentCls : parents){
+			//System.out.println("TYPE: " + parentCls.getClassExpressionType().getName() + "   "  + parentCls.getClassExpressionType().compareTo(ClassExpressionType.OWL_CLASS));
+			if(parentCls.getClassExpressionType().compareTo(ClassExpressionType.OWL_CLASS) == 0){
+				cats.add(parentCls.toString());
+			}
+		}
+		var.setSemanticCategory(cats);
+		
+		//Set window size if different from default, else leave window size = 6
+		String temp = getAnnotationString(cls, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.WINDOW)));
+		if(!temp.isEmpty()){
+			var.setWindowSize(Integer.parseInt(temp));
+		}
+		
+		//Get list of modifiers
+		var.setModifiers(getModifiers(cls));
+
+		//System.out.println(var);
+		return var;
+	}
+	
+	public ArrayList<Variable> getAllVariables() {
+		ArrayList<Variable> variables = new ArrayList<Variable>();
+		ArrayList<OWLClass> elements = new ArrayList<OWLClass>();
+		getVariableList(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Element")), new ArrayList<OWLClass>(), elements);
+		System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
+		for(OWLClass cls : elements){
+			System.out.println(cls.toString());
+			variables.add(getVariable(cls));
+		}
 		return variables;
 	}
 	
-	public ArrayList<IRI> getDomainVariableList(){
+	private void getVariableList(OWLClass cls, ArrayList<OWLClass> elements, ArrayList<OWLClass> varList){
+		//make sure class exists and hasn't already been visited
+		OWLClass c = factory.getOWLClass(cls.getIRI());
+		if(cls == null || elements.contains(cls)){
+			return;
+		}
 		
-		return null;
+		//if class belongs to Schema Ontology then do not add to list
+		/**if(cls.getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#")){
+			System.out.println("This belongs to SO.");
+		}**/
+		
+		Set<OWLClassExpression> subExp = cls.getSubClasses(manager.getOntologies());
+		//System.out.println("Class " + cls.asOWLClass().getIRI());
+		for(OWLClassExpression subCls : subExp){
+			//System.out.println("Expression: " + subCls.asOWLClass().toString());
+			if(!elements.contains(cls.asOWLClass())){
+				elements.add(cls.asOWLClass());
+			}
+			if(!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#")){
+				varList.add(subCls.asOWLClass());
+			}
+			
+			getVariableList(subCls.asOWLClass(), elements, varList);
+		}
+		
+		
+		
 	}
+	
+	
+	
+	/**public void getElementCategoryList(OWLClass elementCls, ArrayList<OWLClass> elements){
+		
+		
+		if(elementCls == null || elements.contains(elementCls)){
+			return;
+		}
+		
+		//if class belongs to Schema Ontology don't add to list
+		
+		Set<OWLClassExpression> parentExp = elementCls.getSubClasses(manager.getOntologies());
+		System.out.println("Class " + elementCls.asOWLClass().getIRI());
+		for(OWLClassExpression subCls : parentExp){
+			System.out.println("Expression: " + subCls.asOWLClass().toString());
+			if(!elements.contains(elementCls.asOWLClass())){
+				elements.add(elementCls.asOWLClass());
+			}
+			getElementCategoryList(subCls.asOWLClass(), elements);
+		}
+		
+		
+	}**/
 	
 	
 	
