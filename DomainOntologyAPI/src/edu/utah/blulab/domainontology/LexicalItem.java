@@ -4,21 +4,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
+import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLIndividual;
+import org.semanticweb.owlapi.model.OWLOntologyManager;
+
 public class LexicalItem {
-	private String itemName, uri,  actionEn, actionSv, actionDe; //prefTermEn, prefTermSv, prefTermDe
-	private ArrayList<String> source, creator; //altTermEn, altTermSv, altTermDe, regEx,
-	private HashMap<String, Set<String>> prefTerm, altTerm, regEx;
+	private String uri,  actionEn, actionSv, actionDe; //prefTermEn, prefTermSv, prefTermDe
+	private Term term;
+	private ArrayList<String> source, creator; 
 	
-	public LexicalItem(){
+	public LexicalItem(OWLIndividual item, OWLOntologyManager manager, OWLDataFactory factory){
 		
-	}
-
-	public String getItemName() {
-		return itemName;
-	}
-
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
 	}
 
 	public String getUri() {
@@ -69,38 +65,19 @@ public class LexicalItem {
 		this.source = source;
 	}
 	
-	public HashMap<String, Set<String>> getAltTerm(){
-		return altTerm;
+	public Term getTerm(){
+		return term;
 	}
 	
-	public void setAltTerm(HashMap<String, Set<String>> altTerm){
-		this.altTerm = altTerm;
+	public void setTerm(Term term){
+		this.term = term;
 	}
-	
-	public HashMap<String, Set<String>> getPrefTerm(){
-		return prefTerm;
-	}
-	
-	public void setPrefTerm(HashMap<String, Set<String>> prefTerm){
-		this.prefTerm = prefTerm;
-	}
-	
-	public HashMap<String, Set<String>> getRegEx(){
-		return regEx;
-	}
-	
-	public void setRegEx(HashMap<String, Set<String>> regEx){
-		this.regEx = regEx;
-	}
-
-	
 
 	@Override
 	public String toString() {
-		return "LexicalItem [itemName=" + itemName + ", uri=" + uri
+		return "LexicalItem [uri=" + uri + ", term=" + term 
 				+ ", actionEn=" + actionEn + ", creator=" + creator
-				+ ", prefTermEn=" + prefTerm + ", source=" + source + ", altTerm=" + altTerm
-				+ ", regEx=" + regEx + "]";
+				+ ", source=" + source + "]";
 	}
 	
 	

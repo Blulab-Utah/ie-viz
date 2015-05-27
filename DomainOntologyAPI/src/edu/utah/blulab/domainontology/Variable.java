@@ -6,18 +6,11 @@ import java.util.ArrayList;
 public class Variable {
 	private String varID;
 	private String varName;
-	private String prefLabel;
-	private String prefCUI;
-	private ArrayList<String> semanticCategories;
-	private ArrayList<String> altCUIs;
-	private ArrayList<String> altLabels;
-	private ArrayList<String> hiddenLabels;
-	private ArrayList<String> abbrLabels;
-	private ArrayList<String> subjExpLabels;
+	private Term concept;
+	private ArrayList<String> semanticCategory;
 	private ArrayList<String> relationships; //May need feeback on the best representation here.
 	private ArrayList<String> rules; //This may change once SWRL rules are implemented in ontology.
-	private ArrayList<Modifier> modifiers;
-	private ArrayList<String> regex; //may need to change to HashMap to allow for multiple languages
+	private ArrayList<String> modifiers;
 	private ArrayList<String> reportTypes; //may change once Document Ontology built
 	private ArrayList<String> sectionHeadings; //may change once SecTag Ontology built
 	private int windowSize;
@@ -25,17 +18,11 @@ public class Variable {
 	public Variable(){
 		varID = "";
 		varName = "";
-		prefLabel = "";
-		prefCUI = "";
-		altCUIs = new ArrayList<String>();
-		altLabels = new ArrayList<String>();
-		hiddenLabels = new ArrayList<String>();
-		abbrLabels = new ArrayList<String>();
-		subjExpLabels = new ArrayList<String>();
+		concept = new Term();
+		semanticCategory = new ArrayList<String>();
 		relationships = new ArrayList<String>();
 		rules = new ArrayList<String>();
-		modifiers = new ArrayList<Modifier>();
-		regex = new ArrayList<String>();
+		modifiers = new ArrayList<String>();
 		reportTypes = new ArrayList<String>();
 		sectionHeadings = new ArrayList<String>();
 		windowSize = 6;
@@ -56,61 +43,13 @@ public class Variable {
 	public void setVarName(String varName) {
 		this.varName = varName;
 	}
-
-	public String getPrefLabel() {
-		return prefLabel;
+	
+	public ArrayList<String> getSemanticCategory(){
+		return semanticCategory;
 	}
-
-	public void setPrefLabel(String prefLabel) {
-		this.prefLabel = prefLabel;
-	}
-
-	public String getPrefCUI() {
-		return prefCUI;
-	}
-
-	public void setPrefCUI(String prefCUI) {
-		this.prefCUI = prefCUI;
-	}
-
-	public ArrayList<String> getAltCUIs() {
-		return altCUIs;
-	}
-
-	public void setAltCUIs(ArrayList<String> altCUIs) {
-		this.altCUIs = altCUIs;
-	}
-
-	public ArrayList<String> getAltLabels() {
-		return altLabels;
-	}
-
-	public void setAltLabels(ArrayList<String> altLabels) {
-		this.altLabels = altLabels;
-	}
-
-	public ArrayList<String> getHiddenLabels() {
-		return hiddenLabels;
-	}
-
-	public void setHiddenLabels(ArrayList<String> hiddenLabels) {
-		this.hiddenLabels = hiddenLabels;
-	}
-
-	public ArrayList<String> getAbbrLabels() {
-		return abbrLabels;
-	}
-
-	public void setAbbrLabels(ArrayList<String> abbrLabels) {
-		this.abbrLabels = abbrLabels;
-	}
-
-	public ArrayList<String> getSubjExpLabels() {
-		return subjExpLabels;
-	}
-
-	public void setSubjExpLabels(ArrayList<String> subjExpLabels) {
-		this.subjExpLabels = subjExpLabels;
+	
+	public void setSemanticCategory(ArrayList<String> semanticCategory){
+		this.semanticCategory = semanticCategory;
 	}
 
 	public ArrayList<String> getRelationships() {
@@ -129,20 +68,12 @@ public class Variable {
 		this.rules = rules;
 	}
 
-	public ArrayList<Modifier> getModifiers() {
+	public ArrayList<String> getModifiers() {
 		return modifiers;
 	}
 
-	public void setModifiers(ArrayList<Modifier> modifiers) {
+	public void setModifiers(ArrayList<String> modifiers) {
 		this.modifiers = modifiers;
-	}
-
-	public ArrayList<String> getRegex() {
-		return regex;
-	}
-
-	public void setRegex(ArrayList<String> regex) {
-		this.regex = regex;
 	}
 
 	public ArrayList<String> getReportTypes() {
@@ -169,25 +100,21 @@ public class Variable {
 		this.windowSize = windowSize;
 	}
 	
-	public ArrayList<String> getSemanticCategories(){
-		return semanticCategories;
+	public Term getConcept(){
+		return concept;
 	}
 	
-	public void setSemanticCategories(ArrayList<String> semanticCategories){
-		this.semanticCategories = semanticCategories;
+	public void setTerm(Term concept){
+		this.concept = concept;
 	}
+
 
 	@Override
 	public String toString() {
 		return "Variable [varID=" + varID + ", varName=" + varName
-				+ ", prefLabel=" + prefLabel + ", prefCUI=" + prefCUI
-				+ ", altCUIs=" + altCUIs + ", altLabels=" + altLabels
-				+ ", hiddenLabels=" + hiddenLabels + ", abbrLabels="
-				+ abbrLabels + ", subjExpLabels=" + subjExpLabels
-				+ ", relationships=" + relationships + ", rules=" + rules
-				+ ", modifiers=" + modifiers + ", regex=" + regex
-				+ ", reportTypes=" + reportTypes + ", sectionHeadings="
-				+ sectionHeadings + ", windowSize=" + windowSize + ", categories=" + semanticCategories + "]";
+				+ ", concept=" + concept + ", relationships=" + relationships + ", rules=" + rules
+				+ ", modifiers=" + modifiers + ", reportTypes=" + reportTypes + ", sectionHeadings="
+				+ sectionHeadings + ", windowSize=" + windowSize + ", categories=" + semanticCategory + "]";
 	}
 	
 	
