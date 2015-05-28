@@ -24,21 +24,21 @@ public class Modifier {
 	private ArrayList<String> closures;
 	
 	
-	public Modifier(String name, OWLOntologyManager manager,
-			OWLDataFactory factory, OWLOntology ontology){
-		
+	public Modifier(String name, OWLOntologyManager manager){
+		OWLDataFactory factory = manager.getOWLDataFactory();
 		closures = new ArrayList<String>();
+		items = new ArrayList<LexicalItem>();
 		
 		//Get modifier class from name
 		uri = name.replaceAll("<|>", "");
 		OWLClass modCls = factory.getOWLClass(IRI.create(uri));
-		System.out.println(modCls.toString());
+		//System.out.println(modCls.toString());
 		//Set uri from name
 		
-		modName = modCls.getIRI().toString().substring(name.indexOf("#")+1).replaceAll(">", "");
+		modName = modCls.getIRI().toString().substring(name.indexOf("#")).replaceAll(">", "");
 		
 		//Get list of closures if any
-		Set<OWLClassExpression> superCls = modCls.getSuperClasses(ontology);
+		Set<OWLClassExpression> superCls = modCls.getSuperClasses(manager.getOntologies());
 		for(OWLClassExpression exp : superCls){
 			if(exp.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
 				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) exp;
@@ -49,9 +49,10 @@ public class Modifier {
 			}
 		}
 		
-		Set<OWLClassExpression> exps = modCls.getSubClasses(ontology);
-		for(OWLClassExpression e : exps){
-			System.out.println(e.toString());
+		Set<OWLIndividual> lexItems = modCls.getIndividuals(manager.getOntologies());
+		for(OWLIndividual ind : lexItems){
+			//System.out.println(ind.toString());
+			items.add(new LexicalItem(ind, manager));
 		}
 		
 		

@@ -230,9 +230,9 @@ public class DomainOntology {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		ArrayList<OWLClass> elements = new ArrayList<OWLClass>();
 		getVariableList(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Element")), new ArrayList<OWLClass>(), elements);
-		System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
+		//System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
 		for(OWLClass cls : elements){
-			System.out.println(cls.toString());
+			//System.out.println(cls.toString());
 			variables.add(getVariable(cls));
 		}
 		return variables;
@@ -244,11 +244,6 @@ public class DomainOntology {
 		if(cls == null || elements.contains(cls)){
 			return;
 		}
-		
-		//if class belongs to Schema Ontology then do not add to list
-		/**if(cls.getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#")){
-			System.out.println("This belongs to SO.");
-		}**/
 		
 		Set<OWLClassExpression> subExp = cls.getSubClasses(manager.getOntologies());
 		//System.out.println("Class " + cls.asOWLClass().getIRI());
@@ -361,15 +356,15 @@ public class DomainOntology {
 	}
 	
 	public ArrayList<Modifier> createModifierDictionary() throws Exception{
-		OWLOntology modOnt = manager.loadOntology(IRI.create(OntologyConstants.MO_PM));
-		//System.out.println(modOnt.toString());
+		ArrayList<Modifier> modifiers = new ArrayList<Modifier>();
 		for(String cls : modifierDictionary){
 			
-			Modifier mod = new Modifier(cls, manager, factory, modOnt);
-			System.out.println(mod.toString());
+			//Modifier mod = new Modifier(cls, manager);
+			modifiers.add(new Modifier(cls, manager));
+			//System.out.println(mod.toString());
 		}
 		
-		return null;
+		return modifiers;
 	}
 	
 	public ArrayList<Modifier> createClosureDictionary(){
