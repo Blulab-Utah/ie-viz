@@ -1,0 +1,1067 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#"
+     xml:base="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ModifierOntology="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:SchemaOntology="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#">
+    <owl:Ontology rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl">
+        <owl:imports rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#abbrLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#abbrLabel"/>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#null -->
+
+    <owl:AnnotationProperty rdf:about="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#null"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA126 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA126">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">follow-up</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Encounter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#After_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Active Follow-up</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C1522577</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Follow Up</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Followup</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Monitoring a person&apos;s health over time after treatment. This includes keeping track of the health of people who participate in a clinical study or clinical trial for a period of time, both during the study and after the study ends.
+NCI: The process by which information about the health status of an individual is obtained after a study has officially closed; an activity that continues something that has already begun or that repeats something that has already been done.
+NCI: The process by which information about the health status of a subject is obtained after the subject is no longer receiving study medication.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">follow-up</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">follow-up</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA127 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA127">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon cancer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0699790</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of Colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of the Colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colon Cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colon Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colonic Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Cancer that forms in the tissues of the colon (the longest part of the large intestine). Most colon cancers are adenocarcinomas (cancers that begin in cells that make and release mucus and other fluids).
+NCI: A malignant epithelial neoplasm that arises from the colon and invades through the muscularis mucosa into the submucosa. The vast majority are adenocarcinomas.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel carcinoma large</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma colon cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma intestine large</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma of colon</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon cancer</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA128 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA128">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenomatous polyps</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#FamilyMember_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adenomatous Polyps</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0206677</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A polypoid neoplasm arising from the glandular epithelium. There is proliferation of glandular cells which may display dysplastic cytologic features. Representative examples include the adenomatous polyps of the colon and rectum.
+NCI: A neoplasm, originating from glandular epithelium, exhibiting polypoid growth, for which the malignancy status has not been determined.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polypoid Adenoma</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polypoid adenoma</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenomatous polyps</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">adenomatous polyps</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA129 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA129">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon cancer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#FamilyMember_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0699790</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of Colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of the Colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colon Cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colon Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colonic Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Cancer that forms in the tissues of the colon (the longest part of the large intestine). Most colon cancers are adenocarcinomas (cancers that begin in cells that make and release mucus and other fluids).
+NCI: A malignant epithelial neoplasm that arises from the colon and invades through the muscularis mucosa into the submucosa. The vast majority are adenocarcinomas.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel carcinoma large</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma colon cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma intestine large</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma of colon</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon cancer</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA130 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA130">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colorectal cancer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#FamilyMember_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0009402</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cancer of Large Bowel</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cancer of Large Intestine</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cancer of the Large Bowel</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cancer of the Large Intestine</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of Large Bowel</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of Large Intestine</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of the Large Bowel</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carcinoma of the Large Intestine</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colorectal Cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colorectal Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large Bowel Cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large Bowel Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large Intestine Cancer</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large Intestine Carcinoma</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Cancer that develops in the colon (the longest part of the large intestine) and/or the rectum (the last several inches of the large intestine before the anus).
+NCI: A malignant epithelial neoplasm that arises from the colon or rectum and invades through the muscularis mucosa into the submucosa. The vast majority are adenocarcinomas.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">carcinoma colorectal</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colorectal cancer</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA138 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA138">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendix</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#AnatomicalSite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Appendix</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0003617</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A small, fingerlike pouch that sticks out from the cecum (the first part of the large intestine near the end of the small intestine).
+NCI: Small tissue projection existing as a cecal diverticulum with a questionable history of vestigial versus specialized organ.
+NCI: Small tissue projection existing as a cecal diverticulum with a questionable history of vestigial versus specialized organ. (NCI)</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermiform Appendix</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermiform appendix</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendix</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendix</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vermiform appendix</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA139 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA139">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cecum</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#AnatomicalSite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0007531</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cecum</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A blind pouch-like commencement of the colon in the right lower quadrant of the abdomen at the end of the small intestine and the start of the large intestine. (from On-line Medical Dictionary)
+NCI: A pouch that forms the first part of the large intestine. It connects the small intestine to the colon, which is part of the large intestine.
+NCI: A blind pouch-like commencement of the colon in the right lower quadrant of the abdomen at the end of the small intestine and the start of the large intestine. (OMD)</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caecum</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cecum</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA140 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA140">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#AnatomicalSite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C1281569</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Entire colon</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA141 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA141">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ileum</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#AnatomicalSite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0020885</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ileum</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: The final section of the small intestine.
+NCI: The final section of the small intestine. (NCI)</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ileal</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ileo</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ileos</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ileum</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ileum</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA142 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA142">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chronic inflammatory bowel disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasSemAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Chronic_Course"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Autoimmune Bowel Disorder</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0021390</ModifierOntology:prefCUI>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IBD</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inflammatory Bowel Diseases</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A spectrum of small and large bowel inflammatory diseases of unknown etiology. It includes Crohn&apos;s disease, ulcerative colitis, and colitis of indeterminate type.
+NCI: A general term that refers to the inflammation of the colon and rectum. Inflammatory bowel disease includes ulcerative colitis and Crohn&apos;s disease.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel disease inflammatory</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel diseases inflammatory</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chronic inflammatory bowel disease</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease inflammatory bowel</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inflammatory bowel diseases</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA143 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA143">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn&apos;s disease</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0010346</ModifierOntology:prefCUI>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CD</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn Disease</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn disease</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn&apos;s</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn&apos;s Disease</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn&apos;s disease</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohn&apos;s regional enteritis</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crohns disease</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Granulomatous enteritis</SchemaOntology:altLabel>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RE</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Regional enteritis</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohn diseases</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohn s</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohn s disease</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohn&apos;s diseases</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohns disease</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohns diseases</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohns&apos;s</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crohns&apos;s disease</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease crohn</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disease crohn&apos;s</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enteritis regional</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">granulomatous enteritis</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regional enteritis</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA144 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA144">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0032584</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A usually exophytic mass attached to the underlying tissue by a broad base or a thin stalk. Polyps can be neoplastic or non-neoplastic. Neoplastic polyps usually represent proliferations of the epithelium, and are commonly seen in the gastrointestinal tract. Polyps of the gastrointestinal tract are often called adenomas, are associated with dysplasia, and may eventually transform into carcinomas. Non-neoplastic polyps may be inflammatory, degenerative, or the result of malformations.
+NCI: A protruding growth attached to the underlying tissue by a broad base or a thin stalk, which can be either inflammatory, hamartomatous, or neoplastic.
+NCI: A growth that protrudes from a mucous membrane.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp NOS</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp undetermined</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA145 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA145">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ulcerative pancolitis</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C2063754</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ulcerative pancolitis</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ulcerative pancolitis</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA146 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA146">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteNegatedExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0032584</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A usually exophytic mass attached to the underlying tissue by a broad base or a thin stalk. Polyps can be neoplastic or non-neoplastic. Neoplastic polyps usually represent proliferations of the epithelium, and are commonly seen in the gastrointestinal tract. Polyps of the gastrointestinal tract are often called adenomas, are associated with dysplasia, and may eventually transform into carcinomas. Non-neoplastic polyps may be inflammatory, degenerative, or the result of malformations.
+NCI: A protruding growth attached to the underlying tissue by a broad base or a thin stalk, which can be either inflammatory, hamartomatous, or neoplastic.
+NCI: A growth that protrudes from a mucous membrane.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp NOS</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp undetermined</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA147 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA147">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unexplained gastrointestinal bleeding</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0017181</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GI bleeding</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GI hemorrhage</SchemaOntology:altLabel>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GIH</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GIT hemorrhage</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gastrointestinal Hemorrhage</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gastrointestinal bleed</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gastrointestinal bleeding</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Bleeding originating from any part of the gastrointestinal system.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastro intestinal bleeding</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal bleed</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal haemorrhage</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal hemorrhage</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gastrointestinal hemorrhages</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gi bleed</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gi bleeding</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gi hemorrhage</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unexplained gastrointestinal bleeding</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA148 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA148">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unexplained iron deficiency anemia</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0162316</ModifierOntology:prefCUI>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IDA</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iron deficiency anemia</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iron deficiency anemia syndrome</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Anemia caused by low iron intake, inefficient iron absorption in the gastrointestinal tract, or chronic blood loss.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sideropenic anemia</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ferropenic anemia</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iron deficiency anaemia</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iron-deficiency anemia</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sideropenic anemia</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unexplained iron deficiency anemia</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA149 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA149">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdominal pain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AP</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdominal Pain</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0000737</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Painful sensation in the abdominal region.
+NCI: A disorder characterized by a sensation of marked discomfort in the abdominal region.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abd pain</SchemaOntology:altLabel>
+        <SchemaOntology:null rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdmnal pain</SchemaOntology:null>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdomen pain</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdominal pain</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abdominal pains</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gut pain</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA150 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA150">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change in bowel habits</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altered bowel function</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altered bowel habit</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altered bowel habits</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0278008</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change in bowel habit</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change in bowel pattern</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel changes habits</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel habits change</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change in bowel habit</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change in bowel habits</SchemaOntology:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA151 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA151">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diarrhea</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0011991</ModifierOntology:prefCUI>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diarrhea</SchemaOntology:altLabel>
+        <SchemaOntology:abbrLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LS</SchemaOntology:abbrLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loose bowel motions</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loose bowel movement</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loose feces</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loose motion</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loose stools</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A condition of frequent and watery bowel movements.
+NCI: A disorder characterized by frequent and watery bowel movements.
+NCI: Frequent and watery bowel movements.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observation of diarrhea</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowel loose movements</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bowels loose movement</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diarrhea</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diarrhea running</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diarrheas</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diarrhoea</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">diarrhoea symptoms</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loose bowel motion</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loose bowel movement</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">symptoms diarrhea</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">watery stool</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">watery stools</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA152 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA152">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight loss</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#Problem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Body Weight decreased</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0043096</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Losing weight</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A reduction in overall body mass.
+NCI: A finding characterized by a decrease in overall body weight; for pediatrics, less than the baseline growth curve.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Progressive weight loss</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight loss</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decrease weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreased weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decreases weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lose weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loses weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">losing weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loss of weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loss weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">loss wt</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lost weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reduction weight</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight decrease</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight loss</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight reduction</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weightloss</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wt loss</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA153 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA153">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aborted colonoscopy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#ProcedureIntervention"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasSemAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Incomplete_ProcedureCompletion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0009378</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endoscopic examination of colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endoscopy of colon</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Examination of the inside of the colon using a colonoscope, inserted into the rectum. A colonoscope is a thin, tube-like instrument with a light and a lens for viewing. It may also have a tool to remove tissue to be checked under a microscope for signs of disease.
+NCI: Endoscopic examination of the luminal surface of the colon.</SchemaOntology:definition>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aborted colonoscopy</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon endoscopy</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopies</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy procedure</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy procedures</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA154 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA154">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biopsy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#ProcedureIntervention"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BX</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Biopsy</SchemaOntology:altLabel>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0005558</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: The removal of tissue specimens or fluid from the living body for microscopic examination, performed to establish a diagnosis.
+NCI: The removal of tissue specimens or fluid from the living body for microscopic examination, performed to establish a diagnosis.
+NCI: The removal of cells or tissues for examination by a pathologist. The pathologist may study the tissue under a microscope or perform other tests on the cells or tissue. There are many different types of biopsy procedures. The most common types include: (1) incisional biopsy, in which only a sample of tissue is removed; (2) excisional biopsy, in which an entire lump or suspicious area is removed; and (3) needle biopsy, in which a sample of tissue or fluid is removed with a needle.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biopsied</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biopsies</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biopsy</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biopsy procedure</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA155 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA155">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foreign body removal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#ProcedureIntervention"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0184937</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Excision or Surgical Removal of foreign body</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">excision of foreign body</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foreign body removal</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foreign body removal</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">removal of foreign body</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA156 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA156">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp removal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#ProcedureIntervention"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0521210</ModifierOntology:prefCUI>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Complete or partial removal of a polypoid lesion from the mucosal surface.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polypectomy</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Resection of polyp</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp removal</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp removal</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyp resection</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">polyps removal</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">removal polyp</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA157 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA157">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#ProcedureIntervention"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Before_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0009378</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endoscopic examination of colon</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Endoscopy of colon</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: Examination of the inside of the colon using a colonoscope, inserted into the rectum. A colonoscope is a thin, tube-like instrument with a light and a lens for viewing. It may also have a tool to remove tissue to be checked under a microscope for signs of disease.
+NCI: Endoscopic examination of the luminal surface of the colon.</SchemaOntology:definition>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colon endoscopy</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopies</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy</SchemaOntology:altLabel>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy</SchemaOntology:prefLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy procedure</SchemaOntology:altLabel>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colonoscopy procedures</SchemaOntology:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA158 -->
+
+    <owl:Class rdf:about="http://blulab.chpc.utah.edu/ontologies/schema/mtharp/colonoscopy.owl#KA158">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informed consent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#RegulationLaw"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#DefiniteExistence_Certainty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Overlap_DocTimeRel"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://blulab.chpc.utah.edu/ontologies/SchemaOntology.owl#hasLingAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl#Patient_Experiencer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ModifierOntology:prefCUI rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C0021430</ModifierOntology:prefCUI>
+        <SchemaOntology:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Informed Consent</SchemaOntology:altLabel>
+        <SchemaOntology:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCI: A process in which a person is given important facts about a medical procedure or treatment, a clinical trial, or genetic testing before deciding whether or not to participate. It also includes informing the patient when there is new information that may affect his or her decision to continue. Informed consent includes information about the possible risks, benefits, and limits of the procedure, treatment, trial, or genetic testing.
+NCI: Consent by a patient to a surgical or medical procedure or participation in a clinical study after achieving an understanding of the relevant medical facts and the risks involved.</SchemaOntology:definition>
+        <SchemaOntology:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">informed consent</SchemaOntology:prefLabel>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+
