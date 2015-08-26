@@ -24,7 +24,7 @@ public class DOtoPyConText {
 	public static void main(String[] args)  {
 		System.out.println("Starting test app.");
 
-		//DOtoPyConText parser = new DOtoPyConText();
+		DOtoPyConText parser = new DOtoPyConText();
 		try {
 			parser.createPyConTextFiles();
 		} catch (Exception e) {
