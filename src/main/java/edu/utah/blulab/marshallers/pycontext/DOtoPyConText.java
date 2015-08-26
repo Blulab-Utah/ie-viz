@@ -251,4 +251,8 @@ public class DOtoPyConText {
 	        Normalizer.normalize(text, Form.NFD)
 	            .replaceAll("\\p{InCombiningDiacriticalMarks}+", "***");
 	}
+	
+	public int testMethod (){
+		return 5;
+	}
 }
