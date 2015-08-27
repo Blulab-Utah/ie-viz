@@ -10,8 +10,6 @@ import java.util.regex.Pattern;
 import org.apache.commons.io.FileUtils;
 //import org.apache.commons.lang3.StringEscapeUtils;
 
-
-
 import edu.utah.blulab.domainontology.*;
 
 public class DOtoPyConText {
@@ -252,5 +250,9 @@ public class DOtoPyConText {
 	    return text == null ? null :
 	        Normalizer.normalize(text, Form.NFD)
 	            .replaceAll("\\p{InCombiningDiacriticalMarks}+", "***");
+	}
+	
+	public int testMethod (){
+		return 5;
 	}
 }
