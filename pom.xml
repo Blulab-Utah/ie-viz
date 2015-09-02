@@ -6,17 +6,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>IE-Viz</name>
 
-	
-	
 	<repositories>
 		<repository>
-			<id>in-project</id>
-			<name>In Project Repo</name>
-			<url>file://${project.basedir}/libs</url>
-		</repository>
-		<repository>
-			<id>blunexus</id>
-			<url>https://blunexus.chpc.utah.edu/content/repositories/snapshots/edu/utah/blulab/</url>
+			<id>nexus-snapshots</id>
+			<url>https://blunexus.chpc.utah.edu/content/repositories/snapshots</url>
 		</repository>
 	</repositories>
 
