@@ -50,7 +50,7 @@ public class TestDotoPyConText {
 	public void test() {
 		DOtoPyConText marshaller = new DOtoPyConText();
 		int val = marshaller.testMethod();
-		assertEquals(5+1, val);
+		assertEquals(5, val);
 		//fail("Not yet implemented");
 	}
 
