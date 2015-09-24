@@ -44,7 +44,7 @@ public class DomainOntology {
 	private ArrayList<String> closureDictionary;
 	private ArrayList<String> relationshipDictionary;
 	private Set<OWLOntology> imports;
-	private final String MODIFIERS = "Modifiers";
+	private final static String MODIFIERS = "Modifiers";
 	private final String RULES = "Rules";
 	private final String RELATIONS = "Relationships";
 	
@@ -242,7 +242,7 @@ public class DomainOntology {
 					OWLClassExpression modClass = obj.getFiller();
 					//System.out.println(modClass.toString());
 					modifiers.add(modClass.toString());
-					
+					details.put(MODIFIERS, modifiers);
 					//add modifier to dictionary list
 					if(!modifierDictionary.contains(modClass.toString())){
 						modifierDictionary.add(modClass.toString());
