@@ -85,7 +85,7 @@ public class LexicalItem {
 		
 		for(OWLLiteral lit : values){
 			if(lit.hasLang("en")){
-				System.out.println(lit.getLiteral());
+				//System.out.println(lit.getLiteral());
 				items.add(lit.getLiteral());
 			}
 			

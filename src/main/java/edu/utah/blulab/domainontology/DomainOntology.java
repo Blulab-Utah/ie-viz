@@ -46,7 +46,7 @@ public class DomainOntology {
 	private Set<OWLOntology> imports;
 	private final static String MODIFIERS = "Modifiers";
 	private final String RULES = "Rules";
-	private final String RELATIONS = "Relationships";
+	private final static String RELATIONS = "Relationships";
 	
 	public DomainOntology(String fileLocation) throws Exception{
 		manager = OWLManager.createOWLOntologyManager();
@@ -159,6 +159,9 @@ public class DomainOntology {
 		//Get list of modifiers
 		//var.setModifiers(getModifiers(cls));
 		var.setModifiers(details.get(MODIFIERS));
+		
+		//Get list of relations
+		var.setRelationships(details.get(RELATIONS));
 
 		//System.out.println(var);
 		return var;
@@ -248,7 +251,13 @@ public class DomainOntology {
 						modifierDictionary.add(modClass.toString());
 					}
 				}else{
-					//TODO Add code to extract relationships
+					//Get remaining axioms and parse out the relation and object to add to variable description
+					//System.out.println(obj.toString());
+					String relation = obj.getProperty().getNamedProperty().getIRI().getShortForm();
+					String object = obj.getFiller().toString();
+					//System.out.println(object);
+					relations.add(relation + "|" + object);
+					details.put(RELATIONS, relations);
 				}
 				
 			}
