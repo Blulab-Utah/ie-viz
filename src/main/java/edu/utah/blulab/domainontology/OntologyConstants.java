@@ -9,7 +9,7 @@ public class OntologyConstants {
 	public static final String PREF_LABEL = SO_PM + "#prefLabel";
 	public static final String ALT_LABEL = SO_PM + "#altLabel";
 	public static final String HIDDEN_LABEL = SO_PM + "#hiddenLabel";
-	public static final String ABR_LABEL = SO_PM + "#abrLabel";
+	public static final String ABR_LABEL = SO_PM + "#abbrLabel";
 	public static final String SUBJ_EXP_LABEL = SO_PM + "#subjExpLabel";
 	public static final String REGEX = SO_PM + "#regex";
 	public static final String PREF_CUI = SO_PM + "#prefCUI";
