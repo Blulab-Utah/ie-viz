@@ -35,11 +35,11 @@ public class LexicalItem {
 		//term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.EN_REGEX))));
 		
 		//Get English action associated with lexical item
-		Set<OWLIndividual> enActions = item.getObjectPropertyValues(factory.getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)), 
+		/**Set<OWLIndividual> enActions = item.getObjectPropertyValues(factory.getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)), 
 				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
 		for(OWLIndividual action : enActions){
 			actionEn = action.asOWLNamedIndividual().getIRI().getShortForm();
-		}
+		}**/
 		
 		
 	}
