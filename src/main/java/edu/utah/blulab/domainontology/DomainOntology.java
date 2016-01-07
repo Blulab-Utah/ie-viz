@@ -39,10 +39,10 @@ public class DomainOntology {
 	private PrefixManager pm;
 	private File ontFile;
 	private String ontURI;
-	private ArrayList<Term> conceptDictionary;
-	private static ArrayList<String> modifierDictionary;
-	private ArrayList<String> closureDictionary;
-	private ArrayList<String> relationshipDictionary;
+	private ArrayList<Term> anchorDictionary;
+	private static ArrayList<Modifier> modifierDictionary;
+	private ArrayList<Modifier> closureDictionary;
+	private ArrayList<Relation> relationshipDictionary;
 	private Set<OWLOntology> imports;
 	private final static String MODIFIERS = "Modifiers";
 	private final String RULES = "Rules";
@@ -55,10 +55,10 @@ public class DomainOntology {
 		ontology = manager.loadOntologyFromOntologyDocument(ontFile);
 		ontURI = ontology.getOntologyID().getOntologyIRI().toString();
 		pm = new DefaultPrefixManager(ontURI + "#");
-		conceptDictionary = new ArrayList<Term>();
-		modifierDictionary = new ArrayList<String>();
-		closureDictionary = new ArrayList<String>();
-		relationshipDictionary = new ArrayList<String>();
+		anchorDictionary = new ArrayList<Term>();
+		modifierDictionary = new ArrayList<Modifier>();
+		closureDictionary = new ArrayList<Modifier>();
+		relationshipDictionary = new ArrayList<Relation>();
 		imports = manager.getImports(ontology);
 		
 		System.out.println("Loaded " + ontURI);
@@ -94,7 +94,7 @@ public class DomainOntology {
 		var.setVarName(getAnnotationString(cls, factory.getRDFSLabel()));
 		
 		//Set preferred label for variable concept
-		term.setPrefTerm(getAnnotationString(cls, 
+		/**term.setPrefTerm(getAnnotationString(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL))));
 		
 		//Set preferred CUIs for variable concept
@@ -123,11 +123,11 @@ public class DomainOntology {
 		
 		//Set regex
 		term.setRegex(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));**/
 		
 		//Add concept to variable and concept dictionary
-		var.setTerm(term);
-		conceptDictionary.add(term);
+		var.setAnchor(term);
+		anchorDictionary.add(term);
 		//Set section headings
 		var.setSectionHeadings(getAnnotationList(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SEC_HEADING))));
@@ -151,17 +151,17 @@ public class DomainOntology {
 		String temp = getAnnotationString(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.WINDOW)));
 		if(!temp.isEmpty()){
-			var.setWindowSize(Integer.parseInt(temp));
+			//var.setWindowSize(Integer.parseInt(temp));
 		}
 		
 		HashMap<String, ArrayList<String>> details = getClassDetails(cls);
 		
 		//Get list of modifiers
 		//var.setModifiers(getModifiers(cls));
-		var.setModifiers(details.get(MODIFIERS));
+		//var.setModifiers(details.get(MODIFIERS));
 		
 		//Get list of relations
-		var.setRelationships(details.get(RELATIONS));
+		//var.setRelationships(details.get(RELATIONS));
 
 		//System.out.println(var);
 		return var;
@@ -248,7 +248,7 @@ public class DomainOntology {
 					details.put(MODIFIERS, modifiers);
 					//add modifier to dictionary list
 					if(!modifierDictionary.contains(modClass.toString())){
-						modifierDictionary.add(modClass.toString());
+						//modifierDictionary.add(modClass.toString());
 					}
 				}else{
 					//Get remaining axioms and parse out the relation and object to add to variable description
@@ -301,23 +301,23 @@ public class DomainOntology {
 		return labelSet;
 	}
 	
-	public ArrayList<Term> createConceptDictionary(){
-		return conceptDictionary;
+	public ArrayList<Term> getAnchorDictionary(){
+		return anchorDictionary;
 	}
 	
-	public ArrayList<Modifier> createModifierDictionary() throws Exception{
+	public ArrayList<Modifier> getModifierDictionary() throws Exception{
 		ArrayList<Modifier> modifiers = new ArrayList<Modifier>();
-		for(String cls : modifierDictionary){
+		for(Modifier cls : modifierDictionary){
 			
 			//Modifier mod = new Modifier(cls, manager);
-			modifiers.add(new Modifier(cls, manager));
+			//modifiers.add(new Modifier(cls, manager));
 			//System.out.println(mod.toString());
 		}
 		
 		return modifiers;
 	}
 	
-	public ArrayList<Modifier> createClosureDictionary(){
+	public ArrayList<Modifier> getClosureDictionary(){
 		return null;
 	}
 	
