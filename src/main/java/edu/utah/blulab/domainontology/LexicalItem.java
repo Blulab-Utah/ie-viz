@@ -18,7 +18,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 public class LexicalItem {
 	private String uri,  actionEn, actionSv, actionDe; //prefTermEn, prefTermSv, prefTermDe
 	private Term term;
-	private ArrayList<String> source, creator; 
+	private int windowSize;
 	
 	public LexicalItem(OWLIndividual item, OWLOntologyManager manager){
 		OWLDataFactory factory = manager.getOWLDataFactory();
@@ -28,19 +28,19 @@ public class LexicalItem {
 		
 		//Create term associated with lexical item
 		term = new Term();
-		term.setPrefTerm(getEnPrefLabel(item, manager, factory));
-		term.setSynonym(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_TERM))));
-		term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.EN_REGEX))));
+		term.setPrefTerm(getAnnotationProperty(item, manager, factory, 
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_TERM)), OntologyConstants.ENGLISH,
+				IRI.create(OntologyConstants.CT_PM)));
+		//term.setSynonym(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_TERM))));
+		//term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.EN_REGEX))));
 		
 		//Get English action associated with lexical item
-		Set<OWLIndividual> enActions = item.getObjectPropertyValues(factory.getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)), 
+		/**Set<OWLIndividual> enActions = item.getObjectPropertyValues(factory.getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)), 
 				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
 		for(OWLIndividual action : enActions){
-			actionEn = action.asOWLNamedIndividual().getIRI().getFragment();
-		}
+			actionEn = action.asOWLNamedIndividual().getIRI().getShortForm();
+		}**/
 		
-		source = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SOURCE)));
-		creator = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.CREATOR)));
 		
 	}
 	
@@ -62,23 +62,23 @@ public class LexicalItem {
 		return labels;
 	}
 	
-	private static String getEnPrefLabel(OWLIndividual ind, OWLOntologyManager manager, OWLDataFactory factory){
+	private static String getAnnotationProperty(OWLIndividual ind, OWLOntologyManager manager, OWLDataFactory factory
+			, OWLAnnotationProperty property, String language, IRI ontology){
 		String str = "";
-		Set<OWLLiteral> values = ind.getDataPropertyValues(factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_TERM)), 
-				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
+		Set<OWLAnnotation> annotations = ind.asOWLNamedIndividual().getAnnotations(manager.getOntology(ontology), 
+				property);
 		
-		for(OWLLiteral lit : values){
-			if(lit.hasLang("en")){
-				//System.out.println(lit.getLiteral());
-				str = lit.getLiteral();
+		if(!annotations.isEmpty()){
+			for(OWLAnnotation ann : annotations){
+				System.out.println(ann);
 			}
-			
 		}
+			
 		return str;
 	}
 	
-	private static ArrayList<String> getEnglishDataProperty(OWLIndividual ind, OWLOntologyManager manager,
-			OWLDataPropertyExpression expression){
+	/**private static ArrayList<String> getAnnotationPropertyList(OWLIndividual ind, OWLOntologyManager manager, OWLDataFactory factory
+			, OWLAnnotationProperty property, String language){
 		ArrayList<String> items = new ArrayList<String>();
 		Set<OWLLiteral> values = ind.getDataPropertyValues(expression, 
 				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
@@ -91,7 +91,7 @@ public class LexicalItem {
 			
 		}
 		return items;
-	}
+	}**/
 	
 	
 	public String getUri() {
@@ -126,22 +126,6 @@ public class LexicalItem {
 	public void setActionDe(String actionDe) {
 		this.actionDe = actionDe;
 	}
-
-	public ArrayList<String> getCreator() {
-		return creator;
-	}
-
-	public void setCreator(ArrayList<String> creator) {
-		this.creator = creator;
-	}
-
-	public ArrayList<String> getSource() {
-		return source;
-	}
-
-	public void setSource(ArrayList<String> source) {
-		this.source = source;
-	}
 	
 	public Term getTerm(){
 		return term;
@@ -150,12 +134,19 @@ public class LexicalItem {
 	public void setTerm(Term term){
 		this.term = term;
 	}
+	
+	public int getWindowSize(){
+		return windowSize;
+	}
+	
+	public void setWindowSize(int windowSize){
+		this.windowSize = windowSize;
+	}
 
 	@Override
 	public String toString() {
 		return "LexicalItem [uri=" + uri + ", term=" + term 
-				+ ", actionEn=" + actionEn + ", creator=" + creator
-				+ ", source=" + source + "]";
+				+ ", windowSize=" + windowSize +", actionEn=" + actionEn + "]";
 	}
 	
 	
