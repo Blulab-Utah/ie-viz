@@ -22,12 +22,14 @@ public class Modifier {
 	private String modName, uri;
 	private ArrayList<LexicalItem> items;
 	private ArrayList<String> closures;
+	private ArrayList<Modifier> children;
 	
 	
 	public Modifier(String name, OWLOntologyManager manager){
 		OWLDataFactory factory = manager.getOWLDataFactory();
 		closures = new ArrayList<String>();
 		items = new ArrayList<LexicalItem>();
+		children = new ArrayList<Modifier>();
 		
 		//Get modifier class from name
 		uri = name.replaceAll("<|>", "");
@@ -48,6 +50,8 @@ public class Modifier {
 				}
 			}
 		}
+		
+		//Get subclasses and store in children
 		
 		Set<OWLIndividual> lexItems = modCls.getIndividuals(manager.getOntologies());
 		for(OWLIndividual ind : lexItems){
@@ -83,6 +87,14 @@ public class Modifier {
 	}
 	public void setClosures(ArrayList<String> closures) {
 		this.closures = closures;
+	}
+	
+	public ArrayList<Modifier> getChildren(){
+		return children;
+	}
+	
+	public void setChildren(ArrayList<Modifier> children){
+		this.children = children;
 	}
 	@Override
 	public String toString() {
