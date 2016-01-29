@@ -127,7 +127,7 @@ public class DomainOntology {
 		
 		//Add concept to variable and concept dictionary
 		var.setTerm(term);
-		conceptDictionary.add(term);
+		//conceptDictionary.add(term);
 		//Set section headings
 		var.setSectionHeadings(getAnnotationList(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SEC_HEADING))));
@@ -170,7 +170,7 @@ public class DomainOntology {
 	public ArrayList<Variable> getAllVariables() {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		ArrayList<OWLClass> elements = new ArrayList<OWLClass>();
-		getVariableList(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Element")), new ArrayList<OWLClass>(), elements);
+		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Element")), new ArrayList<OWLClass>(), elements);
 		//System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
 		for(OWLClass cls : elements){
 			//System.out.println(cls.toString());
@@ -179,10 +179,10 @@ public class DomainOntology {
 		return variables;
 	}
 	
-	private void getVariableList(OWLClass cls, ArrayList<OWLClass> elements, ArrayList<OWLClass> varList){
+	private void getClassHierarchy(OWLClass cls, ArrayList<OWLClass> visitedCls, ArrayList<OWLClass> clsList){
 		//make sure class exists and hasn't already been visited
 		OWLClass c = factory.getOWLClass(cls.getIRI());
-		if(cls == null || elements.contains(cls)){
+		if(cls == null || visitedCls.contains(cls)){
 			return;
 		}
 		
@@ -190,14 +190,15 @@ public class DomainOntology {
 		//System.out.println("Class " + cls.asOWLClass().getIRI());
 		for(OWLClassExpression subCls : subExp){
 			//System.out.println("Expression: " + subCls.asOWLClass().toString());
-			if(!elements.contains(cls.asOWLClass())){
-				elements.add(cls.asOWLClass());
+			if(!visitedCls.contains(cls.asOWLClass())){
+				visitedCls.add(cls.asOWLClass());
 			}
-			if(!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#")){
-				varList.add(subCls.asOWLClass());
+			if(!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#") ||
+					!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				clsList.add(subCls.asOWLClass());
 			}
 			
-			getVariableList(subCls.asOWLClass(), elements, varList);
+			getClassHierarchy(subCls.asOWLClass(), visitedCls, clsList);
 		}
 		
 		
@@ -302,6 +303,44 @@ public class DomainOntology {
 	}
 	
 	public ArrayList<Term> createConceptDictionary(){
+		ArrayList<OWLClass> clsList = new ArrayList<OWLClass>();
+		
+		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Target")), new ArrayList<OWLClass>(), clsList);
+		for (OWLClass cls : clsList){
+			Term term = new Term();
+			//Set preferred label for variable concept
+			term.setPrefTerm(getAnnotationString(cls, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL))));
+			
+			//Set preferred CUIs for variable concept
+			term.setPrefCode(getAnnotationString(cls,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI))));
+			
+			//Set alternate CUIs for variable concept
+			term.setAltCode(getAnnotationList(cls,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI))));
+			
+			//Set alternate labels
+			term.setSynonym(getAnnotationList(cls, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL))));
+			
+			//Set hidden labels
+			term.setMisspelling(getAnnotationList(cls, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL))));
+			
+			//Set abbreviation labels
+			term.setAbbreviation(getAnnotationList(cls,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL))));
+			
+			//Set subjective expression labels
+			term.setSubjExp(getAnnotationList(cls,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL))));
+			
+			//Set regex
+			term.setRegex(getAnnotationList(cls, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
+			
+		}
 		return conceptDictionary;
 	}
 	
