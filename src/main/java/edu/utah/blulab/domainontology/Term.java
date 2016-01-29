@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Term {
 	private String prefTerm, prefCode, definition;
 	private ArrayList<String> synonym, misspelling, abbreviation, subjExp, regex, altCode;
+	private ArrayList<Term> children;
 	
 	public String getPrefTerm() {
 		return prefTerm;
@@ -59,6 +60,14 @@ public class Term {
 	}
 	public void setAltCode(ArrayList<String> altCode) {
 		this.altCode = altCode;
+	}
+	
+	public ArrayList<Term> getChildren(){
+		return children;
+	}
+	
+	public void setChildren(ArrayList<Term> children){
+		this.children = children;
 	}
 	@Override
 	public String toString() {
