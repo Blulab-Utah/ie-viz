@@ -29,25 +29,25 @@ public class LexicalItem {
 		//Create term associated with lexical item
 		term = new Term();
 		term.setPrefTerm(getEnPrefLabel(item, manager, factory));
-		term.setSynonym(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_TERM))));
-		term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.EN_REGEX))));
+		term.setSynonym(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_LABEL))));
+		term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.REGEX))));
 		
 		//Get English action associated with lexical item
 		Set<OWLIndividual> enActions = item.getObjectPropertyValues(factory.getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)), 
-				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
+				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));
 		for(OWLIndividual action : enActions){
-			actionEn = action.asOWLNamedIndividual().getIRI().getFragment();
+			actionEn = action.asOWLNamedIndividual().getIRI().getShortForm();
 		}
 		
-		source = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SOURCE)));
-		creator = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.CREATOR)));
+		//source = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SOURCE)));
+		//creator = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.CREATOR)));
 		
 	}
 	
 	private ArrayList<String> getAnnotationProperty(OWLIndividual ind, OWLOntologyManager manager, OWLAnnotationProperty property){
 		ArrayList<String> labels = new ArrayList<String>();
 		
-		Set<OWLAnnotation> annotations = ind.asOWLNamedIndividual().getAnnotations(manager.getOntology(IRI.create(OntologyConstants.MO_PM)), 
+		Set<OWLAnnotation> annotations = ind.asOWLNamedIndividual().getAnnotations(manager.getOntology(IRI.create(OntologyConstants.CT_PM)), 
 				property);
 		if(!annotations.isEmpty()){
 			Iterator<OWLAnnotation> iter = annotations.iterator();
@@ -64,8 +64,8 @@ public class LexicalItem {
 	
 	private static String getEnPrefLabel(OWLIndividual ind, OWLOntologyManager manager, OWLDataFactory factory){
 		String str = "";
-		Set<OWLLiteral> values = ind.getDataPropertyValues(factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_TERM)), 
-				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
+		Set<OWLLiteral> values = ind.getDataPropertyValues(factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_LABEL)), 
+				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));
 		
 		for(OWLLiteral lit : values){
 			if(lit.hasLang("en")){
@@ -81,7 +81,7 @@ public class LexicalItem {
 			OWLDataPropertyExpression expression){
 		ArrayList<String> items = new ArrayList<String>();
 		Set<OWLLiteral> values = ind.getDataPropertyValues(expression, 
-				manager.getOntology(IRI.create(OntologyConstants.MO_PM)));
+				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));
 		
 		for(OWLLiteral lit : values){
 			if(lit.hasLang("en")){
