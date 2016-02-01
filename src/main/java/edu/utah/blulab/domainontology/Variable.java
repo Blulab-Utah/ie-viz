@@ -6,26 +6,25 @@ import java.util.ArrayList;
 public class Variable {
 	private String varID;
 	private String varName;
-	private Term concept;
+	private Term anchor;
 	private ArrayList<String> semanticCategory;
-	private ArrayList<String> relationships; //May need feeback on the best representation here.
+	private ArrayList<Relation> relationships; //May need feeback on the best representation here.
 	private ArrayList<String> rules; //This may change once SWRL rules are implemented in ontology.
-	private ArrayList<String> modifiers;
+	private ArrayList<Modifier> modifiers;
 	private ArrayList<String> reportTypes; //may change once Document Ontology built
 	private ArrayList<String> sectionHeadings; //may change once SecTag Ontology built
-	private int windowSize;
+	
 	
 	public Variable(){
 		varID = "";
 		varName = "";
-		concept = new Term();
+		anchor = new Term();
 		semanticCategory = new ArrayList<String>();
-		relationships = new ArrayList<String>();
+		relationships = new ArrayList<Relation>();
 		rules = new ArrayList<String>();
-		modifiers = new ArrayList<String>();
+		modifiers = new ArrayList<Modifier>();
 		reportTypes = new ArrayList<String>();
 		sectionHeadings = new ArrayList<String>();
-		windowSize = 6;
 	}
 
 	public String getVarID() {
@@ -52,11 +51,11 @@ public class Variable {
 		this.semanticCategory = semanticCategory;
 	}
 
-	public ArrayList<String> getRelationships() {
+	public ArrayList<Relation> getRelationships() {
 		return relationships;
 	}
 
-	public void setRelationships(ArrayList<String> relationships) {
+	public void setRelationships(ArrayList<Relation> relationships) {
 		this.relationships = relationships;
 	}
 
@@ -68,11 +67,11 @@ public class Variable {
 		this.rules = rules;
 	}
 
-	public ArrayList<String> getModifiers() {
+	public ArrayList<Modifier> getModifiers() {
 		return modifiers;
 	}
 
-	public void setModifiers(ArrayList<String> modifiers) {
+	public void setModifiers(ArrayList<Modifier> modifiers) {
 		this.modifiers = modifiers;
 	}
 
@@ -92,29 +91,23 @@ public class Variable {
 		this.sectionHeadings = sectionHeadings;
 	}
 	
-	public int getWindowSize(){
-		return windowSize;
+	
+	
+	public Term getAnchor(){
+		return anchor;
 	}
 	
-	public void setWindowSize(int windowSize){
-		this.windowSize = windowSize;
-	}
-	
-	public Term getConcept(){
-		return concept;
-	}
-	
-	public void setTerm(Term concept){
-		this.concept = concept;
+	public void setAnchor(Term anchor){
+		this.anchor = anchor;
 	}
 
 
 	@Override
 	public String toString() {
 		return "Variable [varID=" + varID + ", varName=" + varName
-				+ ", concept=" + concept + ", relationships=" + relationships + ", rules=" + rules
+				+ ", anchor=" + anchor + ", relationships=" + relationships + ", rules=" + rules
 				+ ", modifiers=" + modifiers + ", reportTypes=" + reportTypes + ", sectionHeadings="
-				+ sectionHeadings + ", windowSize=" + windowSize + ", categories=" + semanticCategory + "]";
+				+ sectionHeadings + ", categories=" + semanticCategory + "]";
 	}
 	
 	

@@ -10,7 +10,7 @@ public class testAPI {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/pneumonia.owl");
+		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl");
 		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/vincipneu.owl.xml");
 		//DomainOntology domain = new DomainOntology("C:\\Users\\Bill\\Desktop\\carotid stenosis.owl"); 
 		//DomainOntology domain = new DomainOntology("DomainOntologyAPI/src/main/resources/colonoscopy_20141001.owl");
@@ -25,7 +25,7 @@ public class testAPI {
 		}
 		
 		System.out.println("********** Modifier Dictionary: **********");
-		ArrayList<Modifier> modifierDictionary = domain.createModifierDictionary();
+		ArrayList<Modifier> modifierDictionary = domain.getModifierDictionary();
 		for(Modifier modifier : modifierDictionary){
 			System.out.println(modifier.toString());
 		}

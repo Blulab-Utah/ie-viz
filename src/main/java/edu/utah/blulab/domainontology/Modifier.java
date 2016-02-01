@@ -21,12 +21,13 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 public class Modifier {
 	private String modName, uri;
 	private ArrayList<LexicalItem> items;
-	private ArrayList<String> closures;
+	private ArrayList<Modifier> closures, pseudos;
 	
 	
 	public Modifier(String name, OWLOntologyManager manager){
 		OWLDataFactory factory = manager.getOWLDataFactory();
-		closures = new ArrayList<String>();
+		closures = new ArrayList<Modifier>();
+		pseudos = new ArrayList<Modifier>();
 		items = new ArrayList<LexicalItem>();
 		
 		//Get modifier class from name
@@ -44,7 +45,7 @@ public class Modifier {
 				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) exp;
 				OWLObjectPropertyExpression propExp = obj.getProperty();
 				if(propExp.asOWLObjectProperty().equals(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_CLOSURE)))){
-					closures.add(obj.getFiller().toString());
+					//closures.add(obj.getFiller().toString());
 				}
 			}
 		}
@@ -78,15 +79,23 @@ public class Modifier {
 	public void setItems(ArrayList<LexicalItem> items) {
 		this.items = items;
 	}
-	public ArrayList<String> getClosures() {
+	public ArrayList<Modifier> getClosures() {
 		return closures;
 	}
-	public void setClosures(ArrayList<String> closures) {
+	public void setClosures(ArrayList<Modifier> closures) {
 		this.closures = closures;
 	}
+	public ArrayList<Modifier> getPseudos() {
+		return pseudos;
+	}
+	public void setPseudos(ArrayList<Modifier> pseudos) {
+		this.pseudos = pseudos;
+	}
+	
+	
 	@Override
 	public String toString() {
-		return "Modifier [modName=" + modName + ", uri=" + uri  + ", items=" + items + ", closures=" + closures + "]";
+		return "Modifier [modName=" + modName + ", uri=" + uri  + ", items=" + items + ", closures=" + closures + ", pseudos=" + pseudos + "]";
 	}
 	
 	

@@ -2,6 +2,7 @@ package edu.utah.blulab.domainontology;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -39,10 +40,10 @@ public class DomainOntology {
 	private PrefixManager pm;
 	private File ontFile;
 	private String ontURI;
-	private ArrayList<Term> conceptDictionary;
-	private static ArrayList<String> modifierDictionary;
-	private ArrayList<String> closureDictionary;
-	private ArrayList<String> relationshipDictionary;
+	private ArrayList<Term> anchorDictionary;
+	private static HashMap<String, Modifier> modifierDictionary;
+	private ArrayList<Modifier> closureDictionary;
+	private ArrayList<Relation> relationshipDictionary;
 	private Set<OWLOntology> imports;
 	private final static String MODIFIERS = "Modifiers";
 	private final String RULES = "Rules";
@@ -55,10 +56,10 @@ public class DomainOntology {
 		ontology = manager.loadOntologyFromOntologyDocument(ontFile);
 		ontURI = ontology.getOntologyID().getOntologyIRI().toString();
 		pm = new DefaultPrefixManager(ontURI + "#");
-		conceptDictionary = new ArrayList<Term>();
-		modifierDictionary = new ArrayList<String>();
-		closureDictionary = new ArrayList<String>();
-		relationshipDictionary = new ArrayList<String>();
+		anchorDictionary = new ArrayList<Term>();
+		modifierDictionary = new HashMap<String, Modifier>();
+		closureDictionary = new ArrayList<Modifier>();
+		relationshipDictionary = new ArrayList<Relation>();
 		imports = manager.getImports(ontology);
 		
 		System.out.println("Loaded " + ontURI);
@@ -84,57 +85,85 @@ public class DomainOntology {
 	public Variable getVariable(OWLClass cls){
 		Variable var = new Variable();
 		Term term = new Term();
-		
-		
-		
+
 		//Set variable ID (aka URI)
 		var.setVarID(cls.getIRI().toString());
 		
 		//Set variable name using RDF:label
 		var.setVarName(getAnnotationString(cls, factory.getRDFSLabel()));
 		
-		//Set preferred label for variable concept
-		term.setPrefTerm(getAnnotationString(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL))));
+		//Extract anchor from variable class
+		OWLClass anchor = null;
+		Set<OWLClassExpression> exps = cls.getEquivalentClasses(ontology);
+		for(OWLClassExpression e : exps){
+			
+			if(e.getClassExpressionType().equals(ClassExpressionType.OBJECT_SOME_VALUES_FROM)){
+				//System.out.println(e);
+				OWLObjectSomeValuesFrom objprop = (OWLObjectSomeValuesFrom) e;
+				if(objprop.getProperty().equals(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_ANCHOR)))){
+					//System.out.println("Anchor = " + objprop.getFiller());
+					anchor = objprop.getFiller().asOWLClass();
+				}else{
+					ArrayList<Modifier> modifiers = var.getModifiers();
+					Modifier mod = new Modifier(objprop.getFiller().asOWLClass().getIRI().toString(), manager);
+					modifiers.add(mod);
+					var.setModifiers(modifiers);
+					if(!modifierDictionary.containsKey(mod.getUri())){
+						modifierDictionary.put(mod.getUri(), mod);
+					}
+				}
+				//System.out.println(objprop.getFiller());
+				//System.out.println(objprop.getProperty());
+				
+			}
+		}
 		
-		//Set preferred CUIs for variable concept
-		term.setPrefCode(getAnnotationString(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI))));
+		if(!anchor.equals(null)){
+			//Set preferred label for anchor
+			term.setPrefTerm(getAnnotationString(anchor, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_TERM))));
+			
+			//Set preferred CUIs for variable concept
+			term.setPrefCode(getAnnotationString(anchor,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CODE))));
+			
+			//Set alternate CUIs for variable concept
+			term.setAltCode(getAnnotationList(anchor,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CODE))));
+			
+			//Set alternate labels
+			term.setSynonym(getAnnotationList(anchor, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SYNONYM))));
+			
+			//Set hidden labels
+			term.setMisspelling(getAnnotationList(anchor, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.MISSPELLING))));
+			
+			//Set abbreviation labels
+			term.setAbbreviation(getAnnotationList(anchor,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABBREVIATION))));
+			
+			//Set subjective expression labels
+			term.setSubjExp(getAnnotationList(anchor,
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP))));
+			
+			//Set regex
+			term.setRegex(getAnnotationList(anchor, 
+					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
+			
+			//Add concept to variable and concept dictionary
+			var.setAnchor(term);
+			anchorDictionary.add(term);
+		}
 		
-		//Set alternate CUIs for variable concept
-		term.setAltCode(getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI))));
 		
-		//Set alternate labels
-		term.setSynonym(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL))));
-		
-		//Set hidden labels
-		term.setMisspelling(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL))));
-		
-		//Set abbreviation labels
-		term.setAbbreviation(getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL))));
-		
-		//Set subjective expression labels
-		term.setSubjExp(getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL))));
-		
-		//Set regex
-		term.setRegex(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
-		
-		//Add concept to variable and concept dictionary
-		var.setTerm(term);
-		conceptDictionary.add(term);
 		//Set section headings
-		var.setSectionHeadings(getAnnotationList(cls, 
+		/**var.setSectionHeadings(getAnnotationList(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SEC_HEADING))));
 		
 		//Set document types
 		var.setReportTypes(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.DOC_TYPE))));
+				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.DOC_TYPE))));**/
 		
 		//Get semantic categories of class
 		ArrayList<String> cats = new ArrayList<String>();
@@ -147,21 +176,14 @@ public class DomainOntology {
 		}
 		var.setSemanticCategory(cats);
 		
-		//Set window size if different from default, else leave window size = 6
-		String temp = getAnnotationString(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.WINDOW)));
-		if(!temp.isEmpty()){
-			var.setWindowSize(Integer.parseInt(temp));
-		}
-		
 		HashMap<String, ArrayList<String>> details = getClassDetails(cls);
 		
 		//Get list of modifiers
 		//var.setModifiers(getModifiers(cls));
-		var.setModifiers(details.get(MODIFIERS));
+		//var.setModifiers(details.get(MODIFIERS));
 		
 		//Get list of relations
-		var.setRelationships(details.get(RELATIONS));
+		//var.setRelationships(details.get(RELATIONS));
 
 		//System.out.println(var);
 		return var;
@@ -170,7 +192,7 @@ public class DomainOntology {
 	public ArrayList<Variable> getAllVariables() {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		ArrayList<OWLClass> elements = new ArrayList<OWLClass>();
-		getVariableList(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Element")), new ArrayList<OWLClass>(), elements);
+		getVariableList(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Event")), new ArrayList<OWLClass>(), elements);
 		//System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
 		for(OWLClass cls : elements){
 			//System.out.println(cls.toString());
@@ -247,9 +269,9 @@ public class DomainOntology {
 					modifiers.add(modClass.toString());
 					details.put(MODIFIERS, modifiers);
 					//add modifier to dictionary list
-					if(!modifierDictionary.contains(modClass.toString())){
-						modifierDictionary.add(modClass.toString());
-					}
+					/**if(!modifierDictionary.contains(modClass.toString())){
+						//modifierDictionary.add(modClass.toString());
+					}**/
 				}else{
 					//Get remaining axioms and parse out the relation and object to add to variable description
 					//System.out.println(obj.toString());
@@ -301,24 +323,16 @@ public class DomainOntology {
 		return labelSet;
 	}
 	
-	public ArrayList<Term> createConceptDictionary(){
-		return conceptDictionary;
+	public ArrayList<Term> getAnchorDictionary(){
+		return anchorDictionary;
 	}
 	
-	public ArrayList<Modifier> createModifierDictionary() throws Exception{
-		ArrayList<Modifier> modifiers = new ArrayList<Modifier>();
-		for(String cls : modifierDictionary){
-			
-			//Modifier mod = new Modifier(cls, manager);
-			modifiers.add(new Modifier(cls, manager));
-			//System.out.println(mod.toString());
-		}
-		
-		return modifiers;
+	public Collection<Modifier> getModifierDictionary() throws Exception{
+		return modifierDictionary.values();
 	}
 	
-	public ArrayList<Modifier> createClosureDictionary(){
-		return null;
+	public ArrayList<Modifier> getClosureDictionary(){
+		return closureDictionary;
 	}
 	
 	
