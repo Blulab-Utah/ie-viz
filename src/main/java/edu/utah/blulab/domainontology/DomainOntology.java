@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -33,7 +34,7 @@ import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 public class DomainOntology {
 	
-	private OWLOntologyManager manager;
+	private static OWLOntologyManager manager;
 	private static OWLOntology ontology;
 	private static OWLDataFactory factory;
 	private PrefixManager pm;
@@ -72,7 +73,6 @@ public class DomainOntology {
 	
 	public Variable getVariable(String clsName){
 		Variable var = new Variable();
-		Term term = new Term();
 		//Get OWL class
 		OWLClass cls = factory.getOWLClass(clsName, pm);
 		
@@ -83,51 +83,17 @@ public class DomainOntology {
 	
 	public Variable getVariable(OWLClass cls){
 		Variable var = new Variable();
-		Term term = new Term();
-		
-		
-		
+				
 		//Set variable ID (aka URI)
 		var.setVarID(cls.getIRI().toString());
 		
 		//Set variable name using RDF:label
 		var.setVarName(getAnnotationString(cls, factory.getRDFSLabel()));
 		
-		//Set preferred label for variable concept
-		term.setPrefTerm(getAnnotationString(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL))));
-		
-		//Set preferred CUIs for variable concept
-		term.setPrefCode(getAnnotationString(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI))));
-		
-		//Set alternate CUIs for variable concept
-		term.setAltCode(getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI))));
-		
-		//Set alternate labels
-		term.setSynonym(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL))));
-		
-		//Set hidden labels
-		term.setMisspelling(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL))));
-		
-		//Set abbreviation labels
-		term.setAbbreviation(getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL))));
-		
-		//Set subjective expression labels
-		term.setSubjExp(getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL))));
-		
-		//Set regex
-		term.setRegex(getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
-		
-		//Add concept to variable and concept dictionary
+		//Create term for target concept belonging to variable
+		Term term = new Term(cls, manager, ontology);
+		//Add target to variable
 		var.setTerm(term);
-		//conceptDictionary.add(term);
 		//Set section headings
 		var.setSectionHeadings(getAnnotationList(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SEC_HEADING))));
@@ -170,10 +136,10 @@ public class DomainOntology {
 	public ArrayList<Variable> getAllVariables() {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		ArrayList<OWLClass> elements = new ArrayList<OWLClass>();
-		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Element")), new ArrayList<OWLClass>(), elements);
-		//System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
+		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Annotation")), new ArrayList<OWLClass>(), elements);
+		System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
 		for(OWLClass cls : elements){
-			//System.out.println(cls.toString());
+			System.out.println(cls.toString());
 			variables.add(getVariable(cls));
 		}
 		return variables;
@@ -181,7 +147,7 @@ public class DomainOntology {
 	
 	private void getClassHierarchy(OWLClass cls, ArrayList<OWLClass> visitedCls, ArrayList<OWLClass> clsList){
 		//make sure class exists and hasn't already been visited
-		OWLClass c = factory.getOWLClass(cls.getIRI());
+		
 		if(cls == null || visitedCls.contains(cls)){
 			return;
 		}
@@ -193,7 +159,7 @@ public class DomainOntology {
 			if(!visitedCls.contains(cls.asOWLClass())){
 				visitedCls.add(cls.asOWLClass());
 			}
-			if(!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#") ||
+			if(!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
 					!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
 				clsList.add(subCls.asOWLClass());
 			}
@@ -201,35 +167,10 @@ public class DomainOntology {
 			getClassHierarchy(subCls.asOWLClass(), visitedCls, clsList);
 		}
 		
-		
-		
 	}
 	
 	
-	
-	/**public void getElementCategoryList(OWLClass elementCls, ArrayList<OWLClass> elements){
 		
-		
-		if(elementCls == null || elements.contains(elementCls)){
-			return;
-		}
-		
-		//if class belongs to Schema Ontology don't add to list
-		
-		Set<OWLClassExpression> parentExp = elementCls.getSubClasses(manager.getOntologies());
-		System.out.println("Class " + elementCls.asOWLClass().getIRI());
-		for(OWLClassExpression subCls : parentExp){
-			System.out.println("Expression: " + subCls.asOWLClass().toString());
-			if(!elements.contains(elementCls.asOWLClass())){
-				elements.add(elementCls.asOWLClass());
-			}
-			getElementCategoryList(subCls.asOWLClass(), elements);
-		}
-		
-		
-	}**/
-	
-	
 	private static HashMap<String,ArrayList<String>> getClassDetails(OWLClass cls){
 		HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
 		ArrayList<String> modifiers = new ArrayList<String>();
@@ -302,45 +243,16 @@ public class DomainOntology {
 		return labelSet;
 	}
 	
-	public ArrayList<Term> createConceptDictionary(){
+	public ArrayList<Term> createTargetDictionary(){
 		ArrayList<OWLClass> clsList = new ArrayList<OWLClass>();
 		
-		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Target")), new ArrayList<OWLClass>(), clsList);
-		for (OWLClass cls : clsList){
-			Term term = new Term();
-			//Set preferred label for variable concept
-			term.setPrefTerm(getAnnotationString(cls, 
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL))));
+		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Anchor")), new ArrayList<OWLClass>(), clsList);
+		LinkedList<OWLClass> list = new LinkedList<OWLClass>();
+		list.addAll(clsList);
+		
+		
 			
-			//Set preferred CUIs for variable concept
-			term.setPrefCode(getAnnotationString(cls,
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI))));
-			
-			//Set alternate CUIs for variable concept
-			term.setAltCode(getAnnotationList(cls,
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI))));
-			
-			//Set alternate labels
-			term.setSynonym(getAnnotationList(cls, 
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL))));
-			
-			//Set hidden labels
-			term.setMisspelling(getAnnotationList(cls, 
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL))));
-			
-			//Set abbreviation labels
-			term.setAbbreviation(getAnnotationList(cls,
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL))));
-			
-			//Set subjective expression labels
-			term.setSubjExp(getAnnotationList(cls,
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL))));
-			
-			//Set regex
-			term.setRegex(getAnnotationList(cls, 
-					factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX))));
-			
-		}
+		
 		return conceptDictionary;
 	}
 	
@@ -358,6 +270,34 @@ public class DomainOntology {
 	
 	public ArrayList<Modifier> createClosureDictionary(){
 		return null;
+	}
+	
+	private static ArrayList<OWLClass> getChildren(OWLClass cls){
+		ArrayList<OWLClass> list = new ArrayList<OWLClass>();
+		Set<OWLClassExpression> subCls = cls.getSubClasses(ontology);
+		for(OWLClassExpression sub : subCls){
+			list.add(sub.asOWLClass());
+		}
+		return list;
+	}
+	
+	private static void createTargetHierarchy(OWLClass cls, LinkedList<OWLClass> list, ArrayList<Term> hierarchy){
+		if(list.isEmpty()){
+			return;
+		}
+		Term term = new Term(cls, manager, ontology);
+		ArrayList<OWLClass> subs = getChildren(list.removeFirst());
+		if(subs.isEmpty()){
+			return;
+		}
+		ArrayList<Term> children = new ArrayList<Term>();
+		for(OWLClass c : subs){
+			
+			list.remove(c);
+			createTargetHiearchy(c, list, hierarchy);
+		}
+		
+		
 	}
 	
 	
