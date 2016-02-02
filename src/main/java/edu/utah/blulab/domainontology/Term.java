@@ -17,7 +17,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 public class Term {
 	private String prefTerm, prefCode, definition;
 	private ArrayList<String> synonym, misspelling, abbreviation, subjExp, regex, altCode;
-	private ArrayList<Term> children;
+	private ArrayList<Term> parents, children;
 	
 	public Term(){
 		
@@ -25,6 +25,9 @@ public class Term {
 	
 	public Term(OWLClass cls, OWLOntologyManager manager, OWLOntology ontology){
 		OWLDataFactory factory = manager.getOWLDataFactory();
+		parents = new ArrayList<Term>();
+		children = new ArrayList<Term>();
+		
 		//Set preferred label for target concept
 		prefTerm = getAnnotationString(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL)), ontology);
@@ -119,6 +122,22 @@ public class Term {
 	
 	public void setChildren(ArrayList<Term> children){
 		this.children = children;
+	}
+	
+	public ArrayList<Term> getParents(){
+		return parents;
+	}
+	
+	public void setParents(ArrayList<Term> parents){
+		this.parents = parents;
+	}
+	
+	public boolean hasChildren(){
+		return children.isEmpty();
+	}
+	
+	public boolean hasParents(){
+		return parents.isEmpty();
 	}
 	@Override
 	public String toString() {

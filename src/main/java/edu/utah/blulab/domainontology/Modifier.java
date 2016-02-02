@@ -4,25 +4,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
-import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class Modifier {
 	private String modName, uri;
 	private ArrayList<LexicalItem> items;
 	private ArrayList<String> closures;
-	private ArrayList<Modifier> children;
+	private ArrayList<Modifier> parents, children;
 	
 	
 	public Modifier(String name, OWLOntologyManager manager){
@@ -30,6 +26,7 @@ public class Modifier {
 		closures = new ArrayList<String>();
 		items = new ArrayList<LexicalItem>();
 		children = new ArrayList<Modifier>();
+		parents = new ArrayList<Modifier>();
 		
 		//Get modifier class from name
 		uri = name.replaceAll("<|>", "");
@@ -53,11 +50,18 @@ public class Modifier {
 		
 		//Get subclasses and store in children
 		
+		//Get lexical items for each modifier
 		Set<OWLIndividual> lexItems = modCls.getIndividuals(manager.getOntologies());
-		for(OWLIndividual ind : lexItems){
-			//System.out.println(ind.toString());
-			items.add(new LexicalItem(ind, manager));
+		if(!lexItems.isEmpty()){
+			for(OWLIndividual ind : lexItems){
+				//System.out.println(ind.toString());
+				if(ind != null){
+					items.add(new LexicalItem(ind, manager));
+				}
+				
+			}
 		}
+		
 		
 		
 	}
@@ -95,6 +99,22 @@ public class Modifier {
 	
 	public void setChildren(ArrayList<Modifier> children){
 		this.children = children;
+	}
+	
+	public ArrayList<Modifier> getParents(){
+		return parents;
+	}
+	
+	public void setParents(ArrayList<Modifier> parents){
+		this.parents = parents;
+	}
+	
+	public boolean hasChildren(){
+		return children.isEmpty();
+	}
+	
+	public boolean hasParents(){
+		return parents.isEmpty();
 	}
 	@Override
 	public String toString() {

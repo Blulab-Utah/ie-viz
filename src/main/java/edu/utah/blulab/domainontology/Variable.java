@@ -13,7 +13,7 @@ public class Variable {
 	private ArrayList<String> modifiers;
 	private ArrayList<String> reportTypes; //may change once Document Ontology built
 	private ArrayList<String> sectionHeadings; //may change once SecTag Ontology built
-	private int windowSize;
+	private ArrayList<Variable> parents, children;
 	
 	public Variable(){
 		varID = "";
@@ -25,7 +25,8 @@ public class Variable {
 		modifiers = new ArrayList<String>();
 		reportTypes = new ArrayList<String>();
 		sectionHeadings = new ArrayList<String>();
-		windowSize = 6;
+		parents = new ArrayList<Variable>();
+		children = new ArrayList<Variable>();
 	}
 
 	public String getVarID() {
@@ -92,20 +93,36 @@ public class Variable {
 		this.sectionHeadings = sectionHeadings;
 	}
 	
-	public int getWindowSize(){
-		return windowSize;
-	}
-	
-	public void setWindowSize(int windowSize){
-		this.windowSize = windowSize;
-	}
-	
 	public Term getConcept(){
 		return concept;
 	}
 	
 	public void setTerm(Term concept){
 		this.concept = concept;
+	}
+	
+	public ArrayList<Variable> getChildren(){
+		return children;
+	}
+	
+	public void setChildren(ArrayList<Variable> children){
+		this.children = children;
+	}
+	
+	public ArrayList<Variable> getParents(){
+		return parents;
+	}
+	
+	public void setParents(ArrayList<Variable> parents){
+		this.parents = parents;
+	}
+	
+	public boolean hasChildren(){
+		return children.isEmpty();
+	}
+	
+	public boolean hasParents(){
+		return parents.isEmpty();
 	}
 
 
@@ -114,7 +131,7 @@ public class Variable {
 		return "Variable [varID=" + varID + ", varName=" + varName
 				+ ", concept=" + concept + ", relationships=" + relationships + ", rules=" + rules
 				+ ", modifiers=" + modifiers + ", reportTypes=" + reportTypes + ", sectionHeadings="
-				+ sectionHeadings + ", windowSize=" + windowSize + ", categories=" + semanticCategory + "]";
+				+ sectionHeadings  + ", categories=" + semanticCategory + "]";
 	}
 	
 	

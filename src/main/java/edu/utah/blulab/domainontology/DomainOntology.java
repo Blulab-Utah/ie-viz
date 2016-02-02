@@ -14,7 +14,6 @@ import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
-import org.semanticweb.owlapi.model.OWLAnonymousIndividual;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -41,13 +40,14 @@ public class DomainOntology {
 	private File ontFile;
 	private String ontURI;
 	private ArrayList<Term> conceptDictionary;
-	private static ArrayList<String> modifierDictionary;
+	private static ArrayList<Modifier> modifierDictionary;
 	private ArrayList<String> closureDictionary;
 	private ArrayList<String> relationshipDictionary;
 	private Set<OWLOntology> imports;
 	private final static String MODIFIERS = "Modifiers";
 	private final String RULES = "Rules";
 	private final static String RELATIONS = "Relationships";
+	private static ArrayList<OWLObjectProperty> propertyList;
 	
 	public DomainOntology(String fileLocation) throws Exception{
 		manager = OWLManager.createOWLOntologyManager();
@@ -57,10 +57,11 @@ public class DomainOntology {
 		ontURI = ontology.getOntologyID().getOntologyIRI().toString();
 		pm = new DefaultPrefixManager(ontURI + "#");
 		conceptDictionary = new ArrayList<Term>();
-		modifierDictionary = new ArrayList<String>();
+		modifierDictionary = new ArrayList<Modifier>();
 		closureDictionary = new ArrayList<String>();
 		relationshipDictionary = new ArrayList<String>();
 		imports = manager.getImports(ontology);
+		propertyList = new ArrayList<OWLObjectProperty>();
 		
 		System.out.println("Loaded " + ontURI);
 		for(OWLOntology ont : imports){
@@ -68,6 +69,19 @@ public class DomainOntology {
 			
 		}
 		
+		ArrayList<OWLObjectProperty> lingList = new ArrayList<OWLObjectProperty>();
+		getObjectPropertyHierarchy(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_LING_ATTRIBUTE)), new ArrayList<OWLObjectProperty>(), lingList);
+		for(OWLObjectProperty prop : lingList){
+			//System.out.println(prop);
+			propertyList.add(prop);
+		}
+		
+		ArrayList<OWLObjectProperty> semList = new ArrayList<OWLObjectProperty>();
+		getObjectPropertyHierarchy(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_SEM_ATTRIBUTE)), new ArrayList<OWLObjectProperty>(), semList);
+		for(OWLObjectProperty prop : semList){
+			//System.out.println(prop);
+			propertyList.add(prop);
+		}
 	}
 	
 	
@@ -113,13 +127,6 @@ public class DomainOntology {
 		}
 		var.setSemanticCategory(cats);
 		
-		//Set window size if different from default, else leave window size = 6
-		String temp = getAnnotationString(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.WINDOW)));
-		if(!temp.isEmpty()){
-			var.setWindowSize(Integer.parseInt(temp));
-		}
-		
 		HashMap<String, ArrayList<String>> details = getClassDetails(cls);
 		
 		//Get list of modifiers
@@ -137,9 +144,9 @@ public class DomainOntology {
 		ArrayList<Variable> variables = new ArrayList<Variable>();
 		ArrayList<OWLClass> elements = new ArrayList<OWLClass>();
 		getClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Annotation")), new ArrayList<OWLClass>(), elements);
-		System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
+		//System.out.println("THESE ARE THE ELEMENTS IN THE DOMAIN ONTOLOGY...");
 		for(OWLClass cls : elements){
-			System.out.println(cls.toString());
+			//System.out.println(cls.toString());
 			variables.add(getVariable(cls));
 		}
 		return variables;
@@ -168,33 +175,32 @@ public class DomainOntology {
 		}
 		
 	}
-	
-	
 		
 	private static HashMap<String,ArrayList<String>> getClassDetails(OWLClass cls){
 		HashMap<String, ArrayList<String>> details = new HashMap<String, ArrayList<String>>();
 		ArrayList<String> modifiers = new ArrayList<String>();
 		ArrayList<String> relations = new ArrayList<String>();
 		
-		Set<OWLClassExpression> exp = cls.getSuperClasses(ontology);
+		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
+		//Set<OWLClassExpression> exp = cls.getSuperClasses(ontology);
 		for(OWLClassExpression ce : exp){
+			
 			if(ce.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
 				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) ce;
 				OWLObjectPropertyExpression propExp = obj.getProperty();
-				
-				if(propExp.asOWLObjectProperty().equals(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_SEM_ATTRIBUTE))) |
-						propExp.asOWLObjectProperty().equals(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_LING_ATTRIBUTE)))){
+				System.out.println(propExp);
+				if(propertyList.contains(propExp.asOWLObjectProperty())){
 					OWLClassExpression modClass = obj.getFiller();
 					//System.out.println(modClass.toString());
 					modifiers.add(modClass.toString());
 					details.put(MODIFIERS, modifiers);
 					//add modifier to dictionary list
 					if(!modifierDictionary.contains(modClass.toString())){
-						modifierDictionary.add(modClass.toString());
+						modifierDictionary.add(new Modifier(modClass.toString(), manager));
 					}
 				}else{
 					//Get remaining axioms and parse out the relation and object to add to variable description
-					//System.out.println(obj.toString());
+					System.out.println(obj.toString());
 					String relation = obj.getProperty().getNamedProperty().getIRI().getShortForm();
 					String object = obj.getFiller().toString();
 					//System.out.println(object);
@@ -257,15 +263,9 @@ public class DomainOntology {
 	}
 	
 	public ArrayList<Modifier> createModifierDictionary() throws Exception{
-		ArrayList<Modifier> modifiers = new ArrayList<Modifier>();
-		for(String cls : modifierDictionary){
-			
-			//Modifier mod = new Modifier(cls, manager);
-			modifiers.add(new Modifier(cls, manager));
-			//System.out.println(mod.toString());
-		}
 		
-		return modifiers;
+		
+		return modifierDictionary;
 	}
 	
 	public ArrayList<Modifier> createClosureDictionary(){
@@ -281,24 +281,33 @@ public class DomainOntology {
 		return list;
 	}
 	
-	private static void createTargetHierarchy(OWLClass cls, LinkedList<OWLClass> list, ArrayList<Term> hierarchy){
-		if(list.isEmpty()){
+	private void getObjectPropertyHierarchy(OWLObjectProperty prop, ArrayList<OWLObjectProperty> visitedProp, ArrayList<OWLObjectProperty> propList){
+		//make sure class exists and hasn't already been visited
+		
+		if(prop == null || visitedProp.contains(prop)){
 			return;
-		}
-		Term term = new Term(cls, manager, ontology);
-		ArrayList<OWLClass> subs = getChildren(list.removeFirst());
-		if(subs.isEmpty()){
-			return;
-		}
-		ArrayList<Term> children = new ArrayList<Term>();
-		for(OWLClass c : subs){
-			
-			list.remove(c);
-			createTargetHiearchy(c, list, hierarchy);
 		}
 		
+		Set<OWLObjectPropertyExpression> subExp = prop.getSubProperties(manager.getOntologies());
+		//System.out.println("Class " + cls.asOWLClass().getIRI());
+		for(OWLObjectPropertyExpression subProp : subExp){
+			//System.out.println("Expression: " + subCls.asOWLClass().toString());
+			if(!visitedProp.contains(prop.asOWLObjectProperty())){
+				visitedProp.add(prop.asOWLObjectProperty());
+			}
+			/**if(!subProp.asOWLObjectProperty().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!subCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				clsList.add(subCls.asOWLClass());
+			}**/
+			propList.add(subProp.asOWLObjectProperty());
+			
+			getObjectPropertyHierarchy(subProp.asOWLObjectProperty(), visitedProp, propList);
+		}
 		
 	}
+		
+		
+	
 	
 	
 	

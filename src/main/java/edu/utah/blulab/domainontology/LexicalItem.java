@@ -16,7 +16,8 @@ import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class LexicalItem {
-	private String uri,  actionEn, actionSv, actionDe; //prefTermEn, prefTermSv, prefTermDe
+	private String uri,  actionEn, actionSv, actionDe, prefTermEn; //, prefTermSv, prefTermDe
+	private int windowSize;
 	private Term term;
 	private ArrayList<String> source, creator; 
 	
@@ -28,16 +29,26 @@ public class LexicalItem {
 		
 		//Create term associated with lexical item
 		term = new Term();
-		term.setPrefTerm(getEnPrefLabel(item, manager, factory));
-		term.setSynonym(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_LABEL))));
-		term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.REGEX))));
+		if(getEnPrefLabel(item, manager, factory) != null){
+			term.setPrefTerm(getEnPrefLabel(item, manager, factory));
+		}
+		if(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_LABEL))) != null){
+			term.setSynonym(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_LABEL))));
+		}
+		if(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.REGEX))) != null){
+			term.setRegex(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.REGEX))));
+		}
+		
 		
 		//Get English action associated with lexical item
 		Set<OWLIndividual> enActions = item.getObjectPropertyValues(factory.getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)), 
 				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));
-		for(OWLIndividual action : enActions){
-			actionEn = action.asOWLNamedIndividual().getIRI().getShortForm();
+		if(!enActions.isEmpty()){
+			for(OWLIndividual action : enActions){
+				actionEn = action.asOWLNamedIndividual().getIRI().getShortForm();
+			}
 		}
+		
 		
 		//source = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SOURCE)));
 		//creator = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.CREATOR)));
@@ -149,6 +160,14 @@ public class LexicalItem {
 	
 	public void setTerm(Term term){
 		this.term = term;
+	}
+	
+	public int getWindowSize(){
+		return windowSize;
+	}
+	
+	public void setWindowSize(int windowSize){
+		this.windowSize = windowSize;
 	}
 
 	@Override

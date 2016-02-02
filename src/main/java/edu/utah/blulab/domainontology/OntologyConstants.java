@@ -26,8 +26,8 @@ public class OntologyConstants {
 	
 	
 	
-	public static final String HAS_SEM_ATTRIBUTE = SO_PM + "#hasSemAttribute";
-	public static final String HAS_LING_ATTRIBUTE = SO_PM + "#hasLingAttribute";
+	public static final String HAS_SEM_ATTRIBUTE = SO_PM + "#hasSemanticModifier";
+	public static final String HAS_LING_ATTRIBUTE = SO_PM + "#hasLinguisticModifier";
 	public static final String HAS_CLOSURE = CT_PM + "#hasTermination";
 	
 	public static final String FORWARD_ACTION = "forward";
