@@ -13,6 +13,7 @@ import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
+import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class LexicalItem {
@@ -29,7 +30,7 @@ public class LexicalItem {
 		
 		//Create term associated with lexical item
 		term = new Term();
-		if(getEnPrefLabel(item, manager, factory) != null){
+		/**if(getEnPrefLabel(item, manager, factory) != null){
 			term.setPrefTerm(getEnPrefLabel(item, manager, factory));
 		}
 		if(getEnglishDataProperty(item, manager, factory.getOWLDataProperty(IRI.create(OntologyConstants.ALT_LABEL))) != null){
@@ -47,7 +48,7 @@ public class LexicalItem {
 			for(OWLIndividual action : enActions){
 				actionEn = action.asOWLNamedIndividual().getIRI().getShortForm();
 			}
-		}
+		}**/
 		
 		
 		//source = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SOURCE)));
@@ -75,16 +76,23 @@ public class LexicalItem {
 	
 	private static String getEnPrefLabel(OWLIndividual ind, OWLOntologyManager manager, OWLDataFactory factory){
 		String str = "";
-		Set<OWLLiteral> values = ind.getDataPropertyValues(factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_LABEL)), 
-				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));
 		
-		for(OWLLiteral lit : values){
-			if(lit.hasLang("en")){
-				//System.out.println(lit.getLiteral());
-				str = lit.getLiteral();
+		/**Set<OWLLiteral> values = ind.getDataPropertyValues(factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_LABEL)), 
+				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));**/
+
+		Set<OWLAnnotation> values = ind.asOWLNamedIndividual().getAnnotations(manager.getOntology(IRI.create(OntologyConstants.CT_PM)), factory.getRDFSLabel());
+		if(!values.isEmpty()){
+			Iterator<OWLAnnotation> iter = values.iterator();
+			while(iter.hasNext()){
+				OWLAnnotation label = iter.next();
+				String temp = label.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				str = temp;
+				break;
 			}
 			
 		}
+		
 		return str;
 	}
 	
@@ -104,6 +112,39 @@ public class LexicalItem {
 		return items;
 	}
 	
+	private static String getAnnotationString(OWLClass cls, OWLAnnotationProperty annotationProperty, OWLOntology ontology){
+		String str = "";
+		Set<OWLAnnotation> labels = cls.getAnnotations(ontology, annotationProperty);
+		if(!labels.isEmpty()){
+			Iterator<OWLAnnotation> iter = labels.iterator();
+			while(iter.hasNext()){
+				OWLAnnotation label = iter.next();
+				String temp = label.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				str = temp;
+				break;
+			}
+			
+		}
+		return str;
+	}
+	
+
+	
+	private static ArrayList<String> getAnnotationList(OWLClass cls, OWLAnnotationProperty annotationProperty, OWLOntology ontology){
+		ArrayList<String> labelSet = new ArrayList<String>();
+		Set<OWLAnnotation> annotations = cls.getAnnotations(ontology, annotationProperty);
+		if(!annotations.isEmpty()){
+			Iterator<OWLAnnotation> iter = annotations.iterator();
+			while(iter.hasNext()){
+				OWLAnnotation ann = iter.next();
+				String temp = ann.getValue().toString();
+				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
+				labelSet.add(temp);
+			}
+		}
+		return labelSet;
+	}
 	
 	public String getUri() {
 		return uri;

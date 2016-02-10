@@ -29,11 +29,26 @@ public class OntologyConstants {
 	public static final String HAS_SEM_ATTRIBUTE = SO_PM + "#hasSemanticModifier";
 	public static final String HAS_LING_ATTRIBUTE = SO_PM + "#hasLinguisticModifier";
 	public static final String HAS_CLOSURE = CT_PM + "#hasTermination";
+	public static final String HAS_ANCHOR = SO_PM + "#hasAnchor";
 	
 	public static final String FORWARD_ACTION = "forward";
 	public static final String BACKWARD_ACTION = "backward";
 	public static final String BIDIRECTIONAL_ACTION = "bidirectional";
 	public static final String DISCONTINUOUS_ACTION = "discontinuous";
 	public static final String TERMINATE_ACTION = "terminate";
+	
+	public static final String ANNOTATION = SO_PM + "#Annotation";
+	public static final String EVENT = SO_PM + "#Event";
+	public static final String ENTITY = SO_PM + "#Entity";
+	public static final String CONDITION = SO_PM + "#Condition";
+	public static final String DISEASE = SO_PM + "#DiseaseDisorder";
+	public static final String SYMPTOM = SO_PM + "#SignSymptom";
+	public static final String FINDING = SO_PM + "#Finding";
+	public static final String OBSERVATION = SO_PM + "#Observation";
+	public static final String ENCOUNTER = SO_PM + "#Encounter";
+	public static final String MEDICATION = SO_PM + "#MedicationStatement";
+	public static final String PROCEDURE = SO_PM + "#Procedure";
+	public static final String DIAGNOSTIC_PROCEDURE = SO_PM + "#DiagnosticProcedure";
+	public static final String THERAPEUTIC_PROCEDURE = SO_PM + "#TherapeuticProcedure";
 	
 }

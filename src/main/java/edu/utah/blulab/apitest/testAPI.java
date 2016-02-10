@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import edu.utah.blulab.domainontology.DomainOntology;
 import edu.utah.blulab.domainontology.Modifier;
+import edu.utah.blulab.domainontology.Term;
 import edu.utah.blulab.domainontology.Variable;
 
 public class testAPI {
@@ -17,19 +18,26 @@ public class testAPI {
 		//DomainOntology domain = new DomainOntology("DomainOntologyAPI/src/main/resources/colonoscopy_20141001.owl");
 		//DomainOntology domain = new DomainOntology("src/main/resources/colonoscopy_20141001.owl");
 		//domain.getVariable("leukocytosis");
-		//domain.getVariable("KA247");
+		System.out.println(domain.getVariable("KA_1000"));
 		
-		ArrayList<Variable> domainVariables = domain.getAllVariables();
+		
+		ArrayList<Variable> domainVariables = domain.getAllEvents();
 		System.out.println("********** Domain Variables: **********");
 		for(Variable var : domainVariables){
 			System.out.println(var.toString());
 		}
 		
-		System.out.println("********** Modifier Dictionary: **********");
+		/**System.out.println("********** Modifier Dictionary: **********");
 		ArrayList<Modifier> modifierDictionary = domain.createModifierDictionary();
 		for(Modifier modifier : modifierDictionary){
 			System.out.println(modifier.toString());
 		}
+		
+		System.out.println("********** Anchor Dictionary: **********");
+		ArrayList<Term> anchorDictionary = domain.createTargetDictionary();
+		/**for(Term term : anchorDictionary){
+			System.out.println(term.toString());
+		}**/
 	}
 
 }

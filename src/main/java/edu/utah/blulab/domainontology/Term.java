@@ -59,6 +59,16 @@ public class Term {
 		//Set regex
 		regex = getAnnotationList(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX)), ontology);
+		
+		//Set children terms
+		Set<OWLClassExpression> subClsList = cls.getSubClasses(ontology);
+		if(!subClsList.isEmpty()){
+			for(OWLClassExpression sub : subClsList){
+				OWLClass subCls = sub.asOWLClass();
+				//System.out.println(cls.asOWLClass().getIRI().getShortForm() + " has child " + subCls.getIRI().getShortForm());
+				children.add(new Term(subCls, manager, ontology));
+			}
+		}
 	}
 	
 	public String getPrefTerm() {
