@@ -21,7 +21,7 @@ public class testAPI {
 		System.out.println(domain.getVariable("KA_1000"));
 		
 		
-		ArrayList<Variable> domainVariables = domain.getAllEvents();
+		/**ArrayList<Variable> domainVariables = domain.getAllEvents();
 		System.out.println("********** Domain Variables: **********");
 		for(Variable var : domainVariables){
 			System.out.println(var.toString());

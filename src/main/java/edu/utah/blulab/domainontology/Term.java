@@ -15,20 +15,16 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class Term {
-	private String prefTerm, prefCode, definition;
-	private ArrayList<String> synonym, misspelling, abbreviation, subjExp, regex, altCode;
-	private ArrayList<Term> parents, children;
+	private String uri;
+	private DomainOntology domain;
 	
-	public Term(){
-		
+	public Term(String clsURI, DomainOntology domain){
+		this.uri = clsURI;
+		this.domain = domain;
 	}
 	
 	public Term(OWLClass cls, OWLOntologyManager manager, OWLOntology ontology){
-		OWLDataFactory factory = manager.getOWLDataFactory();
-		parents = new ArrayList<Term>();
-		children = new ArrayList<Term>();
-		
-		//Set preferred label for target concept
+		/**Set preferred label for target concept
 		prefTerm = getAnnotationString(cls, 
 				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL)), ontology);
 		
@@ -68,128 +64,61 @@ public class Term {
 				//System.out.println(cls.asOWLClass().getIRI().getShortForm() + " has child " + subCls.getIRI().getShortForm());
 				children.add(new Term(subCls, manager, ontology));
 			}
-		}
+		}**/
+	}
+	
+	public String getURI(){
+		return uri;
 	}
 	
 	public String getPrefTerm() {
-		return prefTerm;
+		return domain.getAnnotationString(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL)));
 	}
-	public void setPrefTerm(String prefTerm) {
-		this.prefTerm = prefTerm;
-	}
+	
 	public String getPrefCode() {
-		return prefCode;
+		return domain.getAnnotationString(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI)));
 	}
-	public void setPrefCode(String prefCode) {
-		this.prefCode = prefCode;
-	}
-	public String getDefinition() {
-		return definition;
-	}
-	public void setDefinition(String definition) {
-		this.definition = definition;
-	}
+	
+	
 	public ArrayList<String> getSynonym() {
-		return synonym;
+		return domain.getAnnotationList(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL)));
 	}
-	public void setSynonym(ArrayList<String> synonym) {
-		this.synonym = synonym;
-	}
+	
 	public ArrayList<String> getMisspelling() {
-		return misspelling;
+		return domain.getAnnotationList(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL)));
 	}
-	public void setMisspelling(ArrayList<String> misspelling) {
-		this.misspelling = misspelling;
-	}
+	
 	public ArrayList<String> getAbbreviation() {
-		return abbreviation;
+		return domain.getAnnotationList(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL)));
 	}
-	public void setAbbreviation(ArrayList<String> abbreviation) {
-		this.abbreviation = abbreviation;
-	}
+	
 	public ArrayList<String> getSubjExp() {
-		return subjExp;
+		return domain.getAnnotationList(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL)));
 	}
-	public void setSubjExp(ArrayList<String> subjExp) {
-		this.subjExp = subjExp;
-	}
+	
 	public ArrayList<String> getRegex() {
-		return regex;
+		return domain.getAnnotationList(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX)));
 	}
-	public void setRegex(ArrayList<String> regex) {
-		this.regex = regex;
-	}
+	
 	public ArrayList<String> getAltCode() {
-		return altCode;
-	}
-	public void setAltCode(ArrayList<String> altCode) {
-		this.altCode = altCode;
+		return domain.getAnnotationList(domain.getClass(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)));
 	}
 	
-	public ArrayList<Term> getChildren(){
-		return children;
-	}
-	
-	public void setChildren(ArrayList<Term> children){
-		this.children = children;
-	}
-	
-	public ArrayList<Term> getParents(){
-		return parents;
-	}
-	
-	public void setParents(ArrayList<Term> parents){
-		this.parents = parents;
-	}
-	
-	public boolean hasChildren(){
-		return children.isEmpty();
-	}
-	
-	public boolean hasParents(){
-		return parents.isEmpty();
-	}
 	@Override
 	public String toString() {
-		return "Term [prefTerm=" + prefTerm + ", prefCode=" + prefCode
-				+ ", children=" + children + ", synonym=" + synonym
-				+ ", misspelling=" + misspelling + ", abbreviation="
-				+ abbreviation + ", subjExp=" + subjExp + ", regex=" + regex
-				+ ", altCode=" + altCode + "]";
-	}
-	
-	private static String getAnnotationString(OWLClass cls, OWLAnnotationProperty annotationProperty, OWLOntology ontology){
-		String str = "";
-		Set<OWLAnnotation> labels = cls.getAnnotations(ontology, annotationProperty);
-		if(!labels.isEmpty()){
-			Iterator<OWLAnnotation> iter = labels.iterator();
-			while(iter.hasNext()){
-				OWLAnnotation label = iter.next();
-				String temp = label.getValue().toString();
-				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-				str = temp;
-				break;
-			}
-			
-		}
-		return str;
-	}
-	
-
-	
-	private static ArrayList<String> getAnnotationList(OWLClass cls, OWLAnnotationProperty annotationProperty, OWLOntology ontology){
-		ArrayList<String> labelSet = new ArrayList<String>();
-		Set<OWLAnnotation> annotations = cls.getAnnotations(ontology, annotationProperty);
-		if(!annotations.isEmpty()){
-			Iterator<OWLAnnotation> iter = annotations.iterator();
-			while(iter.hasNext()){
-				OWLAnnotation ann = iter.next();
-				String temp = ann.getValue().toString();
-				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-				labelSet.add(temp);
-			}
-		}
-		return labelSet;
+		return "Term [prefTerm=" + this.getPrefTerm() + ", prefCode=" + this.getPrefCode()
+				+  ", synonym=" + this.getSynonym()
+				+ ", misspelling=" + this.getMisspelling()+ ", abbreviation="
+				+ this.getAbbreviation() + ", subjExp=" + this.getSubjExp() + ", regex=" + this.getRegex()
+				+ ", altCode=" + this.getAltCode() + "]";
 	}
 	
 }
