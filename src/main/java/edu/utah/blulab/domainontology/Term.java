@@ -68,6 +68,30 @@ public class Term {
 				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)));
 	}
 	
+	public ArrayList<Term> getDirectParents(){
+		ArrayList<Term> parents = new ArrayList<Term>();
+		ArrayList<String> clsStrings = domain.getDirectSuperClasses(domain.getClass(uri));
+		for(String str : clsStrings){
+			if(!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				parents.add(new Term(str, domain));
+			}
+		}
+		return parents;
+	}
+	
+	public ArrayList<Term> getDirectChildren(){
+		ArrayList<Term> children = new ArrayList<Term>();
+		ArrayList<String> clsStrings = domain.getDirectSubClasses(domain.getClass(uri));
+		for(String str : clsStrings){
+			if(!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				children.add(new Term(str, domain));
+			}
+		}
+		return children;
+	}
+	
 	@Override
 	public String toString() {
 		return "Term [prefTerm=" + this.getPrefTerm() + ", prefCode=" + this.getPrefCode()

@@ -20,8 +20,8 @@ public class testAPI {
 		//domain.getVariable("leukocytosis");
 		System.out.println(domain.getVariable("KA_1004"));
 		
-		for(Variable v : domain.getVariable("KA_1004").getDirectParents()){
-			System.out.println(v);
+		for(Term t : domain.getVariable("KA_1006").getAnchor().getDirectChildren()){
+			System.out.println(t);
 		}
 		
 		/**ArrayList<Variable> domainVariables = domain.getAllVariables();
