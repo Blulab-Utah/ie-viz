@@ -11,7 +11,7 @@ public class testAPI {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl");
+		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
 		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/pneumonia.owl");
 		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/vincipneu.owl.xml");
 		//DomainOntology domain = new DomainOntology("C:\\Users\\Bill\\Desktop\\carotid stenosis.owl"); 

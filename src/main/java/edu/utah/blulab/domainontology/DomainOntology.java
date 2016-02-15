@@ -25,8 +25,10 @@ import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.OWLOntologyIRIMapper;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.PrefixManager;
+import org.semanticweb.owlapi.util.AutoIRIMapper;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 public class DomainOntology {
@@ -45,10 +47,15 @@ public class DomainOntology {
 	private static ArrayList<OWLObjectProperty> propertyList, lingPropList, semPropList, numPropList;
 	private static ArrayList<OWLClass> schemaClassList;
 	
-	public DomainOntology(String fileLocation) throws Exception{
+	public DomainOntology(String fileLocation, boolean useLocalFiles) throws Exception{
 		manager = OWLManager.createOWLOntologyManager();
 		factory = manager.getOWLDataFactory();
 		ontFile = new File(fileLocation);
+		if(useLocalFiles){
+			File directory = ontFile.getParentFile();
+			OWLOntologyIRIMapper autoIRIMapper = new AutoIRIMapper(directory, false);
+			manager.addIRIMapper(autoIRIMapper);
+		}
 		ontology = manager.loadOntologyFromOntologyDocument(ontFile);
 		ontURI = ontology.getOntologyID().getOntologyIRI().toString();
 		conceptDictionary = new ArrayList<Term>();
@@ -86,7 +93,13 @@ public class DomainOntology {
 			propertyList.add(prop);
 		}
 		
-		
+		System.out.println("Loaded ontology:" + ontology.getOntologyID().getOntologyIRI().toString());
+		System.out.println("Loaded imports: ");
+		for(OWLOntology ont : ontology.getImports()){
+			System.out.println(ont.getOntologyID().getOntologyIRI().toString());
+		}
+       
+        
 	}
 	
 	
