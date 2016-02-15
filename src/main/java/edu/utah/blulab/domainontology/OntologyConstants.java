@@ -4,7 +4,7 @@ import org.semanticweb.owlapi.model.PrefixManager;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 
 public class OntologyConstants {
-	public static final String CT_PM = "http://blulab.chpc.utha.edu/ontologies/v2/ConText.owl";
+	public static final String CT_PM = "http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl";
 	public static final String SO_PM = "http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl";
 	//public static final String MO_PM = "http://blulab.chpc.utah.edu/ontologies/ModifierOntology.owl";
 	public static final String TM_PM = "http://blulab.chpc.utah.edu/ontologies/TermMapping.owl";
@@ -51,5 +51,9 @@ public class OntologyConstants {
 	public static final String PROCEDURE = SO_PM + "#Procedure";
 	public static final String DIAGNOSTIC_PROCEDURE = SO_PM + "#DiagnosticProcedure";
 	public static final String THERAPEUTIC_PROCEDURE = SO_PM + "#TherapeuticProcedure";
+	
+	public static final String LINGUISTIC_MODIFIER = CT_PM + "#LinguisticModifier";
+	public static final String SEMANTIC_MODIFIER = CT_PM + "#SemanticModifier";
+	public static final String NUMERIC_MODIFIER = CT_PM + "#NumericModifier";
 	
 }

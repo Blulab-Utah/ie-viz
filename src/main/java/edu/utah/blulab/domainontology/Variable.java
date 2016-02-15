@@ -3,6 +3,7 @@ package edu.utah.blulab.domainontology;
 import java.util.ArrayList;
 
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLClass;
 
 
 public class Variable {
@@ -11,14 +12,12 @@ public class Variable {
 	private DomainOntology domain;
 	private ArrayList<String> relationships; //May need feeback on the best representation here.
 	private ArrayList<String> rules; //This may change once SWRL rules are implemented in ontology.
-	private ArrayList<Modifier> modifiers;
 	
 	public Variable(String clsURI, DomainOntology domain){
 		this.domain = domain;
 		uri = clsURI;
 		relationships = new ArrayList<String>();
 		rules = new ArrayList<String>();
-		modifiers = new ArrayList<Modifier>();
 	}
 
 	public String getVarID() {
@@ -30,17 +29,10 @@ public class Variable {
 		
 	}
 
-	/**public ArrayList<String> getSemanticCategory(){
-		ArrayList<String> categories = new ArrayList<String>();
-		ArrayList<OWLClass> list = domain.getAllSuperClasses(domain.getClass(uri), false);
-		for(OWLClass cls : list){
-			ArrayList<OWLClass> clsList = domain.getSchemaClasses();
-			if(domain.getSchemaClasses().contains(cls)){
-				categories.add(cls.getIRI().getShortForm());
-			}
-		}
-		return categories;
-	}**/
+	public ArrayList<String> getSemanticCategory(){
+		
+		return domain.getDirectSuperClasses(domain.getFactory().getOWLClass(IRI.create(uri)));
+	}
 	
 	public ArrayList<String> getSectionHeadings(){
 		ArrayList<String> headings = domain.getAnnotationList(domain.getClass(uri), 
@@ -60,12 +52,23 @@ public class Variable {
 				domain);
 		return anchor;
 	}
+	
+	public ArrayList<Modifier> getModifiers(){
+		ArrayList<Modifier> mods = new ArrayList<Modifier>();
+		ArrayList<OWLClass>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getPropertyList());
+		for(OWLClass cls : list){
+			mods.add(new Modifier(cls.getIRI().toString(), domain));
+		}
+		
+		return mods;
+	}
 
 	@Override
 	public String toString() {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
+				+ ", category=" + this.getSemanticCategory()
 				+ ", concept=" + this.getAnchor().toString() + ", relationships=" + relationships + ", rules=" + rules
-				+ ", modifiers=" + modifiers +   ", sectionHeadings="
+				+ ", modifiers=" + this.getModifiers() +   ", sectionHeadings="
 				+ this.getSectionHeadings() + "]";
 	}
 	

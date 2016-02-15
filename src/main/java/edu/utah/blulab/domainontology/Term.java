@@ -23,50 +23,6 @@ public class Term {
 		this.domain = domain;
 	}
 	
-	public Term(OWLClass cls, OWLOntologyManager manager, OWLOntology ontology){
-		/**Set preferred label for target concept
-		prefTerm = getAnnotationString(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL)), ontology);
-		
-		//Set preferred CUIs for variable concept
-		prefCode = getAnnotationString(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI)), ontology);
-		
-		//Set alternate CUIs for variable concept
-		altCode = getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)), ontology);
-		
-		//Set alternate labels
-		synonym = getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL)), ontology);
-		
-		//Set hidden labels
-		misspelling = getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL)), ontology);
-		
-		//Set abbreviation labels
-		abbreviation = getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL)), ontology);
-		
-		//Set subjective expression labels
-		subjExp = getAnnotationList(cls,
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL)), ontology);
-		
-		//Set regex
-		regex = getAnnotationList(cls, 
-				factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX)), ontology);
-		
-		//Set children terms
-		Set<OWLClassExpression> subClsList = cls.getSubClasses(ontology);
-		if(!subClsList.isEmpty()){
-			for(OWLClassExpression sub : subClsList){
-				OWLClass subCls = sub.asOWLClass();
-				//System.out.println(cls.asOWLClass().getIRI().getShortForm() + " has child " + subCls.getIRI().getShortForm());
-				children.add(new Term(subCls, manager, ontology));
-			}
-		}**/
-	}
-	
 	public String getURI(){
 		return uri;
 	}

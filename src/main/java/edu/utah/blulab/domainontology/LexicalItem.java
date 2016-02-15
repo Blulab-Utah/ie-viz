@@ -17,19 +17,14 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class LexicalItem {
+	private DomainOntology domain;
 	private String uri,  actionEn, actionSv, actionDe, prefTermEn; //, prefTermSv, prefTermDe
 	private int windowSize;
-	private Term term;
-	private ArrayList<String> source, creator; 
 	
-	public LexicalItem(OWLIndividual item, OWLOntologyManager manager){
-		OWLDataFactory factory = manager.getOWLDataFactory();
+	public LexicalItem(String itemURI, DomainOntology domain){
+		uri = itemURI;
+		this.domain = domain;
 		
-		//Set uri
-		uri = item.asOWLNamedIndividual().getIRI().toString();
-		
-		//Create term associated with lexical item
-		term = new Term();
 		/**if(getEnPrefLabel(item, manager, factory) != null){
 			term.setPrefTerm(getEnPrefLabel(item, manager, factory));
 		}
@@ -51,52 +46,11 @@ public class LexicalItem {
 		}**/
 		
 		
-		//source = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.SOURCE)));
-		//creator = getAnnotationProperty(item, manager, factory.getOWLAnnotationProperty(IRI.create(OntologyConstants.CREATOR)));
-		
 	}
 	
-	private ArrayList<String> getAnnotationProperty(OWLIndividual ind, OWLOntologyManager manager, OWLAnnotationProperty property){
-		ArrayList<String> labels = new ArrayList<String>();
-		
-		Set<OWLAnnotation> annotations = ind.asOWLNamedIndividual().getAnnotations(manager.getOntology(IRI.create(OntologyConstants.CT_PM)), 
-				property);
-		if(!annotations.isEmpty()){
-			Iterator<OWLAnnotation> iter = annotations.iterator();
-			while(iter.hasNext()){
-				OWLAnnotation ann = iter.next();
-				String temp = ann.getValue().toString();
-				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-				labels.add(temp);
-			}
-		}
-		
-		return labels;
-	}
 	
-	private static String getEnPrefLabel(OWLIndividual ind, OWLOntologyManager manager, OWLDataFactory factory){
-		String str = "";
-		
-		/**Set<OWLLiteral> values = ind.getDataPropertyValues(factory.getOWLDataProperty(IRI.create(OntologyConstants.PREF_LABEL)), 
-				manager.getOntology(IRI.create(OntologyConstants.CT_PM)));**/
-
-		Set<OWLAnnotation> values = ind.asOWLNamedIndividual().getAnnotations(manager.getOntology(IRI.create(OntologyConstants.CT_PM)), factory.getRDFSLabel());
-		if(!values.isEmpty()){
-			Iterator<OWLAnnotation> iter = values.iterator();
-			while(iter.hasNext()){
-				OWLAnnotation label = iter.next();
-				String temp = label.getValue().toString();
-				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-				str = temp;
-				break;
-			}
-			
-		}
-		
-		return str;
-	}
 	
-	private static ArrayList<String> getEnglishDataProperty(OWLIndividual ind, OWLOntologyManager manager,
+	/**private static ArrayList<String> getEnglishDataProperty(OWLIndividual ind, OWLOntologyManager manager,
 			OWLDataPropertyExpression expression){
 		ArrayList<String> items = new ArrayList<String>();
 		Set<OWLLiteral> values = ind.getDataPropertyValues(expression, 
@@ -110,112 +64,87 @@ public class LexicalItem {
 			
 		}
 		return items;
-	}
-	
-	private static String getAnnotationString(OWLClass cls, OWLAnnotationProperty annotationProperty, OWLOntology ontology){
-		String str = "";
-		Set<OWLAnnotation> labels = cls.getAnnotations(ontology, annotationProperty);
-		if(!labels.isEmpty()){
-			Iterator<OWLAnnotation> iter = labels.iterator();
-			while(iter.hasNext()){
-				OWLAnnotation label = iter.next();
-				String temp = label.getValue().toString();
-				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-				str = temp;
-				break;
-			}
-			
-		}
-		return str;
-	}
-	
-
-	
-	private static ArrayList<String> getAnnotationList(OWLClass cls, OWLAnnotationProperty annotationProperty, OWLOntology ontology){
-		ArrayList<String> labelSet = new ArrayList<String>();
-		Set<OWLAnnotation> annotations = cls.getAnnotations(ontology, annotationProperty);
-		if(!annotations.isEmpty()){
-			Iterator<OWLAnnotation> iter = annotations.iterator();
-			while(iter.hasNext()){
-				OWLAnnotation ann = iter.next();
-				String temp = ann.getValue().toString();
-				temp = temp.substring(temp.indexOf("\"")+1, temp.lastIndexOf("\""));
-				labelSet.add(temp);
-			}
-		}
-		return labelSet;
-	}
+	}**/
 	
 	public String getUri() {
 		return uri;
 	}
 
-	public void setUri(String uri) {
-		this.uri = uri;
-	}
-
-	public String getActionEn() {
-		return actionEn;
-	}
-
-	public void setActionEn(String actionEn) {
-		this.actionEn = actionEn;
+	public String getPrefTerm(){
+		return domain.getAnnotationString(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_LABEL)), "en");
 	}
 	
+	public ArrayList<String> getPrefCode(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.PREF_CUI)), "en");
+	}
+	
+	public ArrayList<String> getSynonym(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_LABEL)), "en");
+	}
+	
+	public ArrayList<String>getMisspelling(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.HIDDEN_LABEL)), "en");
+	}
+	
+	public ArrayList<String>getAbbreviation(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ABR_LABEL)), "en");
+	}
+	
+	public ArrayList<String>getSubjExp(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.SUBJ_EXP_LABEL)), "en");
+	}
+	
+	public ArrayList<String>getRegex(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.REGEX)), "en");
+	}
+	
+	public ArrayList<String>getAltCode(){
+		return domain.getAnnotationStringList(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)), "en");
+	}
+	
+	public String getActionEn(boolean returnDisplayName) {
+		String str = domain.getObjectPropertyFillerIndividual(domain.getIndividual(uri), 
+				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)));
+		if(returnDisplayName){
+			str = domain.getDisplayName(str);
+		}
+		return str;
+	}
 
 	public String getActionSv() {
 		return actionSv;
 	}
 
-	public void setActionSv(String actionSv) {
-		this.actionSv = actionSv;
-	}
-
 	public String getActionDe() {
 		return actionDe;
 	}
-
-	public void setActionDe(String actionDe) {
-		this.actionDe = actionDe;
-	}
-
-	public ArrayList<String> getCreator() {
-		return creator;
-	}
-
-	public void setCreator(ArrayList<String> creator) {
-		this.creator = creator;
-	}
-
-	public ArrayList<String> getSource() {
-		return source;
-	}
-
-	public void setSource(ArrayList<String> source) {
-		this.source = source;
-	}
-	
-	public Term getTerm(){
-		return term;
-	}
-	
-	public void setTerm(Term term){
-		this.term = term;
-	}
 	
 	public int getWindowSize(){
-		return windowSize;
+		String str = domain.getAnnotationString(domain.getIndividual(uri), 
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.WINDOW)));
+		if(str.isEmpty() || str.equals(null)){
+			return 8;
+		}else{
+			return Integer.parseInt(str);
+		}
+		
 	}
 	
-	public void setWindowSize(int windowSize){
-		this.windowSize = windowSize;
-	}
 
 	@Override
 	public String toString() {
-		return "LexicalItem [uri=" + uri + ", term=" + term 
-				+ ", actionEn=" + actionEn + ", creator=" + creator
-				+ ", source=" + source + "]";
+		return "LexicalItem [uri=" + uri + ", prefLabel=" + this.getPrefTerm() + 
+				 ", regex=" + this.getRegex() +
+				 ", altLabel=" + this.getSynonym() +
+				", windowSize=" + this.getWindowSize() + ", actionEn=" + this.getActionEn(true) + "]";
 	}
 	
 	

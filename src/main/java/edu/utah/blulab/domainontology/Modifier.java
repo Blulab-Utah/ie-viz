@@ -15,29 +15,19 @@ import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class Modifier {
-	private String modName, uri;
+	private String uri;
+	private DomainOntology domain;
 	private ArrayList<LexicalItem> items;
 	private ArrayList<String> closures;
 	private ArrayList<Modifier> parents, children;
 	
 	
-	public Modifier(String name, OWLOntologyManager manager){
-		OWLDataFactory factory = manager.getOWLDataFactory();
-		closures = new ArrayList<String>();
-		items = new ArrayList<LexicalItem>();
-		children = new ArrayList<Modifier>();
-		parents = new ArrayList<Modifier>();
-		
-		//Get modifier class from name
-		uri = name.replaceAll("<|>", "");
-		OWLClass modCls = factory.getOWLClass(IRI.create(uri));
-		//System.out.println(modCls.toString());
-		//Set uri from name
-		
-		modName = modCls.getIRI().toString().substring(name.indexOf("#")).replaceAll(">", "");
+	public Modifier(String clsURI, DomainOntology domain){
+		uri = clsURI;
+		this.domain = domain;
 		
 		//Get list of closures if any
-		Set<OWLClassExpression> superCls = modCls.getSuperClasses(manager.getOntologies());
+		/**Set<OWLClassExpression> superCls = modCls.getSuperClasses(manager.getOntologies());
 		for(OWLClassExpression exp : superCls){
 			if(exp.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
 				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) exp;
@@ -48,19 +38,8 @@ public class Modifier {
 			}
 		}
 		
-		//Get subclasses and store in children
 		
-		//Get lexical items for each modifier
-		Set<OWLIndividual> lexItems = modCls.getIndividuals(manager.getOntologies());
-		if(!lexItems.isEmpty()){
-			for(OWLIndividual ind : lexItems){
-				//System.out.println(ind.toString());
-				if(ind != null){
-					items.add(new LexicalItem(ind, manager));
-				}
-				
-			}
-		}
+		}**/
 		
 		
 		
@@ -68,57 +47,31 @@ public class Modifier {
 	
 	
 	public String getModName() {
-		return modName;
+		return domain.getClass(uri).getIRI().getShortForm();
 	}
-	public void setModName(String modName) {
-		this.modName = modName;
-	}
+	
 	public String getUri() {
 		return uri;
 	}
-	public void setUri(String uri) {
-		this.uri = uri;
-	}
 	
 	public ArrayList<LexicalItem> getItems() {
+		ArrayList<LexicalItem> items = new ArrayList<LexicalItem>();
+		for(String item : domain.getAllIndividualURIs(domain.getClass(uri))){
+			items.add(new LexicalItem(item, domain));
+		}
 		return items;
 	}
-	public void setItems(ArrayList<LexicalItem> items) {
-		this.items = items;
-	}
-	public ArrayList<String> getClosures() {
-		return closures;
-	}
-	public void setClosures(ArrayList<String> closures) {
-		this.closures = closures;
+	
+	public ArrayList<Modifier> getClosures() {
+		return null;
 	}
 	
-	public ArrayList<Modifier> getChildren(){
-		return children;
-	}
-	
-	public void setChildren(ArrayList<Modifier> children){
-		this.children = children;
-	}
-	
-	public ArrayList<Modifier> getParents(){
-		return parents;
-	}
-	
-	public void setParents(ArrayList<Modifier> parents){
-		this.parents = parents;
-	}
-	
-	public boolean hasChildren(){
-		return children.isEmpty();
-	}
-	
-	public boolean hasParents(){
-		return parents.isEmpty();
+	public ArrayList<Modifier> getPseudos(){
+		return null;
 	}
 	@Override
 	public String toString() {
-		return "Modifier [modName=" + modName + ", uri=" + uri  + ", items=" + items + ", closures=" + closures + "]";
+		return "Modifier [modName=" + this.getModName() + ", uri=" + uri  + ", items=" + this.getItems() + ", closures=" + closures + "]";
 	}
 	
 	
