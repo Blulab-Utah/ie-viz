@@ -20,9 +20,9 @@ public class testAPI {
 		//domain.getVariable("leukocytosis");
 		System.out.println(domain.getVariable("KA_1004"));
 		
-		for(Term t : domain.getVariable("KA_1006").getAnchor().getDirectChildren()){
+		/**for(Term t : domain.getVariable("KA_1006").getAnchor().getDirectChildren()){
 			System.out.println(t);
-		}
+		}**/
 		
 		/**ArrayList<Variable> domainVariables = domain.getAllVariables();
 		//ArrayList<Variable> domainVariables = domain.getAllEvents();
@@ -47,9 +47,9 @@ public class testAPI {
 		ArrayList<Modifier> pseudoDictionary = domain.createPseudoDictionary();
 		for(Modifier term : pseudoDictionary){
 			System.out.println(term.toString());
-		}**/
+		}
 		
-		/**System.out.println("********** Closure Dictionary: **********");
+		System.out.println("********** Closure Dictionary: **********");
 		ArrayList<Modifier> closureDictionary = domain.createClosureDictionary();
 		for(Modifier term : closureDictionary){
 			System.out.println(term.toString());

@@ -1,18 +1,9 @@
 package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
 
-import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
-import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class Modifier {
 	private String uri;
@@ -22,6 +13,7 @@ public class Modifier {
 	public Modifier(String clsURI, DomainOntology domain){
 		uri = clsURI;
 		this.domain = domain;
+
 	}
 	
 	

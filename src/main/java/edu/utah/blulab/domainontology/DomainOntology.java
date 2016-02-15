@@ -2,6 +2,7 @@ package edu.utah.blulab.domainontology;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
@@ -38,11 +39,6 @@ public class DomainOntology {
 	private static OWLDataFactory factory;
 	private File ontFile;
 	private String ontURI;
-	private ArrayList<Term> conceptDictionary;
-	private static HashMap<String, Modifier> modifierDictionary;
-	private ArrayList<Modifier> closureDictionary;
-	private ArrayList<Modifier> pseudoDictionary;
-	private ArrayList<Modifier> relationshipDictionary;
 	private Set<OWLOntology> imports;
 	private static ArrayList<OWLObjectProperty> propertyList, lingPropList, semPropList, numPropList;
 	private static ArrayList<OWLClass> schemaClassList;
@@ -58,10 +54,6 @@ public class DomainOntology {
 		}
 		ontology = manager.loadOntologyFromOntologyDocument(ontFile);
 		ontURI = ontology.getOntologyID().getOntologyIRI().toString();
-		conceptDictionary = new ArrayList<Term>();
-		modifierDictionary = new HashMap<String, Modifier>();
-		closureDictionary = new ArrayList<Modifier>();
-		relationshipDictionary = new ArrayList<Modifier>();
 		imports = manager.getImports(ontology);
 		propertyList = new ArrayList<OWLObjectProperty>();
 		lingPropList = new ArrayList<OWLObjectProperty>();
@@ -271,7 +263,6 @@ public class DomainOntology {
 					if(!fillerClass.isAnonymous()){
 						filler.add(fillerClass.asOWLClass());
 					}
-					
 				}
 				
 			}
