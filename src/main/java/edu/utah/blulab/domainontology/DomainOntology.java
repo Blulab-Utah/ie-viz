@@ -377,7 +377,21 @@ public class DomainOntology {
 	}
 	
 	public ArrayList<Modifier> createClosureDictionary(){
-		return null;
+		ArrayList<Modifier> clsList = new ArrayList<Modifier>();
+		
+		for(OWLClass cls: this.getAllSubClasses((factory.getOWLClass(IRI.create(OntologyConstants.CLOSURE))), false)){
+			clsList.add(new Modifier(cls.getIRI().toString(), this));
+		}
+		return clsList;
+	}
+	
+	public ArrayList<Modifier> createPseudoDictionary(){
+		ArrayList<Modifier> clsList = new ArrayList<Modifier>();
+		
+		for(OWLClass cls: this.getAllSubClasses((factory.getOWLClass(IRI.create(OntologyConstants.PSEUDO))), false)){
+			clsList.add(new Modifier(cls.getIRI().toString(), this));
+		}
+		return clsList;
 	}
 	
 	private void getObjectPropertyHierarchy(OWLObjectProperty prop, ArrayList<OWLObjectProperty> visitedProp, ArrayList<OWLObjectProperty> propList){

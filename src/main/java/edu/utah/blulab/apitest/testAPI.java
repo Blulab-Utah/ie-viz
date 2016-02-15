@@ -38,6 +38,18 @@ public class testAPI {
 		for(Term term : anchorDictionary){
 			System.out.println(term.toString());
 		}
+		
+		System.out.println("********** Pseudo Dictionary: **********");
+		ArrayList<Modifier> pseudoDictionary = domain.createPseudoDictionary();
+		for(Modifier term : pseudoDictionary){
+			System.out.println(term.toString());
+		}
+		
+		System.out.println("********** Closure Dictionary: **********");
+		ArrayList<Modifier> closureDictionary = domain.createClosureDictionary();
+		for(Modifier term : closureDictionary){
+			System.out.println(term.toString());
+		}
 	}
 
 }
