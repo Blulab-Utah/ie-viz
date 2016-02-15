@@ -32,7 +32,7 @@ public class testAPI {
 		}
 		
 		System.out.println("********** Target Dictionary: **********");
-		ArrayList<Term> targetDictionary = domain.createTargetDictionary();
+		ArrayList<Term> targetDictionary = domain.createAnchorDictionary();
 		for(Term target : targetDictionary){
 			System.out.println(target.toString());
 		}
