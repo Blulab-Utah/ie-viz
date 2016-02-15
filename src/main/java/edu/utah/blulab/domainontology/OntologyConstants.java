@@ -22,7 +22,8 @@ public class OntologyConstants {
 	public static final String ACTION_EN = CT_PM + "#hasActionEn";
 	public static final String ACTION_DE = CT_PM + "#hasActionDe";
 	public static final String ACTION_SV = CT_PM + "#hasActionSv";
-	public static final String TERMINATION = CT_PM + "#hasTermination";
+	public static final String HAS_TERMINATION = CT_PM + "#hasTermination";
+	public static final String HAS_PSEUDO = CT_PM + "#hasPseudo";
 	
 	
 	

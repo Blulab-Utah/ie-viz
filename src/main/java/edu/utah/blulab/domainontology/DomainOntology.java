@@ -11,6 +11,7 @@ import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
@@ -228,6 +229,28 @@ public class DomainOntology {
 				OWLObjectPropertyExpression propExp = obj.getProperty();
 				//System.out.println(propExp);
 				if(props.contains(propExp.asOWLObjectProperty())){
+					OWLClassExpression fillerClass = obj.getFiller();
+					//System.out.println("FILLER: " + fillerClass.toString());
+					if(!fillerClass.isAnonymous()){
+						filler.add(fillerClass.asOWLClass());
+					}
+					
+				}
+				
+			}
+		}
+		return filler;
+	}
+	
+	public ArrayList<OWLClass> getObjectPropertyFillerList(OWLClass cls, OWLObjectProperty prop){
+		ArrayList<OWLClass> filler = new ArrayList<OWLClass>();
+		Set<OWLClassExpression> superCls = cls.getSuperClasses(ontology);
+		for(OWLClassExpression ce : superCls){
+			if(ce.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
+				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) ce;
+				OWLObjectPropertyExpression propExp = obj.getProperty();
+				//System.out.println(propExp);
+				if(prop.equals(propExp.asOWLObjectProperty())){
 					OWLClassExpression fillerClass = obj.getFiller();
 					//System.out.println("FILLER: " + fillerClass.toString());
 					if(!fillerClass.isAnonymous()){

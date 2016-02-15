@@ -20,12 +20,12 @@ public class testAPI {
 		//domain.getVariable("leukocytosis");
 		//System.out.println(domain.getVariable("KA_1000"));
 		
-		ArrayList<Variable> domainVariables = domain.getAllVariables();
+		/**ArrayList<Variable> domainVariables = domain.getAllVariables();
 		//ArrayList<Variable> domainVariables = domain.getAllEvents();
 		System.out.println("********** Domain Variables: **********");
 		for(Variable var : domainVariables){
 			System.out.println(var.toString());
-		}
+		}**/
 		
 		System.out.println("********** Modifier Dictionary: **********");
 		ArrayList<Modifier> modifierDictionary = domain.createModifierDictionary();

@@ -17,32 +17,11 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 public class Modifier {
 	private String uri;
 	private DomainOntology domain;
-	private ArrayList<LexicalItem> items;
-	private ArrayList<String> closures;
-	private ArrayList<Modifier> parents, children;
 	
 	
 	public Modifier(String clsURI, DomainOntology domain){
 		uri = clsURI;
 		this.domain = domain;
-		
-		//Get list of closures if any
-		/**Set<OWLClassExpression> superCls = modCls.getSuperClasses(manager.getOntologies());
-		for(OWLClassExpression exp : superCls){
-			if(exp.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
-				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) exp;
-				OWLObjectPropertyExpression propExp = obj.getProperty();
-				if(propExp.asOWLObjectProperty().equals(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_CLOSURE)))){
-					closures.add(obj.getFiller().toString());
-				}
-			}
-		}
-		
-		
-		}**/
-		
-		
-		
 	}
 	
 	
@@ -63,15 +42,29 @@ public class Modifier {
 	}
 	
 	public ArrayList<Modifier> getClosures() {
-		return null;
+		ArrayList<Modifier> list = new ArrayList<Modifier>();
+		ArrayList<OWLClass> clsList = domain.getObjectPropertyFillerList(domain.getClass(uri), 
+				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.HAS_TERMINATION)));
+		for(OWLClass cls : clsList){
+			list.add(new Modifier(cls.getIRI().toString(), domain));
+		}
+		return list;
 	}
 	
 	public ArrayList<Modifier> getPseudos(){
-		return null;
+		ArrayList<Modifier> list = new ArrayList<Modifier>();
+		ArrayList<OWLClass> clsList = domain.getObjectPropertyFillerList(domain.getClass(uri), 
+				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.HAS_PSEUDO)));
+		for(OWLClass cls : clsList){
+			list.add(new Modifier(cls.getIRI().toString(), domain));
+		}
+		return list;
 	}
 	@Override
 	public String toString() {
-		return "Modifier [modName=" + this.getModName() + ", uri=" + uri  + ", items=" + this.getItems() + ", closures=" + closures + "]";
+		return "Modifier [modName=" + this.getModName() + ", uri=" + uri  + ", items=" + this.getItems() 
+		+ "\n, psuedos=" + this.getPseudos()
+		+ "\n, closures=" + this.getClosures() + "]";
 	}
 	
 	
