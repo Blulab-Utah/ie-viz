@@ -62,13 +62,37 @@ public class Variable {
 		
 		return mods;
 	}
+	
+	public ArrayList<Variable> getDirectParents(){
+		ArrayList<Variable> parents = new ArrayList<Variable>();
+		ArrayList<String> clsStrings = domain.getDirectSuperClasses(domain.getClass(uri));
+		for(String str : clsStrings){
+			if(!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				parents.add(new Variable(str, domain));
+			}
+		}
+		return parents;
+	}
+	
+	public ArrayList<Variable> getDirectChildren(){
+		ArrayList<Variable> children = new ArrayList<Variable>();
+		ArrayList<String> clsStrings = domain.getDirectSubClasses(domain.getClass(uri));
+		for(String str : clsStrings){
+			if(!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				children.add(new Variable(str, domain));
+			}
+		}
+		return children;
+	}
 
 	@Override
 	public String toString() {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
-				+ ", category=" + this.getSemanticCategory()
-				+ ", concept=" + this.getAnchor().toString() + ", relationships=" + relationships + ", rules=" + rules
-				+ ", modifiers=" + this.getModifiers() +   ", sectionHeadings="
+				//+ ", category=" + this.getSemanticCategory()
+				+ ", concept=" + this.getAnchor().toString() 
+				//+ ", modifiers=" + this.getModifiers() +   ", sectionHeadings="
 				+ this.getSectionHeadings() + "]";
 	}
 	

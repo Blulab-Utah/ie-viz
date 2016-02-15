@@ -89,6 +89,8 @@ public class DomainOntology {
 		
 	}
 	
+	
+	
 	public ArrayList<OWLClass> getSchemaClassList(){
 		return schemaClassList;
 	}
@@ -498,7 +500,16 @@ public class DomainOntology {
 		ArrayList<String> list = new ArrayList<String>();
 		Set<OWLClassExpression> superList = cls.getSuperClasses(ontology);
 		for(OWLClassExpression c : superList){
-			list.add(c.asOWLClass().getIRI().getShortForm());
+			list.add(c.asOWLClass().getIRI().toString());
+		}
+		return list;
+	}
+	
+	public ArrayList<String> getDirectSubClasses(OWLClass cls){
+		ArrayList<String> list = new ArrayList<String>();
+		Set<OWLClassExpression> subList = cls.getSubClasses(ontology);
+		for(OWLClassExpression c : subList){
+			list.add(c.asOWLClass().getIRI().toString());
 		}
 		return list;
 	}

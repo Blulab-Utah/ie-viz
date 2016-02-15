@@ -18,7 +18,11 @@ public class testAPI {
 		//DomainOntology domain = new DomainOntology("DomainOntologyAPI/src/main/resources/colonoscopy_20141001.owl");
 		//DomainOntology domain = new DomainOntology("src/main/resources/colonoscopy_20141001.owl");
 		//domain.getVariable("leukocytosis");
-		//System.out.println(domain.getVariable("KA_1000"));
+		System.out.println(domain.getVariable("KA_1004"));
+		
+		for(Variable v : domain.getVariable("KA_1004").getDirectParents()){
+			System.out.println(v);
+		}
 		
 		/**ArrayList<Variable> domainVariables = domain.getAllVariables();
 		//ArrayList<Variable> domainVariables = domain.getAllEvents();
@@ -33,23 +37,23 @@ public class testAPI {
 			System.out.println(modifier.toString());
 		}**/
 		
-		System.out.println("********** Anchor Dictionary: **********");
+		/**System.out.println("********** Anchor Dictionary: **********");
 		ArrayList<Term> anchorDictionary = domain.createAnchorDictionary();
 		for(Term term : anchorDictionary){
 			System.out.println(term.toString());
-		}
+		}**/
 		
-		System.out.println("********** Pseudo Dictionary: **********");
+		/**System.out.println("********** Pseudo Dictionary: **********");
 		ArrayList<Modifier> pseudoDictionary = domain.createPseudoDictionary();
 		for(Modifier term : pseudoDictionary){
 			System.out.println(term.toString());
-		}
+		}**/
 		
-		System.out.println("********** Closure Dictionary: **********");
+		/**System.out.println("********** Closure Dictionary: **********");
 		ArrayList<Modifier> closureDictionary = domain.createClosureDictionary();
 		for(Modifier term : closureDictionary){
 			System.out.println(term.toString());
-		}
+		}**/
 	}
 
 }
