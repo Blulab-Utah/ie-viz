@@ -30,7 +30,6 @@ public class OntologyConstants {
 	public static final String HAS_SEM_ATTRIBUTE = SO_PM + "#hasSemanticModifier";
 	public static final String HAS_LING_ATTRIBUTE = SO_PM + "#hasLinguisticModifier";
 	public static final String HAS_NUM_ATTRIBUTE = SO_PM + "#hasNumericModifier";
-	public static final String HAS_CLOSURE = CT_PM + "#hasTermination";
 	public static final String HAS_ANCHOR = SO_PM + "#hasAnchor";
 	
 	public static final String FORWARD_ACTION = "forward";
@@ -52,6 +51,9 @@ public class OntologyConstants {
 	public static final String PROCEDURE = SO_PM + "#Procedure";
 	public static final String DIAGNOSTIC_PROCEDURE = SO_PM + "#DiagnosticProcedure";
 	public static final String THERAPEUTIC_PROCEDURE = SO_PM + "#TherapeuticProcedure";
+	public static final String TARGET = SO_PM + "#Anchor";
+	public static final String CLOSURE = CT_PM + "#Closure";
+	public static final String PSEUDO = CT_PM + "#Pseudo";
 	
 	public static final String LINGUISTIC_MODIFIER = CT_PM + "#LinguisticModifier";
 	public static final String SEMANTIC_MODIFIER = CT_PM + "#SemanticModifier";

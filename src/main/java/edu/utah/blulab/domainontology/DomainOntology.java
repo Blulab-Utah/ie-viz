@@ -352,19 +352,13 @@ public class DomainOntology {
 		return list;
 	}
 	
-	public ArrayList<Term> createTargetDictionary(){
-		ArrayList<OWLClass> clsList = new ArrayList<OWLClass>();
+	public ArrayList<Term> createAnchorDictionary(){
+		ArrayList<Term> clsList = new ArrayList<Term>();
 		
-		/**getSubClassHierarchy(factory.getOWLClass(IRI.create(OntologyConstants.SO_PM + "#Anchor")), new ArrayList<OWLClass>(), clsList, true);
-		for(OWLClass cls : clsList){
-			System.out.println(cls);
-			Term term = new Term(cls, manager, ontology);
-			if(!conceptDictionary.contains(term)){
-				conceptDictionary.add(term);
-			}
-			
-		}**/
-		return conceptDictionary;
+		for(OWLClass cls: this.getAllSubClasses((factory.getOWLClass(IRI.create(OntologyConstants.TARGET))), false)){
+			clsList.add(new Term(cls.getIRI().toString(), this));
+		}
+		return clsList;
 	}
 	
 	public ArrayList<Modifier> createModifierDictionary() throws Exception{

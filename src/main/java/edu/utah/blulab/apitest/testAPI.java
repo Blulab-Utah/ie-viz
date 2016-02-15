@@ -27,17 +27,17 @@ public class testAPI {
 			System.out.println(var.toString());
 		}**/
 		
-		System.out.println("********** Modifier Dictionary: **********");
+		/**System.out.println("********** Modifier Dictionary: **********");
 		ArrayList<Modifier> modifierDictionary = domain.createModifierDictionary();
 		for(Modifier modifier : modifierDictionary){
 			System.out.println(modifier.toString());
-		}
-		
-		/**System.out.println("********** Anchor Dictionary: **********");
-		ArrayList<Term> anchorDictionary = domain.createTargetDictionary();
-		/**for(Term term : anchorDictionary){
-			System.out.println(term.toString());
 		}**/
+		
+		System.out.println("********** Anchor Dictionary: **********");
+		ArrayList<Term> anchorDictionary = domain.createAnchorDictionary();
+		for(Term term : anchorDictionary){
+			System.out.println(term.toString());
+		}
 	}
 
 }
