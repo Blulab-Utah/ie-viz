@@ -60,6 +60,31 @@ public class Modifier {
 		}
 		return list;
 	}
+	
+	public ArrayList<Modifier> getDirectParents(){
+		ArrayList<Modifier> parents = new ArrayList<Modifier>();
+		ArrayList<String> clsStrings = domain.getDirectSuperClasses(domain.getClass(uri));
+		for(String str : clsStrings){
+			if(!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				parents.add(new Modifier(str, domain));
+			}
+		}
+		return parents;
+	}
+	
+	public ArrayList<Modifier> getDirectChildren(){
+		ArrayList<Modifier> children = new ArrayList<Modifier>();
+		ArrayList<String> clsStrings = domain.getDirectSubClasses(domain.getClass(uri));
+		for(String str : clsStrings){
+			if(!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+					!domain.getClass(str).asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				children.add(new Modifier(str, domain));
+			}
+		}
+		return children;
+	}
+	
 	@Override
 	public String toString() {
 		return "Modifier [modName=" + this.getModName() + ", uri=" + uri  + ", items=" + this.getItems() 
