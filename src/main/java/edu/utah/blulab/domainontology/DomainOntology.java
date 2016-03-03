@@ -489,6 +489,175 @@ public class DomainOntology {
 		return events;
 	}
 	
+	public ArrayList<Variable> getAllConditions(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.CONDITION)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllDiseaseDisorders(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.DISEASE)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllSignSymptoms(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.SYMPTOM)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllFindings(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.FINDING)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllEncounters(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.ENCOUNTER)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllMedications(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.MEDICATION)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllObservations(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.OBSERVATION)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllProcedures(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.PROCEDURE)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllDianosticProcedures(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.DIAGNOSTIC_PROCEDURE)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllTherapeuticProcedures(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.THERAPEUTIC_PROCEDURE)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllEntities(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.ENTITY)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllPatients(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.PATIENT)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
+	public ArrayList<Variable> getAllAllergies(){
+		ArrayList<Variable> events = new ArrayList<Variable>();
+		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.ALLERGY)), true);
+		
+		for(OWLClass cls : list){
+			if(!schemaClassList.contains(cls)){
+				events.add(new Variable(cls.getIRI().toString(), this));
+			}
+		}
+		
+		return events;
+	}
+	
 	public ArrayList<String> getAllIndividualURIs(OWLClass cls){
 		ArrayList<String> indURIs = new ArrayList<String>();
 		Set<OWLIndividual> list = cls.getIndividuals(ontology);

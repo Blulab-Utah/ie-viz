@@ -41,6 +41,8 @@ public class OntologyConstants {
 	public static final String ANNOTATION = SO_PM + "#Annotation";
 	public static final String EVENT = SO_PM + "#Event";
 	public static final String ENTITY = SO_PM + "#Entity";
+	public static final String PATIENT = SO_PM + "#Patient";
+	public static final String ALLERGY = SO_PM + "#AllergyIntolerance";
 	public static final String CONDITION = SO_PM + "#Condition";
 	public static final String DISEASE = SO_PM + "#DiseaseDisorder";
 	public static final String SYMPTOM = SO_PM + "#SignSymptom";

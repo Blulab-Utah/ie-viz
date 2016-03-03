@@ -2,7 +2,7 @@ package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
 
-public class LogicExpression extends ArrayList {
+public class LogicExpression<Object> extends ArrayList<Object> {
 	private String type;
 	public final String AND = "AND";
 	public final String OR = "OR";
