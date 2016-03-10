@@ -1,14 +1,15 @@
 package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 
 
 public class Variable {
 	private String uri;
-	private Term concept;
 	private DomainOntology domain;
 	private ArrayList<String> relationships; //May need feeback on the best representation here.
 	private ArrayList<String> rules; //This may change once SWRL rules are implemented in ontology.
@@ -55,12 +56,37 @@ public class Variable {
 	
 	public ArrayList<Modifier> getModifiers(){
 		ArrayList<Modifier> mods = new ArrayList<Modifier>();
-		ArrayList<OWLClass>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getPropertyList());
+		ArrayList<OWLClass>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNonNumericPropertyList());
 		for(OWLClass cls : list){
 			mods.add(new Modifier(cls.getIRI().toString(), domain));
 		}
+		return mods;
+	}
+	
+	public HashMap<String, Variable> getRelationships(){
+		HashMap<String, Variable> relations = new HashMap<String, Variable>();
+		for(OWLObjectProperty prop : domain.getRelationsList()){
+			ArrayList<OWLClass> list = domain.getObjectPropertyFillerList(domain.getClass(uri), prop);
+			for(OWLClass cls: list){
+				relations.put(prop.asOWLObjectProperty().getIRI().getShortForm(), new Variable(cls.getIRI().toString(), this.domain));
+			}
+			
+		}
+		return relations;
+	}
+	
+	public ArrayList<NumericModifier> getNumericModifiers(){
+		ArrayList<NumericModifier> mods = new ArrayList<NumericModifier>();
+		ArrayList<OWLClass>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNumericPropertyList());
+		for(OWLClass cls : list){
+			mods.add(new NumericModifier(cls.getIRI().toString(), domain));
+		}
 		
 		return mods;
+	}
+	
+	public boolean hasNumericModifiers(){
+		return !this.getNumericModifiers().isEmpty();
 	}
 	
 	public ArrayList<Variable> getDirectParents(){
@@ -92,8 +118,9 @@ public class Variable {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
 				//+ ", category=" + this.getSemanticCategory()
 				+ ", concept=" + this.getAnchor().toString() 
-				//+ ", modifiers=" + this.getModifiers() +   ", sectionHeadings="
-				+ this.getSectionHeadings() + "]";
+				+ "\n\t, modifiers=" + this.getModifiers() 
+				+ "\n\t, numerics=" + this.getNumericModifiers() 
+				+ "\n\t, relations=" + this.getRelationships() +"]";
 	}
 	
 	

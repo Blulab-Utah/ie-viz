@@ -1,18 +1,9 @@
 package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Set;
 
-import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
-import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
 
 public class Modifier {
 	private String uri;
@@ -87,9 +78,9 @@ public class Modifier {
 	
 	@Override
 	public String toString() {
-		return "Modifier [modName=" + this.getModName() + ", uri=" + uri  + ", items=" + this.getItems() 
-		+ "\n, psuedos=" + this.getPseudos()
-		+ "\n, closures=" + this.getClosures() + "]";
+		return "\n\tModifier: " + this.getModName() + ", uri=" + uri  //+ ", items=" + this.getItems() 
+		+ "\n\t\t Pseudos=" + this.getPseudos()
+		+ "\n\t\t Closures=" + this.getClosures() + "]";
 	}
 	
 	

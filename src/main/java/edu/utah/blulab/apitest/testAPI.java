@@ -18,21 +18,26 @@ public class testAPI {
 		//DomainOntology domain = new DomainOntology("DomainOntologyAPI/src/main/resources/colonoscopy_20141001.owl");
 		//DomainOntology domain = new DomainOntology("src/main/resources/colonoscopy_20141001.owl");
 		//domain.getVariable("leukocytosis");
-		System.out.println(domain.getVariable("KA_1004"));
+		System.out.println(domain.getVariable("KA_1005"));
+		//System.out.println(domain.getVariable("KA_1006"));
+		
+		//System.out.println(domain.getVariable("KA_1005").hasNumericModifiers());
+		//System.out.println(domain.getVariable("KA_1006").hasNumericModifiers());
+		
 		
 		/**for(Term t : domain.getVariable("KA_1006").getAnchor().getDirectChildren()){
 			System.out.println(t);
 		}**/
 		
-		/**ArrayList<Variable> domainVariables = domain.getAllVariables();
-		//ArrayList<Variable> domainVariables = domain.getAllEvents();
+		//ArrayList<Variable> domainVariables = domain.getAllVariables();
+		/**ArrayList<Variable> domainVariables = domain.getAllEvents();
 		System.out.println("********** Domain Variables: **********");
 		for(Variable var : domainVariables){
 			System.out.println(var.toString());
-		}**/
+		}
 		
 		/**System.out.println("********** Modifier Dictionary: **********");
-		ArrayList<Modifier> modifierDictionary = domain.getModifierDictionary();
+		ArrayList<Modifier> modifierDictionary = domain.createModifierDictionary();
 		for(Modifier modifier : modifierDictionary){
 			System.out.println(modifier.toString());
 		}**/

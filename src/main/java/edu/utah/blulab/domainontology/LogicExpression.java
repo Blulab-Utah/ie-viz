@@ -2,7 +2,8 @@ package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
 
-public class LogicExpression<Object> extends ArrayList<Object> {
+@SuppressWarnings("serial")
+public class LogicExpression<E> extends ArrayList<E> {
 	private String type;
 	public final String AND = "AND";
 	public final String OR = "OR";
@@ -10,6 +11,7 @@ public class LogicExpression<Object> extends ArrayList<Object> {
 	public final String SINGLE = "SINGLE";
 	
 	public LogicExpression(String type){
+		super();
 		this.type = type;
 	}
 	
@@ -56,4 +58,5 @@ public class LogicExpression<Object> extends ArrayList<Object> {
 			return false;
 		}
 	}
+	
 }

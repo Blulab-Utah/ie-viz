@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.ClassExpressionType;
+import org.semanticweb.owlapi.model.DataRangeType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
 import org.semanticweb.owlapi.model.OWLAnnotationProperty;
@@ -17,7 +18,10 @@ import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
+import org.semanticweb.owlapi.model.OWLDataSomeValuesFrom;
+import org.semanticweb.owlapi.model.OWLDatatypeRestriction;
 import org.semanticweb.owlapi.model.OWLException;
+import org.semanticweb.owlapi.model.OWLFacetRestriction;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
@@ -30,6 +34,7 @@ import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.PrefixManager;
 import org.semanticweb.owlapi.util.AutoIRIMapper;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
+import org.semanticweb.owlapi.vocab.OWLFacet;
 
 public class DomainOntology {
 	
@@ -37,14 +42,7 @@ public class DomainOntology {
 	private static OWLOntology ontology;
 	private static OWLDataFactory factory;
 	private File ontFile;
-	private String ontURI;
-	private ArrayList<Term> conceptDictionary;
-	private static HashMap<String, Modifier> modifierDictionary;
-	private ArrayList<Modifier> closureDictionary;
-	private ArrayList<Modifier> pseudoDictionary;
-	private ArrayList<Modifier> relationshipDictionary;
-	private Set<OWLOntology> imports;
-	private static ArrayList<OWLObjectProperty> propertyList, lingPropList, semPropList, numPropList;
+	private static ArrayList<OWLObjectProperty> propertyList, lingPropList, semPropList, numPropList, relationsList;
 	private static ArrayList<OWLClass> schemaClassList;
 	
 	public DomainOntology(String fileLocation, boolean useLocalFiles) throws Exception{
@@ -57,16 +55,11 @@ public class DomainOntology {
 			manager.addIRIMapper(autoIRIMapper);
 		}
 		ontology = manager.loadOntologyFromOntologyDocument(ontFile);
-		ontURI = ontology.getOntologyID().getOntologyIRI().toString();
-		conceptDictionary = new ArrayList<Term>();
-		modifierDictionary = new HashMap<String, Modifier>();
-		closureDictionary = new ArrayList<Modifier>();
-		relationshipDictionary = new ArrayList<Modifier>();
-		imports = manager.getImports(ontology);
 		propertyList = new ArrayList<OWLObjectProperty>();
 		lingPropList = new ArrayList<OWLObjectProperty>();
 		semPropList = new ArrayList<OWLObjectProperty>();
 		numPropList = new ArrayList<OWLObjectProperty>();
+		relationsList = new ArrayList<OWLObjectProperty>();
 		schemaClassList = this.getSchemaClasses();
 		
 		ArrayList<OWLObjectProperty> lingList = new ArrayList<OWLObjectProperty>();
@@ -93,6 +86,13 @@ public class DomainOntology {
 			propertyList.add(prop);
 		}
 		
+		ArrayList<OWLObjectProperty> relations = new ArrayList<OWLObjectProperty>();
+		getObjectPropertyHierarchy(factory.getOWLObjectProperty(IRI.create(OntologyConstants.HAS_RELATION)), new ArrayList<OWLObjectProperty>(), relations);
+		for(OWLObjectProperty prop : relations){
+			//System.out.println(prop);
+			relationsList.add(prop);
+		}
+		
 		System.out.println("Loaded ontology:" + ontology.getOntologyID().getOntologyIRI().toString());
 		System.out.println("Loaded imports: ");
 		for(OWLOntology ont : ontology.getImports()){
@@ -102,14 +102,27 @@ public class DomainOntology {
         
 	}
 	
-	
-	
 	public ArrayList<OWLClass> getSchemaClassList(){
 		return schemaClassList;
 	}
 	
 	public ArrayList<OWLObjectProperty> getPropertyList(){
 		return propertyList;
+	}
+	
+	public ArrayList<OWLObjectProperty> getNumericPropertyList(){
+		return numPropList;
+	}
+	
+	public ArrayList<OWLObjectProperty> getRelationsList(){
+		return relationsList;
+	}
+	
+	public ArrayList<OWLObjectProperty> getNonNumericPropertyList(){
+		ArrayList<OWLObjectProperty> propList = new ArrayList<OWLObjectProperty>();
+		propList.addAll(lingPropList);
+		propList.addAll(semPropList);
+		return propList;
 	}
 	
 	public Variable getVariable(String clsDisplayName){
@@ -233,6 +246,35 @@ public class DomainOntology {
 		}
 		return item;
 		
+	}
+	
+	public ArrayList<String> getDataPropertyFiller(OWLClass cls, OWLDataProperty prop){
+		ArrayList<String> filler = new ArrayList<String>();
+		Set<OWLClassExpression> subclassExp = cls.getSuperClasses(ontology);
+		for(OWLClassExpression sub : subclassExp){
+			if(sub.getClassExpressionType().equals(ClassExpressionType.DATA_SOME_VALUES_FROM)){
+				//System.out.println(sub.toString());
+				OWLDataSomeValuesFrom axiom = (OWLDataSomeValuesFrom) sub;
+				//System.out.println("This is Filler: " + axiom.getFiller() + " Type: " + axiom.getFiller().getDataRangeType());
+				if(axiom.getFiller().getDataRangeType().equals(DataRangeType.DATATYPE_RESTRICTION)){
+					OWLDatatypeRestriction dataRestriction = (OWLDatatypeRestriction) axiom.getFiller();
+					Set<OWLFacetRestriction> facets = dataRestriction.getFacetRestrictions();
+					for(OWLFacetRestriction facet : facets){
+						//System.out.println("Facet: " + facet.getFacet().toString() + " Value: " + facet.getFacetValue().toString());
+						String temp = "";
+						if(facet.getFacet().equals(OWLFacet.MIN_INCLUSIVE)){
+							temp = temp + ">=" + facet.getFacetValue().parseFloat();
+						}
+						if(facet.getFacet().equals(OWLFacet.MAX_INCLUSIVE)){
+							temp = temp + "<=" + facet.getFacetValue().parseFloat();
+						}
+						//System.out.println(temp);
+						filler.add(temp);
+					}
+				}
+			}
+		}
+		return filler;
 	}
 	
 	public ArrayList<OWLClass> getEquivalentObjectPropertyFillerList(OWLClass cls, ArrayList<OWLObjectProperty> props){
@@ -682,7 +724,9 @@ public class DomainOntology {
 		ArrayList<String> list = new ArrayList<String>();
 		Set<OWLClassExpression> superList = cls.getSuperClasses(ontology);
 		for(OWLClassExpression c : superList){
-			list.add(c.asOWLClass().getIRI().toString());
+			if(!c.isAnonymous()){
+				list.add(c.asOWLClass().getIRI().toString());
+			}
 		}
 		return list;
 	}
