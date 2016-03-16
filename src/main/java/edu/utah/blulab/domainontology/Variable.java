@@ -52,11 +52,31 @@ public class Variable {
 		return types;
 	}
 	
-	public Term getAnchor(){
-		Term anchor = new Term(domain.getEquivalentObjectPropertyFiller(domain.getClass(uri), 
-				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.HAS_ANCHOR))).getIRI().toString(), 
-				domain);
-		return anchor;
+	public ArrayList<LogicExpression<Term>> getAnchor(){
+		ArrayList<LogicExpression<Term>> anchorList = new ArrayList<LogicExpression<Term>>();
+		ArrayList<OWLClassExpression>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), 
+				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.HAS_ANCHOR)));
+		for(OWLClassExpression cls : list){
+			if(!cls.isAnonymous()){
+				LogicExpression<Term> termExp = new LogicExpression<Term>("SINGLE");
+				termExp.add(new Term(cls.asOWLClass().getIRI().toString(), domain));
+				anchorList.add(termExp);
+			}else{
+				if(cls.getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
+					LogicExpression<Term> termExp = new LogicExpression<Term>("OR");
+					OWLObjectUnionOf union = (OWLObjectUnionOf) cls;
+					List<OWLClassExpression> filler = union.getOperandsAsList();
+					for(OWLClassExpression c : filler){
+						if(!c.isAnonymous()){
+							termExp.add(new Term(c.asOWLClass().getIRI().toString(), domain));
+						}
+					}
+					anchorList.add(termExp);
+				}
+			}
+		}
+		
+		return anchorList;
 	}
 	
 	public ArrayList<LogicExpression<Modifier>> getModifiers(){
