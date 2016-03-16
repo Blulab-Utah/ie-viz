@@ -2,10 +2,15 @@ package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
+import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
+import org.semanticweb.owlapi.model.OWLObjectUnionOf;
 
 
 public class Variable {
@@ -54,11 +59,32 @@ public class Variable {
 		return anchor;
 	}
 	
-	public ArrayList<Modifier> getModifiers(){
-		ArrayList<Modifier> mods = new ArrayList<Modifier>();
-		ArrayList<OWLClass>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNonNumericPropertyList());
-		for(OWLClass cls : list){
-			mods.add(new Modifier(cls.getIRI().toString(), domain));
+	public ArrayList<LogicExpression<Modifier>> getModifiers(){
+		ArrayList<LogicExpression<Modifier>> mods = new ArrayList<LogicExpression<Modifier>>();
+		ArrayList<OWLClassExpression>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNonNumericPropertyList());
+		for(OWLClassExpression cls : list){
+			if(!cls.isAnonymous()){
+				LogicExpression<Modifier> modExp = new LogicExpression<Modifier>("SINGLE");
+				modExp.add(new Modifier(cls.asOWLClass().getIRI().toString(), domain));
+				mods.add(modExp);
+			}else{
+				System.out.println("Expression type: " + cls.getClassExpressionType());
+				if(cls.getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
+					LogicExpression<Modifier> modExp = new LogicExpression<Modifier>("OR");
+					OWLObjectUnionOf union = (OWLObjectUnionOf) cls;
+					List<OWLClassExpression> filler = union.getOperandsAsList();
+					System.out.println("Filler list contains: " + filler.toString());
+					for(OWLClassExpression c : filler){
+						if(!c.isAnonymous()){
+							modExp.add(new Modifier(c.asOWLClass().getIRI().toString(), domain));
+							
+						}
+					}
+					mods.add(modExp);
+				}
+			}
+			
+			
 		}
 		return mods;
 	}
@@ -77,9 +103,9 @@ public class Variable {
 	
 	public ArrayList<NumericModifier> getNumericModifiers(){
 		ArrayList<NumericModifier> mods = new ArrayList<NumericModifier>();
-		ArrayList<OWLClass>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNumericPropertyList());
-		for(OWLClass cls : list){
-			mods.add(new NumericModifier(cls.getIRI().toString(), domain));
+		ArrayList<OWLClassExpression>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNumericPropertyList());
+		for(OWLClassExpression cls : list){
+			//mods.add(new NumericModifier(cls.getIRI().toString(), domain));
 		}
 		
 		return mods;
@@ -119,8 +145,9 @@ public class Variable {
 				//+ ", category=" + this.getSemanticCategory()
 				+ ", concept=" + this.getAnchor().toString() 
 				+ "\n\t, modifiers=" + this.getModifiers() 
-				+ "\n\t, numerics=" + this.getNumericModifiers() 
-				+ "\n\t, relations=" + this.getRelationships() +"]";
+				//+ "\n\t, numerics=" + this.getNumericModifiers() 
+				//+ "\n\t, relations=" + this.getRelationships() 
+				+"]";
 	}
 	
 	

@@ -277,8 +277,8 @@ public class DomainOntology {
 		return filler;
 	}
 	
-	public ArrayList<OWLClass> getEquivalentObjectPropertyFillerList(OWLClass cls, ArrayList<OWLObjectProperty> props){
-		ArrayList<OWLClass> filler = new ArrayList<OWLClass>();
+	public ArrayList<OWLClassExpression> getEquivalentObjectPropertyFillerList(OWLClass cls, ArrayList<OWLObjectProperty> props){
+		ArrayList<OWLClassExpression> filler = new ArrayList<OWLClassExpression>();
 		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
 		for(OWLClassExpression ce : exp){
 			if(ce.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
@@ -288,9 +288,7 @@ public class DomainOntology {
 				if(props.contains(propExp.asOWLObjectProperty())){
 					OWLClassExpression fillerClass = obj.getFiller();
 					//System.out.println("FILLER: " + fillerClass.toString());
-					if(!fillerClass.isAnonymous()){
-						filler.add(fillerClass.asOWLClass());
-					}
+					filler.add(fillerClass);
 					
 				}
 				

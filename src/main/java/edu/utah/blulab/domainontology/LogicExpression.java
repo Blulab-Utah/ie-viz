@@ -1,6 +1,7 @@
 package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 @SuppressWarnings("serial")
 public class LogicExpression<E> extends ArrayList<E> {
@@ -57,6 +58,11 @@ public class LogicExpression<E> extends ArrayList<E> {
 		}else{
 			return false;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "LogicExpression [type=" + type +  ", toString()=" + super.toString() + "]";
 	}
 	
 }
