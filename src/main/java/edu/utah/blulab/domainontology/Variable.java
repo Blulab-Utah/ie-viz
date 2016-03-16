@@ -105,7 +105,9 @@ public class Variable {
 		ArrayList<NumericModifier> mods = new ArrayList<NumericModifier>();
 		ArrayList<OWLClassExpression>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNumericPropertyList());
 		for(OWLClassExpression cls : list){
-			//mods.add(new NumericModifier(cls.getIRI().toString(), domain));
+			if(!cls.isAnonymous()){
+				mods.add(new NumericModifier(cls.asOWLClass().getIRI().toString(), domain));
+			}
 		}
 		
 		return mods;
@@ -145,7 +147,7 @@ public class Variable {
 				//+ ", category=" + this.getSemanticCategory()
 				+ ", concept=" + this.getAnchor().toString() 
 				+ "\n\t, modifiers=" + this.getModifiers() 
-				//+ "\n\t, numerics=" + this.getNumericModifiers() 
+				+ "\n\t, numerics=" + this.getNumericModifiers() 
 				//+ "\n\t, relations=" + this.getRelationships() 
 				+"]";
 	}
