@@ -13,6 +13,10 @@ import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectUnionOf;
 
 
+/**
+ * @author melissa
+ *
+ */
 public class Variable {
 	private String uri;
 	private DomainOntology domain;
@@ -148,6 +152,7 @@ public class Variable {
 		}
 		return parents;
 	}
+	
 	
 	public ArrayList<Variable> getDirectChildren(){
 		ArrayList<Variable> children = new ArrayList<Variable>();

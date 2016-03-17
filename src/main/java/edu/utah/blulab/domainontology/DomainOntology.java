@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.DataRangeType;
 import org.semanticweb.owlapi.model.IRI;
@@ -32,6 +33,7 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyIRIMapper;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.PrefixManager;
+import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.util.AutoIRIMapper;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.vocab.OWLFacet;
@@ -758,5 +760,15 @@ public class DomainOntology {
 			list.add(c.asOWLClass().getIRI().toString());
 		}
 		return list;
+	}
+	
+	public ArrayList<String> getSWRLRules(){
+		ArrayList<String> ruleStrings = new ArrayList<String>();
+		for (SWRLRule rule : ontology.getAxioms(AxiomType.SWRL_RULE)){
+			System.out.println(rule.toString());
+			ruleStrings.add(rule.toString());
+		}
+		
+		return ruleStrings;
 	}
 }
