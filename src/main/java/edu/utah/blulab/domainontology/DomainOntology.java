@@ -765,7 +765,7 @@ public class DomainOntology {
 	public ArrayList<String> getSWRLRules(){
 		ArrayList<String> ruleStrings = new ArrayList<String>();
 		for (SWRLRule rule : ontology.getAxioms(AxiomType.SWRL_RULE)){
-			System.out.println(rule.toString());
+			//System.out.println(rule.toString());
 			ruleStrings.add(rule.toString());
 		}
 		
