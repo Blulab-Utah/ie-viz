@@ -68,6 +68,16 @@ public class Term {
 				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)));
 	}
 	
+	public ArrayList<Term> getPseudos(){
+		ArrayList<Term> pseudos = new ArrayList<Term>();
+		ArrayList<OWLClass> pseudoList = domain.getObjectPropertyFillerList(domain.getClass(uri), 
+				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.HAS_PSEUDO)));
+		for(OWLClass pseudo : pseudoList){
+			pseudos.add(new Term(pseudo.getIRI().toString(), domain));
+		}
+		return pseudos;
+	}
+	
 	public ArrayList<Term> getDirectParents(){
 		ArrayList<Term> parents = new ArrayList<Term>();
 		ArrayList<String> clsStrings = domain.getDirectSuperClasses(domain.getClass(uri));
@@ -96,9 +106,11 @@ public class Term {
 	public String toString() {
 		return "Term [prefTerm=" + this.getPrefTerm() + ", prefCode=" + this.getPrefCode()
 				+  ", synonym=" + this.getSynonym()
-				+ ", misspelling=" + this.getMisspelling()+ ", abbreviation="
-				+ this.getAbbreviation() + ", subjExp=" + this.getSubjExp() + ", regex=" + this.getRegex()
-				+ ", altCode=" + this.getAltCode() + "]";
+				+ ", misspelling=" + this.getMisspelling()//+ ", abbreviation="
+				//+ this.getAbbreviation() + ", subjExp=" + this.getSubjExp() + ", regex=" + this.getRegex()
+				//+ ", altCode=" + this.getAltCode() 
+				+ ", pseudos=" + this.getPseudos()
+				+ "]";
 	}
 	
 }

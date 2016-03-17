@@ -92,12 +92,12 @@ public class Variable {
 				modExp.add(new Modifier(cls.asOWLClass().getIRI().toString(), domain));
 				mods.add(modExp);
 			}else{
-				System.out.println("Expression type: " + cls.getClassExpressionType());
+				//System.out.println("Expression type: " + cls.getClassExpressionType());
 				if(cls.getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
 					LogicExpression<Modifier> modExp = new LogicExpression<Modifier>("OR");
 					OWLObjectUnionOf union = (OWLObjectUnionOf) cls;
 					List<OWLClassExpression> filler = union.getOperandsAsList();
-					System.out.println("Filler list contains: " + filler.toString());
+					//System.out.println("Filler list contains: " + filler.toString());
 					for(OWLClassExpression c : filler){
 						if(!c.isAnonymous()){
 							modExp.add(new Modifier(c.asOWLClass().getIRI().toString(), domain));
@@ -173,7 +173,7 @@ public class Variable {
 				+ ", concept=" + this.getAnchor().toString() 
 				+ "\n\t, modifiers=" + this.getModifiers() 
 				+ "\n\t, numerics=" + this.getNumericModifiers() 
-				//+ "\n\t, relations=" + this.getRelationships() 
+				+ "\n\t, relations=" + this.getRelationships() 
 				+"]";
 	}
 	
