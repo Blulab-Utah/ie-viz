@@ -14,7 +14,7 @@ import org.semanticweb.owlapi.model.OWLObjectUnionOf;
 
 
 /**
- * @author melissa
+ * @author Melissa Castine
  *
  */
 public class Variable {
@@ -23,6 +23,10 @@ public class Variable {
 	private ArrayList<String> relationships; //May need feeback on the best representation here.
 	private ArrayList<String> rules; //This may change once SWRL rules are implemented in ontology.
 	
+	/**
+	 * @param clsURI A string representing the variable class URI
+	 * @param domain The DomainOntology object containing variable
+	 */
 	public Variable(String clsURI, DomainOntology domain){
 		this.domain = domain;
 		uri = clsURI;
@@ -30,6 +34,10 @@ public class Variable {
 		rules = new ArrayList<String>();
 	}
 
+	/**
+	 * Returns the ID associated with a variable
+	 * @return A string of the variable ID
+	 */
 	public String getVarID() {
 		return domain.getClassURIString(domain.getClass(uri));
 	}
@@ -154,6 +162,9 @@ public class Variable {
 	}
 	
 	
+	/**
+	 * @return
+	 */
 	public ArrayList<Variable> getDirectChildren(){
 		ArrayList<Variable> children = new ArrayList<Variable>();
 		ArrayList<String> clsStrings = domain.getDirectSubClasses(domain.getClass(uri));

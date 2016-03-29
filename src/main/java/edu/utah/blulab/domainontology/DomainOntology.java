@@ -47,6 +47,12 @@ public class DomainOntology {
 	private static ArrayList<OWLObjectProperty> propertyList, lingPropList, semPropList, numPropList, relationsList;
 	private static ArrayList<OWLClass> schemaClassList;
 	
+	/**
+	 * Creates a domain ontology from a local owl file.
+	 * @param fileLocation A string representing the path of the domain owl file
+	 * @param useLocalFiles Set true if you want to use local copies
+	 * @throws Exception
+	 */
 	public DomainOntology(String fileLocation, boolean useLocalFiles) throws Exception{
 		manager = OWLManager.createOWLOntologyManager();
 		factory = manager.getOWLDataFactory();
@@ -104,22 +110,43 @@ public class DomainOntology {
         
 	}
 	
+	/**
+	 * Gets a list of all schema category classes.
+	 * @return A list of OWL classes representing the schema semantic categories used in a domain.
+	 */
 	public ArrayList<OWLClass> getSchemaClassList(){
 		return schemaClassList;
 	}
 	
+	
+	/**
+	 * Gets a list of all modifier object properties.
+	 * @return A list of object properties that represent all linguistic, numeric and semantic properties.
+	 */
 	public ArrayList<OWLObjectProperty> getPropertyList(){
 		return propertyList;
 	}
 	
+	/**
+	 * Gets a list of all numeric modifier object properties.
+	 * @return A list of object properties that represent all numeric object properties.
+	 */
 	public ArrayList<OWLObjectProperty> getNumericPropertyList(){
 		return numPropList;
 	}
 	
+	/**
+	 * Gets a list of all non-modifier object properties.
+	 * @return A list of object properties that represent all of the SemRep relation properties.
+	 */
 	public ArrayList<OWLObjectProperty> getRelationsList(){
 		return relationsList;
 	}
 	
+	/**
+	 * Gets a list of all non-modifier object properties.
+	 * @return A list of object properties that represent all of the SemRep relation properties.
+	 */
 	public ArrayList<OWLObjectProperty> getNonNumericPropertyList(){
 		ArrayList<OWLObjectProperty> propList = new ArrayList<OWLObjectProperty>();
 		propList.addAll(lingPropList);
