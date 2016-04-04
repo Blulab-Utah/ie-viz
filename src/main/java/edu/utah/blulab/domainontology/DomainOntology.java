@@ -7,33 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.AxiomType;
-import org.semanticweb.owlapi.model.ClassExpressionType;
-import org.semanticweb.owlapi.model.DataRangeType;
-import org.semanticweb.owlapi.model.IRI;
-import org.semanticweb.owlapi.model.OWLAnnotation;
-import org.semanticweb.owlapi.model.OWLAnnotationProperty;
-import org.semanticweb.owlapi.model.OWLAxiom;
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLDataFactory;
-import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
-import org.semanticweb.owlapi.model.OWLDataSomeValuesFrom;
-import org.semanticweb.owlapi.model.OWLDatatypeRestriction;
-import org.semanticweb.owlapi.model.OWLException;
-import org.semanticweb.owlapi.model.OWLFacetRestriction;
-import org.semanticweb.owlapi.model.OWLIndividual;
-import org.semanticweb.owlapi.model.OWLLiteral;
-import org.semanticweb.owlapi.model.OWLObjectProperty;
-import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
-import org.semanticweb.owlapi.model.OWLObjectSomeValuesFrom;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyIRIMapper;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
-import org.semanticweb.owlapi.model.PrefixManager;
-import org.semanticweb.owlapi.model.SWRLRule;
+import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.AutoIRIMapper;
 import org.semanticweb.owlapi.util.DefaultPrefixManager;
 import org.semanticweb.owlapi.vocab.OWLFacet;
@@ -175,7 +149,37 @@ public class DomainOntology {
 		}
 		return variables;
 	}
-	
+
+	public HashMap<String, ArrayList<String>> getClassDefinition(OWLClass cls){
+		HashMap<String, ArrayList<String>> definitions = new HashMap<String, ArrayList<String>>();
+		ArrayList<String> clsList = new ArrayList<String>();
+
+		Set<OWLClassExpression> superDef = cls.getEquivalentClasses(ontology);
+		for(OWLClassExpression exp : superDef){
+			if(exp.getClassExpressionType().equals(ClassExpressionType.OBJECT_COMPLEMENT_OF)){
+				String listType = "COMPLEMENT";
+				OWLObjectComplementOf complement = (OWLObjectComplementOf) exp;
+				OWLClassExpression filler = ((OWLObjectComplementOf) exp).getOperand();
+				//System.out.println(filler);
+				if(!filler.isAnonymous()){
+					clsList.add(filler.asOWLClass().getIRI().toString());
+				}else if(filler.getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
+					OWLObjectUnionOf union = (OWLObjectUnionOf) filler;
+					Set<OWLClassExpression> unionSet = union.getOperands();
+					for(OWLClassExpression expression : unionSet){
+						//System.out.println(expression);
+						if(!expression.isAnonymous()){
+							clsList.add(expression.asOWLClass().getIRI().toString());
+						}
+					}
+				}
+
+				definitions.put(listType, clsList);
+			}
+		}
+		return definitions;
+	}
+
 	private void getSubClassHierarchy(OWLClass cls, ArrayList<OWLClass> visitedCls, ArrayList<OWLClass> clsList, boolean ignoreImports){
 		//make sure class exists and hasn't already been visited
 		if(cls == null || visitedCls.contains(cls)){

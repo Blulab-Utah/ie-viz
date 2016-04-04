@@ -1,9 +1,13 @@
 package edu.utah.blulab.domainontology;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
+import sun.rmi.runtime.Log;
 
 public class Modifier {
 	private String uri;
@@ -75,12 +79,53 @@ public class Modifier {
 		}
 		return children;
 	}
+
+	public boolean isDefault(){
+		boolean bool = false;
+		LogicExpression<LogicExpression<Modifier>> list = this.getDefaultDefintion();
+		for(LogicExpression<Modifier> expression : list){
+			if(!expression.isEmpty()){
+				bool = true;
+			}
+		}
+		return bool;
+
+	}
+
+	public LogicExpression<LogicExpression<Modifier>> getDefaultDefintion(){
+		LogicExpression<LogicExpression<Modifier>> defaultDef = new LogicExpression<LogicExpression<Modifier>>();
+		LogicExpression<Modifier> defValues = new LogicExpression<Modifier>();
+
+		HashMap<String, ArrayList<String>> defs = domain.getClassDefinition(domain.getClass(uri));
+		Iterator iter = defs.entrySet().iterator();
+		while(iter.hasNext()){
+			Map.Entry<String, ArrayList<String>> entry = (Map.Entry<String, ArrayList<String>>) iter.next();
+			defaultDef.setType(entry.getKey());
+			ArrayList<String> list = entry.getValue();
+			if(list.size() > 1){
+				defValues.setType("OR");
+			}else{
+				defValues.setType("SINGLE");
+			}
+			for(String str : list){
+				defValues.add(new Modifier(str, domain));
+			}
+
+		}
+
+		defaultDef.add(defValues);
+		return defaultDef;
+	}
 	
 	@Override
 	public String toString() {
-		return "\n\tModifier: " + this.getModName() + ", uri=" + uri  //+ ", items=" + this.getItems() 
-		+ "\n\t\t Pseudos=" + this.getPseudos()
-		+ "\n\t\t Closures=" + this.getClosures() + "]";
+		return "\n\tModifier: " + this.getModName() + ", uri=" + uri
+				//+ ", items=" + this.getItems()
+				//+ "\n\t\t Pseudos=" + this.getPseudos()
+				//+ "\n\t\t Closures=" + this.getClosures()
+				+ ", isDefault? " + this.isDefault()
+				+ ", Default Definiton = " + this.getDefaultDefintion()
+				+ "]";
 	}
 	
 	
