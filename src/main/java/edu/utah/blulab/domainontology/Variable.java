@@ -177,14 +177,21 @@ public class Variable {
 		return children;
 	}
 
+	public ArrayList<String> getAllParents(){
+		ArrayList<String> parentAncestry = new ArrayList<String>();
+		parentAncestry = domain.getAllSuperClasses(domain.getClass(uri), false);
+		return parentAncestry;
+	}
+
 	@Override
 	public String toString() {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
-				//+ ", category=" + this.getSemanticCategory()
+				+ ", category=" + this.getSemanticCategory()
+				+ ", parentAncestry=" + this.getAllParents()
 				+ ", concept=" + this.getAnchor().toString() 
-				+ "\n\t, modifiers=" + this.getModifiers() 
-				+ "\n\t, numerics=" + this.getNumericModifiers() 
-				+ "\n\t, relations=" + this.getRelationships() 
+				//+ "\n\t, modifiers=" + this.getModifiers()
+				//+ "\n\t, numerics=" + this.getNumericModifiers()
+				//+ "\n\t, relations=" + this.getRelationships()
 				+"]";
 	}
 	
