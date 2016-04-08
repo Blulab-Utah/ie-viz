@@ -213,35 +213,38 @@ public class DomainOntology {
 	
 	private void getSuperClassHierarchy(OWLClass cls, ArrayList<OWLClass> visitedCls, ArrayList<OWLClass> clsList, boolean ignoreImports){
 		//make sure class exists and hasn't already been visited
-		visitedCls.add(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)));
+		//visitedCls.add(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)));
 		if(!cls.isAnonymous()){
 			if(cls == null || visitedCls.contains(cls) || cls.equals(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)))){
 				return;
 			}
 			
 			Set<OWLClassExpression> superExp = cls.getSuperClasses(manager.getOntologies());
-			System.out.println("Class " + cls.asOWLClass().getIRI());
+			//System.out.println("Class " + cls.asOWLClass().getIRI());
 			for(OWLClassExpression superCls : superExp){
-				System.out.println("Expression: " + superCls.asOWLClass().toString());
-				if(!visitedCls.contains(cls.asOWLClass())){
-					visitedCls.add(cls.asOWLClass());
-				}
-				if(ignoreImports){
-					if(!superCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
-							!superCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+				//System.out.println("Expression: " + superCls.asOWLClass().toString());
+				if(!superCls.isAnonymous()){
+					if(!visitedCls.contains(cls.asOWLClass())){
+						visitedCls.add(cls.asOWLClass());
+					}
+					if(ignoreImports){
+						if(!superCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.SO_PM+"#") &&
+								!superCls.asOWLClass().getIRI().getNamespace().equalsIgnoreCase(OntologyConstants.CT_PM+"#")){
+							if(!superCls.equals(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)))){
+								clsList.add(superCls.asOWLClass());
+							}
+
+						}
+					}else{
 						if(!superCls.equals(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)))){
 							clsList.add(superCls.asOWLClass());
 						}
-						
 					}
-				}else{
-					if(!superCls.equals(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)))){
-						clsList.add(superCls.asOWLClass());
-					}
+
+					getSuperClassHierarchy(superCls.asOWLClass(), visitedCls, clsList, ignoreImports);
 				}
-				
-				
-				getSuperClassHierarchy(superCls.asOWLClass(), visitedCls, clsList, ignoreImports);
+
+
 			}
 		}
 		
@@ -555,7 +558,7 @@ public class DomainOntology {
 		return list;
 	}
 	
-	private ArrayList<OWLClass> getAllSubClasses(OWLClass cls, boolean ignoreImports){
+	public ArrayList<OWLClass> getAllSubClasses(OWLClass cls, boolean ignoreImports){
 		ArrayList<OWLClass> list = new ArrayList<OWLClass>();
 		
 		getSubClassHierarchy(cls, new ArrayList<OWLClass>(), list, ignoreImports);
@@ -563,14 +566,18 @@ public class DomainOntology {
 		return list;
 	}
 	
-	ArrayList<OWLClass> getAllSuperClasses(OWLClass cls, boolean ignoreImports){
+	public ArrayList<String> getAllSuperClasses(OWLClass cls, boolean ignoreImports){
 		ArrayList<OWLClass> list = new ArrayList<OWLClass>();
+		ArrayList<String> superList = new ArrayList<String>();
 		
 		getSuperClassHierarchy(cls, new ArrayList<OWLClass>(), list, ignoreImports);
+		for(OWLClass superCls : list){
+			superList.add(superCls.getIRI().toString());
+		}
 		
-		return list;
+		return superList;
 	}
-	
+
 	public ArrayList<Variable> getAllEvents(){
 		ArrayList<Variable> events = new ArrayList<Variable>();
 		ArrayList<OWLClass> list = this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.EVENT)), true);

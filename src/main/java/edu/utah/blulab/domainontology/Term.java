@@ -101,6 +101,12 @@ public class Term {
 		}
 		return children;
 	}
+
+	public ArrayList<String> getAllParents(){
+		ArrayList<String> parentAncestry = new ArrayList<String>();
+		parentAncestry = domain.getAllSuperClasses(domain.getClass(uri), false);
+		return parentAncestry;
+	}
 	
 	@Override
 	public String toString() {
