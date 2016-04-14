@@ -16,6 +16,8 @@ public class OntologyConstants {
 	public static final String REGEX = TM_PM + "#regex"; //SO_PM + "#regex";
 	public static final String PREF_CUI = TM_PM + "#code"; //SO_PM + "#prefCUI";
 	public static final String ALT_CUI = TM_PM + "#alternateCode"; //SO_PM + "#altCUI";
+	public static final String DEFINITION = TM_PM + "#definition";
+	public static final String SEMANTIC_TYPE = TM_PM + "#semanticType";
 	public static final String SEC_HEADING = SO_PM + "#sectionHeader";
 	public static final String DOC_TYPE = SO_PM + "#documentType";
 	public static final String WINDOW = CT_PM + "#windowSize";

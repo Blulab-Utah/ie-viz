@@ -117,6 +117,16 @@ public class Modifier {
 		return defaultDef;
 	}
 
+	public ArrayList<String> getAllChildren(){
+		ArrayList<String> childDescendents = new ArrayList<String>();
+		ArrayList<OWLClass> allChildren = domain.getAllSubClasses(domain.getClass(uri), false);
+		for(OWLClass cls : allChildren){
+			childDescendents.add(cls.getIRI().toString());
+		}
+
+		return childDescendents;
+	}
+
 	public ArrayList<String> getAllParents(){
 		ArrayList<String> parentAncestry = new ArrayList<String>();
 		parentAncestry = domain.getAllSuperClasses(domain.getClass(uri), false);
@@ -129,8 +139,10 @@ public class Modifier {
 				//+ ", items=" + this.getItems()
 				//+ "\n\t\t Pseudos=" + this.getPseudos()
 				//+ "\n\t\t Closures=" + this.getClosures()
-				+ ", isDefault? " + this.isDefault()
-				+ ", Default Definiton = " + this.getDefaultDefintion()
+				//+ ", isDefault? " + this.isDefault()
+				//+ ", Default Definiton = " + this.getDefaultDefintion()
+				+ "\n\tPARENTS: " + this.getAllParents()
+				+ "\n\tCHILDREN: " + this.getAllChildren()
 				+ "]";
 	}
 	
