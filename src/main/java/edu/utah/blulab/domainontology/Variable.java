@@ -47,6 +47,10 @@ public class Variable {
 		
 	}
 
+	public String getURI(){
+		return uri;
+	}
+
 	public ArrayList<String> getSemanticCategory(){
 		
 		return domain.getDirectSuperClasses(domain.getFactory().getOWLClass(IRI.create(uri)));

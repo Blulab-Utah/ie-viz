@@ -809,4 +809,23 @@ public class DomainOntology {
 		
 		return ruleStrings;
 	}
+
+	public String getDomainURI(){
+		return ontology.getOntologyID().getOntologyIRI().toString();
+	}
+
+
+
+	public void setDataProperty(OWLIndividual indiv, String dataPropertyURI, String value) throws OWLOntologyStorageException {
+		OWLDataProperty prop = factory.getOWLDataProperty(IRI.create(dataPropertyURI));
+		OWLLiteral literal = factory.getOWLLiteral(value);
+		OWLDataPropertyAssertionAxiom axiom = factory.getOWLDataPropertyAssertionAxiom(prop, indiv, literal);
+		manager.addAxiom(ontology, axiom);
+		manager.saveOntology(ontology);
+	}
+
+	public void setAnnotationToVariable(AnnotationObject annotation, Variable variable){
+		OWLClass cls = factory.getOWLClass(IRI.create(variable.getURI()));
+		OWLNamedIndividual indiv = factory.getOWLNamedIndividual(IRI.create(annotation.getUri()));
+	}
 }
