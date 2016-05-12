@@ -10,7 +10,7 @@ public class AnnotationObject {
 
     public AnnotationObject(String annotationID, DomainOntology domain){
         this.domain = domain;
-        uri = domain.getDomainURI() + "#" + "annotationID";
+        uri = domain.getDomainURI() + "#" + annotationID;
     }
 
     public String getUri() {
@@ -21,9 +21,21 @@ public class AnnotationObject {
         domain.setDataProperty(domain.getIndividual(uri), OntologyConstants.HAS_ANNOTATION_TYPE, type);
     }
 
-    public void setCorpus(String corpus){}
+    public void setCorpus(String corpus) throws OWLOntologyStorageException {
+        domain.setDataProperty(domain.getIndividual(uri), OntologyConstants.HAS_CORPUS, corpus);
+    }
 
-    public void setDocumentID(String documentID){}
+    public void setDocumentID(String documentID) throws OWLOntologyStorageException {
+        domain.setDataProperty(domain.getIndividual(uri), OntologyConstants.HAS_DOCUMENT_ID, documentID);
+    }
 
-    public void setSpan(ArrayList<String> spans){}
+    public void setSpan(ArrayList<String> spans) throws OWLOntologyStorageException{
+        for(String span : spans){
+            domain.setDataProperty(domain.getIndividual(uri), OntologyConstants.HAS_SPAN, span);
+        }
+    }
+
+    public void setText(String text){
+        //TODO: finish method once data property is added to Schema Ontology
+    }
 }

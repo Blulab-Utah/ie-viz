@@ -313,6 +313,29 @@ public class DomainOntology {
 		return filler;
 	}
 	
+	public HashMap<String, ArrayList<OWLClassExpression>> getEquivalentObjectPropertyFillerMap(OWLClass cls, ArrayList<OWLObjectProperty> props){
+		HashMap<String, ArrayList<OWLClassExpression>> map = new HashMap<String, ArrayList<OWLClassExpression>>();
+		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
+		for(OWLClassExpression ce : exp){
+			ArrayList<OWLClassExpression> filler = new ArrayList<OWLClassExpression>();
+			if(ce.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
+				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) ce;
+				OWLObjectPropertyExpression propExp = obj.getProperty();
+				//System.out.println(propExp);
+				if(props.contains(propExp.asOWLObjectProperty())){
+					OWLClassExpression fillerClass = obj.getFiller();
+					//System.out.println("FILLER: " + fillerClass.toString());
+					filler.add(fillerClass);
+					map.put(propExp.asOWLObjectProperty().getIRI().toString(), filler);
+				}
+
+			}
+		}
+
+
+		return map;
+	}
+
 	public ArrayList<OWLClassExpression> getEquivalentObjectPropertyFillerList(OWLClass cls, ArrayList<OWLObjectProperty> props){
 		ArrayList<OWLClassExpression> filler = new ArrayList<OWLClassExpression>();
 		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
@@ -824,8 +847,15 @@ public class DomainOntology {
 		manager.saveOntology(ontology);
 	}
 
-	public void setAnnotationToVariable(AnnotationObject annotation, Variable variable){
+	public void setAnnotationToVariable(AnnotationObject annotation, Variable variable) throws OWLOntologyStorageException {
 		OWLClass cls = factory.getOWLClass(IRI.create(variable.getURI()));
 		OWLNamedIndividual indiv = factory.getOWLNamedIndividual(IRI.create(annotation.getUri()));
+		OWLClassAssertionAxiom axiom = factory.getOWLClassAssertionAxiom(cls, indiv);
+		manager.addAxiom(ontology, axiom);
+		manager.saveOntology(ontology);
+	}
+
+	public void createVariable(){
+		//TODO: add method to create variables in domain.
 	}
 }
