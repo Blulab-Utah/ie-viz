@@ -127,7 +127,7 @@ public class Term {
 				//+ this.getAbbreviation() + ", subjExp=" + this.getSubjExp() + ", regex=" + this.getRegex()
 				+ ", altCode=" + this.getAltCode()
 				+ ", pseudos=" + this.getPseudos()
-				+ "\n\tPARENTS:  " + this.getAllParents()
+				//+ "\n\tPARENTS:  " + this.getAllParents()
 				+ "]";
 	}
 	

@@ -65,5 +65,10 @@ public class OntologyConstants {
 	public static final String LINGUISTIC_MODIFIER = CT_PM + "#LinguisticModifier";
 	public static final String SEMANTIC_MODIFIER = CT_PM + "#SemanticModifier";
 	public static final String NUMERIC_MODIFIER = CT_PM + "#NumericModifier";
-	
+
+
+	public static final String HAS_CORPUS = SO_PM + "#hasCorpus";
+	public static final String HAS_ANNOTATION_TYPE = SO_PM + "#hasAnnotationType";
+	public static final String HAS_DOCUMENT_ID = SO_PM + "#hasDocumentID";
+	public static final String HAS_SPAN = SO_PM + "#hasSpan";
 }

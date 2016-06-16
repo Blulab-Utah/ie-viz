@@ -270,7 +270,7 @@ public class DomainOntology {
 		return filler;
 	}
 	
-	public String getObjectPropertyFillerIndividual(OWLIndividual indiv, OWLObjectProperty prop){
+	public String getObjectPropertyFiller(OWLIndividual indiv, OWLObjectProperty prop){
 		String item = null;
 		OWLObjectPropertyExpression exp = (OWLObjectPropertyExpression) prop;
 		Set<OWLIndividual> enActions = indiv.asOWLNamedIndividual().getObjectPropertyValues(exp, ontology);
@@ -282,6 +282,10 @@ public class DomainOntology {
 		}
 		return item;
 		
+	}
+
+	public void setObjectPropertyFiller(OWLIndividual indiv, OWLObjectProperty prop){
+		//TODO: set object property for individual
 	}
 	
 	public ArrayList<String> getDataPropertyFiller(OWLClass cls, OWLDataProperty prop){
@@ -312,7 +316,34 @@ public class DomainOntology {
 		}
 		return filler;
 	}
+
+	public void setDataPropertyFiller(OWLIndividual indiv, String str){
+		//TODO: set string data property for individual
+	}
 	
+	public HashMap<String, ArrayList<OWLClassExpression>> getEquivalentObjectPropertyFillerMap(OWLClass cls, ArrayList<OWLObjectProperty> props){
+		HashMap<String, ArrayList<OWLClassExpression>> map = new HashMap<String, ArrayList<OWLClassExpression>>();
+		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
+		for(OWLClassExpression ce : exp){
+			ArrayList<OWLClassExpression> filler = new ArrayList<OWLClassExpression>();
+			if(ce.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
+				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) ce;
+				OWLObjectPropertyExpression propExp = obj.getProperty();
+				//System.out.println(propExp);
+				if(props.contains(propExp.asOWLObjectProperty())){
+					OWLClassExpression fillerClass = obj.getFiller();
+					//System.out.println("FILLER: " + fillerClass.toString());
+					filler.add(fillerClass);
+					map.put(propExp.asOWLObjectProperty().getIRI().toString(), filler);
+				}
+
+			}
+		}
+
+
+		return map;
+	}
+
 	public ArrayList<OWLClassExpression> getEquivalentObjectPropertyFillerList(OWLClass cls, ArrayList<OWLObjectProperty> props){
 		ArrayList<OWLClassExpression> filler = new ArrayList<OWLClassExpression>();
 		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
@@ -487,6 +518,53 @@ public class DomainOntology {
 			allMods.add(new Modifier(cls.getIRI().toString(), this));
 		}
 		return allMods;
+	}
+
+	public HashMap<String, ArrayList<Modifier>> createModifierMap() throws Exception{
+		HashMap<String, ArrayList<Modifier>> modifierMap = new HashMap<String, ArrayList<Modifier>>();
+		ArrayList<String> lingModifiers = this.getDirectSubClasses(
+				factory.getOWLClass(IRI.create(OntologyConstants.LINGUISTIC_MODIFIER)));
+		for(String parentName : lingModifiers){
+			//System.out.println(parentName);
+			ArrayList<Modifier> modifierList = new ArrayList<Modifier>();
+			for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(parentName)), false)){
+				modifierList.add(new Modifier(cls.getIRI().toString(), this));
+			}
+			if(!modifierList.isEmpty()){
+				modifierMap.put(parentName, modifierList);
+			}
+
+		}
+
+		ArrayList<String> numModifiers = this.getDirectSubClasses(
+				factory.getOWLClass(IRI.create(OntologyConstants.NUMERIC_MODIFIER)));
+		for(String parentName : numModifiers){
+			//System.out.println(parentName);
+			ArrayList<Modifier> modifierList = new ArrayList<Modifier>();
+			for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(parentName)), false)){
+				modifierList.add(new Modifier(cls.getIRI().toString(), this));
+			}
+			if(!modifierList.isEmpty()){
+				modifierMap.put(parentName, modifierList);
+			}
+
+		}
+
+		ArrayList<String> semModifiers = this.getDirectSubClasses(
+				factory.getOWLClass(IRI.create(OntologyConstants.SEMANTIC_MODIFIER)));
+		for(String parentName : semModifiers){
+			//System.out.println(parentName);
+			ArrayList<Modifier> modifierList = new ArrayList<Modifier>();
+			for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(parentName)), false)){
+				modifierList.add(new Modifier(cls.getIRI().toString(), this));
+			}
+			if(!modifierList.isEmpty()){
+				modifierMap.put(parentName, modifierList);
+			}
+
+		}
+
+		return modifierMap;
 	}
 	
 	public ArrayList<Modifier> createClosureDictionary(){
@@ -782,7 +860,9 @@ public class DomainOntology {
 	
 	public ArrayList<String> getDirectSuperClasses(OWLClass cls){
 		ArrayList<String> list = new ArrayList<String>();
-		Set<OWLClassExpression> superList = cls.getSuperClasses(ontology);
+		Set<OWLOntology> ontologySet = ontology.getImports();
+		ontologySet.add(ontology);
+		Set<OWLClassExpression> superList = cls.getSuperClasses(ontologySet);
 		for(OWLClassExpression c : superList){
 			if(!c.isAnonymous()){
 				list.add(c.asOWLClass().getIRI().toString());
@@ -793,7 +873,9 @@ public class DomainOntology {
 	
 	public ArrayList<String> getDirectSubClasses(OWLClass cls){
 		ArrayList<String> list = new ArrayList<String>();
-		Set<OWLClassExpression> subList = cls.getSubClasses(ontology);
+		Set<OWLOntology> ontologySet = ontology.getImports();
+		ontologySet.add(ontology);
+		Set<OWLClassExpression> subList = cls.getSubClasses(ontologySet);
 		for(OWLClassExpression c : subList){
 			list.add(c.asOWLClass().getIRI().toString());
 		}
@@ -808,5 +890,32 @@ public class DomainOntology {
 		}
 		
 		return ruleStrings;
+	}
+
+	public String getDomainURI(){
+		return ontology.getOntologyID().getOntologyIRI().toString();
+	}
+
+
+
+	public void setDataProperty(OWLIndividual indiv, String dataPropertyURI, String value) throws OWLOntologyStorageException {
+		OWLDataProperty prop = factory.getOWLDataProperty(IRI.create(dataPropertyURI));
+		OWLLiteral literal = factory.getOWLLiteral(value);
+		OWLDataPropertyAssertionAxiom axiom = factory.getOWLDataPropertyAssertionAxiom(prop, indiv, literal);
+		manager.addAxiom(ontology, axiom);
+		manager.saveOntology(ontology);
+	}
+
+
+	public void setAnnotationToVariable(AnnotationObject annotation, Variable variable) throws OWLOntologyStorageException {
+		OWLClass cls = factory.getOWLClass(IRI.create(variable.getURI()));
+		OWLNamedIndividual indiv = factory.getOWLNamedIndividual(IRI.create(annotation.getUri()));
+		OWLClassAssertionAxiom axiom = factory.getOWLClassAssertionAxiom(cls, indiv);
+		manager.addAxiom(ontology, axiom);
+		manager.saveOntology(ontology);
+	}
+
+	public void createVariable(){
+		//TODO: add method to create variables in domain.
 	}
 }

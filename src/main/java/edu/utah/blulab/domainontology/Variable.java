@@ -1,9 +1,6 @@
 package edu.utah.blulab.domainontology;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import org.semanticweb.owlapi.model.ClassExpressionType;
 import org.semanticweb.owlapi.model.IRI;
@@ -45,6 +42,10 @@ public class Variable {
 	public String getVarName() {
 		return domain.getAnnotationString(domain.getClass(uri), domain.getFactory().getRDFSLabel());
 		
+	}
+
+	public String getURI(){
+		return uri;
 	}
 
 	public ArrayList<String> getSemanticCategory(){
@@ -91,33 +92,35 @@ public class Variable {
 		return anchorList;
 	}
 	
-	public ArrayList<LogicExpression<Modifier>> getModifiers(){
-		ArrayList<LogicExpression<Modifier>> mods = new ArrayList<LogicExpression<Modifier>>();
-		ArrayList<OWLClassExpression>	 list = domain.getEquivalentObjectPropertyFillerList(domain.getClass(uri), domain.getNonNumericPropertyList());
-		for(OWLClassExpression cls : list){
-			if(!cls.isAnonymous()){
-				LogicExpression<Modifier> modExp = new LogicExpression<Modifier>("SINGLE");
-				modExp.add(new Modifier(cls.asOWLClass().getIRI().toString(), domain));
-				mods.add(modExp);
-			}else{
-				//System.out.println("Expression type: " + cls.getClassExpressionType());
-				if(cls.getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
-					LogicExpression<Modifier> modExp = new LogicExpression<Modifier>("OR");
-					OWLObjectUnionOf union = (OWLObjectUnionOf) cls;
-					List<OWLClassExpression> filler = union.getOperandsAsList();
-					//System.out.println("Filler list contains: " + filler.toString());
-					for(OWLClassExpression c : filler){
-						if(!c.isAnonymous()){
-							modExp.add(new Modifier(c.asOWLClass().getIRI().toString(), domain));
-							
+	public HashMap<String, LogicExpression<Modifier>> getModifiers(){
+		HashMap<String, LogicExpression<Modifier>> mods = new HashMap<String, LogicExpression<Modifier>>();
+		HashMap<String, ArrayList<OWLClassExpression>>	 list = domain.getEquivalentObjectPropertyFillerMap(domain.getClass(uri), domain.getNonNumericPropertyList());
+
+		for(Map.Entry<String, ArrayList<OWLClassExpression>> entry : list.entrySet()){
+			String property = entry.getKey();
+			ArrayList<OWLClassExpression> expList = entry.getValue();
+
+			for(OWLClassExpression cls : expList){
+				if(!cls.isAnonymous()){
+					LogicExpression<Modifier> modifierList =  new LogicExpression<Modifier>("SINGLE");
+					modifierList.add(new Modifier(cls.asOWLClass().getIRI().toString(), domain));
+					mods.put(property, modifierList);
+				}else{
+					if(cls.getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
+						LogicExpression<Modifier> modifierList = new LogicExpression<Modifier>("OR");
+						OWLObjectUnionOf union = (OWLObjectUnionOf) cls;
+						List<OWLClassExpression> filler = union.getOperandsAsList();
+						for(OWLClassExpression c : filler){
+							if(!c.isAnonymous()){
+								modifierList.add(new Modifier(c.asOWLClass().getIRI().toString(), domain));
+							}
 						}
+						mods.put(property, modifierList);
 					}
-					mods.add(modExp);
 				}
 			}
-			
-			
 		}
+
 		return mods;
 	}
 	
@@ -183,13 +186,14 @@ public class Variable {
 		return parentAncestry;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
-				+ ", category=" + this.getSemanticCategory()
-				+ ", parentAncestry=" + this.getAllParents()
+				//+ ", category=" + this.getSemanticCategory()
+				//+ ", parentAncestry=" + this.getAllParents()
 				+ ", concept=" + this.getAnchor().toString() 
-				//+ "\n\t, modifiers=" + this.getModifiers()
+				+ "\n\t, modifiers=" + this.getModifiers()
 				//+ "\n\t, numerics=" + this.getNumericModifiers()
 				//+ "\n\t, relations=" + this.getRelationships()
 				+"]";

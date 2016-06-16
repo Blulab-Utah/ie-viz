@@ -141,8 +141,8 @@ public class Modifier {
 				//+ "\n\t\t Closures=" + this.getClosures()
 				//+ ", isDefault? " + this.isDefault()
 				//+ ", Default Definiton = " + this.getDefaultDefintion()
-				+ "\n\tPARENTS: " + this.getAllParents()
-				+ "\n\tCHILDREN: " + this.getAllChildren()
+				//+ "\n\tPARENTS: " + this.getAllParents()
+				//+ "\n\tCHILDREN: " + this.getAllChildren()
 				+ "]";
 	}
 	

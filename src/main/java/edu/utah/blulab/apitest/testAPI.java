@@ -1,18 +1,18 @@
 package edu.utah.blulab.apitest;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-import edu.utah.blulab.domainontology.DomainOntology;
-import edu.utah.blulab.domainontology.Modifier;
-import edu.utah.blulab.domainontology.Term;
-import edu.utah.blulab.domainontology.Variable;
+import edu.utah.blulab.domainontology.*;
 
 public class testAPI {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/98_heartFailure.owl", false);
 		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
+		//DomainOntology domain = new DomainOntology("/Users/melissa/testOntologies/colonoscopyQuality.owl", false);
 		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/pneumonia.owl");
 		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/vincipneu.owl.xml");
 		//DomainOntology domain = new DomainOntology("C:\\Users\\Bill\\Desktop\\carotid stenosis.owl"); 
@@ -20,14 +20,15 @@ public class testAPI {
 		//DomainOntology domain = new DomainOntology("src/main/resources/colonoscopy_20141001.owl");
 		//domain.getVariable("leukocytosis");
 		//System.out.println(domain.getVariable("KA001014"));
-		//System.out.println(domain.getVariable("KA_1006"));
+		System.out.println(domain.getVariable("KA_1006"));
+		System.out.println(domain.getVariable("KA_1003"));
 		
 		//System.out.println(domain.getVariable("KA_1005").hasNumericModifiers());
 		//System.out.println(domain.getVariable("KA_1006").hasNumericModifiers());
 		
-		ArrayList<Variable> domainVariables = domain.getAllVariables();
+		//ArrayList<Variable> domainVariables = domain.getAllVariables();
 		//ArrayList<Variable> domainVariables = domain.getAllEvents();
-		System.out.println("********** Domain Variables: **********");
+		/**System.out.println("********** Domain Variables: **********");
 		for(Variable var : domainVariables){
 			System.out.println(var.toString());
 		}
@@ -54,7 +55,31 @@ public class testAPI {
 		ArrayList<Modifier> closureDictionary = domain.createClosureDictionary();
 		for(Modifier term : closureDictionary){
 			System.out.println(term.toString());
+		}**/
+
+		/**AnnotationObject ann1 = new AnnotationObject("I1000", domain);
+		ann1.setAnnotationType("mention");
+		ann1.setCorpus("corpus1");
+		ann1.setDocumentID("doc1");
+		ArrayList<String> spanList = new ArrayList<String>();
+		spanList.add("1|10");
+		ann1.setSpan(spanList);
+		domain.setAnnotationToVariable(ann1, domain.getVariable("KA_1005"));**/
+
+		System.out.println("********** Modifier Map: **********");
+		HashMap<String, ArrayList<Modifier>> modifierMap = domain.createModifierMap();
+		Iterator iterator = modifierMap.entrySet().iterator();
+		while (iterator.hasNext()){
+			Map.Entry<String, ArrayList<Modifier>> modifierEntry =
+					(Map.Entry<String, ArrayList<Modifier>>)iterator.next();
+			System.out.print(modifierEntry.getKey() + ":\t");
+			for(Modifier modifier : modifierEntry.getValue()){
+				System.out.print(modifier.getModName() + "  ");
+			}
+			System.out.println("");
 		}
 	}
+
+
 
 }
