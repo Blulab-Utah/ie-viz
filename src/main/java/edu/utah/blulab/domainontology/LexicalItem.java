@@ -111,7 +111,7 @@ public class LexicalItem {
 	}
 	
 	public String getActionEn(boolean returnDisplayName) {
-		String str = domain.getObjectPropertyFillerIndividual(domain.getIndividual(uri), 
+		String str = domain.getObjectPropertyFiller(domain.getIndividual(uri),
 				domain.getFactory().getOWLObjectProperty(IRI.create(OntologyConstants.ACTION_EN)));
 		if(returnDisplayName){
 			str = domain.getDisplayName(str);

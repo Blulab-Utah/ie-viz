@@ -270,7 +270,7 @@ public class DomainOntology {
 		return filler;
 	}
 	
-	public String getObjectPropertyFillerIndividual(OWLIndividual indiv, OWLObjectProperty prop){
+	public String getObjectPropertyFiller(OWLIndividual indiv, OWLObjectProperty prop){
 		String item = null;
 		OWLObjectPropertyExpression exp = (OWLObjectPropertyExpression) prop;
 		Set<OWLIndividual> enActions = indiv.asOWLNamedIndividual().getObjectPropertyValues(exp, ontology);
@@ -282,6 +282,10 @@ public class DomainOntology {
 		}
 		return item;
 		
+	}
+
+	public void setObjectPropertyFiller(OWLIndividual indiv, OWLObjectProperty prop){
+		//TODO: set object property for individual
 	}
 	
 	public ArrayList<String> getDataPropertyFiller(OWLClass cls, OWLDataProperty prop){
@@ -311,6 +315,10 @@ public class DomainOntology {
 			}
 		}
 		return filler;
+	}
+
+	public void setDataPropertyFiller(OWLIndividual indiv, String str){
+		//TODO: set string data property for individual
 	}
 	
 	public HashMap<String, ArrayList<OWLClassExpression>> getEquivalentObjectPropertyFillerMap(OWLClass cls, ArrayList<OWLObjectProperty> props){
@@ -846,6 +854,7 @@ public class DomainOntology {
 		manager.addAxiom(ontology, axiom);
 		manager.saveOntology(ontology);
 	}
+
 
 	public void setAnnotationToVariable(AnnotationObject annotation, Variable variable) throws OWLOntologyStorageException {
 		OWLClass cls = factory.getOWLClass(IRI.create(variable.getURI()));

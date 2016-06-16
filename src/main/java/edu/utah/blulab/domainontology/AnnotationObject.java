@@ -3,6 +3,7 @@ package edu.utah.blulab.domainontology;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AnnotationObject {
     private String uri;
@@ -34,6 +35,11 @@ public class AnnotationObject {
             domain.setDataProperty(domain.getIndividual(uri), OntologyConstants.HAS_SPAN, span);
         }
     }
+
+    public void setModifierProperties(HashMap<String, ArrayList<String>> propertyValueMap){
+        //TODO: add method to add properties to annotation instance
+    }
+
 
     public void setText(String text){
         //TODO: finish method once data property is added to Schema Ontology
