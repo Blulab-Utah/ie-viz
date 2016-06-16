@@ -1,6 +1,9 @@
 package edu.utah.blulab.apitest;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import edu.utah.blulab.domainontology.*;
 
@@ -62,6 +65,21 @@ public class testAPI {
 		spanList.add("1|10");
 		ann1.setSpan(spanList);
 		domain.setAnnotationToVariable(ann1, domain.getVariable("KA_1005"));**/
+
+		System.out.println("********** Modifier Map: **********");
+		HashMap<String, ArrayList<Modifier>> modifierMap = domain.createModifierMap();
+		Iterator iterator = modifierMap.entrySet().iterator();
+		while (iterator.hasNext()){
+			Map.Entry<String, ArrayList<Modifier>> modifierEntry =
+					(Map.Entry<String, ArrayList<Modifier>>)iterator.next();
+			System.out.print(modifierEntry.getKey() + ":\t");
+			for(Modifier modifier : modifierEntry.getValue()){
+				System.out.print(modifier.getModName() + "  ");
+			}
+			System.out.println("");
+		}
 	}
+
+
 
 }
