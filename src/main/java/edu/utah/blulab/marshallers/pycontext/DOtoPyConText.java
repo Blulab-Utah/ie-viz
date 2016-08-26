@@ -48,9 +48,11 @@ public class DOtoPyConText {
 	    DomainOntology domain = new DomainOntology(ontology.getPath(), false);
 
         //write modifier file
+        System.out.println("Writing " + modifierFile.getName() + "...");
         BufferedWriter bw = new BufferedWriter(new FileWriter(modifierFile));
         ArrayList<Modifier> modDictionary = domain.createModifierDictionary();
 
+        //TODO:Repeat process for pseudos and closures
         for(Modifier modifier : modDictionary){
             HashMap<String, String> regexTuples = new HashMap<String, String>();
 
@@ -102,6 +104,7 @@ public class DOtoPyConText {
         bw.close();
 
         //write targets file
+        System.out.println("Writing " + targetFile.getName() + "...");
         bw = new BufferedWriter(new FileWriter(targetFile));
 
         ArrayList<Term> anchors = domain.createAnchorDictionary();
@@ -131,13 +134,13 @@ public class DOtoPyConText {
 
 
             if(regexTuples.isEmpty()){
-                System.out.println(term.getPrefTerm() + domain.getDisplayName(term.getURI()) + "" + "\t");
+                //System.out.println(term.getPrefTerm() + domain.getDisplayName(term.getURI()) + "" + "\t");
                 bw.write(term.getPrefTerm() + domain.getDisplayName(term.getURI()) + "" + "\t");
                 bw.newLine();
             }else{
                 for(Map.Entry<String, String> entry : regexTuples.entrySet()){
-                    System.out.println(entry.getKey() + "\t" + domain.getDisplayName(term.getURI()) + "\t" +
-                    entry.getValue());
+                    //System.out.println(entry.getKey() + "\t" + domain.getDisplayName(term.getURI()) + "\t" +
+                    //entry.getValue());
                     bw.write(entry.getKey() + "\t" + domain.getDisplayName(term.getURI()) + "\t" +
                             entry.getValue());
                     bw.newLine();
@@ -146,6 +149,15 @@ public class DOtoPyConText {
         }
 
         bw.close();
+
+        //write rules file
+        final String CATEGORY_RULE = "@CATEGORY_RULE";
+        System.out.println("Writing " + ruleFile.getName() + "...");
+        bw = new BufferedWriter(new FileWriter(ruleFile));
+
+        //TODO: Get variables and parse out anchor and modifiers associated with each anchor
+
+
 
     }
 
