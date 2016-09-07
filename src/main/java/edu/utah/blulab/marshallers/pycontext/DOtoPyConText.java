@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.util.*;
 
 
+import edu.stanford.nlp.util.Triple;
 import edu.utah.blulab.domainontology.*;
 
 public class DOtoPyConText {
@@ -37,7 +38,7 @@ public class DOtoPyConText {
 
 			parser.createPyConTextFiles(ontFile, modifiersFile, targetsFile, rulesFile);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
@@ -52,9 +53,12 @@ public class DOtoPyConText {
         BufferedWriter bw = new BufferedWriter(new FileWriter(modifierFile));
         ArrayList<Modifier> modDictionary = domain.createModifierDictionary();
 
-        //TODO:Repeat process for pseudos and closures
+        bw.write("literal\t category\t regex\t rule");
+
+
         for(Modifier modifier : modDictionary){
             HashMap<String, String> regexTuples = new HashMap<String, String>();
+            ArrayList<Triple<String, String, String>> tripleList = new ArrayList<Triple<String, String, String>>();
 
             ArrayList<LexicalItem> variants = modifier.getItems();
             for(LexicalItem lexicalItem : variants){
@@ -71,16 +75,22 @@ public class DOtoPyConText {
                     ArrayList<String> regex = lexicalItem.getRegex();
                     for(int i = 0; i < regex.size(); i++){
                         regexTuples.put(lexicalItemLabels.get(i), regex.get(i));
+                        tripleList.add(new Triple<String, String, String>(lexicalItemLabels.get(i), regex.get(i),
+                                lexicalItem.getActionEn(true)));
                     }
                     for(String variant : lexicalItemLabels){
                         if(!regexTuples.containsKey(variant)){
                             regexTuples.put(variant, "");
+                            tripleList.add(new Triple<String, String, String>(variant, "",
+                                    lexicalItem.getActionEn(true)));
                         }
                     }
                 }
                 for(String variant : lexicalItemLabels){
                     if(!regexTuples.containsKey(variant)){
                         regexTuples.put(variant, "");
+                        tripleList.add(new Triple<String, String, String>(variant, "",
+                                lexicalItem.getActionEn(true)));
                     }
                 }
 
@@ -89,12 +99,126 @@ public class DOtoPyConText {
 
             if(regexTuples.isEmpty()){
                 //System.out.println(modifier.getModName());
-                bw.write(modifier.getModName());
+                bw.write(modifier.getModName() + "\t\t\t");
                 bw.newLine();
             }else{
-                for(Map.Entry<String, String> entry : regexTuples.entrySet()){
+                for(Triple<String, String, String> triple : tripleList){
                     //System.out.println(modifier.getModName() + "\t" + entry.getKey() + "\t" + entry.getValue());
-                    bw.write(modifier.getModName() + "\t" + entry.getKey() + "\t" + entry.getValue());
+                    bw.write(modifier.getModName() + "\t" + triple.first() + "\t" + triple.second() + "\t"
+                    + triple.third());
+                    bw.newLine();
+                }
+            }
+
+        }
+
+
+        for(Modifier modifier : domain.createPseudoDictionary()){
+            HashMap<String, String> regexTuples = new HashMap<String, String>();
+            ArrayList<Triple<String, String, String>> tripleList = new ArrayList<Triple<String, String, String>>();
+
+            ArrayList<LexicalItem> variants = modifier.getItems();
+            for(LexicalItem lexicalItem : variants){
+                ArrayList<String> lexicalItemLabels = new ArrayList<String>();
+                lexicalItemLabels.add(lexicalItem.getPrefTerm());
+                lexicalItemLabels.addAll(lexicalItem.getSynonym());
+                lexicalItemLabels.addAll(lexicalItem.getAbbreviation());
+                lexicalItemLabels.addAll(lexicalItem.getMisspelling());
+                lexicalItemLabels.addAll(lexicalItem.getSubjExp());
+
+                //once regex in modifier ontology are fixed can use match regex method
+                if(lexicalItem.getRegex().size() > 0){
+                    //System.out.println("Too mnay regex!!");
+                    ArrayList<String> regex = lexicalItem.getRegex();
+                    for(int i = 0; i < regex.size(); i++){
+                        regexTuples.put(lexicalItemLabels.get(i), regex.get(i));
+                        tripleList.add(new Triple<String, String, String>(lexicalItemLabels.get(i), regex.get(i),
+                                lexicalItem.getActionEn(true)));
+                    }
+                    for(String variant : lexicalItemLabels){
+                        if(!regexTuples.containsKey(variant)){
+                            regexTuples.put(variant, "");
+                            tripleList.add(new Triple<String, String, String>(variant, "",
+                                    lexicalItem.getActionEn(true)));
+                        }
+                    }
+                }
+                for(String variant : lexicalItemLabels){
+                    if(!regexTuples.containsKey(variant)){
+                        regexTuples.put(variant, "");
+                        tripleList.add(new Triple<String, String, String>(variant, "",
+                                lexicalItem.getActionEn(true)));
+                    }
+                }
+
+                //regexTuples.putAll(matchRegEx(lexicalItemLabels, lexicalItem.getRegex()));
+            }
+
+            if(regexTuples.isEmpty()){
+                //System.out.println(modifier.getModName());
+                bw.write(modifier.getModName() + "\t\t\t");
+                bw.newLine();
+            }else{
+                for(Triple<String, String, String> triple : tripleList){
+                    //System.out.println(modifier.getModName() + "\t" + entry.getKey() + "\t" + entry.getValue());
+                    bw.write(modifier.getModName() + "\t" + triple.first() + "\t" + triple.second() + "\t"
+                            + triple.third());
+                    bw.newLine();
+                }
+            }
+
+        }
+
+        for(Modifier modifier : domain.createClosureDictionary()){
+            HashMap<String, String> regexTuples = new HashMap<String, String>();
+            ArrayList<Triple<String, String, String>> tripleList = new ArrayList<Triple<String, String, String>>();
+
+            ArrayList<LexicalItem> variants = modifier.getItems();
+            for(LexicalItem lexicalItem : variants){
+                ArrayList<String> lexicalItemLabels = new ArrayList<String>();
+                lexicalItemLabels.add(lexicalItem.getPrefTerm());
+                lexicalItemLabels.addAll(lexicalItem.getSynonym());
+                lexicalItemLabels.addAll(lexicalItem.getAbbreviation());
+                lexicalItemLabels.addAll(lexicalItem.getMisspelling());
+                lexicalItemLabels.addAll(lexicalItem.getSubjExp());
+
+                //once regex in modifier ontology are fixed can use match regex method
+                if(lexicalItem.getRegex().size() > 0){
+                    //System.out.println("Too mnay regex!!");
+                    ArrayList<String> regex = lexicalItem.getRegex();
+                    for(int i = 0; i < regex.size(); i++){
+                        regexTuples.put(lexicalItemLabels.get(i), regex.get(i));
+                        tripleList.add(new Triple<String, String, String>(lexicalItemLabels.get(i), regex.get(i),
+                                lexicalItem.getActionEn(true)));
+                    }
+                    for(String variant : lexicalItemLabels){
+                        if(!regexTuples.containsKey(variant)){
+                            regexTuples.put(variant, "");
+                            tripleList.add(new Triple<String, String, String>(variant, "",
+                                    lexicalItem.getActionEn(true)));
+                        }
+                    }
+                }
+                for(String variant : lexicalItemLabels){
+                    if(!regexTuples.containsKey(variant)){
+                        regexTuples.put(variant, "");
+                        tripleList.add(new Triple<String, String, String>(variant, "",
+                                lexicalItem.getActionEn(true)));
+                    }
+                }
+
+                //regexTuples.putAll(matchRegEx(lexicalItemLabels, lexicalItem.getRegex()));
+            }
+
+            if(regexTuples.isEmpty()){
+                //System.out.println(modifier.getModName());
+                bw.write(modifier.getModName() + "\t\t\t");
+                bw.newLine();
+            }else{
+                for(Triple<String, String, String> triple : tripleList){
+                    //System.out.println(modifier.getModName() + "\t" + entry.getKey() + "\t" + entry.getValue());
+                    bw.write(modifier.getModName() + "\t" + triple.first() + "\t" + triple.second() + "\t"
+                            + triple.third());
                     bw.newLine();
                 }
             }
@@ -106,6 +230,8 @@ public class DOtoPyConText {
         //write targets file
         System.out.println("Writing " + targetFile.getName() + "...");
         bw = new BufferedWriter(new FileWriter(targetFile));
+
+        bw.write("Lex,Type,Regex\n");
 
         ArrayList<Term> anchors = domain.createAnchorDictionary();
 
