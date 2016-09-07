@@ -42,7 +42,6 @@ public class DOtoPyConText {
 			e.printStackTrace();
 		}
 
-		
 	}
 
 	public void createPyConTextFiles(File ontology, File modifierFile, File targetFile, File ruleFile) throws Exception{
