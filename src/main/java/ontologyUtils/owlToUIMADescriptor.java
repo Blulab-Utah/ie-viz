@@ -1,6 +1,5 @@
 package ontologyUtils;
 
-import org.jdom.Namespace;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.*;
@@ -9,7 +8,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Set;
 
-import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.output.Format;
