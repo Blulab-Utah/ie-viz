@@ -230,7 +230,7 @@ public class DOtoPyConText {
         System.out.println("Writing " + targetFile.getName() + "...");
         bw = new BufferedWriter(new FileWriter(targetFile));
 
-        bw.write("Lex,Type,Regex\n");
+        bw.write("Lex\tType\tRegex\n");
 
         ArrayList<Term> anchors = domain.createAnchorDictionary();
 
@@ -260,7 +260,7 @@ public class DOtoPyConText {
 
             if(regexTuples.isEmpty()){
                 //System.out.println(term.getPrefTerm() + domain.getDisplayName(term.getURI()) + "" + "\t");
-                bw.write(term.getPrefTerm() + domain.getDisplayName(term.getURI()) + "" + "\t");
+                bw.write(term.getPrefTerm() + "\t" + domain.getDisplayName(term.getURI()) + "\t");
                 bw.newLine();
             }else{
                 for(Map.Entry<String, String> entry : regexTuples.entrySet()){
