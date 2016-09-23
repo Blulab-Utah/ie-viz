@@ -238,11 +238,34 @@ public class DOtoPyConText {
             HashMap<String, String> regexTuples = new HashMap<String, String>();
             ArrayList<String> variants = new ArrayList<String>();
 
+            ArrayList<String> parents = term.getAllParents();
+            Term ancestor = getAncestor(domain, parents);
+
             variants.add(term.getPrefTerm());
-            variants.addAll(term.getSynonym());
-            variants.addAll(term.getMisspelling());
-            variants.addAll(term.getAbbreviation());
-            variants.addAll(term.getSubjExp());
+            //variants.addAll(term.getSynonym());
+            for(String str : term.getSynonym()){
+                if(!variants.contains(str)){
+                    variants.add(str);
+                }
+            }
+            for(String str : term.getMisspelling()){
+                if(!variants.contains(str)){
+                    variants.add(str);
+                }
+            }
+            for(String str : term.getAbbreviation()){
+                if(!variants.contains(str)){
+                    variants.add(str);
+                }
+            }
+            for(String str : term.getSubjExp()){
+                if(!variants.contains(str)){
+                    variants.add(str);
+                }
+            }
+            //variants.addAll(term.getMisspelling());
+            //variants.addAll(term.getAbbreviation());
+            //variants.addAll(term.getSubjExp());
 
             if(term.getRegex().size() > 0){
                 ArrayList<String> regex = term.getRegex();
@@ -260,12 +283,26 @@ public class DOtoPyConText {
 
             if(regexTuples.isEmpty()){
                 //System.out.println(term.getPrefTerm() + domain.getDisplayName(term.getURI()) + "" + "\t");
-                bw.write(term.getPrefTerm() + "\t" + domain.getDisplayName(term.getURI()) + "\t");
-                bw.newLine();
+                for(String str : variants){
+                    if(ancestor != null){
+                        //System.out.println(str + "\t" + domain.getDisplayName(ancestor.getURI()) + "" + "\t");
+                        bw.write(str + "\t" + domain.getDisplayName(ancestor.getURI()) + "" + "\t");
+                        bw.newLine();
+                    }else{
+                        //System.out.println(str + "\t" + domain.getDisplayName(term.getURI()) + "" + "\t");
+                        bw.write(str + "\t" + domain.getDisplayName(term.getURI()) + "" + "\t");
+                        bw.newLine();
+                    }
+                }
+
+
+                //bw.write(term.getPrefTerm() + "\t" + domain.getDisplayName(term.getURI()) + "\t");
+                //bw.newLine();
             }else{
                 for(Map.Entry<String, String> entry : regexTuples.entrySet()){
                     //System.out.println(entry.getKey() + "\t" + domain.getDisplayName(term.getURI()) + "\t" +
                     //entry.getValue());
+                    //TODO figure out parentage problem for regex tuples
                     bw.write(entry.getKey() + "\t" + domain.getDisplayName(term.getURI()) + "\t" +
                             entry.getValue());
                     bw.newLine();
@@ -323,6 +360,23 @@ public class DOtoPyConText {
 
 
         return tuples;
+    }
+
+    private Term getAncestor(DomainOntology domain, ArrayList<String> ancestors){
+
+        for(String str : ancestors){
+            if(!str.equalsIgnoreCase("http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#Anchor") &&
+                    !str.equalsIgnoreCase("http://www.w3.org/2002/07/owl#Thing")){
+                Term term = new Term(str, domain);
+                //System.out.println(term);
+                if(term.getDirectParents().isEmpty()){
+                    return term;
+                }
+            }
+
+        }
+
+        return null;
     }
 
 
