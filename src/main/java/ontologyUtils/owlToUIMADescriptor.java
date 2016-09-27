@@ -14,6 +14,7 @@ import java.util.Set;
  * Created by melissa on 7/14/16.
  */
 public class owlToUIMADescriptor {
+    /*
     private static final String CT_PM = "http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl";
     private static final String SO_PM = "http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl";
     private static final String TM_PM = "http://blulab.chpc.utah.edu/ontologies/TermMapping.owl";
@@ -238,5 +239,5 @@ public class owlToUIMADescriptor {
 
         return annotations;
     }
-
+*/
 }
