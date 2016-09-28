@@ -38,9 +38,9 @@ public class owlToUIMADescriptor {
             outputFile.createNewFile();
         }
 
-        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-        OWLDataFactory factory = manager.getOWLDataFactory();
-        OWLOntology ontology = manager.loadOntologyFromOntologyDocument(inputFile);
+        final OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        final OWLDataFactory factory = manager.getOWLDataFactory();
+        final OWLOntology ontology = manager.loadOntologyFromOntologyDocument(inputFile);
 
         Element typeDesc = new Element("typeSystemDescription", ontology.getOntologyID().getOntologyIRI().toString());
 
@@ -164,12 +164,10 @@ public class owlToUIMADescriptor {
                         elementType.addContent("edu.utah.blulab.uima.types." +
                                 object.getFiller().asOWLClass().getIRI().getShortForm());
                     }else if(object.getFiller().getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
-                        System.out.println("Find common ancestor and put it's value as content.");
+                        //System.out.println("Find common ancestor and put it's value as content.");
                         OWLObjectUnionOf unionExp = (OWLObjectUnionOf) object.getFiller();
-                        List<OWLClassExpression> operandList = unionExp.getOperandsAsList();
+                        OWLClass ancestor = getCommonAncestor(unionExp.getOperandsAsList(), ontology);
 
-                        boolean sharedParent = false;
-                        OWLClassExpression first = operandList.get(0);
                     }
                     featureDescElement.addContent(elementType);
 
@@ -248,6 +246,51 @@ public class owlToUIMADescriptor {
         }
 
         return annotations;
+    }
+
+    private static OWLClass getCommonAncestor(List<OWLClassExpression> list, OWLOntology ontology){
+        boolean sharedParent = false;
+        ArrayList<OWLClass> ancestors = new ArrayList<OWLClass>();
+        getSuperClassHierarchy(list.get(0).asOWLClass(), ancestors, new ArrayList<OWLClass>(),
+                ontology.getOWLOntologyManager());
+        for(OWLClass cls : ancestors){
+            System.out.println("ANCESTOR: " + cls.toString());
+            if(!sharedParent){
+                for(OWLClassExpression exp : list){
+                    //TODO: Figure out how to check for common ancestor
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private static void getSuperClassHierarchy(OWLClass cls, ArrayList<OWLClass> visitedCls, ArrayList<OWLClass> clsList, OWLOntologyManager manager){
+        //make sure class exists and hasn't already been visited
+        //visitedCls.add(factory.getOWLClass(IRI.create(OntologyConstants.ANNOTATION)));
+
+        if(!cls.isAnonymous()){
+            if(cls == null || visitedCls.contains(cls)){
+                return;
+            }
+
+            Set<OWLClassExpression> superExp = cls.getSuperClasses(manager.getOntologies());
+            //System.out.println("Class " + cls.asOWLClass().getIRI());
+            for(OWLClassExpression superCls : superExp){
+                //System.out.println("Expression: " + superCls.asOWLClass().toString());
+                if(!superCls.isAnonymous()){
+                    if(!visitedCls.contains(cls.asOWLClass())){
+                        visitedCls.add(cls.asOWLClass());
+                    }
+
+                    getSuperClassHierarchy(superCls.asOWLClass(), visitedCls, clsList, manager);
+                }
+
+
+            }
+        }
+
+
     }
 
 }
