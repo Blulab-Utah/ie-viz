@@ -6,6 +6,7 @@ import org.semanticweb.owlapi.model.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import org.jdom.Document;
@@ -162,6 +163,13 @@ public class owlToUIMADescriptor {
                     if(object.getFiller().getClassExpressionType().equals(ClassExpressionType.OWL_CLASS)){
                         elementType.addContent("edu.utah.blulab.uima.types." +
                                 object.getFiller().asOWLClass().getIRI().getShortForm());
+                    }else if(object.getFiller().getClassExpressionType().equals(ClassExpressionType.OBJECT_UNION_OF)){
+                        System.out.println("Find common ancestor and put it's value as content.");
+                        OWLObjectUnionOf unionExp = (OWLObjectUnionOf) object.getFiller();
+                        List<OWLClassExpression> operandList = unionExp.getOperandsAsList();
+
+                        boolean sharedParent = false;
+                        OWLClassExpression first = operandList.get(0);
                     }
                     featureDescElement.addContent(elementType);
 
