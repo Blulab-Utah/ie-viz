@@ -1,9 +1,9 @@
 package ontologyUtils;
 
-//import org.neo4j.graphdb.*;
-//import org.neo4j.graphdb.factory.GraphDatabaseFactory;
-//import org.neo4j.graphdb.index.UniqueFactory;
-//import org.neo4j.io.fs.FileUtils;
+import org.neo4j.graphdb.*;
+import org.neo4j.graphdb.factory.GraphDatabaseFactory;
+import org.neo4j.graphdb.index.UniqueFactory;
+import org.neo4j.io.fs.FileUtils;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.OWLOntologyWalker;
@@ -21,7 +21,7 @@ import java.util.Map;
  * Created by melissa on 8/11/16.
  */
 public class owlToGraph {
- /* would not compile!
+
     public static void main(String[] args) throws Exception {
 
         File ontFile = new File(args[0]);
@@ -116,5 +116,5 @@ public class owlToGraph {
         }
 
     }
-    */
+
 }
