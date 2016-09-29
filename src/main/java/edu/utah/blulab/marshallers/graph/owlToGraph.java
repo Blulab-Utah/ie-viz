@@ -1,4 +1,4 @@
-package ontologyUtils;
+package edu.utah.blulab.marshallers.graph;
 
 import org.neo4j.graphdb.*;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
