@@ -11,24 +11,21 @@ public class testAPI {
 
 	public static void main(String[] args) throws Exception {
 		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/98_heartFailure.owl", false);
-		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
+		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
 		//DomainOntology domain = new DomainOntology("/Users/melissa/testOntologies/colonoscopyQuality.owl", false);
-		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/pneumonia.owl");
-		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/vincipneu.owl.xml");
-		//DomainOntology domain = new DomainOntology("C:\\Users\\Bill\\Desktop\\carotid stenosis.owl"); 
-		//DomainOntology domain = new DomainOntology("DomainOntologyAPI/src/main/resources/colonoscopy_20141001.owl");
-		//DomainOntology domain = new DomainOntology("src/main/resources/colonoscopy_20141001.owl");
+		DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/demo.owl", false);
+
 		//domain.getVariable("leukocytosis");
 		//System.out.println(domain.getVariable("KA001014"));
-		System.out.println(domain.getVariable("KA_1006"));
-		System.out.println(domain.getVariable("KA_1003"));
+		//System.out.println(domain.getVariable("KA_1006"));
+		//System.out.println(domain.getVariable("KA_1003"));
 		
 		//System.out.println(domain.getVariable("KA_1005").hasNumericModifiers());
 		//System.out.println(domain.getVariable("KA_1006").hasNumericModifiers());
 		
-		//ArrayList<Variable> domainVariables = domain.getAllVariables();
+		ArrayList<Variable> domainVariables = domain.getAllVariables();
 		//ArrayList<Variable> domainVariables = domain.getAllEvents();
-		/**System.out.println("********** Domain Variables: **********");
+		System.out.println("********** Domain Variables: **********");
 		for(Variable var : domainVariables){
 			System.out.println(var.toString());
 		}
@@ -55,7 +52,7 @@ public class testAPI {
 		ArrayList<Modifier> closureDictionary = domain.createClosureDictionary();
 		for(Modifier term : closureDictionary){
 			System.out.println(term.toString());
-		}**/
+		}
 
 		/**AnnotationObject ann1 = new AnnotationObject("I1000", domain);
 		ann1.setAnnotationType("mention");

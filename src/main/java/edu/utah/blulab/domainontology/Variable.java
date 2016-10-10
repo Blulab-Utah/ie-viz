@@ -48,6 +48,17 @@ public class Variable {
 		return uri;
 	}
 
+	public String getVariableType(){
+		ArrayList<String> annTypes = domain.getEquivalentDataPropertyFiller((domain.getClass(uri)),
+				domain.getFactory().getOWLDataProperty(IRI.create(OntologyConstants.HAS_ANNOTATION_TYPE)));
+		if(annTypes.isEmpty()){
+			return "";
+		}else{
+			return annTypes.get(0);
+		}
+
+	}
+
 	public ArrayList<String> getSemanticCategory(){
 		
 		return domain.getDirectSuperClasses(domain.getFactory().getOWLClass(IRI.create(uri)));
@@ -192,8 +203,9 @@ public class Variable {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
 				//+ ", category=" + this.getSemanticCategory()
 				//+ ", parentAncestry=" + this.getAllParents()
+				+ ", type= " + this.getVariableType()
 				+ ", concept=" + this.getAnchor().toString() 
-				+ "\n\t, modifiers=" + this.getModifiers()
+				//+ "\n\t, modifiers=" + this.getModifiers()
 				//+ "\n\t, numerics=" + this.getNumericModifiers()
 				//+ "\n\t, relations=" + this.getRelationships()
 				+"]";

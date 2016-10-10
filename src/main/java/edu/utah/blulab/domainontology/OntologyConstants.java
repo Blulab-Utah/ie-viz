@@ -26,6 +26,7 @@ public class OntologyConstants {
 	public static final String ACTION_SV = CT_PM + "#hasActionSv";
 	public static final String HAS_TERMINATION = CT_PM + "#hasTermination";
 	public static final String HAS_PSEUDO = CT_PM + "#hasPseudo";
+	public static final String ANNOTATION_TYPE = SO_PM + "#hasAnnotationType";
 	
 	
 	

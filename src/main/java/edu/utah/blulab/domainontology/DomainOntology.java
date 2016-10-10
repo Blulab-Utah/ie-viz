@@ -288,6 +288,28 @@ public class DomainOntology {
 		//TODO: set object property for individual
 	}
 	
+	public ArrayList<String> getEquivalentDataPropertyFiller(OWLClass cls, OWLDataProperty prop){
+		ArrayList<String> filler = new ArrayList<String>();
+		Set<OWLClassExpression> equivClassExp = cls.getEquivalentClasses(ontology);
+		for(OWLClassExpression equiv : equivClassExp){
+			if(equiv.getClassExpressionType().equals(ClassExpressionType.DATA_SOME_VALUES_FROM)){
+				OWLDataSomeValuesFrom axiom = (OWLDataSomeValuesFrom) equiv;
+				//System.out.println("This is Filler: " + axiom.getFiller() + " Type: " +
+				//		axiom.getFiller().getDataRangeType());
+				if(axiom.getFiller().getDataRangeType().equals(DataRangeType.DATA_ONE_OF)){
+					OWLDataOneOf dataFiller = (OWLDataOneOf) axiom.getFiller();
+					Set<OWLLiteral> fillerLiterals = dataFiller.getValues();
+					for(OWLLiteral lit : fillerLiterals){
+						filler.add(lit.getLiteral());
+					}
+				}
+
+			}
+		}
+
+		return filler;
+	}
+
 	public ArrayList<String> getDataPropertyFiller(OWLClass cls, OWLDataProperty prop){
 		ArrayList<String> filler = new ArrayList<String>();
 		Set<OWLClassExpression> subclassExp = cls.getSuperClasses(ontology);
