@@ -49,11 +49,28 @@ public class owlToGraph {
         try{
             //create Thing node in db
             final Node thingNode = getOrCreateNodeWithUniqueFactory("owl:Thing", NodeTypes.THING, graphDB);
-            ArrayList<OWLClass> subclasses = new ArrayList<OWLClass>();
-            getSubClassHierarchy(manager, factory.getOWLThing(), new ArrayList<OWLClass>(),subclasses);
 
-            for(OWLClass cls : subclasses){
-                System.out.println(cls.toString());
+            //get all classes in domain and imported ontologies
+            Set<OWLClass> classes = ontology.getClassesInSignature(true);
+
+            //create node and attributes of each node
+            for(OWLClass cls : classes){
+                System.out.println(cls.getIRI());
+                Node newNode = getOrCreateNodeWithUniqueFactory(cls.getIRI().getShortForm(), NodeTypes.CLASS, graphDB);
+
+                //get superclasses to link to or else link to owl:Thing
+                Set<OWLClassExpression> superClasses = cls.getSuperClasses(manager.getOntologies());
+                if(superClasses.isEmpty()){
+                    newNode.createRelationshipTo(thingNode, RelationshipType.withName("IS_A"));
+                }else{
+                    for(OWLClassExpression exp : superClasses){
+                        if(exp.getClassExpressionType().equals(ClassExpressionType.OWL_CLASS)){
+                            Node parentNode = getOrCreateNodeWithUniqueFactory(exp.asOWLClass().getIRI().getShortForm(),
+                                    NodeTypes.CLASS, graphDB);
+                            newNode.createRelationshipTo(parentNode, RelationshipType.withName("IS_A"));
+                        }
+                    }
+                }
             }
 
             tx.success();
@@ -68,14 +85,6 @@ public class owlToGraph {
 
     }
 
-    public enum RelationshipTypes implements RelationshipType {
-        IS_A, HAS_MEMBER;
-
-
-        public void createRelationshipType(String type){
-            RelationshipTypes.valueOf(type);
-        }
-    }
 
     private static Node getOrCreateNodeWithUniqueFactory(String nodeName, final Label label,
                                                          GraphDatabaseService graphDb) {
@@ -92,29 +101,7 @@ public class owlToGraph {
         return factory.getOrCreate("name", nodeName);
     }
 
-    private static void getSubClassHierarchy(OWLOntologyManager manager, OWLClass cls, ArrayList<OWLClass> visitedCls, ArrayList<OWLClass> clsList){
-        //make sure class exists and hasn't already been visited
-        if(cls == null || visitedCls.contains(cls)){
-            return;
-        }
-
-        Set<OWLClassExpression> subExp = cls.getSubClasses(manager.getOntologies());
-        //System.out.println("Class " + cls.asOWLClass().getIRI());
-        for(OWLClassExpression subCls : subExp){
-            //System.out.println("Expression: " + subCls.asOWLClass().toString());
-            if(!visitedCls.contains(cls.asOWLClass())){
-                visitedCls.add(cls.asOWLClass());
-            }else{
-                if(!subCls.asOWLClass().isAnonymous()){
-                    clsList.add(subCls.asOWLClass());
-                }
-
-            }
 
 
-            getSubClassHierarchy(manager, subCls.asOWLClass(), visitedCls, clsList);
-        }
-
-    }
 
 }
