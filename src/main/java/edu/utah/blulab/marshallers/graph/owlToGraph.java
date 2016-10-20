@@ -49,6 +49,7 @@ public class owlToGraph {
         try{
             //create Thing node in db
             final Node thingNode = getOrCreateNodeWithUniqueFactory("owl:Thing", NodeTypes.THING, graphDB);
+            thingNode.setProperty("uri", "http://www.w3.org/2002/07/owl#Thing");
 
             //get all classes in domain and imported ontologies
             Set<OWLClass> classes = ontology.getClassesInSignature(true);
@@ -57,6 +58,7 @@ public class owlToGraph {
             for(OWLClass cls : classes){
                 System.out.println(cls.getIRI());
                 Node newNode = getOrCreateNodeWithUniqueFactory(cls.getIRI().getShortForm(), NodeTypes.CLASS, graphDB);
+                newNode.setProperty("uri", cls.getIRI().toString());
 
                 //get superclasses to link to or else link to owl:Thing
                 Set<OWLClassExpression> superClasses = cls.getSuperClasses(manager.getOntologies());
@@ -68,6 +70,33 @@ public class owlToGraph {
                             Node parentNode = getOrCreateNodeWithUniqueFactory(exp.asOWLClass().getIRI().getShortForm(),
                                     NodeTypes.CLASS, graphDB);
                             newNode.createRelationshipTo(parentNode, RelationshipType.withName("IS_A"));
+                        }
+                    }
+                }
+
+                //get all annotation properties and create properties for each
+                Set<OWLAnnotationAssertionAxiom> annProps = cls.getAnnotationAssertionAxioms(ontology);
+                for(OWLAnnotationAssertionAxiom axiom : annProps){
+                    //System.out.println(axiom.toString());
+                    String relType = axiom.getProperty().getIRI().getShortForm();
+                    OWLLiteral value = (OWLLiteral) axiom.getValue();
+                    String valueStr = value.getLiteral();
+                    newNode.setProperty(relType, valueStr);
+                }
+
+                //get all axioms on each class and create relationships for each
+                Set<OWLClassExpression> classExpressions = cls.getEquivalentClasses(manager.getOntologies());
+                classExpressions.addAll(cls.getSuperClasses(manager.getOntologies()));
+                for(OWLClassExpression exp : classExpressions){
+                    if(exp.getClassExpressionType().equals(ClassExpressionType.OBJECT_SOME_VALUES_FROM)){
+                        OWLObjectSomeValuesFrom axiom = (OWLObjectSomeValuesFrom) exp;
+                        OWLObjectPropertyExpression objPropertyExpression = axiom.getProperty();
+                        String relation = objPropertyExpression.asOWLObjectProperty().getIRI().getShortForm();
+                        OWLClassExpression fillerClass = axiom.getFiller();
+                        if(fillerClass.getClassExpressionType().equals(ClassExpressionType.OWL_CLASS)){
+                            String fillerName = fillerClass.asOWLClass().getIRI().getShortForm();
+                            Node fillerNode = getOrCreateNodeWithUniqueFactory(fillerName, NodeTypes.CLASS, graphDB);
+                            newNode.createRelationshipTo(fillerNode, RelationshipType.withName(relation));
                         }
                     }
                 }
