@@ -20,6 +20,8 @@ public class KAAuthenticator {
     String loginParam = "login";
     String passwordParam = "password";
     String tempPass;
+    
+    public static KAAuthenticator Authenticator = null;
 
     protected HttpsURLConnection openHttpsConnection(final URL url) throws KeyManagementException, NoSuchAlgorithmException, IOException {
         // Create a trust manager that does not validate certificate chains
@@ -172,8 +174,18 @@ public class KAAuthenticator {
 
     public static void main(final String[] args) throws Exception {
         KAAuthenticator auth = new KAAuthenticator();
-        auth.setUsername("bscuba");
-        auth.setPassword("chuck6");
+        
+        // LEE:  10/18/2016
+        KAAuthenticator.Authenticator = auth; 
+        IevizCmd.readConfigFile();
+        String username = IevizCmd.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
+        String password = IevizCmd.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
+        auth.setUsername(username);
+        auth.setPassword(password);
+        
+//        auth.setUsername("bscuba");
+//        auth.setPassword("chuck6");
+        
         auth.authenticate();
         if (auth.tempPass == null) {
             System.err.println("Authentication failed");
