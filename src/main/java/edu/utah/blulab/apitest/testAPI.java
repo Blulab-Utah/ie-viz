@@ -1,26 +1,24 @@
 package edu.utah.blulab.apitest;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-import edu.utah.blulab.domainontology.DomainOntology;
-import edu.utah.blulab.domainontology.Modifier;
-import edu.utah.blulab.domainontology.Term;
-import edu.utah.blulab.domainontology.Variable;
+import edu.utah.blulab.domainontology.*;
 
 public class testAPI {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
 		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/98_heartFailure.owl", false);
-		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
-		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/pneumonia.owl");
-		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/vincipneu.owl.xml");
-		//DomainOntology domain = new DomainOntology("C:\\Users\\Bill\\Desktop\\carotid stenosis.owl"); 
-		//DomainOntology domain = new DomainOntology("DomainOntologyAPI/src/main/resources/colonoscopy_20141001.owl");
-		//DomainOntology domain = new DomainOntology("src/main/resources/colonoscopy_20141001.owl");
+		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
+		//DomainOntology domain = new DomainOntology("/Users/melissa/testOntologies/colonoscopyQuality.owl", false);
+		DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/demo.owl", false);
+
 		//domain.getVariable("leukocytosis");
 		//System.out.println(domain.getVariable("KA001014"));
 		//System.out.println(domain.getVariable("KA_1006"));
+		//System.out.println(domain.getVariable("KA_1003"));
 		
 		//System.out.println(domain.getVariable("KA_1005").hasNumericModifiers());
 		//System.out.println(domain.getVariable("KA_1006").hasNumericModifiers());
@@ -55,6 +53,30 @@ public class testAPI {
 		for(Modifier term : closureDictionary){
 			System.out.println(term.toString());
 		}
+
+		/**AnnotationObject ann1 = new AnnotationObject("I1000", domain);
+		ann1.setAnnotationType("mention");
+		ann1.setCorpus("corpus1");
+		ann1.setDocumentID("doc1");
+		ArrayList<String> spanList = new ArrayList<String>();
+		spanList.add("1|10");
+		ann1.setSpan(spanList);
+		domain.setAnnotationToVariable(ann1, domain.getVariable("KA_1005"));**/
+
+		System.out.println("********** Modifier Map: **********");
+		HashMap<String, ArrayList<Modifier>> modifierMap = domain.createModifierMap();
+		Iterator iterator = modifierMap.entrySet().iterator();
+		while (iterator.hasNext()){
+			Map.Entry<String, ArrayList<Modifier>> modifierEntry =
+					(Map.Entry<String, ArrayList<Modifier>>)iterator.next();
+			System.out.print(modifierEntry.getKey() + ":\t");
+			for(Modifier modifier : modifierEntry.getValue()){
+				System.out.print(modifier.getModName() + "  ");
+			}
+			System.out.println("");
+		}
 	}
+
+
 
 }

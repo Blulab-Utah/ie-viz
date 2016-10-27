@@ -67,6 +67,11 @@ public class Term {
 		return domain.getAnnotationList(domain.getClass(uri), 
 				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.ALT_CUI)));
 	}
+
+	public ArrayList<String> getSemanticType() {
+		return domain.getAnnotationList(domain.getClass(uri),
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.SEMANTIC_TYPE)));
+	}
 	
 	public ArrayList<Term> getPseudos(){
 		ArrayList<Term> pseudos = new ArrayList<Term>();
@@ -76,6 +81,11 @@ public class Term {
 			pseudos.add(new Term(pseudo.getIRI().toString(), domain));
 		}
 		return pseudos;
+	}
+
+	public ArrayList<String> getDefinition() {
+		return domain.getAnnotationList(domain.getClass(uri),
+				domain.getFactory().getOWLAnnotationProperty(IRI.create(OntologyConstants.DEFINITION)));
 	}
 	
 	public ArrayList<Term> getDirectParents(){
@@ -113,9 +123,11 @@ public class Term {
 		return "Term [prefTerm=" + this.getPrefTerm() + ", prefCode=" + this.getPrefCode()
 				+  ", synonym=" + this.getSynonym()
 				+ ", misspelling=" + this.getMisspelling()//+ ", abbreviation="
+				+ ", semanticType=" + this.getSemanticType()
 				//+ this.getAbbreviation() + ", subjExp=" + this.getSubjExp() + ", regex=" + this.getRegex()
-				//+ ", altCode=" + this.getAltCode() 
+				+ ", altCode=" + this.getAltCode()
 				+ ", pseudos=" + this.getPseudos()
+				//+ "\n\tPARENTS:  " + this.getAllParents()
 				+ "]";
 	}
 	

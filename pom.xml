@@ -52,6 +52,7 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -100,11 +101,19 @@
             </plugins>
         </pluginManagement>
     </build>
-    <!--
+    
+    <distributionManagement>
+    	<snapshotRepository>
+	      <id>nexus-snapshots</id>
+	      <name>Blunexus Repository</name>
+	      <url>https://blunexus.chpc.utah.edu/content/repositories/snapshots</url>
+	   </snapshotRepository>
+  	</distributionManagement>
+  	<!--
        -
        - SCM
        -
-       -->
+    -->
     <scm>
         <connection>scm:git:https://github.com/Blulab-Utah/ie-viz.git/</connection>
         <url>https://github.com/Blulab-Utah/ie-viz.git/</url>
