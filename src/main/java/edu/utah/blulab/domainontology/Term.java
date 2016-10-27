@@ -1,9 +1,6 @@
 package edu.utah.blulab.domainontology;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
@@ -117,16 +114,21 @@ public class Term {
 		parentAncestry = domain.getAllSuperClasses(domain.getClass(uri), false);
 		return parentAncestry;
 	}
+
+	public List<ClassPath> getClassPaths(){
+		return domain.getRootClassPaths(domain.getClass(uri));
+	}
 	
 	@Override
 	public String toString() {
 		return "Term [prefTerm=" + this.getPrefTerm() + ", prefCode=" + this.getPrefCode()
-				+  ", synonym=" + this.getSynonym()
-				+ ", misspelling=" + this.getMisspelling()//+ ", abbreviation="
-				+ ", semanticType=" + this.getSemanticType()
+				+ ", ancestry= " + this.getClassPaths()
+				//+  ", synonym=" + this.getSynonym()
+				//+ ", misspelling=" + this.getMisspelling()//+ ", abbreviation="
+				//+ ", semanticType=" + this.getSemanticType()
 				//+ this.getAbbreviation() + ", subjExp=" + this.getSubjExp() + ", regex=" + this.getRegex()
-				+ ", altCode=" + this.getAltCode()
-				+ ", pseudos=" + this.getPseudos()
+				//+ ", altCode=" + this.getAltCode()
+				//+ ", pseudos=" + this.getPseudos()
 				//+ "\n\tPARENTS:  " + this.getAllParents()
 				+ "]";
 	}

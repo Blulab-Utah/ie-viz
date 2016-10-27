@@ -1,9 +1,6 @@
 package edu.utah.blulab.domainontology;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
@@ -132,10 +129,15 @@ public class Modifier {
 		parentAncestry = domain.getAllSuperClasses(domain.getClass(uri), false);
 		return parentAncestry;
 	}
+
+	public List<ClassPath> getClassPaths(){
+		return domain.getRootClassPaths(domain.getClass(uri));
+	}
 	
 	@Override
 	public String toString() {
 		return "\n\tModifier: " + this.getModName() + ", uri=" + uri
+				+ ", ancestry= " + this.getClassPaths()
 				//+ ", items=" + this.getItems()
 				//+ "\n\t\t Pseudos=" + this.getPseudos()
 				//+ "\n\t\t Closures=" + this.getClosures()

@@ -11,9 +11,8 @@ public class testAPI {
 
 	public static void main(String[] args) throws Exception {
 		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/98_heartFailure.owl", false);
-		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", true);
-		//DomainOntology domain = new DomainOntology("/Users/melissa/testOntologies/colonoscopyQuality.owl", false);
-		DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/demo.owl", false);
+		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", false);
+		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/demo.owl", false);
 
 		//domain.getVariable("leukocytosis");
 		//System.out.println(domain.getVariable("KA001014"));

@@ -1,10 +1,7 @@
 package edu.utah.blulab.domainontology;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
@@ -368,20 +365,8 @@ public class DomainOntology {
 
 	public ArrayList<OWLClassExpression> getEquivalentObjectPropertyFillerList(OWLClass cls, ArrayList<OWLObjectProperty> props){
 		ArrayList<OWLClassExpression> filler = new ArrayList<OWLClassExpression>();
-		Set<OWLClassExpression> exp = cls.getEquivalentClasses(ontology);
-		for(OWLClassExpression ce : exp){
-			if(ce.getClassExpressionType().compareTo(ClassExpressionType.OBJECT_SOME_VALUES_FROM) == 0){
-				OWLObjectSomeValuesFrom obj = (OWLObjectSomeValuesFrom) ce;
-				OWLObjectPropertyExpression propExp = obj.getProperty();
-				//System.out.println(propExp);
-				if(props.contains(propExp.asOWLObjectProperty())){
-					OWLClassExpression fillerClass = obj.getFiller();
-					//System.out.println("FILLER: " + fillerClass.toString());
-					filler.add(fillerClass);
-					
-				}
-				
-			}
+		for(OWLObjectProperty prop : props){
+			filler.addAll(this.getEquivalentObjectPropertyFillerList(cls, prop));
 		}
 		return filler;
 	}
@@ -940,4 +925,42 @@ public class DomainOntology {
 	public void createVariable(){
 		//TODO: add method to create variables in domain.
 	}
+
+	private static void getPath(OWLClass cls, ClassPath path, List<ClassPath> paths){
+        //add to list of paths if more than one exists
+        if(!paths.contains(path)){
+            paths.add(path);
+        }
+
+        //add to current path
+        path.add(0, cls);
+        //iterate over parents
+        List<OWLClass> parents = new ArrayList<OWLClass>();
+        for(OWLClassExpression clsExp : cls.getSuperClasses(manager.getOntologies())){
+            if(clsExp.getClassExpressionType().equals(ClassExpressionType.OWL_CLASS)){
+                parents.add(clsExp.asOWLClass());
+            }
+        }
+
+        //if only one parent add to path
+        if(parents.size() == 1){
+            getPath(parents.get(0), path, paths);
+        }else if(parents.size() > 1){
+            //clone current path and start new one
+            for(int i = 1; i < parents.size(); i++){
+                getPath(parents.get(i), new ClassPath(path), paths);
+            }
+            getPath(parents.get(0), path, paths);
+        }
+    }
+
+    public static List<ClassPath> getRootClassPaths(OWLClass cls){
+        if(cls != null){
+            //get paths to root
+            List<ClassPath> paths = new ArrayList<ClassPath>();
+            getPath(cls, new ClassPath(), paths);
+            return paths;
+        }
+        return Collections.EMPTY_LIST;
+    }
 }

@@ -197,12 +197,17 @@ public class Variable {
 		return parentAncestry;
 	}
 
+	public List<ClassPath> getClassPaths(){
+		return domain.getRootClassPaths(domain.getClass(uri));
+	}
+
 
 	@Override
 	public String toString() {
 		return "Variable [varID=" + this.getVarID() + ", varName=" + this.getVarName()
 				//+ ", category=" + this.getSemanticCategory()
 				//+ ", parentAncestry=" + this.getAllParents()
+				+ ", ancestry= " + this.getClassPaths()
 				+ ", type= " + this.getVariableType()
 				+ ", concept=" + this.getAnchor().toString() 
 				//+ "\n\t, modifiers=" + this.getModifiers()
