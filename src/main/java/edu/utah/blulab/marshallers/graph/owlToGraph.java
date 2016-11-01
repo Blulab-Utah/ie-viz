@@ -96,7 +96,12 @@ public class owlToGraph {
                         if(fillerClass.getClassExpressionType().equals(ClassExpressionType.OWL_CLASS)){
                             String fillerName = fillerClass.asOWLClass().getIRI().getShortForm();
                             Node fillerNode = getOrCreateNodeWithUniqueFactory(fillerName, NodeTypes.CLASS, graphDB);
-                            newNode.createRelationshipTo(fillerNode, RelationshipType.withName(relation));
+                           // newNode.createRelationshipTo(fillerNode, RelationshipType.withName(relation));
+                            Relationship propRelation = newNode.createRelationshipTo(fillerNode,
+                                    RelationshipType.withName(relation));
+                            propRelation.setProperty("uri",
+                                    objPropertyExpression.asOWLObjectProperty().getIRI().toString());
+
                         }
                     }
                 }
