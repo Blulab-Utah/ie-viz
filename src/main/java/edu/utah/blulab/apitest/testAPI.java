@@ -11,7 +11,7 @@ public class testAPI {
 
 	public static void main(String[] args) throws Exception {
 		//DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/98_heartFailure.owl", false);
-		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/colonoscopyQuality.owl", false);
+		DomainOntology domain = new DomainOntology("/Users/melissa/git/useCases/reasonForExam.owl", false);
 		//DomainOntology domain = new DomainOntology("/Users/melissa/Desktop/demo.owl", false);
 
 		//domain.getVariable("leukocytosis");
@@ -35,7 +35,7 @@ public class testAPI {
 			System.out.println(modifier.toString());
 		}
 		
-		System.out.println("********** Anchor Dictionary: **********");
+		/**System.out.println("********** Anchor Dictionary: **********");
 		ArrayList<Term> anchorDictionary = domain.createAnchorDictionary();
 		for(Term term : anchorDictionary){
 			System.out.println(term.toString());
@@ -62,7 +62,7 @@ public class testAPI {
 		ann1.setSpan(spanList);
 		domain.setAnnotationToVariable(ann1, domain.getVariable("KA_1005"));**/
 
-		System.out.println("********** Modifier Map: **********");
+		/**System.out.println("********** Modifier Map: **********");
 		HashMap<String, ArrayList<Modifier>> modifierMap = domain.createModifierMap();
 		Iterator iterator = modifierMap.entrySet().iterator();
 		while (iterator.hasNext()){
@@ -73,7 +73,7 @@ public class testAPI {
 				System.out.print(modifier.getModName() + "  ");
 			}
 			System.out.println("");
-		}
+		}**/
 	}
 
 

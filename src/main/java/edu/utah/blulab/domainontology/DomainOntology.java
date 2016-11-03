@@ -515,13 +515,13 @@ public class DomainOntology {
 	public ArrayList<Modifier> createModifierDictionary() throws Exception{
 		ArrayList<Modifier> allMods = new ArrayList<Modifier>();
 		
-		for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.LINGUISTIC_MODIFIER)), false)){
+		for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.LINGUISTIC_MODIFIER)), true)){
 			allMods.add(new Modifier(cls.getIRI().toString(), this));
 		}
-		for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.SEMANTIC_MODIFIER)), false)){
+		for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.SEMANTIC_MODIFIER)), true)){
 			allMods.add(new Modifier(cls.getIRI().toString(), this));
 		}
-		for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.NUMERIC_MODIFIER)), false)){
+		for(OWLClass cls : this.getAllSubClasses(factory.getOWLClass(IRI.create(OntologyConstants.NUMERIC_MODIFIER)), true)){
 			allMods.add(new Modifier(cls.getIRI().toString(), this));
 		}
 		return allMods;
