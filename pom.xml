@@ -54,9 +54,11 @@
 			<artifactId>commons-cli</artifactId>
 			<version>1.2</version>
 		</dependency>
-
-
-
+	 <dependency>
+	  <groupId>org.json</groupId>
+	  <artifactId>json</artifactId>
+	  <version>20140107</version>
+	 </dependency>
 	</dependencies>
 
 	<build>
@@ -138,6 +140,9 @@
 									<root>src/test/java</root>
 									<root>src/test/resources</root>
 								</roots>
+                                                                
+                                                                <mainClass>edu.utah.blulab.commandline.KAAuthenticator</mainClass>
+                                                                
 							</configuration>
 						</execution>
 					</executions>
