@@ -10,6 +10,8 @@ import java.security.cert.*;
 import java.util.*;
 
 import javax.net.ssl.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class KAAuthenticator {
 
@@ -20,22 +22,24 @@ public class KAAuthenticator {
     String loginParam = "login";
     String passwordParam = "password";
     String tempPass;
-    
+
     public static KAAuthenticator Authenticator = null;
 
     protected HttpsURLConnection openHttpsConnection(final URL url) throws KeyManagementException, NoSuchAlgorithmException, IOException {
         // Create a trust manager that does not validate certificate chains
-        TrustManager[] trustAllCerts = new TrustManager[] {new X509TrustManager() {
+        TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
             @Override
             public java.security.cert.X509Certificate[] getAcceptedIssuers() {
                 return null;
             }
 
             @Override
-            public void checkClientTrusted(final X509Certificate[] arg0, final String arg1) throws CertificateException {}
+            public void checkClientTrusted(final X509Certificate[] arg0, final String arg1) throws CertificateException {
+            }
 
             @Override
-            public void checkServerTrusted(final X509Certificate[] chain, final String authType) throws CertificateException {}
+            public void checkServerTrusted(final X509Certificate[] chain, final String authType) throws CertificateException {
+            }
         }};
         // Install the all-trusting trust manager
         final SSLContext sc = SSLContext.getInstance("SSL");
@@ -51,7 +55,7 @@ public class KAAuthenticator {
 
         // Install the all-trusting host verifier
         HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-        HttpsURLConnection con = (HttpsURLConnection)url.openConnection();
+        HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
         return con;
     }
 
@@ -76,6 +80,9 @@ public class KAAuthenticator {
         con.setRequestProperty("Content-length", String.valueOf(query.length()));
         con.setDoOutput(true);
         con.setDoInput(true);
+
+        Object o = con.getOutputStream();
+
         DataOutputStream output = new DataOutputStream(con.getOutputStream());
 
         output.writeBytes(query);
@@ -92,8 +99,9 @@ public class KAAuthenticator {
     }
 
     public InputStream openAuthenticatedConnection(final String url) throws KeyManagementException, NoSuchAlgorithmException, MalformedURLException, IOException {
-        if (tempPass == null)
+        if (tempPass == null) {
             throw new IllegalStateException("Not authenticated. Call authenticate() with valid username/password before calling this method");
+        }
         System.out.println("Opening URL " + url);
         HttpsURLConnection con = this.openHttpsConnection(new URL(url));
         con.setRequestProperty("Cookie", "usr=" + URLEncoder.encode(username, "UTF-8") + "; pwd=" + URLEncoder.encode(tempPass, "UTF-8"));
@@ -174,28 +182,36 @@ public class KAAuthenticator {
 
     public static void main(final String[] args) throws Exception {
         KAAuthenticator auth = new KAAuthenticator();
-        
+
         // LEE:  10/18/2016
-        KAAuthenticator.Authenticator = auth; 
+        KAAuthenticator.Authenticator = auth;
         IevizCmd.readConfigFile();
         String username = IevizCmd.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
         String password = IevizCmd.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
         auth.setUsername(username);
         auth.setPassword(password);
-        
+
 //        auth.setUsername("bscuba");
 //        auth.setPassword("chuck6");
-        
         auth.authenticate();
         if (auth.tempPass == null) {
             System.err.println("Authentication failed");
         }
         InputStream xml = auth.openAuthenticatedConnection("https://blulab.chpc.utah.edu/KA/?c=Ontologyc&act=exportToOwl&id_=130");
-        System.out.println(KAAuthenticator.streamToString(xml));
+        // System.out.println(KAAuthenticator.streamToString(xml));
+        xml.close();
 
-        InputStream json = auth.openAuthenticatedConnection("https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
-        System.out.println(KAAuthenticator.streamToString(json));
+        InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection("https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
+        StringBuffer sb = KAAuthenticator.streamToString(json);
+        json.close();
+        String jsstr = sb.toString();
+        JSONArray jarray = new JSONArray(jsstr);
+        for (int i = 0; i < jarray.length(); i++) {
+            JSONObject jo = (JSONObject) jarray.get(i);
+            String name = jo.getString("name");
+            System.out.println(name);
+        }
+
     }
 
 }
-
