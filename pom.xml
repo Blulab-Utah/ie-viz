@@ -140,9 +140,6 @@
 									<root>src/test/java</root>
 									<root>src/test/resources</root>
 								</roots>
-                                                                
-                                                                <mainClass>edu.utah.blulab.commandline.KAAuthenticator</mainClass>
-                                                                
 							</configuration>
 						</execution>
 					</executions>
