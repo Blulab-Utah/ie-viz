@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: IE-Viz Commandline
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: edu.utah.blulab.commandline.IevizCmd
+
