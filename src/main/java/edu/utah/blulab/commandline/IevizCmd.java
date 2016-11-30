@@ -25,8 +25,8 @@ public class IevizCmd {
 
     private static Properties ConfigProperties = null;
     private static Map<String, String[]> ArgMacros = new HashMap<String, String[]>();
-    private static String ConfigFilePathname = "resources/config";
-    private static String MacroFilePathname = "resources/macros";
+    private static String ConfigFilePathname = "src/main/resources/config";
+    private static String MacroFilePathname = "src/main/resources/macros";
     public static String USERNAME_PARAMETER = "KA_username";
     public static String PASSWORD_PARAMETER = "KA_password";
 

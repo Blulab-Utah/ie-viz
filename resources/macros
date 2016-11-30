@@ -1,4 +1,0 @@
-macro1=-run,ontology1,documents1,workflow1
-macro3=-ontologies
-macro2=-run,ontology2,documents2,workflow2
-macro5=-listmacros
