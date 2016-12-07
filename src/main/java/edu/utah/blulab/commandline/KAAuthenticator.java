@@ -59,13 +59,13 @@ public class KAAuthenticator {
         return con;
     }
     
-     public static boolean doAuthentication() {
+     public static boolean doAuthentication(IevizCmd icmd) {
         // Lee: TEST
         if (KAAuthenticator.Authenticator == null || KAAuthenticator.Authenticator.tempPass == null) {
             try {
                 KAAuthenticator auth = KAAuthenticator.Authenticator = new KAAuthenticator();
-                String username = IevizCmd.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
-                String password = IevizCmd.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
+                String username = icmd.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
+                String password = icmd.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
                 auth.setUsername(username);
                 auth.setPassword(password);
                 System.out.println("doAuthentication():  Username=" + username + ",Password=" + password);
@@ -207,9 +207,9 @@ public class KAAuthenticator {
 
         // LEE:  10/18/2016
         KAAuthenticator.Authenticator = auth;
-        IevizCmd.readConfigFile();
-        String username = IevizCmd.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
-        String password = IevizCmd.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
+        IevizCmd.StaticIEVizCmd.readConfigFile();
+        String username = IevizCmd.StaticIEVizCmd.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
+        String password = IevizCmd.StaticIEVizCmd.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
         auth.setUsername(username);
         auth.setPassword(password);
 

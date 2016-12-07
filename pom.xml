@@ -59,6 +59,11 @@
 	  <artifactId>json</artifactId>
 	  <version>20140107</version>
 	 </dependency>
+	 <dependency>
+	  <groupId>Moonstone</groupId>
+	  <artifactId>Moonstone</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	 </dependency>
 	</dependencies>
 
 	<build>

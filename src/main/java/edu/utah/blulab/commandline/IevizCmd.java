@@ -8,7 +8,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import static java.lang.System.out;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,13 +28,28 @@ public class IevizCmd {
     private static String MacroFilePathname = "src/main/resources/macros";
     public static String USERNAME_PARAMETER = "KA_username";
     public static String PASSWORD_PARAMETER = "KA_password";
+    public static int NLPToolArgNum = 4;
+    public static String NLPToolAdviceString = "<input file directory> <domain ontology> <nlp tool to run> <output format>";
+
+    public static IevizCmd StaticIEVizCmd = null;
+
+    public static String SSLConnectionString = "https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active";
 
     public static void main(String[] args) {
-        readResourceFiles();
-        runArgs(args);
+        IevizCmd icmd = new IevizCmd();
+        icmd.processCommandLineArgs(args);
     }
 
-    private static void runArgs(String[] args) {
+    public IevizCmd() {
+        StaticIEVizCmd = this;
+        this.readResourceFiles();
+    }
+
+    public void processCommandLineArgs(String[] args) {
+        this.runArgs(args);
+    }
+
+    private void runArgs(String[] args) {
         try {
             Options options = gatherOptions(args);
             CommandLine line = new BasicParser().parse(options, args);
@@ -95,13 +109,13 @@ public class IevizCmd {
         }
     }
 
-    private static Options gatherOptions(String[] args) {
+    private Options gatherOptions(String[] args) {
         Options options = new Options();
         options.addOption("h", "help", false, "print this message");
         options.addOption("ont", "ontologies", false, "view a list of available ontologies");
         options.addOption("wf", "workflows", false, "provides a list of available NLP workflows.");
         options.addOption("eval", "evaluationTool", true, "specify which evaluation tool to output the results to");
-        OptionBuilder builder = OptionBuilder.hasArgs(3).withArgName("<ontology> <documents> <workflow>");
+        OptionBuilder builder = OptionBuilder.hasArgs(NLPToolArgNum).withArgName("<ontology> <documents> <workflow>");
 
         // LEE: 10/21/2016
         options.addOption("setKAPassword", true, "Store KA password in config file");
@@ -120,11 +134,19 @@ public class IevizCmd {
 
     // optvals:  <input file directory> <domain ontology> <nlp tool to run> 
     //          <output format>
-    private static void runNLPTool(String[] optvals) {
+    private void runNLPTool(String[] optvals) {
+        String inputdir = optvals[0];
+        String ontology = optvals[1];
+        String nlptool = optvals[2];
+        String outputformat = optvals[4];
+        if ("moonstone".equals(nlptool)) {
+            
+//            new MoonstoneRuleInterface();
+        }
         System.out.println("Running NLP tool; args=" + concatenate(optvals, ' '));
     }
 
-    private static void runMacro(String mname) {
+    private void runMacro(String mname) {
         if (mname != null) {
             String[] margs = ArgMacros.get(mname);
             if (margs != null) {
@@ -135,7 +157,7 @@ public class IevizCmd {
         }
     }
 
-    private static void createMacro(String str, String[] args) {
+    private void createMacro(String str, String[] args) {
         String[] margs = gatherMacroArgs(str, args);
         if (margs != null) {
             ArgMacros.put(str, margs);
@@ -144,7 +166,7 @@ public class IevizCmd {
         }
     }
 
-    private static void listMacros() {
+    private void listMacros() {
         if (ArgMacros != null && !ArgMacros.isEmpty()) {
             StringBuffer sb = new StringBuffer();
             for (String macro : ArgMacros.keySet()) {
@@ -161,7 +183,7 @@ public class IevizCmd {
     }
 
     // Lee, 11/10/2016
-    private static void showConfigFile() {
+    private void showConfigFile() {
         if (ConfigProperties != null) {
             for (Enumeration e = ConfigProperties.propertyNames(); e.hasMoreElements();) {
                 String property = (String) e.nextElement();
@@ -171,14 +193,12 @@ public class IevizCmd {
         }
     }
 
-    private static void ontologies() {
-
-        // LEE: 10/21/2016
+    private void ontologies() {
         try {
             int x = 1;
-            if (KAAuthenticator.doAuthentication()) {
+            if (KAAuthenticator.doAuthentication(this)) {
                 InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection(
-                        "https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
+                        SSLConnectionString);
                 StringBuffer sb = KAAuthenticator.streamToString(json);
                 json.close();
                 String jsstr = sb.toString();
@@ -195,18 +215,18 @@ public class IevizCmd {
         }
     }
 
-    private static void workflows() {
+    private void workflows() {
     }
 
-    private static void evaluationTool(String optVal) {
+    private void evaluationTool(String optVal) {
     }
 
-    public static void help(Options options) {
+    public void help(Options options) {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("help", options);
     }
 
-    public static void readMacroFile() {
+    public void readMacroFile() {
         File file = new File(MacroFilePathname);
         if (file.exists()) {
             try {
@@ -232,7 +252,7 @@ public class IevizCmd {
         }
     }
 
-    public static void writeMacroFile() {
+    public void writeMacroFile() {
         try {
             BufferedWriter out = new BufferedWriter(new FileWriter(MacroFilePathname));
             StringBuilder sb = new StringBuilder();
@@ -252,7 +272,7 @@ public class IevizCmd {
         }
     }
 
-    public static void writeConfigFile() {
+    public void writeConfigFile() {
         try {
             if (ConfigProperties != null) {
                 BufferedWriter out = new BufferedWriter(new FileWriter(ConfigFilePathname));
@@ -270,8 +290,7 @@ public class IevizCmd {
         }
     }
 
-    // LEE: 10/18/2016
-    public static void readConfigFile() {
+    public void readConfigFile() {
         File file = new File(ConfigFilePathname);
         if (file.exists()) {
             try {
@@ -285,14 +304,14 @@ public class IevizCmd {
         }
     }
 
-    public static String getConfigProperty(String property) {
+    public String getConfigProperty(String property) {
         if (ConfigProperties != null && property != null) {
             return ConfigProperties.getProperty(property);
         }
         return null;
     }
 
-    public static String setConfigProperty(String property, String value) {
+    public String setConfigProperty(String property, String value) {
         if (ConfigProperties != null && property != null && value != null) {
             ConfigProperties.put(property, value);
             writeConfigFile();
@@ -300,12 +319,12 @@ public class IevizCmd {
         return null;
     }
 
-    public static void readResourceFiles() {
+    public void readResourceFiles() {
         readConfigFile();
         readMacroFile();
     }
 
-    public static String[] gatherMacroArgs(String mname, String[] args) {
+    public String[] gatherMacroArgs(String mname, String[] args) {
         String[] margs = null;
         if (args != null) {
             int mstart = -1;
@@ -325,7 +344,7 @@ public class IevizCmd {
         return margs;
     }
 
-    private static String concatenate(String[] strs, char delim) {
+    private String concatenate(String[] strs, char delim) {
         if (strs != null) {
             String cstr = "";
             for (int i = 0; i < strs.length; i++) {
