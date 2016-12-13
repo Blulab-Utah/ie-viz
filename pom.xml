@@ -9,7 +9,7 @@
     <organization>
         <name>University of Utah</name>
     </organization>
-    <url>https://github.com/Blulab-Utah/ie-viz</url>
+    <url>https://github.com/Blulab-Utah/domainOntology.git</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
