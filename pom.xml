@@ -3,7 +3,7 @@
 
     <groupId>edu.utah.blulab</groupId>
     <artifactId>domainontology</artifactId>
-    <version>2016.12.1-SNAPSHOT</version>
+    <version>2016.12.1</version>
     <packaging>jar</packaging>
     <name>DomainOntologyAPI</name>
     <organization>
@@ -129,6 +129,6 @@
     <scm>
         <connection>scm:git:https://github.com/Blulab-Utah/ie-viz.git/</connection>
         <url>https://github.com/Blulab-Utah/ie-viz.git/</url>
-      <tag>HEAD</tag>
+      <tag>domainontology-2016.12.1</tag>
   </scm>
 </project>
