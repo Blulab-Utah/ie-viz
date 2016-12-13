@@ -127,8 +127,8 @@
        -
     -->
     <scm>
-        <connection>scm:git:https://github.com/Blulab-Utah/ie-viz.git/</connection>
-        <url>https://github.com/Blulab-Utah/ie-viz.git/</url>
+        <connection>scm:git:https://github.com/Blulab-Utah/domainOntology.git/</connection>
+        <url>https://github.com/Blulab-Utah/domainOntology.git/</url>
       <tag>domainontology-2016.12.0</tag>
   </scm>
 </project>
