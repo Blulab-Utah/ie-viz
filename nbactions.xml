@@ -10,7 +10,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath edu.utah.blulab.commandline.IevizCmd -runmacro macro1</exec.args>
+                <exec.args>-classpath %classpath edu.utah.blulab.commandline.IevizCmd -iterate</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>
@@ -39,7 +39,7 @@
                 <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
             </goals>
             <properties>
-                <exec.args>-classpath %classpath edu.utah.blulab.commandline.IevizCmd -runmacro macro1</exec.args>
+                <exec.args>-classpath %classpath edu.utah.blulab.commandline.IevizCmd -iterate</exec.args>
                 <exec.executable>java</exec.executable>
             </properties>
         </action>

@@ -3,359 +3,378 @@ package edu.utah.blulab.commandline;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Logger;
+
 import org.apache.commons.cli.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/**
- * Created by Bill Scuba on 9/20/2016.
- */
 public class IevizCmd {
 
-    private static Properties ConfigProperties = null;
-    private static Map<String, String[]> ArgMacros = new HashMap<String, String[]>();
-    private static String ConfigFilePathname = "src/main/resources/config";
-    private static String MacroFilePathname = "src/main/resources/macros";
-    public static String USERNAME_PARAMETER = "KA_username";
-    public static String PASSWORD_PARAMETER = "KA_password";
-    public static int NLPToolArgNum = 4;
-    public static String NLPToolAdviceString = "<input file directory> <domain ontology> <nlp tool to run> <output format>";
+	private Properties configProperties = null;
+	private Map<String, String[]> argMacros = new HashMap<String, String[]>();
 
-    public static IevizCmd StaticIEVizCmd = null;
+	// 1/14/2016
+	private String errorString = null;
+	private static Logger logger = Logger.getLogger(IevizCmd.class.getName());
 
-    public static String SSLConnectionString = "https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active";
+	public static String USERNAME_PARAMETER = "KA_username";
+	public static String PASSWORD_PARAMETER = "KA_password";
+	private static String ResourceDirectoryName = "resources";
+        
+        private static String ConfigFileName = "config";
+	private static String MacroFileName = "macros";
+        
+//	private static String ConfigFileName = ResourceDirectoryName + File.separatorChar + "config";
+//	private static String MacroFileName = ResourceDirectoryName + File.separatorChar + "macros";
 
-    public static void main(String[] args) {
-        IevizCmd icmd = new IevizCmd();
-        icmd.processCommandLineArgs(args);
-    }
+	private static String[][] optionInfo = { { "h", "help", "false", "print this message" },
+			{ "ont", "ontologies", "false", "view a list of available ontologies" },
+			{ "wf", "workflows", "false", "provides a list of available NLP workflows." },
+			{ "eval", "evaluationTool", "true", "specify which evaluation tool to output the results to" },
+			{ "setKAPassword", "true", "Store KA password in config file" },
+			{ "setKAUsername", "true", "Store KA username in config file" },
+			{ "showconfig", "false", "Show configuration file" }, { "listmacros", "false", "List command arg macros" },
+			{ "createmacro", "true", "Create command arg macro" }, { "rm", "runmacro", "true", "Run macro" },
+			{ "run", "runieviz", "runs ieviz", "ontology <documents> <workflow>", "3" },
+			{ "iterate", "false", "Allow iterative user input" } };
 
-    public IevizCmd() {
-        StaticIEVizCmd = this;
-        this.readResourceFiles();
-    }
+	public static void main(String[] args) {
+		IevizCmd iec = new IevizCmd();
+		try {
+			iec.readConfigFile();
+			iec.readMacroFile();
+			iec.localAuthentication();
+			iec.runArgs(args);
+		} catch (Exception e) {
+			iec.handleError(e);
+		}
+	}
 
-    public void processCommandLineArgs(String[] args) {
-        this.runArgs(args);
-    }
+	private void run(String[] optVals) throws CommandLineException {
+		if (optVals != null) {
+			for (String oval : optVals) {
+				System.out.println(oval);
+			}
+		} else {
+			throw new CommandLineException("Missing options for run");
+		}
+	}
 
-    private void runArgs(String[] args) {
-        try {
-            Options options = gatherOptions(args);
-            CommandLine line = new BasicParser().parse(options, args);
+	private void runArgs(String[] args) throws CommandLineException {
+		try {
+			Options options = extractOptions(args);
+			CommandLineParser parser = new BasicParser();
+			CommandLine line = parser.parse(options, args);
+			String astr;
 
-            String macroName = line.getOptionValue("createmacro");
-            if (macroName != null) {
-                createMacro(macroName, args);
-                return; // Don't execute the commands within the macro scope
-            }
+			if ((astr = line.getOptionValue("rm")) != null) {
+				runMacro(astr);
+			} else if ((astr = line.getOptionValue("createmacro")) != null) {
+				createMacro(astr, args);
+			} else if (line.hasOption("run")) {
+				String[] optVals = line.getOptionValues("run");
+				run(optVals);
+			} else if (line.hasOption("help")) {
+				help(options);
+			} else if (line.hasOption("ontologies")) {
+				ontologies();
+			} else if (line.hasOption("workflows")) {
+				workflows();
+			} else if (line.hasOption("evaluationTool")) {
+				String optVal = line.getOptionValue("evaluationTool");
+				evaluationTool(optVal);
+			} else if (line.hasOption("showconfig")) {
+				showConfigFile();
+			} else if (line.hasOption("listmacros")) {
+				listMacros();
+			} else if ((astr = line.getOptionValue("setKAPassword")) != null) {
+				setConfigProperty(PASSWORD_PARAMETER, astr);
+			} else if ((astr = line.getOptionValue("setKAUsername")) != null) {
+				setConfigProperty(USERNAME_PARAMETER, astr);
+			} else if (line.hasOption("iterate")) {
+				iterateUserInput();
+			}
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to run command line arguments: " + e.toString());
+		}
+	}
 
-            macroName = line.getOptionValue("runmacro");
-            if (macroName != null) {
-                runMacro(macroName);
-            }
+	private Options extractOptions(String[] args) throws CommandLineException {
+		Options options = new Options();
+		CommandLine line = null;
+		for (String[] oinfo : optionInfo) {
+			try {
+				switch (oinfo.length) {
+				case 3:
+					String opt = oinfo[0];
+					Boolean hasArg = Boolean.parseBoolean(oinfo[1]);
+					String description = oinfo[2];
+					options.addOption(opt, hasArg, description);
+					break;
+				case 4:
+					opt = oinfo[0];
+					String longer = oinfo[1];
+					hasArg = Boolean.parseBoolean(oinfo[2]);
+					description = oinfo[3];
+					options.addOption(opt, longer, hasArg, description);
+					break;
+				case 5:
+					opt = oinfo[0];
+					longer = oinfo[1];
+					description = oinfo[2];
+					String template = oinfo[3];
+					int numargs = Integer.parseInt(oinfo[4]);
+					Option o = OptionBuilder.hasArgs(numargs).withArgName(template).withLongOpt(longer)
+							.withDescription(description).create(opt);
+					options.addOption(o);
+					break;
+				default:
+					break;
+				}
+			} catch (Exception e) {
+				throw new CommandLineException("Invalid command line definition: " + oinfo);
+			}
+		}
+		return options;
+	}
 
-            if (line.hasOption("run")) {
-                String[] optVals = line.getOptionValues("run");
-                runNLPTool(optVals);
-            }
+	private void iterateUserInput() throws CommandLineException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		boolean quit = false;
+		String str = null;
+		String laststr = null;
+		while (!quit) {
+			System.out.print("IEViz Command Line> ");
+			try {
+				str = in.readLine();
+				if (str != null && str.toLowerCase().contains("quit")) {
+					return;
+				}
+				if ("!!".equals(str) && laststr != null) {
+					str = laststr;
+				}
+				String[] args = str.split(" ");
+				runArgs(args);
+			} catch (Exception e) {
+				System.out.println("Error executing command: " + str);
+			}
+		}
+	}
 
-            if (line.hasOption("help")) {
-                help(options);
-            }
+	private void createMacro(String str, String[] args) throws CommandLineException {
+		String[] margs = new String[args.length - 1];
+		for (int i = 1; i < args.length; i++) {
+			margs[i - 1] = args[i];
+		}
+		argMacros.put(str, margs);
+		writeMacroFile();
+	}
 
-            if (line.hasOption("ontologies")) {
-                ontologies();
-            }
+	public void runMacro(String mname) throws CommandLineException {
+		try {
+			String[] margs = this.argMacros.get(mname);
+			if (margs == null) {
+				throw new CommandLineException("No macro defined for: " + mname);
+			}
+			this.runArgs(margs);
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to run macro " + mname + ": " + e.toString());
+		}
+	}
 
-            if (line.hasOption("workflows")) {
-                workflows();
-            }
+	private void listMacros() throws CommandLineException {
+		if (argMacros != null && !argMacros.isEmpty()) {
+			StringBuffer sb = new StringBuffer();
+			for (String macro : argMacros.keySet()) {
+				sb.append(macro + ": ");
+				String[] args = (String[]) argMacros.get(macro);
+				for (int i = 0; i < args.length; i++) {
+					sb.append(args[i]);
+					if (i < args.length - 1) {
+						sb.append(" ");
+					}
+				}
+				sb.append("\n");
+			}
+			System.out.println(sb.toString());
+		} else {
+			System.out.println("No macros");
+		}
+	}
 
-            if (line.hasOption("evaluationTool")) {
-                String optVal = line.getOptionValue("evaluationTool");
-                evaluationTool(optVal);
-            }
+	// Lee, 11/10/2016
+	private void showConfigFile() throws CommandLineException {
+		if (configProperties != null) {
+			for (Enumeration e = configProperties.propertyNames(); e.hasMoreElements();) {
+				String property = (String) e.nextElement();
+				String value = (String) configProperties.getProperty(property);
+				System.out.println("Property=" + property + ", Value=" + value);
+			}
+		}
+	}
 
-            if (line.hasOption("showconfig")) {
-                showConfigFile();
-            }
+	private void ontologies() throws CommandLineException {
+		try {
+			InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection(
+					"https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
+			String jsstr = Utilities.convertStreamToString(json);
+			if (jsstr != null) {
+				JSONArray jarray = new JSONArray(jsstr);
+				for (int i = 0; i < jarray.length(); i++) {
+					JSONObject jo = (JSONObject) jarray.get(i);
+					String name = jo.getString("name");
+					System.out.println(name);
+				}
+			} else {
+				throw new CommandLineException("Unable to display ontologies: Server returned null string");
+			}
 
-            if (line.hasOption("listmacros")) {
-                listMacros();
-            }
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to display ontologies: " + e.toString());
+		}
+	}
 
-            String KAPassword = line.getOptionValue("setKAPassword");
-            if (KAPassword != null) {
-                setConfigProperty(PASSWORD_PARAMETER, KAPassword);
-            }
+	private void workflows() throws CommandLineException {
+	}
 
-            String KAUsername = line.getOptionValue("setKAUsername");
-            if (KAUsername != null) {
-                setConfigProperty(USERNAME_PARAMETER, KAUsername);
-            }
-        } catch (ParseException exp) {
-            System.out.println("Unexpected exception:" + exp.getMessage());
-        }
-    }
+	private void evaluationTool(String optVal) throws CommandLineException {
+	}
 
-    private Options gatherOptions(String[] args) {
-        Options options = new Options();
-        options.addOption("h", "help", false, "print this message");
-        options.addOption("ont", "ontologies", false, "view a list of available ontologies");
-        options.addOption("wf", "workflows", false, "provides a list of available NLP workflows.");
-        options.addOption("eval", "evaluationTool", true, "specify which evaluation tool to output the results to");
-        OptionBuilder builder = OptionBuilder.hasArgs(NLPToolArgNum).withArgName("<ontology> <documents> <workflow>");
+	public void help(Options options) throws CommandLineException {
+		HelpFormatter formatter = new HelpFormatter();
+		formatter.printHelp("help", options);
+	}
 
-        // LEE: 10/21/2016
-        options.addOption("setKAPassword", true, "Store KA password in config file");
-        options.addOption("setKAUsername", true, "Store KA username in config file");
+	public void readConfigFile() throws CommandLineException {
+		try {
+			File file = Utilities.getResourceFile(this.getClass(), ConfigFileName);
+			if (file.exists()) {
+				configProperties = new Properties();
+				configProperties.load(new FileReader(file));
+			} else {
+				System.out.println("readConfigFile:  Does not exist=" + file.getAbsolutePath());
+				throw new CommandLineException("Unable to read config file:  File does not exist");
+			}
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to read config file: " + e.toString());
+		}
+	}
 
-        options.addOption("showconfig", false, "Show configuration file");
-        options.addOption("listmacros", false, "List command arg macros");
-        options.addOption("createmacro", true, "Create command arg macro");
-        options.addOption("runmacro", true, "Run previously defined macro");
+	public void writeConfigFile() throws CommandLineException {
+		try {
+			File file = Utilities.getResourceFile(this.getClass(), ConfigFileName);
+			if (configProperties != null) {
+				BufferedWriter out = new BufferedWriter(new FileWriter(file.getAbsolutePath()));
+				StringBuffer sb = new StringBuffer();
+				for (Enumeration<Object> e = configProperties.keys(); e.hasMoreElements();) {
+					String property = (String) e.nextElement();
+					String value = configProperties.getProperty(property);
+					sb.append(property + " = " + value + "\n");
+				}
+				out.write(sb.toString());
+				out.close();
+			}
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to write config file: " + e.toString());
+		}
+	}
 
-        builder.withLongOpt("runieviz");
-        builder.withDescription("runs ieviz");
-        options.addOption(builder.create("run"));
-        return options;
-    }
+	public void readMacroFile() throws CommandLineException {
+		try {
+			File file = Utilities.getResourceFile(this.getClass(), MacroFileName);
+			if (file.exists()) {
+				this.argMacros = new HashMap<String, String[]>();
+				BufferedReader in = new BufferedReader(new FileReader(file));
+				String line = null;
+				while ((line = in.readLine()) != null) {
+					String[] mstrs = line.split(" ");
+					String mname = mstrs[0];
+					String[] margs = new String[mstrs.length - 1];
+					for (int i = 1; i < mstrs.length - 1; i++) {
+						margs[i] = mstrs[i + 1];
+					}
+					this.argMacros.put(mname, margs);
+				}
+				in.close();
+			}
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to read Macro file: " + e.toString());
+		}
+	}
 
-    // optvals:  <input file directory> <domain ontology> <nlp tool to run> 
-    //          <output format>
-    private void runNLPTool(String[] optvals) {
-        String inputdir = optvals[0];
-        String ontology = optvals[1];
-        String nlptool = optvals[2];
-        String outputformat = optvals[4];
-        if ("moonstone".equals(nlptool)) {
-            
-//            new MoonstoneRuleInterface();
-        }
-        System.out.println("Running NLP tool; args=" + concatenate(optvals, ' '));
-    }
+	public void writeMacroFile() throws CommandLineException {
+		try {
+			File file = Utilities.getResourceFile(this.getClass(), MacroFileName);
+			if (this.argMacros != null && !this.argMacros.isEmpty()) {
+				StringBuffer sb = new StringBuffer();
+				BufferedWriter out = new BufferedWriter(new FileWriter(file.getAbsolutePath()));
+				for (String key : this.argMacros.keySet()) {
+					String[] margs = this.argMacros.get(key);
+					String mstr = key + " ";
+					for (String marg : margs) {
+						mstr += marg + " ";
+					}
+					mstr = mstr.trim();
+					sb.append(mstr + "\n");
+				}
+				out.write(sb.toString());
+				out.close();
+			}
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to write Macro file: " + e.toString());
+		}
+	}
 
-    private void runMacro(String mname) {
-        if (mname != null) {
-            String[] margs = ArgMacros.get(mname);
-            if (margs != null) {
-                runArgs(margs);
-            } else {
-                System.out.println("Error:  Macro \"" + mname + "\" not defined.");
-            }
-        }
-    }
+	public String getConfigProperty(String property) throws CommandLineException {
+		if (configProperties != null && property != null) {
+			return configProperties.getProperty(property);
+		}
+		return null;
+	}
 
-    private void createMacro(String str, String[] args) {
-        String[] margs = gatherMacroArgs(str, args);
-        if (margs != null) {
-            ArgMacros.put(str, margs);
-            writeMacroFile();
-            listMacros();
-        }
-    }
+	public String setConfigProperty(String property, String value) throws CommandLineException {
+		if (configProperties != null && property != null && value != null) {
+			configProperties.put(property, value);
+			writeConfigFile();
+		}
+		return null;
+	}
 
-    private void listMacros() {
-        if (ArgMacros != null && !ArgMacros.isEmpty()) {
-            StringBuffer sb = new StringBuffer();
-            for (String macro : ArgMacros.keySet()) {
-                sb.append(macro + ":");
-                String[] args = (String[]) ArgMacros.get(macro);
-                String argstr = concatenate(args, ' ');
-                sb.append(argstr);
-                sb.append("\n");
-            }
-            System.out.println(sb.toString());
-        } else {
-            System.out.println("No macros");
-        }
-    }
+	protected void handleError(Exception e) {
+		if (e instanceof CommandLineException) {
+			CommandLineException cle = (CommandLineException) e;
+			System.out.println(cle.getMessage());
+		} else {
+			e.printStackTrace();
+		}
+	}
 
-    // Lee, 11/10/2016
-    private void showConfigFile() {
-        if (ConfigProperties != null) {
-            for (Enumeration e = ConfigProperties.propertyNames(); e.hasMoreElements();) {
-                String property = (String) e.nextElement();
-                String value = (String) ConfigProperties.getProperty(property);
-                System.out.println("Property=" + property + ", Value=" + value);
-            }
-        }
-    }
-
-    private void ontologies() {
-        try {
-            int x = 1;
-            if (KAAuthenticator.doAuthentication(this)) {
-                InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection(
-                        SSLConnectionString);
-                StringBuffer sb = KAAuthenticator.streamToString(json);
-                json.close();
-                String jsstr = sb.toString();
-                JSONArray jarray = new JSONArray(jsstr);
-                for (int i = 0; i < jarray.length(); i++) {
-                    JSONObject jo = (JSONObject) jarray.get(i);
-                    String name = jo.getString("name");
-                    System.out.println(name);
-                }
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void workflows() {
-    }
-
-    private void evaluationTool(String optVal) {
-    }
-
-    public void help(Options options) {
-        HelpFormatter formatter = new HelpFormatter();
-        formatter.printHelp("help", options);
-    }
-
-    public void readMacroFile() {
-        File file = new File(MacroFilePathname);
-        if (file.exists()) {
-            try {
-                ArgMacros.clear();
-                BufferedReader in = new BufferedReader(new FileReader(file));
-                String line = null;
-                int lineoffset = 0;
-                while ((line = in.readLine()) != null) {
-                    if (line.length() > 6) {
-                        line = line.trim();
-                        String[] lstrs = line.split("=");
-                        String mname = lstrs[0];
-                        String[] args = lstrs[1].split(",");
-                        ArgMacros.put(mname, args);
-                    }
-                }
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void writeMacroFile() {
-        try {
-            BufferedWriter out = new BufferedWriter(new FileWriter(MacroFilePathname));
-            StringBuilder sb = new StringBuilder();
-            for (Iterator<String> iter = ArgMacros.keySet().iterator(); iter.hasNext();) {
-                String property = iter.next();
-                sb.append(property);
-                sb.append("=");
-                String[] args = (String[]) ArgMacros.get(property);
-                String argstr = concatenate(args, ',');
-                sb.append(argstr);
-                sb.append("\n");
-            }
-            out.write(sb.toString());
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void writeConfigFile() {
-        try {
-            if (ConfigProperties != null) {
-                BufferedWriter out = new BufferedWriter(new FileWriter(ConfigFilePathname));
-                StringBuffer sb = new StringBuffer();
-                for (Enumeration e = ConfigProperties.keys(); e.hasMoreElements();) {
-                    String property = (String) e.nextElement();
-                    String value = ConfigProperties.getProperty(property);
-                    sb.append(property + " = " + value + "\n");
-                }
-                out.write(sb.toString());
-                out.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void readConfigFile() {
-        File file = new File(ConfigFilePathname);
-        if (file.exists()) {
-            try {
-                ConfigProperties = new Properties();
-                ConfigProperties.load(new FileReader(file));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public String getConfigProperty(String property) {
-        if (ConfigProperties != null && property != null) {
-            return ConfigProperties.getProperty(property);
-        }
-        return null;
-    }
-
-    public String setConfigProperty(String property, String value) {
-        if (ConfigProperties != null && property != null && value != null) {
-            ConfigProperties.put(property, value);
-            writeConfigFile();
-        }
-        return null;
-    }
-
-    public void readResourceFiles() {
-        readConfigFile();
-        readMacroFile();
-    }
-
-    public String[] gatherMacroArgs(String mname, String[] args) {
-        String[] margs = null;
-        if (args != null) {
-            int mstart = -1;
-            int j = 0;
-            for (int i = 0; i < args.length; i++) {
-                String arg = args[i];
-                if (mstart < 0 && mname.equals(arg)) {
-                    mstart = i + 1;
-                    int marglen = args.length - mstart;
-                    margs = new String[marglen];
-                } else if (mstart > 0) {
-                    margs[j++] = arg;
-                }
-            }
-            return margs;
-        }
-        return margs;
-    }
-
-    private String concatenate(String[] strs, char delim) {
-        if (strs != null) {
-            String cstr = "";
-            for (int i = 0; i < strs.length; i++) {
-                cstr += strs[i];
-                if (i < strs.length - 1) {
-                    cstr += delim;
-                }
-            }
-            return cstr;
-        }
-        return null;
-    }
-
+	private boolean localAuthentication() throws CommandLineException {
+		// Lee: TEST
+		if (KAAuthenticator.Authenticator == null || KAAuthenticator.Authenticator == null) {
+			try {
+				KAAuthenticator auth = KAAuthenticator.Authenticator = new KAAuthenticator();
+				String username = this.getConfigProperty(IevizCmd.USERNAME_PARAMETER);
+				String password = this.getConfigProperty(IevizCmd.PASSWORD_PARAMETER);
+				auth.setUsername(username);
+				auth.setPassword(password);
+				auth.authenticate();
+				if (auth.tempPass != null) {
+					return true;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
 }
