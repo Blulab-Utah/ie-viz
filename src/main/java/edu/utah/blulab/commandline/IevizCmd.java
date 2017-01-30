@@ -17,14 +17,15 @@ import org.apache.commons.cli.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import moonstone.rulebuilder.MoonstoneRuleInterface;
+//import moonstone.io.ehost.MoonstoneEHostXML;
+//import moonstone.rulebuilder.MoonstoneRuleInterface;
 
 public class IevizCmd {
 
 	private Properties configProperties = null;
 	private Map<String, String[]> argMacros = new HashMap<String, String[]>();
 
-	private MoonstoneRuleInterface moonstoneRuleInterface = null;
+//	private MoonstoneRuleInterface moonstoneRuleInterface = null;
 
 	private static Logger logger = Logger.getLogger(IevizCmd.class.getName());
 
@@ -49,7 +50,10 @@ public class IevizCmd {
 			{ "showconfig", "false", "Show configuration file" }, { "listmacros", "false", "List command arg macros" },
 			{ "createmacro", "true", "Create command arg macro" }, { "rm", "runmacro", "true", "Run macro" },
 			{ "run", "runieviz", "runs ieviz", "ontology <documents> <workflow>", "3" },
-			{ "runnlp", "true", "Run single NLP GUI tool" }, { "iterate", "false", "Allow iterative user input" } };
+			{ "iterate", "false", "Allow iterative user input" },
+//                        { "runnlp", "true", "Run single NLP tool" }, 
+//			{ "rmstn", "runMoonstone", "Runs Moonstone", "<inputdir> <outputdir>", "2" }, 
+        };
 
 	public static void main(String[] args) {
 		IevizCmd iec = new IevizCmd();
@@ -64,14 +68,30 @@ public class IevizCmd {
 	}
 
 	private void run(String[] optVals) throws CommandLineException {
-		if (optVals != null) {
-			for (String oval : optVals) {
-				System.out.println(oval);
-			}
-		} else {
-			throw new CommandLineException("Missing options for run");
+		try {
+			DummyNLPTool tool = new DummyNLPTool();
+			String result = tool.getResults();
+			System.out.println(result);
+		} catch (Exception e) {
+			throw new CommandLineException(e.toString());
 		}
 	}
+
+	// LEE: TEST 1/30/2017
+	// Optvals: inputdir, outputdir
+//	private void runMoonstone(String[] optVals) throws CommandLineException {
+//		try {
+//			String inputdir = optVals[0];
+//			String outputdir = optVals[1];
+//			if (this.moonstoneRuleInterface == null) {
+//				this.moonstoneRuleInterface = new MoonstoneRuleInterface();
+//			}
+//			MoonstoneEHostXML mexml = new MoonstoneEHostXML(this.moonstoneRuleInterface);
+//			mexml.readmissionGenerateEHostAnnotations(this.moonstoneRuleInterface, inputdir, outputdir, true, false);
+//		} catch (Exception e) {
+//			throw new CommandLineException("runMoonstone: " + e.toString());
+//		}
+//	}
 
 	private void runArgs(String[] args) throws CommandLineException {
 		try {
@@ -106,21 +126,12 @@ public class IevizCmd {
 				setConfigProperty(USERNAME_PARAMETER, astr);
 			} else if (line.hasOption("iterate")) {
 				iterateUserInput();
-			} else if ((astr = line.getOptionValue("runnlp")) != null) {
-				runNLPGuiTool(astr);
+			} else if (line.hasOption("runMoonstone")) {
+				String[] optVals = line.getOptionValues("runMoonstone");
+//				runMoonstone(optVals);
 			}
 		} catch (Exception e) {
 			throw new CommandLineException("Unable to run command line arguments: " + e.toString());
-		}
-	}
-
-	private void runNLPGuiTool(String name) {
-		if ("moonstone".equals(name.toLowerCase())) {
-			if (this.moonstoneRuleInterface == null) {
-				this.moonstoneRuleInterface = MoonstoneRuleInterface.createMoonstoneRuleBuilder(true, true);
-			} else {
-				System.out.println("Moonstone already running");
-			}
 		}
 	}
 
@@ -254,6 +265,17 @@ public class IevizCmd {
 				throw new CommandLineException("Unable to display ontologies: Server returned null string");
 			}
 
+		} catch (Exception e) {
+			throw new CommandLineException("Unable to display ontologies: " + e.toString());
+		}
+	}
+
+	private String getOntologyXML() throws CommandLineException {
+		try {
+			InputStream is = KAAuthenticator.Authenticator.openAuthenticatedConnection(
+					"https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
+			String xml = Utilities.convertStreamToString(is);
+			return xml;
 		} catch (Exception e) {
 			throw new CommandLineException("Unable to display ontologies: " + e.toString());
 		}
