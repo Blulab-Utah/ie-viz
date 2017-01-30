@@ -17,24 +17,28 @@ import org.apache.commons.cli.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import moonstone.rulebuilder.MoonstoneRuleInterface;
+
 public class IevizCmd {
 
 	private Properties configProperties = null;
 	private Map<String, String[]> argMacros = new HashMap<String, String[]>();
 
-	// 1/14/2016
-	private String errorString = null;
+	private MoonstoneRuleInterface moonstoneRuleInterface = null;
+
 	private static Logger logger = Logger.getLogger(IevizCmd.class.getName());
 
 	public static String USERNAME_PARAMETER = "KA_username";
 	public static String PASSWORD_PARAMETER = "KA_password";
 	private static String ResourceDirectoryName = "resources";
-        
-        private static String ConfigFileName = "config";
+
+	private static String ConfigFileName = "config";
 	private static String MacroFileName = "macros";
-        
-//	private static String ConfigFileName = ResourceDirectoryName + File.separatorChar + "config";
-//	private static String MacroFileName = ResourceDirectoryName + File.separatorChar + "macros";
+
+	// private static String ConfigFileName = ResourceDirectoryName +
+	// File.separatorChar + "config";
+	// private static String MacroFileName = ResourceDirectoryName +
+	// File.separatorChar + "macros";
 
 	private static String[][] optionInfo = { { "h", "help", "false", "print this message" },
 			{ "ont", "ontologies", "false", "view a list of available ontologies" },
@@ -45,7 +49,7 @@ public class IevizCmd {
 			{ "showconfig", "false", "Show configuration file" }, { "listmacros", "false", "List command arg macros" },
 			{ "createmacro", "true", "Create command arg macro" }, { "rm", "runmacro", "true", "Run macro" },
 			{ "run", "runieviz", "runs ieviz", "ontology <documents> <workflow>", "3" },
-			{ "iterate", "false", "Allow iterative user input" } };
+			{ "runnlp", "true", "Run single NLP GUI tool" }, { "iterate", "false", "Allow iterative user input" } };
 
 	public static void main(String[] args) {
 		IevizCmd iec = new IevizCmd();
@@ -102,9 +106,21 @@ public class IevizCmd {
 				setConfigProperty(USERNAME_PARAMETER, astr);
 			} else if (line.hasOption("iterate")) {
 				iterateUserInput();
+			} else if ((astr = line.getOptionValue("runnlp")) != null) {
+				runNLPGuiTool(astr);
 			}
 		} catch (Exception e) {
 			throw new CommandLineException("Unable to run command line arguments: " + e.toString());
+		}
+	}
+
+	private void runNLPGuiTool(String name) {
+		if ("moonstone".equals(name.toLowerCase())) {
+			if (this.moonstoneRuleInterface == null) {
+				this.moonstoneRuleInterface = MoonstoneRuleInterface.createMoonstoneRuleBuilder(true, true);
+			} else {
+				System.out.println("Moonstone already running");
+			}
 		}
 	}
 
@@ -257,11 +273,10 @@ public class IevizCmd {
 	public void readConfigFile() throws CommandLineException {
 		try {
 			File file = Utilities.getResourceFile(this.getClass(), ConfigFileName);
-			if (file.exists()) {
+			if (file != null && file.exists()) {
 				configProperties = new Properties();
 				configProperties.load(new FileReader(file));
 			} else {
-				System.out.println("readConfigFile:  Does not exist=" + file.getAbsolutePath());
 				throw new CommandLineException("Unable to read config file:  File does not exist");
 			}
 		} catch (Exception e) {
@@ -272,7 +287,7 @@ public class IevizCmd {
 	public void writeConfigFile() throws CommandLineException {
 		try {
 			File file = Utilities.getResourceFile(this.getClass(), ConfigFileName);
-			if (configProperties != null) {
+			if (configProperties != null && file != null && file.exists()) {
 				BufferedWriter out = new BufferedWriter(new FileWriter(file.getAbsolutePath()));
 				StringBuffer sb = new StringBuffer();
 				for (Enumeration<Object> e = configProperties.keys(); e.hasMoreElements();) {
@@ -291,7 +306,7 @@ public class IevizCmd {
 	public void readMacroFile() throws CommandLineException {
 		try {
 			File file = Utilities.getResourceFile(this.getClass(), MacroFileName);
-			if (file.exists()) {
+			if (file != null && file.exists()) {
 				this.argMacros = new HashMap<String, String[]>();
 				BufferedReader in = new BufferedReader(new FileReader(file));
 				String line = null;
@@ -314,7 +329,7 @@ public class IevizCmd {
 	public void writeMacroFile() throws CommandLineException {
 		try {
 			File file = Utilities.getResourceFile(this.getClass(), MacroFileName);
-			if (this.argMacros != null && !this.argMacros.isEmpty()) {
+			if (file != null && file.exists() && this.argMacros != null && !this.argMacros.isEmpty()) {
 				StringBuffer sb = new StringBuffer();
 				BufferedWriter out = new BufferedWriter(new FileWriter(file.getAbsolutePath()));
 				for (String key : this.argMacros.keySet()) {

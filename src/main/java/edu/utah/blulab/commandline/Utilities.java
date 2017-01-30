@@ -12,13 +12,13 @@ public class Utilities {
     public static File getResourceFile(Class c, String fname) {
         File file = null;
         try {
-			String current = new java.io.File(".").getCanonicalPath();
-			String fpath = current + File.separatorChar + fname;
 			URL url = c.getClassLoader().getResource(fname);
 			if (url != null) {
 			    file = new File(url.getFile());
 			} 
 			if (file == null || !file.exists()) {
+				String current = new java.io.File(".").getCanonicalPath();
+				String fpath = current + File.separatorChar + fname;
 			    file = new File(fpath);
 			}
 		} catch (IOException e) {
