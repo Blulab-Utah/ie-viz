@@ -17,3 +17,4 @@ out/
 .metadata/
 .settings/
 .DS_Store
+nbactions.xml
