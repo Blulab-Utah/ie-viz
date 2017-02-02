@@ -3,29 +3,26 @@ package edu.utah.blulab.commandline;
 import edu.utah.blulab.domainontology.DomainOntology;
 import java.io.File;
 
-public class DummyNLPTool implements NLPToolInterface {
+public class DummyNLPTool extends NLPTool {
 
-    public DummyNLPTool(DomainOntology ontology, String inputdir, String outputdir) {
-
+    public DummyNLPTool(DomainOntology ontology, String inputdir) {
+    	super("dummy", ontology, inputdir);
     }
 
-    @Override
     public void setOntology(DomainOntology ontology) {
     }
 
-    @Override
     public void setInputDirectory(String inputDirectory) {
     }
 
-    @Override
     public void setOutputDirectory(String outputDirectory) {
     }
-
-    @Override
+    
     public void doProcess() {
+        String results = getResults();
+        System.out.println("Dummy NLP Tool Results: " + results);
     }
 
-    @Override
     public String getResults() {
         String results = null;
         File file = Utilities.getResourceFile(IevizCmd.class, "FakeReport1.txt.knowtator.xml");

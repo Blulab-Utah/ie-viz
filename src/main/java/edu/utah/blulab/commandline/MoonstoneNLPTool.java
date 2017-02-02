@@ -11,22 +11,17 @@ import edu.utah.blulab.domainontology.DomainOntology;
  *
  * @author leechristensen
  */
-public class MoonstoneNLPTool implements NLPToolInterface {
+public class MoonstoneNLPTool extends NLPTool {
     DomainOntology ontology = null;
     String inputDirectory = null;
-    String outputDirectory = null;
    // MoonstoneRuleInterface moonstoneRuleInterface = null;
     
-    public MoonstoneNLPTool(DomainOntology ontology, String inputdir, String outputdir) {
-        this.ontology = ontology;
-        this.inputDirectory = inputdir;
-        this.outputDirectory = outputdir;
-//        this.moonstoneRuleInterface = new MoonstoneRuleInterface();
+    public MoonstoneNLPTool(DomainOntology ontology, String inputdir) {
+       super("moonstone", ontology, inputdir);
     }
     
 //    private MoonstoneRuleInterface moonstoneRuleInterface = null;
     
-    @Override
     public void doProcess() {
 //        MoonstoneEHostXML mexml = new MoonstoneEHostXML(this.moonstoneRuleInterface);
 //        mexml.readmissionGenerateEHostAnnotations(this.moonstoneRuleInterface, this.inputDirectory, this.outputDirectory, true, false);
@@ -38,10 +33,6 @@ public class MoonstoneNLPTool implements NLPToolInterface {
 
     public void setInputDirectory(String inputDirectory) {
         this.inputDirectory = inputDirectory;
-    }
-
-    public void setOutputDirectory(String outputDirectory) {
-        this.outputDirectory = outputDirectory;
     }
 
     public String getResults() {

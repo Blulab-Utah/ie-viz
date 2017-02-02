@@ -23,8 +23,8 @@ public class IevizCmd {
     private Properties configProperties = null;
     private Map<String, String[]> argMacros = new HashMap<String, String[]>();
 
-    private NLPToolInterface NLPTool = null;
-    private HashMap<String, NLPToolInterface> NLPToolMap = new HashMap();
+    private NLPTool NLPTool = null;
+    private HashMap<String, NLPTool> NLPToolMap = new HashMap();
 
     private static Logger logger = Logger.getLogger(IevizCmd.class.getName());
 
@@ -47,8 +47,9 @@ public class IevizCmd {
     {"setKAUsername", "true", "Store KA username in config file"},
     {"showconfig", "false", "Show configuration file"}, {"listmacros", "false", "List command arg macros"},
     {"createmacro", "true", "Create command arg macro"}, {"rm", "runmacro", "true", "Run macro"},
-    {"run", "runieviz", "runs ieviz", "<toolname> <ontology> <inputdir> <outputdir>", "4"},
-    {"iterate", "false", "Allow iterative user input"}
+    {"run", "runieviz", "runs ieviz", "<toolname> <ontology> <inputdir>", "3"},
+    {"iterate", "false", "Allow iterative user input"},
+    {"workbench", "false", "Start Evaluation Workbench"},
     };
 
     public static void main(String[] args) {
@@ -70,18 +71,18 @@ public class IevizCmd {
             String inputdir = optVals[2];
             String outputdir = optVals[3];
             DomainOntology ontology = getDomainOntology(oname);
-            NLPToolInterface tool = this.NLPToolMap.get(toolname);
+            NLPTool tool = this.NLPToolMap.get(toolname);
             if (tool == null) {
                 if ("moonstone".equals(toolname)) {
-                    tool = new MoonstoneNLPTool(ontology, inputdir, outputdir);
+                    tool = new MoonstoneNLPTool(ontology, inputdir);
                     this.NLPToolMap.put(toolname, tool);
                 } else if ("dummy".equals(toolname)) {
-                    tool = new DummyNLPTool(ontology, inputdir, outputdir);
+                    tool = new DummyNLPTool(ontology, inputdir);
                     this.NLPToolMap.put(toolname, tool);
                 }
             }
             if (tool != null) {
-                tool.doProcess();
+                tool.processFiles();
             } else {
                 throw new CommandLineException("runNLPTool: Unable to process: Tool=" + toolname + ", Ontology="
                         + oname + ", Inputdir=" + inputdir + ", Outputdir=" + outputdir);
@@ -124,6 +125,8 @@ public class IevizCmd {
                 setConfigProperty(USERNAME_PARAMETER, astr);
             } else if (line.hasOption("iterate")) {
                 iterateUserInput();
+            } else if (line.hasOption("workbench")) {
+            	EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool();
             }
         } catch (Exception e) {
             throw new CommandLineException(e.toString());

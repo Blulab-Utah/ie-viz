@@ -9,6 +9,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.URL;
+import java.util.Vector;
+
+import tsl.utilities.VUtils;
 
 public class Utilities {
 
@@ -64,5 +67,32 @@ public class Utilities {
         }
         return sb.toString();
     }
+    
+    public static Vector<File> readFilesFromDirectory(String dname) {
+		Vector<File> v = null;
+		if (dname != null) {
+			File sourcedir = new File(dname);
+			if (sourcedir != null && sourcedir.exists() && sourcedir.isDirectory()) {
+				v = readFilesFromDirectory(sourcedir);
+			}
+		}
+		return v;
+	}
+    
+    public static Vector<File> readFilesFromDirectory(File sourcedir) {
+		Vector<File> v = null;
+		if (sourcedir != null && sourcedir.exists()) {
+			File[] files = sourcedir.listFiles();
+			for (int i = 0; i < files.length; i++) {
+				File file = files[i];
+				if (file.isFile() && file.getName().charAt(0) != '.') {
+					v = VUtils.add(v, file);
+				} else if (file.isDirectory()) {
+					v = VUtils.append(v, readFilesFromDirectory(file));
+				}
+			}
+		}
+		return v;
+	}
 
 }
