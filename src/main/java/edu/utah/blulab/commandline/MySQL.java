@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.mysql.jdbc.Connection;
@@ -25,13 +26,13 @@ public class MySQL {
 		return mySQL;
 	}
 
-	public void addDocumentAnalysis(NLPTool tool, String corpus, String document, String analysis) {
+	public void addDocumentAnalysis(NLPTool tool, String document, String analysis) {
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
 			String sql = "insert into analyses (tool, corpus, annotator, document, analysis) values (?, ?, ?, ?, ?)";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
 			ps.setString(1, tool.getToolName());
-			ps.setString(2, tool.getInputDirectoryName());
+			ps.setString(2, tool.getCorpus());
 			ps.setString(3, tool.getAnnotator());
 			ps.setString(4, document);
 			ps.setString(5, analysis);
@@ -41,12 +42,12 @@ public class MySQL {
 		}
 	}
 
-	public void addDocumentText(String corpus, String document, String text) {
+	public void addDocumentText(NLPTool tool, String document, String text) {
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
 			String sql = "insert into documents (corpus, document, text) values (?, ?, ?)";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
-			ps.setString(1, "corpus");
+			ps.setString(1, tool.getCorpus());
 			ps.setString(2, document);
 			ps.setString(3, text);
 			ps.execute();
@@ -55,15 +56,15 @@ public class MySQL {
 		}
 	}
 
-	public String getDocumentAnalysis(String tool, String document, String corpus) {
+	public String getDocumentAnalysis(NLPTool tool, String document, String corpus) {
 		String analysis = null;
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select analysis from ANALYSIS where corpus = ? and document = ? and tool = ?";
+			String sql = "select analysis from ANALYSIS where corpus = ? and document = ? and annotator = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
-			ps.setString(1, corpus);
+			ps.setString(1, tool.getCorpus());
 			ps.setString(2, document);
-			ps.setString(3, tool);
+			ps.setString(3, tool.getAnnotator());
 			ps.execute();
 			ResultSet rs = ps.executeQuery();
 			if (rs.first()) {
@@ -73,6 +74,26 @@ public class MySQL {
 			e.printStackTrace();
 		}
 		return analysis;
+	}
+	
+	public List<String> getDocumentAnalyses(String corpus, String annotator) {
+		List<String> analyses = new ArrayList();
+		try {
+			Connection c = MySQL.getMySQL().getConnection();
+			String sql = "select analysis from ANALYSIS where corpus = ? and annotator = ?";
+			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
+			ps.setString(1, corpus);
+			ps.setString(2, annotator);
+			ps.execute();
+			ResultSet rs = ps.executeQuery();
+			if (rs.first()) {
+				String analysis = rs.getString(1);
+				analyses.add(analysis);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return analyses;
 	}
 
 	public String getDocumentText(String docname, String corpname) {

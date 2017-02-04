@@ -3,12 +3,10 @@ package edu.utah.blulab.commandline;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 import com.ed.wew.api.AnnotatorImpl;
 import com.ed.wew.api.AnnotatorReference;
@@ -19,48 +17,41 @@ import com.ed.wew.api.Params;
 import com.ed.wew.api.ResultTable;
 import com.ed.wew.api.WEWManager;
 
-import edu.utah.blulab.evaluationworkbenchmanager.EvaluationWorkbenchManager;
 import edu.utah.blulab.evaluationworkbenchmanager.WEWManagerInterface;
-import tsl.utilities.FUtils;
 import workbench.api.gui.WBGUI;
 import workbench.arr.EvaluationWorkbench;
 
 public class EvaluationWorkbenchTool {
+	private NLPTool nlpTool = null;
 	private WBGUI workbench = null;
-	
-	public EvaluationWorkbenchTool() {
+
+	public EvaluationWorkbenchTool(NLPTool tool) {
+		this.nlpTool = tool;
 		startupWorkbench();
 	}
-	
+
 	public boolean startupWorkbench() {
 		try {
-			
+			invokeWEWManagerMySQL();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return true;
 	}
-	
-	public static void invokeWEWManagerMySQL(String corpus) throws Exception {
 
+	public void invokeWEWManagerMySQL() throws Exception {
+		String corpus = this.nlpTool.getCorpus();
 		EvaluationWorkbench wb = WEWManagerInterface.initializeOldWorkbench(false);
-
 		String format = wb.getStartupParameters().getInputTypeFirstAnnotator();
-		
+		String schemaFileName = wb.getStartupParameters().getKnowtatorSchemaFile();
+		String primaryAnnotatorName = wb.getStartupParameters().getFirstAnnotatorName();
+		String secondaryAnnotatorName = wb.getStartupParameters().getSecondAnnotatorName();
 		// Schema
 		DocumentImpl schema = new DocumentImpl();
-		File sfile = Utilities.getResourceFile(IevizCmd.class, "projectschema.xml");
+		File sfile = Utilities.getResourceFile(IevizCmd.class, schemaFileName);
 		InputStreamReader sisr = new InputStreamReader(new FileInputStream(sfile));
-		schema.setName("projectschema.xml");
+		schema.setName(schemaFileName);
 		schema.setReader(sisr);
-		
-		
-		String schemaFileName = wb.getStartupParameters()
-				.getKnowtatorSchemaFile();
-		String primaryAnnotatorName = wb.getStartupParameters()
-				.getFirstAnnotatorName();
-		String secondaryAnnotatorName = wb.getStartupParameters()
-				.getSecondAnnotatorName();
 
 		// Documents
 		List<DocumentReference> documents = new ArrayList();
@@ -73,39 +64,33 @@ public class EvaluationWorkbenchTool {
 			d.setReader(new InputStreamReader(dsis));
 			documents.add(d);
 		}
-		
-		&&& GOT THIS FAR 2/3/2017 &&&&&
-	
+
 		// Primary
+		int i = 0;
 		List<AnnotatorReference> primary = new ArrayList();
-		files = tsl.utilities.FUtils
-				.readFilesFromDirectory(primaryAnnotationDir);
-		if (files != null) {
-			for (File f : files) {
-				String sname = f.getName();
-				String lname = f.getAbsolutePath();
-				AnnotatorImpl a1 = new AnnotatorImpl();
-				a1.setAnnotatorType(AnnotatorType.Primary);
-				a1.setName(sname);
-				a1.setReader(new FileReader(lname));
-				primary.add(a1);
-			}
+		List<String> analyses = MySQL.getMySQL().getDocumentAnalyses(corpus, primaryAnnotatorName);
+		for (String analysis : analyses) {
+			String aname = "Primary" + i;
+			InputStream asis = new ByteArrayInputStream(analysis.getBytes("UTF_8"));
+			AnnotatorImpl a1 = new AnnotatorImpl();
+			a1.setAnnotatorType(AnnotatorType.Primary);
+			a1.setName(aname);
+			a1.setReader(new InputStreamReader(asis));
+			primary.add(a1);
 		}
 
 		// Secondary
+		i = 0;
 		List<AnnotatorReference> secondary = new ArrayList();
-		files = tsl.utilities.FUtils
-				.readFilesFromDirectory(secondaryAnnotationDir);
-		if (files != null) {
-			for (File f : files) {
-				String sname = f.getName();
-				String lname = f.getAbsolutePath();
-				AnnotatorImpl a1 = new AnnotatorImpl();
-				a1.setAnnotatorType(AnnotatorType.Secondary);
-				a1.setName(sname);
-				a1.setReader(new FileReader(lname));
-				secondary.add(a1);
-			}
+		analyses = MySQL.getMySQL().getDocumentAnalyses(corpus, secondaryAnnotatorName);
+		for (String analysis : analyses) {
+			String aname = "Secondary" + i;
+			InputStream asis = new ByteArrayInputStream(analysis.getBytes("UTF_8"));
+			AnnotatorImpl a2 = new AnnotatorImpl();
+			a2.setAnnotatorType(AnnotatorType.Secondary);
+			a2.setName(aname);
+			a2.setReader(new InputStreamReader(asis));
+			secondary.add(a2);
 		}
 
 		// Params
@@ -114,15 +99,7 @@ public class EvaluationWorkbenchTool {
 		params.putParam("firstAnnotator", primaryAnnotatorName);
 		params.putParam("secondAnnotator", secondaryAnnotatorName);
 
-		ResultTable result = WEWManager.load(schema, documents, primary,
-				secondary, params);
-
-		String text = result.toString();
-
-		FUtils.writeFile("/Users/leechristensen/Desktop/WEWManagerResult.txt",
-				text);
-		// System.out.println("\n\n" + result + "\n\n");
+		ResultTable result = WEWManager.load(schema, documents, primary, secondary, params);
 	}
 
-	
 }

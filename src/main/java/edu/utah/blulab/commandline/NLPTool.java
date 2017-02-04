@@ -9,12 +9,14 @@ public class NLPTool {
 	private String toolName = null;
 	private DomainOntology ontology = null;
 	private String inputDirectoryName = null;
+	private String corpus = null;
 	private String annotator = null;
 
 	public NLPTool(String tool, DomainOntology ontology, String inputdir, String annotator) {
 		this.toolName = tool;
 		this.ontology = ontology;
 		this.inputDirectoryName = inputdir;
+		this.corpus = inputdir;
 		this.annotator = annotator;
 	}
 
@@ -24,10 +26,10 @@ public class NLPTool {
 			if (files != null) {
 				for (File file : files) {
 					String text = Utilities.readFile(file);
-					MySQL.getMySQL().addDocumentText(this.inputDirectoryName, file.getName(), text);
+					MySQL.getMySQL().addDocumentText(this, file.getName(), text);
 					String results = this.processFile(file);
 					if (results != null) {
-						MySQL.getMySQL().addDocumentAnalysis(this, this.inputDirectoryName, file.getName(), results);
+						MySQL.getMySQL().addDocumentAnalysis(this, file.getName(), results);
 					}
 				}
 			}
@@ -55,5 +57,11 @@ public class NLPTool {
 	public String getAnnotator() {
 		return annotator;
 	}
+
+	public String getCorpus() {
+		return corpus;
+	}
+	
+	
 
 }
