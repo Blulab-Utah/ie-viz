@@ -69,15 +69,14 @@ public class IevizCmd {
             String toolname = optVals[0].toLowerCase();
             String oname = optVals[1].toLowerCase();
             String inputdir = optVals[2];
-            String outputdir = optVals[3];
             DomainOntology ontology = getDomainOntology(oname);
             NLPTool tool = this.NLPToolMap.get(toolname);
             if (tool == null) {
                 if ("moonstone".equals(toolname)) {
-                    tool = new MoonstoneNLPTool(ontology, inputdir);
+                    tool = new MoonstoneNLPTool(ontology, inputdir, "moonstone");
                     this.NLPToolMap.put(toolname, tool);
                 } else if ("dummy".equals(toolname)) {
-                    tool = new DummyNLPTool(ontology, inputdir);
+                    tool = new DummyNLPTool(ontology, inputdir, "dummy");
                     this.NLPToolMap.put(toolname, tool);
                 }
             }
@@ -85,7 +84,7 @@ public class IevizCmd {
                 tool.processFiles();
             } else {
                 throw new CommandLineException("runNLPTool: Unable to process: Tool=" + toolname + ", Ontology="
-                        + oname + ", Inputdir=" + inputdir + ", Outputdir=" + outputdir);
+                        + oname + ", Inputdir=" + inputdir);
             }
         } catch (Exception e) {
             throw new CommandLineException("runNLPTool: " + e.toString());

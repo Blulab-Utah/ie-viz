@@ -72,6 +72,11 @@
 		<artifactId>EvaluationWorkbenchManager</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
+	<dependency>
+		<groupId>edu.utah.blulab</groupId>
+		<artifactId>Moonstone</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
 	</dependencies>
 
 	<build>

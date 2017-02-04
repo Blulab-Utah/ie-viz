@@ -9,29 +9,51 @@ public class NLPTool {
 	private String toolName = null;
 	private DomainOntology ontology = null;
 	private String inputDirectoryName = null;
-	
-	public NLPTool(String tname, DomainOntology ont, String dname) {
-		this.toolName = tname;
-		this.inputDirectoryName = dname;
-		this.ontology = ont;
+	private String annotator = null;
+
+	public NLPTool(String tool, DomainOntology ontology, String inputdir, String annotator) {
+		this.toolName = tool;
+		this.ontology = ontology;
+		this.inputDirectoryName = inputdir;
+		this.annotator = annotator;
 	}
-	
+
 	public void processFiles() throws CommandLineException {
-		Vector<File> files = Utilities.readFilesFromDirectory(this.inputDirectoryName);
-		if (files != null) {
-			for (File file : files) {
-				String text = Utilities.readFile(file);
-				MySQL.getMySQL().addDocumentText(this.toolName, file.getName(), "?", text);
-				String results = this.processFile(file);
-				if (results != null) {
-					MySQL.getMySQL().addDocumentAnalysis(this.toolName, file.getName(), "?", results);
+		try {
+			Vector<File> files = Utilities.readFilesFromDirectory(this.inputDirectoryName);
+			if (files != null) {
+				for (File file : files) {
+					String text = Utilities.readFile(file);
+					MySQL.getMySQL().addDocumentText(this.inputDirectoryName, file.getName(), text);
+					String results = this.processFile(file);
+					if (results != null) {
+						MySQL.getMySQL().addDocumentAnalysis(this, this.inputDirectoryName, file.getName(), results);
+					}
 				}
 			}
+		} catch (Exception e) {
+			throw new CommandLineException(e.toString());
 		}
 	}
-	
+
 	public String processFile(File file) {
 		return null;
+	}
+
+	public String getToolName() {
+		return toolName;
+	}
+
+	public DomainOntology getOntology() {
+		return ontology;
+	}
+
+	public String getInputDirectoryName() {
+		return inputDirectoryName;
+	}
+
+	public String getAnnotator() {
+		return annotator;
 	}
 
 }

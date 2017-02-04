@@ -3,6 +3,7 @@ package edu.utah.blulab.commandline;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import com.mysql.jdbc.Connection;
@@ -11,7 +12,7 @@ public class MySQL {
 
 	private com.mysql.jdbc.Connection connection = null;
 	private static MySQL mySQL = null;
-	private static String ConnectionString = "jdbc:mysql://localhost/ievizdb?user=root&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
+	private static String ConnectionString = "jdbc:mysql://localhost/ieviz?user=root&password=lilith10&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
 
 	public MySQL() {
 		getConnection();
@@ -24,45 +25,45 @@ public class MySQL {
 		return mySQL;
 	}
 
-	public void addDocumentAnalysis(String tool, String docname, String corpname, String analysis) {
+	public void addDocumentAnalysis(NLPTool tool, String corpus, String document, String analysis) {
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "insert tool = ?, document = ?, corpus = ?, analysis = ? into ANALYSIS";
+			String sql = "insert into analyses (tool, corpus, annotator, document, analysis) values (?, ?, ?, ?, ?)";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
-			ps.setString(1, tool);
-			ps.setString(2, docname);
-			ps.setString(3, corpname);
-			ps.setString(4, analysis);
+			ps.setString(1, tool.getToolName());
+			ps.setString(2, tool.getInputDirectoryName());
+			ps.setString(3, tool.getAnnotator());
+			ps.setString(4, document);
+			ps.setString(5, analysis);
 			ps.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void addDocumentText(String tool, String docname, String corpname, String text) {
+	public void addDocumentText(String corpus, String document, String text) {
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "insert tool = ?, document = ?, corpus = ?, text = ? into DOCUMENT";
+			String sql = "insert into documents (corpus, document, text) values (?, ?, ?)";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
-			ps.setString(1, tool);
-			ps.setString(2, docname);
-			ps.setString(3, corpname);
-			ps.setString(4, text);
+			ps.setString(1, "corpus");
+			ps.setString(2, document);
+			ps.setString(3, text);
 			ps.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public String getDocumentAnalysis(String toolname, String docname, String corpname) {
+	public String getDocumentAnalysis(String tool, String document, String corpus) {
 		String analysis = null;
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select analysis from ANALYSIS where tool = ? and document = ? and corpus = ?";
+			String sql = "select analysis from ANALYSIS where corpus = ? and document = ? and tool = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
-			ps.setString(1, toolname);
-			ps.setString(2, docname);
-			ps.setString(3, corpname);
+			ps.setString(1, corpus);
+			ps.setString(2, document);
+			ps.setString(3, tool);
 			ps.execute();
 			ResultSet rs = ps.executeQuery();
 			if (rs.first()) {
@@ -74,14 +75,14 @@ public class MySQL {
 		return analysis;
 	}
 
-	public String getDocumentText(String toolname, String docname, String corpname) {
+	public String getDocumentText(String docname, String corpname) {
 		String text = null;
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select text from DOCUMENT where tool = ? and document = ? and corpus = ?";
+			String sql = "select text from DOCUMENT where document = ? and corpus = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
-			ps.setString(1, toolname);
-			ps.setString(2, docname);
+			ps.setString(1, docname);
+			ps.setString(2, corpname);
 			ps.execute();
 			ResultSet rs = ps.executeQuery();
 			if (rs.first()) {
@@ -91,6 +92,25 @@ public class MySQL {
 			e.printStackTrace();
 		}
 		return text;
+	}
+	
+	public ArrayList<String> getDocumentNames(String corpname) {
+		ArrayList<String> dnames = new ArrayList();
+		try {
+			Connection c = MySQL.getMySQL().getConnection();
+			String sql = "select document from DOCUMENT where corpus = ?";
+			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
+			ps.setString(1, corpname);
+			ps.execute();
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String dname = rs.getString(1);
+				dnames.add(dname);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return dnames;
 	}
 
 	public Connection getConnection() {
@@ -105,6 +125,7 @@ public class MySQL {
 			String istr = String.valueOf(1024 * 1024 * 256);
 			props.setProperty("maxAllowedPacket", istr);
 
+			String cstr = ConnectionString;
 			this.connection = (Connection) DriverManager.getConnection(ConnectionString, props);
 
 			System.out.println("Connection succeeded...");

@@ -16,8 +16,8 @@ public class MoonstoneNLPTool extends NLPTool {
     String inputDirectory = null;
    // MoonstoneRuleInterface moonstoneRuleInterface = null;
     
-    public MoonstoneNLPTool(DomainOntology ontology, String inputdir) {
-       super("moonstone", ontology, inputdir);
+    public MoonstoneNLPTool(DomainOntology ontology, String inputdir, String annotator) {
+       super("moonstone", ontology, inputdir, annotator);
     }
     
 //    private MoonstoneRuleInterface moonstoneRuleInterface = null;
