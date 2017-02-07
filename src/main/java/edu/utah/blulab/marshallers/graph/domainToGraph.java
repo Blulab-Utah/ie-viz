@@ -10,8 +10,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Created by melissa on 11/1/16.
@@ -39,6 +39,7 @@ public class domainToGraph {
         final GraphDatabaseService graphDB = dbFactory.newEmbeddedDatabase(graphFile);
         final DomainOntology domain = new DomainOntology(domainFile.getPath(), false);
 
+
         Transaction tx = graphDB.beginTx();
 
         try{
@@ -54,7 +55,7 @@ public class domainToGraph {
             }
             //create PseudoModifier nodes
             for(Modifier pseudo : domain.createPseudoModifierDictionary()){
-                Node pseudoNode = createPseudoModifierTypeNode(pseudo, graphDB);
+                Node pseudoNode = createPseudoModifierNode(pseudo, graphDB);
 
                 //create lexical item nodes
                 for(LexicalItem item : pseudo.getItems()){
@@ -64,31 +65,21 @@ public class domainToGraph {
             }
 
             //create Modifier nodes
-            //TODO find numeric modifiers and create new nodes
             HashMap<String, ArrayList<Modifier>> modifierMap = domain.createModifierTypeMap();
-            /**for(Modifier modifier : domain.createModifierDictionary()){
-                Node modifierNode = createModifierTypeNode(modifier, NodeTypes.MODIFIER, graphDB);
+            for(Modifier modifier : modifierMap.get("Linguistic")){
+                //System.out.println(modifier);
+                createModifierNode(modifier, NodeTypes.LINGUISTC_MODIFIER, graphDB);
+            }
 
-                //create lexical item nodes
-                for(LexicalItem item : modifier.getItems()){
-                    Node lexicalItemNode = createItemTypeNode(item, NodeTypes.LEXICAL_ITEM, graphDB);
-                    lexicalItemNode.createRelationshipTo(modifierNode, RelationshipType.withName("IS_MEMBER_OF"));
-                }
+            for(Modifier modifier : modifierMap.get("Semantic")){
+                //System.out.println(modifier);
+                createModifierNode(modifier, NodeTypes.SEMANTIC_MODIFIER, graphDB);
+            }
 
-                for(Modifier parent : modifier.getDirectParents()){
-                    Node parentNode = createModifierTypeNode(parent, NodeTypes.MODIFIER, graphDB);
-                    modifierNode.createRelationshipTo(parentNode, RelationshipType.withName("IS_A"));
-                }
-
-                for(Modifier pseudo : modifier.getPseudos()){
-                    Node pseudoNode = createModifierTypeNode(pseudo, NodeTypes.PSEUDO_MODIFIER, graphDB);
-                    modifierNode.createRelationshipTo(pseudoNode, RelationshipType.withName("hasPseudo"));
-                }
-                for(Modifier closure: modifier.getClosures()){
-                    Node closureNode = createModifierTypeNode(closure, NodeTypes.CLOSURE, graphDB);
-                    modifierNode.createRelationshipTo(closureNode, RelationshipType.withName("hasClosure"));
-                }
-            }**/
+            for(Modifier modifier : modifierMap.get("Numeric")){
+                //System.out.println(modifier);
+                createModifierNode(modifier, NodeTypes.NUMERIC_MODIFIER, graphDB);
+            }
 
             //create anchor nodes
             for(Anchor anchor : domain.createAnchorDictionary()){
@@ -100,8 +91,6 @@ public class domainToGraph {
                     anchorNode.createRelationshipTo(parentNode, RelationshipType.withName("IS_A"));
                 }
 
-
-                //TODO: fix this in ontology so that code can be consistent
                 //link to pseudos
                 for(Anchor pseudo : anchor.getPseudos()){
                     Node pseudoNode = createAnchorNode(pseudo, graphDB);
@@ -136,8 +125,18 @@ public class domainToGraph {
                     relationshipName = relationshipName.substring(relationshipName.lastIndexOf("#")+1,
                             relationshipName.length());
                    for(Modifier modifier : entry.getValue()){
+                       NodeTypes type = null;
+                       if(modifier.getModifierType().equals(Modifier.LINGUISTIC)){
+                           type = NodeTypes.LINGUISTC_MODIFIER;
+                       }else if(modifier.getModifierType().equals(Modifier.SEMANTIC)){
+                           type = NodeTypes.SEMANTIC_MODIFIER;
+                       }else if(modifier.getModifierType().equals(Modifier.NUMERIC)){
+                           type = NodeTypes.NUMERIC_MODIFIER;
+                       }else{
+                           type = NodeTypes.QUALIFIER;
+                       }
                        Node modifierNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(),
-                               NodeTypes.MODIFIER, graphDB);
+                               type, graphDB);
                        Relationship relationship = variableNode.createRelationshipTo(modifierNode,
                                RelationshipType.withName(relationshipName));
                        relationship.setProperty("uri", entry.getKey());
@@ -155,60 +154,58 @@ public class domainToGraph {
 
     }
 
-    private static Node createLinguisticModifierTypeNode(Modifier modifier, GraphDatabaseService graphDB){
-        Node modNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(),
-                NodeTypes.LINGUISTC_MODIFIER, graphDB);
+
+    private static Node createModifierNode(Modifier modifier, NodeTypes type, GraphDatabaseService graphDB){
+        Node modifierNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(),
+                type, graphDB);
 
         //set uri prop
-        modNode.setProperty("uri", modifier.getUri());
+        modifierNode.setProperty("uri", modifier.getUri());
 
-        return modNode;
+        //set name
+        modifierNode.setProperty("name", modifier.getModName());
+
+        //create lexical item nodes
+        for(LexicalItem item : modifier.getItems()){
+            Node lexicalItemNode = createItemTypeNode(item, NodeTypes.LEXICAL_ITEM, graphDB);
+            lexicalItemNode.createRelationshipTo(modifierNode, RelationshipType.withName("IS_MEMBER_OF"));
+        }
+
+        for(Modifier parent : modifier.getDirectParents()){
+            Node parentNode = createModifierNode(parent, type, graphDB);
+            modifierNode.createRelationshipTo(parentNode, RelationshipType.withName("IS_A"));
+        }
+
+        for(Modifier pseudo : modifier.getPseudos()){
+            Node pseudoNode = createPseudoModifierNode(pseudo, graphDB);
+            modifierNode.createRelationshipTo(pseudoNode, RelationshipType.withName("hasPseudo"));
+        }
+        for(Modifier closure: modifier.getClosures()){
+            Node closureNode = createClosureNode(closure, graphDB);
+            modifierNode.createRelationshipTo(closureNode, RelationshipType.withName("hasClosure"));
+        }
+
+        if(type.equals(NodeTypes.NUMERIC_MODIFIER)){
+            //TODO: Add additional numeric attributes here
+        }
+
+        return modifierNode;
     }
 
-    private static Node createSemanticModifierTypeNode(Modifier modifier, GraphDatabaseService graphDB){
-        Node modNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(),
-                NodeTypes.SEMANTIC_MODIFIER, graphDB);
-
-        //set uri prop
-        modNode.setProperty("uri", modifier.getUri());
-
-        return modNode;
-    }
-
-    private static Node createNumericModifierTypeNode(Modifier modifier, GraphDatabaseService graphDB){
-        Node modNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(),
-                NodeTypes.NUMERIC_MODIFIER, graphDB);
-
-        //set uri prop
-        modNode.setProperty("uri", modifier.getUri());
-
-        return modNode;
-    }
-
-    private static Node createPseudoModifierTypeNode(Modifier modifier, GraphDatabaseService graphDB){
-        Node modNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(),
-                NodeTypes.PSEUDO_MODIFIER, graphDB);
-
-        //set uri prop
-        modNode.setProperty("uri", modifier.getUri());
+    private static Node createPseudoModifierNode(Modifier modifier, GraphDatabaseService graphDB){
+        Node modNode = createModifierNode(modifier, NodeTypes.PSEUDO_MODIFIER, graphDB);
 
         return modNode;
     }
 
     private static Node createClosureNode(Modifier modifier, GraphDatabaseService graphDB){
-        Node modNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(), NodeTypes.CLOSURE, graphDB);
-
-        //set uri prop
-        modNode.setProperty("uri", modifier.getUri());
+        Node modNode = createModifierNode(modifier, NodeTypes.CLOSURE, graphDB);
 
         return modNode;
     }
 
     private static Node createQualifierNode(Modifier modifier, GraphDatabaseService graphDB){
-        Node modNode = getOrCreateNodeWithUniqueFactory(modifier.getModName(), NodeTypes.QUALIFIER, graphDB);
-
-        //set uri prop
-        modNode.setProperty("uri", modifier.getUri());
+        Node modNode = createModifierNode(modifier, NodeTypes.QUALIFIER, graphDB);
 
         return modNode;
     }
@@ -219,22 +216,14 @@ public class domainToGraph {
         //set uri prop
         termNode.setProperty("uri", term.getURI());
         termNode.setProperty("preferredTerm", term.getPrefTerm());
-        for(String synonym : term.getSynonym()){
-            termNode.setProperty("synonym", synonym);
-        }
-        for(String misspelling : term.getMisspelling()){
-            termNode.setProperty("misspelling", misspelling);
-        }
-        for(String regex : term.getRegex()){
-            termNode.setProperty("regex", regex);
-        }
-        for(String subjExp : term.getSubjExp()){
-            termNode.setProperty("subjectiveExpression", subjExp);
-        }
+        termNode.setProperty("synonym", String.join(";", term.getSynonym()));
+        termNode.setProperty("misspelling", String.join(";", term.getMisspelling()));
+        termNode.setProperty("regex", String.join(";", term.getRegex()));
+        termNode.setProperty("subjectiveExpression", String.join(";", term.getSubjExp()));
+        termNode.setProperty("alternateCode", String.join(";", term.getAltCode()));
         termNode.setProperty("code", term.getPrefCode());
-        for(String altCode : term.getAltCode()){
-            termNode.setProperty("alternateCode", altCode);
-        }
+
+        //link to parent nodes
 
         return termNode;
     }
@@ -245,24 +234,13 @@ public class domainToGraph {
         //set uri prop
         itemNode.setProperty("uri", item.getUri());
         itemNode.setProperty("preferredTerm", item.getPrefTerm());
-        for(String synonym : item.getSynonym()){
-            itemNode.setProperty("synonym", synonym);
-        }
-        for(String misspelling : item.getMisspelling()){
-            itemNode.setProperty("misspelling", misspelling);
-        }
-        for(String regex : item.getRegex()){
-            itemNode.setProperty("regex", regex);
-        }
-        for(String subjExp : item.getSubjExp()){
-            itemNode.setProperty("subjectiveExpression", subjExp);
-        }
-        for(String prefCode : item.getPrefCode()){
-            itemNode.setProperty("code", prefCode);
-        }
-        for(String altCode : item.getAltCode()){
-            itemNode.setProperty("alternateCode", altCode);
-        }
+        itemNode.setProperty("synonym", String.join(";", item.getSynonym()));
+        itemNode.setProperty("misspelling", String.join(";", item.getMisspelling()));
+        itemNode.setProperty("regex", String.join(";", item.getRegex()));
+        itemNode.setProperty("subjectiveExpression", String.join(";", item.getSubjExp()));
+        itemNode.setProperty("alternateCode", String.join(";", item.getAltCode()));
+        itemNode.setProperty("code", String.join(";", item.getPrefCode()));
+        itemNode.setProperty("windowSize", item.getWindowSize());
         if(item.getActionEn(true) != null) itemNode.setProperty("ActionEn", item.getActionEn(true));
 
         return itemNode;
