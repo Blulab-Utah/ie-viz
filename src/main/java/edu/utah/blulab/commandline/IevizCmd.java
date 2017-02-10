@@ -1,6 +1,9 @@
 package edu.utah.blulab.commandline;
 
 import edu.utah.blulab.domainontology.DomainOntology;
+import tsl.utilities.FUtils;
+import tsl.utilities.StrUtils;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -34,6 +37,8 @@ public class IevizCmd {
 
     private static String ConfigFileName = "config";
     private static String MacroFileName = "macros";
+    
+    public static String TSLPropertiesFile = "tsl.properties";
 
     // private static String ConfigFileName = ResourceDirectoryName +
     // File.separatorChar + "config";
@@ -47,9 +52,9 @@ public class IevizCmd {
     {"setKAUsername", "true", "Store KA username in config file"},
     {"showconfig", "false", "Show configuration file"}, {"listmacros", "false", "List command arg macros"},
     {"createmacro", "true", "Create command arg macro"}, {"rm", "runmacro", "true", "Run macro"},
-    {"run", "runieviz", "runs ieviz", "<toolname> <ontology> <inputdir>", "3"},
+    {"run", "runieviz", "runs ieviz", "<toolname> <ontology> <inputdir> <corpus>", "4"},
     {"iterate", "false", "Allow iterative user input"},
-    {"workbench", "false", "Start Evaluation Workbench"},
+    {"workbench", "true", "Start Evaluation Workbench"},
     };
 
     public static void main(String[] args) {
@@ -69,14 +74,15 @@ public class IevizCmd {
             String toolname = optVals[0].toLowerCase();
             String oname = optVals[1].toLowerCase();
             String inputdir = optVals[2];
+            String corpus = optVals[3];
             DomainOntology ontology = getDomainOntology(oname);
             NLPTool tool = this.NLPToolMap.get(toolname);
             if (tool == null) {
                 if ("moonstone".equals(toolname)) {
-                    tool = new MoonstoneNLPTool(ontology, inputdir, "moonstone");
+                    tool = new MoonstoneNLPTool(ontology, inputdir, corpus, "moonstone");
                     this.NLPToolMap.put(toolname, tool);
                 } else if ("dummy".equals(toolname)) {
-                    tool = new DummyNLPTool(ontology, inputdir, "dummy");
+                    tool = new DummyNLPTool(ontology, inputdir, corpus, "dummy");
                     this.NLPToolMap.put(toolname, tool);
                 }
             }
@@ -124,8 +130,8 @@ public class IevizCmd {
                 setConfigProperty(USERNAME_PARAMETER, astr);
             } else if (line.hasOption("iterate")) {
                 iterateUserInput();
-            } else if (line.hasOption("workbench")) {
-            	EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool();
+            } else if ((astr = line.getOptionValue("workbench")) != null) {
+            	EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool(astr);
             }
         } catch (Exception e) {
             throw new CommandLineException(e.toString());
@@ -254,7 +260,7 @@ public class IevizCmd {
         try {
             InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection(
                     "https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
-            String jsstr = Utilities.convertStreamToString(json);
+            String jsstr = StrUtils.convertStreamToString(json);
             if (jsstr != null) {
                 JSONArray jarray = new JSONArray(jsstr);
                 for (int i = 0; i < jarray.length(); i++) {
@@ -275,7 +281,7 @@ public class IevizCmd {
         try {
             InputStream is = KAAuthenticator.Authenticator.openAuthenticatedConnection(
                     "https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
-            String xml = Utilities.convertStreamToString(is);
+            String xml = StrUtils.convertStreamToString(is);
             return xml;
         } catch (Exception e) {
             throw new CommandLineException("Unable to display ontologies: " + e.toString());
@@ -295,7 +301,7 @@ public class IevizCmd {
 
     public void readConfigFile() throws CommandLineException {
         try {
-            File file = Utilities.getResourceFile(this.getClass(), ConfigFileName);
+            File file = FUtils.getResourceFile(this.getClass(), ConfigFileName);
             if (file != null && file.exists()) {
                 configProperties = new Properties();
                 configProperties.load(new FileReader(file));
@@ -309,7 +315,7 @@ public class IevizCmd {
 
     public void writeConfigFile() throws CommandLineException {
         try {
-            File file = Utilities.getResourceFile(this.getClass(), ConfigFileName);
+            File file = FUtils.getResourceFile(this.getClass(), ConfigFileName);
             if (configProperties != null && file != null && file.exists()) {
                 BufferedWriter out = new BufferedWriter(new FileWriter(file.getAbsolutePath()));
                 StringBuffer sb = new StringBuffer();
@@ -328,7 +334,7 @@ public class IevizCmd {
 
     public void readMacroFile() throws CommandLineException {
         try {
-            File file = Utilities.getResourceFile(this.getClass(), MacroFileName);
+            File file = FUtils.getResourceFile(this.getClass(), MacroFileName);
             if (file != null && file.exists()) {
                 this.argMacros = new HashMap<String, String[]>();
                 BufferedReader in = new BufferedReader(new FileReader(file));
@@ -351,7 +357,7 @@ public class IevizCmd {
 
     public void writeMacroFile() throws CommandLineException {
         try {
-            File file = Utilities.getResourceFile(this.getClass(), MacroFileName);
+            File file = FUtils.getResourceFile(this.getClass(), MacroFileName);
             if (file != null && file.exists() && this.argMacros != null && !this.argMacros.isEmpty()) {
                 StringBuffer sb = new StringBuffer();
                 BufferedWriter out = new BufferedWriter(new FileWriter(file.getAbsolutePath()));

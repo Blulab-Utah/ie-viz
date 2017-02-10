@@ -14,6 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import tsl.utilities.StrUtils;
+
 public class KAAuthenticator {
 
 	String server = "blulab.chpc.utah.edu";
@@ -198,7 +200,7 @@ public class KAAuthenticator {
 
 			InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection(
 					"https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
-			String jsstr = Utilities.convertStreamToString(json);
+			String jsstr = StrUtils.convertStreamToString(json);
 			json.close();
 			JSONArray jarray = new JSONArray(jsstr);
 			for (int i = 0; i < jarray.length(); i++) {

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eHOST_Project_Configure Version="1.0">
+    <Pre_Defined_Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Qualifier.preannotate</Pre_Defined_Dictionary>
+    <Separator_of_PreDefined_Dictionary>&lt;---&gt;</Separator_of_PreDefined_Dictionary>
+    <Handling_Text_Database>false</Handling_Text_Database>
+    <OracleFunction_Enabled>false</OracleFunction_Enabled>
+    <AttributeEditor_PopUp_Enabled>false</AttributeEditor_PopUp_Enabled>
+    <OracleFunction>true</OracleFunction>
+    <AnnotationBuilder_Using_ExactSpan>false</AnnotationBuilder_Using_ExactSpan>
+    <OracleFunction_Using_WholeWord>true</OracleFunction_Using_WholeWord>
+    <GraphicAnnotationPath_Enabled>true</GraphicAnnotationPath_Enabled>
+    <Diff_Indicator_Enabled>true</Diff_Indicator_Enabled>
+    <Diff_Indicator_Check_CrossSpan>true</Diff_Indicator_Check_CrossSpan>
+    <Diff_Indicator_Check_Overlaps>false</Diff_Indicator_Check_Overlaps>
+    <StopWords_Enabled>false</StopWords_Enabled>
+    <Output_VerifySuggestions>false</Output_VerifySuggestions>
+    <Pre_Defined_Dictionary_DifferentWeight>false</Pre_Defined_Dictionary_DifferentWeight>
+    <PreAnnotated_Dictionaries Owner="NLP_Assistant">
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\FunctionalStatus_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>8</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\CognitiveImpairment_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\ContextualAspect.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\DocTimeRel_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>5</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Drugs_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Duration_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>2</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Homelessness.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\PhysicalImpairment_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>27</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\SocialStressors.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\SocialSupport_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>5</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Tobacco_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\UseAlcohol_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>3</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\ContextualAspect.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>10</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Course_Readmit.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>6</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\HeadingSubheading.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>4</Number_of_Entries>
+        </PreAnnotated_Dict>
+        <PreAnnotated_Dict>
+            <Dictionary>P:\ORD_Keyhani_201309065D\Annotation\Brett_ReadmissionPilot\Dictionaries\Qualifier.preannotate</Dictionary>
+            <Weight>0</Weight>
+            <Description>Pre-annotated concept dictionary.</Description>
+            <Separator>&lt;---&gt;</Separator>
+            <Number_of_Entries>1</Number_of_Entries>
+        </PreAnnotated_Dict>
+    </PreAnnotated_Dictionaries>
+    <attributeDefs>
+        <attributeDef>
+            <Name>validation</Name>
+            <is_Linked_to_UMLS_CUICode_and_CUILabel>false</is_Linked_to_UMLS_CUICode_and_CUILabel>
+            <is_Linked_to_UMLS_CUICode>false</is_Linked_to_UMLS_CUICode>
+            <is_Linked_to_UMLS_CUILabel>false</is_Linked_to_UMLS_CUILabel>
+            <attributeDefOptionDef>incorrect</attributeDefOptionDef>
+            <attributeDefOptionDef>correct</attributeDefOptionDef>
+        </attributeDef>
+    </attributeDefs>
+    <Relationship_Rules>
+        <Relationship_Rule>
+            <Name>hasHeading_SubHeading</Name>
+            <Definition>((SOCIAL_SUPPORT)|(SUBSTANCE_USE_DRUGS)|(SUBSTANCE_USE_TOBACCO)|(SUBSTANCE_USE_ALCOHOL)|(SOCIAL_STRESSORS)|(ADL_IADL_COGNITIVE_IMPAIRMENT)|(FUNCTIONAL_STATUS)|(HOMELESSNESS)|(LIVING_ALONE)|(ADL_IADL_PHYSICAL_IMPAIRMENT))((HEADING_SUBHEADING))</Definition>
+            <attributeDefs />
+        </Relationship_Rule>
+        <Relationship_Rule>
+            <Name>hasLingAttribute</Name>
+            <Definition>((PHYSICAL_IMPAIRMENT)|(SOCIAL_SUPPORT)|(SUBSTANCE_USE_DRUGS)|(SUBSTANCE_USE_ALCOHOL)|(COGNITIVE_IMPAIRMENT)|(SOCIAL_STRESSORS)|(HOMELESSNESS)|(SUBSTANCE_USE_TOBACCO)|(ADL_IADL_COGNITIVE_IMPAIRMENT)|(FUNCTIONAL_STATUS)|(LIVING_ALONE)|(ADL_IADL_PHYSICAL_IMPAIRMENT))((lingAttrib_Duration)|(lingAttrib_Frequency)|(lingAttrib_ContextualAspect)|(lingAttrib_Certainty)|(lingAttrib_DocTimeRel)|(lingAttrib_HypotheticalConditional))</Definition>
+            <attributeDefs />
+        </Relationship_Rule>
+        <Relationship_Rule>
+            <Name>hasSemAttribute</Name>
+            <Definition>((PHYSICAL_IMPAIRMENT)|(SOCIAL_SUPPORT)|(SUBSTANCE_USE_DRUGS)|(SUBSTANCE_USE_ALCOHOL)|(COGNITIVE_IMPAIRMENT)|(SOCIAL_STRESSORS)|(HOMELESSNESS)|(SUBSTANCE_USE_TOBACCO)|(SCORE_GRADELEVEL_MEASUREMENT)|(ADL_IADL_COGNITIVE_IMPAIRMENT)|(FUNCTIONAL_STATUS)|(ADL_IADL_PHYSICAL_IMPAIRMENT))((semAttrib_Severity)|(semAttrib_Quantity)|(semAttrib_Qualifier)|(semAttrib_HypotheticalConditional)|(semAttrib_Course)|(ScoreGradeLevelMeasurement))</Definition>
+            <attributeDefs />
+        </Relationship_Rule>
+        <Relationship_Rule>
+            <Name>overlap</Name>
+            <Definition>((PHYSICAL_IMPAIRMENT)|(SUBSTANCE_USE_DRUGS)|(SOCIAL_SUPPORT)|(SUBSTANCE_USE_TOBACCO)|(SUBSTANCE_USE_ALCOHOL)|(ADL_IADL_COGNITIVE_IMPAIRMENT)|(COGNITIVE_IMPAIRMENT)|(SOCIAL_STRESSORS)|(FUNCTIONAL_STATUS)|(HOMELESSNESS)|(DURATION)|(ADL_IADL_PHYSICAL_IMPAIRMENT)|(LIVING_ALONE)|(OTHER))((PHYSICAL_IMPAIRMENT)|(SUBSTANCE_USE_DRUGS)|(SOCIAL_SUPPORT)|(SUBSTANCE_USE_TOBACCO)|(SUBSTANCE_USE_ALCOHOL)|(ADL_IADL_COGNITIVE_IMPAIRMENT)|(COGNITIVE_IMPAIRMENT)|(SOCIAL_STRESSORS)|(FUNCTIONAL_STATUS)|(HOMELESSNESS)|(DURATION)|(ADL_IADL_PHYSICAL_IMPAIRMENT)|(LIVING_ALONE)|(OTHER))</Definition>
+            <attributeDefs />
+        </Relationship_Rule>
+    </Relationship_Rules>
+    <classDefs>
+        <classDef>
+            <Name>HOUSING_SITUATION</Name>
+            <RGB_R>128</RGB_R>
+            <RGB_G>128</RGB_G>
+            <RGB_B>192</RGB_B>
+            <InHerit_Public_Attributes>true</InHerit_Public_Attributes>
+            <attributeDef>
+                <Name>housingnorm</Name>
+                <is_Linked_to_UMLS_CUICode_and_CUILabel>false</is_Linked_to_UMLS_CUICode_and_CUILabel>
+                <is_Linked_to_UMLS_CUICode>false</is_Linked_to_UMLS_CUICode>
+                <is_Linked_to_UMLS_CUILabel>false</is_Linked_to_UMLS_CUILabel>
+                <defaultValue>no mention</defaultValue>
+                <attributeDefOptionDef>lives in a facility</attributeDefOptionDef>
+                <attributeDefOptionDef>no mention</attributeDefOptionDef>
+                <attributeDefOptionDef>not homeless/but other housing situation</attributeDefOptionDef>
+                <attributeDefOptionDef>lives in a permanent single room occupancy</attributeDefOptionDef>
+                <attributeDefOptionDef>lives at home</attributeDefOptionDef>
+                <attributeDefOptionDef>marginally housed/temporarily housed/at risk of homelessness</attributeDefOptionDef>
+                <attributeDefOptionDef>homeless</attributeDefOptionDef>
+            </attributeDef>
+            <Source>eHOST</Source>
+        </classDef>
+        <classDef>
+            <Name>LIVING_ALONE</Name>
+            <RGB_R>0</RGB_R>
+            <RGB_G>192</RGB_G>
+            <RGB_B>255</RGB_B>
+            <InHerit_Public_Attributes>true</InHerit_Public_Attributes>
+            <attributeDef>
+                <Name>livingalonenorm</Name>
+                <is_Linked_to_UMLS_CUICode_and_CUILabel>false</is_Linked_to_UMLS_CUICode_and_CUILabel>
+                <is_Linked_to_UMLS_CUICode>false</is_Linked_to_UMLS_CUICode>
+                <is_Linked_to_UMLS_CUILabel>false</is_Linked_to_UMLS_CUILabel>
+                <defaultValue>no mention</defaultValue>
+                <attributeDefOptionDef>no mention</attributeDefOptionDef>
+                <attributeDefOptionDef>does not live alone</attributeDefOptionDef>
+                <attributeDefOptionDef>living alone</attributeDefOptionDef>
+            </attributeDef>
+            <Source>eHOST</Source>
+        </classDef>
+        <classDef>
+            <Name>SOCIAL_SUPPORT</Name>
+            <RGB_R>0</RGB_R>
+            <RGB_G>128</RGB_G>
+            <RGB_B>192</RGB_B>
+            <InHerit_Public_Attributes>true</InHerit_Public_Attributes>
+            <attributeDef>
+                <Name>socialsupportnorm</Name>
+                <is_Linked_to_UMLS_CUICode_and_CUILabel>false</is_Linked_to_UMLS_CUICode_and_CUILabel>
+                <is_Linked_to_UMLS_CUICode>false</is_Linked_to_UMLS_CUICode>
+                <is_Linked_to_UMLS_CUILabel>false</is_Linked_to_UMLS_CUILabel>
+                <defaultValue>no mention</defaultValue>
+                <attributeDefOptionDef>no mention</attributeDefOptionDef>
+                <attributeDefOptionDef>has access to community services</attributeDefOptionDef>
+                <attributeDefOptionDef>no social support</attributeDefOptionDef>
+                <attributeDefOptionDef>has social support</attributeDefOptionDef>
+            </attributeDef>
+            <Source>eHOST</Source>
+        </classDef>
+    </classDefs>
+</eHOST_Project_Configure>
+
