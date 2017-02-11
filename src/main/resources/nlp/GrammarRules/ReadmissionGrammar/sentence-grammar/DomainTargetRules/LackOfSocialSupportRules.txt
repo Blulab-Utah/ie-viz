@@ -1,0 +1,99 @@
+'(
+wordrule
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; LACK SUPPORT 
+ 
+;; e.g. "no family support" (also negated complex concepts)
+((ruleid negated-family-support-denotes-lack-of-support-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words (":FAMILY_SUPPORT:" ":POSSIBLE_SUPPORT:"
+		":FAMILY::CARING:"))
+ (tests (neg ?0))
+ (removeproperties directionality))
+ 
+((ruleid no-care-from-family-implies-lack-of-support-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words (":FAMILY:") 
+		(":CARE:" ":PROVISION_OF_CARE:" ":TRANSPORTATION:" ":POSSIBLE_SUPPORT:"))
+ (tests (neg ?1))
+ (removeproperties directionality))
+
+((ruleid no-one-to-provide-care-implies-lack-of-support-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words (":NO-ONE:" ":LACK:") 
+		(":CARE:" ":PROVISION_OF_CARE:" ":TRANSPORTATION:" ":POSSIBLE_SUPPORT:"))
+ (tests (notneg ?1)))
+ 
+;; e.g. "no caregiver"
+((ruleid no-caregiver-means-lacks-support-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words (":CAREGIVER:"))
+ (tests (neg ?0))
+ (removeproperties directionality))
+
+((ruleid social-isolation-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words ("social isolation" "socially isolated")))
+ 
+;;;;;;;;;;;;;;;;;;;;;
+;; 6/28/2016
+
+((ruleid caregiver-status-no-caregiver-indicates-lack-support-rule) 
+  (concept ":POSSIBLE_LACK_SUPPORT:") 
+  (ordered true) 
+  (words 
+    ("caregiver" "care giver") 
+    ("status") 
+    (":POSSIBLE_LACK_SUPPORT:")))
+
+((ruleid lack-of-family-help-indicates-lack-of-support-rule) 
+  (concept ":POSSIBLE_LACK_SUPPORT:") 
+  (ordered true) 
+  (window 32.0) 
+  (words 
+    (":FAMILY:" ":FRIEND:" ":MULTI_FAMILY_MEMBERS:") 
+    (":HELP:" ":CARE:")) 
+  (tests (neg ?1)) 
+  (removeproperties directionality))
+  
+((ruleid no-care-provision-indicates-lack-of-support-rule)
+  (concept ":POSSIBLE_LACK_SUPPORT:") 
+  (words (":POSSIBLE_SUPPORT:"))
+  (tests (neg ?0))
+  (removeproperties directionality)) 
+
+ 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DELETED RULES, 4/4/2016
+
+;; 4/1/2016:  If there is negated provision of care involving the patient, 
+;; that is lack of support. e.g. "he is not receiving care from his children"
+((ruleidXXX negated-provision-of-care-denotes-lack-of-support-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words ("@question-answer-negation-rule@"))
+ (tests (hc ?0 ":PROVISION_OF_CARE:"))
+ (removeproperties directionality))
+
+((ruleidXXX question-answer-support-negation-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (ordered true)
+ (words (":PROVISION_OF_CARE:"))
+ (tests (neg ?0) (hcr ?0 ":PATIENT:"))
+ (removeproperties directionality))
+
+;; e.g. "patient is not well supported"
+((ruleidXXX patient-not-well-supported-general-rule)
+ (concept ":POSSIBLE_LACK_SUPPORT:")
+ (words (":FAMILY:" ":FRIEND:") 
+		(":HELP:" ":CARE:" ":PROVISION_OF_CARE:" ":POSSIBLE_SUPPORT:"))
+ (tests (neg ?1))
+ (removeproperties directionality))
+
+ 
+
+ 
+ 
+ 
+)
+

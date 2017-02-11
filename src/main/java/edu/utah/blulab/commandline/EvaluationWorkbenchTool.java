@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -20,6 +21,7 @@ import com.ed.wew.api.Params;
 import com.ed.wew.api.ResultTable;
 import com.ed.wew.api.WEWManager;
 
+import edu.utah.blulab.evaluationworkbenchmanager.EvaluationWorkbenchManager;
 import edu.utah.blulab.evaluationworkbenchmanager.WEWManagerInterface;
 import tsl.knowledge.engine.KnowledgeEngine;
 import tsl.knowledge.engine.StartupParameters;
@@ -47,25 +49,26 @@ public class EvaluationWorkbenchTool {
 	}
 
 	public void invokeWEWManagerMySQL() throws CommandLineException {
-		int x = 1;
 		String pfilename = NLPTool.NLPDirectoryName + File.separatorChar + IevizCmd.TSLPropertiesFile;
 		Properties properties = FUtils.readPropertiesFile(IevizCmd.class, pfilename);
-		
+
 		File pfile = FUtils.getResourceFile(IevizCmd.class, pfilename);
 		String rootdir = pfile.getParent();
 		properties.put("RootDirectory", rootdir);
-		
+
 		KnowledgeEngine ke = KnowledgeEngine.getCurrentKnowledgeEngine(false, properties);
 		StartupParameters sp = ke.getStartupParameters();
-		String inputTypeFirstAnnotator = sp.getPropertyValue(workbench.arr.StartupParameters.WorkbenchAnnotationFileTypeFirstAnnotator);
-		String inputTypeSecondAnnotator = sp.getPropertyValue(workbench.arr.StartupParameters.WorkbenchAnnotationFileTypeSecondAnnotator);
+		String inputTypeFirstAnnotator = sp
+				.getPropertyValue(workbench.arr.StartupParameters.WorkbenchAnnotationFileTypeFirstAnnotator);
+		String inputTypeSecondAnnotator = sp
+				.getPropertyValue(workbench.arr.StartupParameters.WorkbenchAnnotationFileTypeSecondAnnotator);
 		String format = inputTypeFirstAnnotator;
 		String schemaFileName = sp.getPropertyValue(workbench.arr.StartupParameters.WorkbenchKnowtatorSchemaFile);
 		String primaryAnnotatorName = sp.getPropertyValue(workbench.arr.StartupParameters.FirstAnnotatorName);
 		String secondaryAnnotatorName = sp.getPropertyValue(workbench.arr.StartupParameters.SecondAnnotatorName);
 		DocumentImpl schema = new DocumentImpl();
-		File sfile = FUtils.getResourceFile(IevizCmd.class, schemaFileName);
-		InputStreamReader sisr;
+		File sfile = FUtils.getResourceFile(IevizCmd.class, NLPTool.getNLPDirectoryFilename(schemaFileName));
+		InputStreamReader sisr = null;
 		try {
 			sisr = new InputStreamReader(new FileInputStream(sfile));
 		} catch (FileNotFoundException e) {
@@ -79,12 +82,7 @@ public class EvaluationWorkbenchTool {
 		List<String> dnames = MySQL.getMySQL().getDocumentNames(this.corpusName);
 		for (String dname : dnames) {
 			String text = MySQL.getMySQL().getDocumentText(dname, this.corpusName);
-			InputStream dsis;
-			try {
-				dsis = new ByteArrayInputStream(text.getBytes("UTF_8"));
-			} catch (UnsupportedEncodingException e) {
-				throw new CommandLineException("Workbench: " + e.toString());
-			}
+			InputStream dsis = new ByteArrayInputStream(text.getBytes(Charset.forName("UTF-8")));
 			DocumentImpl d = new DocumentImpl();
 			d.setName(dname);
 			d.setReader(new InputStreamReader(dsis));
@@ -94,15 +92,11 @@ public class EvaluationWorkbenchTool {
 		// Primary
 		int i = 0;
 		List<AnnotatorReference> primary = new ArrayList();
+		int x = 1;
 		List<String> analyses = MySQL.getMySQL().getDocumentAnalyses(this.corpusName, primaryAnnotatorName);
 		for (String analysis : analyses) {
 			String aname = "Primary" + i;
-			InputStream asis;
-			try {
-				asis = new ByteArrayInputStream(analysis.getBytes("UTF_8"));
-			} catch (UnsupportedEncodingException e) {
-				throw new CommandLineException("Workbench: " + e.toString());
-			}
+			InputStream asis = new ByteArrayInputStream(analysis.getBytes(Charset.forName("UTF-8")));
 			AnnotatorImpl a1 = new AnnotatorImpl();
 			a1.setAnnotatorType(AnnotatorType.Primary);
 			a1.setName(aname);
@@ -116,12 +110,7 @@ public class EvaluationWorkbenchTool {
 		analyses = MySQL.getMySQL().getDocumentAnalyses(this.corpusName, secondaryAnnotatorName);
 		for (String analysis : analyses) {
 			String aname = "Secondary" + i;
-			InputStream asis;
-			try {
-				asis = new ByteArrayInputStream(analysis.getBytes("UTF_8"));
-			} catch (UnsupportedEncodingException e) {
-				throw new CommandLineException("Workbench: " + e.toString());
-			}
+			InputStream asis = new ByteArrayInputStream(analysis.getBytes(Charset.forName("UTF-8")));
 			AnnotatorImpl a2 = new AnnotatorImpl();
 			a2.setAnnotatorType(AnnotatorType.Secondary);
 			a2.setName(aname);
@@ -136,8 +125,7 @@ public class EvaluationWorkbenchTool {
 		params.putParam("secondAnnotator", secondaryAnnotatorName);
 
 		try {
-			sisr.close();
-			ResultTable result = WEWManager.load(schema, documents, primary, secondary, params);
+			EvaluationWorkbenchManager.loadWBGUI(null, schema, documents, primary, secondary, params);
 		} catch (Exception e) {
 			throw new CommandLineException("Workbench: " + e.toString());
 		}

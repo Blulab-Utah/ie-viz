@@ -60,7 +60,7 @@ public class MySQL {
 		String analysis = null;
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select analysis from ANALYSIS where corpus = ? and document = ? and annotator = ?";
+			String sql = "select analysis from ANALYSES where corpus = ? and document = ? and annotator = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
 			ps.setString(1, tool.getCorpus());
 			ps.setString(2, document);
@@ -80,13 +80,13 @@ public class MySQL {
 		List<String> analyses = new ArrayList();
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select analysis from ANALYSIS where corpus = ? and annotator = ?";
+			String sql = "select analysis from ANALYSES where corpus = ? and annotator = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
 			ps.setString(1, corpus);
 			ps.setString(2, annotator);
 			ps.execute();
 			ResultSet rs = ps.executeQuery();
-			if (rs.first()) {
+			while (rs.next()) {
 				String analysis = rs.getString(1);
 				analyses.add(analysis);
 			}
@@ -100,7 +100,7 @@ public class MySQL {
 		String text = null;
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select text from DOCUMENT where document = ? and corpus = ?";
+			String sql = "select text from DOCUMENTS where document = ? and corpus = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
 			ps.setString(1, docname);
 			ps.setString(2, corpname);
@@ -119,7 +119,7 @@ public class MySQL {
 		ArrayList<String> dnames = new ArrayList();
 		try {
 			Connection c = MySQL.getMySQL().getConnection();
-			String sql = "select document from DOCUMENT where corpus = ?";
+			String sql = "select document from DOCUMENTS where corpus = ?";
 			com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) c.prepareStatement(sql);
 			ps.setString(1, corpname);
 			ps.execute();

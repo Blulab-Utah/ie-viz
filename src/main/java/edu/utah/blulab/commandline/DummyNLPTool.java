@@ -22,7 +22,6 @@ public class DummyNLPTool extends NLPTool {
 
     public String processFile(File file) {
         String results = null;
-        int x = 2;
         file = FUtils.getResourceFile(IevizCmd.class, "FakeReport1.txt.knowtator.xml");
         if (file != null && file.exists()) {
         	results = FUtils.readFile(file);

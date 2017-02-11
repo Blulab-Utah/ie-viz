@@ -40,6 +40,10 @@ public class NLPTool {
 			throw new CommandLineException(e.toString());
 		}
 	}
+	
+	public static String getNLPDirectoryFilename(String fname) {
+		return NLPTool.NLPDirectoryName + File.separatorChar + fname;
+	}
 
 	public String processFile(File file) {
 		return null;

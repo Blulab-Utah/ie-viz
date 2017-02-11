@@ -1,0 +1,24 @@
+'(
+wordrule
+
+((ruleid checkbox-checked-item-rule-1)
+ (concept ?1)
+ (ordered true)
+ (words (":CHECKBOX_CHECKED:") (?interpreted)))
+
+((ruleid checkbox-checked-item-rule-2)
+ (concept ?0)
+ (ordered true)
+ (words (?interpreted) (":CHECKBOX_CHECKED:")))
+ 
+((ruleid checkbox-unchecked-item-rule-1)
+ (concept ?1)
+ (ordered true)
+ (words (":CHECKBOX_UNCHECKED:") (?interpreted)))
+
+((ruleid checkbox-unchecked-item-rule-2)
+ (concept ?0)
+ (ordered true)
+ (words (?interpreted) (":CHECKBOX_UNCHECKED:")))
+
+)

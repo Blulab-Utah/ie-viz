@@ -1,0 +1,65 @@
+'(
+tagrule
+ 
+ ;;;;;;;
+ ;; 11/6/2016 TEST
+ 
+((ruleid pre-negation-context-rule-FILE)
+  (debug true)
+  (concept ?1)
+  (ordered true)
+  (window 8)
+  (words (?filestring "never" "no" "not" "without" "w/o" "can't" "never") 
+  		 (?interpreted))
+
+  ;; 3/12/2016:  Need action for phrases like "family not here".
+  ;; (actions ("applyModifierProperties" ?rule ?1))
+  
+  (contextlexicon 
+    ("category=definiteNegatedExistence" "en (sv) action=forward"))
+  (stopword 
+    ("_BUT_" "_PRESENTATION_" "_AND_" "_REMAIN_" "_ETIOLOGY_"))
+  (properties (directionality negated))
+  (tests 
+		;; 11/6/2016 TEST
+		;; ("containsTarget" ?1)
+		   (notneg ?1)
+		   (not ("firstWordBeginsWithUppercase" ?1))  ;; 2/6/2016 klooge
+		 ;; DOESN'T WORK; e.g. in "not  Get support", parser simply ignores "Get"
+	))
+	
+((ruleid question-answer-negation-rule)
+  (concept ?0)
+  (ordered true)
+  (words (?interpreted) ("no" "false" "unknown")) 
+  
+  ;; 7/15/2016
+  (actions ("applyModifierProperties" ?rule ?0))
+  
+  (properties (directionality negated))
+  (tests ("usesCombinedHeaderSentence" ?sentence)))
+	
+((ruleid post-affirmation-context-rule) 
+  (concept ?0)
+  (ordered true)
+  (words (?interpreted) ("yes" "true")) 
+  (stopword 
+    ("_BUT_" "_PRESENTATION_" "_AND_" "_REMAIN_" "_ETIOLOGY_")) 
+  (properties 
+    ("directionality" "affirmed")))
+	
+((ruleid checklist-affirmation-context-rule) 
+  (concept ?1)
+  (juxtaposed true)
+  (words ("(x)" "[x]") (?interpreted)) 
+  (properties 
+    ("directionality" "affirmed")))
+	
+((ruleid checklist-negation-context-rule) 
+  (concept ?1)
+  (juxtaposed true)
+  (words ("()" "[]") (?interpreted)) 
+  (properties 
+    ("directionality" "negated")))
+
+)
