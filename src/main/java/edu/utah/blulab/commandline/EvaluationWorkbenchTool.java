@@ -31,11 +31,12 @@ import workbench.arr.EvaluationWorkbench;
 
 public class EvaluationWorkbenchTool {
 	private WBGUI evaluationWorkbench = null;
+	private IevizCmd ieviz = null;
 	private String corpusName = null;
 
-	public EvaluationWorkbenchTool(String corpus) {
+	public EvaluationWorkbenchTool(IevizCmd ieviz, String corpus) {
+		this.ieviz = ieviz;
 		this.corpusName = corpus;
-		int x = 1;
 		startupWorkbench();
 	}
 
@@ -92,7 +93,7 @@ public class EvaluationWorkbenchTool {
 		// Primary
 		int i = 0;
 		List<AnnotatorReference> primary = new ArrayList();
-		int x = 1;
+		int x = 2;
 		List<String> analyses = MySQL.getMySQL().getDocumentAnalyses(this.corpusName, primaryAnnotatorName);
 		for (String analysis : analyses) {
 			String aname = "Primary" + i;

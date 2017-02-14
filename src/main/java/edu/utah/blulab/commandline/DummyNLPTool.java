@@ -7,8 +7,8 @@ import java.io.File;
 
 public class DummyNLPTool extends NLPTool {
 
-    public DummyNLPTool(DomainOntology ontology, String inputdir, String corpus, String annotator) {
-    	super("dummy", ontology, inputdir, corpus, annotator);
+    public DummyNLPTool(IevizCmd ieviz, DomainOntology ontology, String inputdir, String corpus, String annotator) {
+    	super("dummy", ieviz, ontology, inputdir, corpus, annotator);
     }
 
     public void setOntology(DomainOntology ontology) {

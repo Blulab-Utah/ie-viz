@@ -77,12 +77,17 @@ public class IevizCmd {
             String corpus = optVals[3];
             DomainOntology ontology = getDomainOntology(oname);
             NLPTool tool = this.NLPToolMap.get(toolname);
+            
+            // test
+            tool = null;
+            int x = 1;
+            
             if (tool == null) {
                 if ("moonstone".equals(toolname)) {
-                    tool = new MoonstoneNLPTool(ontology, inputdir, corpus, "moonstone");
+                    tool = new MoonstoneNLPTool(this, ontology, inputdir, corpus, "moonstone");
                     this.NLPToolMap.put(toolname, tool);
                 } else if ("dummy".equals(toolname)) {
-                    tool = new DummyNLPTool(ontology, inputdir, corpus, "dummy");
+                    tool = new DummyNLPTool(this, ontology, inputdir, corpus, "dummy");
                     this.NLPToolMap.put(toolname, tool);
                 }
             }
@@ -131,7 +136,7 @@ public class IevizCmd {
             } else if (line.hasOption("iterate")) {
                 iterateUserInput();
             } else if ((astr = line.getOptionValue("workbench")) != null) {
-            	EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool(astr);
+            	EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool(this, astr);
             }
         } catch (Exception e) {
             throw new CommandLineException(e.toString());
