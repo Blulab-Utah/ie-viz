@@ -31,10 +31,6 @@ public class MoonstoneNLPTool extends NLPTool {
 		super("moonstone", ieviz, ontology, inputdir, corpus, annotator);
 		String pfilename = NLPTool.NLPDirectoryName + File.separatorChar + IevizCmd.TSLPropertiesFile;
 		Properties properties = FUtils.readPropertiesFile(IevizCmd.class, pfilename);
-		File pfile = FUtils.getResourceFile(IevizCmd.class, pfilename);
-		String rootdir = pfile.getParent();
-		properties.put("RootDirectory", rootdir);
-		int x = 1;
 		this.moonstoneRuleInterface = new MoonstoneRuleInterface(properties);
 	}
 

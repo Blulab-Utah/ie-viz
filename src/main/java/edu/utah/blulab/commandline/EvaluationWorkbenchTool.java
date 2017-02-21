@@ -52,11 +52,6 @@ public class EvaluationWorkbenchTool {
 	public void invokeWEWManagerMySQL() throws CommandLineException {
 		String pfilename = NLPTool.NLPDirectoryName + File.separatorChar + IevizCmd.TSLPropertiesFile;
 		Properties properties = FUtils.readPropertiesFile(IevizCmd.class, pfilename);
-
-		File pfile = FUtils.getResourceFile(IevizCmd.class, pfilename);
-		String rootdir = pfile.getParent();
-		properties.put("RootDirectory", rootdir);
-
 		KnowledgeEngine ke = KnowledgeEngine.getCurrentKnowledgeEngine(false, properties);
 		StartupParameters sp = ke.getStartupParameters();
 		String inputTypeFirstAnnotator = sp
