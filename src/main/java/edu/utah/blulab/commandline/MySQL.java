@@ -13,8 +13,9 @@ public class MySQL {
 
 	private com.mysql.jdbc.Connection connection = null;
 	private static MySQL mySQL = null;
-	private static String ConnectionString = "jdbc:mysql://localhost/ieviz?user=root&password=lilith10&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
-
+	// private static String ConnectionString = "jdbc:mysql://localhost/ieviz?user=root&password=lilith10&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
+	private static String ConnectionString = "jdbc:mysql://localhost/ieviz?user=root&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
+	
 	public MySQL() {
 		getConnection();
 	}
