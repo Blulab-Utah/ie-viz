@@ -132,7 +132,7 @@ public class DOtoPyConText {
             HashMap<String, String> regexTuples = new HashMap<String, String>();
             ArrayList<String> variants = new ArrayList<String>();
 
-            ArrayList<String> parents = term.getAllParents();
+            List<ClassPath> parents = term.getClassPaths();
             Anchor ancestor = getAncestor(domain, parents);
 
             variants.add(term.getPrefTerm());
@@ -319,18 +319,16 @@ public class DOtoPyConText {
         return tuples;
     }
 
-    private Anchor getAncestor(DomainOntology domain, ArrayList<String> ancestors){
+    private Anchor getAncestor(DomainOntology domain, List<ClassPath> ancestors) throws Exception{
 
-        for(String str : ancestors){
-            if(!str.equalsIgnoreCase("http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#Anchor") &&
-                    !str.equalsIgnoreCase("http://www.w3.org/2002/07/owl#Thing")){
-                Anchor term = new Anchor(str, domain);
-                //System.out.println(term);
-                if(term.getDirectParents().isEmpty()){
-                    return term;
+
+        for(ClassPath path : ancestors){
+            for(int i =0; i<path.size(); i++){
+                if(!path.get(i).getIRI().toString().equals("http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Lexicon")
+                        && !path.get(i).getIRI().toString().equals("http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#Anchor")){
+                    return domain.createAnchor(path.get(i).getIRI().toString());
                 }
             }
-
         }
 
         return null;
