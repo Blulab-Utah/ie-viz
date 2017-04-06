@@ -26,6 +26,8 @@ import edu.utah.blulab.evaluationworkbenchmanager.WEWManagerInterface;
 import tsl.knowledge.engine.KnowledgeEngine;
 import tsl.knowledge.engine.StartupParameters;
 import tsl.utilities.FUtils;
+import workbench.api.constraint.ConstraintMatch;
+import workbench.api.constraint.ConstraintPacket;
 import workbench.api.gui.WBGUI;
 import workbench.arr.EvaluationWorkbench;
 
@@ -33,6 +35,8 @@ public class EvaluationWorkbenchTool {
 	private WBGUI evaluationWorkbench = null;
 	private IevizCmd ieviz = null;
 	private String corpusName = null;
+
+	private static String DefaultConstraintPacketName = "AnnotationHasClassification";
 
 	public EvaluationWorkbenchTool(IevizCmd ieviz, String corpus) {
 		this.ieviz = ieviz;
@@ -49,6 +53,15 @@ public class EvaluationWorkbenchTool {
 		return true;
 	}
 
+	public void printResults() {
+		ConstraintPacket cp = this.evaluationWorkbench.getAnalysis().getConstraintPacket(DefaultConstraintPacketName);
+		this.evaluationWorkbench.getAnalysis().setSelectedConstraintPacket(DefaultConstraintPacketName);
+		this.evaluationWorkbench.getAnalysis().updateStatistics();
+		ConstraintMatch cm = this.evaluationWorkbench.getAnalysis().getConstraintMatch(DefaultConstraintPacketName);
+		double value = cm.getFmeasure(-1);
+		System.out.println("F-Measure:  " + value);
+	}
+
 	public void invokeWEWManagerMySQL() throws CommandLineException {
 		String pfilename = NLPTool.NLPDirectoryName + File.separatorChar + IevizCmd.TSLPropertiesFile;
 		Properties properties = FUtils.readPropertiesFile(IevizCmd.class, pfilename);
@@ -63,12 +76,15 @@ public class EvaluationWorkbenchTool {
 		String primaryAnnotatorName = sp.getPropertyValue(workbench.arr.StartupParameters.FirstAnnotatorName);
 		String secondaryAnnotatorName = sp.getPropertyValue(workbench.arr.StartupParameters.SecondAnnotatorName);
 		DocumentImpl schema = new DocumentImpl();
-		File sfile = FUtils.getResourceFile(IevizCmd.class, NLPTool.getNLPDirectoryFilename(schemaFileName));
+
 		InputStreamReader sisr = null;
+		String fpath = null;
 		try {
-			sisr = new InputStreamReader(new FileInputStream(sfile));
-		} catch (FileNotFoundException e) {
-			throw new CommandLineException("Workbench: " + e.toString());
+			fpath = NLPTool.getNLPDirectoryFilename(schemaFileName);
+			InputStream is = IevizCmd.class.getResourceAsStream(fpath);
+			sisr = new InputStreamReader(is);
+		} catch (Exception e) {
+			throw new CommandLineException("Workbench: Unable to read schema file (" + fpath + "):" + e.toString());
 		}
 		schema.setName(schemaFileName);
 		schema.setReader(sisr);
@@ -88,7 +104,7 @@ public class EvaluationWorkbenchTool {
 		// Primary
 		int i = 0;
 		List<AnnotatorReference> primary = new ArrayList();
-		int x = 2;
+		int x = 3;
 		List<String> analyses = MySQL.getMySQL().getDocumentAnalyses(this.corpusName, primaryAnnotatorName);
 		for (String analysis : analyses) {
 			String aname = "Primary" + i;
@@ -101,6 +117,7 @@ public class EvaluationWorkbenchTool {
 		}
 
 		// Secondary
+		x = 1;
 		i = 0;
 		List<AnnotatorReference> secondary = new ArrayList();
 		analyses = MySQL.getMySQL().getDocumentAnalyses(this.corpusName, secondaryAnnotatorName);
@@ -121,10 +138,17 @@ public class EvaluationWorkbenchTool {
 		params.putParam("secondAnnotator", secondaryAnnotatorName);
 
 		try {
-			EvaluationWorkbenchManager.loadWBGUI(null, schema, documents, primary, secondary, params);
+			System.out.println(
+					"docs=" + documents + ",primary=" + primary + ",secondary=" + secondary + ",params=" + params);
+			this.evaluationWorkbench = EvaluationWorkbenchManager.loadWBGUI((EvaluationWorkbench) null, schema,
+					documents, primary, secondary, params, false);
 		} catch (Exception e) {
 			throw new CommandLineException("Workbench: " + e.toString());
 		}
+	}
+
+	public WBGUI getEvaluationWorkbench() {
+		return evaluationWorkbench;
 	}
 
 }

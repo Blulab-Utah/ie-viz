@@ -10,27 +10,49 @@ import tsl.utilities.FUtils;
 public class NLPTool {
 	private IevizCmd ieviz = null;
 	private String toolName = null;
-	private DomainOntology ontology = null;
-	private String inputDirectoryName = null;
+	private String ontologyFilePath = null;
+	private String ontologyName = null;
+	private DomainOntology ontology = null; // For later
+	private String inputDirectoryPath = null;
 	private String corpus = null;
 	private String annotator = null;
+	private String url = null;
 
 	public static String NLPDirectoryName = "nlp";
+	public static String DefaultDockerOntologyFilePath = "/nlp/resources/DockerOntology.owl";
 
-	public NLPTool(String tool, IevizCmd ieviz, DomainOntology ontology, String inputdir, String corpus,
+	public NLPTool(String tool, IevizCmd ieviz, String oname, String opath, String inputdir, String corpus, String url,
 			String annotator) {
 		this.toolName = tool;
 		this.ieviz = ieviz;
-		this.ontology = ontology;
-		this.inputDirectoryName = inputdir;
+		this.ontologyFilePath = opath;
+		this.inputDirectoryPath = inputdir;
 		this.corpus = corpus;
+		this.url = url;
 		this.annotator = annotator;
+	}
+
+	public void storeOntologyToMySQL() throws CommandLineException {
+		MySQL ms = MySQL.getMySQL();
+		String ostr = FUtils.readFile(this.ontologyFilePath);
+		if (ostr != null) {
+			ms.addOntologyText(this.ontologyName, this.ontologyFilePath);
+		}
+	}
+
+	public void storeOntologyToDefaultDockerFile() throws CommandLineException {
+		String ostr = FUtils.readFile(this.ontologyFilePath);
+		if (ostr != null && !DefaultDockerOntologyFilePath.equals(this.ontologyFilePath)) {
+			FUtils.writeFile(DefaultDockerOntologyFilePath, ostr);
+		}
 	}
 
 	public void processFiles() throws CommandLineException {
 		try {
-			Vector<File> files = FUtils.readFilesFromDirectory(this.inputDirectoryName);
+			System.out.println("NLPTool:  About to read files from: " + this.inputDirectoryPath);
+			Vector<File> files = FUtils.readFilesFromDirectory(this.inputDirectoryPath);
 			if (files != null) {
+				String ofilepath = this.ontologyFilePath;
 				for (File file : files) {
 					if (!isReportFile(file)) {
 						continue;
@@ -38,7 +60,8 @@ public class NLPTool {
 					String text = FUtils.readFile(file);
 					if (text != null && text.length() > 10) {
 						MySQL.getMySQL().addDocumentText(this, file.getName(), text);
-						String results = this.processFile(file);
+						String results = this.processFile(file, ofilepath);
+						ofilepath = null;
 						if (results != null) {
 							MySQL.getMySQL().addDocumentAnalysis(this, file.getName(), results);
 						}
@@ -51,10 +74,13 @@ public class NLPTool {
 	}
 
 	public static String getNLPDirectoryFilename(String fname) {
-		return NLPTool.NLPDirectoryName + File.separatorChar + fname;
+		if (fname != null && Character.isLetter(fname.charAt(0))) {
+			fname = File.separatorChar + NLPTool.NLPDirectoryName + File.separatorChar + fname;
+		}
+		return fname;
 	}
 
-	public String processFile(File file) {
+	public String processFile(File file, String ontologyFilePath) throws CommandLineException {
 		return null;
 	}
 
@@ -66,8 +92,8 @@ public class NLPTool {
 		return ontology;
 	}
 
-	public String getInputDirectoryName() {
-		return inputDirectoryName;
+	public String getInputDirectoryPath() {
+		return inputDirectoryPath;
 	}
 
 	public String getAnnotator() {
@@ -80,6 +106,10 @@ public class NLPTool {
 
 	public IevizCmd getIeviz() {
 		return ieviz;
+	}
+
+	public String getUrl() {
+		return url;
 	}
 
 	public boolean isReportFile(File file) {

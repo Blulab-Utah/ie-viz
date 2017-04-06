@@ -27,19 +27,32 @@ import workbench.api.input.knowtator.KTSimpleInstance;
 public class MoonstoneNLPTool extends NLPTool {
 	private MoonstoneRuleInterface moonstoneRuleInterface = null;
 
-	public MoonstoneNLPTool(IevizCmd ieviz, DomainOntology ontology, String inputdir, String corpus, String annotator) {
-		super("moonstone", ieviz, ontology, inputdir, corpus, annotator);
+	public MoonstoneNLPTool(IevizCmd ieviz, String oname, String opath, String inputdir, String corpus, String url) {
+		super("moonstone", ieviz, oname, opath, inputdir, corpus, url, "moonstone");
 		String pfilename = NLPTool.NLPDirectoryName + File.separatorChar + IevizCmd.TSLPropertiesFile;
 		Properties properties = FUtils.readPropertiesFile(IevizCmd.class, pfilename);
-		this.moonstoneRuleInterface = new MoonstoneRuleInterface(properties);
+//		this.moonstoneRuleInterface = new MoonstoneRuleInterface(properties);
 	}
 
-    public String processFile(File file) {
-    	String fname = file.getName();
-    	MoonstoneEHostXML exml = new MoonstoneEHostXML(this.moonstoneRuleInterface);
-    	String text = FUtils.readFile(file);
-    	String xml = null;
-    	System.out.print("Processing : " + fname + "...");
+	public String processFile(File file, String ontologyFilePath) throws CommandLineException {
+		String xml = null;
+		try {
+			String fname = file.getName();
+			String text = FUtils.readFile(file);
+			System.out.println("MoonstoneNLPTool: File=" + fname + ",text=" + text);
+			xml = this.getIeviz().getRest().sendPost(this.getUrl(), text, ontologyFilePath);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return xml;
+	}
+
+	public String processFileBeforeREST(File file) {
+		String fname = file.getName();
+		MoonstoneEHostXML exml = new MoonstoneEHostXML(this.moonstoneRuleInterface);
+		String text = FUtils.readFile(file);
+		String xml = null;
+		System.out.print("Processing : " + fname + "...");
 		Vector<Annotation> targets = gatherTargetAnnotations(text, fname);
 		if (targets != null) {
 			try {
@@ -53,10 +66,10 @@ public class MoonstoneNLPTool extends NLPTool {
 			}
 		}
 		return xml;
-    }
-    
+	}
+
 	public Vector<Annotation> gatherTargetAnnotations(String text, String fname) {
-	  	Readmission readmission = this.moonstoneRuleInterface.getReadmission();
+		Readmission readmission = this.moonstoneRuleInterface.getReadmission();
 		Vector<Annotation> targets = null;
 		Vector<Annotation> annotations = this.moonstoneRuleInterface.applyNarrativeGrammarToText(fname, text, true,
 				true, true);
@@ -75,7 +88,7 @@ public class MoonstoneNLPTool extends NLPTool {
 		}
 		return targets;
 	}
-	
+
 	public Vector<Annotation> appendIfSeparate(Vector<Annotation> annotations1, Vector<Annotation> annotations2) {
 		if (annotations1 == null) {
 			return annotations2;
@@ -99,7 +112,5 @@ public class MoonstoneNLPTool extends NLPTool {
 		}
 		return v;
 	}
-
-   
 
 }
