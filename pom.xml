@@ -28,7 +28,7 @@
 		<dependency>
 			<groupId>edu.utah.blulab</groupId>
 			<artifactId>domainontology</artifactId>
-			<version>2015.07.0-SNAPSHOT</version>
+			<version>2016.12.2-SNAPSHOT</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
 		<dependency>

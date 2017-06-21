@@ -44,9 +44,6 @@ public class RestFulCommunication {
 			}
 			urlParameters += "ontology=\"" + ontologyPath + "\"";
 		}
-		
-		System.out.println("REST: sendPost(): url=" + url + ",params=" + urlParameters);
-		
 		con.setDoOutput(true);
 		DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 

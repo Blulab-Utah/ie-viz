@@ -1,0 +1,16 @@
+'(
+wordrule
+
+;;; LEE's ADDITIONS
+((ruleid "OWL-RELATION-ANCHOR-MODIFIER") 
+  (uri "NOURI") 
+  (concept ?0) 
+  (stype ?0) 
+  (words 
+    ("<ANCHOR>") 
+    ("<MODIFIER>")) 
+  (relations 
+    (hasmodifier ?0 ?1)))
+    
+)
+

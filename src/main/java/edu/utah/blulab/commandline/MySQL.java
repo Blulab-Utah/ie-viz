@@ -17,7 +17,7 @@ public class MySQL {
 	// "jdbc:mysql://localhost/ieviz?user=root&password=lilith10&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
 	private static String LocalConnectionString = "jdbc:mysql://localhost/ieviz?user=root&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
 	private static String DockerConnectionString = "jdbc:mysql://0.0.0.0:6603/ieviz?user=root&password=mypassword&ConnectionTimout=10000&SocketTimeout=10000&useUnbufferedInput=true&useReadAheadInput=false&jdbcCompliantTruncation=false&SetBigStringTryClob=true&max_allowed_packet=1G";
-	private static String ConnectionString = DockerConnectionString;
+	private static String ConnectionString = LocalConnectionString;
 	
 	public static void main(String[] args)  {
 		try {

@@ -1,22 +1,27 @@
 package edu.utah.blulab.commandline;
 
 import edu.utah.blulab.domainontology.DomainOntology;
+import moonstone.annotation.Annotation;
+import moonstone.rule.Rule;
+import moonstone.rulebuilder.MoonstoneRuleInterface;
+import moonstone.workfromhome.ontology.owl.ExtractOWLOntology;
+import tsl.documentanalysis.document.Document;
 import tsl.utilities.FUtils;
 import tsl.utilities.StrUtils;
+import tsl.utilities.VUtils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Vector;
 import java.util.logging.Logger;
 
 import org.apache.commons.cli.*;
@@ -53,8 +58,10 @@ public class IevizCmd {
 			{ "createmacro", "true", "Create command arg macro" }, { "rm", "runmacro", "true", "Run macro" },
 			{ "run", "runieviz", "runs ieviz",
 					"<toolname> <ontologyname> <ontology input file> <inputdir> <corpus> <url>", "6" },
-			{ "iterate", "false", "Allow iterative user input" },
-			{ "workbench", "true", "Start Evaluation Workbench" }, };
+			{ "iterate", "false", "Allow iterative user input" }, { "workbench", "true", "Start Evaluation Workbench" },
+			{ "mss", "moonstone-simple", "Simple Moonstone Workflow", "<ontology> <corpusdir> <outfile>", "3" },
+
+	};
 
 	public static void main(String[] args) {
 		IevizCmd iec = new IevizCmd();
@@ -66,6 +73,45 @@ public class IevizCmd {
 			iec.runArgs(args);
 		} catch (Exception e) {
 			iec.handleError(e);
+		}
+	}
+
+	private void mss(String[] optVals) throws CommandLineException {
+		int x;
+		try {
+			String ontologyURI = optVals[0];
+			String corpusdir = optVals[1];
+			String outfile = optVals[2];
+			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
+			ExtractOWLOntology ont = new ExtractOWLOntology(msri);
+			ont.setDomain(ontologyURI);
+			ont.analyze(false);
+			Vector<File> files = FUtils.readFilesFromDirectory(corpusdir);
+			Vector<Annotation> annotations = null;
+			if (files != null) {
+				for (File file : files) {
+					String text = FUtils.readFile(file);
+					Document doc = new Document(text);
+					Vector<Annotation> v = msri.applyNarrativeGrammarToText(doc, true, true, true);
+					v = msri.getControl().getSentenceGrammar().getDisplayedAnnotations();
+					annotations = VUtils.append(annotations, v);
+				}
+			}
+			if (annotations != null) {
+				StringBuffer sb = new StringBuffer();
+				sb.append("TEXT|SPAN|TYPE|CONCEPT|PROPERTIES|RELATIONS\n");
+				for (Annotation annotation : annotations) {
+					Rule rule = annotation.getRule();
+					if (!rule.containsFlag("owl-modifier")) {
+						String astr = annotation.toIEVizWorkflowString();
+						sb.append(astr + "\n");
+					}
+				}
+				FUtils.writeFile(outfile, sb.toString());
+			}
+
+		} catch (Exception e) {
+			throw new CommandLineException("runNLPTool: " + e.toString());
 		}
 	}
 
@@ -88,18 +134,17 @@ public class IevizCmd {
 				}
 			}
 			MySQL.getMySQL().emptyTables();
-			
-			System.out.println("Run:  About to process files");
-			
+
 			if (tool != null) {
 				// tool.storeOntologyToDefaultDockerFile();
 				tool.processFiles();
-				
+
 				// FOR LATER...
+				System.out.println("About to initiate Workbench; print F-measure...");
 				EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool(this, corpus);
 				ewt.printResults();
 				x = 1;
-				
+
 			} else {
 				throw new CommandLineException("runNLPTool: Unable to process: Tool=" + toolname + ", Ontology=" + oname
 						+ ", Inputdir=" + inputdir);
@@ -144,6 +189,9 @@ public class IevizCmd {
 				iterateUserInput();
 			} else if ((astr = line.getOptionValue("workbench")) != null) {
 				EvaluationWorkbenchTool ewt = new EvaluationWorkbenchTool(this, astr);
+			} else if ((astr = line.getOptionValue("mss")) != null) {
+				String[] optVals = line.getOptionValues("mss");
+				mss(optVals);
 			}
 		} catch (Exception e) {
 			throw new CommandLineException(e.toString());
@@ -294,9 +342,10 @@ public class IevizCmd {
 			InputStream is = KAAuthenticator.Authenticator.openAuthenticatedConnection(
 					"https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
 			String xml = StrUtils.convertStreamToString(is);
+			is.close();
 			return xml;
 		} catch (Exception e) {
-			throw new CommandLineException("Unable to display ontologies: " + e.toString());
+			throw new CommandLineException("Unable to get ontology: " + e.toString());
 		}
 	}
 
@@ -361,7 +410,7 @@ public class IevizCmd {
 					String[] mstrs = line.split(" ");
 					String mname = mstrs[0];
 					String[] margs = new String[mstrs.length - 1];
-					for (int i = 1; i < mstrs.length - 1; i++) {
+					for (int i = 0; i < mstrs.length - 1; i++) {
 						margs[i] = mstrs[i + 1];
 					}
 					this.argMacros.put(mname, margs);
@@ -452,6 +501,5 @@ public class IevizCmd {
 	public RestFulCommunication getRest() {
 		return rest;
 	}
-	
-	
+
 }

@@ -33,13 +33,16 @@ public class MoonstoneNLPTool extends NLPTool {
 		Properties properties = FUtils.readPropertiesFile(IevizCmd.class, pfilename);
 //		this.moonstoneRuleInterface = new MoonstoneRuleInterface(properties);
 	}
+	
+//	public MoonstoneNLPTool(IevizCmd ieviz, String ontology, String corpus, String outfile) {
+//		
+//	}
 
 	public String processFile(File file, String ontologyFilePath) throws CommandLineException {
 		String xml = null;
 		try {
 			String fname = file.getName();
 			String text = FUtils.readFile(file);
-			System.out.println("MoonstoneNLPTool: File=" + fname + ",text=" + text);
 			xml = this.getIeviz().getRest().sendPost(this.getUrl(), text, ontologyFilePath);
 		} catch (Exception e) {
 			e.printStackTrace();

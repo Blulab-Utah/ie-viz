@@ -49,7 +49,8 @@ public class NLPTool {
 
 	public void processFiles() throws CommandLineException {
 		try {
-			System.out.println("NLPTool:  About to read files from: " + this.inputDirectoryPath);
+			System.out.println("NLPTool:  About to extract grammar rules from ontology; read files from: "
+					+ this.inputDirectoryPath);
 			Vector<File> files = FUtils.readFilesFromDirectory(this.inputDirectoryPath);
 			if (files != null) {
 				String ofilepath = this.ontologyFilePath;
