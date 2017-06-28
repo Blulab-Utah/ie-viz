@@ -25,20 +25,22 @@ public class owlToGraph {
     public static void main(String[] args) throws Exception {
 
         File ontFile = new File(args[0]);
-        File f = new File("/Users/melissa/db/domain");
-        if(f.exists()){
+        //File f = new File("/Users/melissa/db/domain");
+        String name = ontFile.getName();
+        name = name.substring(0, name.lastIndexOf("."));
+
+        File graphFile = new File(ontFile.getParent() + "/db/" + name);
+
+        if(graphFile.exists()){
             try {
-                FileUtils.deleteRecursively(f);
+                FileUtils.deleteRecursively(graphFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        //TODO: create directory for graph database using the directory of domain file
         GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
-        final GraphDatabaseService graphDB = dbFactory.newEmbeddedDatabase(f);
-
-
+        final GraphDatabaseService graphDB = dbFactory.newEmbeddedDatabase(graphFile);
 
         final OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
         final OWLDataFactory factory = manager.getOWLDataFactory();
@@ -119,7 +121,6 @@ public class owlToGraph {
 
     }
 
-
     private static Node getOrCreateNodeWithUniqueFactory(String nodeName, final Label label,
                                                          GraphDatabaseService graphDb) {
         UniqueFactory<Node> factory = new UniqueFactory.UniqueNodeFactory(
@@ -134,8 +135,4 @@ public class owlToGraph {
 
         return factory.getOrCreate("name", nodeName);
     }
-
-
-
-
 }

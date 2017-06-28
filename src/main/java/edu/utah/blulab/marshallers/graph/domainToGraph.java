@@ -20,6 +20,9 @@ public class domainToGraph {
 
     public static void main(String[] args) throws Exception {
 
+        // http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl
+        // http://blulab.chpc.utah.edu/ontologies/examples/heartDiseaseInDiabetics.owl
+
         File domainFile = new File(args[0]);
 
         String name = domainFile.getName();
@@ -38,7 +41,6 @@ public class domainToGraph {
         GraphDatabaseFactory dbFactory = new GraphDatabaseFactory();
         final GraphDatabaseService graphDB = dbFactory.newEmbeddedDatabase(graphFile);
         final DomainOntology domain = new DomainOntology(domainFile.getPath(), false);
-
 
         Transaction tx = graphDB.beginTx();
 
