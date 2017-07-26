@@ -1,0 +1,44 @@
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Access_medication_mention
+	hasAnchor	http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Administer_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Administer
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Bring_in_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Bring_in
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Control_medication_mention
+	hasAnchor	http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Disposal_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Disposal
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Excessive_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Excessive
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Hold_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Hold
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Keep_Safe_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Keep_Safe
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Lock_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Lock
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Manage_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Manage
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Monitor_medication__mention
+	hasAnchor	Medication
+		hasCertainty	Monitor
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Pack_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Pack
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Secure_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Secure
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Stockpile_medication_mention
+	hasAnchor	Medication
+		hasCertainty	Stockpile
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Medication_MRC
+	hasAnchor	Medication
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Delimiter
+	hasAnchor	http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl#Family
+	hasAnchor			hasExperiencer	FamilyMember_Experiencer
