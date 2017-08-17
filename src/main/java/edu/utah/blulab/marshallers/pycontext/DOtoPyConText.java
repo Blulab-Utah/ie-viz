@@ -268,7 +268,11 @@ public class DOtoPyConText {
                     for(String str : numericMod.getQuantityValueRange()){
                         numList = numList + str + ",";
                     }
-                    numList = numList.substring(0, numList.length()-1);
+                    if (numList.length() > 0) {
+                        numList = numList.substring(0, numList.length() - 1);
+                    }else {
+                        System.out.println ("Error writing numeric modifier for: " + numericMod.getModName());
+                    }
                     bw.write("\t\thasQuantityValue\t" + numList + "\n");
                 }
             }
@@ -278,7 +282,6 @@ public class DOtoPyConText {
         bw.close();
 
     }
-
 
     public HashMap<String, String> matchRegEx(ArrayList<String> variants, ArrayList<String> regex){
         HashMap<String, String> tuples = new HashMap<String, String>();

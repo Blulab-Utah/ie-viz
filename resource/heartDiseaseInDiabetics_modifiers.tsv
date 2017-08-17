@@ -1,0 +1,892 @@
+literal	 category	 regex	 ruleDefiniteExistence_Certainty	asserted as		forward
+DefiniteExistence_Certainty	definite		forward
+DefiniteExistence_Certainty	doubtless		forward
+DefiniteExistence_Certainty	evident		forward
+DefiniteExistence_Certainty	hence		forward
+DefiniteExistence_Certainty	obvious		forward
+DefiniteExistence_Certainty	positive examination for		forward
+DefiniteExistence_Certainty	positive study for		forward
+DefiniteExistence_Certainty	seen as		forward
+DefiniteExistence_Certainty	without doubt		bidirectional
+DefiniteNegatedExistence_Certainty			bidirectional
+DefiniteNegatedExistence_Certainty	without additional		bidirectional
+DefiniteNegatedExistence_Certainty	is no longer		bidirectional
+DefiniteNegatedExistence_Certainty	adequate to rule the patient out against		forward
+DefiniteNegatedExistence_Certainty	are ruled out		backward
+DefiniteNegatedExistence_Certainty	being ruled out		backward
+DefiniteNegatedExistence_Certainty	can be ruled out		backward
+DefiniteNegatedExistence_Certainty	can rule him out		forward
+DefiniteNegatedExistence_Certainty	can rule him out against	"r""""""can\srule\s(her|him)\sout\sagainst"""""""	forward
+DefiniteNegatedExistence_Certainty	can rule out		forward
+DefiniteNegatedExistence_Certainty	can rule out against		forward
+DefiniteNegatedExistence_Certainty	can rule the patient out against	"r""""""can\srule\s(her|him)\sout\sagainst"""""""	forward
+DefiniteNegatedExistence_Certainty	cannot		forward
+DefiniteNegatedExistence_Certainty	cleared of		forward
+DefiniteNegatedExistence_Certainty	declined		forward
+DefiniteNegatedExistence_Certainty	declines		forward
+DefiniteNegatedExistence_Certainty	denied		forward
+DefiniteNegatedExistence_Certainty	denies		forward
+DefiniteNegatedExistence_Certainty	deny		forward
+DefiniteNegatedExistence_Certainty	did rule her out		forward
+DefiniteNegatedExistence_Certainty	did rule her out against		forward
+DefiniteNegatedExistence_Certainty	did rule her out for		forward
+DefiniteNegatedExistence_Certainty	did rule him out		forward
+DefiniteNegatedExistence_Certainty	did rule him out against		forward
+DefiniteNegatedExistence_Certainty	did rule him out for		forward
+DefiniteNegatedExistence_Certainty	did rule out		forward
+DefiniteNegatedExistence_Certainty	did rule out against		forward
+DefiniteNegatedExistence_Certainty	did rule out for		forward
+DefiniteNegatedExistence_Certainty	did rule the patient out		forward
+DefiniteNegatedExistence_Certainty	did rule the patient out against		forward
+DefiniteNegatedExistence_Certainty	did rule the patient out for		forward
+DefiniteNegatedExistence_Certainty	excluded		bidirectional
+DefiniteNegatedExistence_Certainty	free		bidirectional
+DefiniteNegatedExistence_Certainty	free of		forward
+DefiniteNegatedExistence_Certainty	has been ruled out		backward
+DefiniteNegatedExistence_Certainty	have been ruled out		backward
+DefiniteNegatedExistence_Certainty	is absent		backward
+DefiniteNegatedExistence_Certainty	is negative	"r""(is|was) negative"""	backward
+DefiniteNegatedExistence_Certainty	is ruled out		backward
+DefiniteNegatedExistence_Certainty	negative examination for	"r""negative (examination|study|exam|evaluation) for"""	forward
+DefiniteNegatedExistence_Certainty	negative for		forward
+DefiniteNegatedExistence_Certainty	neither		forward
+DefiniteNegatedExistence_Certainty	never developed		forward
+DefiniteNegatedExistence_Certainty	never had		forward
+DefiniteNegatedExistence_Certainty	no	"r""\bno\b"""	forward
+DefiniteNegatedExistence_Certainty	no evidence		forward
+DefiniteNegatedExistence_Certainty	no new		forward
+DefiniteNegatedExistence_Certainty	no other	"r""""""no[\s]*other"""""""	forward
+DefiniteNegatedExistence_Certainty	no support for		forward
+DefiniteNegatedExistence_Certainty	no suspicion of		forward
+DefiniteNegatedExistence_Certainty	not	"r""\bnot\b"""	forward
+DefiniteNegatedExistence_Certainty	not exhibit		forward
+DefiniteNegatedExistence_Certainty	not had		forward
+DefiniteNegatedExistence_Certainty	not have		forward
+DefiniteNegatedExistence_Certainty	not seen		backward
+DefiniteNegatedExistence_Certainty	nothing		forward
+DefiniteNegatedExistence_Certainty	patient was not		forward
+DefiniteNegatedExistence_Certainty	reject		forward
+DefiniteNegatedExistence_Certainty	rejected		forward
+DefiniteNegatedExistence_Certainty	resolved		backward
+DefiniteNegatedExistence_Certainty	ruled her out		forward
+DefiniteNegatedExistence_Certainty	ruled her out against	"""""ruled\s(him|her)\sout\sagainst"""""	forward
+DefiniteNegatedExistence_Certainty	ruled her out for		forward
+DefiniteNegatedExistence_Certainty	ruled him out		forward
+DefiniteNegatedExistence_Certainty	ruled him out against		forward
+DefiniteNegatedExistence_Certainty	ruled him out for		forward
+DefiniteNegatedExistence_Certainty	ruled out		forward
+DefiniteNegatedExistence_Certainty	ruled out against		forward
+DefiniteNegatedExistence_Certainty	ruled out for		forward
+DefiniteNegatedExistence_Certainty	ruled the patient out		forward
+DefiniteNegatedExistence_Certainty	ruled the patient out against		forward
+DefiniteNegatedExistence_Certainty	ruled the patient out for		forward
+DefiniteNegatedExistence_Certainty	rules her out		forward
+DefiniteNegatedExistence_Certainty	rules her out for	"r""""""rules\s(him|her)\sout\sfor"""""""	forward
+DefiniteNegatedExistence_Certainty	rules him out	"r""""""rules\s(him|her)\sout"""""""	forward
+DefiniteNegatedExistence_Certainty	rules him out for	"r""""""rules\s(him|her)\sout\sfor"""""""	forward
+DefiniteNegatedExistence_Certainty	rules out		forward
+DefiniteNegatedExistence_Certainty	rules out for		forward
+DefiniteNegatedExistence_Certainty	rules the patient out		forward
+DefiniteNegatedExistence_Certainty	rules the patient out for		forward
+DefiniteNegatedExistence_Certainty	was ruled out		backward
+DefiniteNegatedExistence_Certainty	with no		forward
+DefiniteNegatedExistence_Certainty	without		forward
+DefiniteNegatedExistence_Certainty	no evidence to suggest		forward
+DefiniteNegatedExistence_Certainty	no interval change		forward
+DefiniteNegatedExistence_Certainty	no mammographic evidence of		forward
+DefiniteNegatedExistence_Certainty	no new evidence		forward
+DefiniteNegatedExistence_Certainty	no other evidence		forward
+DefiniteNegatedExistence_Certainty	no radiographic evidence of		forward
+DefiniteNegatedExistence_Certainty	without any evidence of		forward
+DefiniteNegatedExistence_Certainty	without evidence		forward
+ProbableExistence_Certainty	versus		bidirectional
+ProbableExistence_Certainty	v.		bidirectional
+ProbableExistence_Certainty	vs		bidirectional
+ProbableExistence_Certainty	acts as		forward
+ProbableExistence_Certainty	and/or		bidirectional
+ProbableExistence_Certainty	apparent		forward
+ProbableExistence_Certainty	apparently		forward
+ProbableExistence_Certainty	appear	"""""\bappear\b"""""	forward
+ProbableExistence_Certainty	appearing		bidirectional
+ProbableExistence_Certainty	appears		forward
+ProbableExistence_Certainty	assume		forward
+ProbableExistence_Certainty	assuming		forward
+ProbableExistence_Certainty	believe		forward
+ProbableExistence_Certainty	but rather		forward
+ProbableExistence_Certainty	can		forward
+ProbableExistence_Certainty	can be		forward
+ProbableExistence_Certainty	clinical picture as in		forward
+ProbableExistence_Certainty	clinical picture in line with		forward
+ProbableExistence_Certainty	clinical suspicion of		forward
+ProbableExistence_Certainty	compatible with		forward
+ProbableExistence_Certainty	conceivable		forward
+ProbableExistence_Certainty	concerning for		forward
+ProbableExistence_Certainty	consider		forward
+ProbableExistence_Certainty	considerations		bidirectional
+ProbableExistence_Certainty	considerations include		forward
+ProbableExistence_Certainty	consistent with		forward
+ProbableExistence_Certainty	convincing		bidirectional
+ProbableExistence_Certainty	could		forward
+ProbableExistence_Certainty	could be		forward
+ProbableExistence_Certainty	differential diagnosis would include	"r""differential\s((diagnosis|considerations)\s)?((would|could)\sinclud[a-z]*)?"""	forward
+ProbableExistence_Certainty	eventual		forward
+ProbableExistence_Certainty	everything pointing at		forward
+ProbableExistence_Certainty	evidence		forward
+ProbableExistence_Certainty	favor		forward
+ProbableExistence_Certainty	feels like		forward
+ProbableExistence_Certainty	felt		forward
+ProbableExistence_Certainty	guess		forward
+ProbableExistence_Certainty	I believe		forward
+ProbableExistence_Certainty	identified		bidirectional
+ProbableExistence_Certainty	implied		bidirectional
+ProbableExistence_Certainty	implies		forward
+ProbableExistence_Certainty	in line with		forward
+ProbableExistence_Certainty	indicate		forward
+ProbableExistence_Certainty	indicated		bidirectional
+ProbableExistence_Certainty	indicates		forward
+ProbableExistence_Certainty	interpreted as		forward
+ProbableExistence_Certainty	is in the differential	"r""is\sin\sthe\sdifferential"""	backward
+ProbableExistence_Certainty	is understood as		forward
+ProbableExistence_Certainty	likely		bidirectional
+ProbableExistence_Certainty	looks like		forward
+ProbableExistence_Certainty	may		forward
+ProbableExistence_Certainty	may be		forward
+ProbableExistence_Certainty	may represent	"r""""""(may|might)\srepresent"""""""	forward
+ProbableExistence_Certainty	not certain		forward
+ProbableExistence_Certainty	not exclude		forward
+ProbableExistence_Certainty	not excluded	"r""""""not\s(excluded|ruled\sout)"""""""	bidirectional
+ProbableExistence_Certainty	not improbable		bidirectional
+ProbableExistence_Certainty	not sure		forward
+ProbableExistence_Certainty	noted		bidirectional
+ProbableExistence_Certainty	or		forward
+ProbableExistence_Certainty	perceived as		forward
+ProbableExistence_Certainty	perhaps		forward
+ProbableExistence_Certainty	points to		forward
+ProbableExistence_Certainty	possible		forward
+ProbableExistence_Certainty	possibly		forward
+ProbableExistence_Certainty	potential		forward
+ProbableExistence_Certainty	preliminary		bidirectional
+ProbableExistence_Certainty	presumably		forward
+ProbableExistence_Certainty	presumed		forward
+ProbableExistence_Certainty	presumptive		forward
+ProbableExistence_Certainty	probable		forward
+ProbableExistence_Certainty	probable cause		forward
+ProbableExistence_Certainty	probably		forward
+ProbableExistence_Certainty	question		forward
+ProbableExistence_Certainty	questionable	\?	bidirectional
+ProbableExistence_Certainty	raise the question of		forward
+ProbableExistence_Certainty	raises question of		forward
+ProbableExistence_Certainty	raises the question of		forward
+ProbableExistence_Certainty	raising the possibility of		forward
+ProbableExistence_Certainty	raising the question of		forward
+ProbableExistence_Certainty	reasonable		forward
+ProbableExistence_Certainty	reportedly		bidirectional
+ProbableExistence_Certainty	representing		forward
+ProbableExistence_Certainty	represents		forward
+ProbableExistence_Certainty	seems like		forward
+ProbableExistence_Certainty	seen	"r""(seen|visualized|observed)"""	backward
+ProbableExistence_Certainty	seen best		backward
+ProbableExistence_Certainty	should		forward
+ProbableExistence_Certainty	should be considered		bidirectional
+ProbableExistence_Certainty	signs of		forward
+ProbableExistence_Certainty	somewhat suspected		backward
+ProbableExistence_Certainty	speaks for		forward
+ProbableExistence_Certainty	strong suspicion		forward
+ProbableExistence_Certainty	suggest	"r""""""\bsuggest\b"""""""	forward
+ProbableExistence_Certainty	suggested		bidirectional
+ProbableExistence_Certainty	suggestion		forward
+ProbableExistence_Certainty	suggestive		forward
+ProbableExistence_Certainty	suggests	"r""""""\bsuggests\b"""""""	forward
+ProbableExistence_Certainty	supporting		forward
+ProbableExistence_Certainty	suppose		forward
+ProbableExistence_Certainty	suspect		forward
+ProbableExistence_Certainty	suspected		bidirectional
+ProbableExistence_Certainty	suspicion		forward
+ProbableExistence_Certainty	suspicion for		forward
+ProbableExistence_Certainty	suspicious		forward
+ProbableExistence_Certainty	the possibility		forward
+ProbableExistence_Certainty	thought		forward
+ProbableExistence_Certainty	unclear		forward
+ProbableExistence_Certainty	unsure		forward
+ProbableExistence_Certainty	was seen as		forward
+ProbableExistence_Certainty	whether		forward
+ProbableExistence_Certainty	worrisome		forward
+ProbableExistence_Certainty	worrisome for		forward
+ProbableExistence_Certainty	would		forward
+ProbableNegatedExistence_Certainty	absence of		forward
+ProbableNegatedExistence_Certainty	adequate to rule her out		forward
+ProbableNegatedExistence_Certainty	adequate to rule her out for	"r""""""adequate\sto\srule\s(her|him)\sout\sfor"""""""	forward
+ProbableNegatedExistence_Certainty	adequate to rule him out		forward
+ProbableNegatedExistence_Certainty	adequate to rule him out for		forward
+ProbableNegatedExistence_Certainty	adequate to rule out		forward
+ProbableNegatedExistence_Certainty	adequate to rule out for		forward
+ProbableNegatedExistence_Certainty	adequate to rule the patient out		forward
+ProbableNegatedExistence_Certainty	adequate to rule the patient out for		forward
+ProbableNegatedExistence_Certainty	can rule her out		forward
+ProbableNegatedExistence_Certainty	can rule her out against	"r""""""can\srule\s(her|him)\sout\sagainst"""""""	forward
+ProbableNegatedExistence_Certainty	can rule her out for		forward
+ProbableNegatedExistence_Certainty	can rule him out for		forward
+ProbableNegatedExistence_Certainty	can rule out for		forward
+ProbableNegatedExistence_Certainty	can rule the patient out		forward
+ProbableNegatedExistence_Certainty	can rule the patient out for		forward
+ProbableNegatedExistence_Certainty	cannot be excluded	"r""""""(cannot|can\snot)\sbe\sexcluded"""""""	backward
+ProbableNegatedExistence_Certainty	cannot exclude	"r""cannot\sexclude"""	forward
+ProbableNegatedExistence_Certainty	cannot see		forward
+ProbableNegatedExistence_Certainty	could be ruled out		bidirectional
+ProbableNegatedExistence_Certainty	could not exclude		forward
+ProbableNegatedExistence_Certainty	denying		forward
+ProbableNegatedExistence_Certainty	do not think these findings speak for		forward
+ProbableNegatedExistence_Certainty	doubt		forward
+ProbableNegatedExistence_Certainty	doubtful		bidirectional
+ProbableNegatedExistence_Certainty	exclude		forward
+ProbableNegatedExistence_Certainty	fails to reveal		forward
+ProbableNegatedExistence_Certainty	is not excluded	"r""""""(is|was|are|were)\snot\sexcluded"""""""	backward
+ProbableNegatedExistence_Certainty	is not indicated		backward
+ProbableNegatedExistence_Certainty	low probability		forward
+ProbableNegatedExistence_Certainty	no abnormal		forward
+ProbableNegatedExistence_Certainty	no cause of		forward
+ProbableNegatedExistence_Certainty	no complaints of		forward
+ProbableNegatedExistence_Certainty	no definite	"r""""""no[\s]*definite"""""""	forward
+ProbableNegatedExistence_Certainty	no demonstrated		forward
+ProbableNegatedExistence_Certainty	no findings of		forward
+ProbableNegatedExistence_Certainty	no findings to indicate		forward
+ProbableNegatedExistence_Certainty	no grounds for		forward
+ProbableNegatedExistence_Certainty	no Indication of		forward
+ProbableNegatedExistence_Certainty	no obvious		forward
+ProbableNegatedExistence_Certainty	no sign of		forward
+ProbableNegatedExistence_Certainty	no significant		forward
+ProbableNegatedExistence_Certainty	no signs of		forward
+ProbableNegatedExistence_Certainty	no suggestion of		forward
+ProbableNegatedExistence_Certainty	no sure		forward
+ProbableNegatedExistence_Certainty	not a sure		forward
+ProbableNegatedExistence_Certainty	not appreciate		forward
+ProbableNegatedExistence_Certainty	not associated with		forward
+ProbableNegatedExistence_Certainty	not complain of		forward
+ProbableNegatedExistence_Certainty	not demonstrate		forward
+ProbableNegatedExistence_Certainty	not feel		forward
+ProbableNegatedExistence_Certainty	not know of		forward
+ProbableNegatedExistence_Certainty	not known to have		forward
+ProbableNegatedExistence_Certainty	not reveal		forward
+ProbableNegatedExistence_Certainty	not ruled out		backward
+ProbableNegatedExistence_Certainty	not see		forward
+ProbableNegatedExistence_Certainty	not think		forward
+ProbableNegatedExistence_Certainty	not to be		forward
+ProbableNegatedExistence_Certainty	rather than		forward
+ProbableNegatedExistence_Certainty	sufficient to rule her out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule her out against		forward
+ProbableNegatedExistence_Certainty	sufficient to rule her out for	"r""""""sufficient\sto\srule\s(her|him)\sout\sfor"""""""	forward
+ProbableNegatedExistence_Certainty	sufficient to rule him out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule him out against	"r""""""sufficient\sto\srule\s(him|her)\sout\sagainst"""""""	forward
+ProbableNegatedExistence_Certainty	sufficient to rule him out for		forward
+ProbableNegatedExistence_Certainty	sufficient to rule out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule out against		forward
+ProbableNegatedExistence_Certainty	sufficient to rule out for		forward
+ProbableNegatedExistence_Certainty	sufficient to rule the patient out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule the patient out against		forward
+ProbableNegatedExistence_Certainty	sufficient to rule the patient out for		forward
+ProbableNegatedExistence_Certainty	test for		forward
+ProbableNegatedExistence_Certainty	to exclude		forward
+ProbableNegatedExistence_Certainty	unable to adequately assess		forward
+ProbableNegatedExistence_Certainty	unable to assess		forward
+ProbableNegatedExistence_Certainty	unlikely		backward
+ProbableNegatedExistence_Certainty	unremarkable for		forward
+ProbableNegatedExistence_Certainty	very little that speaks for		forward
+ProbableNegatedExistence_Certainty	without Indication of		forward
+ProbableNegatedExistence_Certainty	without sign of		forward
+ProbableNegatedExistence_Certainty	not appear		backward
+Uncertain_Certainty	difficult to assess		forward
+Uncertain_Certainty	either		forward
+Uncertain_Certainty	equivocal		bidirectional
+Uncertain_Certainty	uncertain		forward
+Uncertain_Certainty	versus		bidirectional
+Actual_ContextualModality			
+DefiniteExistence_Certainty	asserted as		forward
+DefiniteExistence_Certainty	definite		forward
+DefiniteExistence_Certainty	doubtless		forward
+DefiniteExistence_Certainty	evident		forward
+DefiniteExistence_Certainty	hence		forward
+DefiniteExistence_Certainty	obvious		forward
+DefiniteExistence_Certainty	positive examination for		forward
+DefiniteExistence_Certainty	positive study for		forward
+DefiniteExistence_Certainty	seen as		forward
+DefiniteExistence_Certainty	without doubt		bidirectional
+DefiniteNegatedExistence_Certainty			bidirectional
+DefiniteNegatedExistence_Certainty	without additional		bidirectional
+DefiniteNegatedExistence_Certainty	is no longer		bidirectional
+DefiniteNegatedExistence_Certainty	adequate to rule the patient out against		forward
+DefiniteNegatedExistence_Certainty	are ruled out		backward
+DefiniteNegatedExistence_Certainty	being ruled out		backward
+DefiniteNegatedExistence_Certainty	can be ruled out		backward
+DefiniteNegatedExistence_Certainty	can rule him out		forward
+DefiniteNegatedExistence_Certainty	can rule him out against	"r""""""can\srule\s(her|him)\sout\sagainst"""""""	forward
+DefiniteNegatedExistence_Certainty	can rule out		forward
+DefiniteNegatedExistence_Certainty	can rule out against		forward
+DefiniteNegatedExistence_Certainty	can rule the patient out against	"r""""""can\srule\s(her|him)\sout\sagainst"""""""	forward
+DefiniteNegatedExistence_Certainty	cannot		forward
+DefiniteNegatedExistence_Certainty	cleared of		forward
+DefiniteNegatedExistence_Certainty	declined		forward
+DefiniteNegatedExistence_Certainty	declines		forward
+DefiniteNegatedExistence_Certainty	denied		forward
+DefiniteNegatedExistence_Certainty	denies		forward
+DefiniteNegatedExistence_Certainty	deny		forward
+DefiniteNegatedExistence_Certainty	did rule her out		forward
+DefiniteNegatedExistence_Certainty	did rule her out against		forward
+DefiniteNegatedExistence_Certainty	did rule her out for		forward
+DefiniteNegatedExistence_Certainty	did rule him out		forward
+DefiniteNegatedExistence_Certainty	did rule him out against		forward
+DefiniteNegatedExistence_Certainty	did rule him out for		forward
+DefiniteNegatedExistence_Certainty	did rule out		forward
+DefiniteNegatedExistence_Certainty	did rule out against		forward
+DefiniteNegatedExistence_Certainty	did rule out for		forward
+DefiniteNegatedExistence_Certainty	did rule the patient out		forward
+DefiniteNegatedExistence_Certainty	did rule the patient out against		forward
+DefiniteNegatedExistence_Certainty	did rule the patient out for		forward
+DefiniteNegatedExistence_Certainty	excluded		bidirectional
+DefiniteNegatedExistence_Certainty	free		bidirectional
+DefiniteNegatedExistence_Certainty	free of		forward
+DefiniteNegatedExistence_Certainty	has been ruled out		backward
+DefiniteNegatedExistence_Certainty	have been ruled out		backward
+DefiniteNegatedExistence_Certainty	is absent		backward
+DefiniteNegatedExistence_Certainty	is negative	"r""(is|was) negative"""	backward
+DefiniteNegatedExistence_Certainty	is ruled out		backward
+DefiniteNegatedExistence_Certainty	negative examination for	"r""negative (examination|study|exam|evaluation) for"""	forward
+DefiniteNegatedExistence_Certainty	negative for		forward
+DefiniteNegatedExistence_Certainty	neither		forward
+DefiniteNegatedExistence_Certainty	never developed		forward
+DefiniteNegatedExistence_Certainty	never had		forward
+DefiniteNegatedExistence_Certainty	no	"r""\bno\b"""	forward
+DefiniteNegatedExistence_Certainty	no evidence		forward
+DefiniteNegatedExistence_Certainty	no new		forward
+DefiniteNegatedExistence_Certainty	no other	"r""""""no[\s]*other"""""""	forward
+DefiniteNegatedExistence_Certainty	no support for		forward
+DefiniteNegatedExistence_Certainty	no suspicion of		forward
+DefiniteNegatedExistence_Certainty	not	"r""\bnot\b"""	forward
+DefiniteNegatedExistence_Certainty	not exhibit		forward
+DefiniteNegatedExistence_Certainty	not had		forward
+DefiniteNegatedExistence_Certainty	not have		forward
+DefiniteNegatedExistence_Certainty	not seen		backward
+DefiniteNegatedExistence_Certainty	nothing		forward
+DefiniteNegatedExistence_Certainty	patient was not		forward
+DefiniteNegatedExistence_Certainty	reject		forward
+DefiniteNegatedExistence_Certainty	rejected		forward
+DefiniteNegatedExistence_Certainty	resolved		backward
+DefiniteNegatedExistence_Certainty	ruled her out		forward
+DefiniteNegatedExistence_Certainty	ruled her out against	"""""ruled\s(him|her)\sout\sagainst"""""	forward
+DefiniteNegatedExistence_Certainty	ruled her out for		forward
+DefiniteNegatedExistence_Certainty	ruled him out		forward
+DefiniteNegatedExistence_Certainty	ruled him out against		forward
+DefiniteNegatedExistence_Certainty	ruled him out for		forward
+DefiniteNegatedExistence_Certainty	ruled out		forward
+DefiniteNegatedExistence_Certainty	ruled out against		forward
+DefiniteNegatedExistence_Certainty	ruled out for		forward
+DefiniteNegatedExistence_Certainty	ruled the patient out		forward
+DefiniteNegatedExistence_Certainty	ruled the patient out against		forward
+DefiniteNegatedExistence_Certainty	ruled the patient out for		forward
+DefiniteNegatedExistence_Certainty	rules her out		forward
+DefiniteNegatedExistence_Certainty	rules her out for	"r""""""rules\s(him|her)\sout\sfor"""""""	forward
+DefiniteNegatedExistence_Certainty	rules him out	"r""""""rules\s(him|her)\sout"""""""	forward
+DefiniteNegatedExistence_Certainty	rules him out for	"r""""""rules\s(him|her)\sout\sfor"""""""	forward
+DefiniteNegatedExistence_Certainty	rules out		forward
+DefiniteNegatedExistence_Certainty	rules out for		forward
+DefiniteNegatedExistence_Certainty	rules the patient out		forward
+DefiniteNegatedExistence_Certainty	rules the patient out for		forward
+DefiniteNegatedExistence_Certainty	was ruled out		backward
+DefiniteNegatedExistence_Certainty	with no		forward
+DefiniteNegatedExistence_Certainty	without		forward
+DefiniteNegatedExistence_Certainty	no evidence to suggest		forward
+DefiniteNegatedExistence_Certainty	no interval change		forward
+DefiniteNegatedExistence_Certainty	no mammographic evidence of		forward
+DefiniteNegatedExistence_Certainty	no new evidence		forward
+DefiniteNegatedExistence_Certainty	no other evidence		forward
+DefiniteNegatedExistence_Certainty	no radiographic evidence of		forward
+DefiniteNegatedExistence_Certainty	without any evidence of		forward
+DefiniteNegatedExistence_Certainty	without evidence		forward
+Generic_ContextualModality			
+Hedged_ContextualModality			
+ProbableExistence_Certainty	versus		bidirectional
+ProbableExistence_Certainty	v.		bidirectional
+ProbableExistence_Certainty	vs		bidirectional
+ProbableExistence_Certainty	acts as		forward
+ProbableExistence_Certainty	and/or		bidirectional
+ProbableExistence_Certainty	apparent		forward
+ProbableExistence_Certainty	apparently		forward
+ProbableExistence_Certainty	appear	"""""\bappear\b"""""	forward
+ProbableExistence_Certainty	appearing		bidirectional
+ProbableExistence_Certainty	appears		forward
+ProbableExistence_Certainty	assume		forward
+ProbableExistence_Certainty	assuming		forward
+ProbableExistence_Certainty	believe		forward
+ProbableExistence_Certainty	but rather		forward
+ProbableExistence_Certainty	can		forward
+ProbableExistence_Certainty	can be		forward
+ProbableExistence_Certainty	clinical picture as in		forward
+ProbableExistence_Certainty	clinical picture in line with		forward
+ProbableExistence_Certainty	clinical suspicion of		forward
+ProbableExistence_Certainty	compatible with		forward
+ProbableExistence_Certainty	conceivable		forward
+ProbableExistence_Certainty	concerning for		forward
+ProbableExistence_Certainty	consider		forward
+ProbableExistence_Certainty	considerations		bidirectional
+ProbableExistence_Certainty	considerations include		forward
+ProbableExistence_Certainty	consistent with		forward
+ProbableExistence_Certainty	convincing		bidirectional
+ProbableExistence_Certainty	could		forward
+ProbableExistence_Certainty	could be		forward
+ProbableExistence_Certainty	differential diagnosis would include	"r""differential\s((diagnosis|considerations)\s)?((would|could)\sinclud[a-z]*)?"""	forward
+ProbableExistence_Certainty	eventual		forward
+ProbableExistence_Certainty	everything pointing at		forward
+ProbableExistence_Certainty	evidence		forward
+ProbableExistence_Certainty	favor		forward
+ProbableExistence_Certainty	feels like		forward
+ProbableExistence_Certainty	felt		forward
+ProbableExistence_Certainty	guess		forward
+ProbableExistence_Certainty	I believe		forward
+ProbableExistence_Certainty	identified		bidirectional
+ProbableExistence_Certainty	implied		bidirectional
+ProbableExistence_Certainty	implies		forward
+ProbableExistence_Certainty	in line with		forward
+ProbableExistence_Certainty	indicate		forward
+ProbableExistence_Certainty	indicated		bidirectional
+ProbableExistence_Certainty	indicates		forward
+ProbableExistence_Certainty	interpreted as		forward
+ProbableExistence_Certainty	is in the differential	"r""is\sin\sthe\sdifferential"""	backward
+ProbableExistence_Certainty	is understood as		forward
+ProbableExistence_Certainty	likely		bidirectional
+ProbableExistence_Certainty	looks like		forward
+ProbableExistence_Certainty	may		forward
+ProbableExistence_Certainty	may be		forward
+ProbableExistence_Certainty	may represent	"r""""""(may|might)\srepresent"""""""	forward
+ProbableExistence_Certainty	not certain		forward
+ProbableExistence_Certainty	not exclude		forward
+ProbableExistence_Certainty	not excluded	"r""""""not\s(excluded|ruled\sout)"""""""	bidirectional
+ProbableExistence_Certainty	not improbable		bidirectional
+ProbableExistence_Certainty	not sure		forward
+ProbableExistence_Certainty	noted		bidirectional
+ProbableExistence_Certainty	or		forward
+ProbableExistence_Certainty	perceived as		forward
+ProbableExistence_Certainty	perhaps		forward
+ProbableExistence_Certainty	points to		forward
+ProbableExistence_Certainty	possible		forward
+ProbableExistence_Certainty	possibly		forward
+ProbableExistence_Certainty	potential		forward
+ProbableExistence_Certainty	preliminary		bidirectional
+ProbableExistence_Certainty	presumably		forward
+ProbableExistence_Certainty	presumed		forward
+ProbableExistence_Certainty	presumptive		forward
+ProbableExistence_Certainty	probable		forward
+ProbableExistence_Certainty	probable cause		forward
+ProbableExistence_Certainty	probably		forward
+ProbableExistence_Certainty	question		forward
+ProbableExistence_Certainty	questionable	\?	bidirectional
+ProbableExistence_Certainty	raise the question of		forward
+ProbableExistence_Certainty	raises question of		forward
+ProbableExistence_Certainty	raises the question of		forward
+ProbableExistence_Certainty	raising the possibility of		forward
+ProbableExistence_Certainty	raising the question of		forward
+ProbableExistence_Certainty	reasonable		forward
+ProbableExistence_Certainty	reportedly		bidirectional
+ProbableExistence_Certainty	representing		forward
+ProbableExistence_Certainty	represents		forward
+ProbableExistence_Certainty	seems like		forward
+ProbableExistence_Certainty	seen	"r""(seen|visualized|observed)"""	backward
+ProbableExistence_Certainty	seen best		backward
+ProbableExistence_Certainty	should		forward
+ProbableExistence_Certainty	should be considered		bidirectional
+ProbableExistence_Certainty	signs of		forward
+ProbableExistence_Certainty	somewhat suspected		backward
+ProbableExistence_Certainty	speaks for		forward
+ProbableExistence_Certainty	strong suspicion		forward
+ProbableExistence_Certainty	suggest	"r""""""\bsuggest\b"""""""	forward
+ProbableExistence_Certainty	suggested		bidirectional
+ProbableExistence_Certainty	suggestion		forward
+ProbableExistence_Certainty	suggestive		forward
+ProbableExistence_Certainty	suggests	"r""""""\bsuggests\b"""""""	forward
+ProbableExistence_Certainty	supporting		forward
+ProbableExistence_Certainty	suppose		forward
+ProbableExistence_Certainty	suspect		forward
+ProbableExistence_Certainty	suspected		bidirectional
+ProbableExistence_Certainty	suspicion		forward
+ProbableExistence_Certainty	suspicion for		forward
+ProbableExistence_Certainty	suspicious		forward
+ProbableExistence_Certainty	the possibility		forward
+ProbableExistence_Certainty	thought		forward
+ProbableExistence_Certainty	unclear		forward
+ProbableExistence_Certainty	unsure		forward
+ProbableExistence_Certainty	was seen as		forward
+ProbableExistence_Certainty	whether		forward
+ProbableExistence_Certainty	worrisome		forward
+ProbableExistence_Certainty	worrisome for		forward
+ProbableExistence_Certainty	would		forward
+ProbableNegatedExistence_Certainty	absence of		forward
+ProbableNegatedExistence_Certainty	adequate to rule her out		forward
+ProbableNegatedExistence_Certainty	adequate to rule her out for	"r""""""adequate\sto\srule\s(her|him)\sout\sfor"""""""	forward
+ProbableNegatedExistence_Certainty	adequate to rule him out		forward
+ProbableNegatedExistence_Certainty	adequate to rule him out for		forward
+ProbableNegatedExistence_Certainty	adequate to rule out		forward
+ProbableNegatedExistence_Certainty	adequate to rule out for		forward
+ProbableNegatedExistence_Certainty	adequate to rule the patient out		forward
+ProbableNegatedExistence_Certainty	adequate to rule the patient out for		forward
+ProbableNegatedExistence_Certainty	can rule her out		forward
+ProbableNegatedExistence_Certainty	can rule her out against	"r""""""can\srule\s(her|him)\sout\sagainst"""""""	forward
+ProbableNegatedExistence_Certainty	can rule her out for		forward
+ProbableNegatedExistence_Certainty	can rule him out for		forward
+ProbableNegatedExistence_Certainty	can rule out for		forward
+ProbableNegatedExistence_Certainty	can rule the patient out		forward
+ProbableNegatedExistence_Certainty	can rule the patient out for		forward
+ProbableNegatedExistence_Certainty	cannot be excluded	"r""""""(cannot|can\snot)\sbe\sexcluded"""""""	backward
+ProbableNegatedExistence_Certainty	cannot exclude	"r""cannot\sexclude"""	forward
+ProbableNegatedExistence_Certainty	cannot see		forward
+ProbableNegatedExistence_Certainty	could be ruled out		bidirectional
+ProbableNegatedExistence_Certainty	could not exclude		forward
+ProbableNegatedExistence_Certainty	denying		forward
+ProbableNegatedExistence_Certainty	do not think these findings speak for		forward
+ProbableNegatedExistence_Certainty	doubt		forward
+ProbableNegatedExistence_Certainty	doubtful		bidirectional
+ProbableNegatedExistence_Certainty	exclude		forward
+ProbableNegatedExistence_Certainty	fails to reveal		forward
+ProbableNegatedExistence_Certainty	is not excluded	"r""""""(is|was|are|were)\snot\sexcluded"""""""	backward
+ProbableNegatedExistence_Certainty	is not indicated		backward
+ProbableNegatedExistence_Certainty	low probability		forward
+ProbableNegatedExistence_Certainty	no abnormal		forward
+ProbableNegatedExistence_Certainty	no cause of		forward
+ProbableNegatedExistence_Certainty	no complaints of		forward
+ProbableNegatedExistence_Certainty	no definite	"r""""""no[\s]*definite"""""""	forward
+ProbableNegatedExistence_Certainty	no demonstrated		forward
+ProbableNegatedExistence_Certainty	no findings of		forward
+ProbableNegatedExistence_Certainty	no findings to indicate		forward
+ProbableNegatedExistence_Certainty	no grounds for		forward
+ProbableNegatedExistence_Certainty	no Indication of		forward
+ProbableNegatedExistence_Certainty	no obvious		forward
+ProbableNegatedExistence_Certainty	no sign of		forward
+ProbableNegatedExistence_Certainty	no significant		forward
+ProbableNegatedExistence_Certainty	no signs of		forward
+ProbableNegatedExistence_Certainty	no suggestion of		forward
+ProbableNegatedExistence_Certainty	no sure		forward
+ProbableNegatedExistence_Certainty	not a sure		forward
+ProbableNegatedExistence_Certainty	not appreciate		forward
+ProbableNegatedExistence_Certainty	not associated with		forward
+ProbableNegatedExistence_Certainty	not complain of		forward
+ProbableNegatedExistence_Certainty	not demonstrate		forward
+ProbableNegatedExistence_Certainty	not feel		forward
+ProbableNegatedExistence_Certainty	not know of		forward
+ProbableNegatedExistence_Certainty	not known to have		forward
+ProbableNegatedExistence_Certainty	not reveal		forward
+ProbableNegatedExistence_Certainty	not ruled out		backward
+ProbableNegatedExistence_Certainty	not see		forward
+ProbableNegatedExistence_Certainty	not think		forward
+ProbableNegatedExistence_Certainty	not to be		forward
+ProbableNegatedExistence_Certainty	rather than		forward
+ProbableNegatedExistence_Certainty	sufficient to rule her out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule her out against		forward
+ProbableNegatedExistence_Certainty	sufficient to rule her out for	"r""""""sufficient\sto\srule\s(her|him)\sout\sfor"""""""	forward
+ProbableNegatedExistence_Certainty	sufficient to rule him out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule him out against	"r""""""sufficient\sto\srule\s(him|her)\sout\sagainst"""""""	forward
+ProbableNegatedExistence_Certainty	sufficient to rule him out for		forward
+ProbableNegatedExistence_Certainty	sufficient to rule out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule out against		forward
+ProbableNegatedExistence_Certainty	sufficient to rule out for		forward
+ProbableNegatedExistence_Certainty	sufficient to rule the patient out		forward
+ProbableNegatedExistence_Certainty	sufficient to rule the patient out against		forward
+ProbableNegatedExistence_Certainty	sufficient to rule the patient out for		forward
+ProbableNegatedExistence_Certainty	test for		forward
+ProbableNegatedExistence_Certainty	to exclude		forward
+ProbableNegatedExistence_Certainty	unable to adequately assess		forward
+ProbableNegatedExistence_Certainty	unable to assess		forward
+ProbableNegatedExistence_Certainty	unlikely		backward
+ProbableNegatedExistence_Certainty	unremarkable for		forward
+ProbableNegatedExistence_Certainty	very little that speaks for		forward
+ProbableNegatedExistence_Certainty	without Indication of		forward
+ProbableNegatedExistence_Certainty	without sign of		forward
+ProbableNegatedExistence_Certainty	not appear		backward
+Hypothetical_ContextualModality	should the patient		forward
+Hypothetical_ContextualModality	to prevent		forward
+Hypothetical_ContextualModality	look for		forward
+FamilyMember_Experiencer	spouse		forward
+FamilyMember_Experiencer	spouse's		forward
+FamilyMember_Experiencer	aunt		forward
+FamilyMember_Experiencer	aunt's		forward
+FamilyMember_Experiencer	family history		forward
+FamilyMember_Experiencer	family's		forward
+FamilyMember_Experiencer	family		forward
+FamilyMember_Experiencer	grandfather		forward
+FamilyMember_Experiencer	granddad		forward
+FamilyMember_Experiencer	grandfather's		forward
+FamilyMember_Experiencer	granddad's		forward
+FamilyMember_Experiencer	grandmother		forward
+FamilyMember_Experiencer	grandmother's		forward
+FamilyMember_Experiencer	husband		forward
+FamilyMember_Experiencer	husband's		forward
+FamilyMember_Experiencer	roommate		forward
+FamilyMember_Experiencer	room mate		forward
+FamilyMember_Experiencer	roommate's		forward
+FamilyMember_Experiencer	room mate's		forward
+FamilyMember_Experiencer	uncle		forward
+FamilyMember_Experiencer	uncle's		forward
+FamilyMember_Experiencer	wife		forward
+FamilyMember_Experiencer	wife's		forward
+FirstDegreeFemaleFamilyMember_Experiencer	daughter		forward
+FirstDegreeFemaleFamilyMember_Experiencer	daughter's		forward
+FirstDegreeFemaleFamilyMember_Experiencer	mom		forward
+FirstDegreeFemaleFamilyMember_Experiencer	mother's		forward
+FirstDegreeFemaleFamilyMember_Experiencer	mom's		forward
+FirstDegreeFemaleFamilyMember_Experiencer	sister		forward
+FirstDegreeFemaleFamilyMember_Experiencer	sister's		forward
+FirstDegreeMaleFamilyMember_Experiencer	son		forward
+FirstDegreeMaleFamilyMember_Experiencer	son's		forward
+FirstDegreeMaleFamilyMember_Experiencer	brother		forward
+FirstDegreeMaleFamilyMember_Experiencer	brother's		forward
+FirstDegreeMaleFamilyMember_Experiencer	dad		forward
+FirstDegreeMaleFamilyMember_Experiencer	dad's		forward
+FirstDegreeMaleFamilyMember_Experiencer	father		forward
+FirstDegreeMaleFamilyMember_Experiencer	father's		forward
+OtherMember_Experiencer			forward
+Patient_Experiencer			
+After_DocTimeRel	as needed		forward
+After_DocTimeRel	at risk for	"r""""""at\srisk\s(in\sthe\sfuture\s)?for"""""""	forward
+After_DocTimeRel	call		forward
+After_DocTimeRel	come back for		forward
+After_DocTimeRel	come back to		forward
+After_DocTimeRel	if		forward
+After_DocTimeRel	if clinical concern for	"r""""""if\sclinical\s(concern|suspicion)\sfor"""""""	forward
+After_DocTimeRel	if there is concern for		forward
+After_DocTimeRel	look out for		forward
+After_DocTimeRel	return		forward
+After_DocTimeRel	returning		forward
+After_DocTimeRel	should he		forward
+After_DocTimeRel	should she		forward
+After_DocTimeRel	should the		forward
+After_DocTimeRel	should there		forward
+After_DocTimeRel			forward
+Before-Overlap_DocTimeRel	day history of		forward
+Before-Overlap_DocTimeRel	days history of		forward
+Before-Overlap_DocTimeRel	month history of		forward
+Before-Overlap_DocTimeRel	months history of		forward
+Before-Overlap_DocTimeRel	evolving		bidirectional
+Before-Overlap_DocTimeRel	redemonstration of		forward
+Before_DocTimeRel			backward
+Before_DocTimeRel	last january		bidirectional
+Before_DocTimeRel	last jan		bidirectional
+Before_DocTimeRel	past january		bidirectional
+Before_DocTimeRel	past jan		bidirectional
+Before_DocTimeRel	last february		bidirectional
+Before_DocTimeRel	past february		bidirectional
+Before_DocTimeRel	last feb		bidirectional
+Before_DocTimeRel	past feb		bidirectional
+Before_DocTimeRel	last march		bidirectional
+Before_DocTimeRel	past mar		bidirectional
+Before_DocTimeRel	past march		bidirectional
+Before_DocTimeRel	last mar		bidirectional
+Before_DocTimeRel	last april		bidirectional
+Before_DocTimeRel	last apr		bidirectional
+Before_DocTimeRel	past april		bidirectional
+Before_DocTimeRel	past apr		bidirectional
+Before_DocTimeRel	last may		bidirectional
+Before_DocTimeRel	past may		bidirectional
+Before_DocTimeRel	last june		bidirectional
+Before_DocTimeRel	past june		bidirectional
+Before_DocTimeRel	last jun		bidirectional
+Before_DocTimeRel	past jun		bidirectional
+Before_DocTimeRel	last july		bidirectional
+Before_DocTimeRel	past jul		bidirectional
+Before_DocTimeRel	past july		bidirectional
+Before_DocTimeRel	last jul		bidirectional
+Before_DocTimeRel	last august		bidirectional
+Before_DocTimeRel	last aug		bidirectional
+Before_DocTimeRel	past aug		bidirectional
+Before_DocTimeRel	past august		bidirectional
+Before_DocTimeRel	last sep		bidirectional
+Before_DocTimeRel	last october		bidirectional
+Before_DocTimeRel	last oct		bidirectional
+Before_DocTimeRel	past october		bidirectional
+Before_DocTimeRel	past oct		bidirectional
+Before_DocTimeRel	last november		bidirectional
+Before_DocTimeRel	past november		bidirectional
+Before_DocTimeRel	last nov		bidirectional
+Before_DocTimeRel	past nov		bidirectional
+Before_DocTimeRel	last december		bidirectional
+Before_DocTimeRel	past december		bidirectional
+Before_DocTimeRel	last dec		bidirectional
+Before_DocTimeRel	past dec		bidirectional
+Before_DocTimeRel	again noted		bidirectional
+Before_DocTimeRel	change in		forward
+Before_DocTimeRel	changing		forward
+Before_DocTimeRel	chronic		forward
+Before_DocTimeRel	clinical history		forward
+Before_DocTimeRel	decrease in		forward
+Before_DocTimeRel	diminished		bidirectional
+Before_DocTimeRel	documented		forward
+Before_DocTimeRel	experiences		forward
+Before_DocTimeRel	family history of		forward
+Before_DocTimeRel	healing	"r""\b(healing|healed)\b"""	bidirectional
+Before_DocTimeRel	history		forward
+Before_DocTimeRel	in the past for		forward
+Before_DocTimeRel	interval change		bidirectional
+Before_DocTimeRel	known to have		forward
+Before_DocTimeRel	old		bidirectional
+Before_DocTimeRel	persistent		bidirectional
+Before_DocTimeRel	pre-existing		forward
+Before_DocTimeRel	previous		forward
+Before_DocTimeRel	prior		bidirectional
+Before_DocTimeRel	prior study		bidirectional
+Before_DocTimeRel	progression of	"r""""""progression\s(of|in)"""""""	forward
+Before_DocTimeRel	resolution of		forward
+Before_DocTimeRel	resolved		backward
+Before_DocTimeRel	resolving		forward
+Before_DocTimeRel	sequelae of		forward
+Before_DocTimeRel	status post		forward
+Before_DocTimeRel	subacute		forward
+Before_DocTimeRel	unchanged		bidirectional
+Overlap_DocTimeRel			
+AllergyIntoleranceIndicator			
+AllergyIndicator			forward
+IntoleranceIndicator			bidirectional
+NotApplicable_Indicator			
+Female_Gender	female		bidirectional
+Female_Gender	woman		bidirectional
+Female_Gender	girl		bidirectional
+Male_Gender	male		bidirectional
+Male_Gender	man		bidirectional
+Male_Gender	boy		bidirectional
+Male_Gender			bidirectional
+Gt_100_mg_per_dL			backward
+Gt_240_mg_per_dL			backward
+Gt_30			backward
+Gt_35_in			backward
+Gt_40_in			backward
+gt_126			backward
+gt_40_percent			backward
+gt_6.5			backward
+Lt_55_years_old			backward
+Lt_65_years_old			backward
+Denominator_gt_90_mmHg			backward
+Numerator_gt_140_mmHg			backward
+PseudoFuture	if negative		forward
+PseudoFuture	know if		forward
+PseudoHistorical	clinical history		forward
+PseudoHistorical	day history of		forward
+PseudoHistorical	detailed history		forward
+PseudoHistorical	history and		forward
+PseudoHistorical	history and examination		forward
+PseudoHistorical	history and physical		forward
+PseudoHistorical	history from		forward
+PseudoHistorical	history of chief complaint		forward
+PseudoHistorical	history of present illness		forward
+PseudoHistorical	history taking		forward
+PseudoHistorical	history physical		forward
+PseudoHistorical	patient history		forward
+PseudoHistorical	poor history		forward
+PseudoHistorical	social history		forward
+PseudoNegation	gram negative		forward
+PseudoNegation	no change		forward
+PseudoNegation	no definite change		forward
+PseudoNegation	no increase		forward
+PseudoNegation	no significant change		forward
+PseudoNegation	no significant interval change		forward
+PseudoNegation	no suspicious change		forward
+PseudoNegation	not cause		forward
+PseudoNegation	not drain		forward
+PseudoNegation	not extend		forward
+PseudoNegation	not necessarily		forward
+PseudoNegation	not only		forward
+PseudoNegation	positive study for	"r""positive (study|exam|examination)( for)"""	forward
+PseudoNegation	without difficulty		forward
+PseudoNegation	did not rule out		forward
+Because_Group	because		terminate
+Because_Group	for this reason		terminate
+Because_Group	since		terminate
+But_Group	although		terminate
+But_Group	apart from		terminate
+But_Group	aside from		terminate
+But_Group	but		terminate
+But_Group	except		terminate
+But_Group	however		terminate
+But_Group	nevertheless		terminate
+But_Group	still		terminate
+But_Group	though		terminate
+But_Group	yet		terminate
+Patient_Group	her		terminate
+Patient_Group	his		terminate
+Patient_Group	patient		terminate
+Patient_Group	patient's		terminate
+Patient_Group	who		terminate
+Presentation_Group			
+SecondaryTo_Group	as a cause for		terminate
+SecondaryTo_Group	as a cause of		terminate
+SecondaryTo_Group	as a reason for		terminate
+SecondaryTo_Group	as a reason of		terminate
+SecondaryTo_Group	as a secondary cause for		terminate
+SecondaryTo_Group	as a secondary cause of		terminate
+SecondaryTo_Group	as a secondary etiology for		terminate
+SecondaryTo_Group	as a secondary etiology of		terminate
+SecondaryTo_Group	as a secondary origin for		terminate
+SecondaryTo_Group	as a secondary origin of		terminate
+SecondaryTo_Group	as a secondary reason for		terminate
+SecondaryTo_Group	as a secondary reason of		terminate
+SecondaryTo_Group	as a secondary source for		terminate
+SecondaryTo_Group	as a secondary source of		terminate
+SecondaryTo_Group	as a source for		terminate
+SecondaryTo_Group	as a source of		terminate
+SecondaryTo_Group	as an cause for		terminate
+SecondaryTo_Group	as an cause of		terminate
+SecondaryTo_Group	as an etiology for		terminate
+SecondaryTo_Group	as an etiology of		terminate
+SecondaryTo_Group	as an origin for		terminate
+SecondaryTo_Group	as an origin of		terminate
+SecondaryTo_Group	as an reason for		terminate
+SecondaryTo_Group	as an reason of		terminate
+SecondaryTo_Group	as an secondary cause for		terminate
+SecondaryTo_Group	as an secondary cause of		terminate
+SecondaryTo_Group	as an secondary etiology for		terminate
+SecondaryTo_Group	as an secondary etiology of		terminate
+SecondaryTo_Group	as an secondary origin for		terminate
+SecondaryTo_Group	as an secondary origin of		terminate
+SecondaryTo_Group	as an secondary reason for		terminate
+SecondaryTo_Group	as an secondary reason of		terminate
+SecondaryTo_Group	as an secondary source for		terminate
+SecondaryTo_Group	as an secondary source of		terminate
+SecondaryTo_Group	as an source for		terminate
+SecondaryTo_Group	as an source of		terminate
+SecondaryTo_Group	as the cause for		terminate
+SecondaryTo_Group	as the cause of		terminate
+SecondaryTo_Group	as the etiology for		terminate
+SecondaryTo_Group	as the etiology of		terminate
+SecondaryTo_Group	as the origin for		terminate
+SecondaryTo_Group	as the origin of		terminate
+SecondaryTo_Group	as the reason for		terminate
+SecondaryTo_Group	as the reason of		terminate
+SecondaryTo_Group	as the secondary cause for		terminate
+SecondaryTo_Group	as the secondary cause of		terminate
+SecondaryTo_Group	as the secondary etiology for		terminate
+SecondaryTo_Group	as the secondary etiology of		terminate
+SecondaryTo_Group	as the secondary origin for		terminate
+SecondaryTo_Group	as the secondary origin of		terminate
+SecondaryTo_Group	as the secondary reason for		terminate
+SecondaryTo_Group	as the secondary reason of		terminate
+SecondaryTo_Group	as the secondary source for		terminate
+SecondaryTo_Group	as the secondary source of		terminate
+SecondaryTo_Group	as the source for		terminate
+SecondaryTo_Group	as the source of		terminate
+SecondaryTo_Group	cause for		terminate
+SecondaryTo_Group	cause of		terminate
+SecondaryTo_Group	causes for		terminate
+SecondaryTo_Group	causes of		terminate
+SecondaryTo_Group	etiology for		terminate
+SecondaryTo_Group	etiology of		terminate
+SecondaryTo_Group	involving		terminate
+SecondaryTo_Group	origin for		terminate
+SecondaryTo_Group	origin of		terminate
+SecondaryTo_Group	origins for		terminate
+SecondaryTo_Group	origins of		terminate
+SecondaryTo_Group	other possibilities of		terminate
+SecondaryTo_Group	reason for		terminate
+SecondaryTo_Group	reason of		terminate
+SecondaryTo_Group	reasons for		terminate
+SecondaryTo_Group	reasons of		terminate
+SecondaryTo_Group	secondary to		terminate
+SecondaryTo_Group	source for		terminate
+SecondaryTo_Group	source of		terminate
+SecondaryTo_Group	sources for		terminate
+SecondaryTo_Group	sources of		terminate
+SecondaryTo_Group	trigger event for		terminate
+SecondaryTo_Group	with		terminate
+Which_Group	which		terminate

@@ -1,0 +1,117 @@
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#current_smoker_document
+	hasAnchor	Smoker
+		hasTemporality	Overlap_DocTimeRel
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#current_smoker_mention
+	hasAnchor	http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Smoking_cessation_group_mention
+	hasAnchor	Smoking_cessation_group
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#explicit_current_smoker_mention
+	hasAnchor	Current_Smoker
+		hasTemporality	Overlap_DocTimeRel
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before-Overlap_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoking_but_continues_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before-Overlap_DocTimeRel,Before_DocTimeRel
+		hasContextualAspect	Continues_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty,ProbableExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention_lt_1_year
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#just_quit_smoking_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before-Overlap_DocTimeRel
+		hasContextualAspect	Terminates_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoker_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	Continues_ContextualAspect,NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty,ProbableExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoker_mention_with_duration
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+		hasQuantityValue	
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoking_started_or_reinitiated_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	Initiates_ContextualAspect,Reinitiates_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#non-smoker_document
+	hasAnchor	Non-smoker
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#non-smoker_mention
+	hasAnchor	http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#negated_smoking_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteNegatedExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#non-user_mention
+	hasAnchor	TOBACCO_NON-USER
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#past_smoker_document
+	hasAnchor	Smoker
+		hasTemporality	Before_DocTimeRel
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#past_smoker_mention
+	hasAnchor	http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ex-user_for_1_year_or_greater_mention
+	hasAnchor	Ex-tobacco_user
+		hasTemporality	Overlap_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_before_only_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention_gt_1_yr
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before-Overlap_DocTimeRel,Before_DocTimeRel
+		hasContextualAspect	NotApplicable_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#negated_current_smoker_mention
+	hasAnchor	Current_Smoker
+		hasTemporality	Before-Overlap_DocTimeRel,Before_DocTimeRel,Overlap_DocTimeRel
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteNegatedExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#quit_smoking_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before_DocTimeRel,Overlap_DocTimeRel
+		hasContextualAspect	Terminates_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoking_stopped_for_1_year_or_greater_mention
+	hasAnchor	Smoke,Smoker,Tobacco,Tobacco_use
+		hasTemporality	Before-Overlap_DocTimeRel,Before_DocTimeRel,Overlap_DocTimeRel
+		hasContextualAspect	Terminates_ContextualAspect
+		hasExperiencer	Patient_Experiencer
+		hasCertainty	DefiniteExistence_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#unknown_smoker_document
+	hasAnchor	Smoker
+		hasCertainty	Uncertain_Certainty
+http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#unknown_smoker_mention
+	hasAnchor	

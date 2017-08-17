@@ -1,0 +1,1586 @@
+Lex	Type	Regex
+ACE Inhibitor	ACE_Inhibitor	
+angiotensin-converting enzyme inhibitor	ACE_Inhibitor	
+ANTAG ANGIOTENSIN CONVERTING ENZYME	ACE_Inhibitor	
+INHIB KININASE II	ACE_Inhibitor	
+Angiotensin Converting Enzyme Antagonists	ACE_Inhibitor	
+Angiotensin-Converting Enzyme Inhibitor	ACE_Inhibitor	
+angiotensin converting enzyme inhibitor	ACE_Inhibitor	
+KININASE II INHIB	ACE_Inhibitor	
+KININASE II ANTAG	ACE_Inhibitor	
+ACE inhibitor	ACE_Inhibitor	
+ACE INHIB	ACE_Inhibitor	
+INHIB ACE	ACE_Inhibitor	
+ANGIOTENSIN I CONVERTING ENZYME INHIB	ACE_Inhibitor	
+Angiotensin I-Converting Enzyme Inhibitors	ACE_Inhibitor	
+Angiotensin-Converting Enzyme Antagonists	ACE_Inhibitor	
+Angiotensin-converting enzyme inhibitor	ACE_Inhibitor	
+Angiotensin-Converting Enzyme Inhibitors	ACE_Inhibitor	
+Angiotensin Converting Enzyme Inhibitors	ACE_Inhibitor	
+Angiotensin-converting Enzyme 	ACE_Inhibitor	
+ANGIOTENSIN CONVERTING ENZYME ANTAG	ACE_Inhibitor	
+Angiotensin-converting enzyme inhibitor agent	ACE_Inhibitor	
+INHIB ANGIOTENSIN CONVERTING ENZYME	ACE_Inhibitor	
+ANTAG KININASE II	ACE_Inhibitor	
+angiotensin-converting-enzyme inhibitor	ACE_Inhibitor	
+Kininase II Inhibitors	ACE_Inhibitor	
+Angiotensin I Converting Enzyme Inhibitors	ACE_Inhibitor	
+ACE Inhibitors	ACE_Inhibitor	
+ACE	ACE_Inhibitor	
+Kininase II Antagonists	ACE_Inhibitor	
+ACE INHIBITORS	ACE_Inhibitor	
+Benazepril	ACE_Inhibitor	
+benazapril	ACE_Inhibitor	
+benazepril	ACE_Inhibitor	
+benzazepril	ACE_Inhibitor	
+BENAZEPRIL	ACE_Inhibitor	
+Benazepril hydrochloride	ACE_Inhibitor	
+benazepril HCl	ACE_Inhibitor	
+86541-74-4	ACE_Inhibitor	
+Cibacène	ACE_Inhibitor	
+BENAZEPRIL HYDROCHLORIDE	ACE_Inhibitor	
+benazepril hydrochloride	ACE_Inhibitor	
+Lotensin	ACE_Inhibitor	
+CGS-14824-A	ACE_Inhibitor	
+Benazepril HCl	ACE_Inhibitor	
+Benazepril Hydrochloride	ACE_Inhibitor	
+CGS14824A	ACE_Inhibitor	
+CGS-14824A	ACE_Inhibitor	
+Cibacen	ACE_Inhibitor	
+Benazeprilat	ACE_Inhibitor	
+benezaprilat	ACE_Inhibitor	
+BENAZEPRILAT	ACE_Inhibitor	
+benazeprilat	ACE_Inhibitor	
+CGS-14831	ACE_Inhibitor	
+CGS 14831	ACE_Inhibitor	
+Briem	ACE_Inhibitor	
+Labopal	ACE_Inhibitor	
+Captopril	ACE_Inhibitor	
+62571-86-2	ACE_Inhibitor	
+Capoten	ACE_Inhibitor	
+captopril	ACE_Inhibitor	
+capoten	ACE_Inhibitor	
+CAPTOPRIL	ACE_Inhibitor	
+CPT	ACE_Inhibitor	
+L-Proline, 1-(3-mercapto-2-methyl-1-oxopropyl)-, (S)-	ACE_Inhibitor	
+Acepril	ACE_Inhibitor	
+Alacepril	ACE_Inhibitor	
+ALACEPRIL	ACE_Inhibitor	
+alacepril	ACE_Inhibitor	
+aracepril	ACE_Inhibitor	
+DU-1219	ACE_Inhibitor	
+DU 1219	ACE_Inhibitor	
+Capozide	ACE_Inhibitor	
+Capropril	ACE_Inhibitor	
+Ecopace	ACE_Inhibitor	
+Hypapril	ACE_Inhibitor	
+Hyteneze	ACE_Inhibitor	
+Kaplon	ACE_Inhibitor	
+Lopirin	ACE_Inhibitor	
+S-nitrosocaptopril	ACE_Inhibitor	
+L-Proline, 1-(2-methyl-3-(nitrosothio)-1-oxopropyl)-, (S)-	ACE_Inhibitor	
+SQ-14225	ACE_Inhibitor	
+SQ14225	ACE_Inhibitor	
+SQ-14,225	ACE_Inhibitor	
+SQ 14,225	ACE_Inhibitor	
+SQ14,225	ACE_Inhibitor	
+SQ 14225	ACE_Inhibitor	
+SQ-25868	ACE_Inhibitor	
+SQ 25868	ACE_Inhibitor	
+Tensopril	ACE_Inhibitor	
+Zofenopril	ACE_Inhibitor	
+zofenopril	ACE_Inhibitor	
+ZOFENOPRIL	ACE_Inhibitor	
+SQ-26900	ACE_Inhibitor	
+SQ 26900	ACE_Inhibitor	
+SQ-26991	ACE_Inhibitor	
+SQ 26991	ACE_Inhibitor	
+Zofenopril Calcium	ACE_Inhibitor	
+Zofenopril calcium	ACE_Inhibitor	
+ZOFENOPRIL CALCIUM	ACE_Inhibitor	
+Zofil	ACE_Inhibitor	
+Zofenil	ACE_Inhibitor	
+Menarini brand of zofenopril	ACE_Inhibitor	
+Zofenoprilat	ACE_Inhibitor	
+zofenoprilat	ACE_Inhibitor	
+zofenoprilate	ACE_Inhibitor	
+ZOFENOPRILAT	ACE_Inhibitor	
+Zofenoprilat Arginine	ACE_Inhibitor	
+SQ-26,703	ACE_Inhibitor	
+ZOFENOPRILAT ARGININE	ACE_Inhibitor	
+SQ 26703	ACE_Inhibitor	
+Zofenoprilat arginine	ACE_Inhibitor	
+SQ 26,703	ACE_Inhibitor	
+zofenopril-SH	ACE_Inhibitor	
+captopril disulfide	ACE_Inhibitor	
+SQ-14551	ACE_Inhibitor	
+SQ 14,551	ACE_Inhibitor	
+SQ-14,551	ACE_Inhibitor	
+SQ 14551	ACE_Inhibitor	
+desacetyl-alacepril	ACE_Inhibitor	
+deacetylalacepril	ACE_Inhibitor	
+desacetylalacepril	ACE_Inhibitor	
+DU-1227	ACE_Inhibitor	
+DU 1227	ACE_Inhibitor	
+4-fluorocaptopril	ACE_Inhibitor	
+Cilazapril Monohydrate	ACE_Inhibitor	
+CILAZAPRIL MONOHYDRATE	ACE_Inhibitor	
+Ro 31-2848 Monohydrate	ACE_Inhibitor	
+Ro 31 2848	ACE_Inhibitor	
+Cilazapril	ACE_Inhibitor	
+CILAZAPRIL	ACE_Inhibitor	
+Ro 312848	ACE_Inhibitor	
+Cilazapril Hydrate	ACE_Inhibitor	
+Ro-31-2848	ACE_Inhibitor	
+Ro312848	ACE_Inhibitor	
+Ro 31-2848	ACE_Inhibitor	
+Cilazapril Anhydrous	ACE_Inhibitor	
+Anhydrous Cilazapril	ACE_Inhibitor	
+CILAZAPRIL ANHYDROUS	ACE_Inhibitor	
+Cilazaprilat	ACE_Inhibitor	
+cilazaprilat	ACE_Inhibitor	
+CILAZAPRILAT	ACE_Inhibitor	
+cilazaprilat anhydrous	ACE_Inhibitor	
+Ro 313113	ACE_Inhibitor	
+Ro 31-3113	ACE_Inhibitor	
+Inhibace	ACE_Inhibitor	
+Monohydrobromide, Cilazapril	ACE_Inhibitor	
+Cilazapril Monohydrobromide	ACE_Inhibitor	
+Vascace	ACE_Inhibitor	
+Delapril	ACE_Inhibitor	
+delapril	ACE_Inhibitor	
+derapril	ACE_Inhibitor	
+DELAPRIL	ACE_Inhibitor	
+Alindapril	ACE_Inhibitor	
+CV-3317	ACE_Inhibitor	
+CV 3317	ACE_Inhibitor	
+Delapril Hydrochloride	ACE_Inhibitor	
+DELAPRIL HYDROCHLORIDE	ACE_Inhibitor	
+Delapril hydrochloride	ACE_Inhibitor	
+Enalapril	ACE_Inhibitor	
+enalapril	ACE_Inhibitor	
+ENALAPRIL	ACE_Inhibitor	
+Enalapril Maleate	ACE_Inhibitor	
+enalapril maleate	ACE_Inhibitor	
+Enacard	ACE_Inhibitor	
+Renitek	ACE_Inhibitor	
+Vasotec	ACE_Inhibitor	
+Renitec	ACE_Inhibitor	
+Enalapril maleate	ACE_Inhibitor	
+ENALAPRIL MALEATE	ACE_Inhibitor	
+Epaned	ACE_Inhibitor	
+Innovace	ACE_Inhibitor	
+Lexxel	ACE_Inhibitor	
+MK421	ACE_Inhibitor	
+MK 421	ACE_Inhibitor	
+MK-421	ACE_Inhibitor	
+Teczem	Calcium_Channel_Blockers	
+Vaseretic 10-25	ACE_Inhibitor	
+Vaseretic 5-12.5	ACE_Inhibitor	
+Vasotec	ACE_Inhibitor	
+Enalaprilat	ACE_Inhibitor	
+enalaprilat	ACE_Inhibitor	
+Merck Frosst Brand of Enalaprilat Anhydrous	ACE_Inhibitor	
+ENALAPRILAT	ACE_Inhibitor	
+Enalaprilat Dihydrate	ACE_Inhibitor	
+Biovail Brand of Enalaprilat Anhydrous	ACE_Inhibitor	
+Enalaprilic Acid	ACE_Inhibitor	
+Anhydrous Enalaprilat Citrate	ACE_Inhibitor	
+Boehringer Ingelheim Brand of Enalaprilat Anhydrous	ACE_Inhibitor	
+Pres iv	ACE_Inhibitor	
+Enaprilat	ACE_Inhibitor	
+MK422	ACE_Inhibitor	
+MK-422	ACE_Inhibitor	
+MK 422	ACE_Inhibitor	
+MSD Brand of Enalaprilat	ACE_Inhibitor	
+Xanef	ACE_Inhibitor	
+Teva Brand of Enalaprilat	ACE_Inhibitor	
+Enalapril TEVA	ACE_Inhibitor	
+EnalaprilTEVA	ACE_Inhibitor	
+Enalapril-TEVA	ACE_Inhibitor	
+Vasotec	ACE_Inhibitor	
+enalaprilat anhydrous	ACE_Inhibitor	
+Enalaprilat Anhydrous	ACE_Inhibitor	
+ENALAPRILAT ANHYDROUS	ACE_Inhibitor	
+RAC-X-65	ACE_Inhibitor	
+RAC X 65	ACE_Inhibitor	
+Spirapril	ACE_Inhibitor	
+spirapril	ACE_Inhibitor	
+SPIRAPRIL	ACE_Inhibitor	
+Quadropril	ACE_Inhibitor	
+Renormax	ACE_Inhibitor	
+Renpress	ACE_Inhibitor	
+SCH-33844	ACE_Inhibitor	
+SCH 33844	ACE_Inhibitor	
+Spirapril Hydrochloride	ACE_Inhibitor	
+spirapril hydrochloride	ACE_Inhibitor	
+SPIRAPRIL HYDROCHLORIDE	ACE_Inhibitor	
+Zanipress	ACE_Inhibitor	
+spiraprilat	ACE_Inhibitor	
+spiraprilate	ACE_Inhibitor	
+SCH 33861	ACE_Inhibitor	
+SCH-33861	ACE_Inhibitor	
+Fasidotril	ACE_Inhibitor	
+FASIDOTRIL	ACE_Inhibitor	
+Fosinopril	ACE_Inhibitor	
+Fosenopril	ACE_Inhibitor	
+FOSINOPRIL	ACE_Inhibitor	
+Ferrer Brand of Fosinopril Sodium	ACE_Inhibitor	
+Hiperlex	ACE_Inhibitor	
+Fosinopril Sodium	ACE_Inhibitor	
+Eliten	ACE_Inhibitor	
+Newace	ACE_Inhibitor	
+Staril	ACE_Inhibitor	
+Fosinopril sodium	ACE_Inhibitor	
+FOSINOPRIL SODIUM	ACE_Inhibitor	
+Fosinorm	ACE_Inhibitor	
+Monopril	ACE_Inhibitor	
+Monopril-HCT	ACE_Inhibitor	
+Fosinoprilat	ACE_Inhibitor	
+SQ-27519	ACE_Inhibitor	
+SQ 27519	ACE_Inhibitor	
+fosinoprilat	ACE_Inhibitor	
+FOSINOPRILAT	ACE_Inhibitor	
+fosinoprilic acid	ACE_Inhibitor	
+SQ 27,519	ACE_Inhibitor	
+SQ-27,519	ACE_Inhibitor	
+Merck Lipha Santé Brand of Fosinopril	ACE_Inhibitor	
+Fozitec	ACE_Inhibitor	
+SQ-28555	ACE_Inhibitor	
+SQ-28,555	ACE_Inhibitor	
+SQ28,555	ACE_Inhibitor	
+SQ 28,555	ACE_Inhibitor	
+SQ 28555	ACE_Inhibitor	
+SQ28555	ACE_Inhibitor	
+Fosinopril Sodium	ACE_Inhibitor	
+Eliten	ACE_Inhibitor	
+Newace	ACE_Inhibitor	
+Staril	ACE_Inhibitor	
+Fosinopril sodium	ACE_Inhibitor	
+FOSINOPRIL SODIUM	ACE_Inhibitor	
+Fosinorm	ACE_Inhibitor	
+Monopril	ACE_Inhibitor	
+Schwarz Brand of Fosinopril Sodium	ACE_Inhibitor	
+Sanol Brand of Fosinopril Sodium	ACE_Inhibitor	
+Dynacil	ACE_Inhibitor	
+Squibb Brand of Fosinopril Sodium	ACE_Inhibitor	
+Fosinil	ACE_Inhibitor	
+Fositens	ACE_Inhibitor	
+Tensocardil	ACE_Inhibitor	
+Tenso Stop	ACE_Inhibitor	
+Esteve Brand of Fosinopril Sodium	ACE_Inhibitor	
+Gemopatrilat	ACE_Inhibitor	
+GEMOPATRILAT	ACE_Inhibitor	
+gemopatrilat	ACE_Inhibitor	
+BMS-189921	ACE_Inhibitor	
+Idrapril	ACE_Inhibitor	
+IDRAPRIL	ACE_Inhibitor	
+idrapril	ACE_Inhibitor	
+LG-32001	ACE_Inhibitor	
+LG 32001	ACE_Inhibitor	
+Imidapril	ACE_Inhibitor	
+imidapril	ACE_Inhibitor	
+IMIDAPRIL	ACE_Inhibitor	
+Imidapril hydrochloride	ACE_Inhibitor	
+Imidapril Hydrochloride	ACE_Inhibitor	
+IMIDAPRIL HYDROCHLORIDE	ACE_Inhibitor	
+imidapril hydrochloride	ACE_Inhibitor	
+TA-6366	ACE_Inhibitor	
+TA 6366	ACE_Inhibitor	
+Tanatril	ACE_Inhibitor	
+Imidaprilat	ACE_Inhibitor	
+IMIDAPRILAT	ACE_Inhibitor	
+imidaprilat	ACE_Inhibitor	
+6366A	ACE_Inhibitor	
+LVV-hemorphin 6	ACE_Inhibitor	
+LVV hemorphin-6	ACE_Inhibitor	
+Libenzapril	ACE_Inhibitor	
+LIBENZAPRIL	ACE_Inhibitor	
+libenzapril	ACE_Inhibitor	
+CGS-16617	ACE_Inhibitor	
+CGS 16617	ACE_Inhibitor	
+Lisinopril	ACE_Inhibitor	
+lisinopril	ACE_Inhibitor	
+83915-83-7	ACE_Inhibitor	
+Zestril	ACE_Inhibitor	
+LISINOPRIL	ACE_Inhibitor	
+Prinivil	ACE_Inhibitor	
+Lysinopril	ACE_Inhibitor	
+BL-11 (epsilon-biotinamidocaproyl-lisinopril)	ACE_Inhibitor	
+BL11	ACE_Inhibitor	
+BL-11	ACE_Inhibitor	
+BL 11	ACE_Inhibitor	
+Carace	Thiazide_Diuretics	
+Carace Plus	Thiazide_Diuretics	
+Lisinopril Anhydrous	ACE_Inhibitor	
+LISINOPRIL ANHYDROUS	ACE_Inhibitor	
+Lisinopril Maleate (1:1)	ACE_Inhibitor	
+Lisinopril Sulfate (1:2)	ACE_Inhibitor	
+MK-521	ACE_Inhibitor	
+Prinize	Thiazide_Diuretics	
+Prinzide	Thiazide_Diuretics	
+Zestoretic	Thiazide_Diuretics	
+Moexipril	ACE_Inhibitor	
+moexipril	ACE_Inhibitor	
+MOEXIPRIL	ACE_Inhibitor	
+CGS 30440	ACE_Inhibitor	
+Fempress	ACE_Inhibitor	
+Moexipril hydrochloride	ACE_Inhibitor	
+Univasc	ACE_Inhibitor	
+moexipril hydrochloride	ACE_Inhibitor	
+Moexipril Hydrochloride	ACE_Inhibitor	
+MOEXIPRIL HYDROCHLORIDE	ACE_Inhibitor	
+Perdix	ACE_Inhibitor	
+Moex	ACE_Inhibitor	
+Moexipril HCl	ACE_Inhibitor	
+Uniretic	Thiazide_Diuretics	
+RS-10085	ACE_Inhibitor	
+RS 10085	ACE_Inhibitor	
+Moexiprilat	ACE_Inhibitor	
+RS 10029	ACE_Inhibitor	
+moexiprilat	ACE_Inhibitor	
+RS-10029	ACE_Inhibitor	
+MOEXIPRILAT	ACE_Inhibitor	
+Moexiprilat Hydrochloride	ACE_Inhibitor	
+Moexipril Diacid Hydrochloride	ACE_Inhibitor	
+MOEXIPRILAT HYDROCHLORIDE	ACE_Inhibitor	
+Moveltipril	ACE_Inhibitor	
+MOVELTIPRIL	ACE_Inhibitor	
+Omapatrilat	ACE_Inhibitor	
+BMS 186716	ACE_Inhibitor	
+Vanlev	ACE_Inhibitor	
+BMS-186716-01	ACE_Inhibitor	
+OMAPATRILAT	ACE_Inhibitor	
+omapatrilat	ACE_Inhibitor	
+BMS-186716	ACE_Inhibitor	
+Omapatrilate	ACE_Inhibitor	
+Orbutopril	ACE_Inhibitor	
+ORBUTOPRIL	ACE_Inhibitor	
+Pentopril	ACE_Inhibitor	
+PENTOPRIL	ACE_Inhibitor	
+1-(4-(ethoxycarbonyl)-2-methylpentanoyl)-2,3-dihydroindole-2-carboxylic acid	ACE_Inhibitor	
+pentopril	ACE_Inhibitor	
+CGS 13945	ACE_Inhibitor	
+CGS-13945	ACE_Inhibitor	
+Perindopril	ACE_Inhibitor	
+S 94903	ACE_Inhibitor	
+S 9490 3	ACE_Inhibitor	
+PERINDOPRIL	ACE_Inhibitor	
+S9490	ACE_Inhibitor	
+S-9490	ACE_Inhibitor	
+S 9490	ACE_Inhibitor	
+Pirindopril	ACE_Inhibitor	
+S 9490-3	ACE_Inhibitor	
+Perindopril Erbumine	ACE_Inhibitor	
+82834-16-0	ACE_Inhibitor	
+perindopril erbumine	ACE_Inhibitor	
+S-9490-3	ACE_Inhibitor	
+PERINDOPRIL ERBUMINE	ACE_Inhibitor	
+Aceon	ACE_Inhibitor	
+Coversyl	ACE_Inhibitor	
+Perindopril erbumine	ACE_Inhibitor	
+MCN-A-2833-109	ACE_Inhibitor	
+Perindopril tert-butylamine	ACE_Inhibitor	
+Perindopril Tert-butylamine	ACE_Inhibitor	
+Perindopril arginine	ACE_Inhibitor	
+perindopril arginine	ACE_Inhibitor	
+Prestalia	Calcium_Channel_Blockers	
+Perstarium	ACE_Inhibitor	
+Preterax	Thiazide_Diuretics	
+S 5590	Thiazide_Diuretics	
+S5590	Thiazide_Diuretics	
+Perindoprilat	ACE_Inhibitor	
+perindoprilat	ACE_Inhibitor	
+PERINDOPRILAT	ACE_Inhibitor	
+S-9780	ACE_Inhibitor	
+Pivopril	ACE_Inhibitor	
+PIVOPRIL	ACE_Inhibitor	
+Quinapril	ACE_Inhibitor	
+QUINAPRIL	ACE_Inhibitor	
+quinapril	ACE_Inhibitor	
+Accupril	ACE_Inhibitor	
+Accuretic	Thiazide_Diuretics	
+CI-906	ACE_Inhibitor	
+CI 906	ACE_Inhibitor	
+PD-109,452-2	ACE_Inhibitor	
+PD 109452-2	ACE_Inhibitor	
+Quinapril hydrochloride	ACE_Inhibitor	
+Quinapril Hydrochloride	ACE_Inhibitor	
+Accuprill	ACE_Inhibitor	
+quinapril hydrochloride	ACE_Inhibitor	
+QUINAPRIL HYDROCHLORIDE	ACE_Inhibitor	
+Accupro	ACE_Inhibitor	
+Ramipril	ACE_Inhibitor	
+Hoechst Brand of Ramipril	ACE_Inhibitor	
+RAMIPRIL	ACE_Inhibitor	
+Delix	ACE_Inhibitor	
+87333-19-5	ACE_Inhibitor	
+Monarch Brand of Ramipril	ACE_Inhibitor	
+Ramace	ACE_Inhibitor	
+Acovil	ACE_Inhibitor	
+Zabien	ACE_Inhibitor	
+Aventis Pharma Brand of Ramipril	ACE_Inhibitor	
+Aventis Brand of Ramipril	ACE_Inhibitor	
+Triatec	ACE_Inhibitor	
+ramipril	ACE_Inhibitor	
+Astra Brand of Ramipril	ACE_Inhibitor	
+Altace	ACE_Inhibitor	
+Tritace	ACE_Inhibitor	
+Almirall Brand of Ramipril	ACE_Inhibitor	
+Carasel	ACE_Inhibitor	
+AstraZeneca Brand of Ramipril	ACE_Inhibitor	
+Promed Brand of Ramipril	ACE_Inhibitor	
+Vesdil	ACE_Inhibitor	
+HOE498	ACE_Inhibitor	
+HOE-498	ACE_Inhibitor	
+HOE 498	ACE_Inhibitor	
+Ramiprilat	ACE_Inhibitor	
+RAMIPRILAT	ACE_Inhibitor	
+ramiprilat	ACE_Inhibitor	
+Rentiapril	ACE_Inhibitor	
+RENTIAPRIL	ACE_Inhibitor	
+rentiapril	ACE_Inhibitor	
+2-(2'-hydroxyphenyl)-3-(3-mercaptopropanoyl)-4-thiazolidine carboxylic acid	ACE_Inhibitor	
+SA-446	ACE_Inhibitor	
+SA 446	ACE_Inhibitor	
+Temocapril	ACE_Inhibitor	
+TEMOCAPRIL	ACE_Inhibitor	
+temocapril	ACE_Inhibitor	
+Temocapril Hydrochloride	ACE_Inhibitor	
+TEMOCAPRIL HYDROCHLORIDE	ACE_Inhibitor	
+Temocapril HCl	ACE_Inhibitor	
+temocapril hydrochloride	ACE_Inhibitor	
+CS622	ACE_Inhibitor	
+CS-622	ACE_Inhibitor	
+CS 622	ACE_Inhibitor	
+Temocapril Hydrochloride	ACE_Inhibitor	
+TEMOCAPRIL HYDROCHLORIDE	ACE_Inhibitor	
+Temocapril HCl	ACE_Inhibitor	
+temocapril hydrochloride	ACE_Inhibitor	
+Temocaprilat	ACE_Inhibitor	
+temocaprilate	ACE_Inhibitor	
+TEMOCAPRILAT	ACE_Inhibitor	
+temocaprilat	ACE_Inhibitor	
+RS-5139	ACE_Inhibitor	
+RS 5139	ACE_Inhibitor	
+Teprotide	ACE_Inhibitor	
+Bradykinin-Potentiating Peptide 9a	ACE_Inhibitor	
+Bradykinin Potentiating Peptide 9a	ACE_Inhibitor	
+Nonapeptide Converting Enzyme Inhibitor	ACE_Inhibitor	
+BPP-9a	ACE_Inhibitor	
+NONAPEPTIDE CONVERTING ENZYME INHIB	ACE_Inhibitor	
+Nonapeptide-Converting Enzyme Inhibitor	ACE_Inhibitor	
+SQ-20881	ACE_Inhibitor	
+Trandolapril	ACE_Inhibitor	
+Gopten	ACE_Inhibitor	
+Mavik	ACE_Inhibitor	
+trandolapril	ACE_Inhibitor	
+TRANDOLAPRIL	ACE_Inhibitor	
+Knoll brand of trandolapril	ACE_Inhibitor	
+Abbott brand of trandolapril	ACE_Inhibitor	
+Aventis Pharma brand of trandolapril	ACE_Inhibitor	
+Alter brand of trandolapril	ACE_Inhibitor	
+Hoechst brand of trandolapril	ACE_Inhibitor	
+Udrik	ACE_Inhibitor	
+Aventis brand of trandolapril	ACE_Inhibitor	
+Odrik	ACE_Inhibitor	
+RU44570	ACE_Inhibitor	
+RU 44570	ACE_Inhibitor	
+RU-44570	ACE_Inhibitor	
+Tarka	ACE_Inhibitor	
+Trandolaprilat	ACE_Inhibitor	
+trandolaprilat	ACE_Inhibitor	
+trandolaprilate	ACE_Inhibitor	
+TRANDOLAPRILAT	ACE_Inhibitor	
+RU-44403	ACE_Inhibitor	
+RU 44 403	ACE_Inhibitor	
+RU 44403	ACE_Inhibitor	
+Utibaprilat	ACE_Inhibitor	
+UTIBAPRILAT	ACE_Inhibitor	
+FPL 63547	ACE_Inhibitor	
+FPL-63547	ACE_Inhibitor	
+Valyltryptophan	ACE_Inhibitor	
+L-valyl- L-tryptophan	ACE_Inhibitor	
+N-L-valyl-L-tryptophan	ACE_Inhibitor	
+L-Valyl-L-Tryptophan	ACE_Inhibitor	
+VALYLTRYPTOPHAN	ACE_Inhibitor	
+L-Valyl- L-Tryptophan	ACE_Inhibitor	
+N-L-Valyl-L-tryptophan	ACE_Inhibitor	
+N-valyltryptophan	ACE_Inhibitor	
+L-valyl-L-tryptophan	ACE_Inhibitor	
+Val-Trp	ACE_Inhibitor	
+Zabicipril	ACE_Inhibitor	
+zabicipril	ACE_Inhibitor	
+ZABICIPRIL	ACE_Inhibitor	
+S9650	ACE_Inhibitor	
+S-9650	ACE_Inhibitor	
+S 9650	ACE_Inhibitor	
+Zabiciprilat	ACE_Inhibitor	
+zabiciprilate	ACE_Inhibitor	
+ZABICIPRILAT	ACE_Inhibitor	
+zabiciprilat	ACE_Inhibitor	
+S-10211	ACE_Inhibitor	
+S 10211	ACE_Inhibitor	
+ceronapril	ACE_Inhibitor	
+ceranapril	ACE_Inhibitor	
+SQ-29,852	ACE_Inhibitor	
+SQ 29852	ACE_Inhibitor	
+quinaprilat	ACE_Inhibitor	
+CI 928	ACE_Inhibitor	
+CI-928	ACE_Inhibitor	
+Quinaprilat	ACE_Inhibitor	
+QUINAPRILAT	ACE_Inhibitor	
+Adrenergic beta-Antagonists	Adrenergic_beta-Antagonists	
+ADRENERGIC ANTAGONISTS BETA	Adrenergic_beta-Antagonists	
+Adrenergic beta-Receptor Blockaders	Adrenergic_beta-Antagonists	
+BETA BLOCKERS ADREN	Adrenergic_beta-Antagonists	
+Beta-Adrenergic Blocking Agent	Adrenergic_beta-Antagonists	
+adrenergic beta receptor blockaders	Adrenergic_beta-Antagonists	
+ADREN BETA RECEPT BLOCK	Adrenergic_beta-Antagonists	
+beta blocker	Adrenergic_beta-Antagonists	
+beta-Adrenergic Receptor Blockaders	Adrenergic_beta-Antagonists	
+Adrenergic beta Antagonists	Adrenergic_beta-Antagonists	
+beta Adrenergic Blocking Agents	Adrenergic_beta-Antagonists	
+ADREN BETA ANTAG	Adrenergic_beta-Antagonists	
+BETA ADREN BLOCK AGENTS	Adrenergic_beta-Antagonists	
+Adrenergic beta Blockers	Adrenergic_beta-Antagonists	
+Beta-adrenergic Blocking Agents	Adrenergic_beta-Antagonists	
+Adrenergic beta-Blockers	Adrenergic_beta-Antagonists	
+Beta-blocker	Adrenergic_beta-Antagonists	
+Beta-Blockers	Adrenergic_beta-Antagonists	
+Beta-adrenoceptor blocking agent	Adrenergic_beta-Antagonists	
+Beta blockers	Adrenergic_beta-Antagonists	
+beta Adrenergic Blockers	Adrenergic_beta-Antagonists	
+BETA ADREN BLOCK	Adrenergic_beta-Antagonists	
+Beta-Adrenergic Antagonist	Adrenergic_beta-Antagonists	
+beta-Blocking agent	Adrenergic_beta-Antagonists	
+beta-adrenergic receptor blockaders	Adrenergic_beta-Antagonists	
+beta-Adrenergic Blockers	Adrenergic_beta-Antagonists	
+Beta-adrenoceptor blocking drug	Adrenergic_beta-Antagonists	
+beta-Adrenergic Blocking Agents	Adrenergic_beta-Antagonists	
+Beta Blocker	Adrenergic_beta-Antagonists	
+BETA ADREN RECEPT BLOCK	Adrenergic_beta-Antagonists	
+ADRENERGIC RECEPTOR BLOCKADERS BETA	Adrenergic_beta-Antagonists	
+beta-Adrenergic blocking agent	Adrenergic_beta-Antagonists	
+Adrenergic beta Receptor Blockaders	Adrenergic_beta-Antagonists	
+beta Adrenergic Receptor Blockaders	Adrenergic_beta-Antagonists	
+APRL	Adrenergic_beta-Antagonists	
+Acebutolol	Adrenergic_beta-Antagonists	
+ACEBUTOLOL	Adrenergic_beta-Antagonists	
+Acetobutolol	Adrenergic_beta-Antagonists	
+Acebutolol-ratiopharm	Adrenergic_beta-Antagonists	
+Lafon Ratiopharm Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Acébutololratiopharm	Adrenergic_beta-Antagonists	
+Lafon-Ratiopharm Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Acébutolol ratiopharm	Adrenergic_beta-Antagonists	
+Acébutolol-ratiopharm	Adrenergic_beta-Antagonists	
+Acebutolol Heumann	Adrenergic_beta-Antagonists	
+Heumann Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Acebutolol hydrochloride	Adrenergic_beta-Antagonists	
+ACEBUTOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+M & B 17803A	Adrenergic_beta-Antagonists	
+M&B17803 A	Adrenergic_beta-Antagonists	
+M&B 17803 A	Adrenergic_beta-Antagonists	
+M&B-17803 A	Adrenergic_beta-Antagonists	
+Sectral	Adrenergic_beta-Antagonists	
+Monitan	Adrenergic_beta-Antagonists	
+Wyeth Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Specia Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Italfarmaco Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Apo-Acebutolol	Adrenergic_beta-Antagonists	
+ApoAcebutolol	Adrenergic_beta-Antagonists	
+Apotex Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Apo Acebutolol	Adrenergic_beta-Antagonists	
+BAYI-5240	Adrenergic_beta-Antagonists	
+BAYI 5240	Adrenergic_beta-Antagonists	
+Neptal	Adrenergic_beta-Antagonists	
+Proctor & Gamble Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Novo-Acebutolol	Adrenergic_beta-Antagonists	
+NovoAcebutolol	Adrenergic_beta-Antagonists	
+Novo Acebutolol	Adrenergic_beta-Antagonists	
+Novopharm Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Prent	Adrenergic_beta-Antagonists	
+Bayer Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Gepepharm Brand of Acebutolol	Adrenergic_beta-Antagonists	
+Acebutolol Gepepharm Brand	Adrenergic_beta-Antagonists	
+Rhotral	Adrenergic_beta-Antagonists	
+Rhodiapharm Brand of Acebutolol Hydrochloride	Adrenergic_beta-Antagonists	
+Tredalat	Adrenergic_beta-Antagonists	
+acebutolol azide	Adrenergic_beta-Antagonists	
+diacetolol	Adrenergic_beta-Antagonists	
+acetyl acebutolol	Adrenergic_beta-Antagonists	
+M&B 16,942	Adrenergic_beta-Antagonists	
+diacetolol monohydrochloride	Adrenergic_beta-Antagonists	
+secradex	Adrenergic_beta-Antagonists	
+Adaprolol	Adrenergic_beta-Antagonists	
+adaprolol	Adrenergic_beta-Antagonists	
+ADAPROLOL	Adrenergic_beta-Antagonists	
+Adaprolol Maleate	Adrenergic_beta-Antagonists	
+CDDD 2803	Adrenergic_beta-Antagonists	
+ADAPROLOL MALEATE	Adrenergic_beta-Antagonists	
+adaprolol maleate	Adrenergic_beta-Antagonists	
+HGP 2	Adrenergic_beta-Antagonists	
+Adaprolol Maleate	Adrenergic_beta-Antagonists	
+CDDD 2803	Adrenergic_beta-Antagonists	
+ADAPROLOL MALEATE	Adrenergic_beta-Antagonists	
+adaprolol maleate	Adrenergic_beta-Antagonists	
+HGP 2	Adrenergic_beta-Antagonists	
+Adimolol	Adrenergic_beta-Antagonists	
+ADIMOLOL	Adrenergic_beta-Antagonists	
+adimolol	Adrenergic_beta-Antagonists	
+Afurolol	Adrenergic_beta-Antagonists	
+AFUROLOL	Adrenergic_beta-Antagonists	
+Amosulalol	Adrenergic_beta-Antagonists	
+AMOSULALOL	Adrenergic_beta-Antagonists	
+amosulalol	Adrenergic_beta-Antagonists	
+YM-09538	Adrenergic_beta-Antagonists	
+YM 09538	Adrenergic_beta-Antagonists	
+Ancarolol	Adrenergic_beta-Antagonists	
+ANCAROLOL	Adrenergic_beta-Antagonists	
+((+)-2--2-furananilide)	Adrenergic_beta-Antagonists	
+Arnolol	Adrenergic_beta-Antagonists	
+4-(2-methoxyethylphenoxy)-3-amino-3-methylbutan-2-ol	Adrenergic_beta-Antagonists	
+3-amino-1-(4-(2-methoxyethyl)phenoxy)-3-methyl- 2-Butanol	Adrenergic_beta-Antagonists	
+arnolol	Adrenergic_beta-Antagonists	
+ARNOLOL	Adrenergic_beta-Antagonists	
+BDF 7584	Adrenergic_beta-Antagonists	
+arnolol fumarate	Adrenergic_beta-Antagonists	
+Arotinolol	Adrenergic_beta-Antagonists	
+AROTINOLOL	Adrenergic_beta-Antagonists	
+arotinolol	Adrenergic_beta-Antagonists	
+S-596	Adrenergic_beta-Antagonists	
+S 596	Adrenergic_beta-Antagonists	
+Atenolol	Adrenergic_beta-Antagonists	
+4-(2-hydroxy-3-((1-methylethyl)amino)propoxy)- Benzeneacetamide	Adrenergic_beta-Antagonists	
+atenolol	Adrenergic_beta-Antagonists	
+ATENOLOL	Adrenergic_beta-Antagonists	
+29122-68-7	Adrenergic_beta-Antagonists	
+Antipressan	Adrenergic_beta-Antagonists	
+Atenix	Adrenergic_beta-Antagonists	
+AtenixCo	Adrenergic_beta-Antagonists	
+Atenolol/Chlorthalidone	Adrenergic_beta-Antagonists	
+Atenolol + chlorthalidone	Adrenergic_beta-Antagonists	
+Atenolol / Chlorthalidone	Adrenergic_beta-Antagonists	
+Tenoretic	Adrenergic_beta-Antagonists	
+ATENOLOL/CHLORTHALIDONE	Adrenergic_beta-Antagonists	
+chlortalidone drug combinations atenolol	Adrenergic_beta-Antagonists	
+atenolol - chlortalidone	Adrenergic_beta-Antagonists	
+Igroseles	Adrenergic_beta-Antagonists	
+ICI66082	Adrenergic_beta-Antagonists	
+ICI-66082	Adrenergic_beta-Antagonists	
+ICI 66082	Adrenergic_beta-Antagonists	
+Senormin	Adrenergic_beta-Antagonists	
+Tenchlor	Adrenergic_beta-Antagonists	
+Tenoret	Adrenergic_beta-Antagonists	
+Tenormin	Adrenergic_beta-Antagonists	
+Tenormine	Adrenergic_beta-Antagonists	
+Totamol	Adrenergic_beta-Antagonists	
+Totaretic	Adrenergic_beta-Antagonists	
+Vasaten	Adrenergic_beta-Antagonists	
+kalten	Adrenergic_beta-Antagonists	
+Befunolol	Adrenergic_beta-Antagonists	
+befunolol	Adrenergic_beta-Antagonists	
+2-Acetyl-7-(2-hyroxy-3-isopropylaminopropoxy)benzofuran	Adrenergic_beta-Antagonists	
+2-acetyl-7-(2-hydroxy-3-isopropylamino)propoxybenzofuran	Adrenergic_beta-Antagonists	
+BEFUNOLOL	Adrenergic_beta-Antagonists	
+BFE 60	Adrenergic_beta-Antagonists	
+Bentos	Adrenergic_beta-Antagonists	
+Glauconex	Adrenergic_beta-Antagonists	
+befunolol hydrochloride	Adrenergic_beta-Antagonists	
+Beta 2 blocking agent	Adrenergic_beta-Antagonists	
+Beta 2 adrenergic blocking agent	Adrenergic_beta-Antagonists	
+Betaxolol	Adrenergic_beta-Antagonists	
+betaxolol	Adrenergic_beta-Antagonists	
+BETAXOLOL	Adrenergic_beta-Antagonists	
+ALO140102	Adrenergic_beta-Antagonists	
+ALO 1401 02	Adrenergic_beta-Antagonists	
+ALO-1401-02	Adrenergic_beta-Antagonists	
+Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Alcon Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Kerlone	Adrenergic_beta-Antagonists	
+Oxodal	Adrenergic_beta-Antagonists	
+Synthélabo Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Schwarz Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+BETAXOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Betaxolol hydrochloride	Adrenergic_beta-Antagonists	
+Betoptima	Adrenergic_beta-Antagonists	
+Allphar Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Boots Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Betoptic	Adrenergic_beta-Antagonists	
+betaxolol hydrochloride	Adrenergic_beta-Antagonists	
+Lorex Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Kerlon	Adrenergic_beta-Antagonists	
+Synthelabo Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Searle Brand of Betaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+Betaxolol Alcon	Adrenergic_beta-Antagonists	
+Betoptic S	Adrenergic_beta-Antagonists	
+Betoptic Pilo	Adrenergic_beta-Antagonists	
+Cicloprolol Hydrochloride	Adrenergic_beta-Antagonists	
+CICLOPROLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+SL-75.177.10	Adrenergic_beta-Antagonists	
+SL 75 177-10	Adrenergic_beta-Antagonists	
+SL 75,177-10	Adrenergic_beta-Antagonists	
+SL 75-177-10	Adrenergic_beta-Antagonists	
+cicloprolol hydrochloride	Adrenergic_beta-Antagonists	
+SL 75177-10	Adrenergic_beta-Antagonists	
+Levobetaxolol	Adrenergic_beta-Antagonists	
+L-betaxolol	Adrenergic_beta-Antagonists	
+LEVOBETAXOLOL	Adrenergic_beta-Antagonists	
+Betaxon	Adrenergic_beta-Antagonists	
+Levobetaxolol Hydrochloride	Adrenergic_beta-Antagonists	
+levobetaxolol hydrochloride	Adrenergic_beta-Antagonists	
+LEVOBETAXOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Betaxon	Adrenergic_beta-Antagonists	
+Ophthalmic betaxolol hydrochloride	Adrenergic_beta-Antagonists	
+Oral form betaxolol	Adrenergic_beta-Antagonists	
+SL75212	Adrenergic_beta-Antagonists	
+SL-75212	Adrenergic_beta-Antagonists	
+SL 75212	Adrenergic_beta-Antagonists	
+Bevantolol	Adrenergic_beta-Antagonists	
+1-((2-(3,4-dimethoxyphenyl)ethyl)amino)- 3-(3-methylphenoxy)-2-propanol	Adrenergic_beta-Antagonists	
+BEVANTOLOL	Adrenergic_beta-Antagonists	
+bevantolol	Adrenergic_beta-Antagonists	
+1-(3,4-Dimethoxyphenethylamino)-3-(m-tolyloxy)-2-propanol	Adrenergic_beta-Antagonists	
+CI-775	Adrenergic_beta-Antagonists	
+CI 775	Adrenergic_beta-Antagonists	
+bevantolol hydrochloride	Adrenergic_beta-Antagonists	
+Bisoprolol	Adrenergic_beta-Antagonists	
+bisoprolol	Adrenergic_beta-Antagonists	
+BISOPROLOL	Adrenergic_beta-Antagonists	
+Bisoprolol Fumarate	Adrenergic_beta-Antagonists	
+Bisoprolol Hemifumarate	Adrenergic_beta-Antagonists	
+bisoprolol fumarate	Adrenergic_beta-Antagonists	
+Bisoprolol fumarate	Adrenergic_beta-Antagonists	
+66722-44-9	Adrenergic_beta-Antagonists	
+BISOPROLOL FUMARATE	Adrenergic_beta-Antagonists	
+Emcor	Adrenergic_beta-Antagonists	
+Emcor LS	Adrenergic_beta-Antagonists	
+Monocor	Adrenergic_beta-Antagonists	
+Zebeta	Adrenergic_beta-Antagonists	
+Bisoprolol Methanesulfonate Salt	Adrenergic_beta-Antagonists	
+CL297939	Adrenergic_beta-Antagonists	
+CL-297939	Adrenergic_beta-Antagonists	
+CL 297939	Adrenergic_beta-Antagonists	
+EMD33512	Adrenergic_beta-Antagonists	
+EMD 33512	Adrenergic_beta-Antagonists	
+EMD-33512	Adrenergic_beta-Antagonists	
+Hydrochloride, Bisoprolol	Adrenergic_beta-Antagonists	
+Bisoprolol Hydrochloride	Adrenergic_beta-Antagonists	
+Maxsoten	Adrenergic_beta-Antagonists	
+Bometolol	Adrenergic_beta-Antagonists	
+bometolol	Adrenergic_beta-Antagonists	
+8-acetonyloxy-5-(3-(2-(3,4-dimethoxyphenyl)ethylamino)-2-hydroxypropoxy)-3,4-dihydrocarbostyril	Adrenergic_beta-Antagonists	
+BOMETOLOL	Adrenergic_beta-Antagonists	
+OPC-1427	Adrenergic_beta-Antagonists	
+bometolol, ethanedioate salt	Adrenergic_beta-Antagonists	
+ethanedioate salt bometolol	Adrenergic_beta-Antagonists	
+bometolol monohydrochloride	Adrenergic_beta-Antagonists	
+bometolol monooxalate	Adrenergic_beta-Antagonists	
+Bornaprolol	Adrenergic_beta-Antagonists	
+BORNAPROLOL	Adrenergic_beta-Antagonists	
+bornaprolol	Adrenergic_beta-Antagonists	
+FM-24	Adrenergic_beta-Antagonists	
+FM 24	Adrenergic_beta-Antagonists	
+Bucindolol	Adrenergic_beta-Antagonists	
+BUCINDOLOL	Adrenergic_beta-Antagonists	
+Bucindololum	Adrenergic_beta-Antagonists	
+bucindolol	Adrenergic_beta-Antagonists	
+MJ 13105	Adrenergic_beta-Antagonists	
+bucindolol hydrochloride	Adrenergic_beta-Antagonists	
+Bucumolol	Adrenergic_beta-Antagonists	
+BUCUMOLOL	Adrenergic_beta-Antagonists	
+5-methyl-8-(2-hydroxy-3-t-butylaminopropoxy)coumarin	Adrenergic_beta-Antagonists	
+bucumolol	Adrenergic_beta-Antagonists	
+CS-359	Adrenergic_beta-Antagonists	
+CS 359	Adrenergic_beta-Antagonists	
+bucumolol hydrochloride	Adrenergic_beta-Antagonists	
+Bufetolol	Adrenergic_beta-Antagonists	
+bufetolol	Adrenergic_beta-Antagonists	
+BUFETOLOL	Adrenergic_beta-Antagonists	
+Adobiol	Adrenergic_beta-Antagonists	
+Y-6124	Adrenergic_beta-Antagonists	
+Y 6124	Adrenergic_beta-Antagonists	
+bufetolol hydrochloride	Adrenergic_beta-Antagonists	
+Bufuralol	Adrenergic_beta-Antagonists	
+1-(7-ethylbenzofuran-2-yl)-2-tert-butylamino-1-hydroxyethane	Adrenergic_beta-Antagonists	
+BUFURALOL	Adrenergic_beta-Antagonists	
+bufuralol	Adrenergic_beta-Antagonists	
+Ro 3-4787	Adrenergic_beta-Antagonists	
+bufuralol, hydrochloride	Adrenergic_beta-Antagonists	
+hydrochloride bufuralol	Adrenergic_beta-Antagonists	
+Bunitrolol	Adrenergic_beta-Antagonists	
+Benzonitrile, 2-(3-((1,1-dimethylethyl)amino)-2-hydroxypropoxy)-	Adrenergic_beta-Antagonists	
+BUNITROLOL	Adrenergic_beta-Antagonists	
+bunitrolol	Adrenergic_beta-Antagonists	
+Koe-1366	Adrenergic_beta-Antagonists	
+Ko 1366	Adrenergic_beta-Antagonists	
+Koe 1366	Adrenergic_beta-Antagonists	
+Ko-1366	Adrenergic_beta-Antagonists	
+Bunolol	Adrenergic_beta-Antagonists	
+Bunolol Hydrochloride	Adrenergic_beta-Antagonists	
+Levobunolol	Adrenergic_beta-Antagonists	
+levobunolol	Adrenergic_beta-Antagonists	
+LEVOBUNOLOL	Adrenergic_beta-Antagonists	
+AKBeta	Adrenergic_beta-Antagonists	
+Akorn Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+Apo-Levobunolol	Adrenergic_beta-Antagonists	
+Apo Levobunolol	Adrenergic_beta-Antagonists	
+Apotex Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+ApoLevobunolol	Adrenergic_beta-Antagonists	
+Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+L-bunolol hydrochloride	Adrenergic_beta-Antagonists	
+Levobunolol hydrochloride	Adrenergic_beta-Antagonists	
+Allergan Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+Betagan	Adrenergic_beta-Antagonists	
+levobunolol hydrochloride	Adrenergic_beta-Antagonists	
+LEVOBUNOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+AK-Beta	Adrenergic_beta-Antagonists	
+Novo-Levobunolol	Adrenergic_beta-Antagonists	
+NovoLevobunolol	Adrenergic_beta-Antagonists	
+Novo Levobunolol	Adrenergic_beta-Antagonists	
+Novopharm Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+PMS-Levobunolol	Adrenergic_beta-Antagonists	
+PMS Levobunolol	Adrenergic_beta-Antagonists	
+PMSLevobunolol	Adrenergic_beta-Antagonists	
+Pharmascience Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+TYR-BUN	Adrenergic_beta-Antagonists	
+Ultracortenol	Adrenergic_beta-Antagonists	
+Ciba Vision Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+Vistagan	Adrenergic_beta-Antagonists	
+Pharm Allergan Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+Pharm-Allergan Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+W7000A	Adrenergic_beta-Antagonists	
+W-7000A	Adrenergic_beta-Antagonists	
+W 7000A	Adrenergic_beta-Antagonists	
+Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+L-bunolol hydrochloride	Adrenergic_beta-Antagonists	
+Levobunolol hydrochloride	Adrenergic_beta-Antagonists	
+Allergan Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+Betagan	Adrenergic_beta-Antagonists	
+levobunolol hydrochloride	Adrenergic_beta-Antagonists	
+LEVOBUNOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+ratio-Levobunolol	Adrenergic_beta-Antagonists	
+Ratiopharm Brand of Levobunolol Hydrochloride	Adrenergic_beta-Antagonists	
+ratio Levobunolol	Adrenergic_beta-Antagonists	
+vistagan-liquifilm	Adrenergic_beta-Antagonists	
+vistagan liquifilm	Adrenergic_beta-Antagonists	
+W 6412A	Adrenergic_beta-Antagonists	
+W6412A	Adrenergic_beta-Antagonists	
+W-6412A	Adrenergic_beta-Antagonists	
+Bupranolol	Adrenergic_beta-Antagonists	
+BUPRANOLOL	Adrenergic_beta-Antagonists	
+BUPRANOLOL HCL	Adrenergic_beta-Antagonists	
+Betadrenol	Adrenergic_beta-Antagonists	
+Desma Brand of Bupranolol Hydrochloride	Adrenergic_beta-Antagonists	
+Cardiotensin	Adrenergic_beta-Antagonists	
+D 69-12	Adrenergic_beta-Antagonists	
+KL255	Adrenergic_beta-Antagonists	
+KL 255	Adrenergic_beta-Antagonists	
+KL-255	Adrenergic_beta-Antagonists	
+K 105	Adrenergic_beta-Antagonists	
+beta-aldopur	Adrenergic_beta-Antagonists	
+betaisoketul	Adrenergic_beta-Antagonists	
+beta-isoket	Adrenergic_beta-Antagonists	
+minotensin	Thiazide_Diuretics	
+Butocrolol	Adrenergic_beta-Antagonists	
+BUTOCROLOL	Adrenergic_beta-Antagonists	
+Butofilolol	Adrenergic_beta-Antagonists	
+BUTOFILOLOL	Adrenergic_beta-Antagonists	
+butofilolol	Adrenergic_beta-Antagonists	
+CM-6805	Adrenergic_beta-Antagonists	
+CM 6805	Adrenergic_beta-Antagonists	
+Cafide	Adrenergic_beta-Antagonists	
+Butoxamine Hydrochloride	Adrenergic_beta-Antagonists	
+BW 64-9	Adrenergic_beta-Antagonists	
+BUTOXAMINE HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+C16-PAF	Adrenergic_beta-Antagonists	
+CGP 12177	Adrenergic_beta-Antagonists	
+CGP-12177	Adrenergic_beta-Antagonists	
+CGP-12177A	Adrenergic_beta-Antagonists	
+CGP 12177A	Adrenergic_beta-Antagonists	
+CGP 20712A	Adrenergic_beta-Antagonists	
+CGP-20712A	Adrenergic_beta-Antagonists	
+CGP-20712-A	Adrenergic_beta-Antagonists	
+Carazolol	Adrenergic_beta-Antagonists	
+CARAZOLOL	Adrenergic_beta-Antagonists	
+4-(2-hydroxy-3-isopropylamino-propoxy)-carbazole	Adrenergic_beta-Antagonists	
+carazolol	Adrenergic_beta-Antagonists	
+BM 51052	Adrenergic_beta-Antagonists	
+Suacron	Adrenergic_beta-Antagonists	
+carazolol, monohydrochloride	Adrenergic_beta-Antagonists	
+monohydrochloride carazolol	Adrenergic_beta-Antagonists	
+Carpindolol	Adrenergic_beta-Antagonists	
+CARPINDOLOL	Adrenergic_beta-Antagonists	
+Carteolol	Adrenergic_beta-Antagonists	
+carteolol	Adrenergic_beta-Antagonists	
+CARTEOLOL	Adrenergic_beta-Antagonists	
+Carteolol Hydrochloride	Adrenergic_beta-Antagonists	
+CARTEOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Carteolol hydrochloride	Adrenergic_beta-Antagonists	
+Carteolol Monohydrochloride	Adrenergic_beta-Antagonists	
+carteolol hydrochloride	Adrenergic_beta-Antagonists	
+Cartrol	Adrenergic_beta-Antagonists	
+OPC1085	Adrenergic_beta-Antagonists	
+OPC 1085	Adrenergic_beta-Antagonists	
+OPC-1085	Adrenergic_beta-Antagonists	
+Ocupress	Adrenergic_beta-Antagonists	
+Teoptic	Adrenergic_beta-Antagonists	
+Carvedilol	Adrenergic_beta-Antagonists	
+carvedilol	Adrenergic_beta-Antagonists	
+CARVEDILOL	Adrenergic_beta-Antagonists	
+Coreg	Adrenergic_beta-Antagonists	
+72956-09-3	Adrenergic_beta-Antagonists	
+BM-14190	Adrenergic_beta-Antagonists	
+BM 14190	Adrenergic_beta-Antagonists	
+Carvedilol Phosphate	Adrenergic_beta-Antagonists	
+Carvedilol phosphate	Adrenergic_beta-Antagonists	
+carvedilol phosphate	Adrenergic_beta-Antagonists	
+CARVEDILOL PHOSPHATE	Adrenergic_beta-Antagonists	
+Coropres	Adrenergic_beta-Antagonists	
+Eucardic	Adrenergic_beta-Antagonists	
+Dilatrend	Adrenergic_beta-Antagonists	
+Kredex	Adrenergic_beta-Antagonists	
+Querto	Adrenergic_beta-Antagonists	
+carvedilol hydrochloride	Adrenergic_beta-Antagonists	
+Celiprolol	Adrenergic_beta-Antagonists	
+RHC-5320A	Adrenergic_beta-Antagonists	
+CELIPROLOL	Adrenergic_beta-Antagonists	
+UL/1677	Adrenergic_beta-Antagonists	
+Celiprolol Hydrochloride	Adrenergic_beta-Antagonists	
+CELIPROLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Celiprolol hydrochloride	Adrenergic_beta-Antagonists	
+Celiprolol Monohydrochloride	Adrenergic_beta-Antagonists	
+Celectol	Adrenergic_beta-Antagonists	
+REV5320A	Adrenergic_beta-Antagonists	
+REV-5320A	Adrenergic_beta-Antagonists	
+REV 5320A	Adrenergic_beta-Antagonists	
+ST1396	Adrenergic_beta-Antagonists	
+ST 1396	Adrenergic_beta-Antagonists	
+ST-1396	Adrenergic_beta-Antagonists	
+Selectol	Adrenergic_beta-Antagonists	
+Selectol	Adrenergic_beta-Antagonists	
+celiprolol FD	Adrenergic_beta-Antagonists	
+celiprolol-FD	Adrenergic_beta-Antagonists	
+Cetamolol	Adrenergic_beta-Antagonists	
+cetamolol	Adrenergic_beta-Antagonists	
+CETAMOLOL	Adrenergic_beta-Antagonists	
+AI-27303	Adrenergic_beta-Antagonists	
+betacor	Adrenergic_beta-Antagonists	
+cetamolol HCl	Adrenergic_beta-Antagonists	
+Cetamolol Hydrochloride	Adrenergic_beta-Antagonists	
+CETAMOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Cicloprolol	Adrenergic_beta-Antagonists	
+cicloprolol	Adrenergic_beta-Antagonists	
+Cicloprololum	Adrenergic_beta-Antagonists	
+CICLOPROLOL	Adrenergic_beta-Antagonists	
+SL 75117-10	Adrenergic_beta-Antagonists	
+Cicloprolol Hydrochloride	Adrenergic_beta-Antagonists	
+CICLOPROLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+SL-75.177.10	Adrenergic_beta-Antagonists	
+SL 75 177-10	Adrenergic_beta-Antagonists	
+SL 75,177-10	Adrenergic_beta-Antagonists	
+SL 75-177-10	Adrenergic_beta-Antagonists	
+cicloprolol hydrochloride	Adrenergic_beta-Antagonists	
+SL 75177-10	Adrenergic_beta-Antagonists	
+Cinamolol	Adrenergic_beta-Antagonists	
+CINAMOLOL	Adrenergic_beta-Antagonists	
+Cloranolol	Adrenergic_beta-Antagonists	
+chloranolol	Adrenergic_beta-Antagonists	
+chlorpropanol	Adrenergic_beta-Antagonists	
+tobanum, hydrochloride, (+-)-isomer	Adrenergic_beta-Antagonists	
+CLORANOLOL	Adrenergic_beta-Antagonists	
+2-propanol, 1-(2,5-dichlorophenoxy)-3-((1,1-dimethylethyl)amino)-	Adrenergic_beta-Antagonists	
+tobanum	Adrenergic_beta-Antagonists	
+cloranolol	Adrenergic_beta-Antagonists	
+1-(2,5-dichlorophenoxy)-3-tertiary-butylamino-2-propanol	Adrenergic_beta-Antagonists	
+GYKI-41099	Adrenergic_beta-Antagonists	
+tobanum hydrochloride	Adrenergic_beta-Antagonists	
+Dalbraminol	Adrenergic_beta-Antagonists	
+DALBRAMINOL	Adrenergic_beta-Antagonists	
+Dexefaroxan	Adrenergic_beta-Antagonists	
+dexefaroxan	Adrenergic_beta-Antagonists	
+DEXEFAROXAN	Adrenergic_beta-Antagonists	
+RX 831003	Adrenergic_beta-Antagonists	
+Dexnebivolol	Adrenergic_beta-Antagonists	
+DEXNEBIVOLOL	Adrenergic_beta-Antagonists	
+Dexpropranolol	Adrenergic_beta-Antagonists	
+DEXPROPRANOLOL	Adrenergic_beta-Antagonists	
+dexpropranolol	Adrenergic_beta-Antagonists	
+Dexpropranolol Hydrochloride	Adrenergic_beta-Antagonists	
+DEXPROPRANOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Dioxadilol	Adrenergic_beta-Antagonists	
+DIOXADILOL	Adrenergic_beta-Antagonists	
+Draquinolol	Adrenergic_beta-Antagonists	
+DRAQUINOLOL	Adrenergic_beta-Antagonists	
+Ecastolol	Adrenergic_beta-Antagonists	
+ECASTOLOL	Adrenergic_beta-Antagonists	
+Epanolol	Adrenergic_beta-Antagonists	
+EPANOLOL	Adrenergic_beta-Antagonists	
+epanolol	Adrenergic_beta-Antagonists	
+ICI-141,292	Adrenergic_beta-Antagonists	
+ICI 141292	Adrenergic_beta-Antagonists	
+ICI 141,292	Adrenergic_beta-Antagonists	
+Visacor	Adrenergic_beta-Antagonists	
+Ericolol	Adrenergic_beta-Antagonists	
+ERICOLOL	Adrenergic_beta-Antagonists	
+Ersentilide	Adrenergic_beta-Antagonists	
+ERSENTILIDE	Adrenergic_beta-Antagonists	
+ersentilide	Adrenergic_beta-Antagonists	
+4-HIPPM	Adrenergic_beta-Antagonists	
+CK-3579	Adrenergic_beta-Antagonists	
+CK 3579	Adrenergic_beta-Antagonists	
+CK-4000	Adrenergic_beta-Antagonists	
+CK 4000	Adrenergic_beta-Antagonists	
+CK-4001	Adrenergic_beta-Antagonists	
+CK 4001	Adrenergic_beta-Antagonists	
+HE93	Adrenergic_beta-Antagonists	
+HE 93	Adrenergic_beta-Antagonists	
+HE-93	Adrenergic_beta-Antagonists	
+Esatenolol	Adrenergic_beta-Antagonists	
+ESATENOLOL	Adrenergic_beta-Antagonists	
+Esmolol	Adrenergic_beta-Antagonists	
+103598-03-4	Adrenergic_beta-Antagonists	
+esmolol	Adrenergic_beta-Antagonists	
+ESMOLOL	Adrenergic_beta-Antagonists	
+Esmolol hydrochloride	Adrenergic_beta-Antagonists	
+esmolol hydrochloride	Adrenergic_beta-Antagonists	
+Esmolol Hydrochloride	Adrenergic_beta-Antagonists	
+ASL-8052	Adrenergic_beta-Antagonists	
+Brevibloc	Adrenergic_beta-Antagonists	
+ESMOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Esmolol hydrochloride product	Adrenergic_beta-Antagonists	
+ASL 8052	Adrenergic_beta-Antagonists	
+Exaprolol	Adrenergic_beta-Antagonists	
+EXAPROLOL	Adrenergic_beta-Antagonists	
+1-isopropylamino-3-(2-cyclohexylphenoxy)-2- propanol	Adrenergic_beta-Antagonists	
+exaprolol	Adrenergic_beta-Antagonists	
+Exaprolol Hydrochloride	Adrenergic_beta-Antagonists	
+exaprolol hydrochloride	Adrenergic_beta-Antagonists	
+EXAPROLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+MG 8823	Adrenergic_beta-Antagonists	
+VULM-111	Adrenergic_beta-Antagonists	
+VUL-111	Adrenergic_beta-Antagonists	
+VULM 111	Adrenergic_beta-Antagonists	
+VULM-456	Adrenergic_beta-Antagonists	
+VULM 456	Adrenergic_beta-Antagonists	
+exaprolol sulfate	Adrenergic_beta-Antagonists	
+Falintolol	Adrenergic_beta-Antagonists	
+falintolol	Adrenergic_beta-Antagonists	
+FALINTOLOL	Adrenergic_beta-Antagonists	
+Flestolol	Adrenergic_beta-Antagonists	
+flestolol	Adrenergic_beta-Antagonists	
+FLESTOLOL	Adrenergic_beta-Antagonists	
+ACC-9089	Adrenergic_beta-Antagonists	
+ACC 9089	Adrenergic_beta-Antagonists	
+Flestolol Sulfate	Adrenergic_beta-Antagonists	
+FLESTOLOL SULFATE	Adrenergic_beta-Antagonists	
+flestolol sulfate	Adrenergic_beta-Antagonists	
+Flusoxolol	Adrenergic_beta-Antagonists	
+FLUSOXOLOL	Adrenergic_beta-Antagonists	
+flusoxolol	Adrenergic_beta-Antagonists	
+RO-31-1118	Adrenergic_beta-Antagonists	
+Ro 31-1118	Adrenergic_beta-Antagonists	
+Ro 31-1411	Adrenergic_beta-Antagonists	
+HAG-PC	Adrenergic_beta-Antagonists	
+HAGPC	Adrenergic_beta-Antagonists	
+HD-PAF	Adrenergic_beta-Antagonists	
+ICI 118551	Adrenergic_beta-Antagonists	
+ICI 118,551	Adrenergic_beta-Antagonists	
+ICI-118551	Adrenergic_beta-Antagonists	
+ICI-111581	Adrenergic_beta-Antagonists	
+ICI 111,581	Adrenergic_beta-Antagonists	
+ICI 111581	Adrenergic_beta-Antagonists	
+ICI 118551, hydrochloride	Adrenergic_beta-Antagonists	
+hydrochloride ICI 118551	Adrenergic_beta-Antagonists	
+ICI 89406	Adrenergic_beta-Antagonists	
+ICI-89406	Adrenergic_beta-Antagonists	
+ICI 89 406	Adrenergic_beta-Antagonists	
+ICI 89,406	Adrenergic_beta-Antagonists	
+IPS 339	Adrenergic_beta-Antagonists	
+IPS-339	Adrenergic_beta-Antagonists	
+Idropranolol	Adrenergic_beta-Antagonists	
+IDROPRANOLOL	Adrenergic_beta-Antagonists	
+Indenolol	Adrenergic_beta-Antagonists	
+INDENOLOL	Adrenergic_beta-Antagonists	
+indenolol	Adrenergic_beta-Antagonists	
+1-(7-indenyloxy)-3-isopropylaminopropan-2-ol.HCl	Adrenergic_beta-Antagonists	
+YB-2	Adrenergic_beta-Antagonists	
+indenolol hydrochloride	Adrenergic_beta-Antagonists	
+Indopanolol	Adrenergic_beta-Antagonists	
+INDOPANOLOL	Adrenergic_beta-Antagonists	
+Iprocrolol	Adrenergic_beta-Antagonists	
+S 464	Adrenergic_beta-Antagonists	
+S-464	Adrenergic_beta-Antagonists	
+IPROCROLOL	Adrenergic_beta-Antagonists	
+Isoxaprolol	Adrenergic_beta-Antagonists	
+ISOXAPROLOL	Adrenergic_beta-Antagonists	
+L 750355	Adrenergic_beta-Antagonists	
+L-750355	Adrenergic_beta-Antagonists	
+Labetalol	Adrenergic_beta-Antagonists	
+labetalol	Adrenergic_beta-Antagonists	
+LABETALOL	Adrenergic_beta-Antagonists	
+Labetolol	Adrenergic_beta-Antagonists	
+AH5158	Adrenergic_beta-Antagonists	
+AH 5158	Adrenergic_beta-Antagonists	
+AH-5158	Adrenergic_beta-Antagonists	
+Apo-Labetalol	Adrenergic_beta-Antagonists	
+Apotex Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+ApoLabetalol	Adrenergic_beta-Antagonists	
+Apo Labetalol	Adrenergic_beta-Antagonists	
+Dilevalol	Adrenergic_beta-Antagonists	
+DILEVALOL	Adrenergic_beta-Antagonists	
+Labetalol, (R,R)-Isomer	Adrenergic_beta-Antagonists	
+R,R-Labetalol	Adrenergic_beta-Antagonists	
+R,R Labetalol	Adrenergic_beta-Antagonists	
+Labetalol hydrochloride	Adrenergic_beta-Antagonists	
+Faro Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Trandate	Adrenergic_beta-Antagonists	
+Shire Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+labetalol hydrochloride	Adrenergic_beta-Antagonists	
+Ibidomide hydrochloride	Adrenergic_beta-Antagonists	
+Schering Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Kern Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Glaxo Wellcome Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+LABETALOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Sigma Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Celltech Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Normodyne	Adrenergic_beta-Antagonists	
+GlaxoSmithKline Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+Labrocol	Adrenergic_beta-Antagonists	
+Trandide	Thiazide_Diuretics	
+Presolol	Adrenergic_beta-Antagonists	
+Alphapharm Brand of Labetalol Hydrochloride	Adrenergic_beta-Antagonists	
+SCH19927	Adrenergic_beta-Antagonists	
+SCH-19927	Adrenergic_beta-Antagonists	
+SCH 19927	Adrenergic_beta-Antagonists	
+Landiolol	Adrenergic_beta-Antagonists	
+ONO-1101	Adrenergic_beta-Antagonists	
+landiolol	Adrenergic_beta-Antagonists	
+LANDIOLOL	Adrenergic_beta-Antagonists	
+ONO 1101	Adrenergic_beta-Antagonists	
+Levobunolol	Adrenergic_beta-Antagonists	
+levobunolol	Adrenergic_beta-Antagonists	
+LEVOBUNOLOL	Adrenergic_beta-Antagonists	
+Levonebivolol	Adrenergic_beta-Antagonists	
+R 67145	Adrenergic_beta-Antagonists	
+LEVONEBIVOLOL	Adrenergic_beta-Antagonists	
+Metipranolol	Adrenergic_beta-Antagonists	
+1-(4-Acetoxy-2,3,5-Trimethylphenoxy)-3-Isopropylamino-2-Propanol	Adrenergic_beta-Antagonists	
+Methypranol	Adrenergic_beta-Antagonists	
+Trimepranol	Adrenergic_beta-Antagonists	
+METIPRANOLOL	Adrenergic_beta-Antagonists	
+Disorat	Adrenergic_beta-Antagonists	
+Glauline	Adrenergic_beta-Antagonists	
+Metipranolol hydrochloride	Adrenergic_beta-Antagonists	
+OptiPranolol	Adrenergic_beta-Antagonists	
+METIPRANOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Optipranolol	Adrenergic_beta-Antagonists	
+Metipranolol Hydrochloride	Adrenergic_beta-Antagonists	
+Minims Metipranolol	Adrenergic_beta-Antagonists	
+Torrat	Thiazide_Diuretics	
+VUFB 8101	Adrenergic_beta-Antagonists	
+VUFB-8101	Adrenergic_beta-Antagonists	
+VUFB 8227	Adrenergic_beta-Antagonists	
+VUFB-8227	Adrenergic_beta-Antagonists	
+deacetyltrimepranol	Adrenergic_beta-Antagonists	
+deacetylmetipranolol	Adrenergic_beta-Antagonists	
+desacetylmetipranolol	Adrenergic_beta-Antagonists	
+VUFB 6502	Adrenergic_beta-Antagonists	
+tri-torrat	Thiazide_Diuretics	
+trimecryton	Thiazide_Diuretics	
+crystepin T	Thiazide_Diuretics	
+Metoprolol	Adrenergic_beta-Antagonists	
+37350-58-6	Adrenergic_beta-Antagonists	
+2-Propanol, 1-(4-(2-methoxyethyl)phenoxy)-3-((1-methylethyl)amino)-, (+-)-	Adrenergic_beta-Antagonists	
+METOPROLOL	Adrenergic_beta-Antagonists	
+metoprolol	Adrenergic_beta-Antagonists	
+BelocDuriles	Adrenergic_beta-Antagonists	
+Beloc Duriles	Adrenergic_beta-Antagonists	
+Beloc-Duriles	Adrenergic_beta-Antagonists	
+Betalok	Adrenergic_beta-Antagonists	
+CGP2175	Adrenergic_beta-Antagonists	
+CGP 2175	Adrenergic_beta-Antagonists	
+CGP-2175	Adrenergic_beta-Antagonists	
+H 87-07	Adrenergic_beta-Antagonists	
+1-(4-(2-methoxyethoxy)phenoxy)-3-((1-methylethyl)amino)- 2-propanol	Adrenergic_beta-Antagonists	
+H87-07	Adrenergic_beta-Antagonists	
+H 87-07 hydrochloride	Adrenergic_beta-Antagonists	
+H 9326	Adrenergic_beta-Antagonists	
+H 93 26	Adrenergic_beta-Antagonists	
+H 93-26	Adrenergic_beta-Antagonists	
+Metoprolol Tartrate	Adrenergic_beta-Antagonists	
+Lopressor	Adrenergic_beta-Antagonists	
+Metoprolol tartrate	Adrenergic_beta-Antagonists	
+METOPROLOL TARTRATE	Adrenergic_beta-Antagonists	
+metoprolol tartrate	Adrenergic_beta-Antagonists	
+Arbralene	Adrenergic_beta-Antagonists	
+Betaloc	Adrenergic_beta-Antagonists	
+Betaloc Astra	Adrenergic_beta-Antagonists	
+Betaloc-Astra	Adrenergic_beta-Antagonists	
+BetalocAstra	Adrenergic_beta-Antagonists	
+Dutoprol	Thiazide_Diuretics	
+Lopressor HCT	Thiazide_Diuretics	
+Mepranix	Adrenergic_beta-Antagonists	
+Metoprolol fumarate	Adrenergic_beta-Antagonists	
+METOPROLOL FUMARATE	Adrenergic_beta-Antagonists	
+Metoprolol Fumarate	Adrenergic_beta-Antagonists	
+Metoros	Adrenergic_beta-Antagonists	
+O-demethylmetoprolol	Adrenergic_beta-Antagonists	
+H 105-22	Adrenergic_beta-Antagonists	
+H105-22	Adrenergic_beta-Antagonists	
+Parenteral form metoprolol	Adrenergic_beta-Antagonists	
+Seloken	Adrenergic_beta-Antagonists	
+Spesikor	Adrenergic_beta-Antagonists	
+Spesicor	Adrenergic_beta-Antagonists	
+alpha-hydroxymetoprolol	Adrenergic_beta-Antagonists	
+H 119-66	Adrenergic_beta-Antagonists	
+H119-66	Adrenergic_beta-Antagonists	
+logroton	Thiazide_Diuretics	
+metoprolol succinate	Adrenergic_beta-Antagonists	
+metoprolol CR-XL	Adrenergic_beta-Antagonists	
+Metoprolol CR XL	Adrenergic_beta-Antagonists	
+Metoprolol Succinate	Adrenergic_beta-Antagonists	
+Metoprolol succinate	Adrenergic_beta-Antagonists	
+Toprol XL	Adrenergic_beta-Antagonists	
+Toprol-XL	Adrenergic_beta-Antagonists	
+ToprolXL	Adrenergic_beta-Antagonists	
+Metoprolol CR-XL	Adrenergic_beta-Antagonists	
+METOPROLOL SUCCINATE	Adrenergic_beta-Antagonists	
+Dutoprol	Thiazide_Diuretics	
+Toprol	Adrenergic_beta-Antagonists	
+Moprolol	Adrenergic_beta-Antagonists	
+1-(2-methoxyphenoxy)-3-((1-methylethyl)amino)-2-propanol	Adrenergic_beta-Antagonists	
+MOPROLOL	Adrenergic_beta-Antagonists	
+1-(o-methoxyphenoxy)-3-isopropylamino-2-propanol	Adrenergic_beta-Antagonists	
+moprolol	Adrenergic_beta-Antagonists	
+Levomoprolol	Adrenergic_beta-Antagonists	
+levomoprolol	Adrenergic_beta-Antagonists	
+LEVOMOPROLOL	Adrenergic_beta-Antagonists	
+(-)-isomer moprolol	Adrenergic_beta-Antagonists	
+SD 1601	Adrenergic_beta-Antagonists	
+moprolol, monohydrochloride	Adrenergic_beta-Antagonists	
+monohydrochloride moprolol	Adrenergic_beta-Antagonists	
+Nadolol	Adrenergic_beta-Antagonists	
+2,3-Naphthalenediol, 5-(3-((1,1-dimethylethyl)amino)-2-hydroxypropoxy)-1,2,3,4-tetrahydro-	Adrenergic_beta-Antagonists	
+42200-33-9	Adrenergic_beta-Antagonists	
+NADOLOL	Adrenergic_beta-Antagonists	
+Corgard	Adrenergic_beta-Antagonists	
+nadolol	Adrenergic_beta-Antagonists	
+Corgaretic	Thiazide_Diuretics	
+Corzide	Thiazide_Diuretics	
+K 4423	Adrenergic_beta-Antagonists	
+K-4423	Adrenergic_beta-Antagonists	
+K 4423, hydrochloride	Adrenergic_beta-Antagonists	
+hydrochloride K 4423	Adrenergic_beta-Antagonists	
+K 5407	Adrenergic_beta-Antagonists	
+K-5407	Adrenergic_beta-Antagonists	
+K 5407 monohydrochloride	Adrenergic_beta-Antagonists	
+Nadolol+diuretic	Adrenergic_beta-Antagonists	
+SQ11725	Adrenergic_beta-Antagonists	
+SQ 11725	Adrenergic_beta-Antagonists	
+SQ-11725	Adrenergic_beta-Antagonists	
+Solgol	Adrenergic_beta-Antagonists	
+diacetylnadolol	Adrenergic_beta-Antagonists	
+nadolol diacetate	Adrenergic_beta-Antagonists	
+Nadoxolol	Adrenergic_beta-Antagonists	
+NADOXOLOL	Adrenergic_beta-Antagonists	
+LL 1530	Adrenergic_beta-Antagonists	
+N,3-dihydroxy-4-(1-naphthalenyloxy)butanimidamide	Adrenergic_beta-Antagonists	
+nadoxolol	Adrenergic_beta-Antagonists	
+4-(1-naphthyloxy)-3-hydroxybutyramidoxime	Adrenergic_beta-Antagonists	
+Bradyl	Adrenergic_beta-Antagonists	
+nadoxolol hydrochloride	Adrenergic_beta-Antagonists	
+Nafetolol	Adrenergic_beta-Antagonists	
+NAFETOLOL	Adrenergic_beta-Antagonists	
+Neraminol	Adrenergic_beta-Antagonists	
+NERAMINOL	Adrenergic_beta-Antagonists	
+Nicainoprol	Adrenergic_beta-Antagonists	
+NICAINOPROL	Adrenergic_beta-Antagonists	
+nicainoprol	Adrenergic_beta-Antagonists	
+1,2,3,4-tetrahydro-8-(2-hydroxy-3-(isopropylamino)propoxy)-1-nicotinoylquinoline	Adrenergic_beta-Antagonists	
+Nifenalol	Adrenergic_beta-Antagonists	
+nifenalol	Adrenergic_beta-Antagonists	
+inpea	Adrenergic_beta-Antagonists	
+NIFENALOL	Adrenergic_beta-Antagonists	
+1-(4-nitrophenyl)-2-isopropylaminoethanol	Adrenergic_beta-Antagonists	
+Nipradilol	Adrenergic_beta-Antagonists	
+K 351	Adrenergic_beta-Antagonists	
+nipradilol	Adrenergic_beta-Antagonists	
+K-351	Adrenergic_beta-Antagonists	
+NIPRADILOL	Adrenergic_beta-Antagonists	
+Oxprenolol	Adrenergic_beta-Antagonists	
+1-((1-methylethyl)amino)-3-(2-(2-propenyloxy)phenoxy)- 2-Propanol	Adrenergic_beta-Antagonists	
+OXPRENOLOL	Adrenergic_beta-Antagonists	
+Coretal	Adrenergic_beta-Antagonists	
+Koretal	Adrenergic_beta-Antagonists	
+Oxprenolol Hydrochloride	Adrenergic_beta-Antagonists	
+OXPRENOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Oxprenolol hydrochloride	Adrenergic_beta-Antagonists	
+Oxyprenix SR	Adrenergic_beta-Antagonists	
+Trasicor	Adrenergic_beta-Antagonists	
+Trasidrex	Thiazide_Diuretics	
+Trasicor Retard	Adrenergic_beta-Antagonists	
+Trasicor, Slow	Adrenergic_beta-Antagonists	
+Slow Trasicor	Adrenergic_beta-Antagonists	
+Trasidrex	Thiazide_Diuretics	
+Slow-Pren	Adrenergic_beta-Antagonists	
+Tevacor	Adrenergic_beta-Antagonists	
+Pacrinolol	Adrenergic_beta-Antagonists	
+PACRINOLOL	Adrenergic_beta-Antagonists	
+pacrinolol	Adrenergic_beta-Antagonists	
+HOE 224	Adrenergic_beta-Antagonists	
+Pafenolol	Adrenergic_beta-Antagonists	
+pafenolol	Adrenergic_beta-Antagonists	
+PAFENOLOL	Adrenergic_beta-Antagonists	
+Penbutolol	Adrenergic_beta-Antagonists	
+2-Propanol, 1-(2-cyclopentylphenoxy)-3-((1,1-dimethylethyl)amino)-	Adrenergic_beta-Antagonists	
+PENBUTOLOL	Adrenergic_beta-Antagonists	
+Betapressin	Adrenergic_beta-Antagonists	
+Hoe893d	Adrenergic_beta-Antagonists	
+Hoe-893d	Adrenergic_beta-Antagonists	
+Hoe 893d	Adrenergic_beta-Antagonists	
+Penbutolol Sulfate	Adrenergic_beta-Antagonists	
+Penbutolol sulphate	Adrenergic_beta-Antagonists	
+PENBUTOLOL SULFATE	Adrenergic_beta-Antagonists	
+Penbutolol Sulfate (2:1)	Adrenergic_beta-Antagonists	
+Penbutolol sulfate	Adrenergic_beta-Antagonists	
+Levatol	Adrenergic_beta-Antagonists	
+Penirolol	Adrenergic_beta-Antagonists	
+PENIROLOL	Adrenergic_beta-Antagonists	
+Pindolol	Adrenergic_beta-Antagonists	
+Visken	Adrenergic_beta-Antagonists	
+pindolol	Adrenergic_beta-Antagonists	
+Carvisken	Adrenergic_beta-Antagonists	
+Prindolol	Adrenergic_beta-Antagonists	
+Prinodolol	Adrenergic_beta-Antagonists	
+PINDOLOL	Adrenergic_beta-Antagonists	
+BAM-CYP	Adrenergic_beta-Antagonists	
+Betadren	Adrenergic_beta-Antagonists	
+betadren	Adrenergic_beta-Antagonists	
+Br-AAM-pindolol	Adrenergic_beta-Antagonists	
+Br-pindolol	Adrenergic_beta-Antagonists	
+1-(1'-bromoacetamido-2'-methyl-2'-isopropylamino)-3-indoloxy-2-propanol	Adrenergic_beta-Antagonists	
+LB46	Adrenergic_beta-Antagonists	
+LB-46	Adrenergic_beta-Antagonists	
+LB 46	Adrenergic_beta-Antagonists	
+Mepindolol	Adrenergic_beta-Antagonists	
+mepindolol	Adrenergic_beta-Antagonists	
+MEPINDOLOL	Adrenergic_beta-Antagonists	
+1-(Isopropylamino)-3-((2-methylindol-4-yl)oxy)-2-propanol	Adrenergic_beta-Antagonists	
+Corindolan	Adrenergic_beta-Antagonists	
+LF 17-895	Adrenergic_beta-Antagonists	
+MEPINDOLOL SULFATE	Adrenergic_beta-Antagonists	
+SH E 222	Adrenergic_beta-Antagonists	
+Tenesor	Thiazide_Diuretics	
+USVC 6524	Adrenergic_beta-Antagonists	
+USVC 6524, hydrochloride	Adrenergic_beta-Antagonists	
+hydrochloride USVC 6524	Adrenergic_beta-Antagonists	
+Viskaldix	Thiazide_Diuretics	
+bopindolol	Adrenergic_beta-Antagonists	
+BOPINDOLOL HYDROGEN MALONATE	Adrenergic_beta-Antagonists	
+LT 31-200	Adrenergic_beta-Antagonists	
+cyanopindolol	Adrenergic_beta-Antagonists	
+nitrisken retard	Adrenergic_beta-Antagonists	
+pindobind	Adrenergic_beta-Antagonists	
+pindolol-NBD	Adrenergic_beta-Antagonists	
+Pirepolol	Adrenergic_beta-Antagonists	
+PIREPOLOL	Adrenergic_beta-Antagonists	
+Practolol	Adrenergic_beta-Antagonists	
+practolol	Adrenergic_beta-Antagonists	
+PRACTOLOL	Adrenergic_beta-Antagonists	
+Dalzic	Adrenergic_beta-Antagonists	
+Eraldin	Adrenergic_beta-Antagonists	
+ICI50172	Adrenergic_beta-Antagonists	
+ICI 50172	Adrenergic_beta-Antagonists	
+ICI-50172	Adrenergic_beta-Antagonists	
+Practolol, Eralzdin	Adrenergic_beta-Antagonists	
+Eralzdin Practolol	Adrenergic_beta-Antagonists	
+chloropractolol	Adrenergic_beta-Antagonists	
+Primidolol	Adrenergic_beta-Antagonists	
+PRIMIDOLOL	Adrenergic_beta-Antagonists	
+primidolol	Adrenergic_beta-Antagonists	
+UK-11,443	Adrenergic_beta-Antagonists	
+primidolol hydrochloride	Adrenergic_beta-Antagonists	
+Prizidilol	Adrenergic_beta-Antagonists	
+PRIZIDILOL	Adrenergic_beta-Antagonists	
+prizidilol	Adrenergic_beta-Antagonists	
+SKF 92657	Adrenergic_beta-Antagonists	
+SK&F-92657	Adrenergic_beta-Antagonists	
+SK&F 92657	Adrenergic_beta-Antagonists	
+prizidilol monohydrate	Adrenergic_beta-Antagonists	
+prizidilol monosulfate, monohydrate	Adrenergic_beta-Antagonists	
+monohydrate prizidilol monosulfate	Adrenergic_beta-Antagonists	
+Prizidilol Hydrochloride	Adrenergic_beta-Antagonists	
+PRIZIDILOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Prizidilol Hydrochloride Anhydrous	Adrenergic_beta-Antagonists	
+PRIZIDILOL HYDROCHLORIDE ANHYDROUS	Adrenergic_beta-Antagonists	
+Pronetalol	Adrenergic_beta-Antagonists	
+ICI 38174	Adrenergic_beta-Antagonists	
+PRONETALOL	Adrenergic_beta-Antagonists	
+alpha-(((1-methylethyl)amino)methyl)- 2-Naphthalenemethanol	Adrenergic_beta-Antagonists	
+pronetalol	Adrenergic_beta-Antagonists	
+pronethalol	Adrenergic_beta-Antagonists	
+naphthylisoproterenol	Adrenergic_beta-Antagonists	
+Propranolol	Adrenergic_beta-Antagonists	
+propanolol	Adrenergic_beta-Antagonists	
+propranolol	Adrenergic_beta-Antagonists	
+1--3-(1-naphthalenyloxy)-2-propanol	Adrenergic_beta-Antagonists	
+Propanolol	Adrenergic_beta-Antagonists	
+1-((1-methylethyl)amino)-3-(1-naphthalenyloxy)- 2-Propanol	Adrenergic_beta-Antagonists	
+1-((1-Methylethyl)amino)-3-(1-naphthalenyloxy)-2-propanol	Adrenergic_beta-Antagonists	
+PROPRANOLOL	Adrenergic_beta-Antagonists	
+AY20694	Adrenergic_beta-Antagonists	
+AY-20694	Adrenergic_beta-Antagonists	
+AY 20694	Adrenergic_beta-Antagonists	
+Alprenolol	Adrenergic_beta-Antagonists	
+1-((1-methylethyl)amino)-3-(2-(2-propenyl)phenoxy)- 2-Propanol	Adrenergic_beta-Antagonists	
+ALPRENOLOL	Adrenergic_beta-Antagonists	
+1-(o-Allylphenoxy)-3-(isopropylamino)-2-propanol	Adrenergic_beta-Antagonists	
+alprenolol	Adrenergic_beta-Antagonists	
+Alfeprol	Adrenergic_beta-Antagonists	
+Alpheprol	Adrenergic_beta-Antagonists	
+Alprenolol Hydrochloride	Adrenergic_beta-Antagonists	
+ALPRENOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Aptin	Adrenergic_beta-Antagonists	
+Aptin Duriles	Adrenergic_beta-Antagonists	
+AptinDuriles	Adrenergic_beta-Antagonists	
+Aptin-Duriles	Adrenergic_beta-Antagonists	
+Astra Brand of Alprenolol Hydrochloride	Adrenergic_beta-Antagonists	
+Aptina	Adrenergic_beta-Antagonists	
+Made Brand of Alprenolol Hydrochloride	Adrenergic_beta-Antagonists	
+Aptine	Adrenergic_beta-Antagonists	
+Astra Brand of Alprenolol Benzoate	Adrenergic_beta-Antagonists	
+Dihydroalprenolol	Adrenergic_beta-Antagonists	
+1-((1-methylethyl)amino)-3-(2-propylphenoxy)- 2-Propanol	Adrenergic_beta-Antagonists	
+1-((Methylethyl)amino)-3-(2-propylphenoxy)-2-propanol	Adrenergic_beta-Antagonists	
+H5628	Adrenergic_beta-Antagonists	
+H-56-28	Adrenergic_beta-Antagonists	
+H 56 28	Adrenergic_beta-Antagonists	
+Pargolol	Adrenergic_beta-Antagonists	
+pargolol	Adrenergic_beta-Antagonists	
+PARGOLOL	Adrenergic_beta-Antagonists	
+Ko 1400	Adrenergic_beta-Antagonists	
+RU 21824	Adrenergic_beta-Antagonists	
+alprenolol glucuronide	Adrenergic_beta-Antagonists	
+alprenolone methoxime	Adrenergic_beta-Antagonists	
+1-(isopropylamino)-3-(2-allylphenoxy)-2-propanone methoxime	Adrenergic_beta-Antagonists	
+alprenoxime	Adrenergic_beta-Antagonists	
+dansyl alprenolol	Adrenergic_beta-Antagonists	
+dansyl-L-alprenolol	Adrenergic_beta-Antagonists	
+Anapriline	Adrenergic_beta-Antagonists	
+anaprilin	Adrenergic_beta-Antagonists	
+Anaprilin	Adrenergic_beta-Antagonists	
+Bedranol	Adrenergic_beta-Antagonists	
+Betadren	Adrenergic_beta-Antagonists	
+betadren	Adrenergic_beta-Antagonists	
+Betadur CR	Adrenergic_beta-Antagonists	
+Half-Betadur CR	Adrenergic_beta-Antagonists	
+Half Propatard LA	Adrenergic_beta-Antagonists	
+Inderex	Thiazide_Diuretics	
+ORF 12592	Adrenergic_beta-Antagonists	
+ORF 12,592	Adrenergic_beta-Antagonists	
+ORF 12592 hydrochloride	Adrenergic_beta-Antagonists	
+Obzidan	Adrenergic_beta-Antagonists	
+Obsidan	Adrenergic_beta-Antagonists	
+obzidan	Adrenergic_beta-Antagonists	
+obsidan	Adrenergic_beta-Antagonists	
+Probeta LA	Adrenergic_beta-Antagonists	
+Propanix LA	Adrenergic_beta-Antagonists	
+Propanix SR	Adrenergic_beta-Antagonists	
+Propranolol Hydrochloride	Adrenergic_beta-Antagonists	
+Inderal	Adrenergic_beta-Antagonists	
+318-98-9	Adrenergic_beta-Antagonists	
+2-Propanol-1--3-(1-naphthalenyloxy) Hydrochloride	Adrenergic_beta-Antagonists	
+PROPRANOLOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+91523	Adrenergic_beta-Antagonists	
+propranolol hydrochloride	Adrenergic_beta-Antagonists	
+Propranolol hydrochloride	Adrenergic_beta-Antagonists	
+inderal	Adrenergic_beta-Antagonists	
+Innopran XL	Adrenergic_beta-Antagonists	
+Angilol	Adrenergic_beta-Antagonists	
+Apsolol	Adrenergic_beta-Antagonists	
+Avlocardyl Retard	Adrenergic_beta-Antagonists	
+Bedranol SR	Adrenergic_beta-Antagonists	
+Berkolol	Adrenergic_beta-Antagonists	
+Beta-Prograne	Adrenergic_beta-Antagonists	
+Cardinol	Adrenergic_beta-Antagonists	
+Half Beta-Prograne	Adrenergic_beta-Antagonists	
+Half Propanix LA	Adrenergic_beta-Antagonists	
+Hemangeol	Adrenergic_beta-Antagonists	
+Inderide	Thiazide_Diuretics	
+inderide	Thiazide_Diuretics	
+Inderide LA	Thiazide_Diuretics	
+InnoPran	Adrenergic_beta-Antagonists	
+Lopranol LA	Adrenergic_beta-Antagonists	
+Pronol	Adrenergic_beta-Antagonists	
+Propanix	Adrenergic_beta-Antagonists	
+Propatard LA	Adrenergic_beta-Antagonists	
+Sloprolol	Adrenergic_beta-Antagonists	
+avlocardyl	Adrenergic_beta-Antagonists	
+Avlocardyl	Adrenergic_beta-Antagonists	
+dansylpropranolol	Adrenergic_beta-Antagonists	
+dociton	Adrenergic_beta-Antagonists	
+Dociton	Adrenergic_beta-Antagonists	
+fluoropropranolol	Adrenergic_beta-Antagonists	
+obsilazin	Adrenergic_beta-Antagonists	
+obsilazine	Adrenergic_beta-Antagonists	
+palmitoyl propranolol	Adrenergic_beta-Antagonists	
+palmitoyl propranolol hydrochloride	Adrenergic_beta-Antagonists	
+pranolium	Adrenergic_beta-Antagonists	
+N,N-dimethylpropranolol	Adrenergic_beta-Antagonists	
+dimethylpropranolol	Adrenergic_beta-Antagonists	
+SC 27761	Adrenergic_beta-Antagonists	
+UM-272	Adrenergic_beta-Antagonists	
+UM 272	Adrenergic_beta-Antagonists	
+pranolium chloride	Adrenergic_beta-Antagonists	
+pranolium iodide	Adrenergic_beta-Antagonists	
+propranolol FD	Adrenergic_beta-Antagonists	
+propranolol-FD	Adrenergic_beta-Antagonists	
+propranolol mustard	Adrenergic_beta-Antagonists	
+1-(bis(2-chloroethyl)amino)-3-(1-naphthalenyloxy)- 2-Propanol	Adrenergic_beta-Antagonists	
+1-(1-naphthyloxy)-3-(bis(2-chloroethyl)amino)-2-propanol	Adrenergic_beta-Antagonists	
+spiroprop	Adrenergic_beta-Antagonists	
+Ridazolol	Adrenergic_beta-Antagonists	
+ridazolol	Adrenergic_beta-Antagonists	
+RIDAZOLOL	Adrenergic_beta-Antagonists	
+Ronactolol	Adrenergic_beta-Antagonists	
+ronactolol	Adrenergic_beta-Antagonists	
+RONACTOLOL	Adrenergic_beta-Antagonists	
+4'-(2-hydroxy-3-isopropylamino)propoxy-4-anisanilide	Adrenergic_beta-Antagonists	
+SR59230A	Adrenergic_beta-Antagonists	
+SR-59230A	Adrenergic_beta-Antagonists	
+SR 59230A	Adrenergic_beta-Antagonists	
+Soquinolol	Adrenergic_beta-Antagonists	
+soquinolol	Adrenergic_beta-Antagonists	
+SOQUINOLOL	Adrenergic_beta-Antagonists	
+Sotalol	Adrenergic_beta-Antagonists	
+sotalol	Adrenergic_beta-Antagonists	
+SOTALOL	Adrenergic_beta-Antagonists	
+AM 92016	Adrenergic_beta-Antagonists	
+AM-92016	Adrenergic_beta-Antagonists	
+Knoll Pharmaceutical Brand of Sotalol	Adrenergic_beta-Antagonists	
+Darob	Adrenergic_beta-Antagonists	
+Sotalol Hydrochloride	Adrenergic_beta-Antagonists	
+sotalol hydrochloride	Adrenergic_beta-Antagonists	
+Sotalol Monohydrochloride	Adrenergic_beta-Antagonists	
+Sotalol hydrochloride	Adrenergic_beta-Antagonists	
+Betapace	Adrenergic_beta-Antagonists	
+SOTALOL HYDROCHLORIDE	Adrenergic_beta-Antagonists	
+Beta-Cardone	Adrenergic_beta-Antagonists	
+MJ1999	Adrenergic_beta-Antagonists	
+MJ 1999	Adrenergic_beta-Antagonists	
+MJ-1999	Adrenergic_beta-Antagonists	
+Sorine	Adrenergic_beta-Antagonists	
+Sotacor	Adrenergic_beta-Antagonists	
+Sotylize	Adrenergic_beta-Antagonists	
+Tolerzide	Thiazide_Diuretics	
+Spirendolol	Adrenergic_beta-Antagonists	
+spirendolol	Adrenergic_beta-Antagonists	
+spirendalol	Adrenergic_beta-Antagonists	
+SPIRENDOLOL	Adrenergic_beta-Antagonists	
+Talinolol	Adrenergic_beta-Antagonists	
+talinolol	Adrenergic_beta-Antagonists	
+1-(4-cyclohexylureidophenoxy)-2-hydroxy-3-tert-butylaminopropane	Adrenergic_beta-Antagonists	
+TALINOLOL	Adrenergic_beta-

@@ -1,0 +1,125 @@
+Lex	Type	Regex
+Current Smoker	Current_Smoker	
+Current smoker	Current_Smoker	
+Ex-tobacco user	Ex-tobacco_user	
+Former smoker	Ex-tobacco_user	
+Prior Smoker	Ex-tobacco_user	
+Former Tobacco User	Ex-tobacco_user	
+Recovered smoker	Ex-tobacco_user	
+Ex-smoker	Ex-tobacco_user	
+Past tobacco smoker	Ex-tobacco_user	
+ex-smoker	Ex-tobacco_user	
+Former Smoker	Ex-tobacco_user	
+Cessation of smoking	Ex-tobacco_user	
+Aggressive ex-smoker	Ex-tobacco_user	
+Ex-cigar smoker	Ex-tobacco_user	
+Ex-cigarette smoker	Ex-tobacco_user	
+Ex-pipe smoker	Ex-tobacco_user	
+Ex-smoker for more than 1 year	Ex-tobacco_user	
+Former heavy tobacco smoker	Ex-tobacco_user	
+Ex-heavy tobacco smoker	Ex-tobacco_user	
+Former light tobacco smoker	Ex-tobacco_user	
+Ex-light tobacco smoker	Ex-tobacco_user	
+Intolerant ex-smoker	Ex-tobacco_user	
+Tolerant ex-smoker	Ex-tobacco_user	
+Smoke	Smoke	
+smoked	Smoke	
+smoking	Smoke	
+Smokes	Smoke	
+Cigarette smoke	Smoke	
+Smoker	Smoker	
+Smokers	Smoker	
+Cigarette Smoker	Smoker	
+Smoking cessation group	Smoking_cessation_group	
+Smoking cessation program	Smoking_cessation_group	
+recommendations included smoking cessation	Smoking_cessation_group	
+TOBACCO NON-USER	TOBACCO_NON-USER	
+Non-tobacco user	TOBACCO_NON-USER	
+Non-smoker	TOBACCO_NON-USER	
+Non-Smokers	TOBACCO_NON-USER	
+Non smoker	TOBACCO_NON-USER	
+Nonsmoker	TOBACCO_NON-USER	
+Tobacco	Tobacco	
+TOBACCO	Tobacco	
+Any Tobacco	Tobacco	
+tobacco	Tobacco	
+Tobacco - substance	Tobacco	
+tobacco in any form	Tobacco	
+Tobacco Products	Tobacco	
+Tobacco Product	Tobacco	
+TOBACCO LEAF	Tobacco	
+tobacco product	Tobacco	
+TABACCO	Tobacco	
+Cigarette	Tobacco	
+cigs	Tobacco	
+Cigs	Tobacco	
+cigarette	Tobacco	
+Cigarettes	Tobacco	
+CIGARETTES (CONTAINING TOBACCO)	Tobacco	
+Bidi	Tobacco	
+bidi	Tobacco	
+Beedi	Tobacco	
+Beedie	Tobacco	
+Kretek	Tobacco	
+kretek	Tobacco	
+Very Low Nicotine Content Cigarette	Tobacco	
+filter cigarette	Tobacco	
+filterless cigarette	Tobacco	
+low tar cigarette	Tobacco	
+mentholated cigarette	Tobacco	
+Cigars	Tobacco	
+cigar	Tobacco	
+Cigar	Tobacco	
+Cigarillo	Tobacco	
+pipe tobacco	Tobacco	
+tobacco pipe	Tobacco	
+Tobacco use	Tobacco_use	
+Tobacco Consumption	Tobacco_use	
+tobacco use	Tobacco_use	
+TOBACCO USE	Tobacco_use	
+tobacco abuse	Tobacco_use	
+Tobacco Use	Tobacco_use	
+Tobacco Uses	Tobacco_use	
+Tobacco Chewing	Tobacco_use	
+Dependence, Tobacco	Tobacco_use	
+Tobacco dependence syndrome	Tobacco_use	
+TOBACCO DEPENDENCE	Tobacco_use	
+Tobacco Dependence	Tobacco_use	
+Tobacco Dependences	Tobacco_use	
+Tobacco dependence	Tobacco_use	
+Compulsive tobacco user syndrome	Tobacco_use	
+Electronic cigarette user	Tobacco_use	
+E-cigarette smoker	Tobacco_use	
+Vapor cigarette smoker	Tobacco_use	
+Vapour cigarette smoker	Tobacco_use	
+Smoking	Tobacco_use	
+SMOKING	Tobacco_use	
+smoking	Tobacco_use	
+Smoking, Hashish	Tobacco_use	
+Hashish Smoking	Tobacco_use	
+smoking hashish	Tobacco_use	
+Smoking, Hookah	Tobacco_use	
+Hookah Smoking	Tobacco_use	
+Smoking, Waterpipe	Tobacco_use	
+Waterpipe Smoking	Tobacco_use	
+Tobacco Smoking	Tobacco_use	
+Tobacco smoking	Tobacco_use	
+Smoking	Tobacco_use	
+Finding of tobacco smoking behavior	Tobacco_use	
+TOBACCO SMOKING	Tobacco_use	
+Tobacco smoking behavior	Tobacco_use	
+Tobacco smoking behaviour - finding	Tobacco_use	
+Tobacco smoking behavior - finding	Tobacco_use	
+smoking tobacco	Tobacco_use	
+freebasing	Tobacco_use	
+smoking pipe (history)	Tobacco_use	
+PIPE SMOKING	Tobacco_use	
+Pipe Smoking	Tobacco_use	
+Pipe smoking	Tobacco_use	
+smoking with inhalation	Tobacco_use	
+smoking without inhalation	Tobacco_use	
+Tobacco user	Tobacco_use	
+Tobacco use	Tobacco_use	
+Chews tobacco	Tobacco_use	
+Snuff user	Tobacco_use	
+Snuff taker	Tobacco_use	
