@@ -6,6 +6,7 @@ import moonstone.rule.Rule;
 import moonstone.rulebuilder.MoonstoneRuleInterface;
 import moonstone.workfromhome.ontology.owl.ExtractOWLOntology;
 import tsl.documentanalysis.document.Document;
+import tsl.error.TSLException;
 import tsl.utilities.FUtils;
 import tsl.utilities.StrUtils;
 import tsl.utilities.VUtils;
@@ -17,6 +18,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,20 +63,83 @@ public class IevizCmd {
 			{ "iterate", "false", "Allow iterative user input" }, { "workbench", "true", "Start Evaluation Workbench" },
 			{ "mss", "moonstone-simple", "Simple Moonstone Workflow", "<ontology> <corpusdir> <outfile>", "3" },
 
-	};
+			{ "ontdb", "extract-annotation-typesystem-to-db", "<ontology-url>", "1" },
+			{ "corpdb", "store-corpus-to-db", "<corpusdir>", "1" },
+			{ "mspipe", "ontology-moonstone-corpus-pipeline", "<ontology-url> <corpusname>", "2" },
+			{ "viewwb", "view-annotations-via-workbench", "<annotator> <corpusname>", "2" },
 
-	public static void main(String[] args) {
-		IevizCmd iec = new IevizCmd();
+	};
+	
+	public IevizCmd() {
 		try {
-			iec.rest = new RestFulCommunication();
-			iec.readConfigFile();
-			iec.readMacroFile();
-			iec.localAuthentication();
-			iec.runArgs(args);
-		} catch (Exception e) {
-			iec.handleError(e);
+			this.readConfigFile();
+			this.readMacroFile();
+			this.localAuthentication();
+		} catch (CommandLineException e) {
+			this.handleError(e);
 		}
 	}
+
+	public static void main(String[] args) {
+		try {
+			IevizCmd iec = new IevizCmd();
+			iec.rest = new RestFulCommunication();
+			iec.runArgs(args);
+		} catch (CommandLineException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void ontdb(String[] optVals) throws CommandLineException {
+		try {
+			String ontologyURI = optVals[0];
+			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
+			ExtractOWLOntology ont = new ExtractOWLOntology(msri);
+			ont.setDomain(ontologyURI);
+			ont.analyze(false, true);
+			msri.getMoonstoneMySQLAPI().storeAnnotationTypeSystem(msri.getKnowledgeEngine().getCurrentOntology());
+		} catch (Exception e) {
+			throw new CommandLineException("ontdb: " + e.toString());
+		}
+	}
+
+	private void corpdb(String[] optVals) throws CommandLineException {
+		try {
+			String corpusdir = optVals[0];
+			String corpusname = optVals[1];
+			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
+			msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL().storeDocumentsFromDirectory(corpusdir,
+					corpusname);
+		} catch (TSLException e) {
+			throw new CommandLineException("ontdb: " + e.toString());
+		}
+	}
+	
+	private void mspipe(String[] optVals) throws CommandLineException {
+		try {
+			String ontologyURI = optVals[0];
+			String corpusname = optVals[1];
+			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
+			msri.getMoonstoneMySQLAPI().processDocumentsFromCorpus();
+		} catch (TSLException e) {
+			throw new CommandLineException("ontdb: " + e.toString());
+		}
+	}
+	
+	private void viewwb(String[] optVals) throws CommandLineException {
+		try {
+			String annotatorname = optVals[0];
+			String corpusname = optVals[1];
+			String pfilepath = optVals[2];
+			File pfile = new File(pfilepath);
+			Properties properties = new Properties();
+//			properties.load(pfile);
+			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
+		} catch (TSLException e) {
+			throw new CommandLineException("ontdb: " + e.toString());
+		}
+	}
+
 
 	private void mss(String[] optVals) throws CommandLineException {
 		int x;
@@ -85,7 +150,7 @@ public class IevizCmd {
 			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
 			ExtractOWLOntology ont = new ExtractOWLOntology(msri);
 			ont.setDomain(ontologyURI);
-			ont.analyze(false);
+			ont.analyze(false, true);
 			Vector<File> files = FUtils.readFilesFromDirectory(corpusdir);
 			Vector<Annotation> annotations = null;
 			if (files != null) {
@@ -192,7 +257,21 @@ public class IevizCmd {
 			} else if ((astr = line.getOptionValue("mss")) != null) {
 				String[] optVals = line.getOptionValues("mss");
 				mss(optVals);
+
+				// 8/31/2017
+			} else if ((astr = line.getOptionValue("ontdb")) != null) {
+				String[] optVals = line.getOptionValues("ontdb");
+				ontdb(optVals);
+			} else if ((astr = line.getOptionValue("corpdb")) != null) {
+				String[] optVals = line.getOptionValues("corpdb");
+				corpdb(optVals);
+			} else if ((astr = line.getOptionValue("mspipe")) != null) {
+				String[] optVals = line.getOptionValues("mspipe");
+				mspipe(optVals);
 			}
+			
+			
+			
 		} catch (Exception e) {
 			throw new CommandLineException(e.toString());
 		}
@@ -317,7 +396,16 @@ public class IevizCmd {
 	}
 
 	private void ontologies() throws CommandLineException {
+		String[] onames = getOntologyInfo("name");
+		for (String oname : onames) {
+			System.out.println(oname);
+		}
+	}
+	
+	public static String[] getOntologyInfo(String key) throws CommandLineException {
+		String[] onames = null;
 		try {
+			ArrayList<String> onamelst = new ArrayList<String>();
 			InputStream json = KAAuthenticator.Authenticator.openAuthenticatedConnection(
 					"https://blulab.chpc.utah.edu/KA/?act=searchd&c=Ontologyc&view=JSON&npp=200&q_status_=Active");
 			String jsstr = StrUtils.convertStreamToString(json);
@@ -325,18 +413,22 @@ public class IevizCmd {
 				JSONArray jarray = new JSONArray(jsstr);
 				for (int i = 0; i < jarray.length(); i++) {
 					JSONObject jo = (JSONObject) jarray.get(i);
-					String name = jo.getString("name");
-					System.out.println(name);
+					String name = jo.getString(key);
+					onamelst.add(name);
 				}
 			} else {
-				throw new CommandLineException("Unable to display ontologies: Server returned null string");
+				throw new CommandLineException("Unable to gather ontology information: Server returned null string");
 			}
-
+			onames = new String[onamelst.size()];
+			for (int i = 0; i < onamelst.size(); i++) {
+				onames[i] = onamelst.get(i);
+			}
 		} catch (Exception e) {
-			throw new CommandLineException("Unable to display ontologies: " + e.toString());
+			throw new CommandLineException("Unable to gather ontology information: " + e.toString());
 		}
+		return onames;
 	}
-
+	
 	private String getOntologyXML() throws CommandLineException {
 		try {
 			InputStream is = KAAuthenticator.Authenticator.openAuthenticatedConnection(

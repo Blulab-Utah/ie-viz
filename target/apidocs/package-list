@@ -1,4 +1,5 @@
 edu.utah.blulab.commandline
+edu.utah.blulab.ievizgui
 edu.utah.blulab.marshallers.graph
 edu.utah.blulab.marshallers.pycontext
 edu.utah.blulab.marshallers.uima
