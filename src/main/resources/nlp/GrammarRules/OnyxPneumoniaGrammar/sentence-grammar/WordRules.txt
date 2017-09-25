@@ -1,0 +1,111 @@
+'(
+wordrule
+
+((ruleid is-auxilliary-word-rule)
+ (macro "_IS_")
+ (words ("is" "was" "are" "were" "has been" "have been"))
+ (inhibit-interstitial true))
+ 
+((ruleid isnt-auxilliary-word-rule)
+ (macro "_ISNT_")
+ (words ("isn't" "wasn't" "aren\'t" "weren't" "hasn't been" "haven't been"))
+ (inhibit-interstitial true))
+
+((ruleid conjunct-word-rule)
+ (concept ":CONJ:")
+ (words ("and" "or" "and/or" "and or" "as well as" "&" "but"))
+  (inhibit-interstitial true)) 
+ 
+((ruleid have-word-rule)
+ (macro "_HAVE_")
+ (words ("have" "has" "had")))
+ 
+;;;;;;;
+((ruleid left-word-rule)
+ (stype "<PULMLOCMODSIDE>")
+ (concept ":LEFT:")
+ (words ("left" "left-sided" "left sided")))
+ 
+((ruleid right-word-rule)
+ (stype "<PULMLOCMODSIDE>")
+ (concept ":RIGHT:")
+ (words ("right" "right-sided" "right sided")))
+ 
+((ruleid upper-word-rule)
+ (stype "<PULMLOCMODSIDEUPPERLOWER>")
+ (concept ":UPPER:")
+ (words ("upper")))
+
+((ruleid lower-word-rule)
+ (stype "<PULMLOCMODSIDEUPPERLOWER>")
+ (concept ":LOWER:")
+ (words ("lower")))
+
+((ruleid lower-word-rule)
+ (stype "<PULMLOCMODSIDEUPPERLOWER>")
+ (concept ":MIDDLE:")
+ (words ("mid" "middle")))
+ 
+((ruleid lobe-word-rule)
+ (stype "<PULMLOC>")
+ (concept ":LOBE:")
+ (words ("lobe")))
+ 
+((ruleid possible-word-rule)
+ (stype "<POSSIBILITY>")
+ (concept ":POSSIBLE:")
+ (words ("possible" "likely")))
+ 
+((ruleid there-is-word-rule)
+ (stype "<EXISTENCE>")
+ (concept ":THERE-IS:")
+ (words ("there is" "there are" "i see")))
+ 
+ ;;;; From MPLUS ;;;;
+ 
+ ((ruleid "continuation-rule") 
+  (words 
+    ("however" "too" "rather" "so" "in addition" "from then on" "same goes for")) 
+  (concept ":CONTINUATION:") 
+  (stype "<ELABORATION>"))
+
+((ruleid "see-previous-event-rule") 
+  (words 
+    ("it" "that" "that one" "however" "other" "this" "those" "then")) 
+  (concept ":SEE-PREVIOUS-EVENT:") 
+  (stype "<REFERENCE>"))
+
+((ruleid "absent-rule") 
+  (words 
+    ("does not appear" "absent" "missing" "not present" "do not have" "does not have" "not have" "cannot detect" "negative for" "not detected" 	"doubt" "cannot recognize" "cleared" "without evidence of" "ruleout" "rule out" "not visualized" "free of" "do not see" "resolution of" 
+	"rather than" "clear" "do not think there is" "no definite" "has cleared" "have cleared"
+	"negative exam" "exam negative" "negative for" "exam negative for" 
+	"not identified" "does not confirm" "exclude" "excluded" "do not recognize" 
+	"resolved" "has resolved" "have resolved" "does not demonstrate" "not demonstrated"
+	"no evidence of" "within normal limits" "upper limits of normal" "normal" "no new" "no evidence"
+	"no significant" "probably normal")) 
+  (concept ":ABSENT:") 
+  (stype "<STATE>"))
+
+((ruleid "possible-rule") 
+  (words 
+    ("watch" "might" "possibly" "not totally excluded" "cannot exclude" "could not exclude" "can't exclude" 
+	"cannot rule out" "can't rule out" "could be"
+	"consider" "unclear" "partial resolution of" "suspect" "possible" "not excluded" "not clear"
+	"may be" "cannot be completely excluded" "possibility of" "probable" "probably" "presumably" "question")) 
+  (concept ":POSSIBLE:") 
+  (stype "<STATE>"))
+
+((ruleid "present-rule")
+ (words ("abnormal" "presence" "presence of"))
+ (concept ":PRESENT:")
+ (stype "<STATE>"))
+
+((ruleid "history-of-word-rule") 
+  (words ("history of")) 
+  (concept ":HISTORY:") 
+  (stype "<STATE>"))
+
+
+)
+

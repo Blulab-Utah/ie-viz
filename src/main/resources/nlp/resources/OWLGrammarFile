@@ -1,0 +1,2555 @@
+'(
+	wordrule
+
+(
+  (ruleid "OWL-MODIFIER-DefiniteExistence_Certainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#DefiniteExistence_Certainty") 
+  (concept ":DEFINITEEXISTENCE_CERTAINTY:") 
+  (stype "<DEFINITEEXISTENCE_CERTAINTY>") 
+  (flags owl-modifier) 
+  (words 
+    ("asserted as" "definite" "doubtless" "evident" "hence" "obvious" "positive examination for" "positive study for" "seen as" "without doubt")))
+(
+  (ruleid "OWL-MODIFIER-DefiniteNegatedExistence_Certainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#DefiniteNegatedExistence_Certainty") 
+  (concept ":DEFINITENEGATEDEXISTENCE_CERTAINTY:") 
+  (stype "<DEFINITENEGATEDEXISTENCE_CERTAINTY>") 
+  (flags owl-modifier) 
+  (words 
+    ("adequate to rule the patient out against" "are ruled out" "being ruled out" "can be ruled out" "can rule him out" "can rule him out against" "can rule out" "can rule out against" "can rule the patient out against" "cannot" "cleared of" "declined" "declines" "denied" "denies" "deny" "did rule her out" "did rule her out against" "did rule her out for" "did rule him out" "did rule him out against" "did rule him out for" "did rule out" "did rule out against" "did rule out for" "did rule the patient out" "did rule the patient out against" "did rule the patient out for" "excluded" "free" "free of" "has been ruled out" "have been ruled out" "is absent" "is negative" "is ruled out" "negative examination for" "negative for" "neither" "never developed" "never had" "no" "no evidence" "no new" "no other" "no support for" "no suspicion of" "not" "not exhibit" "not had" "not have" "not seen" "nothing" "patient was not" "reject" "rejected" "resolved" "ruled her out" "ruled her out against" "ruled her out for" "ruled him out" "ruled him out against" "ruled him out for" "ruled out" "ruled out against" "ruled out for" "ruled the patient out" "ruled the patient out against" "ruled the patient out for" "rules her out" "rules her out for" "rules him out" "rules him out for" "rules out" "rules out for" "rules the patient out" "rules the patient out for" "was ruled out" "with no" "without" "no evidence to suggest" "no interval change" "no mammographic evidence of" "no new evidence" "no other evidence" "no radiographic evidence of" "without any evidence of" "without evidence")))
+(
+  (ruleid "OWL-MODIFIER-ProbableExistence_Certainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#ProbableExistence_Certainty") 
+  (concept ":PROBABLEEXISTENCE_CERTAINTY:") 
+  (stype "<PROBABLEEXISTENCE_CERTAINTY>") 
+  (flags owl-modifier) 
+  (words 
+    ("acts as" "and/or" "apparent" "apparently" "appear" "appearing" "appears" "assume" "assuming" "believe" "but rather" "can" "can be" "clinical picture as in" "clinical picture in line with" "clinical suspicion of" "compatible with" "conceivable" "concerning for" "consider" "considerations" "considerations include" "consistent with" "convincing" "could" "could be" "differential diagnosis would include" "eventual" "everything pointing at" "evidence" "favor" "feels like" "felt" "guess" "i believe" "identified" "implied" "implies" "in line with" "indicate" "indicated" "indicates" "interpreted as" "is in the differential" "is understood as" "likely" "looks like" "may" "may be" "may represent" "not certain" "not exclude" "not excluded" "not improbable" "not sure" "noted" "or" "perceived as" "perhaps" "points to" "possible" "possibly" "potential" "preliminary" "presumably" "presumed" "presumptive" "probable" "probable cause" "probably" "question" "questionable" "raise the question of" "raises question of" "raises the question of" "raising the possibility of" "raising the question of" "reasonable" "reportedly" "representing" "represents" "seems like" "seen" "seen best" "should" "should be considered" "signs of" "somewhat suspected" "speaks for" "strong suspicion" "suggest" "suggested" "suggestion" "suggestive" "suggests" "supporting" "suppose" "suspect" "suspected" "suspicion" "suspicion for" "suspicious" "the possibility" "thought" "unclear" "unsure" "was seen as" "whether" "worrisome" "would")))
+(
+  (ruleid "OWL-MODIFIER-ProbableNegatedExistence_Certainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#ProbableNegatedExistence_Certainty") 
+  (concept ":PROBABLENEGATEDEXISTENCE_CERTAINTY:") 
+  (stype "<PROBABLENEGATEDEXISTENCE_CERTAINTY>") 
+  (flags owl-modifier) 
+  (words 
+    ("absence of" "adequate to rule her out" "adequate to rule her out for" "adequate to rule him out" "adequate to rule him out for" "adequate to rule out" "adequate to rule out for" "adequate to rule the patient out" "adequate to rule the patient out for" "can rule her out" "can rule her out against" "can rule her out for" "can rule him out for" "can rule out for" "can rule the patient out" "can rule the patient out for" "cannot be excluded" "cannot exclude" "cannot see" "could be ruled out" "could not exclude" "denying" "do not think these findings speak for" "doubt" "doubtful" "exclude" "fails to reveal" "is not excluded" "is not indicated" "low probability" "no abnormal" "no cause of" "no complaints of" "no definite" "no demonstrated" "no findings of" "no findings to indicate" "no grounds for" "no indication of" "no obvious" "no sign of" "no significant" "no signs of" "no suggestion of" "no sure" "not a sure" "not appreciate" "not associated with" "not complain of" "not demonstrate" "not feel" "not know of" "not known to have" "not reveal" "not ruled out" "not see" "not think" "not to be" "rather than" "sufficient to rule her out" "sufficient to rule her out against" "sufficient to rule her out for" "sufficient to rule him out" "sufficient to rule him out against" "sufficient to rule him out for" "sufficient to rule out" "sufficient to rule out against" "sufficient to rule out for" "sufficient to rule the patient out" "sufficient to rule the patient out against" "sufficient to rule the patient out for" "test for" "to exclude" "unable to adequately assess" "unable to assess" "unlikely" "unremarkable for" "very little that speaks for" "without indication of" "without sign of" "not appear")))
+(
+  (ruleid "OWL-MODIFIER-Uncertain_Certainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Uncertain_Certainty") 
+  (concept ":UNCERTAIN_CERTAINTY:") 
+  (stype "<UNCERTAIN_CERTAINTY>") 
+  (flags owl-modifier) 
+  (words 
+    ("difficult to assess" "either" "equivocal" "uncertain" "versus")))
+(
+  (ruleid "OWL-MODIFIER-FamilyMember_Experiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#FamilyMember_Experiencer") 
+  (concept ":FAMILYMEMBER_EXPERIENCER:") 
+  (stype "<FAMILYMEMBER_EXPERIENCER>") 
+  (flags owl-modifier) 
+  (words 
+    ("aunt" "aunt's" "brother" "brother's" "dad" "dad's" "family history" "father's" "grandfather" "grandfather's" "grandmother" "grandmother's" "husband" "husband's" "mom" "mom's" "mother's" "roommate" "roommate's" "sister" "sister's" "uncle" "uncle's" "wife" "wife's")))
+(
+  (ruleid "OWL-MODIFIER-After_DocTimeRel-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#After_DocTimeRel") 
+  (concept ":AFTER_DOCTIMEREL:") 
+  (stype "<AFTER_DOCTIMEREL>") 
+  (flags owl-modifier) 
+  (words 
+    ("as needed" "at risk for" "call" "come back for" "come back to" "if" "if clinical concern for" "if there is concern for" "look out for" "return" "returning" "should he" "should she" "should the" "should there")))
+(
+  (ruleid "OWL-MODIFIER-Before-Overlap_DocTimeRel-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Before-Overlap_DocTimeRel") 
+  (concept ":BEFORE_OVERLAP_DOCTIMEREL:") 
+  (stype "<BEFORE-OVERLAP_DOCTIMEREL>") 
+  (flags owl-modifier) 
+  (words 
+    ("evolving" "redemonstration of")))
+(
+  (ruleid "OWL-MODIFIER-Before_DocTimeRel-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Before_DocTimeRel") 
+  (concept ":BEFORE_DOCTIMEREL:") 
+  (stype "<BEFORE_DOCTIMEREL>") 
+  (flags owl-modifier) 
+  (words 
+    ("again noted" "change in" "changing" "chronic" "clinical history" "decrease in" "diminished" "documented" "experiences" "family history of" "healing" "history" "in the past for" "interval change" "known to have" "old" "persistent" "pre-existing" "previous" "prior" "prior study" "progression of" "resolution of" "resolved" "resolving" "s/p" "sequelae of" "status post" "subacute" "unchanged")))
+(
+  (ruleid "OWL-MODIFIER-Lung-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Lung") 
+  (concept ":LUNG:") 
+  (stype "<LUNG>") 
+  (flags owl-modifier) 
+  (words 
+    ("lung")))
+(
+  (ruleid "OWL-MODIFIER-Pneumocyte-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Pneumocyte") 
+  (concept ":PNEUMOCYTE:") 
+  (stype "<PNEUMOCYTE>") 
+  (flags owl-modifier) 
+  (words 
+    ("pneumocyte")))
+(
+  (ruleid "OWL-VARIABLE-pneumonia-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000409") 
+  (concept ":PNEUMONIA:") 
+  (stype "<KA000409>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":PNEUMONIA:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-pneumonia-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000409") 
+  (concept ":PNEUMONIA:") 
+  (stype "<KA000409>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":PNEUMONIA:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-pneumonia-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000409") 
+  (concept ":PNEUMONIA:") 
+  (stype "<KA000409>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:" ":PROBABLEEXISTENCE_CERTAINTY:") 
+    (":PNEUMONIA:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-leukocytosis-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA007") 
+  (concept ":LEUKOCYTOSIS:") 
+  (stype "<KA007>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":LEUKOCYTOSIS:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-leukocytosis-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA007") 
+  (concept ":LEUKOCYTOSIS:") 
+  (stype "<KA007>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":LEUKOCYTOSIS:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-leukocytosis-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA007") 
+  (concept ":LEUKOCYTOSIS:") 
+  (stype "<KA007>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":LEUKOCYTOSIS:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-leukopenia-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA008") 
+  (concept ":LEUKOPENIA:") 
+  (stype "<KA008>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":LEUKOPENIA:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-leukopenia-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA008") 
+  (concept ":LEUKOPENIA:") 
+  (stype "<KA008>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":LEUKOPENIA:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-leukopenia-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA008") 
+  (concept ":LEUKOPENIA:") 
+  (stype "<KA008>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":LEUKOPENIA:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of tachypnea-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000400") 
+  (concept ":NEW_ONSET_OF_TACHYPNEA:") 
+  (stype "<KA000400>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of tachypnea-hascontextualaspect-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000400") 
+  (concept ":NEW_ONSET_OF_TACHYPNEA:") 
+  (stype "<KA000400>") 
+  (flags owl-variable) 
+  (words 
+    (":NOVEL_CONTEXTUALASPECT:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hascontextualaspect "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of tachypnea-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000400") 
+  (concept ":NEW_ONSET_OF_TACHYPNEA:") 
+  (stype "<KA000400>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of tachypnea-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000400") 
+  (concept ":NEW_ONSET_OF_TACHYPNEA:") 
+  (stype "<KA000400>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-new lung infiltration-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000401") 
+  (concept ":NEW_LUNG_INFILTRATION:") 
+  (stype "<KA000401>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-new lung infiltration-hascontextualaspect-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000401") 
+  (concept ":NEW_LUNG_INFILTRATION:") 
+  (stype "<KA000401>") 
+  (flags owl-variable) 
+  (words 
+    (":NOVEL_CONTEXTUALASPECT:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hascontextualaspect "?0")))
+(
+  (ruleid "OWL-VARIABLE-new lung infiltration-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000401") 
+  (concept ":NEW_LUNG_INFILTRATION:") 
+  (stype "<KA000401>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-new lung infiltration-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000401") 
+  (concept ":NEW_LUNG_INFILTRATION:") 
+  (stype "<KA000401>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:" ":PROBABLEEXISTENCE_CERTAINTY:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-abnormal mental state in patients gte 70 yo-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA005") 
+  (concept ":ABNORMAL_MENTAL_STATE_IN_PATIENTS_GTE_70_YO:") 
+  (stype "<KA005>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":ABNORMAL_MENTAL_STATE:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-abnormal mental state in patients gte 70 yo-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA005") 
+  (concept ":ABNORMAL_MENTAL_STATE_IN_PATIENTS_GTE_70_YO:") 
+  (stype "<KA005>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":ABNORMAL_MENTAL_STATE:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-abnormal mental state in patients gte 70 yo-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA005") 
+  (concept ":ABNORMAL_MENTAL_STATE_IN_PATIENTS_GTE_70_YO:") 
+  (stype "<KA005>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":ABNORMAL_MENTAL_STATE:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-cavitation of lung-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA006") 
+  (concept ":CAVITATION_OF_LUNG:") 
+  (stype "<KA006>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":CAVITATION_OF_LUNG:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-cavitation of lung-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA006") 
+  (concept ":CAVITATION_OF_LUNG:") 
+  (stype "<KA006>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":CAVITATION_OF_LUNG:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-cavitation of lung-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA006") 
+  (concept ":CAVITATION_OF_LUNG:") 
+  (stype "<KA006>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:" ":PROBABLEEXISTENCE_CERTAINTY:") 
+    (":CAVITATION_OF_LUNG:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-lung consolidation-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA009") 
+  (concept ":LUNG_CONSOLIDATION:") 
+  (stype "<KA009>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":CONSOLIDATION:" ":LUNG_CONSOLIDATION:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-lung consolidation-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA009") 
+  (concept ":LUNG_CONSOLIDATION:") 
+  (stype "<KA009>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":CONSOLIDATION:" ":LUNG_CONSOLIDATION:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-lung consolidation-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA009") 
+  (concept ":LUNG_CONSOLIDATION:") 
+  (stype "<KA009>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:" ":PROBABLEEXISTENCE_CERTAINTY:") 
+    (":CONSOLIDATION:" ":LUNG_CONSOLIDATION:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-changing lung infiltration-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA010") 
+  (concept ":CHANGING_LUNG_INFILTRATION:") 
+  (stype "<KA010>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-changing lung infiltration-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA010") 
+  (concept ":CHANGING_LUNG_INFILTRATION:") 
+  (stype "<KA010>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-changing lung infiltration-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA010") 
+  (concept ":CHANGING_LUNG_INFILTRATION:") 
+  (stype "<KA010>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:" ":PROBABLEEXISTENCE_CERTAINTY:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-changing lung infiltration-hasdeltaflag-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA010") 
+  (concept ":CHANGING_LUNG_INFILTRATION:") 
+  (stype "<KA010>") 
+  (flags owl-variable) 
+  (words 
+    (":CHANGED_DELTAFLAG:") 
+    (":INFILTRATION:")) 
+  (properties 
+    (hasdeltaflag "?0")))
+(
+  (ruleid "OWL-VARIABLE-bronchial breathing-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA011") 
+  (concept ":BRONCHIAL_BREATHING:") 
+  (stype "<KA011>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":BRONCHIAL_BREATHING:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-bronchial breathing-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA011") 
+  (concept ":BRONCHIAL_BREATHING:") 
+  (stype "<KA011>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":BRONCHIAL_BREATHING:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-bronchial breathing-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA011") 
+  (concept ":BRONCHIAL_BREATHING:") 
+  (stype "<KA011>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":BRONCHIAL_BREATHING:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening tachypnea-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA015") 
+  (concept ":WORSENING_TACHYPNEA:") 
+  (stype "<KA015>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening tachypnea-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA015") 
+  (concept ":WORSENING_TACHYPNEA:") 
+  (stype "<KA015>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening tachypnea-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA015") 
+  (concept ":WORSENING_TACHYPNEA:") 
+  (stype "<KA015>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening tachypnea-hasdeltaflag-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA015") 
+  (concept ":WORSENING_TACHYPNEA:") 
+  (stype "<KA015>") 
+  (flags owl-variable) 
+  (words 
+    (":WORSENED_DELTAFLAG:") 
+    (":TACHYPNOEA:")) 
+  (properties 
+    (hasdeltaflag "?0")))
+(
+  (ruleid "OWL-VARIABLE-purulent sputum-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA016") 
+  (concept ":PURULENT_SPUTUM:") 
+  (stype "<KA016>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":SPUTUM:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-purulent sputum-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA016") 
+  (concept ":PURULENT_SPUTUM:") 
+  (stype "<KA016>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":SPUTUM:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-purulent sputum-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA016") 
+  (concept ":PURULENT_SPUTUM:") 
+  (stype "<KA016>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":SPUTUM:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-rales-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA017") 
+  (concept ":RALES:") 
+  (stype "<KA017>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":RALES:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-rales-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA017") 
+  (concept ":RALES:") 
+  (stype "<KA017>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":RALES:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-rales-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA017") 
+  (concept ":RALES:") 
+  (stype "<KA017>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":RALES:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory secretion-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA018") 
+  (concept ":RESPIRATORY_SECRETION:") 
+  (stype "<KA018>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":RESPIRATORY_SECRETION:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory secretion-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA018") 
+  (concept ":RESPIRATORY_SECRETION:") 
+  (stype "<KA018>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":RESPIRATORY_SECRETION:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory secretion-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA018") 
+  (concept ":RESPIRATORY_SECRETION:") 
+  (stype "<KA018>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":RESPIRATORY_SECRETION:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening cough-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000402") 
+  (concept ":WORSENING_COUGH:") 
+  (stype "<KA000402>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening cough-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000402") 
+  (concept ":WORSENING_COUGH:") 
+  (stype "<KA000402>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening cough-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000402") 
+  (concept ":WORSENING_COUGH:") 
+  (stype "<KA000402>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening cough-hasdeltaflag-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000402") 
+  (concept ":WORSENING_COUGH:") 
+  (stype "<KA000402>") 
+  (flags owl-variable) 
+  (words 
+    (":WORSENED_DELTAFLAG:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hasdeltaflag "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening dyspnea-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000403") 
+  (concept ":WORSENING_DYSPNEA:") 
+  (stype "<KA000403>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening dyspnea-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000403") 
+  (concept ":WORSENING_DYSPNEA:") 
+  (stype "<KA000403>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening dyspnea-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000403") 
+  (concept ":WORSENING_DYSPNEA:") 
+  (stype "<KA000403>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening dyspnea-hasdeltaflag-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA000403") 
+  (concept ":WORSENING_DYSPNEA:") 
+  (stype "<KA000403>") 
+  (flags owl-variable) 
+  (words 
+    (":WORSENED_DELTAFLAG:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hasdeltaflag "?0")))
+(
+  (ruleid "OWL-VARIABLE-fever-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA012") 
+  (concept ":FEVER:") 
+  (stype "<KA012>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":FEVER:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-fever-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA012") 
+  (concept ":FEVER:") 
+  (stype "<KA012>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":FEVER:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-fever-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA012") 
+  (concept ":FEVER:") 
+  (stype "<KA012>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":FEVER:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of cough-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA013") 
+  (concept ":NEW_ONSET_OF_COUGH:") 
+  (stype "<KA013>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of cough-hascontextualaspect-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA013") 
+  (concept ":NEW_ONSET_OF_COUGH:") 
+  (stype "<KA013>") 
+  (flags owl-variable) 
+  (words 
+    (":NOVEL_CONTEXTUALASPECT:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hascontextualaspect "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of cough-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA013") 
+  (concept ":NEW_ONSET_OF_COUGH:") 
+  (stype "<KA013>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of cough-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA013") 
+  (concept ":NEW_ONSET_OF_COUGH:") 
+  (stype "<KA013>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":COUGH_ADVERSE_EVENT:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of dyspnea-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA014") 
+  (concept ":NEW_ONSET_OF_DYSPNEA:") 
+  (stype "<KA014>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of dyspnea-hascontextualaspect-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA014") 
+  (concept ":NEW_ONSET_OF_DYSPNEA:") 
+  (stype "<KA014>") 
+  (flags owl-variable) 
+  (words 
+    (":NOVEL_CONTEXTUALASPECT:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hascontextualaspect "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of dyspnea-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA014") 
+  (concept ":NEW_ONSET_OF_DYSPNEA:") 
+  (stype "<KA014>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-new onset of dyspnea-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA014") 
+  (concept ":NEW_ONSET_OF_DYSPNEA:") 
+  (stype "<KA014>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":DYSPNOEA:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-body temperature gt 100.4 F-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA001") 
+  (concept ":BODY_TEMPERATURE_GT_100_4_F:") 
+  (stype "<KA001>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":ENTITY_HANDLING___BODY_TEMPERATURE:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-body temperature gt 100.4 F-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA001") 
+  (concept ":BODY_TEMPERATURE_GT_100_4_F:") 
+  (stype "<KA001>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":ENTITY_HANDLING___BODY_TEMPERATURE:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-body temperature gt 100.4 F-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA001") 
+  (concept ":BODY_TEMPERATURE_GT_100_4_F:") 
+  (stype "<KA001>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":ENTITY_HANDLING___BODY_TEMPERATURE:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-oxygen saturation-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA002") 
+  (concept ":OXYGEN_SATURATION:") 
+  (stype "<KA002>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":OXYGEN_SATURATION_MEASUREMENT:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-oxygen saturation-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA002") 
+  (concept ":OXYGEN_SATURATION:") 
+  (stype "<KA002>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":OXYGEN_SATURATION_MEASUREMENT:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-oxygen saturation-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA002") 
+  (concept ":OXYGEN_SATURATION:") 
+  (stype "<KA002>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":OXYGEN_SATURATION_MEASUREMENT:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-white blood cell count lt 4000-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA003") 
+  (concept ":WHITE_BLOOD_CELL_COUNT_LT_4000:") 
+  (stype "<KA003>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-white blood cell count lt 4000-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA003") 
+  (concept ":WHITE_BLOOD_CELL_COUNT_LT_4000:") 
+  (stype "<KA003>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-white blood cell count lt 4000-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA003") 
+  (concept ":WHITE_BLOOD_CELL_COUNT_LT_4000:") 
+  (stype "<KA003>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-white blood cell count gte 12000-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA004") 
+  (concept ":WHITE_BLOOD_CELL_COUNT_GTE_12000:") 
+  (stype "<KA004>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-white blood cell count gte 12000-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA004") 
+  (concept ":WHITE_BLOOD_CELL_COUNT_GTE_12000:") 
+  (stype "<KA004>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-white blood cell count gte 12000-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA004") 
+  (concept ":WHITE_BLOOD_CELL_COUNT_GTE_12000:") 
+  (stype "<KA004>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening gas exchange-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA019") 
+  (concept ":WORSENING_GAS_EXCHANGE:") 
+  (stype "<KA019>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening gas exchange-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA019") 
+  (concept ":WORSENING_GAS_EXCHANGE:") 
+  (stype "<KA019>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening gas exchange-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA019") 
+  (concept ":WORSENING_GAS_EXCHANGE:") 
+  (stype "<KA019>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-worsening gas exchange-hasdeltaflag-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA019") 
+  (concept ":WORSENING_GAS_EXCHANGE:") 
+  (stype "<KA019>") 
+  (flags owl-variable) 
+  (words 
+    (":WORSENED_DELTAFLAG:") 
+    (":ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH:")) 
+  (properties 
+    (hasdeltaflag "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory rate gt 25 bpm-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA023") 
+  (concept ":RESPIRATORY_RATE_GT_25_BPM:") 
+  (stype "<KA023>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":RESPIRATORY_RATE:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory rate gt 25 bpm-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA023") 
+  (concept ":RESPIRATORY_RATE_GT_25_BPM:") 
+  (stype "<KA023>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":RESPIRATORY_RATE:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory rate gt 25 bpm-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA023") 
+  (concept ":RESPIRATORY_RATE_GT_25_BPM:") 
+  (stype "<KA023>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":RESPIRATORY_RATE:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-oxygen therapy-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA020") 
+  (concept ":OXYGEN_THERAPY:") 
+  (stype "<KA020>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":OXYGEN_THERAPY_CARE:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-oxygen therapy-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA020") 
+  (concept ":OXYGEN_THERAPY:") 
+  (stype "<KA020>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":OXYGEN_THERAPY_CARE:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-oxygen therapy-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA020") 
+  (concept ":OXYGEN_THERAPY:") 
+  (stype "<KA020>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":OXYGEN_THERAPY_CARE:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory suctioning-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA021") 
+  (concept ":RESPIRATORY_SUCTIONING:") 
+  (stype "<KA021>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":AIRWAY_SUCTION_TECHNIQUE:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory suctioning-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA021") 
+  (concept ":RESPIRATORY_SUCTIONING:") 
+  (stype "<KA021>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":AIRWAY_SUCTION_TECHNIQUE:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-respiratory suctioning-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA021") 
+  (concept ":RESPIRATORY_SUCTIONING:") 
+  (stype "<KA021>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":AIRWAY_SUCTION_TECHNIQUE:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-VARIABLE-ventilator care-hastemporality-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA022") 
+  (concept ":VENTILATOR_CARE:") 
+  (stype "<KA022>") 
+  (flags owl-variable) 
+  (words 
+    (":OVERLAP_DOCTIMEREL:") 
+    (":VENTILATOR_CARE:")) 
+  (properties 
+    (hastemporality "?0")))
+(
+  (ruleid "OWL-VARIABLE-ventilator care-hasexperiencer-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA022") 
+  (concept ":VENTILATOR_CARE:") 
+  (stype "<KA022>") 
+  (flags owl-variable) 
+  (words 
+    (":PATIENT_EXPERIENCER:") 
+    (":VENTILATOR_CARE:")) 
+  (properties 
+    (hasexperiencer "?0")))
+(
+  (ruleid "OWL-VARIABLE-ventilator care-hascertainty-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#KA022") 
+  (concept ":VENTILATOR_CARE:") 
+  (stype "<KA022>") 
+  (flags owl-variable) 
+  (words 
+    (":DEFINITEEXISTENCE_CERTAINTY:") 
+    (":VENTILATOR_CARE:")) 
+  (properties 
+    (hascertainty "?0")))
+(
+  (ruleid "OWL-ANCHOR-abnormal_mental_state-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Abnormal_mental_state") 
+  (concept ":ABNORMAL_MENTAL_STATE:") 
+  (stype "<ABNORMAL_MENTAL_STATE>") 
+  (flags owl-anchor) 
+  (words 
+    ("abnormal mental state" "mental state abnormal" "altered mental status (finding)" "altered mental status")))
+(
+  (ruleid "OWL-ANCHOR-mental_health_impairment-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Mental_health_impairment") 
+  (concept ":MENTAL_HEALTH_IMPAIRMENT:") 
+  (stype "<MENTAL_HEALTH_IMPAIRMENT>") 
+  (flags owl-anchor) 
+  (words 
+    ("mental health impairment" "mental health impairment (finding)")))
+(
+  (ruleid "OWL-ANCHOR-transient_altered_mental_status-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Transient_altered_mental_status") 
+  (concept ":TRANSIENT_ALTERED_MENTAL_STATUS:") 
+  (stype "<TRANSIENT_ALTERED_MENTAL_STATUS>") 
+  (flags owl-anchor) 
+  (words 
+    ("transient altered mental status" "transient altered mental status (finding)")))
+(
+  (ruleid "OWL-ANCHOR-airway_suction_technique-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Airway_suction_technique") 
+  (concept ":AIRWAY_SUCTION_TECHNIQUE:") 
+  (stype "<AIRWAY_SUCTION_TECHNIQUE>") 
+  (flags owl-anchor) 
+  (words 
+    ("airway suction technique" "airway suctioning" "airway suction technique (procedure)")))
+(
+  (ruleid "OWL-ANCHOR-analysis_of_arterial_blood_gases_and_ph-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Analysis_of_arterial_blood_gases_and_pH") 
+  (concept ":ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH:") 
+  (stype "<ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH>") 
+  (flags owl-anchor) 
+  (words 
+    ("analysis of arterial blood gases and ph" "arterial blood gases" "gases, arterial measurement" "arterial blood gas analysis" "arterial blood gas" "blood gases, arterial measurement" "abgs measurement")))
+(
+  (ruleid "OWL-ANCHOR-body_temperature-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Body_temperature") 
+  (concept ":ENTITY_HANDLING___BODY_TEMPERATURE:") 
+  (stype "<BODY_TEMPERATURE>") 
+  (flags owl-anchor) 
+  (words 
+    ("entity handling - body temperature" "body temperature" "temperatures, body" "body temperature - observation" "body temperature finding" "body temperature (observable entity)" "body temperature finding (finding)" "temperature, body" "body temperature measurement" "body temp" "body temperature:temperature:point in time:^patient:quantitative" "temperature" "temp" "body temperatures" "body temperature:temp:pt:^patient:qn")))
+(
+  (ruleid "OWL-ANCHOR-bronchial_breathing-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Bronchial_breathing") 
+  (concept ":BRONCHIAL_BREATHING:") 
+  (stype "<BRONCHIAL_BREATHING>") 
+  (flags owl-anchor) 
+  (words 
+    ("bronchial breathing" "bronchial breathing (finding)" "tubular breath sounds" "bb - bronchial breathing" "breath sound(s) bronchial" "bronchial breath sounds" "tubular breathing" "bronchial breath sound")))
+(
+  (ruleid "OWL-ANCHOR-cavitation_of_lung-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Cavitation_of_lung") 
+  (concept ":CAVITATION_OF_LUNG:") 
+  (stype "<CAVITATION_OF_LUNG>") 
+  (flags owl-anchor) 
+  (words 
+    ("cavitation of lung" "cavitation" "cavitation of lung (finding)" "lung cavitation")))
+(
+  (ruleid "OWL-ANCHOR-consolidation-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Consolidation") 
+  (concept ":CONSOLIDATION:") 
+  (stype "<CONSOLIDATION>") 
+  (flags owl-anchor) 
+  (words 
+    ("consolidation" "consolidation (morphologic abnormality)")))
+(
+  (ruleid "OWL-ANCHOR-lung_consolidation-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Lung_consolidation") 
+  (concept ":LUNG_CONSOLIDATION:") 
+  (stype "<LUNG_CONSOLIDATION>") 
+  (flags owl-anchor) 
+  (words 
+    ("lung consolidation" "lung consolidation (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-coughing-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Coughing") 
+  (concept ":COUGH_ADVERSE_EVENT:") 
+  (stype "<COUGHING>") 
+  (flags owl-anchor) 
+  (words 
+    ("cough adverse event" "cough [disease/finding]" "coughing" "cough" "complaining of cough" "coughing (observable entity)" "cough (finding)" "observation of cough" "finding of cough" "cough (r05)" "coughs" "c/o - cough" "complaining of cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-barking_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Barking_cough") 
+  (concept ":BARKING_COUGH:") 
+  (stype "<BARKING_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("barking cough" "barking cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-bovine_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Bovine_cough") 
+  (concept ":BOVINE_COUGH:") 
+  (stype "<BOVINE_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("bovine cough" "bovine cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-brassy_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Brassy_cough") 
+  (concept ":BRASSY_COUGH:") 
+  (stype "<BRASSY_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("brassy cough" "brassy cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-chesty_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Chesty_cough") 
+  (concept ":CHESTY_COUGH:") 
+  (stype "<CHESTY_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("chesty cough" "chesty cough (finding)" "bronchial cough")))
+(
+  (ruleid "OWL-ANCHOR-clearing_throat_hawking-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Clearing_throat_hawking") 
+  (concept ":CLEARING_THROAT___HAWKING:") 
+  (stype "<CLEARING_THROAT_HAWKING>") 
+  (flags owl-anchor) 
+  (words 
+    ("clearing throat - hawking" "clearing throat - hawking (finding)" "hawking" "clearing throat")))
+(
+  (ruleid "OWL-ANCHOR-cough_at_rest-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Cough_at_rest") 
+  (concept ":COUGH_AT_REST:") 
+  (stype "<COUGH_AT_REST>") 
+  (flags owl-anchor) 
+  (words 
+    ("cough at rest" "cough at rest (finding)")))
+(
+  (ruleid "OWL-ANCHOR-cough_on_exercise-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Cough_on_exercise") 
+  (concept ":COUGH_ON_EXERCISE:") 
+  (stype "<COUGH_ON_EXERCISE>") 
+  (flags owl-anchor) 
+  (words 
+    ("cough on exercise" "cough on exercise (finding)")))
+(
+  (ruleid "OWL-ANCHOR-croupy_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Croupy_cough") 
+  (concept ":CROUPY_COUGH:") 
+  (stype "<CROUPY_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("croupy cough" "croupy cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-dry_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Dry_cough") 
+  (concept ":DRY_COUGH:") 
+  (stype "<DRY_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("dry cough" "dry cough (finding)" "non-productive cough (finding)" "unproductive cough" "cough nonproductive" "cough, nonproductive" "non-productive cough" "cough, dry")))
+(
+  (ruleid "OWL-ANCHOR-hacking_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Hacking_cough") 
+  (concept ":HACKING_COUGH:") 
+  (stype "<HACKING_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("hacking cough" "cough, hacking" "hacking cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-effective_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Effective_cough") 
+  (concept ":EFFECTIVE_COUGH:") 
+  (stype "<EFFECTIVE_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("effective cough" "effective cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-paroxysmal_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Paroxysmal_cough") 
+  (concept ":PAROXYSMAL_COUGH:") 
+  (stype "<PAROXYSMAL_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("paroxysmal cough" "cough, paroxysmal" "paroxysm of coughing" "bout of coughing" "fit of coughing" "paroxysmal cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-postural_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Postural_cough") 
+  (concept ":POSTURAL_COUGH:") 
+  (stype "<POSTURAL_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("postural cough" "postural cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-productive_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Productive_cough") 
+  (concept ":PRODUCTIVE_COUGH:") 
+  (stype "<PRODUCTIVE_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("productive cough" "producing sputum" "cough, productive" "moist cough" "productive cough (finding)" "loose cough" "wet cough")))
+(
+  (ruleid "OWL-ANCHOR-spasmodic_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Spasmodic_cough") 
+  (concept ":SPASMODIC_COUGH:") 
+  (stype "<SPASMODIC_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("spasmodic cough" "spasmodic cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-unexplained_cough-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Unexplained_cough") 
+  (concept ":UNEXPLAINED_COUGH:") 
+  (stype "<UNEXPLAINED_COUGH>") 
+  (flags owl-anchor) 
+  (words 
+    ("unexplained cough" "unexplained cough (finding)")))
+(
+  (ruleid "OWL-ANCHOR-dyspnoea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Dyspnoea") 
+  (concept ":DYSPNOEA:") 
+  (stype "<DYSPNOEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("dyspnoea" "difficulty breathing" "dyspnea" "respiration difficult" "shortness of breath" "dyspneas" "winded" "sob (shortness of breath)" "dyspnoeas" "tightness of breath" "dyspnea, unspecified" "dib - difficulty in breathing" "difficulty breathing (finding)" "breathing difficult" "breathlessness" "sob - shortness of breath" "dyspnoea nos" "breath shortness" "breathing difficulties" "winded (finding)" "respiratory difficulties" "dyspnea [disease/finding]" "short of breath" "breath shortnesses" "dyspnea (finding)" "breathless" "sob" "dyspnea nos" "shortness of breath dyspnea")))
+(
+  (ruleid "OWL-ANCHOR-dyspnoea_on_exertion-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Dyspnoea_on_exertion") 
+  (concept ":DYSPNOEA_ON_EXERTION:") 
+  (stype "<DYSPNOEA_ON_EXERTION>") 
+  (flags owl-anchor) 
+  (words 
+    ("dyspnoea on exertion" "exertional dyspnoea" "dyspnoea on effort" "dyspnea on effort" "dyspnea on exertion" "short of breath on exertion" "soboe - shortness of breath on exertion" "dyspnea on exertion (finding)" "breathlessness on exertion" "exertional dyspnea")))
+(
+  (ruleid "OWL-ANCHOR-dyspnea_after_eating-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Dyspnea_after_eating") 
+  (concept ":DYSPNEA_AFTER_EATING:") 
+  (stype "<DYSPNEA_AFTER_EATING>") 
+  (flags owl-anchor) 
+  (words 
+    ("dyspnea after eating" "dyspnoea after eating" "dyspnea after eating (finding)")))
+(
+  (ruleid "OWL-ANCHOR-dyspnea_leaning_over-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Dyspnea_leaning_over") 
+  (concept ":DYSPNEA_LEANING_OVER:") 
+  (stype "<DYSPNEA_LEANING_OVER>") 
+  (flags owl-anchor) 
+  (words 
+    ("dyspnea leaning over" "dyspnoea leaning over" "dyspnea leaning over (finding)")))
+(
+  (ruleid "OWL-ANCHOR-dyspnea_raising_arms-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Dyspnea_raising_arms") 
+  (concept ":DYSPNEA_RAISING_ARMS:") 
+  (stype "<DYSPNEA_RAISING_ARMS>") 
+  (flags owl-anchor) 
+  (words 
+    ("dyspnea raising arms" "dyspnea raizing arms" "dyspnoea raising arms" "dyspnea raising arms (finding)" "dyspnoea raizing arms")))
+(
+  (ruleid "OWL-ANCHOR-short_of_breath_dressing_undressing-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Short_of_breath_dressing_undressing") 
+  (concept ":SHORT_OF_BREATH_DRESSING_UNDRESSING:") 
+  (stype "<SHORT_OF_BREATH_DRESSING_UNDRESSING>") 
+  (flags owl-anchor) 
+  (words 
+    ("short of breath dressing/undressing" "short of breath dressing/undressing (finding)")))
+(
+  (ruleid "OWL-ANCHOR-expiratory_dyspnea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Expiratory_dyspnea") 
+  (concept ":EXPIRATORY_DYSPNEA:") 
+  (stype "<EXPIRATORY_DYSPNEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("expiratory dyspnea" "expiratory dyspnoea" "expiratory dyspnea (finding)")))
+(
+  (ruleid "OWL-ANCHOR-gasping_for_breath-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Gasping_for_breath") 
+  (concept ":GASPING_FOR_BREATH:") 
+  (stype "<GASPING_FOR_BREATH>") 
+  (flags owl-anchor) 
+  (words 
+    ("gasping for breath" "gasping" "gasping respiration" "gasping for breath (finding)")))
+(
+  (ruleid "OWL-ANCHOR-increasing_breathlessness-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Increasing_breathlessness") 
+  (concept ":INCREASING_BREATHLESSNESS:") 
+  (stype "<INCREASING_BREATHLESSNESS>") 
+  (flags owl-anchor) 
+  (words 
+    ("increasing breathlessness" "increasing breathlessness (finding)" "increased shortness of breath")))
+(
+  (ruleid "OWL-ANCHOR-inspiratory_dyspnea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Inspiratory_dyspnea") 
+  (concept ":INSPIRATORY_DYSPNEA:") 
+  (stype "<INSPIRATORY_DYSPNEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("inspiratory dyspnea" "laryngeal dyspnea" "inspiratory dyspnoea" "laryngeal dyspnoea" "inspiratory dyspnea (finding)")))
+(
+  (ruleid "OWL-ANCHOR-laboured_breathing-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Laboured_breathing") 
+  (concept ":LABORED_BREATHING:") 
+  (stype "<LABOURED_BREATHING>") 
+  (flags owl-anchor) 
+  (words 
+    ("labored breathing" "respiration laboured" "labored respiration" "respiration labored" "labored breathing (finding)" "laboured breathing" "laboured respiration")))
+(
+  (ruleid "OWL-ANCHOR-orthopnoea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Orthopnoea") 
+  (concept ":ORTHOPNEA:") 
+  (stype "<ORTHOPNOEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("orthopnea" "orthopnoea" "orthopnea (finding)" "breathlessness lying flat")))
+(
+  (ruleid "OWL-ANCHOR-paroxysmal_dyspnea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Paroxysmal_dyspnea") 
+  (concept ":PAROXYSMAL_DYSPNEA:") 
+  (stype "<PAROXYSMAL_DYSPNEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("paroxysmal dyspnea" "dyspnea, paroxysmal [disease/finding]" "dyspnea, paroxysmal" "paroxysmal dyspnea (finding)" "paroxysmal dyspneas" "dyspneas, paroxysmal" "paroxysmal dyspnoea")))
+(
+  (ruleid "OWL-ANCHOR-platypnea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Platypnea") 
+  (concept ":PLATYPNEA:") 
+  (stype "<PLATYPNEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("platypnea" "platypnea (finding)" "platypnoea" "plathpnea")))
+(
+  (ruleid "OWL-ANCHOR-respiratory_distress-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Respiratory_distress") 
+  (concept ":RESPIRATORY_DISTRESS:") 
+  (stype "<RESPIRATORY_DISTRESS>") 
+  (flags owl-anchor) 
+  (words 
+    ("respiratory distress" "distress respiratory" "distress, respiratory" "distressed breathing" "respiratory distress (finding)")))
+(
+  (ruleid "OWL-ANCHOR-acute_respiratory_distress-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Acute_respiratory_distress") 
+  (concept ":ACUTE_RESPIRATORY_DISTRESS:") 
+  (stype "<ACUTE_RESPIRATORY_DISTRESS>") 
+  (flags owl-anchor) 
+  (words 
+    ("acute respiratory distress" "acute respiratory distress (finding)")))
+(
+  (ruleid "OWL-ANCHOR-sobar_shortness_of_breath_at_rest-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#SOBAR_Shortness_of_breath_at_rest") 
+  (concept ":SOBAR___SHORTNESS_OF_BREATH_AT_REST:") 
+  (stype "<SOBAR_SHORTNESS_OF_BREATH_AT_REST>") 
+  (flags owl-anchor) 
+  (words 
+    ("sobar - shortness of breath at rest" "breathless - at rest" "dyspnea at rest" "dyspnea at rest (finding)" "dyspnoea at rest")))
+(
+  (ruleid "OWL-ANCHOR-trepopnea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Trepopnea") 
+  (concept ":TREPOPNEA:") 
+  (stype "<TREPOPNEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("trepopnea" "trepopnoea" "trepopnea (finding)")))
+(
+  (ruleid "OWL-ANCHOR-unable_to_complete_a_sentence_in_one_breath-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Unable_to_complete_a_sentence_in_one_breath") 
+  (concept ":UNABLE_TO_COMPLETE_A_SENTENCE_IN_ONE_BREATH:") 
+  (stype "<UNABLE_TO_COMPLETE_A_SENTENCE_IN_ONE_BREATH>") 
+  (flags owl-anchor) 
+  (words 
+    ("unable to complete a sentence in one breath" "unable to complete a sentence in one breath (finding)")))
+(
+  (ruleid "OWL-ANCHOR-fever-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Fever") 
+  (concept ":FEVER:") 
+  (stype "<FEVER>") 
+  (flags owl-anchor) 
+  (words 
+    ("fever" "pyrexial" "temperature elevated" "temperature raised" "has a temperature" "increased body temperature" "pyrexia" "fever (finding)" "febrile")))
+(
+  (ruleid "OWL-ANCHOR-infiltration-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Infiltration") 
+  (concept ":INFILTRATION:") 
+  (stype "<INFILTRATION>") 
+  (flags owl-anchor) 
+  (words 
+    ("infiltration" "spread by direct extension (qualifier value)" "infiltrates" "infiltrate" "tissue infiltration" "infiltrating" "infiltration of tissue" "spread of disease by direct extension" "infiltration (procedure)" "infiltration (morphologic abnormality)" "spread by direct extension")))
+(
+  (ruleid "OWL-ANCHOR-leucocytosis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Leucocytosis") 
+  (concept ":LEUKOCYTOSIS:") 
+  (stype "<LEUCOCYTOSIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("leukocytosis" "leucocytosis" "leukocytosis nos" "increased blood leucocyte number" "leukocytosis, unspecified" "leukocytosis (disorder)" "increased blood leukocyte number" "increased blood leukocyte number (finding)" "leukocytosis (leucocytosis)" "leukocytosis [disease/finding]" "leukocytoses" "leucocytosis nos")))
+(
+  (ruleid "OWL-ANCHOR-lymphocytosis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Lymphocytosis") 
+  (concept ":LYMPHOCYTE_COUNT_INCREASED:") 
+  (stype "<LYMPHOCYTOSIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("lymphocyte count increased" "increased blood lymphocyte number" "lymphocytosis" "lymphocytoses" "lymphocytosis [disease/finding]" "lymphocytes increased" "lymphocytosis (disorder)" "lymphocytes raised" "lymphocyte count high" "increased blood lymphocyte number (finding)")))
+(
+  (ruleid "OWL-ANCHOR-monocytosis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Monocytosis") 
+  (concept ":MONOCYTOSIS:") 
+  (stype "<MONOCYTOSIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("monocytosis" "monocytosis (disorder)" "increased blood monocyte number (finding)" "increased blood monocyte number")))
+(
+  (ruleid "OWL-ANCHOR-neutrophilia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Neutrophilia") 
+  (concept ":NEUTROPHILIA__FINDING_:") 
+  (stype "<NEUTROPHILIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("neutrophilia (finding)" "neutrophilic leukocytosis" "neutrophilic leucocytosis" "neutrophilia")))
+(
+  (ruleid "OWL-ANCHOR-leucopenia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Leucopenia") 
+  (concept ":LEUKOPENIA:") 
+  (stype "<LEUCOPENIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("leukopenia" "decreased blood leukocyte number (finding)" "leukocytes decreased" "leukocytopenias" "leucopenia" "wbc decreased" "leukocytopenia nos" "decreased white cell count" "white blood cell decreased" "leukopenias" "decreased blood leukocyte number" "decreased white blood cell count" "leukocytopenia, unspecified" "leukopenia nos" "leukocyte count decreased" "leukopenia [disease/finding]" "white blood cell count decreased" "leukocytopenia" "wbc dec" "leucocytopenia" "white blood cells decreased" "leukopenia (disorder)" "decreased blood leucocyte number")))
+(
+  (ruleid "OWL-ANCHOR-febrile_leukopenia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Febrile_leukopenia") 
+  (concept ":FEBRILE_LEUKOPENIA:") 
+  (stype "<FEBRILE_LEUKOPENIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("febrile leukopenia" "febrile leukopenia (disorder)" "febrile leucopenia")))
+(
+  (ruleid "OWL-ANCHOR-granulocytopenia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Granulocytopenia") 
+  (concept ":GRANULOCYTOPENIA:") 
+  (stype "<GRANULOCYTOPENIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("granulocytopenia" "neutrophils decreased" "neutropenic disorder" "granulocytopenias" "neutropenia" "neutropenic disorder (disorder)" "agranulocytosis" "granulocytopenic disorder (disorder)" "neutrophil count below reference range" "neutrophil count low" "neutropenias" "neutropenia [disease/finding]" "granulocytopenic disorder" "neutrophils reduced" "agranulocytoses" "neutropenia (finding)" "neutropenia nos" "neutrophil count decreased" "neutropenia, unspecified")))
+(
+  (ruleid "OWL-ANCHOR-pancytopenia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Pancytopenia") 
+  (concept ":PANCYTOPENIA:") 
+  (stype "<PANCYTOPENIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("pancytopenia" "pancytopenia (disorder)" "bone marrow failure" "pancytopenia [disease/finding]" "pancytopenias")))
+(
+  (ruleid "OWL-ANCHOR-oxygen_saturation_measurement-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Oxygen_saturation_measurement") 
+  (concept ":OXYGEN_SATURATION_MEASUREMENT:") 
+  (stype "<OXYGEN_SATURATION_MEASUREMENT>") 
+  (flags owl-anchor) 
+  (words 
+    ("oxygen saturation measurement" "oxygen saturation test" "o2 saturations" "hemoglobin saturation measurement" "oximetries" "o2 saturation" "blood oxygen saturation" "oxygen saturation" "haemoglobin saturation measurement" "oxygen content measurement" "oximetry" "oxygen saturation measurement (procedure)" "oxysat" "oximetry (procedure)" "hemoglobin saturation" "oxymetry")))
+(
+  (ruleid "OWL-ANCHOR-pulse_oximetry-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Pulse_oximetry") 
+  (concept ":PULSE_OXIMETRY:") 
+  (stype "<PULSE_OXIMETRY>") 
+  (flags owl-anchor) 
+  (words 
+    ("pulse oximetry" "pulse oximetries" "oximetry, pulse" "pulse oximetry (procedure)" "oximetries, pulse" "transcutaneous pulse oximetry")))
+(
+  (ruleid "OWL-ANCHOR-continuous_pulse_oximetry-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Continuous_pulse_oximetry") 
+  (concept ":CONTINUOUS_PULSE_OXIMETRY:") 
+  (stype "<CONTINUOUS_PULSE_OXIMETRY>") 
+  (flags owl-anchor) 
+  (words 
+    ("continuous pulse oximetry" "continuous pulse oximetry (procedure)")))
+(
+  (ruleid "OWL-ANCHOR-intermittent_pulse_oximetry-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Intermittent_pulse_oximetry") 
+  (concept ":INTERMITTENT_PULSE_OXIMETRY:") 
+  (stype "<INTERMITTENT_PULSE_OXIMETRY>") 
+  (flags owl-anchor) 
+  (words 
+    ("intermittent pulse oximetry" "spot-check pulse oximetry" "intermittent pulse oximetry (procedure)")))
+(
+  (ruleid "OWL-ANCHOR-overnight_pulse_oximetry-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Overnight_pulse_oximetry") 
+  (concept ":OVERNIGHT_PULSE_OXIMETRY:") 
+  (stype "<OVERNIGHT_PULSE_OXIMETRY>") 
+  (flags owl-anchor) 
+  (words 
+    ("overnight pulse oximetry" "overnight pulse oximetry (procedure)" "mini-sleep study")))
+(
+  (ruleid "OWL-ANCHOR-oxygen_therapy_care-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Oxygen_therapy_care") 
+  (concept ":OXYGEN_THERAPY_CARE:") 
+  (stype "<OXYGEN_THERAPY_CARE>") 
+  (flags owl-anchor) 
+  (words 
+    ("oxygen therapy care" "therapy, oxygen inhalation" "oxygen inhalation ther" "inhalation therapy, oxygen" "ther oxygen inhalation" "inhalation ther oxygen" "oxygen therapy (procedure)" "oxygen inhalation therapy" "oxygenation therapy" "oxygen therapy" "oxygen administration" "oxygen inhalation therapies" "inhalation therapies, oxygen" "supplemental oxygen therapy" "o2 therapy" "therapies, oxygen inhalation")))
+(
+  (ruleid "OWL-ANCHOR-home_oxygen_therapy-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Home_oxygen_therapy") 
+  (concept ":HOME_OXYGEN_THERAPY:") 
+  (stype "<HOME_OXYGEN_THERAPY>") 
+  (flags owl-anchor) 
+  (words 
+    ("home oxygen therapy" "home oxygen therapy (procedure)")))
+(
+  (ruleid "OWL-ANCHOR-oxygenator_therapy-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Oxygenator_therapy") 
+  (concept ":OXYGEN_THERAPY_CARE:") 
+  (stype "<OXYGENATOR_THERAPY>") 
+  (flags owl-anchor) 
+  (words 
+    ("oxygen therapy care" "therapy, oxygen inhalation" "oxygen inhalation ther" "inhalation therapy, oxygen" "warburg therapy" "inhalation ther oxygen" "ther oxygen inhalation" "oxygen therapy (procedure)" "oxygen inhalation therapy" "oxygenator therapy (procedure)" "oxygenation therapy" "oxygen administration" "oxygen therapy" "therapy using oxygenators" "oxygen inhalation therapies" "inhalation therapies, oxygen" "oxygenator therapy" "supplemental oxygen therapy" "therapies, oxygen inhalation" "o2 therapy")))
+(
+  (ruleid "OWL-ANCHOR-pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Pneumonia") 
+  (concept ":PNEUMONIA:") 
+  (stype "<PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("pneumonia" "lung inflammation" "inflammations, lung" "pneumonitis" "pneumonitides" "pneumonia, unspecified" "inflammation, lung" "pneumonitis nos" "pneumonia (disorder)" "pneumonia nos" "pneumonia [disease/finding]" "pneumonias" "pneumonitis (disorder)" "inflammations, pulmonary" "lung inflammations" "pulmonary inflammations" "pulmonary inflammation" "inflammation, pulmonary")))
+(
+  (ruleid "OWL-ANCHOR-aspiration_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Aspiration_pneumonia") 
+  (concept ":ASPIRATION_PNEUMONIA:") 
+  (stype "<ASPIRATION_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("aspiration pneumonia" "aspiration pneumonitis (disorder)" "inhalational pneumonia" "aspiration pneumonia nos" "aspiration pneumonitis" "aspiration pneumonias" "pneumonia aspiration" "pneumonias, aspiration" "inhalation pneumonia" "pneumonia, aspiration" "pneumonitis aspiration" "aspiration pneumonia (disorder)" "pneumonia, aspiration [disease/finding]")))
+(
+  (ruleid "OWL-ANCHOR-bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Bronchopneumonia") 
+  (concept ":BRONCHOPNEUMONIA:") 
+  (stype "<BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("bronchopneumonia" "bronchopneumonia (disorder)" "bronchopneumonia nos" "lobular pneumonia" "bronchopneumonia org nos" "bronchopneumonia, organism unspecified" "bronchopneumonia, unspecified organism" "pneumonia, bronchial" "bronchopneumonia [disease/finding]" "bronchial pneumonia" "pneumonias, bronchial" "bronchial pneumonias" "bronchopneumonias" "bronchopneumonia, unspecified")))
+(
+  (ruleid "OWL-ANCHOR-acute_bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Acute_bronchopneumonia") 
+  (concept ":ACUTE_BRONCHOPNEUMONIA:") 
+  (stype "<ACUTE_BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("acute bronchopneumonia" "acute bronchopneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-hemorrhagic_bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Hemorrhagic_bronchopneumonia") 
+  (concept ":HEMORRHAGIC_BRONCHOPNEUMONIA:") 
+  (stype "<HEMORRHAGIC_BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("hemorrhagic bronchopneumonia" "hemorrhagic bronchopneumonia (disorder)" "bronchopneumonia, hemorrhagic" "haemorrhagic bronchopneumonia")))
+(
+  (ruleid "OWL-ANCHOR-hypostatic_bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Hypostatic_bronchopneumonia") 
+  (concept ":HYPOSTATIC_BRONCHOPNEUMONIA:") 
+  (stype "<HYPOSTATIC_BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("hypostatic bronchopneumonia" "hypostatic bronchopneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-necrotizing_bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Necrotizing_bronchopneumonia") 
+  (concept ":NECROTIZING_BRONCHOPNEUMONIA:") 
+  (stype "<NECROTIZING_BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("necrotizing bronchopneumonia" "necrotizing bronchopneumonia (disorder)" "necrotising bronchopneumonia")))
+(
+  (ruleid "OWL-ANCHOR-pleuropneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Pleuropneumonia") 
+  (concept ":MYCOPLASMA:") 
+  (stype "<PLEUROPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("mycoplasma" "eperythrozoon schilling 1928 (approved lists 1980)" "borrelomyces" "eperythrozoon" "genus haemobartonella (organism)" "asteromyces" "genus mycoplasma" "pleuropneumonias" "asterococcus" "genus mycoplasma (organism)" "pleuropneumonia [disease/finding]" "pleurobronchopneumonia (disorder)" "bovimyces" "mycoplasma nowak 1929" "pleuropneumonia" "haemobartonella" "genus haemobartonella" "pleurobronchopneumonia" "haemobartonella tyzzer and weinman 1939 (approved lists 1980)")))
+(
+  (ruleid "OWL-ANCHOR-terminal_bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Terminal_bronchopneumonia") 
+  (concept ":TERMINAL_BRONCHOPNEUMONIA:") 
+  (stype "<TERMINAL_BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("terminal bronchopneumonia" "bronchopneumonia, terminal" "terminal bronchopneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-catarrhal_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Catarrhal_pneumonia") 
+  (concept ":CATARRHAL_PNEUMONIA:") 
+  (stype "<CATARRHAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("catarrhal pneumonia" "catarrhal pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-community_acquired_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Community_acquired_pneumonia") 
+  (concept ":COMMUNITY_ACQUIRED_PNEUMONIA:") 
+  (stype "<COMMUNITY_ACQUIRED_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("community acquired pneumonia" "community-acquired pneumonia" "community acquired pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-confluent_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Confluent_pneumonia") 
+  (concept ":CONFLUENT_PNEUMONIA:") 
+  (stype "<CONFLUENT_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("confluent pneumonia" "confluent pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-drug_induced_pneumonitis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Drug_induced_pneumonitis") 
+  (concept ":DRUG_INDUCED_PNEUMONITIS:") 
+  (stype "<DRUG_INDUCED_PNEUMONITIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("drug-induced pneumonitis" "drug-induced pneumonitis (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-focal_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Focal_pneumonia") 
+  (concept ":FOCAL_PNEUMONIA:") 
+  (stype "<FOCAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("focal pneumonia" "focal pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-gangrenous_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Gangrenous_pneumonia") 
+  (concept ":GANGRENOUS_PNEUMONIA:") 
+  (stype "<GANGRENOUS_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("gangrenous pneumonia" "necrotizing pneumonia" "gangrenous pneumonia (disorder)" "pneumonia necrotizing" "necrotising pneumonia" "necrotic pneumonia" "pneumonia necrotising")))
+(
+  (ruleid "OWL-ANCHOR-granulomatous_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Granulomatous_pneumonia") 
+  (concept ":GRANULOMATOUS_PNEUMONIA:") 
+  (stype "<GRANULOMATOUS_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("granulomatous pneumonia" "granulomatous pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-haemorrhagic_varicella_pneumonitis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Haemorrhagic_varicella_pneumonitis") 
+  (concept ":HEMORRHAGIC_VARICELLA_PNEUMONITIS:") 
+  (stype "<HAEMORRHAGIC_VARICELLA_PNEUMONITIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("hemorrhagic varicella pneumonitis" "hemorrhagic varicella pneumonitis (disorder)" "varicella (hemorrhagic) pneumonitis" "varicella pneumonitis" "haemorrhagic varicella pneumonitis" "varicella (haemorrhagic) pneumonitis")))
+(
+  (ruleid "OWL-ANCHOR-hemorrhagic_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Hemorrhagic_pneumonia") 
+  (concept ":HEMORRHAGIC_PNEUMONIA:") 
+  (stype "<HEMORRHAGIC_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("hemorrhagic pneumonia" "hemorrhagic pneumonia (disorder)" "haemorrhagic pneumonia")))
+(
+  (ruleid "OWL-ANCHOR-hypostatic_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Hypostatic_pneumonia") 
+  (concept ":HYPOSTATIC_PNEUMONIA:") 
+  (stype "<HYPOSTATIC_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("hypostatic pneumonia" "passive pneumonia" "pneumonia hypostatic" "hypostatic pneumonia, unspecified" "hypostatic pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-hypostatic_bronchopneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Hypostatic_bronchopneumonia") 
+  (concept ":HYPOSTATIC_BRONCHOPNEUMONIA:") 
+  (stype "<HYPOSTATIC_BRONCHOPNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("hypostatic bronchopneumonia" "hypostatic bronchopneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-infective_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Infective_pneumonia") 
+  (concept ":INFECTIVE_PNEUMONIA:") 
+  (stype "<INFECTIVE_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("infective pneumonia" "infective pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-bacterial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Bacterial_pneumonia") 
+  (concept ":BACTERIAL_PNEUMONIA:") 
+  (stype "<BACTERIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("bacterial pneumonia" "bacterial pneumonia nos" "pneumonia, bacterial" "pneumonias, bacterial" "unspecified bacterial pneumonia" "pneumonia bacterial" "bacterial pneumonias" "pneumonia bacterial nos" "bact pneumonia" "bacterial pneumonia (disorder)" "pneumonia bact" "bacterial pneumonia, unspecified" "pneumonia, bacterial [disease/finding]")))
+(
+  (ruleid "OWL-ANCHOR-fungal_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Fungal_pneumonia") 
+  (concept ":FUNGAL_PNEUMONIA:") 
+  (stype "<FUNGAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("fungal pneumonia" "pneumonia in mycoses" "pneumonia fungal nos" "pneumonia fungal" "fungal pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-healthcare_associated_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Healthcare_associated_pneumonia") 
+  (concept ":HEALTHCARE_ASSOCIATED_PNEUMONIA:") 
+  (stype "<HEALTHCARE_ASSOCIATED_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("healthcare associated pneumonia" "healthcare associated pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-nosocomial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Nosocomial_pneumonia") 
+  (concept ":NOSOCOMIAL_PNEUMONIA:") 
+  (stype "<NOSOCOMIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("nosocomial pneumonia" "hospital acquired pneumonia" "nosocomial pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-pneumonia_due_to_parasitic_infestation-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Pneumonia_due_to_parasitic_infestation") 
+  (concept ":PNEUMONIA_DUE_TO_PARASITIC_INFESTATION:") 
+  (stype "<PNEUMONIA_DUE_TO_PARASITIC_INFESTATION>") 
+  (flags owl-anchor) 
+  (words 
+    ("pneumonia due to parasitic infestation" "pneumonia due to parasitic infestation (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-viral_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Viral_pneumonia") 
+  (concept ":PNEUMONIA__VIRAL:") 
+  (stype "<VIRAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("pneumonia, viral" "pneumonia viral nos" "viral pneumonia (disorder)" "viral pneumonias" "pneumonia, abacterial" "viral pneumonia" "viral pneumonia nos" "pneumonia, viral [disease/finding]" "viral pneumonitis" "pneumonia viral" "viral pneumonia, unspecified" "pneumonias, viral")))
+(
+  (ruleid "OWL-ANCHOR-interstitial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Interstitial_pneumonia") 
+  (concept ":INTERSTITIAL_PNEUMONIA:") 
+  (stype "<INTERSTITIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("interstitial pneumonia" "interstitial pneumonia nos" "interstitial pneumonias" "interstitial pneumonitides" "interstitial pneumonitis" "pneumonitis, interstitial" "pneumonia interstitial" "pneumonitides, interstitial" "pneumonias, interstitial" "pneumonia, interstitial" "interstitial pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-idiopathic_interstitial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Idiopathic_interstitial_pneumonia") 
+  (concept ":IDIOPATHIC_INTERSTITIAL_PNEUMONIA:") 
+  (stype "<IDIOPATHIC_INTERSTITIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("idiopathic interstitial pneumonia" "pneumonias, idiopathic interstitial" "interstitial pneumonias, idiopathic" "idiopathic interstitial pneumonia (disorder)" "iip" "pneumonia, idiopathic interstitial" "interstitial pneumonia, idiopathic" "idiopathic interstitial pneumonias" "idiopathic interstitial pneumonias [disease/finding]")))
+(
+  (ruleid "OWL-ANCHOR-acute_interstitial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Acute_interstitial_pneumonia") 
+  (concept ":ACUTE_INTERSTITIAL_PNEUMONIA:") 
+  (stype "<ACUTE_INTERSTITIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("acute interstitial pneumonia" "hamman rich syndrome" "hamman-rich diseases" "acute interstitial pneumonitis" "hamman-rich disease" "diseases, hamman-rich" "acute interstitial pneum" "hamman rich disease" "disease, hamman-rich" "acute interstitial pneumonia (disorder)" "hamman-rich syndrome" "idiopathic pulmonary fibrosis, acute fatal form" "aip" "syndrome, hamman-rich")))
+(
+  (ruleid "OWL-ANCHOR-bronchiolitis_obliterans_organising_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Bronchiolitis_obliterans_organising_pneumonia") 
+  (concept ":BRONCHIOLITIS_OBLITERANS_ORGANIZING_PNEUMONIA:") 
+  (stype "<BRONCHIOLITIS_OBLITERANS_ORGANISING_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("bronchiolitis obliterans organizing pneumonia" "cop - cryptogenic organising pneumonitis" "bronchiolitis obliterans and organising pneumonitis" "bronchiolitis obliterans organising pneumonia" "cryptogenic organizing pneumonias" "boop - bronchiolitis obliterans and organizing pneumonitis" "organizing pneumonia, cryptogenic" "organizing pneumonias, cryptogenic" "cryptogenic organising pneumonitis" "cryptogenic organising pneumonia" "cryptogenic organizing pneumonia [disease/finding]" "cop - cryptogenic organizing pneumonitis" "boop" "pneumonia, cryptogenic organizing" "cryptogenic organizing pneumonia" "boop - bronchiolitis obliterans and organising pneumonitis" "bronchiolitis obliterans with organizing pneumonia" "pneumonias, cryptogenic organizing" "bronchiolitis obliterans and organizing pneumonitis" "cryptogenic organizing pneumonitis" "bronchiolitis obliterans with organising pneumonia" "cryptogenic organiz pneu" "cop" "bronchiolitis obliterans organizing pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-desquamative_interstitial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Desquamative_interstitial_pneumonia") 
+  (concept ":DESQUAMATIVE_INTERSTITIAL_PNEUMONIA:") 
+  (stype "<DESQUAMATIVE_INTERSTITIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("desquamative interstitial pneumonia" "dip" "pneumonia, desquamative interstitial, familial" "dip - desquamative interstitial pneumonitis" "ild, desquamative" "rbild" "pneumonitis, desquamative interstitial, familial" "pneumonia, desquamative interstitial" "respiratory bronchiolitis interstitial lung disease" "interstitial lung disease, desquamative" "interstitial pneumonitis, desquamative, familial" "desquamative interstitial pneumonia (disorder)" "resp brncio interst lung" "desquamative interstitial pneumonitis" "desquamatv interst pneu")))
+(
+  (ruleid "OWL-ANCHOR-idiopathic_pulmonary_fibrosis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Idiopathic_pulmonary_fibrosis") 
+  (concept ":IDIOPATHIC_PULMONARY_FIBROSIS:") 
+  (stype "<IDIOPATHIC_PULMONARY_FIBROSIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("idiopathic pulmonary fibrosis" "idiopathic fibrosing alveolitis, chronic form" "fibrosing alveolitis" "idiopathic pulmonary fibrosis, familial" "alveolitis fibrosing" "alveolitis, fibrosing" "fibrosing alveolitis (idiopathic)" "fibrocystic pulmonary dysplasias" "fibrosing alveolitides" "cryptogenic fibrosing alveolitis" "fibrosis, idiopathic pulmonary" "alveolitis, chronic diffuse fibrosing" "dysplasias, fibrocystic pulmonary" "idiopath pulmon fibrosis" "diffuse interstitial pulmonary fibrosis" "fibrocystic pulmonary dysplasia" "ipf" "fibrosing alveolitis, cryptogenic" "familial idiopathic pulmonary fibrosis (disorder)" "cryptogenic fibrosing alveolitides" "alveolitides, fibrosing" "fibrosing alveolitides, cryptogenic" "familial idiopathic pulmonary fibrosis" "idiopathic pulmonary fibrosis [disease/finding]" "pulmonary dysplasia, fibrocystic" "idiopathic pulmonary fibroses" "alveolitis, chronic diffuse sclerosing" "cfa - cryptogenic fibrosing alveolitis" "dysplasia, fibrocystic pulmonary" "idiopathic fibrosing alveolitis" "idiopathic pulmonary fibrosis (disorder)" "fibrosis, pulmonary, interstitial diffuse" "pulmonary fibrosis, idiopathic" "pulmonary fibroses, idiopathic" "diopathic pulmonary fibrosis" "pulmonary dysplasias, fibrocystic")))
+(
+  (ruleid "OWL-ANCHOR-chronic_idiopathic_pulmonary_fibrosis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Chronic_idiopathic_pulmonary_fibrosis") 
+  (concept ":CHRONIC_IDIOPATHIC_PULMONARY_FIBROSIS:") 
+  (stype "<CHRONIC_IDIOPATHIC_PULMONARY_FIBROSIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("chronic idiopathic pulmonary fibrosis" "chronic idiopathic pulmonary fibrosis (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-subacute_idiopathic_pulmonary_fibrosis-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Subacute_idiopathic_pulmonary_fibrosis") 
+  (concept ":SUBACUTE_IDIOPATHIC_PULMONARY_FIBROSIS:") 
+  (stype "<SUBACUTE_IDIOPATHIC_PULMONARY_FIBROSIS>") 
+  (flags owl-anchor) 
+  (words 
+    ("subacute idiopathic pulmonary fibrosis" "idiopathic fibrosing alveolitis, subacute form" "scadding syndrome" "subacute idiopathic pulmonary fibrosis (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-lymphoid_interstitial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Lymphoid_interstitial_pneumonia") 
+  (concept ":LYMPHOID_INTERSTITIAL_PNEUMONIA:") 
+  (stype "<LYMPHOID_INTERSTITIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("lymphoid interstitial pneumonia" "lip - lymphoid interstitial pneumonitis" "lymphoid interstitial pneumonitis" "lymphocytic interstitial pneumonitis" "lymphocytic interstitial pneumonia" "lip" "lymphocytic interst. pneumonitis" "lymphoid interstitial pneumonia (disorder)" "lymphoid interstitial pneumonia nos" "diffuse hyperplasia of bronchus-associated lymphoid tissue")))
+(
+  (ruleid "OWL-ANCHOR-nonspecific_interstitial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Nonspecific_interstitial_pneumonia") 
+  (concept ":NONSPECIFIC_INTERSTITIAL_PNEUMONIA:") 
+  (stype "<NONSPECIFIC_INTERSTITIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("nonspecific interstitial pneumonia" "nonspecific interstitial pneumonia (disorder)" "nsip")))
+(
+  (ruleid "OWL-ANCHOR-respiratory_bronchiolitis_associated_interstitial_lung_disease-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Respiratory_bronchiolitis_associated_interstitial_lung_disease") 
+  (concept ":RESPIRATORY_BRONCHIOLITIS_ASSOCIATED_INTERSTITIAL_LUNG_DISEASE:") 
+  (stype "<RESPIRATORY_BRONCHIOLITIS_ASSOCIATED_INTERSTITIAL_LUNG_DISEASE>") 
+  (flags owl-anchor) 
+  (words 
+    ("respiratory bronchiolitis associated interstitial lung disease" "respiratory bronchiolitis-associated interstitial lung disease" "respiratory bronchiolitis associated interstitial lung disease (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-primary_atypical_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Primary_atypical_pneumonia") 
+  (concept ":PRIMARY_ATYPICAL_PNEUMONIA:") 
+  (stype "<PRIMARY_ATYPICAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("primary atypical pneumonia" "cold agglutinin positive pneumonia" "pneumonias, mycoplasma" "atypical pneumonia" "pap due to mycoplasma pneumoniae" "pneumonia, primary atypical" "pneumonia due to mycoplasma pneumoniae" "mycoplasma pneumonia" "pneumonia due to mycoplasma pneumoniae (disorder)" "pneumonia, mycoplasma [disease/finding]" "atypical pneumonia, primary" "primary atypical pneumonias" "atypical pneumonias, primary" "pneumonias, primary atypical" "pneumonia primary atypical" "primary atypical interstitial pneumonia (disorder)" "primary atypical interstitial pneumonia" "eaton's agent pneumonia" "pneumonia, eaton agent" "pneumonia due to eaton's agent" "primary atypical pneumonia due to mycoplasma pneumoniae" "atypical bronchopneumonia" "mycoplasma pneumoniae pneumonia" "atypical interstitial pneumonia" "mycoplasmal pneumonia" "pneumonia mycoplasmal" "eaton agent pneumonia" "mycoplasma pneumonias" "infection by pplo" "pneumonia, mycoplasmal" "pneu mycplsm pneumoniae" "pneumonia, cold agglutinin positive" "endemic pneumonia" "pplo" "pneumonia, mycoplasma" "pneumonia due to pplo")))
+(
+  (ruleid "OWL-ANCHOR-lipid_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Lipid_pneumonia") 
+  (concept ":LIPID_PNEUMONIA:") 
+  (stype "<LIPID_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("lipid pneumonia" "lipid pneumonias" "pneumonia, lipid [disease/finding]" "lipoid pneumonia" "lipid pneumonitis" "lipoid pneumonitis (disorder)" "pneumonia lipid" "exogenous lipoid pneumonia" "pneumonia, lipid" "lipid pneumonia nos" "pneumonias, lipid" "pneumonia lipoid" "lipoid pneumonitis")))
+(
+  (ruleid "OWL-ANCHOR-endogenous_lipoid_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Endogenous_lipoid_pneumonia") 
+  (concept ":ENDOGENOUS_LIPOID_PNEUMONIA:") 
+  (stype "<ENDOGENOUS_LIPOID_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("endogenous lipoid pneumonia" "endogenous lipoid pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-peribronchial_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Peribronchial_pneumonia") 
+  (concept ":PERIBRONCHIAL_PNEUMONIA:") 
+  (stype "<PERIBRONCHIAL_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("peribronchial pneumonia" "peribronchial pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-ventilator_associated_pneumonia-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Ventilator_associated_pneumonia") 
+  (concept ":VENTILATOR_ASSOCIATED_PNEUMONIA:") 
+  (stype "<VENTILATOR_ASSOCIATED_PNEUMONIA>") 
+  (flags owl-anchor) 
+  (words 
+    ("ventilator-associated pneumonia" "ventilator-acquired pneumonia" "ventilator-acquired pneumonia (disorder)")))
+(
+  (ruleid "OWL-ANCHOR-rales-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Rales") 
+  (concept ":RALES:") 
+  (stype "<RALES>") 
+  (flags owl-anchor) 
+  (words 
+    ("rales" "respiratory crackles (finding)" "pulmonary rales" "crackles lung" "chest crepitation" "basal crepitations (finding)" "lung crepitation" "basal crepitations" "crackle" "respiratory crackles" "pulmonary rales/crackles/crepitations" "crepitations" "basal creps" "crackles" "rale" "respiratory crepitations" "crepitations nos" "rales, basilar" "basilar rales")))
+(
+  (ruleid "OWL-ANCHOR-atelectatic_rales-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Atelectatic_rales") 
+  (concept ":ATELECTATIC_RALES:") 
+  (stype "<ATELECTATIC_RALES>") 
+  (flags owl-anchor) 
+  (words 
+    ("atelectatic rales" "atelectatic rales (finding)")))
+(
+  (ruleid "OWL-ANCHOR-basal_creps-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Basal_creps") 
+  (concept ":BASAL_CREPS:") 
+  (stype "<BASAL_CREPS>") 
+  (flags owl-anchor) 
+  (words 
+    ("basal creps" "rales" "basal crepitations (finding)" "basal crepitations" "crackles" "rales, basilar" "basilar rales")))
+(
+  (ruleid "OWL-ANCHOR-coarse_respiratory_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Coarse_respiratory_crackles") 
+  (concept ":COARSE_RESPIRATORY_CRACKLES:") 
+  (stype "<COARSE_RESPIRATORY_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("coarse respiratory crackles" "coarse respiratory crepitations" "coarse respiratory crackles (finding)" "rales, coarse")))
+(
+  (ruleid "OWL-ANCHOR-expiratory_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Expiratory_crackles") 
+  (concept ":EXPIRATORY_CRACKLES:") 
+  (stype "<EXPIRATORY_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("expiratory crackles" "expiratory crackles (finding)")))
+(
+  (ruleid "OWL-ANCHOR-fine_respiratory_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Fine_respiratory_crackles") 
+  (concept ":FINE_RESPIRATORY_CRACKLES:") 
+  (stype "<FINE_RESPIRATORY_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("fine respiratory crackles" "fine respiratory crackles (finding)" "rales, fine" "fine respiratory crepitations")))
+(
+  (ruleid "OWL-ANCHOR-inspiratory_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Inspiratory_crackles") 
+  (concept ":INSPIRATORY_CRACKLES:") 
+  (stype "<INSPIRATORY_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("inspiratory crackles" "inspiratory crackles (finding)")))
+(
+  (ruleid "OWL-ANCHOR-medium_rales-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Medium_rales") 
+  (concept ":MEDIUM_RALES:") 
+  (stype "<MEDIUM_RALES>") 
+  (flags owl-anchor) 
+  (words 
+    ("medium rales" "medium rales (finding)")))
+(
+  (ruleid "OWL-ANCHOR-moist_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Moist_crackles") 
+  (concept ":MOIST_CRACKLES:") 
+  (stype "<MOIST_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("moist crackles" "moist respiratory crepitations" "moist crackles (finding)")))
+(
+  (ruleid "OWL-ANCHOR-bubbling_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Bubbling_crackles") 
+  (concept ":BUBBLING_CRACKLES:") 
+  (stype "<BUBBLING_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("bubbling crackles" "bubbling crackles (finding)")))
+(
+  (ruleid "OWL-ANCHOR-post_tussive_crackles-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Post_tussive_crackles") 
+  (concept ":POST_TUSSIVE_CRACKLES:") 
+  (stype "<POST_TUSSIVE_CRACKLES>") 
+  (flags owl-anchor) 
+  (words 
+    ("post-tussive crackles" "post-tussive crepitations" "post-tussive crackles (finding)" "post-tussive rales")))
+(
+  (ruleid "OWL-ANCHOR-superficial_crackling_rales-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Superficial_crackling_rales") 
+  (concept ":SUPERFICIAL_CRACKLING_RALES:") 
+  (stype "<SUPERFICIAL_CRACKLING_RALES>") 
+  (flags owl-anchor) 
+  (words 
+    ("superficial crackling rales" "superficial crackling rales (finding)")))
+(
+  (ruleid "OWL-ANCHOR-respiratory_rate-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Respiratory_rate") 
+  (concept ":RESPIRATORY_RATE:") 
+  (stype "<RESPIRATORY_RATE>") 
+  (flags owl-anchor) 
+  (words 
+    ("respiratory rate" "respiration rates" "resp rate" "breaths:nrat:pt:respiratory system:qn" "resp" "rates, respiratory" "respiratory frequency" "br - breathing rate" "rate, respiration" "breathing rate" "respiration rate" "respiratory rate (observable entity)" "respiratory rates" "rates, respiration" "rr - respiratory rate" "breaths:number = count/time:point in time:respiratory system:quantitative" "rate of respiration" "rate, respiratory")))
+(
+  (ruleid "OWL-ANCHOR-respiratory_secretion-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Respiratory_secretion") 
+  (concept ":RESPIRATORY_SECRETION:") 
+  (stype "<RESPIRATORY_SECRETION>") 
+  (flags owl-anchor) 
+  (words 
+    ("respiratory secretion" "respiratory secretion (specimen)" "respiratory secretion (substance)")))
+(
+  (ruleid "OWL-ANCHOR-sputum-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Sputum") 
+  (concept ":SPUTUM:") 
+  (stype "<SPUTUM>") 
+  (flags owl-anchor) 
+  (words 
+    ("sputum" "sputum (substance)" "expectoration" "sputums" "specimen type - sputum")))
+(
+  (ruleid "OWL-ANCHOR-purulent_sputum-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Purulent_sputum") 
+  (concept ":PURULENT_SPUTUM:") 
+  (stype "<PURULENT_SPUTUM>") 
+  (flags owl-anchor) 
+  (words 
+    ("purulent sputum" "purulent sputum (finding)" "sputum purulent" "sputum, purulent")))
+(
+  (ruleid "OWL-ANCHOR-mucopurulent_sputum-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Mucopurulent_sputum") 
+  (concept ":MUCOPURULENT_SPUTUM:") 
+  (stype "<MUCOPURULENT_SPUTUM>") 
+  (flags owl-anchor) 
+  (words 
+    ("mucopurulent sputum" "mucopurulent sputum (finding)")))
+(
+  (ruleid "OWL-ANCHOR-tachypnoea-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Tachypnoea") 
+  (concept ":TACHYPNOEA:") 
+  (stype "<TACHYPNOEA>") 
+  (flags owl-anchor) 
+  (words 
+    ("tachypnoea" "rate of respiration, increased" "respiration rate increased" "tachypnea" "tachypnea (finding)" "tachypnoeic" "respiratory rate increased" "rapid breathing" "rapid respiration" "breathing rate increased" "increased respiratory rate" "respiratory rate high" "tachypneic" "respiratory rate, increased" "tachypnea nos" "tachypnea [disease/finding]" "tachypneas")))
+(
+  (ruleid "OWL-ANCHOR-rapid_shallow_breathing-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Rapid_shallow_breathing") 
+  (concept ":RAPID_SHALLOW_BREATHING:") 
+  (stype "<RAPID_SHALLOW_BREATHING>") 
+  (flags owl-anchor) 
+  (words 
+    ("rapid shallow breathing" "rapid shallow breathing (finding)" "panting respiration" "panting")))
+(
+  (ruleid "OWL-ANCHOR-ventilator_care-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Ventilator_care") 
+  (concept ":VENTILATOR_CARE:") 
+  (stype "<VENTILATOR_CARE>") 
+  (flags owl-anchor) 
+  (words 
+    ("ventilator care" "ventilator care (regime/therapy)")))
+(
+  (ruleid "OWL-ANCHOR-ventilator_care_and_adjustment-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#Ventilator_care_and_adjustment") 
+  (concept ":VENTILATOR_CARE_AND_ADJUSTMENT:") 
+  (stype "<VENTILATOR_CARE_AND_ADJUSTMENT>") 
+  (flags owl-anchor) 
+  (words 
+    ("ventilator care and adjustment" "ventilator care and adjustment (regime/therapy)")))
+(
+  (ruleid "OWL-ANCHOR-white_blood_cell_count-2017/08/18 21:15:13") 
+  (uri "http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl#White_blood_cell_count") 
+  (concept ":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:") 
+  (stype "<WHITE_BLOOD_CELL_COUNT>") 
+  (flags owl-anchor) 
+  (words 
+    ("white blood cell count (procedure)" "white blood cell count" "white blood cell test" "wbc count")))
+(
+  (ruleid "OWL-RELATION-hasinterpretation-observation-ordinalinterpretation-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<OBSERVATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<OBSERVATION>") 
+    ("<ORDINALINTERPRETATION>")) 
+  (relations 
+    (hasinterpretation ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-isanchorof-anchor-annotation-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANCHOR>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANCHOR>") 
+    ("<ANNOTATION>")) 
+  (relations 
+    (isanchorof ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasanchor-annotation-anchor-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<ANCHOR>")) 
+  (relations 
+    (hasanchor ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasunit-numericmodifier-unit-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<NUMERICMODIFIER>") 
+  (flags owl-relation) 
+  (words 
+    ("<NUMERICMODIFIER>") 
+    ("<UNIT>")) 
+  (relations 
+    (hasunit ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasrate-annotation-quantity-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<QUANTITY>")) 
+  (relations 
+    (hasrate ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasrate-annotation-rangemodifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<RANGEMODIFIER>")) 
+  (relations 
+    (hasrate ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasexclusion-modifier-modifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<MODIFIER>") 
+  (flags owl-relation) 
+  (words 
+    ("<MODIFIER>") 
+    ("<MODIFIER>")) 
+  (relations 
+    (hasexclusion ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasexclusion-modifier-annotation-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<MODIFIER>") 
+  (flags owl-relation) 
+  (words 
+    ("<MODIFIER>") 
+    ("<ANNOTATION>")) 
+  (relations 
+    (hasexclusion ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasexclusion-annotation-modifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<MODIFIER>")) 
+  (relations 
+    (hasexclusion ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasexclusion-annotation-annotation-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<ANNOTATION>")) 
+  (relations 
+    (hasexclusion ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasqualifier-modifier-qualifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<MODIFIER>") 
+  (flags owl-relation) 
+  (words 
+    ("<MODIFIER>") 
+    ("<QUALIFIER>")) 
+  (relations 
+    (hasqualifier ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasgender-patient-gender-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<PATIENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<PATIENT>") 
+    ("<GENDER>")) 
+  (relations 
+    (hasgender ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasrelation-annotation-annotation-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<ANNOTATION>")) 
+  (relations 
+    (hasrelation ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasageabatement-condition-age-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<CONDITION>") 
+  (flags owl-relation) 
+  (words 
+    ("<CONDITION>") 
+    ("<AGE>")) 
+  (relations 
+    (hasageabatement ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasdeltaflag-condition-deltaflag-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<CONDITION>") 
+  (flags owl-relation) 
+  (words 
+    ("<CONDITION>") 
+    ("<DELTAFLAG>")) 
+  (relations 
+    (hasdeltaflag ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasdeltaflag-observation-deltaflag-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<OBSERVATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<OBSERVATION>") 
+    ("<DELTAFLAG>")) 
+  (relations 
+    (hasdeltaflag ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasdeltaflag-procedure-deltaflag-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<PROCEDURE>") 
+  (flags owl-relation) 
+  (words 
+    ("<PROCEDURE>") 
+    ("<DELTAFLAG>")) 
+  (relations 
+    (hasdeltaflag ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasagerange-patient-age-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<PATIENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<PATIENT>") 
+    ("<AGE>")) 
+  (relations 
+    (hasagerange ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hascertainty-event-certainty-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<EVENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<EVENT>") 
+    ("<CERTAINTY>")) 
+  (relations 
+    (hascertainty ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasannotationtype-annotation-annotationtype-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<ANNOTATIONTYPE>")) 
+  (relations 
+    (hasannotationtype ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasexperiencer-event-experiencer-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<EVENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<EVENT>") 
+    ("<EXPERIENCER>")) 
+  (relations 
+    (hasexperiencer ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-haspseudo-anchor-pseudoanchor-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANCHOR>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANCHOR>") 
+    ("<PSEUDOANCHOR>")) 
+  (relations 
+    (haspseudo ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasseverity-condition-severity-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<CONDITION>") 
+  (flags owl-relation) 
+  (words 
+    ("<CONDITION>") 
+    ("<SEVERITY>")) 
+  (relations 
+    (hasseverity ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasnumvalue-annotation-numericmodifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<NUMERICMODIFIER>")) 
+  (relations 
+    (hasnumvalue ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasregimen-therapeuticprocedure-procedure-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<THERAPEUTICPROCEDURE>") 
+  (flags owl-relation) 
+  (words 
+    ("<THERAPEUTICPROCEDURE>") 
+    ("<PROCEDURE>")) 
+  (relations 
+    (hasregimen ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasage-patient-age-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<PATIENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<PATIENT>") 
+    ("<AGE>")) 
+  (relations 
+    (hasage ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-wasderivedfrom-annotation-annotation-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<ANNOTATION>")) 
+  (relations 
+    (wasderivedfrom ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hastemporality-event-temporality-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<EVENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<EVENT>") 
+    ("<TEMPORALITY>")) 
+  (relations 
+    (hastemporality ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hascontextualaspect-event-contextualaspect-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<EVENT>") 
+  (flags owl-relation) 
+  (words 
+    ("<EVENT>") 
+    ("<CONTEXTUALASPECT>")) 
+  (relations 
+    (hascontextualaspect ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasmodifier-annotation-modifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<ANNOTATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<ANNOTATION>") 
+    ("<MODIFIER>")) 
+  (relations 
+    (hasmodifier ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasbodysite-condition-bodysite-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<CONDITION>") 
+  (flags owl-relation) 
+  (words 
+    ("<CONDITION>") 
+    ("<BODYSITE>")) 
+  (relations 
+    (hasbodysite ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasbodysite-observation-bodysite-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<OBSERVATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<OBSERVATION>") 
+    ("<BODYSITE>")) 
+  (relations 
+    (hasbodysite ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasbodysite-procedure-bodysite-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<PROCEDURE>") 
+  (flags owl-relation) 
+  (words 
+    ("<PROCEDURE>") 
+    ("<BODYSITE>")) 
+  (relations 
+    (hasbodysite ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasageonset-condition-age-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<CONDITION>") 
+  (flags owl-relation) 
+  (words 
+    ("<CONDITION>") 
+    ("<AGE>")) 
+  (relations 
+    (hasageonset ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-hasmethod-observation-procedure-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<OBSERVATION>") 
+  (flags owl-relation) 
+  (words 
+    ("<OBSERVATION>") 
+    ("<PROCEDURE>")) 
+  (relations 
+    (hasmethod ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-haspseudo-modifier-pseudomodifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<MODIFIER>") 
+  (flags owl-relation) 
+  (words 
+    ("<MODIFIER>") 
+    ("<PSEUDOMODIFIER>")) 
+  (relations 
+    (haspseudo ?0 ?1)))
+(
+  (ruleid "OWL-RELATION-ispseudoof-pseudo-modifier-2017/08/18 21:15:13") 
+  (uri "NOURI") 
+  (concept "?0") 
+  (stype "<PSEUDO>") 
+  (flags owl-relation) 
+  (words 
+    ("<PSEUDO>") 
+    ("<MODIFIER>")) 
+  (relations 
+    (ispseudoof ?0 ?1)))
+
+)

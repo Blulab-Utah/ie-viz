@@ -1,0 +1,15 @@
+'(
+inferencerule
+
+((ruleid patient-subject-event-rule)
+ (-> (and (subject ?annotation ?subject)
+		  (event ?annotation ?event)
+		  (hc ?subject ":PATIENT:"))
+	 (subject-patient-event ?annotation ?subject ?event)))
+
+((ruleidXXX tsl-substance-use-rule)
+ (-> (and (subject-patient-event ?annotation ?subject ?event)
+          ("hasConceptRecursive" ?event ":SUBSTANCE_USE:"))
+     (inferred-target ?annotation ":PATIENT_SUBSTANCE_USE:")))	 
+	
+)

@@ -1,0 +1,59 @@
+'(
+wordrule
+(
+  (ruleid "AUTO-inability-to-do-something-rule-2-2016/12/05 16:36:16") 
+  (specialized) 
+  (example-snippet "unable to walks without help") 
+  (ordered true) 
+  (sourceid "inability-to-do-something-rule") 
+  (concept ":ADL_DIFFICULTY_AMBULATING:") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 16.0) 
+  (words 
+    ("@inability-word-rule-1@") 
+    ("@AUTO-event-thing-rule-2-2016/12/04 17:26:08@")) 
+  (properties 
+    (directionality negated)) 
+  (tests 
+    (notneg ?0) 
+    (notneg ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-AUTO-event-thing-rule-2-2016/12/04 17:26:08-3-2016/12/05 16:36:16") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "walks without help") 
+  (ordered true) 
+  (sourceid "AUTO-event-thing-rule-2-2016/12/04 17:26:08") 
+  (concept ":WALK_WITHOUT_HELP:") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 32.0) 
+  (words 
+    ("@adl-walking-rule@") 
+    ("@AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08@")) 
+  (properties 
+    (event ?0) 
+    (object ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08-4-2016/12/05 16:36:16") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "without help") 
+  (ordered true) 
+  (sourceid "AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08") 
+  (concept "?1") 
+  (stype "<ACTIVITY>") 
+  (window 8.0) 
+  (words 
+    ("without") 
+    ("@help-rule-1@")) 
+  (properties 
+    (directionality negated)) 
+  (tests 
+    (not 
+      ("firstWordBeginsWithUppercase" ?1))))
+
+)

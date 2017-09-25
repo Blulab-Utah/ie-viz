@@ -1,0 +1,48 @@
+'(
+wordrule
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Living alone
+
+((ruleid living-alone-rule-1)
+ (concept ":LIVING_ALONE:")
+ (ordered true)
+ (pattern (":LIVE_AT:") (":ALONE:"))
+ (tests (notneg ?0)))
+ 
+((ruleid patient-living-alone-rule-1)
+ (concept ":LIVING_ALONE:")
+ (ordered true)
+ (pattern (":PATIENT:") (":LIVING_ALONE:"))
+ (tests (notneg ?1)))
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;
+ ;; NOT LIVING ALONE
+ 
+((ruleid patient-not-living-alone-rule)
+ (concept ":NOT_LIVING_ALONE:")
+ (ordered true)
+ (pattern (":PATIENT:") (":NOT_LIVING_ALONE:"))
+ (tests (notneg ?0)))
+		
+((ruleid negated-living-alone-is-not-living-alone-rule)
+ (concept ":NOT_LIVING_ALONE:")
+ (pattern (":LIVING_ALONE:"))
+ (tests (neg ?0))
+ (removeproperties directionality))
+ 
+;; e.g. "daughter lives with this patient”
+;; Note no ordering:  pt w/ family, family w/ 
+;; patient.
+((ruleid living-with-family-means-not-living-alone-rule)
+ (concept ":NOT_LIVING_ALONE:")
+ (pattern (":FAMILY:" ":FRIEND:")
+ 			(":LIVE_AT:")
+ 			(":PATIENT:"))
+ (tests (notneg ?1))
+ (relations (live-with ?2 ?0)))
+  
+
+
+ 
+)

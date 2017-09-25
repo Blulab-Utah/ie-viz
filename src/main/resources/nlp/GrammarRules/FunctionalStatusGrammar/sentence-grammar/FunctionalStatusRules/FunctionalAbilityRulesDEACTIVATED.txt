@@ -1,0 +1,84 @@
+'(
+wordrule
+
+((ruleidXXX adl-activity-perform-with-help-rule)
+ (stype "<COMPLEX_EVENT>")
+ (concept ":ADL_NEEDS_ASSISTANCE_WITH_ADLS:")
+ (ordered true)
+ (words (":ADL_ACTIVITY:") (":HELP:" ":IMPAIRMENT:"))
+ (tests (notneg ?0)))
+
+((ruleid adl-activity-types-rule) 
+ (concept ":ADL_ACTIVITY:")
+ (words (":TOILETING:" ":DRESSING:" ":HYGIENE:" ":EATING:" 
+			;; ":WALKING:"  -- 11/16/2015 removed:  I handle walking differently from other ADLs.
+ )))
+
+ ;; 12/4/2016:  Need literal meaning here instead of jumping to conclusion; e.g.
+ ;; "walk without help" may be used in several ways.
+((ruleidXXX walking-no-inability-rule)
+ (stype "<COMPLEX_EVENT>")
+ (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:")
+ (words (":WALKING:") (":IMPAIRMENT:" ":INABILITY:" ":HELP:"))
+ (tests (neg ?1))
+ (removeproperties directionality))
+ 
+ ;; 11/30/2015:  I shouldn't have IADL reference here...
+((ruleidXXX walking-without-help-or-inability-denotes-walking-without-assistance-rule)
+ (stype "<COMPLEX_EVENT>")
+ (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
+ (words (":ADL_ACTIVITY:" ":IADL_ACTIVITY:") 
+ 		(":IMPAIRMENT:" ":INABILITY:" ":HELP:"))
+ (tests (neg ?1))
+ (removeproperties directionality))
+ 
+  ;; 8/4/2016:  
+((ruleidXXX pre-negation-context-complex-event-rule)
+  (concept ?1)
+  (ordered true)
+  (window 8)
+  (words (?filestring "never" "no" "not" "without" "w/o" "can't" "never") 
+  		 ("<EVENT>" "<COMPLEX_EVENT>"))
+  (actions ("applyModifierProperties" ?rule ?1))
+  (contextlexicon 
+    ("category=definiteNegatedExistence" "en (sv) action=forward"))
+  (stopword 
+    ("_BUT_" "_PRESENTATION_" "_AND_" "_REMAIN_" "_ETIOLOGY_"))
+  (properties (directionality negated)))
+  
+  
+((ruleidXXX ambulation-self-rule)
+ (stype "<COMPLEX_EVENT>")
+ (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:")
+ (ordered true)
+ (words (":WALKING:") (":ALONE:"))
+ (tests (notneg ?0)))
+
+((ruleidXXX ambulation-need-help-rule)
+ (stype "<COMPLEX_EVENT>")
+ (concept ":ADL_DIFFICULTY_AMBULATING:")
+ (ordered true)
+ (words (":WALKING:") (":HELP:"))
+ (tests (notneg ?0) (notneg ?1)))
+ 
+ ((ruleidXXX ambulation-no-impairment-rule-1)
+  (stype "<COMPLEX_EVENT>")
+  (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:")
+  (words (":WALKING:") (":NO_IMPAIRMENT:"))
+  (tests (notneg ?0)))
+ 
+((ruleidXXX adl-activity-perform-alone-rule)
+ (stype "<COMPLEX_EVENT>")
+ (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
+ (ordered true)
+ (words (":ADL_ACTIVITY:") (":ALONE:"))
+ (tests (notneg ?0)))
+ 
+
+((ruleidXXX independent-with-adl-activities-rule)
+ (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
+ (words (":INDEPENDENT:" ":ABILITY:") (":ADL_ACTIVITY:"))
+ (tests (notneg ?0)))
+ 
+
+)

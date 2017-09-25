@@ -1,0 +1,32 @@
+'(
+wordrule
+
+;;; LEE's ADDITIONS
+((ruleid "OWL-RELATION-ANCHOR-MODIFIER") 
+  (uri "NOURI") 
+  (concept ?0) 
+  (stype ?0) 
+  (words 
+    ("<ANCHOR>") 
+    ("<MODIFIER>")) 
+  (relations 
+    (hasmodifier ?0 ?1)))
+    
+((ruleid there-is-finding-rule)
+ (concept ?1)
+ (stype ?1)
+ (words ("there is" "there are") ("<ANCHOR>" "<FINDING>" "<DISEASE>"))
+ (properties (claim-of-existence ?1)))
+ 
+((ruleid something-is-seen-rule)
+ (concept ?0)
+ (stype ?0)
+ (words ("<ANCHOR>" "<FINDING>" "<DISEASE>") 
+ 		("are" "is") 
+ 		("seen" "visible" "appreciated"))
+ (properties (visibility-of ?0)))
+ 
+ 
+    
+)
+

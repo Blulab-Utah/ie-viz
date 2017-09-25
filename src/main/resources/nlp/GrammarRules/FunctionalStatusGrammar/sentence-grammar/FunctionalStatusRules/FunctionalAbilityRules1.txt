@@ -44,22 +44,6 @@ wordrule
  (tests (neg ?0))
  (removeproperties directionality))
  
-((ruleid walking-no-inability-rule)
- (stype "<COMPLEX_EVENT>")
- (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:")
- (words (":WALKING:") (":IMPAIRMENT:" ":INABILITY:" ":HELP:"))
- (tests (neg ?1))
- (removeproperties directionality))
- 
- ;; 11/30/2015:  I shouldn't have IADL reference here...
-((ruleid walking-without-help-or-inability-denotes-walking-without-assistance-rule)
- (stype "<COMPLEX_EVENT>")
- (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
- (words (":ADL_ACTIVITY:" ":IADL_ACTIVITY:") 
- 		(":IMPAIRMENT:" ":INABILITY:" ":HELP:"))
- (tests (neg ?1))
- (removeproperties directionality))
- 
 ((ruleid adl-activity-independent-header-rule)
  (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
  (words (":INDEPENDENT:" ":CONTINENT:"))
@@ -117,7 +101,8 @@ wordrule
  (tests (notneg ?0) (hcr ?0 ":WALKING:")))
 
  ;; E.G. "walks without help"
-((ruleid adl-activity-without-assistance-rule)
+ ;; 12/4/2016:  Need literal concept
+((ruleidXXX adl-activity-without-assistance-rule)
 (debug true)
  (stype "<COMPLEX_EVENT>")
  (concept ":ADL_NO_IMPAIRMENT:")
@@ -239,53 +224,7 @@ wordrule
  
 ;;; 11/15/2015
 
-((ruleid ambulation-self-rule)
- (stype "<COMPLEX_EVENT>")
- (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:")
- (ordered true)
- (words (":WALKING:") (":ALONE:"))
- (tests (notneg ?0)))
 
-((ruleid ambulation-need-help-rule)
- (stype "<COMPLEX_EVENT>")
- (concept ":ADL_DIFFICULTY_AMBULATING:")
- (ordered true)
- (words (":WALKING:") (":HELP:"))
- (tests (notneg ?0) (notneg ?1)))
- 
- ((ruleid ambulation-no-impairment-rule-1)
-  (stype "<COMPLEX_EVENT>")
-  (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:")
-  (words (":WALKING:") (":NO_IMPAIRMENT:"))
-  (tests (notneg ?0)))
- 
-((ruleid adl-activity-perform-alone-rule)
- (stype "<COMPLEX_EVENT>")
- (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
- (ordered true)
- (words (":ADL_ACTIVITY:") (":ALONE:"))
- (tests (notneg ?0)))
- 
- 
-((ruleid adl-activity-perform-with-help-rule)
- (stype "<COMPLEX_EVENT>")
- (concept ":ADL_NEEDS_ASSISTANCE_WITH_ADLS:")
- (ordered true)
- (words (":ADL_ACTIVITY:") (":HELP:" ":IMPAIRMENT:"))
- (tests (notneg ?0)))
-
-((ruleid adl-activity-types-rule) 
- (concept ":ADL_ACTIVITY:")
- (words (":TOILETING:" ":DRESSING:" ":HYGIENE:" ":EATING:" 
-			;; ":WALKING:"  -- 11/16/2015 removed:  I handle walking differently from other ADLs.
- )))
- 
-
-((ruleid independent-with-adl-activities-rule)
- (concept ":ADL_NO_ASSISTANCE_WITH_ADLS:")
- (words (":INDEPENDENT:" ":ABILITY:") (":ADL_ACTIVITY:"))
- (tests (notneg ?0)))
- 
  ;; 12/8/2015
 ((ruleid self-care-word-rule) 
  (concept ":ADL_ACTIVITY:")
@@ -326,18 +265,6 @@ wordrule
  (tests (neg ?0))
  (removeproperties directionality))
   
-  ;; 8/4/2016:  
-((ruleid pre-negation-context-complex-event-rule)
-  (concept ?1)
-  (ordered true)
-  (window 8)
-  (words (?filestring "never" "no" "not" "without" "w/o" "can't" "never") 
-  		 ("<EVENT>" "<COMPLEX_EVENT>"))
-  (actions ("applyModifierProperties" ?rule ?1))
-  (contextlexicon 
-    ("category=definiteNegatedExistence" "en (sv) action=forward"))
-  (stopword 
-    ("_BUT_" "_PRESENTATION_" "_AND_" "_REMAIN_" "_ETIOLOGY_"))
-  (properties (directionality negated)))
+
  
 )

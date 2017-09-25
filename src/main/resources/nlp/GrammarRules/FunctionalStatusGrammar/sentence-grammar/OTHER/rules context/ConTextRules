@@ -2,11 +2,12 @@
 tagrule
  
 ((ruleid pre-negation-context-rule-FILE)
+  (debug true)
   (concept ?1)
   (ordered true)
   (window 8)
   (words (?filestring "never" "no" "not" "without" "w/o" "can't" "never") 
-  		 (?interpreted))
+  		 (?interpreted "<COMPLEX_EVENT>"))
  
   ;; 3/12/2016:  Need action for phrases like "family not here".
   ;; (actions ("applyModifierProperties" ?rule ?1))

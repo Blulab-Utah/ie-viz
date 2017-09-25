@@ -1,0 +1,4 @@
+;; Function status ontology additions
+
+'(functional-status
+

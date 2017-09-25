@@ -1,0 +1,2661 @@
+'(
+
+(deftype "root" 
+  (isroot))
+(deftype "owl" 
+  (isa "root"))
+(deftype "lexicon" 
+  (isa "owl"))
+(deftype "anchor" 
+  (isa "lexicon"))
+(isanchorof "<ANCHOR>" "<ANNOTATION>")
+(haspseudo "<ANCHOR>" "<PSEUDOANCHOR>")
+(deftype "rales" 
+  (isa "anchor"))
+(deftype "superficial_crackling_rales" 
+  (isa "rales"))
+(defstringconstant ":SUPERFICIAL_CRACKLING_RALES:" "<SUPERFICIAL_CRACKLING_RALES>")
+(deftype "basal_creps" 
+  (isa "rales"))
+(defstringconstant ":BASAL_CREPS:" "<BASAL_CREPS>")
+(deftype "atelectatic_rales" 
+  (isa "rales"))
+(defstringconstant ":ATELECTATIC_RALES:" "<ATELECTATIC_RALES>")
+(deftype "moist_crackles" 
+  (isa "rales"))
+(defstringconstant ":MOIST_CRACKLES:" "<MOIST_CRACKLES>")
+(deftype "bubbling_crackles" 
+  (isa "moist_crackles"))
+(defstringconstant ":BUBBLING_CRACKLES:" "<BUBBLING_CRACKLES>")
+(deftype "inspiratory_crackles" 
+  (isa "rales"))
+(defstringconstant ":INSPIRATORY_CRACKLES:" "<INSPIRATORY_CRACKLES>")
+(deftype "coarse_respiratory_crackles" 
+  (isa "rales"))
+(defstringconstant ":COARSE_RESPIRATORY_CRACKLES:" "<COARSE_RESPIRATORY_CRACKLES>")
+(deftype "medium_rales" 
+  (isa "rales"))
+(defstringconstant ":MEDIUM_RALES:" "<MEDIUM_RALES>")
+(deftype "fine_respiratory_crackles" 
+  (isa "rales"))
+(defstringconstant ":FINE_RESPIRATORY_CRACKLES:" "<FINE_RESPIRATORY_CRACKLES>")
+(deftype "expiratory_crackles" 
+  (isa "rales"))
+(defstringconstant ":EXPIRATORY_CRACKLES:" "<EXPIRATORY_CRACKLES>")
+(deftype "post_tussive_crackles" 
+  (isa "rales"))
+(defstringconstant ":POST_TUSSIVE_CRACKLES:" "<POST_TUSSIVE_CRACKLES>")
+(deftype "oxygen_saturation_measurement" 
+  (isa "anchor"))
+(defstringconstant ":OXYGEN_SATURATION_MEASUREMENT:" "<OXYGEN_SATURATION_MEASUREMENT>")
+(deftype "pulse_oximetry" 
+  (isa "oxygen_saturation_measurement"))
+(defstringconstant ":PULSE_OXIMETRY:" "<PULSE_OXIMETRY>")
+(deftype "intermittent_pulse_oximetry" 
+  (isa "pulse_oximetry"))
+(defstringconstant ":INTERMITTENT_PULSE_OXIMETRY:" "<INTERMITTENT_PULSE_OXIMETRY>")
+(deftype "continuous_pulse_oximetry" 
+  (isa "pulse_oximetry"))
+(defstringconstant ":CONTINUOUS_PULSE_OXIMETRY:" "<CONTINUOUS_PULSE_OXIMETRY>")
+(deftype "overnight_pulse_oximetry" 
+  (isa "pulse_oximetry"))
+(defstringconstant ":OVERNIGHT_PULSE_OXIMETRY:" "<OVERNIGHT_PULSE_OXIMETRY>")
+(deftype "dyspnoea" 
+  (isa "anchor"))
+(defstringconstant ":DYSPNOEA:" "<DYSPNOEA>")
+(deftype "dyspnoea_on_exertion" 
+  (isa "dyspnoea"))
+(defstringconstant ":DYSPNOEA_ON_EXERTION:" "<DYSPNOEA_ON_EXERTION>")
+(deftype "dyspnea_after_eating" 
+  (isa "dyspnoea_on_exertion"))
+(defstringconstant ":DYSPNEA_AFTER_EATING:" "<DYSPNEA_AFTER_EATING>")
+(deftype "dyspnea_raising_arms" 
+  (isa "dyspnoea_on_exertion"))
+(defstringconstant ":DYSPNEA_RAISING_ARMS:" "<DYSPNEA_RAISING_ARMS>")
+(deftype "dyspnea_leaning_over" 
+  (isa "dyspnoea_on_exertion"))
+(defstringconstant ":DYSPNEA_LEANING_OVER:" "<DYSPNEA_LEANING_OVER>")
+(deftype "short_of_breath_dressing_undressing" 
+  (isa "dyspnoea_on_exertion"))
+(defstringconstant ":SHORT_OF_BREATH_DRESSING_UNDRESSING:" "<SHORT_OF_BREATH_DRESSING_UNDRESSING>")
+(deftype "orthopnoea" 
+  (isa "dyspnoea"))
+(defstringconstant ":ORTHOPNEA:" "<ORTHOPNOEA>")
+(deftype "trepopnea" 
+  (isa "dyspnoea"))
+(defstringconstant ":TREPOPNEA:" "<TREPOPNEA>")
+(deftype "laboured_breathing" 
+  (isa "dyspnoea"))
+(defstringconstant ":LABORED_BREATHING:" "<LABOURED_BREATHING>")
+(deftype "respiratory_distress" 
+  (isa "dyspnoea"))
+(defstringconstant ":RESPIRATORY_DISTRESS:" "<RESPIRATORY_DISTRESS>")
+(deftype "acute_respiratory_distress" 
+  (isa "respiratory_distress"))
+(defstringconstant ":ACUTE_RESPIRATORY_DISTRESS:" "<ACUTE_RESPIRATORY_DISTRESS>")
+(deftype "gasping_for_breath" 
+  (isa "dyspnoea"))
+(defstringconstant ":GASPING_FOR_BREATH:" "<GASPING_FOR_BREATH>")
+(deftype "expiratory_dyspnea" 
+  (isa "dyspnoea"))
+(defstringconstant ":EXPIRATORY_DYSPNEA:" "<EXPIRATORY_DYSPNEA>")
+(deftype "platypnea" 
+  (isa "dyspnoea"))
+(defstringconstant ":PLATYPNEA:" "<PLATYPNEA>")
+(deftype "increasing_breathlessness" 
+  (isa "dyspnoea"))
+(defstringconstant ":INCREASING_BREATHLESSNESS:" "<INCREASING_BREATHLESSNESS>")
+(deftype "sobar_shortness_of_breath_at_rest" 
+  (isa "dyspnoea"))
+(defstringconstant ":SOBAR___SHORTNESS_OF_BREATH_AT_REST:" "<SOBAR_SHORTNESS_OF_BREATH_AT_REST>")
+(deftype "unable_to_complete_a_sentence_in_one_breath" 
+  (isa "dyspnoea"))
+(defstringconstant ":UNABLE_TO_COMPLETE_A_SENTENCE_IN_ONE_BREATH:" "<UNABLE_TO_COMPLETE_A_SENTENCE_IN_ONE_BREATH>")
+(deftype "inspiratory_dyspnea" 
+  (isa "dyspnoea"))
+(defstringconstant ":INSPIRATORY_DYSPNEA:" "<INSPIRATORY_DYSPNEA>")
+(deftype "paroxysmal_dyspnea" 
+  (isa "dyspnoea"))
+(defstringconstant ":PAROXYSMAL_DYSPNEA:" "<PAROXYSMAL_DYSPNEA>")
+(deftype "leucocytosis" 
+  (isa "anchor"))
+(deftype "neutrophilia" 
+  (isa "leucocytosis"))
+(defstringconstant ":NEUTROPHILIA__FINDING_:" "<NEUTROPHILIA>")
+(deftype "monocytosis" 
+  (isa "leucocytosis"))
+(defstringconstant ":MONOCYTOSIS:" "<MONOCYTOSIS>")
+(deftype "lymphocytosis" 
+  (isa "leucocytosis"))
+(defstringconstant ":LYMPHOCYTE_COUNT_INCREASED:" "<LYMPHOCYTOSIS>")
+(deftype "pneumonia" 
+  (isa "anchor"))
+(deftype "interstitial_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":INTERSTITIAL_PNEUMONIA:" "<INTERSTITIAL_PNEUMONIA>")
+(deftype "primary_atypical_pneumonia" 
+  (isa "interstitial_pneumonia"))
+(defstringconstant ":PRIMARY_ATYPICAL_PNEUMONIA:" "<PRIMARY_ATYPICAL_PNEUMONIA>")
+(deftype "idiopathic_interstitial_pneumonia" 
+  (isa "interstitial_pneumonia"))
+(defstringconstant ":IDIOPATHIC_INTERSTITIAL_PNEUMONIA:" "<IDIOPATHIC_INTERSTITIAL_PNEUMONIA>")
+(deftype "idiopathic_pulmonary_fibrosis" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":IDIOPATHIC_PULMONARY_FIBROSIS:" "<IDIOPATHIC_PULMONARY_FIBROSIS>")
+(deftype "chronic_idiopathic_pulmonary_fibrosis" 
+  (isa "idiopathic_pulmonary_fibrosis"))
+(defstringconstant ":CHRONIC_IDIOPATHIC_PULMONARY_FIBROSIS:" "<CHRONIC_IDIOPATHIC_PULMONARY_FIBROSIS>")
+(deftype "subacute_idiopathic_pulmonary_fibrosis" 
+  (isa "idiopathic_pulmonary_fibrosis"))
+(defstringconstant ":SUBACUTE_IDIOPATHIC_PULMONARY_FIBROSIS:" "<SUBACUTE_IDIOPATHIC_PULMONARY_FIBROSIS>")
+(deftype "respiratory_bronchiolitis_associated_interstitial_lung_disease" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":RESPIRATORY_BRONCHIOLITIS_ASSOCIATED_INTERSTITIAL_LUNG_DISEASE:" "<RESPIRATORY_BRONCHIOLITIS_ASSOCIATED_INTERSTITIAL_LUNG_DISEASE>")
+(deftype "lymphoid_interstitial_pneumonia" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":LYMPHOID_INTERSTITIAL_PNEUMONIA:" "<LYMPHOID_INTERSTITIAL_PNEUMONIA>")
+(deftype "desquamative_interstitial_pneumonia" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":DESQUAMATIVE_INTERSTITIAL_PNEUMONIA:" "<DESQUAMATIVE_INTERSTITIAL_PNEUMONIA>")
+(deftype "bronchiolitis_obliterans_organising_pneumonia" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":BRONCHIOLITIS_OBLITERANS_ORGANIZING_PNEUMONIA:" "<BRONCHIOLITIS_OBLITERANS_ORGANISING_PNEUMONIA>")
+(deftype "acute_interstitial_pneumonia" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":ACUTE_INTERSTITIAL_PNEUMONIA:" "<ACUTE_INTERSTITIAL_PNEUMONIA>")
+(deftype "nonspecific_interstitial_pneumonia" 
+  (isa "idiopathic_interstitial_pneumonia"))
+(defstringconstant ":NONSPECIFIC_INTERSTITIAL_PNEUMONIA:" "<NONSPECIFIC_INTERSTITIAL_PNEUMONIA>")
+(deftype "catarrhal_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":CATARRHAL_PNEUMONIA:" "<CATARRHAL_PNEUMONIA>")
+(deftype "bronchopneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":BRONCHOPNEUMONIA:" "<BRONCHOPNEUMONIA>")
+(deftype "hypostatic_bronchopneumonia" 
+  (isa "bronchopneumonia" "hypostatic_pneumonia"))
+(defstringconstant ":HYPOSTATIC_BRONCHOPNEUMONIA:" "<HYPOSTATIC_BRONCHOPNEUMONIA>")
+(deftype "pleuropneumonia" 
+  (isa "bronchopneumonia"))
+(defstringconstant ":MYCOPLASMA:" "<PLEUROPNEUMONIA>")
+(deftype "acute_bronchopneumonia" 
+  (isa "bronchopneumonia"))
+(defstringconstant ":ACUTE_BRONCHOPNEUMONIA:" "<ACUTE_BRONCHOPNEUMONIA>")
+(deftype "hemorrhagic_bronchopneumonia" 
+  (isa "bronchopneumonia"))
+(defstringconstant ":HEMORRHAGIC_BRONCHOPNEUMONIA:" "<HEMORRHAGIC_BRONCHOPNEUMONIA>")
+(deftype "necrotizing_bronchopneumonia" 
+  (isa "bronchopneumonia"))
+(defstringconstant ":NECROTIZING_BRONCHOPNEUMONIA:" "<NECROTIZING_BRONCHOPNEUMONIA>")
+(deftype "terminal_bronchopneumonia" 
+  (isa "bronchopneumonia"))
+(defstringconstant ":TERMINAL_BRONCHOPNEUMONIA:" "<TERMINAL_BRONCHOPNEUMONIA>")
+(deftype "hypostatic_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":HYPOSTATIC_PNEUMONIA:" "<HYPOSTATIC_PNEUMONIA>")
+(deftype "hypostatic_bronchopneumonia" 
+  (isa "bronchopneumonia" "hypostatic_pneumonia"))
+(defstringconstant ":HYPOSTATIC_BRONCHOPNEUMONIA:" "<HYPOSTATIC_BRONCHOPNEUMONIA>")
+(deftype "haemorrhagic_varicella_pneumonitis" 
+  (isa "pneumonia"))
+(defstringconstant ":HEMORRHAGIC_VARICELLA_PNEUMONITIS:" "<HAEMORRHAGIC_VARICELLA_PNEUMONITIS>")
+(deftype "ventilator_associated_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":VENTILATOR_ASSOCIATED_PNEUMONIA:" "<VENTILATOR_ASSOCIATED_PNEUMONIA>")
+(deftype "lipid_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":LIPID_PNEUMONIA:" "<LIPID_PNEUMONIA>")
+(deftype "endogenous_lipoid_pneumonia" 
+  (isa "lipid_pneumonia" "non_infectious_pneumonia"))
+(defstringconstant ":ENDOGENOUS_LIPOID_PNEUMONIA:" "<ENDOGENOUS_LIPOID_PNEUMONIA>")
+(deftype "peribronchial_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":PERIBRONCHIAL_PNEUMONIA:" "<PERIBRONCHIAL_PNEUMONIA>")
+(deftype "aspiration_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":ASPIRATION_PNEUMONIA:" "<ASPIRATION_PNEUMONIA>")
+(deftype "community_acquired_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":COMMUNITY_ACQUIRED_PNEUMONIA:" "<COMMUNITY_ACQUIRED_PNEUMONIA>")
+(deftype "hemorrhagic_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":HEMORRHAGIC_PNEUMONIA:" "<HEMORRHAGIC_PNEUMONIA>")
+(deftype "drug_induced_pneumonitis" 
+  (isa "pneumonia"))
+(defstringconstant ":DRUG_INDUCED_PNEUMONITIS:" "<DRUG_INDUCED_PNEUMONITIS>")
+(deftype "infective_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":INFECTIVE_PNEUMONIA:" "<INFECTIVE_PNEUMONIA>")
+(deftype "healthcare_associated_pneumonia" 
+  (isa "infective_pneumonia"))
+(defstringconstant ":HEALTHCARE_ASSOCIATED_PNEUMONIA:" "<HEALTHCARE_ASSOCIATED_PNEUMONIA>")
+(deftype "nosocomial_pneumonia" 
+  (isa "infective_pneumonia"))
+(defstringconstant ":NOSOCOMIAL_PNEUMONIA:" "<NOSOCOMIAL_PNEUMONIA>")
+(deftype "pneumonia_due_to_parasitic_infestation" 
+  (isa "infective_pneumonia"))
+(defstringconstant ":PNEUMONIA_DUE_TO_PARASITIC_INFESTATION:" "<PNEUMONIA_DUE_TO_PARASITIC_INFESTATION>")
+(deftype "viral_pneumonia" 
+  (isa "infective_pneumonia"))
+(defstringconstant ":PNEUMONIA__VIRAL:" "<VIRAL_PNEUMONIA>")
+(deftype "bacterial_pneumonia" 
+  (isa "infective_pneumonia"))
+(defstringconstant ":BACTERIAL_PNEUMONIA:" "<BACTERIAL_PNEUMONIA>")
+(deftype "fungal_pneumonia" 
+  (isa "infective_pneumonia"))
+(defstringconstant ":FUNGAL_PNEUMONIA:" "<FUNGAL_PNEUMONIA>")
+(deftype "gangrenous_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":GANGRENOUS_PNEUMONIA:" "<GANGRENOUS_PNEUMONIA>")
+(deftype "focal_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":FOCAL_PNEUMONIA:" "<FOCAL_PNEUMONIA>")
+(deftype "granulomatous_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":GRANULOMATOUS_PNEUMONIA:" "<GRANULOMATOUS_PNEUMONIA>")
+(deftype "confluent_pneumonia" 
+  (isa "pneumonia"))
+(defstringconstant ":CONFLUENT_PNEUMONIA:" "<CONFLUENT_PNEUMONIA>")
+(deftype "ventilator_care" 
+  (isa "anchor"))
+(deftype "ventilator_care_and_adjustment" 
+  (isa "ventilator_care"))
+(defstringconstant ":VENTILATOR_CARE_AND_ADJUSTMENT:" "<VENTILATOR_CARE_AND_ADJUSTMENT>")
+(deftype "tachypnoea" 
+  (isa "anchor"))
+(defstringconstant ":TACHYPNOEA:" "<TACHYPNOEA>")
+(deftype "rapid_shallow_breathing" 
+  (isa "tachypnoea"))
+(defstringconstant ":RAPID_SHALLOW_BREATHING:" "<RAPID_SHALLOW_BREATHING>")
+(deftype "white_blood_cell_count" 
+  (isa "anchor"))
+(defstringconstant ":WHITE_BLOOD_CELL_COUNT__PROCEDURE_:" "<WHITE_BLOOD_CELL_COUNT>")
+(deftype "analysis_of_arterial_blood_gases_and_ph" 
+  (isa "anchor"))
+(defstringconstant ":ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH:" "<ANALYSIS_OF_ARTERIAL_BLOOD_GASES_AND_PH>")
+(deftype "coughing" 
+  (isa "anchor"))
+(defstringconstant ":COUGH_ADVERSE_EVENT:" "<COUGHING>")
+(deftype "barking_cough" 
+  (isa "coughing"))
+(defstringconstant ":BARKING_COUGH:" "<BARKING_COUGH>")
+(deftype "dry_cough" 
+  (isa "coughing"))
+(defstringconstant ":DRY_COUGH:" "<DRY_COUGH>")
+(deftype "hacking_cough" 
+  (isa "dry_cough"))
+(defstringconstant ":HACKING_COUGH:" "<HACKING_COUGH>")
+(deftype "cough_on_exercise" 
+  (isa "coughing"))
+(defstringconstant ":COUGH_ON_EXERCISE:" "<COUGH_ON_EXERCISE>")
+(deftype "effective_cough" 
+  (isa "coughing"))
+(defstringconstant ":EFFECTIVE_COUGH:" "<EFFECTIVE_COUGH>")
+(deftype "postural_cough" 
+  (isa "coughing"))
+(defstringconstant ":POSTURAL_COUGH:" "<POSTURAL_COUGH>")
+(deftype "brassy_cough" 
+  (isa "coughing"))
+(defstringconstant ":BRASSY_COUGH:" "<BRASSY_COUGH>")
+(deftype "spasmodic_cough" 
+  (isa "coughing"))
+(defstringconstant ":SPASMODIC_COUGH:" "<SPASMODIC_COUGH>")
+(deftype "chesty_cough" 
+  (isa "coughing"))
+(defstringconstant ":CHESTY_COUGH:" "<CHESTY_COUGH>")
+(deftype "bovine_cough" 
+  (isa "coughing"))
+(defstringconstant ":BOVINE_COUGH:" "<BOVINE_COUGH>")
+(deftype "cough_at_rest" 
+  (isa "coughing"))
+(defstringconstant ":COUGH_AT_REST:" "<COUGH_AT_REST>")
+(deftype "productive_cough" 
+  (isa "coughing"))
+(defstringconstant ":PRODUCTIVE_COUGH:" "<PRODUCTIVE_COUGH>")
+(deftype "clearing_throat_hawking" 
+  (isa "coughing"))
+(defstringconstant ":CLEARING_THROAT___HAWKING:" "<CLEARING_THROAT_HAWKING>")
+(deftype "croupy_cough" 
+  (isa "coughing"))
+(defstringconstant ":CROUPY_COUGH:" "<CROUPY_COUGH>")
+(deftype "paroxysmal_cough" 
+  (isa "coughing"))
+(defstringconstant ":PAROXYSMAL_COUGH:" "<PAROXYSMAL_COUGH>")
+(deftype "unexplained_cough" 
+  (isa "coughing"))
+(defstringconstant ":UNEXPLAINED_COUGH:" "<UNEXPLAINED_COUGH>")
+(deftype "sputum" 
+  (isa "anchor"))
+(defstringconstant ":SPUTUM:" "<SPUTUM>")
+(deftype "purulent_sputum" 
+  (isa "sputum"))
+(deftype "mucopurulent_sputum" 
+  (isa "purulent_sputum"))
+(defstringconstant ":MUCOPURULENT_SPUTUM:" "<MUCOPURULENT_SPUTUM>")
+(deftype "leucopenia" 
+  (isa "anchor"))
+(deftype "febrile_leukopenia" 
+  (isa "leucopenia"))
+(defstringconstant ":FEBRILE_LEUKOPENIA:" "<FEBRILE_LEUKOPENIA>")
+(deftype "pancytopenia" 
+  (isa "leucopenia"))
+(defstringconstant ":PANCYTOPENIA:" "<PANCYTOPENIA>")
+(deftype "granulocytopenia" 
+  (isa "leucopenia"))
+(defstringconstant ":GRANULOCYTOPENIA:" "<GRANULOCYTOPENIA>")
+(deftype "abnormal_mental_state" 
+  (isa "anchor"))
+(defstringconstant ":ABNORMAL_MENTAL_STATE:" "<ABNORMAL_MENTAL_STATE>")
+(deftype "transient_altered_mental_status" 
+  (isa "abnormal_mental_state"))
+(defstringconstant ":TRANSIENT_ALTERED_MENTAL_STATUS:" "<TRANSIENT_ALTERED_MENTAL_STATUS>")
+(deftype "mental_health_impairment" 
+  (isa "abnormal_mental_state"))
+(defstringconstant ":MENTAL_HEALTH_IMPAIRMENT:" "<MENTAL_HEALTH_IMPAIRMENT>")
+(deftype "fever" 
+  (isa "anchor"))
+(deftype "respiratory_rate" 
+  (isa "anchor"))
+(defstringconstant ":RESPIRATORY_RATE:" "<RESPIRATORY_RATE>")
+(deftype "cavitation_of_lung" 
+  (isa "anchor"))
+(deftype "oxygen_therapy_care" 
+  (isa "anchor"))
+(defstringconstant ":OXYGEN_THERAPY_CARE:" "<OXYGEN_THERAPY_CARE>")
+(deftype "oxygenator_therapy" 
+  (isa "oxygen_therapy_care"))
+(deftype "home_oxygen_therapy" 
+  (isa "oxygen_therapy_care"))
+(defstringconstant ":HOME_OXYGEN_THERAPY:" "<HOME_OXYGEN_THERAPY>")
+(deftype "body_temperature" 
+  (isa "anchor"))
+(defstringconstant ":ENTITY_HANDLING___BODY_TEMPERATURE:" "<BODY_TEMPERATURE>")
+(deftype "infiltration" 
+  (isa "anchor"))
+(defstringconstant ":INFILTRATION:" "<INFILTRATION>")
+(deftype "consolidation" 
+  (isa "anchor"))
+(defstringconstant ":CONSOLIDATION:" "<CONSOLIDATION>")
+(deftype "lung_consolidation" 
+  (isa "consolidation"))
+(deftype "respiratory_secretion" 
+  (isa "anchor"))
+(deftype "airway_suction_technique" 
+  (isa "anchor"))
+(defstringconstant ":AIRWAY_SUCTION_TECHNIQUE:" "<AIRWAY_SUCTION_TECHNIQUE>")
+(deftype "bronchial_breathing" 
+  (isa "anchor"))
+(deftype "modifier" 
+  (isa "lexicon"))
+(hasexclusion "<MODIFIER>" "<MODIFIER>")
+(hasexclusion "<MODIFIER>" "<ANNOTATION>")
+(hasqualifier "<MODIFIER>" "<QUALIFIER>")
+(haspseudo "<MODIFIER>" "<PSEUDOMODIFIER>")
+(deftype "semanticmodifier" 
+  (isa "modifier"))
+(deftype "bodysite" 
+  (isa "semanticmodifier"))
+(deftype "lung" 
+  (isa "bodysite"))
+(defstringconstant ":LUNG:" "<LUNG>")
+(deftype "entire_lung" 
+  (isa "lung"))
+(defstringconstant ":ENTIRE_LUNG:" "<ENTIRE_LUNG>")
+(deftype "structure_of_lymphoid_tissue_of_lung" 
+  (isa "entire_lung"))
+(defstringconstant ":STRUCTURE_OF_LYMPHOID_TISSUE_OF_LUNG:" "<STRUCTURE_OF_LYMPHOID_TISSUE_OF_LUNG>")
+(deftype "structure_of_extrapulmonary_lymph_node_of_lung" 
+  (isa "structure_of_lymphoid_tissue_of_lung"))
+(defstringconstant ":STRUCTURE_OF_EXTRAPULMONARY_LYMPH_NODE_OF_LUNG:" "<STRUCTURE_OF_EXTRAPULMONARY_LYMPH_NODE_OF_LUNG>")
+(deftype "highest_mediastinal_lymph_node" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":HIGHEST_MEDIASTINAL_LYMPH_NODE:" "<HIGHEST_MEDIASTINAL_LYMPH_NODE>")
+(deftype "lower_paratracheallymph_node" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":LOWER_PARATRACHEALLYMPH_NODE:" "<LOWER_PARATRACHEALLYMPH_NODE>")
+(deftype "right_lower_paratracheal_lymph_node" 
+  (isa "lower_paratracheallymph_node"))
+(defstringconstant ":RIGHT_LOWER_PARATRACHEAL_LYMPH_NODE:" "<RIGHT_LOWER_PARATRACHEAL_LYMPH_NODE>")
+(deftype "lower_paratracheal_lymph_node_superior_group" 
+  (isa "lower_paratracheallymph_node"))
+(defstringconstant ":LOWER_PARATRACHEAL_LYMPH_NODE_SUPERIOR_GROUP:" "<LOWER_PARATRACHEAL_LYMPH_NODE_SUPERIOR_GROUP>")
+(deftype "lower_paratracheal_lymph_node_inferior_group" 
+  (isa "lower_paratracheallymph_node"))
+(defstringconstant ":LOWER_PARATRACHEAL_LYMPH_NODE_INFERIOR_GROUP:" "<LOWER_PARATRACHEAL_LYMPH_NODE_INFERIOR_GROUP>")
+(deftype "left_lower_paratracheal_lymph_node" 
+  (isa "lower_paratracheallymph_node"))
+(defstringconstant ":LEFT_LOWER_PARATRACHEAL_LYMPH_NODE:" "<LEFT_LOWER_PARATRACHEAL_LYMPH_NODE>")
+(deftype "structure_of_superior_tracheobronchial_lymph_node" 
+  (isa "lower_paratracheallymph_node"))
+(defstringconstant ":STRUCTURE_OF_SUPERIOR_TRACHEOBRONCHIAL_LYMPH_NODE:" "<STRUCTURE_OF_SUPERIOR_TRACHEOBRONCHIAL_LYMPH_NODE>")
+(deftype "entire_superior_tracheobronchial_lymph_node" 
+  (isa "structure_of_superior_tracheobronchial_lymph_node"))
+(defstringconstant ":ENTIRE_SUPERIOR_TRACHEOBRONCHIAL_LYMPH_NODE:" "<ENTIRE_SUPERIOR_TRACHEOBRONCHIAL_LYMPH_NODE>")
+(deftype "structure_of_subcarinal_lymph_node" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":STRUCTURE_OF_SUBCARINAL_LYMPH_NODE:" "<STRUCTURE_OF_SUBCARINAL_LYMPH_NODE>")
+(deftype "entire_subcarinal_lymph_node" 
+  (isa "structure_of_subcarinal_lymph_node"))
+(defstringconstant ":ENTIRE_SUBCARINAL_LYMPH_NODE:" "<ENTIRE_SUBCARINAL_LYMPH_NODE>")
+(deftype "upper_paratracheal_lymph_node" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":UPPER_PARATRACHEAL_LYMPH_NODE:" "<UPPER_PARATRACHEAL_LYMPH_NODE>")
+(deftype "left_upper_paratrachealmediastinal_lymph_node" 
+  (isa "upper_paratracheal_lymph_node"))
+(defstringconstant ":LEFT_UPPER_PARATRACHEALMEDIASTINAL_LYMPH_NODE:" "<LEFT_UPPER_PARATRACHEALMEDIASTINAL_LYMPH_NODE>")
+(deftype "right_upper_paratrachealmediastinal_lymph_node" 
+  (isa "upper_paratracheal_lymph_node"))
+(defstringconstant ":RIGHT_UPPER_PARATRACHEALMEDIASTINAL_LYMPH_NODE:" "<RIGHT_UPPER_PARATRACHEALMEDIASTINAL_LYMPH_NODE>")
+(deftype "hilar_lymph_node" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":HILAR_LYMPH_NODE:" "<HILAR_LYMPH_NODE>")
+(deftype "entire_hilar_lymph_node" 
+  (isa "hilar_lymph_node"))
+(defstringconstant ":ENTIRE_HILAR_LYMPH_NODE:" "<ENTIRE_HILAR_LYMPH_NODE>")
+(deftype "left_peribronchial_lymph_node" 
+  (isa "hilar_lymph_node"))
+(defstringconstant ":LEFT_PERIBRONCHIAL_LYMPH_NODE:" "<LEFT_PERIBRONCHIAL_LYMPH_NODE>")
+(deftype "hilar_lymph_node_group" 
+  (isa "hilar_lymph_node"))
+(defstringconstant ":HILAR_LYMPH_NODE_GROUP:" "<HILAR_LYMPH_NODE_GROUP>")
+(deftype "para_aortic_lymph_node_of_the_anterior_mediastinum" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":PARA_AORTIC_LYMPH_NODE_OF_THE_ANTERIOR_MEDIASTINUM:" "<PARA_AORTIC_LYMPH_NODE_OF_THE_ANTERIOR_MEDIASTINUM>")
+(deftype "prevascular_retrotracheal_lymph_node" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":PREVASCULAR_RETROTRACHEAL_LYMPH_NODE:" "<PREVASCULAR_RETROTRACHEAL_LYMPH_NODE>")
+(deftype "retrotracheal_lymph_node" 
+  (isa "prevascular_retrotracheal_lymph_node"))
+(defstringconstant ":RETROTRACHEAL_LYMPH_NODE:" "<RETROTRACHEAL_LYMPH_NODE>")
+(deftype "lymph_node_of_aortopulmonary_window" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":LYMPH_NODE_OF_AORTOPULMONARY_WINDOW:" "<LYMPH_NODE_OF_AORTOPULMONARY_WINDOW>")
+(deftype "lymph_node_of_the_pulmonary_ligament" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":LYMPH_NODE_OF_THE_PULMONARY_LIGAMENT:" "<LYMPH_NODE_OF_THE_PULMONARY_LIGAMENT>")
+(deftype "paraesophageal_lymph_node_below_carina" 
+  (isa "structure_of_extrapulmonary_lymph_node_of_lung"))
+(defstringconstant ":PARAESOPHAGEAL_LYMPH_NODE_BELOW_CARINA:" "<PARAESOPHAGEAL_LYMPH_NODE_BELOW_CARINA>")
+(deftype "structure_of_intrapulmonary_lymph_node" 
+  (isa "structure_of_lymphoid_tissue_of_lung"))
+(defstringconstant ":STRUCTURE_OF_INTRAPULMONARY_LYMPH_NODE:" "<STRUCTURE_OF_INTRAPULMONARY_LYMPH_NODE>")
+(deftype "entire_intrapulmonary_lymph_node" 
+  (isa "structure_of_intrapulmonary_lymph_node"))
+(defstringconstant ":ENTIRE_INTRAPULMONARY_LYMPH_NODE:" "<ENTIRE_INTRAPULMONARY_LYMPH_NODE>")
+(deftype "interlobar_lymph_node_of_the_lung" 
+  (isa "structure_of_intrapulmonary_lymph_node"))
+(defstringconstant ":INTERLOBAR_LYMPH_NODE_OF_THE_LUNG:" "<INTERLOBAR_LYMPH_NODE_OF_THE_LUNG>")
+(deftype "subsegmental_lymph_node_of_the_lung" 
+  (isa "structure_of_intrapulmonary_lymph_node"))
+(defstringconstant ":SUBSEGMENTAL_LYMPH_NODE_OF_THE_LUNG:" "<SUBSEGMENTAL_LYMPH_NODE_OF_THE_LUNG>")
+(deftype "lobar_lymph_node_of_the_lung" 
+  (isa "structure_of_intrapulmonary_lymph_node"))
+(defstringconstant ":LOBAR_LYMPH_NODE_OF_THE_LUNG:" "<LOBAR_LYMPH_NODE_OF_THE_LUNG>")
+(deftype "segmental_lymph_node_of_the_lung" 
+  (isa "structure_of_intrapulmonary_lymph_node"))
+(defstringconstant ":SEGMENTAL_LYMPH_NODE_OF_THE_LUNG:" "<SEGMENTAL_LYMPH_NODE_OF_THE_LUNG>")
+(deftype "entire_lymphoid_tissue_of_lung" 
+  (isa "structure_of_lymphoid_tissue_of_lung"))
+(defstringconstant ":ENTIRE_LYMPHOID_TISSUE_OF_LUNG:" "<ENTIRE_LYMPHOID_TISSUE_OF_LUNG>")
+(deftype "bronchopulmonary_segment" 
+  (isa "entire_lung" "structure_of_lobe_of_lung"))
+(defstringconstant ":BRONCHOPULMONARY_SEGMENT:" "<BRONCHOPULMONARY_SEGMENT>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_bronchopulmonary_segment" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":ENTIRE_BRONCHOPULMONARY_SEGMENT:" "<ENTIRE_BRONCHOPULMONARY_SEGMENT>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "apical_segment_of_upper_lobe_of_lung" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG:" "<APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_lobe_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_LOBE_OF_LUNG:" "<STRUCTURE_OF_LOBE_OF_LUNG>")
+(deftype "bronchopulmonary_segment" 
+  (isa "entire_lung" "structure_of_lobe_of_lung"))
+(defstringconstant ":BRONCHOPULMONARY_SEGMENT:" "<BRONCHOPULMONARY_SEGMENT>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_bronchopulmonary_segment" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":ENTIRE_BRONCHOPULMONARY_SEGMENT:" "<ENTIRE_BRONCHOPULMONARY_SEGMENT>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "apical_segment_of_upper_lobe_of_lung" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG:" "<APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_lower_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_LOWER_LOBE_OF_LUNG:" "<STRUCTURE_OF_LOWER_LOBE_OF_LUNG>")
+(deftype "entire_lower_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_lower_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOWER_LOBE_OF_LUNG:" "<ENTIRE_LOWER_LOBE_OF_LUNG>")
+(deftype "structure_of_normal_accessory_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_NORMAL_ACCESSORY_LOBE_OF_LUNG:" "<STRUCTURE_OF_NORMAL_ACCESSORY_LOBE_OF_LUNG>")
+(deftype "bronchiole_structure_of_accessory_lobe" 
+  (isa "structure_of_normal_accessory_lobe_of_lung"))
+(defstringconstant ":BRONCHIOLE_STRUCTURE_OF_ACCESSORY_LOBE:" "<BRONCHIOLE_STRUCTURE_OF_ACCESSORY_LOBE>")
+(deftype "part_of_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":PART_OF_LOBE_OF_LUNG:" "<PART_OF_LOBE_OF_LUNG>")
+(deftype "entire_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOBE_OF_LUNG:" "<ENTIRE_LOBE_OF_LUNG>")
+(deftype "entire_lower_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_lower_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOWER_LOBE_OF_LUNG:" "<ENTIRE_LOWER_LOBE_OF_LUNG>")
+(deftype "entire_upper_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_upper_lobe_of_lung"))
+(defstringconstant ":ENTIRE_UPPER_LOBE_OF_LUNG:" "<ENTIRE_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_upper_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_UPPER_LOBE_OF_LUNG:" "<STRUCTURE_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "entire_upper_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_upper_lobe_of_lung"))
+(defstringconstant ":ENTIRE_UPPER_LOBE_OF_LUNG:" "<ENTIRE_UPPER_LOBE_OF_LUNG>")
+(deftype "lung_part" 
+  (isa "entire_lung" "lung"))
+(defstringconstant ":LUNG_PART:" "<LUNG_PART>")
+(deftype "structure_of_lobe_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_LOBE_OF_LUNG:" "<STRUCTURE_OF_LOBE_OF_LUNG>")
+(deftype "bronchopulmonary_segment" 
+  (isa "entire_lung" "structure_of_lobe_of_lung"))
+(defstringconstant ":BRONCHOPULMONARY_SEGMENT:" "<BRONCHOPULMONARY_SEGMENT>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_bronchopulmonary_segment" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":ENTIRE_BRONCHOPULMONARY_SEGMENT:" "<ENTIRE_BRONCHOPULMONARY_SEGMENT>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "apical_segment_of_upper_lobe_of_lung" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG:" "<APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_lower_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_LOWER_LOBE_OF_LUNG:" "<STRUCTURE_OF_LOWER_LOBE_OF_LUNG>")
+(deftype "entire_lower_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_lower_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOWER_LOBE_OF_LUNG:" "<ENTIRE_LOWER_LOBE_OF_LUNG>")
+(deftype "structure_of_normal_accessory_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_NORMAL_ACCESSORY_LOBE_OF_LUNG:" "<STRUCTURE_OF_NORMAL_ACCESSORY_LOBE_OF_LUNG>")
+(deftype "bronchiole_structure_of_accessory_lobe" 
+  (isa "structure_of_normal_accessory_lobe_of_lung"))
+(defstringconstant ":BRONCHIOLE_STRUCTURE_OF_ACCESSORY_LOBE:" "<BRONCHIOLE_STRUCTURE_OF_ACCESSORY_LOBE>")
+(deftype "part_of_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":PART_OF_LOBE_OF_LUNG:" "<PART_OF_LOBE_OF_LUNG>")
+(deftype "entire_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOBE_OF_LUNG:" "<ENTIRE_LOBE_OF_LUNG>")
+(deftype "entire_lower_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_lower_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOWER_LOBE_OF_LUNG:" "<ENTIRE_LOWER_LOBE_OF_LUNG>")
+(deftype "entire_upper_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_upper_lobe_of_lung"))
+(defstringconstant ":ENTIRE_UPPER_LOBE_OF_LUNG:" "<ENTIRE_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_upper_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_UPPER_LOBE_OF_LUNG:" "<STRUCTURE_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "entire_upper_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_upper_lobe_of_lung"))
+(defstringconstant ":ENTIRE_UPPER_LOBE_OF_LUNG:" "<ENTIRE_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_parenchyma_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_PARENCHYMA_OF_LUNG:" "<STRUCTURE_OF_PARENCHYMA_OF_LUNG>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "entire_lung_parenchyma" 
+  (isa "structure_of_parenchyma_of_lung"))
+(defstringconstant ":ENTIRE_LUNG_PARENCHYMA:" "<ENTIRE_LUNG_PARENCHYMA>")
+(deftype "lung_surface_feature" 
+  (isa "lung_part"))
+(defstringconstant ":LUNG_SURFACE_FEATURE:" "<LUNG_SURFACE_FEATURE>")
+(deftype "structure_of_perihilar_region_of_lung" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":STRUCTURE_OF_PERIHILAR_REGION_OF_LUNG:" "<STRUCTURE_OF_PERIHILAR_REGION_OF_LUNG>")
+(deftype "entire_perihilar_region_of_lung" 
+  (isa "structure_of_perihilar_region_of_lung"))
+(defstringconstant ":ENTIRE_PERIHILAR_REGION_OF_LUNG:" "<ENTIRE_PERIHILAR_REGION_OF_LUNG>")
+(deftype "lung_surface" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":LUNG_SURFACE:" "<LUNG_SURFACE>")
+(deftype "structure_of_costal_surface_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG>")
+(deftype "entire_costal_surface_of_lung" 
+  (isa "structure_of_costal_surface_of_lung"))
+(defstringconstant ":ENTIRE_COSTAL_SURFACE_OF_LUNG:" "<ENTIRE_COSTAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_medial_surface_of_lung" 
+  (isa "entire_lung" "lung_surface" "part_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_medial_surface_of_lung" 
+  (isa "structure_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_mediastinal_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_interlobar_surfaces_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG:" "<STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "entire_interlobar_surfaces_of_lung" 
+  (isa "structure_of_interlobar_surfaces_of_lung"))
+(defstringconstant ":ENTIRE_INTERLOBAR_SURFACES_OF_LUNG:" "<ENTIRE_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "structure_of_diaphragmatic_surface_of_lung" 
+  (isa "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_DIAPHRAGMATIC_SURFACE_OF_LUNG:" "<STRUCTURE_OF_DIAPHRAGMATIC_SURFACE_OF_LUNG>")
+(deftype "entire_diaphragmatic_surface_of_lung" 
+  (isa "structure_of_diaphragmatic_surface_of_lung"))
+(defstringconstant ":ENTIRE_DIAPHRAGMATIC_SURFACE_OF_LUNG:" "<ENTIRE_DIAPHRAGMATIC_SURFACE_OF_LUNG>")
+(deftype "structure_of_apex_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_APEX_OF_LUNG:" "<STRUCTURE_OF_APEX_OF_LUNG>")
+(deftype "entire_apex_of_lung" 
+  (isa "structure_of_apex_of_lung"))
+(defstringconstant ":ENTIRE_APEX_OF_LUNG:" "<ENTIRE_APEX_OF_LUNG>")
+(deftype "part_of_medial_surface_of_lung" 
+  (isa "lung_surface_feature"))
+(defstringconstant ":PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_medial_surface_of_lung" 
+  (isa "entire_lung" "lung_surface" "part_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_medial_surface_of_lung" 
+  (isa "structure_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_mediastinal_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "margin_of_lung" 
+  (isa "lung_surface_feature"))
+(defstringconstant ":MARGIN_OF_LUNG:" "<MARGIN_OF_LUNG>")
+(deftype "structure_of_inferior_margin_of_lung" 
+  (isa "entire_lung" "margin_of_lung"))
+(defstringconstant ":STRUCTURE_OF_INFERIOR_MARGIN_OF_LUNG:" "<STRUCTURE_OF_INFERIOR_MARGIN_OF_LUNG>")
+(deftype "entire_inferior_margin_of_lung" 
+  (isa "structure_of_inferior_margin_of_lung"))
+(defstringconstant ":ENTIRE_INFERIOR_MARGIN_OF_LUNG:" "<ENTIRE_INFERIOR_MARGIN_OF_LUNG>")
+(deftype "structure_of_anterior_margin_of_lung" 
+  (isa "entire_lung" "margin_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ANTERIOR_MARGIN_OF_LUNG:" "<STRUCTURE_OF_ANTERIOR_MARGIN_OF_LUNG>")
+(deftype "entire_anterior_margin_of_lung" 
+  (isa "structure_of_anterior_margin_of_lung"))
+(defstringconstant ":ENTIRE_ANTERIOR_MARGIN_OF_LUNG:" "<ENTIRE_ANTERIOR_MARGIN_OF_LUNG>")
+(deftype "lung_root" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":LUNG_ROOT:" "<LUNG_ROOT>")
+(deftype "structure_of_hilum_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_HILUM_OF_LUNG:" "<STRUCTURE_OF_HILUM_OF_LUNG>")
+(deftype "entire_hilum_of_lung" 
+  (isa "structure_of_hilum_of_lung"))
+(defstringconstant ":ENTIRE_HILUM_OF_LUNG:" "<ENTIRE_HILUM_OF_LUNG>")
+(deftype "lung_field" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":LUNG_FIELD:" "<LUNG_FIELD>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "fissure_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":FISSURE_OF_LUNG:" "<FISSURE_OF_LUNG>")
+(deftype "structure_of_interstitial_tissue_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_INTERSTITIAL_TISSUE_OF_LUNG:" "<STRUCTURE_OF_INTERSTITIAL_TISSUE_OF_LUNG>")
+(deftype "entire_interstitial_tissue_of_lung" 
+  (isa "structure_of_interstitial_tissue_of_lung"))
+(defstringconstant ":ENTIRE_INTERSTITIAL_TISSUE_OF_LUNG:" "<ENTIRE_INTERSTITIAL_TISSUE_OF_LUNG>")
+(deftype "structure_of_parenchyma_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_PARENCHYMA_OF_LUNG:" "<STRUCTURE_OF_PARENCHYMA_OF_LUNG>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "entire_lung_parenchyma" 
+  (isa "structure_of_parenchyma_of_lung"))
+(defstringconstant ":ENTIRE_LUNG_PARENCHYMA:" "<ENTIRE_LUNG_PARENCHYMA>")
+(deftype "structure_of_perihilar_region_of_lung" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":STRUCTURE_OF_PERIHILAR_REGION_OF_LUNG:" "<STRUCTURE_OF_PERIHILAR_REGION_OF_LUNG>")
+(deftype "entire_perihilar_region_of_lung" 
+  (isa "structure_of_perihilar_region_of_lung"))
+(defstringconstant ":ENTIRE_PERIHILAR_REGION_OF_LUNG:" "<ENTIRE_PERIHILAR_REGION_OF_LUNG>")
+(deftype "pulmonary_artery_within_lung" 
+  (isa "entire_lung"))
+(defstringconstant ":PULMONARY_ARTERY_WITHIN_LUNG:" "<PULMONARY_ARTERY_WITHIN_LUNG>")
+(deftype "pulmonary_venous_structure" 
+  (isa "entire_lung"))
+(defstringconstant ":PULMONARY_VENOUS_STRUCTURE:" "<PULMONARY_VENOUS_STRUCTURE>")
+(deftype "entire_vein_of_lung" 
+  (isa "pulmonary_venous_structure"))
+(defstringconstant ":ENTIRE_VEIN_OF_LUNG:" "<ENTIRE_VEIN_OF_LUNG>")
+(deftype "entire_pulmonary_vein" 
+  (isa "entire_vein_of_lung" "structure_of_pulmonary_vein_great_vessel"))
+(defstringconstant ":ENTIRE_PULMONARY_VEIN:" "<ENTIRE_PULMONARY_VEIN>")
+(deftype "structure_of_ostia_of_pulmonary_veins" 
+  (isa "entire_pulmonary_vein"))
+(defstringconstant ":STRUCTURE_OF_OSTIA_OF_PULMONARY_VEINS:" "<STRUCTURE_OF_OSTIA_OF_PULMONARY_VEINS>")
+(deftype "opening_of_left_pulmonary_vein" 
+  (isa "structure_of_ostia_of_pulmonary_veins"))
+(defstringconstant ":OPENING_OF_LEFT_PULMONARY_VEIN:" "<OPENING_OF_LEFT_PULMONARY_VEIN>")
+(deftype "opening_of_left_superior_pulmonary_vein" 
+  (isa "opening_of_left_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_LEFT_SUPERIOR_PULMONARY_VEIN:" "<OPENING_OF_LEFT_SUPERIOR_PULMONARY_VEIN>")
+(deftype "opening_of_left_inferior_pulmonary_vein" 
+  (isa "opening_of_left_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_LEFT_INFERIOR_PULMONARY_VEIN:" "<OPENING_OF_LEFT_INFERIOR_PULMONARY_VEIN>")
+(deftype "opening_of_right_pulmonary_vein" 
+  (isa "structure_of_ostia_of_pulmonary_veins"))
+(defstringconstant ":OPENING_OF_RIGHT_PULMONARY_VEIN:" "<OPENING_OF_RIGHT_PULMONARY_VEIN>")
+(deftype "opening_of_right_inferior_pulmonary_vein" 
+  (isa "opening_of_right_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_RIGHT_INFERIOR_PULMONARY_VEIN:" "<OPENING_OF_RIGHT_INFERIOR_PULMONARY_VEIN>")
+(deftype "opening_of_right_superior_pulmonary_vein" 
+  (isa "opening_of_right_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_RIGHT_SUPERIOR_PULMONARY_VEIN:" "<OPENING_OF_RIGHT_SUPERIOR_PULMONARY_VEIN>")
+(deftype "entire_ostia_of_pulmonary_veins" 
+  (isa "structure_of_ostia_of_pulmonary_veins"))
+(defstringconstant ":ENTIRE_OSTIA_OF_PULMONARY_VEINS:" "<ENTIRE_OSTIA_OF_PULMONARY_VEINS>")
+(deftype "structure_of_pulmonary_vein_great_vessel" 
+  (isa "pulmonary_venous_structure"))
+(defstringconstant ":STRUCTURE_OF_PULMONARY_VEIN_GREAT_VESSEL:" "<STRUCTURE_OF_PULMONARY_VEIN_GREAT_VESSEL>")
+(deftype "entire_pulmonary_vein" 
+  (isa "entire_vein_of_lung" "structure_of_pulmonary_vein_great_vessel"))
+(defstringconstant ":ENTIRE_PULMONARY_VEIN:" "<ENTIRE_PULMONARY_VEIN>")
+(deftype "structure_of_ostia_of_pulmonary_veins" 
+  (isa "entire_pulmonary_vein"))
+(defstringconstant ":STRUCTURE_OF_OSTIA_OF_PULMONARY_VEINS:" "<STRUCTURE_OF_OSTIA_OF_PULMONARY_VEINS>")
+(deftype "opening_of_left_pulmonary_vein" 
+  (isa "structure_of_ostia_of_pulmonary_veins"))
+(defstringconstant ":OPENING_OF_LEFT_PULMONARY_VEIN:" "<OPENING_OF_LEFT_PULMONARY_VEIN>")
+(deftype "opening_of_left_superior_pulmonary_vein" 
+  (isa "opening_of_left_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_LEFT_SUPERIOR_PULMONARY_VEIN:" "<OPENING_OF_LEFT_SUPERIOR_PULMONARY_VEIN>")
+(deftype "opening_of_left_inferior_pulmonary_vein" 
+  (isa "opening_of_left_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_LEFT_INFERIOR_PULMONARY_VEIN:" "<OPENING_OF_LEFT_INFERIOR_PULMONARY_VEIN>")
+(deftype "opening_of_right_pulmonary_vein" 
+  (isa "structure_of_ostia_of_pulmonary_veins"))
+(defstringconstant ":OPENING_OF_RIGHT_PULMONARY_VEIN:" "<OPENING_OF_RIGHT_PULMONARY_VEIN>")
+(deftype "opening_of_right_inferior_pulmonary_vein" 
+  (isa "opening_of_right_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_RIGHT_INFERIOR_PULMONARY_VEIN:" "<OPENING_OF_RIGHT_INFERIOR_PULMONARY_VEIN>")
+(deftype "opening_of_right_superior_pulmonary_vein" 
+  (isa "opening_of_right_pulmonary_vein"))
+(defstringconstant ":OPENING_OF_RIGHT_SUPERIOR_PULMONARY_VEIN:" "<OPENING_OF_RIGHT_SUPERIOR_PULMONARY_VEIN>")
+(deftype "entire_ostia_of_pulmonary_veins" 
+  (isa "structure_of_ostia_of_pulmonary_veins"))
+(defstringconstant ":ENTIRE_OSTIA_OF_PULMONARY_VEINS:" "<ENTIRE_OSTIA_OF_PULMONARY_VEINS>")
+(deftype "tributary_of_right_pulmonary_vein" 
+  (isa "pulmonary_venous_structure"))
+(defstringconstant ":TRIBUTARY_OF_RIGHT_PULMONARY_VEIN:" "<TRIBUTARY_OF_RIGHT_PULMONARY_VEIN>")
+(deftype "tributary_of_inferior_right_pulmonary_vein" 
+  (isa "tributary_of_right_pulmonary_vein"))
+(defstringconstant ":TRIBUTARY_OF_INFERIOR_RIGHT_PULMONARY_VEIN:" "<TRIBUTARY_OF_INFERIOR_RIGHT_PULMONARY_VEIN>")
+(deftype "right_basal_pulmonary_vein" 
+  (isa "tributary_of_right_pulmonary_vein"))
+(defstringconstant ":RIGHT_BASAL_PULMONARY_VEIN:" "<RIGHT_BASAL_PULMONARY_VEIN>")
+(deftype "tributary_of_superior_right_pulmonary_vein" 
+  (isa "tributary_of_right_pulmonary_vein"))
+(defstringconstant ":TRIBUTARY_OF_SUPERIOR_RIGHT_PULMONARY_VEIN:" "<TRIBUTARY_OF_SUPERIOR_RIGHT_PULMONARY_VEIN>")
+(deftype "tributary_of_left_pulmonary_vein" 
+  (isa "pulmonary_venous_structure"))
+(defstringconstant ":TRIBUTARY_OF_LEFT_PULMONARY_VEIN:" "<TRIBUTARY_OF_LEFT_PULMONARY_VEIN>")
+(deftype "tributary_of_inferior_left_pulmonary_vein" 
+  (isa "tributary_of_left_pulmonary_vein"))
+(defstringconstant ":TRIBUTARY_OF_INFERIOR_LEFT_PULMONARY_VEIN:" "<TRIBUTARY_OF_INFERIOR_LEFT_PULMONARY_VEIN>")
+(deftype "left_basal_pulmonary_vein" 
+  (isa "tributary_of_left_pulmonary_vein"))
+(defstringconstant ":LEFT_BASAL_PULMONARY_VEIN:" "<LEFT_BASAL_PULMONARY_VEIN>")
+(deftype "tributary_of_superior_left_pulmonary_vein" 
+  (isa "tributary_of_left_pulmonary_vein"))
+(defstringconstant ":TRIBUTARY_OF_SUPERIOR_LEFT_PULMONARY_VEIN:" "<TRIBUTARY_OF_SUPERIOR_LEFT_PULMONARY_VEIN>")
+(deftype "pulmonary_venous_pathway" 
+  (isa "pulmonary_venous_structure"))
+(defstringconstant ":PULMONARY_VENOUS_PATHWAY:" "<PULMONARY_VENOUS_PATHWAY>")
+(deftype "structure_of_bronchial_vein" 
+  (isa "pulmonary_venous_structure"))
+(defstringconstant ":STRUCTURE_OF_BRONCHIAL_VEIN:" "<STRUCTURE_OF_BRONCHIAL_VEIN>")
+(deftype "left_bronchial_veins" 
+  (isa "structure_of_bronchial_vein"))
+(defstringconstant ":LEFT_BRONCHIAL_VEINS:" "<LEFT_BRONCHIAL_VEINS>")
+(deftype "entire_bronchial_vein" 
+  (isa "structure_of_bronchial_vein"))
+(defstringconstant ":ENTIRE_BRONCHIAL_VEIN:" "<ENTIRE_BRONCHIAL_VEIN>")
+(deftype "right_bronchial_veins" 
+  (isa "structure_of_bronchial_vein"))
+(defstringconstant ":RIGHT_BRONCHIAL_VEINS:" "<RIGHT_BRONCHIAL_VEINS>")
+(deftype "structure_of_costal_surface_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG>")
+(deftype "entire_costal_surface_of_lung" 
+  (isa "structure_of_costal_surface_of_lung"))
+(defstringconstant ":ENTIRE_COSTAL_SURFACE_OF_LUNG:" "<ENTIRE_COSTAL_SURFACE_OF_LUNG>")
+(deftype "lung_surface" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":LUNG_SURFACE:" "<LUNG_SURFACE>")
+(deftype "structure_of_costal_surface_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG>")
+(deftype "entire_costal_surface_of_lung" 
+  (isa "structure_of_costal_surface_of_lung"))
+(defstringconstant ":ENTIRE_COSTAL_SURFACE_OF_LUNG:" "<ENTIRE_COSTAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_medial_surface_of_lung" 
+  (isa "entire_lung" "lung_surface" "part_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_medial_surface_of_lung" 
+  (isa "structure_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_mediastinal_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_interlobar_surfaces_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG:" "<STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "entire_interlobar_surfaces_of_lung" 
+  (isa "structure_of_interlobar_surfaces_of_lung"))
+(defstringconstant ":ENTIRE_INTERLOBAR_SURFACES_OF_LUNG:" "<ENTIRE_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "structure_of_diaphragmatic_surface_of_lung" 
+  (isa "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_DIAPHRAGMATIC_SURFACE_OF_LUNG:" "<STRUCTURE_OF_DIAPHRAGMATIC_SURFACE_OF_LUNG>")
+(deftype "entire_diaphragmatic_surface_of_lung" 
+  (isa "structure_of_diaphragmatic_surface_of_lung"))
+(defstringconstant ":ENTIRE_DIAPHRAGMATIC_SURFACE_OF_LUNG:" "<ENTIRE_DIAPHRAGMATIC_SURFACE_OF_LUNG>")
+(deftype "structure_of_apex_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_APEX_OF_LUNG:" "<STRUCTURE_OF_APEX_OF_LUNG>")
+(deftype "entire_apex_of_lung" 
+  (isa "structure_of_apex_of_lung"))
+(defstringconstant ":ENTIRE_APEX_OF_LUNG:" "<ENTIRE_APEX_OF_LUNG>")
+(deftype "structure_of_medial_surface_of_lung" 
+  (isa "entire_lung" "lung_surface" "part_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_medial_surface_of_lung" 
+  (isa "structure_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_mediastinal_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_lymphatic_vessel_of_lung" 
+  (isa "entire_lung"))
+(defstringconstant ":STRUCTURE_OF_LYMPHATIC_VESSEL_OF_LUNG:" "<STRUCTURE_OF_LYMPHATIC_VESSEL_OF_LUNG>")
+(deftype "lymphatics_of_lung" 
+  (isa "structure_of_lymphatic_vessel_of_lung"))
+(defstringconstant ":LYMPHATICS_OF_LUNG:" "<LYMPHATICS_OF_LUNG>")
+(deftype "structure_of_hilum_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_HILUM_OF_LUNG:" "<STRUCTURE_OF_HILUM_OF_LUNG>")
+(deftype "entire_hilum_of_lung" 
+  (isa "structure_of_hilum_of_lung"))
+(defstringconstant ":ENTIRE_HILUM_OF_LUNG:" "<ENTIRE_HILUM_OF_LUNG>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "lung_field" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":LUNG_FIELD:" "<LUNG_FIELD>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "structure_of_inferior_margin_of_lung" 
+  (isa "entire_lung" "margin_of_lung"))
+(defstringconstant ":STRUCTURE_OF_INFERIOR_MARGIN_OF_LUNG:" "<STRUCTURE_OF_INFERIOR_MARGIN_OF_LUNG>")
+(deftype "entire_inferior_margin_of_lung" 
+  (isa "structure_of_inferior_margin_of_lung"))
+(defstringconstant ":ENTIRE_INFERIOR_MARGIN_OF_LUNG:" "<ENTIRE_INFERIOR_MARGIN_OF_LUNG>")
+(deftype "structure_of_interlobar_surfaces_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG:" "<STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "entire_interlobar_surfaces_of_lung" 
+  (isa "structure_of_interlobar_surfaces_of_lung"))
+(defstringconstant ":ENTIRE_INTERLOBAR_SURFACES_OF_LUNG:" "<ENTIRE_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "fissure_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":FISSURE_OF_LUNG:" "<FISSURE_OF_LUNG>")
+(deftype "structure_of_apex_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_APEX_OF_LUNG:" "<STRUCTURE_OF_APEX_OF_LUNG>")
+(deftype "entire_apex_of_lung" 
+  (isa "structure_of_apex_of_lung"))
+(defstringconstant ":ENTIRE_APEX_OF_LUNG:" "<ENTIRE_APEX_OF_LUNG>")
+(deftype "entire_transplanted_lung" 
+  (isa "entire_lung" "structure_of_transplanted_lung"))
+(defstringconstant ":ENTIRE_TRANSPLANTED_LUNG:" "<ENTIRE_TRANSPLANTED_LUNG>")
+(deftype "structure_of_interstitial_tissue_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_INTERSTITIAL_TISSUE_OF_LUNG:" "<STRUCTURE_OF_INTERSTITIAL_TISSUE_OF_LUNG>")
+(deftype "entire_interstitial_tissue_of_lung" 
+  (isa "structure_of_interstitial_tissue_of_lung"))
+(defstringconstant ":ENTIRE_INTERSTITIAL_TISSUE_OF_LUNG:" "<ENTIRE_INTERSTITIAL_TISSUE_OF_LUNG>")
+(deftype "lung_root" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":LUNG_ROOT:" "<LUNG_ROOT>")
+(deftype "structure_of_anterior_margin_of_lung" 
+  (isa "entire_lung" "margin_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ANTERIOR_MARGIN_OF_LUNG:" "<STRUCTURE_OF_ANTERIOR_MARGIN_OF_LUNG>")
+(deftype "entire_anterior_margin_of_lung" 
+  (isa "structure_of_anterior_margin_of_lung"))
+(defstringconstant ":ENTIRE_ANTERIOR_MARGIN_OF_LUNG:" "<ENTIRE_ANTERIOR_MARGIN_OF_LUNG>")
+(deftype "all_peripheral_pulmonary_arteries" 
+  (isa "entire_lung"))
+(defstringconstant ":ALL_PERIPHERAL_PULMONARY_ARTERIES:" "<ALL_PERIPHERAL_PULMONARY_ARTERIES>")
+(deftype "lung_part" 
+  (isa "entire_lung" "lung"))
+(defstringconstant ":LUNG_PART:" "<LUNG_PART>")
+(deftype "structure_of_lobe_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_LOBE_OF_LUNG:" "<STRUCTURE_OF_LOBE_OF_LUNG>")
+(deftype "bronchopulmonary_segment" 
+  (isa "entire_lung" "structure_of_lobe_of_lung"))
+(defstringconstant ":BRONCHOPULMONARY_SEGMENT:" "<BRONCHOPULMONARY_SEGMENT>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_bronchopulmonary_segment" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":ENTIRE_BRONCHOPULMONARY_SEGMENT:" "<ENTIRE_BRONCHOPULMONARY_SEGMENT>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "apical_segment_of_upper_lobe_of_lung" 
+  (isa "bronchopulmonary_segment"))
+(defstringconstant ":APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG:" "<APICAL_SEGMENT_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_lower_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_LOWER_LOBE_OF_LUNG:" "<STRUCTURE_OF_LOWER_LOBE_OF_LUNG>")
+(deftype "entire_lower_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_lower_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOWER_LOBE_OF_LUNG:" "<ENTIRE_LOWER_LOBE_OF_LUNG>")
+(deftype "structure_of_normal_accessory_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_NORMAL_ACCESSORY_LOBE_OF_LUNG:" "<STRUCTURE_OF_NORMAL_ACCESSORY_LOBE_OF_LUNG>")
+(deftype "bronchiole_structure_of_accessory_lobe" 
+  (isa "structure_of_normal_accessory_lobe_of_lung"))
+(defstringconstant ":BRONCHIOLE_STRUCTURE_OF_ACCESSORY_LOBE:" "<BRONCHIOLE_STRUCTURE_OF_ACCESSORY_LOBE>")
+(deftype "part_of_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":PART_OF_LOBE_OF_LUNG:" "<PART_OF_LOBE_OF_LUNG>")
+(deftype "entire_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOBE_OF_LUNG:" "<ENTIRE_LOBE_OF_LUNG>")
+(deftype "entire_lower_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_lower_lobe_of_lung"))
+(defstringconstant ":ENTIRE_LOWER_LOBE_OF_LUNG:" "<ENTIRE_LOWER_LOBE_OF_LUNG>")
+(deftype "entire_upper_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_upper_lobe_of_lung"))
+(defstringconstant ":ENTIRE_UPPER_LOBE_OF_LUNG:" "<ENTIRE_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_upper_lobe_of_lung" 
+  (isa "structure_of_lobe_of_lung"))
+(defstringconstant ":STRUCTURE_OF_UPPER_LOBE_OF_LUNG:" "<STRUCTURE_OF_UPPER_LOBE_OF_LUNG>")
+(deftype "entire_upper_lobe_of_lung" 
+  (isa "entire_lobe_of_lung" "structure_of_upper_lobe_of_lung"))
+(defstringconstant ":ENTIRE_UPPER_LOBE_OF_LUNG:" "<ENTIRE_UPPER_LOBE_OF_LUNG>")
+(deftype "structure_of_parenchyma_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_PARENCHYMA_OF_LUNG:" "<STRUCTURE_OF_PARENCHYMA_OF_LUNG>")
+(deftype "structure_of_acinus_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_parenchyma_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ACINUS_OF_LUNG:" "<STRUCTURE_OF_ACINUS_OF_LUNG>")
+(deftype "structure_of_respiratory_bronchiole" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_RESPIRATORY_BRONCHIOLE:" "<STRUCTURE_OF_RESPIRATORY_BRONCHIOLE>")
+(deftype "entire_respiratory_bronchiole" 
+  (isa "structure_of_respiratory_bronchiole"))
+(defstringconstant ":ENTIRE_RESPIRATORY_BRONCHIOLE:" "<ENTIRE_RESPIRATORY_BRONCHIOLE>")
+(deftype "structure_of_alveolar_duct_of_lung" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "entire_alveolar_duct_of_lung" 
+  (isa "structure_of_alveolar_duct_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_DUCT_OF_LUNG:" "<ENTIRE_ALVEOLAR_DUCT_OF_LUNG>")
+(deftype "pulmonary_alveolar_structure" 
+  (isa "bronchopulmonary_segment" "structure_of_acinus_of_lung"))
+(defstringconstant ":PULMONARY_ALVEOLAR_STRUCTURE:" "<PULMONARY_ALVEOLAR_STRUCTURE>")
+(deftype "entire_pulmonary_alveolus" 
+  (isa "pulmonary_alveolar_structure"))
+(defstringconstant ":ENTIRE_PULMONARY_ALVEOLUS:" "<ENTIRE_PULMONARY_ALVEOLUS>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "structure_of_alveolar_sac_of_lung" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG:" "<STRUCTURE_OF_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "structure_of_atrium_of_alveolus" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ATRIUM_OF_ALVEOLUS:" "<STRUCTURE_OF_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_atrium_of_alveolus" 
+  (isa "structure_of_atrium_of_alveolus"))
+(defstringconstant ":ENTIRE_ATRIUM_OF_ALVEOLUS:" "<ENTIRE_ATRIUM_OF_ALVEOLUS>")
+(deftype "entire_alveolar_sac_of_lung" 
+  (isa "structure_of_alveolar_sac_of_lung"))
+(defstringconstant ":ENTIRE_ALVEOLAR_SAC_OF_LUNG:" "<ENTIRE_ALVEOLAR_SAC_OF_LUNG>")
+(deftype "alveolar_wall" 
+  (isa "entire_pulmonary_alveolus" "pulmonary_alveolar_structure"))
+(defstringconstant ":ALVEOLAR_WALL:" "<ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_wall" 
+  (isa "alveolar_wall"))
+(defstringconstant ":ENTIRE_ALVEOLAR_WALL:" "<ENTIRE_ALVEOLAR_WALL>")
+(deftype "structure_of_alveolar_epithelium" 
+  (isa "alveolar_wall" "entire_alveolar_wall"))
+(defstringconstant ":STRUCTURE_OF_ALVEOLAR_EPITHELIUM:" "<STRUCTURE_OF_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_alveolar_epithelium" 
+  (isa "structure_of_alveolar_epithelium"))
+(defstringconstant ":ENTIRE_ALVEOLAR_EPITHELIUM:" "<ENTIRE_ALVEOLAR_EPITHELIUM>")
+(deftype "entire_pulmonary_acinus" 
+  (isa "structure_of_acinus_of_lung"))
+(defstringconstant ":ENTIRE_PULMONARY_ACINUS:" "<ENTIRE_PULMONARY_ACINUS>")
+(deftype "entire_lung_parenchyma" 
+  (isa "structure_of_parenchyma_of_lung"))
+(defstringconstant ":ENTIRE_LUNG_PARENCHYMA:" "<ENTIRE_LUNG_PARENCHYMA>")
+(deftype "lung_surface_feature" 
+  (isa "lung_part"))
+(defstringconstant ":LUNG_SURFACE_FEATURE:" "<LUNG_SURFACE_FEATURE>")
+(deftype "structure_of_perihilar_region_of_lung" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":STRUCTURE_OF_PERIHILAR_REGION_OF_LUNG:" "<STRUCTURE_OF_PERIHILAR_REGION_OF_LUNG>")
+(deftype "entire_perihilar_region_of_lung" 
+  (isa "structure_of_perihilar_region_of_lung"))
+(defstringconstant ":ENTIRE_PERIHILAR_REGION_OF_LUNG:" "<ENTIRE_PERIHILAR_REGION_OF_LUNG>")
+(deftype "lung_surface" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":LUNG_SURFACE:" "<LUNG_SURFACE>")
+(deftype "structure_of_costal_surface_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_COSTAL_SURFACE_OF_LUNG>")
+(deftype "entire_costal_surface_of_lung" 
+  (isa "structure_of_costal_surface_of_lung"))
+(defstringconstant ":ENTIRE_COSTAL_SURFACE_OF_LUNG:" "<ENTIRE_COSTAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_medial_surface_of_lung" 
+  (isa "entire_lung" "lung_surface" "part_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_medial_surface_of_lung" 
+  (isa "structure_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_mediastinal_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_interlobar_surfaces_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG:" "<STRUCTURE_OF_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "entire_interlobar_surfaces_of_lung" 
+  (isa "structure_of_interlobar_surfaces_of_lung"))
+(defstringconstant ":ENTIRE_INTERLOBAR_SURFACES_OF_LUNG:" "<ENTIRE_INTERLOBAR_SURFACES_OF_LUNG>")
+(deftype "structure_of_diaphragmatic_surface_of_lung" 
+  (isa "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_DIAPHRAGMATIC_SURFACE_OF_LUNG:" "<STRUCTURE_OF_DIAPHRAGMATIC_SURFACE_OF_LUNG>")
+(deftype "entire_diaphragmatic_surface_of_lung" 
+  (isa "structure_of_diaphragmatic_surface_of_lung"))
+(defstringconstant ":ENTIRE_DIAPHRAGMATIC_SURFACE_OF_LUNG:" "<ENTIRE_DIAPHRAGMATIC_SURFACE_OF_LUNG>")
+(deftype "structure_of_apex_of_lung" 
+  (isa "entire_lung" "lung_surface"))
+(defstringconstant ":STRUCTURE_OF_APEX_OF_LUNG:" "<STRUCTURE_OF_APEX_OF_LUNG>")
+(deftype "entire_apex_of_lung" 
+  (isa "structure_of_apex_of_lung"))
+(defstringconstant ":ENTIRE_APEX_OF_LUNG:" "<ENTIRE_APEX_OF_LUNG>")
+(deftype "part_of_medial_surface_of_lung" 
+  (isa "lung_surface_feature"))
+(defstringconstant ":PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_medial_surface_of_lung" 
+  (isa "entire_lung" "lung_surface" "part_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_medial_surface_of_lung" 
+  (isa "structure_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_mediastinal_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_MEDIASTINAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_cardiac_impression_of_medial_surface_of_lung" 
+  (isa "structure_of_cardiac_impression_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_CARDIAC_IMPRESSION_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "structure_of_vertebral_part_of_medial_surface_of_lung" 
+  (isa "entire_medial_surface_of_lung" "part_of_medial_surface_of_lung" "structure_of_medial_surface_of_lung"))
+(defstringconstant ":STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<STRUCTURE_OF_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "entire_vertebral_part_of_medial_surface_of_lung" 
+  (isa "structure_of_vertebral_part_of_medial_surface_of_lung"))
+(defstringconstant ":ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG:" "<ENTIRE_VERTEBRAL_PART_OF_MEDIAL_SURFACE_OF_LUNG>")
+(deftype "margin_of_lung" 
+  (isa "lung_surface_feature"))
+(defstringconstant ":MARGIN_OF_LUNG:" "<MARGIN_OF_LUNG>")
+(deftype "structure_of_inferior_margin_of_lung" 
+  (isa "entire_lung" "margin_of_lung"))
+(defstringconstant ":STRUCTURE_OF_INFERIOR_MARGIN_OF_LUNG:" "<STRUCTURE_OF_INFERIOR_MARGIN_OF_LUNG>")
+(deftype "entire_inferior_margin_of_lung" 
+  (isa "structure_of_inferior_margin_of_lung"))
+(defstringconstant ":ENTIRE_INFERIOR_MARGIN_OF_LUNG:" "<ENTIRE_INFERIOR_MARGIN_OF_LUNG>")
+(deftype "structure_of_anterior_margin_of_lung" 
+  (isa "entire_lung" "margin_of_lung"))
+(defstringconstant ":STRUCTURE_OF_ANTERIOR_MARGIN_OF_LUNG:" "<STRUCTURE_OF_ANTERIOR_MARGIN_OF_LUNG>")
+(deftype "entire_anterior_margin_of_lung" 
+  (isa "structure_of_anterior_margin_of_lung"))
+(defstringconstant ":ENTIRE_ANTERIOR_MARGIN_OF_LUNG:" "<ENTIRE_ANTERIOR_MARGIN_OF_LUNG>")
+(deftype "lung_root" 
+  (isa "entire_lung" "lung_surface_feature"))
+(defstringconstant ":LUNG_ROOT:" "<LUNG_ROOT>")
+(deftype "structure_of_hilum_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_HILUM_OF_LUNG:" "<STRUCTURE_OF_HILUM_OF_LUNG>")
+(deftype "entire_hilum_of_lung" 
+  (isa "structure_of_hilum_of_lung"))
+(defstringconstant ":ENTIRE_HILUM_OF_LUNG:" "<ENTIRE_HILUM_OF_LUNG>")
+(deftype "lung_field" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":LUNG_FIELD:" "<LUNG_FIELD>")
+(deftype "basal_segment_of_lung" 
+  (isa "bronchopulmonary_segment" "entire_lung" "lung_field"))
+(defstringconstant ":BASAL_SEGMENT_OF_LUNG:" "<BASAL_SEGMENT_OF_LUNG>")
+(deftype "entire_base_of_lung" 
+  (isa "basal_segment_of_lung"))
+(defstringconstant ":ENTIRE_BASE_OF_LUNG:" "<ENTIRE_BASE_OF_LUNG>")
+(deftype "fissure_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":FISSURE_OF_LUNG:" "<FISSURE_OF_LUNG>")
+(deftype "structure_of_interstitial_tissue_of_lung" 
+  (isa "entire_lung" "lung_part"))
+(defstringconstant ":STRUCTURE_OF_INTERSTITIAL_TISSUE_OF_LUNG:" "<STRUCTURE_OF_INTERSTITIAL_TISSUE_OF_LUNG>")
+(deftype "entire_interstitial_tissue_of_lung" 
+  (isa "structure_of_interstitial_tissue_of_lung"))
+(defstringconstant ":ENTIRE_INTERSTITIAL_TISSUE_OF_LUNG:" "<ENTIRE_INTERSTITIAL_TISSUE_OF_LUNG>")
+(deftype "pneumocyte" 
+  (isa "lung"))
+(defstringconstant ":PNEUMOCYTE:" "<PNEUMOCYTE>")
+(deftype "pneumocyte_type_1" 
+  (isa "pneumocyte"))
+(defstringconstant ":PNEUMOCYTE_TYPE_1:" "<PNEUMOCYTE_TYPE_1>")
+(deftype "alveolar_macrophage" 
+  (isa "pneumocyte"))
+(defstringconstant ":ALVEOLAR_MACROPHAGE:" "<ALVEOLAR_MACROPHAGE>")
+(deftype "pneumocyte_type_2" 
+  (isa "pneumocyte"))
+(defstringconstant ":PNEUMOCYTE_TYPE_2:" "<PNEUMOCYTE_TYPE_2>")
+(deftype "structure_of_transplanted_lung" 
+  (isa "lung"))
+(defstringconstant ":STRUCTURE_OF_TRANSPLANTED_LUNG:" "<STRUCTURE_OF_TRANSPLANTED_LUNG>")
+(deftype "entire_transplanted_lung" 
+  (isa "entire_lung" "structure_of_transplanted_lung"))
+(defstringconstant ":ENTIRE_TRANSPLANTED_LUNG:" "<ENTIRE_TRANSPLANTED_LUNG>")
+(deftype "ordinalinterpretation" 
+  (isa "semanticmodifier"))
+(deftype "positive_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":POSITIVE_ORDINALINTERPRETATION:" "<POSITIVE_ORDINALINTERPRETATION>")
+(deftype "weaklypositive_ordinalinterpretation" 
+  (isa "positive_ordinalinterpretation"))
+(defstringconstant ":WEAKLYPOSITIVE_ORDINALINTERPRETATION:" "<WEAKLYPOSITIVE_ORDINALINTERPRETATION>")
+(deftype "inconclusive_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":INCONCLUSIVE_ORDINALINTERPRETATION:" "<INCONCLUSIVE_ORDINALINTERPRETATION>")
+(deftype "unrecordable_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":UNRECORDABLE_ORDINALINTERPRETATION:" "<UNRECORDABLE_ORDINALINTERPRETATION>")
+(deftype "high_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":HIGH_ORDINALINTERPRETATION:" "<HIGH_ORDINALINTERPRETATION>")
+(deftype "abnormallyhigh_ordinalinterpretation" 
+  (isa "high_ordinalinterpretation"))
+(defstringconstant ":ABNORMALLYHIGH_ORDINALINTERPRETATION:" "<ABNORMALLYHIGH_ORDINALINTERPRETATION>")
+(deftype "veryhigh_ordinalinterpretation" 
+  (isa "high_ordinalinterpretation"))
+(defstringconstant ":VERYHIGH_ORDINALINTERPRETATION:" "<VERYHIGH_ORDINALINTERPRETATION>")
+(deftype "susceptible_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":SUSCEPTIBLE_ORDINALINTERPRETATION:" "<SUSCEPTIBLE_ORDINALINTERPRETATION>")
+(deftype "moderatelysusceptible_ordinalinterpretation" 
+  (isa "susceptible_ordinalinterpretation"))
+(defstringconstant ":MODERATELYSUSCEPTIBLE_ORDINALINTERPRETATION:" "<MODERATELYSUSCEPTIBLE_ORDINALINTERPRETATION>")
+(deftype "intermediatelysusceptible_ordinalinterpretation" 
+  (isa "susceptible_ordinalinterpretation"))
+(defstringconstant ":INTERMEDIATELYSUSCEPTIBLE_ORDINALINTERPRETATION:" "<INTERMEDIATELYSUSCEPTIBLE_ORDINALINTERPRETATION>")
+(deftype "abnormal_abnormalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":ABNORMAL_ABNORMALINTERPRETATION:" "<ABNORMAL_ABNORMALINTERPRETATION>")
+(deftype "low_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":LOW_ORDINALINTERPRETATION:" "<LOW_ORDINALINTERPRETATION>")
+(deftype "abnormallylow_ordinalinterpretation" 
+  (isa "low_ordinalinterpretation"))
+(defstringconstant ":ABNORMALLYLOW_ORDINALINTERPRETATION:" "<ABNORMALLYLOW_ORDINALINTERPRETATION>")
+(deftype "verylow_ordinalinterpretation" 
+  (isa "low_ordinalinterpretation"))
+(defstringconstant ":VERYLOW_ORDINALINTERPRETATION:" "<VERYLOW_ORDINALINTERPRETATION>")
+(deftype "deficiency_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":DEFICIENCY_ORDINALINTERPRETATION:" "<DEFICIENCY_ORDINALINTERPRETATION>")
+(deftype "inaccurate_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":INACCURATE_ORDINALINTERPRETATION:" "<INACCURATE_ORDINALINTERPRETATION>")
+(deftype "significant_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":SIGNIFICANT_ORDINALINTERPRETATION:" "<SIGNIFICANT_ORDINALINTERPRETATION>")
+(deftype "notsignificant_ordinalinterpretation" 
+  (isa "significant_ordinalinterpretation"))
+(defstringconstant ":NOTSIGNIFICANT_ORDINALINTERPRETATION:" "<NOTSIGNIFICANT_ORDINALINTERPRETATION>")
+(deftype "minimallysignificant_ordinalinterpretation" 
+  (isa "significant_ordinalinterpretation"))
+(defstringconstant ":MINIMALLYSIGNIFICANT_ORDINALINTERPRETATION:" "<MINIMALLYSIGNIFICANT_ORDINALINTERPRETATION>")
+(deftype "highlysignificant_ordinalinterpretation" 
+  (isa "significant_ordinalinterpretation"))
+(defstringconstant ":HIGHLYSIGNIFICANT_ORDINALINTERPRETATION:" "<HIGHLYSIGNIFICANT_ORDINALINTERPRETATION>")
+(deftype "inadequate_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":INADEQUATE_ORDINALINTERPRETATION:" "<INADEQUATE_ORDINALINTERPRETATION>")
+(deftype "veryabnormal_abnormalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":VERYABNORMAL_ABNORMALINTERPRETATION:" "<VERYABNORMAL_ABNORMALINTERPRETATION>")
+(deftype "twoplus_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":TWOPLUS_ORDINALINTERPRETATION:" "<TWOPLUS_ORDINALINTERPRETATION>")
+(deftype "notabnormal_abnormalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":NOTABNORMAL_ABNORMALINTERPRETATION:" "<NOTABNORMAL_ABNORMALINTERPRETATION>")
+(deftype "normal_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":NORMAL_ORDINALINTERPRETATION:" "<NORMAL_ORDINALINTERPRETATION>")
+(deftype "threeplus_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":THREEPLUS_ORDINALINTERPRETATION:" "<THREEPLUS_ORDINALINTERPRETATION>")
+(deftype "notdetected_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":NOTDETECTED_ORDINALINTERPRETATION:" "<NOTDETECTED_ORDINALINTERPRETATION>")
+(deftype "adequate_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":ADEQUATE_ORDINALINTERPRETATION:" "<ADEQUATE_ORDINALINTERPRETATION>")
+(deftype "trace_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":TRACE_ORDINALINTERPRETATION:" "<TRACE_ORDINALINTERPRETATION>")
+(deftype "marginate_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":MARGINATE_ORDINALINTERPRETATION:" "<MARGINATE_ORDINALINTERPRETATION>")
+(deftype "detected_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":DETECTED_ORDINALINTERPRETATION:" "<DETECTED_ORDINALINTERPRETATION>")
+(deftype "resistant_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":RESISTANT_ORDINALINTERPRETATION:" "<RESISTANT_ORDINALINTERPRETATION>")
+(deftype "weak_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":WEAK_ORDINALINTERPRETATION:" "<WEAK_ORDINALINTERPRETATION>")
+(deftype "negative_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":NEGATIVE_ORDINALINTERPRETATION:" "<NEGATIVE_ORDINALINTERPRETATION>")
+(deftype "excessive_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":EXCESSIVE_ORDINALINTERPRETATION:" "<EXCESSIVE_ORDINALINTERPRETATION>")
+(deftype "fourplus_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":FOURPLUS_ORDINALINTERPRETATION:" "<FOURPLUS_ORDINALINTERPRETATION>")
+(deftype "indeterminate_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":INDETERMINATE_ORDINALINTERPRETATION:" "<INDETERMINATE_ORDINALINTERPRETATION>")
+(deftype "oneplus_ordinalinterpretation" 
+  (isa "ordinalinterpretation"))
+(defstringconstant ":ONEPLUS_ORDINALINTERPRETATION:" "<ONEPLUS_ORDINALINTERPRETATION>")
+(deftype "severity" 
+  (isa "semanticmodifier"))
+(deftype "mild_severity" 
+  (isa "severity"))
+(defstringconstant ":MILD_SEVERITY:" "<MILD_SEVERITY>")
+(deftype "moderatetosevere_severity" 
+  (isa "severity"))
+(defstringconstant ":MODERATETOSEVERE_SEVERITY:" "<MODERATETOSEVERE_SEVERITY>")
+(deftype "mildtomoderate_severity" 
+  (isa "severity"))
+(defstringconstant ":MILDTOMODERATE_SEVERITY:" "<MILDTOMODERATE_SEVERITY>")
+(deftype "moderate_severity" 
+  (isa "severity"))
+(defstringconstant ":MODERATE_SEVERITY:" "<MODERATE_SEVERITY>")
+(deftype "fatal_severity" 
+  (isa "severity"))
+(defstringconstant ":FATAL_SEVERITY:" "<FATAL_SEVERITY>")
+(deftype "lifethreatening_severity" 
+  (isa "severity"))
+(defstringconstant ":LIFETHREATENING_SEVERITY:" "<LIFETHREATENING_SEVERITY>")
+(deftype "severe_severity" 
+  (isa "severity"))
+(defstringconstant ":SEVERE_SEVERITY:" "<SEVERE_SEVERITY>")
+(deftype "deltaflag" 
+  (isa "semanticmodifier"))
+(deftype "stabilized_deltaflag" 
+  (isa "deltaflag"))
+(defstringconstant ":STABILIZED_DELTAFLAG:" "<STABILIZED_DELTAFLAG>")
+(deftype "maintained_deltaflag" 
+  (isa "deltaflag"))
+(defstringconstant ":MAINTAINED_DELTAFLAG:" "<MAINTAINED_DELTAFLAG>")
+(deftype "changed_deltaflag" 
+  (isa "deltaflag"))
+(defstringconstant ":CHANGED_DELTAFLAG:" "<CHANGED_DELTAFLAG>")
+(deftype "improved_deltaflag" 
+  (isa "changed_deltaflag"))
+(defstringconstant ":IMPROVED_DELTAFLAG:" "<IMPROVED_DELTAFLAG>")
+(deftype "worsened_deltaflag" 
+  (isa "changed_deltaflag"))
+(defstringconstant ":WORSENED_DELTAFLAG:" "<WORSENED_DELTAFLAG>")
+(deftype "increased_deltaflag" 
+  (isa "changed_deltaflag"))
+(defstringconstant ":INCREASED_DELTAFLAG:" "<INCREASED_DELTAFLAG>")
+(deftype "decreased_deltaflag" 
+  (isa "changed_deltaflag"))
+(defstringconstant ":DECREASED_DELTAFLAG:" "<DECREASED_DELTAFLAG>")
+(deftype "unchanged_deltaflag" 
+  (isa "deltaflag"))
+(defstringconstant ":UNCHANGED_DELTAFLAG:" "<UNCHANGED_DELTAFLAG>")
+(deftype "gender" 
+  (isa "semanticmodifier"))
+(deftype "male_gender" 
+  (isa "gender"))
+(defstringconstant ":MALE_GENDER:" "<MALE_GENDER>")
+(deftype "female_gender" 
+  (isa "gender"))
+(defstringconstant ":FEMALE_GENDER:" "<FEMALE_GENDER>")
+(deftype "qualifier" 
+  (isa "modifier"))
+(deftype "unit" 
+  (isa "qualifier"))
+(deftype "unitoftime_unit" 
+  (isa "unit"))
+(deftype "years_unit" 
+  (isa "unitoftime_unit"))
+(deftype "weeks_unit" 
+  (isa "unitoftime_unit"))
+(deftype "months_unit" 
+  (isa "unitoftime_unit"))
+(deftype "unitofphysiologicalstatusandassessment_unit" 
+  (isa "unit"))
+(deftype "breaths_per_minute_unit" 
+  (isa "unitofphysiologicalstatusandassessment_unit"))
+(deftype "beats_per_minute_unit" 
+  (isa "unitofphysiologicalstatusandassessment_unit"))
+(deftype "unitoftemperature_unit" 
+  (isa "unit"))
+(deftype "degrees_celsius_unit" 
+  (isa "unitoftemperature_unit"))
+(deftype "degrees_fahrenheit_unit" 
+  (isa "unitoftemperature_unit"))
+(deftype "unitoffractionalmeasurement_unit" 
+  (isa "unit"))
+(deftype "percentage_unit_unit" 
+  (isa "unitoffractionalmeasurement_unit"))
+(deftype "numericmodifier" 
+  (isa "modifier"))
+(hasunit "<NUMERICMODIFIER>" "<UNIT>")
+(deftype "quantity" 
+  (isa "numericmodifier"))
+(deftype "ka000404" 
+  (isa "quantity"))
+(defstringconstant ":KA000404:" "<KA000404>")
+(deftype "age" 
+  (isa "quantity"))
+(deftype "age_gte_70_yo" 
+  (isa "age"))
+(defstringconstant ":AGE_GTE_70_YO:" "<AGE_GTE_70_YO>")
+(deftype "ka000408" 
+  (isa "quantity"))
+(defstringconstant ":KA000408:" "<KA000408>")
+(deftype "ka000407" 
+  (isa "quantity"))
+(defstringconstant ":KA000407:" "<KA000407>")
+(deftype "ka000406" 
+  (isa "quantity"))
+(defstringconstant ":KA000406:" "<KA000406>")
+(deftype "ka000405" 
+  (isa "quantity"))
+(defstringconstant ":KA000405:" "<KA000405>")
+(deftype "rangemodifier" 
+  (isa "numericmodifier"))
+(deftype "range_gt_0_percent" 
+  (isa "rangemodifier"))
+(defstringconstant ":RANGE_GT_0_PERCENT:" "<RANGE_GT_0_PERCENT>")
+(deftype "linguisticmodifier" 
+  (isa "modifier"))
+(deftype "temporality" 
+  (isa "linguisticmodifier"))
+(deftype "after_doctimerel" 
+  (isa "temporality"))
+(defstringconstant ":AFTER_DOCTIMEREL:" "<AFTER_DOCTIMEREL>")
+(deftype "before_doctimerel" 
+  (isa "temporality"))
+(defstringconstant ":BEFORE_DOCTIMEREL:" "<BEFORE_DOCTIMEREL>")
+(deftype "overlap_doctimerel" 
+  (isa "temporality"))
+(defstringconstant ":OVERLAP_DOCTIMEREL:" "<OVERLAP_DOCTIMEREL>")
+(deftype "before-overlap_doctimerel" 
+  (isa "temporality"))
+(defstringconstant ":BEFORE_OVERLAP_DOCTIMEREL:" "<BEFORE-OVERLAP_DOCTIMEREL>")
+(deftype "contextualaspect" 
+  (isa "linguisticmodifier"))
+(deftype "continues_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":CONTINUES_CONTEXTUALASPECT:" "<CONTINUES_CONTEXTUALASPECT>")
+(deftype "initiates_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":INITIATES_CONTEXTUALASPECT:" "<INITIATES_CONTEXTUALASPECT>")
+(deftype "notapplicable_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":NOTAPPLICABLE_CONTEXTUALASPECT:" "<NOTAPPLICABLE_CONTEXTUALASPECT>")
+(deftype "intermittent_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":INTERMITTENT_CONTEXTUALASPECT:" "<INTERMITTENT_CONTEXTUALASPECT>")
+(deftype "terminates_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":TERMINATES_CONTEXTUALASPECT:" "<TERMINATES_CONTEXTUALASPECT>")
+(deftype "novel_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":NOVEL_CONTEXTUALASPECT:" "<NOVEL_CONTEXTUALASPECT>")
+(deftype "reinitiates_contextualaspect" 
+  (isa "contextualaspect"))
+(defstringconstant ":REINITIATES_CONTEXTUALASPECT:" "<REINITIATES_CONTEXTUALASPECT>")
+(deftype "certainty" 
+  (isa "linguisticmodifier"))
+(deftype "uncertain_certainty" 
+  (isa "certainty"))
+(defstringconstant ":UNCERTAIN_CERTAINTY:" "<UNCERTAIN_CERTAINTY>")
+(deftype "definitenegatedexistence_certainty" 
+  (isa "certainty"))
+(defstringconstant ":DEFINITENEGATEDEXISTENCE_CERTAINTY:" "<DEFINITENEGATEDEXISTENCE_CERTAINTY>")
+(deftype "probablenegatedexistence_certainty" 
+  (isa "certainty"))
+(defstringconstant ":PROBABLENEGATEDEXISTENCE_CERTAINTY:" "<PROBABLENEGATEDEXISTENCE_CERTAINTY>")
+(deftype "definiteexistence_certainty" 
+  (isa "certainty"))
+(defstringconstant ":DEFINITEEXISTENCE_CERTAINTY:" "<DEFINITEEXISTENCE_CERTAINTY>")
+(deftype "probableexistence_certainty" 
+  (isa "certainty"))
+(defstringconstant ":PROBABLEEXISTENCE_CERTAINTY:" "<PROBABLEEXISTENCE_CERTAINTY>")
+(deftype "experiencer" 
+  (isa "linguisticmodifier"))
+(deftype "donorfamilymember_experiencer" 
+  (isa "experiencer"))
+(defstringconstant ":DONORFAMILYMEMBER_EXPERIENCER:" "<DONORFAMILYMEMBER_EXPERIENCER>")
+(deftype "familymember_experiencer" 
+  (isa "experiencer"))
+(defstringconstant ":FAMILYMEMBER_EXPERIENCER:" "<FAMILYMEMBER_EXPERIENCER>")
+(deftype "patient_experiencer" 
+  (isa "experiencer"))
+(defstringconstant ":PATIENT_EXPERIENCER:" "<PATIENT_EXPERIENCER>")
+(deftype "donorothermember_experiencer" 
+  (isa "experiencer"))
+(defstringconstant ":DONOROTHERMEMBER_EXPERIENCER:" "<DONOROTHERMEMBER_EXPERIENCER>")
+(deftype "othermember_experiencer" 
+  (isa "experiencer"))
+(defstringconstant ":OTHERMEMBER_EXPERIENCER:" "<OTHERMEMBER_EXPERIENCER>")
+(deftype "closure" 
+  (isa "lexicon"))
+(deftype "but_group" 
+  (isa "closure"))
+(deftype "because_group" 
+  (isa "closure"))
+(deftype "which_group" 
+  (isa "closure"))
+(deftype "patient_group" 
+  (isa "closure"))
+(deftype "secondaryto_group" 
+  (isa "closure"))
+(deftype "pseudo" 
+  (isa "lexicon"))
+(ispseudoof "<PSEUDO>" "<MODIFIER>")
+(deftype "pseudoanchor" 
+  (isa "pseudo"))
+(deftype "non_infectious_pneumonia" 
+  (isa "pseudoanchor"))
+(deftype "rheumatic_pneumonia" 
+  (isa "non_infectious_pneumonia"))
+(deftype "traumatic_pneumonia" 
+  (isa "non_infectious_pneumonia"))
+(deftype "endogenous_lipoid_pneumonia" 
+  (isa "lipid_pneumonia" "non_infectious_pneumonia"))
+(defstringconstant ":ENDOGENOUS_LIPOID_PNEUMONIA:" "<ENDOGENOUS_LIPOID_PNEUMONIA>")
+(deftype "lupus_pneumonia" 
+  (isa "non_infectious_pneumonia"))
+(deftype "foreign_body_pneumonia" 
+  (isa "non_infectious_pneumonia"))
+(deftype "allergic_pneumonia" 
+  (isa "non_infectious_pneumonia"))
+(deftype "allergic_cough" 
+  (isa "pseudoanchor"))
+(deftype "cough_after_eating" 
+  (isa "pseudoanchor"))
+(deftype "smokers_cough" 
+  (isa "pseudoanchor"))
+(deftype "autoimmune_leukopenia" 
+  (isa "pseudoanchor"))
+(deftype "pseudomodifier" 
+  (isa "pseudo"))
+(deftype "pseudonegation" 
+  (isa "pseudomodifier"))
+(deftype "pseudofuture" 
+  (isa "pseudomodifier"))
+(deftype "pseudohistorical" 
+  (isa "pseudomodifier"))
+(deftype "thing" 
+  (isa "owl"))
+(deftype "annotation" 
+  (isa "thing"))
+(hasanchor "<ANNOTATION>" "<ANCHOR>")
+(hasrate "<ANNOTATION>" "<QUANTITY>")
+(hasrate "<ANNOTATION>" "<RANGEMODIFIER>")
+(hasexclusion "<ANNOTATION>" "<MODIFIER>")
+(hasexclusion "<ANNOTATION>" "<ANNOTATION>")
+(hasrelation "<ANNOTATION>" "<ANNOTATION>")
+(hasannotationtype "<ANNOTATION>" "<ANNOTATIONTYPE>")
+(hasnumvalue "<ANNOTATION>" "<NUMERICMODIFIER>")
+(wasderivedfrom "<ANNOTATION>" "<ANNOTATION>")
+(hasmodifier "<ANNOTATION>" "<MODIFIER>")
+(deftype "event" 
+  (isa "annotation"))
+(hascertainty "<EVENT>" "<CERTAINTY>")
+(hasexperiencer "<EVENT>" "<EXPERIENCER>")
+(hastemporality "<EVENT>" "<TEMPORALITY>")
+(hascontextualaspect "<EVENT>" "<CONTEXTUALASPECT>")
+(deftype "condition" 
+  (isa "event"))
+(hasageabatement "<CONDITION>" "<AGE>")
+(hasdeltaflag "<CONDITION>" "<DELTAFLAG>")
+(hasseverity "<CONDITION>" "<SEVERITY>")
+(hasbodysite "<CONDITION>" "<BODYSITE>")
+(hasageonset "<CONDITION>" "<AGE>")
+(deftype "finding" 
+  (isa "condition"))
+(deftype "ka011" 
+  (isa "finding"))
+(defstringconstant ":BRONCHIAL_BREATHING:" "<KA011>")
+(deftype "ka018" 
+  (isa "finding"))
+(defstringconstant ":RESPIRATORY_SECRETION:" "<KA018>")
+(deftype "ka017" 
+  (isa "finding"))
+(defstringconstant ":RALES:" "<KA017>")
+(deftype "ka016" 
+  (isa "finding"))
+(defstringconstant ":PURULENT_SPUTUM:" "<KA016>")
+(deftype "ka015" 
+  (isa "finding"))
+(defstringconstant ":WORSENING_TACHYPNEA:" "<KA015>")
+(deftype "ka010" 
+  (isa "finding"))
+(defstringconstant ":CHANGING_LUNG_INFILTRATION:" "<KA010>")
+(deftype "ka009" 
+  (isa "finding"))
+(defstringconstant ":LUNG_CONSOLIDATION:" "<KA009>")
+(deftype "ka006" 
+  (isa "finding"))
+(defstringconstant ":CAVITATION_OF_LUNG:" "<KA006>")
+(deftype "ka005" 
+  (isa "finding"))
+(defstringconstant ":ABNORMAL_MENTAL_STATE_IN_PATIENTS_GTE_70_YO:" "<KA005>")
+(deftype "ka000401" 
+  (isa "finding"))
+(defstringconstant ":NEW_LUNG_INFILTRATION:" "<KA000401>")
+(deftype "ka000400" 
+  (isa "finding"))
+(defstringconstant ":NEW_ONSET_OF_TACHYPNEA:" "<KA000400>")
+(deftype "signsymptom" 
+  (isa "condition"))
+(deftype "ka000402" 
+  (isa "signsymptom"))
+(defstringconstant ":WORSENING_COUGH:" "<KA000402>")
+(deftype "ka014" 
+  (isa "signsymptom"))
+(defstringconstant ":NEW_ONSET_OF_DYSPNEA:" "<KA014>")
+(deftype "ka013" 
+  (isa "signsymptom"))
+(defstringconstant ":NEW_ONSET_OF_COUGH:" "<KA013>")
+(deftype "ka012" 
+  (isa "signsymptom"))
+(defstringconstant ":FEVER:" "<KA012>")
+(deftype "ka000403" 
+  (isa "signsymptom"))
+(defstringconstant ":WORSENING_DYSPNEA:" "<KA000403>")
+(deftype "diseasedisorder" 
+  (isa "condition"))
+(deftype "ka007" 
+  (isa "diseasedisorder"))
+(defstringconstant ":LEUKOCYTOSIS:" "<KA007>")
+(deftype "ka008" 
+  (isa "diseasedisorder"))
+(defstringconstant ":LEUKOPENIA:" "<KA008>")
+(deftype "ka000409" 
+  (isa "diseasedisorder"))
+(defstringconstant ":PNEUMONIA:" "<KA000409>")
+(deftype "observation" 
+  (isa "event"))
+(hasinterpretation "<OBSERVATION>" "<ORDINALINTERPRETATION>")
+(hasdeltaflag "<OBSERVATION>" "<DELTAFLAG>")
+(hasbodysite "<OBSERVATION>" "<BODYSITE>")
+(hasmethod "<OBSERVATION>" "<PROCEDURE>")
+(deftype "ka023" 
+  (isa "observation"))
+(defstringconstant ":RESPIRATORY_RATE_GT_25_BPM:" "<KA023>")
+(deftype "ka019" 
+  (isa "observation"))
+(defstringconstant ":WORSENING_GAS_EXCHANGE:" "<KA019>")
+(deftype "ka004" 
+  (isa "observation"))
+(defstringconstant ":WHITE_BLOOD_CELL_COUNT_GTE_12000:" "<KA004>")
+(deftype "ka003" 
+  (isa "observation"))
+(defstringconstant ":WHITE_BLOOD_CELL_COUNT_LT_4000:" "<KA003>")
+(deftype "ka002" 
+  (isa "observation"))
+(defstringconstant ":OXYGEN_SATURATION:" "<KA002>")
+(deftype "ka001" 
+  (isa "observation"))
+(defstringconstant ":BODY_TEMPERATURE_GT_100_4_F:" "<KA001>")
+(deftype "procedure" 
+  (isa "event"))
+(hasdeltaflag "<PROCEDURE>" "<DELTAFLAG>")
+(hasbodysite "<PROCEDURE>" "<BODYSITE>")
+(deftype "therapeuticprocedure" 
+  (isa "procedure"))
+(hasregimen "<THERAPEUTICPROCEDURE>" "<PROCEDURE>")
+(deftype "ka022" 
+  (isa "therapeuticprocedure"))
+(defstringconstant ":VENTILATOR_CARE:" "<KA022>")
+(deftype "ka021" 
+  (isa "therapeuticprocedure"))
+(defstringconstant ":RESPIRATORY_SUCTIONING:" "<KA021>")
+(deftype "ka020" 
+  (isa "therapeuticprocedure"))
+(defstringconstant ":OXYGEN_THERAPY:" "<KA020>")
+(deftype "entity" 
+  (isa "annotation"))
+(deftype "patient" 
+  (isa "entity"))
+(hasgender "<PATIENT>" "<GENDER>")
+(hasagerange "<PATIENT>" "<AGE>")
+(hasage "<PATIENT>" "<AGE>")
+(deftype "ka024" 
+  (isa "patient"))
+(defstringconstant ":PT_GTE_70_YO:" "<KA024>")
+(deftype "attribute" 
+  (isa "thing"))
+(deftype "annotationtype" 
+  (isa "attribute"))
+(deftype "mentionannotation" 
+  (isa "annotationtype"))
+
+)

@@ -1,0 +1,54 @@
+'(
+wordrule
+(
+  (ruleid "AUTO-person-event-complex-rule-3-2017/05/10 12:24:41") 
+  (specialized) 
+  (example-snippet "He came by bus to the clinic") 
+  (ordered true) 
+  (sourceid "person-event-complex-rule") 
+  (concept ":POSSIBLE_LACK_SUPPORT:") 
+  (stype "<SENTENCE>") 
+  (window 32.0) 
+  (words 
+    ("@patient-rule-1@") 
+    ("@AUTO-event-thing-rule-4-2017/05/10 12:24:41@")) 
+  (properties 
+    (subject ?0) 
+    (event ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-event-thing-rule-4-2017/05/10 12:24:41") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "bus to the clinic") 
+  (ordered true) 
+  (sourceid "event-thing-rule") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 32.0) 
+  (words 
+    ("@transportation-object-rule-1@") 
+    ("@AUTO-simple-pp-rule-30-2016/06/24 20:38:18@")) 
+  (properties 
+    (event ?0) 
+    (object ?1)))
+
+(
+  (ruleid "AUTO-simple-pp-rule-5-2017/05/10 12:24:41") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "to the clinic") 
+  (ordered true) 
+  (sourceid "simple-pp-rule") 
+  (concept "?1") 
+  (stype "<FACILITY>") 
+  (window 16.0) 
+  (words 
+    ("@preposition-word-rule@") 
+    ("@medical-facility-rule-1@")) 
+  (properties 
+    (object ?1)) 
+  (tests 
+    ("isInterpreted" ?1)))
+
+)

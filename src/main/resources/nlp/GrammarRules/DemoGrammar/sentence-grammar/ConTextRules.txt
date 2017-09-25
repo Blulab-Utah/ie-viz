@@ -1,0 +1,18 @@
+'(
+tagrule
+ 
+((ruleid pre-negation-context-rule-FILE)
+  (concept ?1)
+  (ordered true)
+  (window 8)
+  (pattern (":PRE-NEGATION-WORD:") (?interpreted))
+  (properties (directionality negated))
+  (tests (notneg ?1)))
+
+((ruleid pre-negation-word-rule)
+ (concept ":PRE-NEGATION-WORD:")
+ (words ("never" "no" "not" "without" "w/o" "can't" "never")))
+
+  
+
+)

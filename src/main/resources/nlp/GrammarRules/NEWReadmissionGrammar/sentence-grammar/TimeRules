@@ -1,0 +1,80 @@
+'(
+wordrule
+
+((ruleid time-unit-before-event-thing-rule)
+ (stype "<TIME-EXPRESSION>")
+ (concept ?0)
+ (words ("<TIME-DURATION>") ("prior to" "before") ("<EVENT>" "<STATEMENT>")))
+
+((ruleid date-range-rule-1)
+ (stype "<DATE>")
+ (concept ?0)
+ (ordered true)
+ (words ("<DATE>") ("to" "through" "until") ("<DATE>")))
+
+((ruleid time-duration-expression-rule)-
+ (stype "<TIME-EXPRESSION>")
+ (concept ?0)
+ (words ("<TIME-DURATION>" "<DATE>")))
+  
+((ruleid specific-time-combination-rule-1)
+ (concept ":SPECIFIC-TIME:")
+ (words (":NUMBER:") (":SPECIFIC-TIME:")))
+  
+;; e.g. "five years"
+((ruleid time-number-rule)
+ (concept ?1)
+ (juxtaposed true)
+ (words ("<NUMBER>") ("<TIME-DURATION>")))
+
+((ruleid modified-time-duration-rule)
+ (stype "<TIME-DURATION>")
+ (concept ?1)
+ (words ("<TIME-MODIFIER>") ("<TIME-DURATION>")))
+
+;; "patient currently drinks alcohol"
+((ruleid modified-time-expression-rule)
+ (stype "<EVENT>")
+ (concept ?1)
+ (ordered true)
+ (words ("<TIME-MODIFIER>") ("<EVENT>"))
+ (relations (time-modifier ?* ?0) (event ?* ?1)))
+
+((ruleid per-time-unit-rule-1)
+ (concept ":PER-TIME-UNIT:")
+ (words ("per") (":TIME-UNIT:")))
+ 
+ ;;;;;;;;;;;;;;;;;;;;
+;; Word rules
+
+((ruleid specific-time-rule-1)
+  (concept ":SPECIFIC-TIME:")
+  (words ("today" "tomorrow" "yesterday" "4-5pm" "after work" )))
+
+;; "weekly", "per year"
+((ruleid time-unit-rule) 
+  (concept ":TIME-UNIT:")
+  (words 
+    ("years" "year" "day" "days" "night" "nights"
+	"week" "weeks" "month" "months" "hour" "hours")))
+
+;; 6/11/2015
+((ruleid temporal-regularity-rule) 
+  (concept ":REGULARLY:")
+  (words 
+    ("monthly" "every month" "daily" "every day" "nightly" "every night" 
+	"weekly" "every week" "hourly" "every hour" "regularly" "frequently"))
+  (properties (frequency regular)))
+
+
+((ruleid time-modifier-rule) 
+  (concept ":GENERAL-TIME:")
+  (words 
+    ("since" "ago" "until" "per" "lasting until" "last" "lasting" 
+	"lasting up to" "until" "when" "current" "currently" "occasionally" 
+	"frequently" "infrequently" "occasionally" "regularly" "continually"
+	"later than" "up to" "recently" "at this time" "at present" "presently")))
+
+
+
+)

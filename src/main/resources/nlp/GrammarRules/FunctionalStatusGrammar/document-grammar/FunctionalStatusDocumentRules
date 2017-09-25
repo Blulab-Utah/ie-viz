@@ -37,6 +37,17 @@ wordrule
 	(tests (notneg ?0))
 	(actions ("applyModifierProperties" ?rule ?0)) 
  	(properties (contains-target true)))
+ 	
+ 	
+((ruleid document-walks-with-help-rule)
+ (concept ":ADL_DIFFICULTY_AMBULATING:")
+ (words (":WALK_WITH_HELP:"))
+ (properties (contains-target true))
+ (tests (notneg ?0)))
+ 
+ 
+ 	
+ 	":WALK_WITH_HELP:"
 
 
 )

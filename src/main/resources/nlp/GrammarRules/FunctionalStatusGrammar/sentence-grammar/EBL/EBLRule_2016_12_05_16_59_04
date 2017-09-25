@@ -1,0 +1,127 @@
+'(
+wordrule
+(
+  (ruleid "AUTO-person-event-rule-15-2016/12/05 16:59:04") 
+  (specialized) 
+  (example-snippet "He states that he is able to walk without help") 
+  (ordered true) 
+  (sourceid "person-event-rule") 
+  (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:") 
+  (stype "<SENTENCE>") 
+  (window 32.0) 
+  (words 
+    ("@patient-rule-1@") 
+    ("@AUTO-patient-communication-event-affirmed-16-2016/12/05 16:59:04@")) 
+  (properties 
+    (subject ?0) 
+    (event ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-patient-communication-event-affirmed-16-2016/12/05 16:59:04") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "states that he is able to walk without help") 
+  (ordered true) 
+  (sourceid "patient-communication-event-affirmed") 
+  (concept "?1") 
+  (stype "<COMMUNICATION>") 
+  (window 32.0) 
+  (words 
+    ("@affirm-word-rule@") 
+    ("@AUTO-passive-sentence-rule-17-2016/12/05 16:59:04@")) 
+  (properties 
+    (communication true)))
+
+(
+  (ruleid "AUTO-passive-sentence-rule-17-2016/12/05 16:59:04") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "he is able to walk without help") 
+  (ordered true) 
+  (sourceid "passive-sentence-rule") 
+  (concept "?1") 
+  (stype "<PASSIVE_SENTENCE>") 
+  (window 32.0) 
+  (words 
+    ("@patient-rule-1@") 
+    ("@AUTO-passive-event-rule-18-2016/12/05 16:59:04@")) 
+  (properties 
+    (subject ?0) 
+    (event 
+      (event ?1))))
+
+(
+  (ruleid "AUTO-passive-event-rule-18-2016/12/05 16:59:04") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "is able to walk without help") 
+  (ordered true) 
+  (sourceid "passive-event-rule") 
+  (concept "?1") 
+  (stype "<PASSIVE_EVENT>") 
+  (window 32.0) 
+  (words 
+    ("@is-auxilliary-word-rule@") 
+    ("@AUTO-able-to-do-something-rule-11-2016/12/05 16:56:57@")) 
+  (properties 
+    (event ?1)))
+
+(
+  (ruleid "AUTO-AUTO-able-to-do-something-rule-11-2016/12/05 16:56:57-19-2016/12/05 16:59:04") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "able to walk without help") 
+  (ordered true) 
+  (sourceid "AUTO-able-to-do-something-rule-11-2016/12/05 16:56:57") 
+  (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 16.0) 
+  (words 
+    ("@ability-word-rule-1@") 
+    ("@AUTO-event-thing-rule-2-2016/12/04 17:26:08@")) 
+  (properties 
+    (directionality affirmed)) 
+  (tests 
+    (notneg ?0) 
+    (notneg ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-AUTO-event-thing-rule-2-2016/12/04 17:26:08-20-2016/12/05 16:59:04") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "walk without help") 
+  (ordered true) 
+  (sourceid "AUTO-event-thing-rule-2-2016/12/04 17:26:08") 
+  (concept ":WALK_WITHOUT_HELP:") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 32.0) 
+  (words 
+    ("@adl-walking-rule@") 
+    ("@AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08@")) 
+  (properties 
+    (event ?0) 
+    (object ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08-21-2016/12/05 16:59:04") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "without help") 
+  (ordered true) 
+  (sourceid "AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08") 
+  (concept "?1") 
+  (stype "<ACTIVITY>") 
+  (window 8.0) 
+  (words 
+    ("without") 
+    ("@help-rule-1@")) 
+  (properties 
+    (directionality negated)) 
+  (tests 
+    (not 
+      ("firstWordBeginsWithUppercase" ?1))))
+
+)

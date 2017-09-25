@@ -1,0 +1,4676 @@
+'(
+wordrule
+
+((ruleid disease-has-location)
+  (stype ?0)
+  (ordered true)
+  (words ("<PULMDISEASE>") ("<PULMLOC>"))
+  (relations (condition-at-location ?0 ?1)))
+
+ ((ruleid disease-has-state)
+  (words ("<PULMDISEASE>") ("<STATE>"))
+  (stype ?0)
+  (relations (condition-has-state ?0 ?1)))
+
+((ruleid finding-has-location)
+  (stype ?0)
+  (concept ?0)
+  (words ("<PULMFINDING>") ("<PULMLOC>"))
+  (relations (condition-at-location ?0 ?1)))
+
+ ((ruleid finding-has-state)
+  (words ("<PULMFINDING>") ("<STATE>"))
+  (concept ?0)
+  (relations (condition-has-state ?0 ?1)))
+
+(
+  (ruleid "partial") 
+  (words 
+    ("partial")) 
+  (concept ":PARTIAL:") 
+  (stype "<EXTENT>"))
+
+(
+  (ruleid "moderate") 
+  (words 
+    ("deep")) 
+  (concept ":MODERATE:") 
+  (stype "<EXTENT>"))
+
+(
+  (ruleid "full") 
+  (words 
+    ("full")) 
+  (concept ":FULL:") 
+  (stype "<EXTENT>"))
+
+(
+  (ruleid "artifact") 
+  (words 
+    (":LEFT-HEMIDIAPHRAGM:") 
+    ("silhouettting")) 
+  (concept ":ARTIFACT:") 
+  (stype "<PULMFINDING>"))
+
+((ruleid "rll-infiltrate-rule") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+((ruleid "rul-infiltrate-rule") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+((ruleid "rml-infiltrate-rule") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+((ruleid "lll-infiltrate-rule") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+((ruleid "lul-infiltrate-rule") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("infiltrate")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "chest-wall-generalized-infiltrate-rule") 
+  (words 
+    (":CHEST-WALL:") 
+    ("infiltrate")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "right-lower-lobe-density-rule") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("density")) 
+  (concept ":PARENCHYMAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    ("patchy") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "lll-ill-defined-opacity-rule") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("ill-defined") 
+    ("opacity")) 
+  (concept ":LOCALIZED-LOWER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    ("infiltrative") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    ("lobular") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("infiltrates")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("<LOCALPULMLOC>" "<BILATERALPULMLOC>") 
+    ("infiltrates" "infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "artifact") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("artifact")) 
+  (concept ":ARTIFACT:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "artifact") 
+  (words 
+    ("overlying") 
+    ("shadows")) 
+  (concept ":ARTIFACT:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    ("masses")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedparenchymalabnormalityns") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("density")) 
+  (concept ":LOCALIZED-PARENCHYMAL-ABNORMALITY-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedparenchymalabnormalityns") 
+  (words 
+    ("density")) 
+  (concept ":LOCALIZED-PARENCHYMAL-ABNORMALITY-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":BILATERAL-PERIHILAR-REGION:") 
+    ("mild") 
+    ("infiltration")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    ("consolidative") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":BILATERAL-UPPER-LOBES:") 
+    ("interstitial") 
+    ("increased") 
+    ("markings")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    ("pleural effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("infiltrate")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedlowerlobeinfiltrate") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-LOWER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("patchy") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedupperlobeinfiltrate") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("linear") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-UPPER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "artifact") 
+  (words 
+    ("technical changes")) 
+  (concept ":ARTIFACT:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "upperlobenodule") 
+  (words 
+    ("nodular") 
+    ("density")) 
+  (concept ":UPPER-LOBE-NODULE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    ("hazy") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("diffuse") 
+    ("infiltrates")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormality") 
+  (words 
+    (":SKELETON-NOS:") 
+    ("abnormalities")) 
+  (concept ":ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "insterstitialabnormality") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("interstitial") 
+    ("chronic") 
+    ("disease")) 
+  (concept ":INSTERSTITIAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryscarring") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("chronic") 
+    ("scarring")) 
+  (concept ":PULMONARY-SCARRING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":BILATERAL-PERIHILAR-REGION:") 
+    ("interstitial") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":LEFT-PERIHILAR-REGION:") 
+    ("ill-defined") 
+    ("infiltrate")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "calcifiednodule") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("calcified") 
+    ("density")) 
+  (concept ":CALCIFIED-NODULE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("opacity")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    ("infiltrates")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    ("effusions")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "hilarabnormality") 
+  (words 
+    (":BILATERAL-HILUM:") 
+    ("structures")) 
+  (concept ":HILAR-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementoftheheart") 
+  (words 
+    (":HEART:") 
+    ("enlarged")) 
+  (concept ":ENLARGEMENT-OF-THE-HEART:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("masses")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":LEFT-THORAX:") 
+    ("mass")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("masses")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "hilaradenopathy") 
+  (words 
+    ("adenopathy")) 
+  (concept ":HILAR-ADENOPATHY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    ("mass")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":UPPER-LOBE-VESSELS:") 
+    ("airspace") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("nodule")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedlowerlobeinfiltrate") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("opacity")) 
+  (concept ":LOCALIZED-LOWER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":LOWER-LUNG-REGIONS:") 
+    ("patchy") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    ("fractures")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":RIB:") 
+    ("fractures")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":RIB:") 
+    ("fracture")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateralpleuraleffusion") 
+  (words 
+    (":LEFT-INTERPLEURAL-SPACE:") 
+    ("effusion")) 
+  (concept ":UNILATERAL-PLEURAL-EFFUSION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateralpleuraleffusion") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("effusion")) 
+  (concept ":UNILATERAL-PLEURAL-EFFUSION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "upperlobenodule") 
+  (words 
+    (":MID-REGION-LEFT-LUNG:") 
+    ("rounded") 
+    ("density")) 
+  (concept ":UPPER-LOBE-NODULE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":MID-REGION-LEFT-LUNG:") 
+    ("rounded") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("rounded") 
+    ("calcifications")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    (":ALL-THORACIC-LOCATIONS:") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("mass")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    (":AORTA:") 
+    ("atherosclerotic") 
+    ("calcification")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryvascularredistribution") 
+  (words 
+    (":BILATERAL-UPPER-LOBES:") 
+    ("redistribution")) 
+  (concept ":PULMONARY-VASCULAR-REDISTRIBUTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":PLEURA:") 
+    ("effusions")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("infiltrates")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    (":AORTA:") 
+    ("tortuous")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("effusions")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryvascularredistribution") 
+  (words 
+    ("redistribution")) 
+  (concept ":PULMONARY-VASCULAR-REDISTRIBUTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    ("interstitial") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("patchy") 
+    ("infiltrates")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    ("parenchymal") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedvolumeincrease") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("hyperinflation")) 
+  (concept ":GENERALIZED-VOLUME-INCREASE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":BILATERAL-UPPER-LOBES:") 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":VERTEBRAE:") 
+    ("fracture")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":PLEURA:") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":ALL-THORACIC-LOCATIONS:") 
+    ("effusions")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":HEART:") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pneumothorax") 
+  (words 
+    ("air")) 
+  (concept ":PNEUMOTHORAX:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "mediastinalshift") 
+  (words 
+    ("midline")) 
+  (concept ":MEDIASTINAL-SHIFT:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pneumothorax") 
+  (words 
+    ("shadows")) 
+  (concept ":PNEUMOTHORAX:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":PLEURA:") 
+    ("nodular") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "loculatedpleuraleffusion") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("density")) 
+  (concept ":LOCULATED-PLEURAL-EFFUSION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("soft tissue") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "mediastinaladenopathy") 
+  (words 
+    (":MEDIASTINUM:") 
+    ("adenopathy")) 
+  (concept ":MEDIASTINAL-ADENOPATHY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":CHEST-WALL:") 
+    ("calcified") 
+    ("mass")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormality") 
+  (words 
+    ("abnormalities")) 
+  (concept ":ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralthickening") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("thickening")) 
+  (concept ":PLEURAL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("diffuse") 
+    ("density")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":PLEURA:") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":HEART:") 
+    ("patchy") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("patchy") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":RIB:") 
+    ("healed") 
+    ("fractures")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("indistinct")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":PLEURA:") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralthickening") 
+  (words 
+    (":LOWER-LUNG-REGIONS:") 
+    ("thickening")) 
+  (concept ":PLEURAL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "mediastinalabnormality") 
+  (words 
+    (":MEDIASTINUM:") 
+    ("structures")) 
+  (concept ":MEDIASTINAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":SKELETON-NOS:") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":CHEST-WALL:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "upperlobenodule") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("density")) 
+  (concept ":UPPER-LOBE-NODULE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pneumothorax") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("air")) 
+  (concept ":PNEUMOTHORAX:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    (":DIAPHRAGM:") 
+    ("calcification")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    ("calcified")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    (":AORTA:") 
+    ("calcification")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("interstitial") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("diffuse") 
+    ("alveolar") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("diffuse") 
+    ("interstitial") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":INTERLOBULAR-FISSURE:") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("septal lines")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    ("low") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("nodular") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":MEDIASTINUM:") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementoftheheart") 
+  (words 
+    (":HEART:") 
+    ("abnormality")) 
+  (concept ":ENLARGEMENT-OF-THE-HEART:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":AORTA:") 
+    ("atherosclerotic") 
+    ("disease")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("confluent") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("loss")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":LEFT-COSTOPHRENIC-SULCUS:") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "mediastinalwidening") 
+  (words 
+    (":MEDIASTINUM:") 
+    ("contours")) 
+  (concept ":MEDIASTINAL-WIDENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementoftheheart") 
+  (words 
+    (":HEART:") 
+    ("contours")) 
+  (concept ":ENLARGEMENT-OF-THE-HEART:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedvolumereduction") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("aerated")) 
+  (concept ":GENERALIZED-VOLUME-REDUCTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("dense") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":LEFT-COSTOPHRENIC-SULCUS:") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "softtissueabnormality") 
+  (words 
+    (":INTERLOBULAR-FISSURE:") 
+    ("soft tissue")) 
+  (concept ":SOFT-TISSUE-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedvolumereduction") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("depressed") 
+    ("collapse")) 
+  (concept ":LOCALIZED-VOLUME-REDUCTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pneumothorax") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("collection") 
+    ("air")) 
+  (concept ":PNEUMOTHORAX:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":SOFT-TISSUES:") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("focal") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bilateralpleuraleffusion") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("interstitial") 
+    ("effusions")) 
+  (concept ":BILATERAL-PLEURAL-EFFUSION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    ("focal") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bronchialwallthickening") 
+  (words 
+    (":BRONCHIAL-WALL:") 
+    ("cuffing")) 
+  (concept ":BRONCHIAL-WALL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":VERTEBRAE:") 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateraldiaphragmaticelevation") 
+  (words 
+    (":LEFT-COSTOPHRENIC-SULCUS:") 
+    ("elevated")) 
+  (concept ":UNILATERAL-DIAPHRAGMATIC-ELEVATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateraldiaphragmaticelevation") 
+  (words 
+    (":DIAPHRAGM:") 
+    ("elevated")) 
+  (concept ":UNILATERAL-DIAPHRAGMATIC-ELEVATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralthickening") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("thickening")) 
+  (concept ":PLEURAL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("infiltrates")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("focal") 
+    ("opacity")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bronchialwallthickening") 
+  (words 
+    (":BRONCHIAL-WALL:") 
+    ("thickening")) 
+  (concept ":BRONCHIAL-WALL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("inflammatory") 
+    ("infiltrates")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("linear") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    ("focal") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("increased") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":LEFT-HEMIDIAPHRAGM:") 
+    ("ill-defined") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedlowerlobeinfiltrate") 
+  (words 
+    ("ill-defined")) 
+  (concept ":LOCALIZED-LOWER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("focal") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementoftheheart") 
+  (words 
+    ("enlarged")) 
+  (concept ":ENLARGEMENT-OF-THE-HEART:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("patchy")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("nodular") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("chronic") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("diffuse") 
+    ("patchy") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":MID-REGION-LEFT-LUNG:") 
+    ("patchy") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("patchy") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateraldiaphragmaticelevation") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("elevated")) 
+  (concept ":UNILATERAL-DIAPHRAGMATIC-ELEVATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedvolumereduction") 
+  (words 
+    ("aerated")) 
+  (concept ":GENERALIZED-VOLUME-REDUCTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryscarring") 
+  (words 
+    ("interstitial") 
+    ("chronic") 
+    ("scarring")) 
+  (concept ":PULMONARY-SCARRING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    ("interstitial")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("diffuse") 
+    ("nodular") 
+    ("infiltrates")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedlowerlobeinfiltrate") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("diffuse") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-LOWER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    ("mild")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("mild") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedupperlobeinfiltrate") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-UPPER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryscarring") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("scarring")) 
+  (concept ":PULMONARY-SCARRING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("healed") 
+    ("fracture")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralthickening") 
+  (words 
+    ("thickening")) 
+  (concept ":PLEURAL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    ("tortuous")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":HEART:") 
+    ("mild")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    ("interstitial") 
+    ("patchy") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    ("dense") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    ("interstitial") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bilateralpleuraleffusion") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("interstitial")) 
+  (concept ":BILATERAL-PLEURAL-EFFUSION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedvolumereduction") 
+  (words 
+    ("collapse")) 
+  (concept ":LOCALIZED-VOLUME-REDUCTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("patchy") 
+    ("density")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("confluent") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("linear") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("pleural effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    ("mild") 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("pleural effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    ("mild") 
+    ("interstitial") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bronchialwallthickening") 
+  (words 
+    ("cuffing")) 
+  (concept ":BRONCHIAL-WALL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    ("infiltration")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedupperlobeinfiltrate") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("mild") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-UPPER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":VERTEBRAE:") 
+    ("fractures")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryvascularredistribution") 
+  (words 
+    ("mild") 
+    ("redistribution")) 
+  (concept ":PULMONARY-VASCULAR-REDISTRIBUTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    ("loss")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("patchy") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralthickening") 
+  (words 
+    ("chronic") 
+    ("thickening")) 
+  (concept ":PLEURAL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    ("mild") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("loss")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":PLEURA:") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryscarring") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("chronic") 
+    ("scarring")) 
+  (concept ":PULMONARY-SCARRING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "upperlobenodule") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("rounded") 
+    ("density")) 
+  (concept ":UPPER-LOBE-NODULE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryscarring") 
+  (words 
+    ("chronic")) 
+  (concept ":PULMONARY-SCARRING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateraldiaphragmaticelevation") 
+  (words 
+    ("indistinct") 
+    ("elevated")) 
+  (concept ":UNILATERAL-DIAPHRAGMATIC-ELEVATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":VERTEBRAE:") 
+    ("mild")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "softtissueabnormality") 
+  (words 
+    (":MID-REGION-LEFT-LUNG:") 
+    ("soft tissue")) 
+  (concept ":SOFT-TISSUE-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "softtissueabnormality") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("soft tissue")) 
+  (concept ":SOFT-TISSUE-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("linear") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("mass")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":LEFT-PERIHILAR-REGION:") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    ("mild") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("patchy") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("ill-defined") 
+    ("infiltrate")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("patchy") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    ("mild") 
+    ("fluid")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("soft tissue") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("ill-defined") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("patchy") 
+    ("infiltrate")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("mild")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("confluent") 
+    ("infiltrates")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonaryvascularredistribution") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("redistribution")) 
+  (concept ":PULMONARY-VASCULAR-REDISTRIBUTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bronchialwallthickening") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("cuffing")) 
+  (concept ":BRONCHIAL-WALL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-HEMIDIAPHRAGM:") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    ("dense")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementoftheheart") 
+  (words 
+    ("contours")) 
+  (concept ":ENLARGEMENT-OF-THE-HEART:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("fractures")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("diffuse") 
+    ("interstitial") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "unilateraldiaphragmaticelevation") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("elevated")) 
+  (concept ":UNILATERAL-DIAPHRAGMATIC-ELEVATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("interstitial") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    ("diffuse") 
+    ("ill-defined") 
+    ("infiltrate")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    ("nodule")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("pleural effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    ("nodular")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("nodular") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "enlargementofthepulmonaryvessels") 
+  (words 
+    (":BILATERAL-HILUM:") 
+    ("prominence")) 
+  (concept ":ENLARGEMENT-OF-THE-PULMONARY-VESSELS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    ("nodular") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    ("patchy") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    ("interstitial") 
+    ("patchy") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralthickening") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("thickening")) 
+  (concept ":PLEURAL-THICKENING:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bluntingofcpangle") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("chronic") 
+    ("blunting")) 
+  (concept ":BLUNTING-OF-CP-ANGLE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "perihilarinfiltrate") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("mild")) 
+  (concept ":PERIHILAR-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    ("calcification")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("mild") 
+    ("interstitial") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("focal") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    ("increased") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("patchy") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedvolumereduction") 
+  (words 
+    (":VERTEBRAE:") 
+    ("collapse")) 
+  (concept ":LOCALIZED-VOLUME-REDUCTION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("interstitial")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    ("atherosclerotic") 
+    ("calcification")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("interstitial")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":LEFT-INTERPLEURAL-SPACE:") 
+    ("effusions")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    ("mild") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedconsolidation") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("dense") 
+    ("consolidation")) 
+  (concept ":LOCALIZED-CONSOLIDATION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedupperlobeinfiltrate") 
+  (words 
+    ("linear")) 
+  (concept ":LOCALIZED-UPPER-LOBE-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("increased") 
+    ("density")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "density") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("density")) 
+  (concept ":DENSITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("diffuse") 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("density")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("loss")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "genericinfiltratenos") 
+  (words 
+    ("interstitial") 
+    ("infiltrate")) 
+  (concept ":GENERIC-INFILTRATE-NOS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    ("diffuse") 
+    ("interstitial") 
+    ("markings")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuralabnormality") 
+  (words 
+    (":BILATERAL-UPPER-LOBES:") 
+    ("interstitial")) 
+  (concept ":PLEURAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "insterstitialabnormality") 
+  (words 
+    ("mild") 
+    ("interstitial") 
+    ("chronic")) 
+  (concept ":INSTERSTITIAL-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pleuraleffusionns") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("pleural effusion")) 
+  (concept ":PLEURAL-EFFUSION-NS:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":LEFT-HEMIDIAPHRAGM:") 
+    ("opacity")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    ("healed")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "localizedinfiltrate") 
+  (words 
+    (":LEFT-PERIHILAR-REGION:") 
+    ("infiltrates")) 
+  (concept ":LOCALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarynodularlesion") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("interstitial") 
+    ("densities")) 
+  (concept ":PULMONARY-NODULAR-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "bonyabnormality") 
+  (words 
+    (":PLEURA:") 
+    ("abnormality")) 
+  (concept ":BONY-ABNORMALITY:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "fracturedrib") 
+  (words 
+    ("fracture")) 
+  (concept ":FRACTURED-RIB:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "generalizedinfiltrate") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("linear") 
+    ("infiltrates")) 
+  (concept ":GENERALIZED-INFILTRATE:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "abnormalaorta") 
+  (words 
+    ("rounded")) 
+  (concept ":ABNORMAL-AORTA:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pneumothorax") 
+  (words 
+    ("mild") 
+    ("air")) 
+  (concept ":PNEUMOTHORAX:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pneumothorax") 
+  (words 
+    ("patchy") 
+    ("air")) 
+  (concept ":PNEUMOTHORAX:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "parenchymalabnormalityno") 
+  (words 
+    (":LEFT-PERIHILAR-REGION:") 
+    ("diffuse")) 
+  (concept ":PARENCHYMAL-ABNORMALITY-NO:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "pulmonarymasslesion") 
+  (words 
+    (":PLEURA:") 
+    ("mass")) 
+  (concept ":PULMONARY-MASS-LESION:") 
+  (stype "<PULMFINDING>"))
+
+(
+  (ruleid "lefthemidiaphragm") 
+  (words 
+    ("medial") 
+    ("aspect of") 
+    ("lung") 
+    ("left") 
+    ("base")) 
+  (concept ":LEFT-HEMIDIAPHRAGM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("medial") 
+    ("left") 
+    ("base")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("lobe") 
+    ("right") 
+    ("lower")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("pulmonary")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("right") 
+    ("base")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("superior segment") 
+    ("lobe") 
+    ("right") 
+    ("lower")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("lung") 
+    ("right") 
+    ("lower")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("left") 
+    ("base")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("lobes") 
+    ("right") 
+    ("lower")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallung") 
+  (words 
+    ("lungs")) 
+  (concept ":BILATERAL-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlung") 
+  (words 
+    ("lung") 
+    ("left")) 
+  (concept ":LEFT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("basilar")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("bases")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightupperlobe") 
+  (words 
+    ("lobe") 
+    ("right")) 
+  (concept ":RIGHT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightupperlobe") 
+  (words 
+    ("lobe") 
+    ("right") 
+    ("upper")) 
+  (concept ":RIGHT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("left") 
+    ("basilar")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftupperlobe") 
+  (words 
+    ("lobe") 
+    ("left") 
+    ("upper")) 
+  (concept ":LEFT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("lung") 
+    ("right") 
+    ("base")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralperihilarregion") 
+  (words 
+    ("perihilar") 
+    ("bilateral")) 
+  (concept ":BILATERAL-PERIHILAR-REGION:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftperihilarregion") 
+  (words 
+    ("perihilar") 
+    ("left")) 
+  (concept ":LEFT-PERIHILAR-REGION:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightmiddlelobe") 
+  (words 
+    ("lobes") 
+    ("right") 
+    ("middle")) 
+  (concept ":RIGHT-MIDDLE-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bronchialwall") 
+  (words 
+    ("bronchial")) 
+  (concept ":BRONCHIAL-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralupperlobes") 
+  (words 
+    ("perihilar") 
+    ("lungs") 
+    ("lower")) 
+  (concept ":BILATERAL-UPPER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("lungs")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlung") 
+  (words 
+    ("lung") 
+    ("right")) 
+  (concept ":RIGHT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallung") 
+  (words 
+    ("lateral") 
+    ("lungs")) 
+  (concept ":BILATERAL-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("medial") 
+    ("left") 
+    ("base")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("lobes") 
+    ("bilaterally") 
+    ("lower")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("lung") 
+    ("bases")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "aorta") 
+  (words 
+    ("aorta")) 
+  (concept ":AORTA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallung") 
+  (words 
+    ("lung")) 
+  (concept ":BILATERAL-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftupperlobe") 
+  (words 
+    ("lingula") 
+    ("left") 
+    ("upper")) 
+  (concept ":LEFT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "skeletonnos") 
+  (words 
+    ("bony")) 
+  (concept ":SKELETON-NOS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlung") 
+  (words 
+    ("left")) 
+  (concept ":LEFT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("lobes") 
+    ("bilateral") 
+    ("lower")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightmiddlelobe") 
+  (words 
+    ("aspect of") 
+    ("lobe") 
+    ("right") 
+    ("middle")) 
+  (concept ":RIGHT-MIDDLE-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("lateral") 
+    ("costophrenic angle") 
+    ("right")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "heart") 
+  (words 
+    ("heart")) 
+  (concept ":HEART:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralhilum") 
+  (words 
+    ("hilar")) 
+  (concept ":BILATERAL-HILUM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("pulmonary") 
+    ("left")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftthorax") 
+  (words 
+    ("chest") 
+    ("left")) 
+  (concept ":LEFT-THORAX:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("lateral")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("posteriorly") 
+    ("lobe") 
+    ("left") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("right") 
+    ("basilar")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("pulmonary") 
+    ("bilaterally")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "upperlobevessels") 
+  (concept ":UPPER-LOBE-VESSELS:") 
+  (stype "<PULMLOC>")
+  (words 
+    ("upper lobe vessels" "left upper lobe vessels" 
+    	"right upper lobe vessels")))
+
+(
+  (ruleid "rightmiddlelobe") 
+  (words 
+    ("lobe") 
+    ("right") 
+    ("middle")) 
+  (concept ":RIGHT-MIDDLE-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("lobe") 
+    ("left") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "lowerlungregions") 
+  (words 
+    ("laterally") 
+    ("infrahilar") 
+    ("right") 
+    ("base")) 
+  (concept ":LOWER-LUNG-REGIONS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("vascular") 
+    ("bilateral")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rib") 
+  (words 
+    ("ribs") 
+    ("right")) 
+  (concept ":RIB:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("vessels")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftinterpleuralspace") 
+  (words 
+    ("left sided")) 
+  (concept ":LEFT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("pleural") 
+    ("right sided")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rib") 
+  (words 
+    ("rib")) 
+  (concept ":RIB:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "midregionleftlung") 
+  (words 
+    ("lung") 
+    ("right") 
+    ("mid")) 
+  (concept ":MID-REGION-LEFT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "heart") 
+  (words 
+    ("silhouette") 
+    ("cardiac")) 
+  (concept ":HEART:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "allthoraciclocations") 
+  (words 
+    ("chest")) 
+  (concept ":ALL-THORACIC-LOCATIONS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("pulmonary") 
+    ("right")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "aorta") 
+  (words 
+    ("aortic")) 
+  (concept ":AORTA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralupperlobes") 
+  (words 
+    ("lobes") 
+    ("upper")) 
+  (concept ":BILATERAL-UPPER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("vascular")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("pleural") 
+    ("bilateral")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("posterior") 
+    ("costophrenic") 
+    ("pleural")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("lateral") 
+    ("costophrenic") 
+    ("pleural")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralupperlobes") 
+  (words 
+    ("apices")) 
+  (concept ":BILATERAL-UPPER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "vertebrae") 
+  (words 
+    ("vertebral body")) 
+  (concept ":VERTEBRAE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralupperlobes") 
+  (words 
+    ("peripheral") 
+    ("lung fields")) 
+  (concept ":BILATERAL-UPPER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("pleural")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "allthoraciclocations") 
+  (words 
+    ("chest") 
+    ("bilateral")) 
+  (concept ":ALL-THORACIC-LOCATIONS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("pleural") 
+    ("right")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("pleural") 
+    ("right") 
+    ("mid")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("anteriorly") 
+    ("lateral") 
+    ("pleural") 
+    ("right") 
+    ("mid")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("both") 
+    ("bases")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("medial") 
+    ("lung") 
+    ("right") 
+    ("base")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("posteriorly") 
+    ("hemithorax") 
+    ("right")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "chestwall") 
+  (words 
+    ("abdomen") 
+    ("upper")) 
+  (concept ":CHEST-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "mediastinum") 
+  (words 
+    ("mediastinum")) 
+  (concept ":MEDIASTINUM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "chestwall") 
+  (words 
+    ("posterior") 
+    ("chest wall")) 
+  (concept ":CHEST-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "chestwall") 
+  (words 
+    ("chest wall") 
+    ("right")) 
+  (concept ":CHEST-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallung") 
+  (words 
+    ("pulmonary") 
+    ("bilateral")) 
+  (concept ":BILATERAL-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("costophrenic") 
+    ("pleural") 
+    ("both")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "cardiopulmonary") 
+  (words 
+    ("cardiopulmonary")) 
+  (concept ":CARDIOPULMONARY:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "lowerlungregions") 
+  (words 
+    ("infrahilar") 
+    ("right")) 
+  (concept ":LOWER-LUNG-REGIONS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "mediastinum") 
+  (words 
+    ("mediastinal")) 
+  (concept ":MEDIASTINUM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("medial") 
+    ("both") 
+    ("bases")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlung") 
+  (words 
+    ("medial") 
+    ("lung") 
+    ("both")) 
+  (concept ":RIGHT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "chestwall") 
+  (words 
+    ("chest") 
+    ("right")) 
+  (concept ":CHEST-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightupperlobe") 
+  (words 
+    ("right") 
+    ("upper")) 
+  (concept ":RIGHT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("posterior")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "diaphragm") 
+  (words 
+    ("diaphragm")) 
+  (concept ":DIAPHRAGM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("lung") 
+    ("left") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftupperlobe") 
+  (words 
+    ("lung") 
+    ("left") 
+    ("upper")) 
+  (concept ":LEFT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("perihilar") 
+    ("pulmonary")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interlobularfissure") 
+  (words 
+    ("fissure")) 
+  (concept ":INTERLOBULAR-FISSURE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "heart") 
+  (words 
+    ("cardiac")) 
+  (concept ":HEART:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("right")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftcostophrenicsulcus") 
+  (words 
+    ("costophrenic angle") 
+    ("left")) 
+  (concept ":LEFT-COSTOPHRENIC-SULCUS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightmiddlelobe") 
+  (words 
+    ("lateral") 
+    ("lobe") 
+    ("right") 
+    ("middle")) 
+  (concept ":RIGHT-MIDDLE-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftcostophrenicsulcus") 
+  (words 
+    ("costophrenic sulcus")) 
+  (concept ":LEFT-COSTOPHRENIC-SULCUS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightupperlobe") 
+  (words 
+    ("right") 
+    ("apex")) 
+  (concept ":RIGHT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "heart") 
+  (words 
+    ("central") 
+    ("heart")) 
+  (concept ":HEART:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("central") 
+    ("pulmonary")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "softtissues") 
+  (words 
+    ("soft tissues") 
+    ("both")) 
+  (concept ":SOFT-TISSUES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallung") 
+  (words 
+    ("bilateral")) 
+  (concept ":BILATERAL-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bronchialwall") 
+  (words 
+    ("peribronchial")) 
+  (concept ":BRONCHIAL-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "vertebrae") 
+  (words 
+    ("mid")) 
+  (concept ":VERTEBRAE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftcostophrenicsulcus") 
+  (words 
+    ("costophrenic angle") 
+    ("right")) 
+  (concept ":LEFT-COSTOPHRENIC-SULCUS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("base")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "diaphragm") 
+  (words 
+    ("diaphragm") 
+    ("right") 
+    ("base")) 
+  (concept ":DIAPHRAGM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("laterally") 
+    ("left")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallung") 
+  (words 
+    ("both")) 
+  (concept ":BILATERAL-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("lobe") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftinterpleuralspace") 
+  (words 
+    ("pleural") 
+    ("left")) 
+  (concept ":LEFT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlung") 
+  (words 
+    ("medial") 
+    ("base")) 
+  (concept ":RIGHT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlung") 
+  (words 
+    ("medial") 
+    ("right")) 
+  (concept ":RIGHT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("structures") 
+    ("vascular")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bronchialwall") 
+  (words 
+    ("peribronchial") 
+    ("bilaterally")) 
+  (concept ":BRONCHIAL-WALL:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "lefthemidiaphragm") 
+  (words 
+    ("aspect of") 
+    ("upper")) 
+  (concept ":LEFT-HEMIDIAPHRAGM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "midregionleftlung") 
+  (words 
+    ("right") 
+    ("mid")) 
+  (concept ":MID-REGION-LEFT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightmiddlelobe") 
+  (words 
+    ("right") 
+    ("middle")) 
+  (concept ":RIGHT-MIDDLE-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("bilaterally") 
+    ("bases")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("hemithorax") 
+    ("right")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("lateral") 
+    ("lobe") 
+    ("left") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "midregionleftlung") 
+  (words 
+    ("lung") 
+    ("right") 
+    ("mid")) 
+  (concept ":MID-REGION-LEFT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftupperlobe") 
+  (words 
+    ("lung") 
+    ("right") 
+    ("upper")) 
+  (concept ":LEFT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("perihilar") 
+    ("lung") 
+    ("right") 
+    ("lower")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftperihilarregion") 
+  (words 
+    ("perihilar") 
+    ("right")) 
+  (concept ":LEFT-PERIHILAR-REGION:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("posterior") 
+    ("right") 
+    ("base")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("posterior") 
+    ("medial") 
+    ("right") 
+    ("base")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("bilateral") 
+    ("basilar")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("posterior") 
+    ("costophrenic")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("laterally")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("posterior") 
+    ("aspect of") 
+    ("right")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("hemithorax") 
+    ("right") 
+    ("mid")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilaterallowerlobes") 
+  (words 
+    ("lung") 
+    ("both") 
+    ("bases")) 
+  (concept ":BILATERAL-LOWER-LOBES:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "lefthemidiaphragm") 
+  (words 
+    ("lung") 
+    ("left") 
+    ("base")) 
+  (concept ":LEFT-HEMIDIAPHRAGM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("central")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightinterpleuralspace") 
+  (words 
+    ("hemithorax") 
+    ("left")) 
+  (concept ":RIGHT-INTERPLEURAL-SPACE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightupperlobe") 
+  (words 
+    ("posterior") 
+    ("lobe") 
+    ("right") 
+    ("upper")) 
+  (concept ":RIGHT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "bilateralhilum") 
+  (words 
+    ("hilar") 
+    ("right")) 
+  (concept ":BILATERAL-HILUM:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("pleural") 
+    ("bilaterally")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("lobe") 
+    ("bilateral") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pulmonaryvessels") 
+  (words 
+    ("central") 
+    ("vessels") 
+    ("upper")) 
+  (concept ":PULMONARY-VESSELS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightupperlobe") 
+  (words 
+    ("lobe") 
+    ("right") 
+    ("mid")) 
+  (concept ":RIGHT-UPPER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlung") 
+  (words 
+    ("lung") 
+    ("right") 
+    ("upper")) 
+  (concept ":RIGHT-LUNG:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightlowerlobe") 
+  (words 
+    ("lower")) 
+  (concept ":RIGHT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("lateral") 
+    ("lower")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "interpleuralspacens") 
+  (words 
+    ("lateral") 
+    ("costophrenic angle") 
+    ("left")) 
+  (concept ":INTERPLEURAL-SPACE-NS:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftlowerlobe") 
+  (words 
+    ("left") 
+    ("lower")) 
+  (concept ":LEFT-LOWER-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "leftperihilarregion") 
+  (words 
+    ("perihilar")) 
+  (concept ":LEFT-PERIHILAR-REGION:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "rightmiddlelobe") 
+  (words 
+    ("lateral") 
+    ("lobe") 
+    ("right") 
+    ("base")) 
+  (concept ":RIGHT-MIDDLE-LOBE:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pleura") 
+  (words 
+    ("lateral") 
+    ("pleural")) 
+  (concept ":PLEURA:") 
+  (stype "<PULMLOC>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    ("acute") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+((ruleid "chf-rule") 
+  (words 
+    ("congestive failure" "congestive heart failure" "chf" "heart failure"))
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    ("prior") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonitis") 
+  (words 
+    ("pneumonitis")) 
+  (concept ":PNEUMONITIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    ("congestive") 
+    ("heart failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuraleffusion") 
+  (words 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":LEFT-UPPER-LOBE:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":BRONCHIAL-WALL:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "anyacutedisease") 
+  (words 
+    ("acute") 
+    ("infection")) 
+  (concept ":ANY-ACUTE-DISEASE:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atypicalpneumonia") 
+  (words 
+    ("atypical") 
+    ("pneumonitis")) 
+  (concept ":ATYPICAL-PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "metastasis") 
+  (words 
+    (":SKELETON-NOS:") 
+    ("metastatic") 
+    ("disease")) 
+  (concept ":METASTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "anyacutedisease") 
+  (words 
+    ("active")) 
+  (concept ":ANY-ACUTE-DISEASE:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "metastasis") 
+  (words 
+    ("metastatic") 
+    ("disease")) 
+  (concept ":METASTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    ("failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chronicobstructivepulmonarydisease") 
+  (words 
+    ("obstructive")) 
+  (concept ":CHRONIC-OBSTRUCTIVE-PULMONARY-DISEASE:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atherosclerosis") 
+  (words 
+    (":AORTA:") 
+    ("atherosclerotic") 
+    ("disease")) 
+  (concept ":ATHEROSCLEROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    (":HEART:") 
+    ("congestive") 
+    ("failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("congestion")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "hemorrhage") 
+  (words 
+    ("blood")) 
+  (concept ":HEMORRHAGE:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "aspirationpneumonia") 
+  (words 
+    ("aspiration pneumonia" "aspiration")) 
+  (concept ":ASPIRATION-PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    ("acute")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diffuseidiopathicpulmonaryfibrosis") 
+  (words 
+    (":BILATERAL-UPPER-LOBES:") 
+    ("diffuse") 
+    ("fibrosis")) 
+  (concept ":DIFFUSE-IDIOPATHIC-PULMONARY-FIBROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("active") 
+    ("disease")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("scar")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("scar")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    ("metastatic") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "primarylungcancer") 
+  (words 
+    ("metastatic") 
+    ("carcinoma")) 
+  (concept ":PRIMARY-LUNG-CANCER:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diffuseidiopathicpulmonaryfibrosis") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("fibrosis")) 
+  (concept ":DIFFUSE-IDIOPATHIC-PULMONARY-FIBROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    (":CARDIOPULMONARY:") 
+    ("acute") 
+    ("disease")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    (":CARDIOPULMONARY:") 
+    ("active") 
+    ("disease")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "bronchiectasis") 
+  (words 
+    ("bronchiectasis")) 
+  (concept ":BRONCHIECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "bronchiectasis") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("bronchiectasis")) 
+  (concept ":BRONCHIECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "bronchiectasis") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("bronchiectasis")) 
+  (concept ":BRONCHIECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    ("active") 
+    ("disease")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    ("focal")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    ("active")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    (":PULMONARY-VESSELS:") 
+    ("congestive") 
+    ("failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chronicobstructivepulmonarydisease") 
+  (words 
+    ("obstructive") 
+    ("disease")) 
+  (concept ":CHRONIC-OBSTRUCTIVE-PULMONARY-DISEASE:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pulmonarydiseasenos") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("disease")) 
+  (concept ":PULMONARY-DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diffuseidiopathicpulmonaryfibrosis") 
+  (words 
+    ("septal")) 
+  (concept ":DIFFUSE-IDIOPATHIC-PULMONARY-FIBROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pulmonaryedemans") 
+  (words 
+    ("water")) 
+  (concept ":PULMONARY-EDEMA-NS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "fluidoverload") 
+  (words 
+    ("fluid")) 
+  (concept ":FLUID-OVERLOAD:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diseasenos") 
+  (words 
+    ("disease")) 
+  (concept ":DISEASE-NOS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    ("prior")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    ("atypical") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    ("focal") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    ("heart failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    ("acute") 
+    ("heart failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atherosclerosis") 
+  (words 
+    ("atherosclerotic")) 
+  (concept ":ATHEROSCLEROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diffuseidiopathicpulmonaryfibrosis") 
+  (words 
+    ("fibrosis")) 
+  (concept ":DIFFUSE-IDIOPATHIC-PULMONARY-FIBROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("acute") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuraleffusion") 
+  (words 
+    (":RIGHT-LOWER-LOBE:") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diffuseidiopathicpulmonaryfibrosis") 
+  (words 
+    ("diffuse")) 
+  (concept ":DIFFUSE-IDIOPATHIC-PULMONARY-FIBROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":PLEURA:") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    ("scar")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    ("blood") 
+    ("failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":BILATERAL-LOWER-LOBES:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("diffuse") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuraleffusion") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("diffuse") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    ("prior") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    ("prior") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":INTERPLEURAL-SPACE-NS:") 
+    ("focal") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":LEFT-HEMIDIAPHRAGM:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":RIGHT-UPPER-LOBE:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "diffuseidiopathicpulmonaryfibrosis") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("fibrosis")) 
+  (concept ":DIFFUSE-IDIOPATHIC-PULMONARY-FIBROSIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":LEFT-LUNG:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    (":HEART:") 
+    ("failure")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":RIGHT-LUNG:") 
+    ("scar")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "anyacutedisease") 
+  (words 
+    ("infection")) 
+  (concept ":ANY-ACUTE-DISEASE:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonia") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("pneumonia")) 
+  (concept ":PNEUMONIA:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    ("acute") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuraleffusion") 
+  (words 
+    (":RIGHT-INTERPLEURAL-SPACE:") 
+    ("effusion")) 
+  (concept ":PLEURAL-EFFUSION:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "bronchiectasis") 
+  (words 
+    ("diffuse") 
+    ("bronchiectasis")) 
+  (concept ":BRONCHIECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "chf") 
+  (words 
+    ("congestion")) 
+  (concept ":CHF:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "atelectasis") 
+  (words 
+    (":BILATERAL-LUNG:") 
+    ("atelectasis")) 
+  (concept ":ATELECTASIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pneumonitis") 
+  (words 
+    (":RIGHT-MIDDLE-LOBE:") 
+    ("pneumonitis")) 
+  (concept ":PNEUMONITIS:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "pleuralscarring") 
+  (words 
+    (":LEFT-LOWER-LOBE:") 
+    ("scarring")) 
+  (concept ":PLEURAL-SCARRING:") 
+  (stype "<PULMDISEASE>"))
+
+(
+  (ruleid "report") 
+  (words 
+    ("pa and lateral")) 
+  (concept ":REPORT:") 
+  (stype "<REPORT>"))
+
+(
+  (ruleid "improving") 
+  (words 
+    ("clearing")) 
+  (concept ":IMPROVING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "improving") 
+  (words 
+    ("improved")) 
+  (concept ":IMPROVING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "unchanged") 
+  (words 
+    ("persistent")) 
+  (concept ":UNCHANGED:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "unchanged") 
+  (words 
+    ("unchanged")) 
+  (concept ":UNCHANGED:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "worsening") 
+  (words 
+    ("increasing")) 
+  (concept ":WORSENING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "improving") 
+  (words 
+    ("resolving")) 
+  (concept ":IMPROVING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "improving") 
+  (words 
+    ("improvement")) 
+  (concept ":IMPROVING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "unchanged") 
+  (words 
+    ("still")) 
+  (concept ":UNCHANGED:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "improving") 
+  (words 
+    ("less prominent")) 
+  (concept ":IMPROVING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "worsening") 
+  (words 
+    ("increased")) 
+  (concept ":WORSENING:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "unchanged") 
+  (words 
+    ("persist")) 
+  (concept ":UNCHANGED:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "unchanged") 
+  (words 
+    ("no") 
+    ("interval change")) 
+  (concept ":UNCHANGED:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "chronic") 
+  (words 
+    ("chronic")) 
+  (concept ":CHRONIC:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "chronic") 
+  (words 
+    ("persists")) 
+  (concept ":CHRONIC:") 
+  (stype "<STATECHANGE>"))
+
+(
+  (ruleid "unchanged") 
+  (words 
+    ("no interval change")) 
+  (concept ":UNCHANGED:") 
+  (stype "<STATECHANGE>"))
+
+
+
+
+)

@@ -1,0 +1,20 @@
+'(
+wordrule
+(
+  (ruleid "BOC-person-event-rule-14-2016/12/05 16:58:07") 
+  (specialized) 
+  (example-snippet "He states that he is able to walk without help") 
+  (ordered true) 
+  (concept ":ADL_AMBULATES_WITHOUT_ASSISTANCE:") 
+  (stype "<SENTENCE>") 
+  (window 32.0) 
+  (bagofconcepts true) 
+  (words 
+    (":PATIENT:") 
+    (":AFFIRMATIVE_COMMUNICATION:") 
+    ("_IS_") 
+    (":ABILITY:") 
+    (":WALKING:") 
+    (":HELP:")))
+
+)

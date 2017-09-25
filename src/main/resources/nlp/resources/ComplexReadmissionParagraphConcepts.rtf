@@ -1,0 +1,67 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww13780\viewh15380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Intern contacted family today to discuss veteran's care needs.  Tried to reach vets wife but phone number disconnected.  Contacted veteran's daughter who is also vet's POA.  Daughter stated she recently spoke to vets discharge nurse and was aware that veteran would need NH placement.  HPC SW intern discussed this with vet's daughter in more detail.  Vet's daughter stated that it would not be best for her father to come home.  Vet's wife (daughter's step-mother) recently had a stroke and is wheelchair bound and also needs caretaking.  Daughter is concerned that the needs in the home for both are too high and that it would be beneficial for both to begin looking at NH placement.  Daughter is aware after talking with medical team that vet is not doing very well.  Daughter understands that vet can go over to LD for up to 30 days while awaiting a NH placement.  Daughter will be visiting vet later today at CD to talk with him more about this.\
+\
+******************\
+CONCEPTS:\
+\
+CareNeed -> Need -> Thing ("care needs")\
+GenitiveThing -> Thing ("veteran's care needs")\
+GenitiveFamily -> GenitivePerson ("veteran's daughter") -> Person\
+Family ("daughter) -> Person\
+PatientPOA ("vet's POA") -> Person\
+Provider (intern, discharge nurse)\
+FacilityPlacement ("NH Placement")\
+ContraveningSentence -> ButSentence -> Sentence ("but phone number disconnected")\
+AttemptXButContraveningY -> SentenceConjSentence ("tried to contact ... but phone number disconnected")\
+GoToPlace ("come home")\
+NeedsCare -> NeedThing -> Predicate ("has care needs", "needs therapy"...)\
+HomeNeeds -> NeedThing -> Predicate ("the needs in the home")\
+LevelQualifier -> Property ("too high")\
+HypotheticalCopula -> Modifier ("would be")\
+BestIfQualifier -> ValuationQualifier -> Modifier ("best if")\
+ValuationQualifiedSentence -> Sentence ("best for her father to come home", "best if her father came home")\
+ExamineThing ("look at NH placement")\
+BeginEndPredicate ("begin looking at NH placement")\
+ExaminePredicate ("looking at NH placement")\
+HealthStatus -> State ("not doing very well")\
+GoToPlacePredicate ("go over to LD")\
+UpToTemporalModifier ("up to 30 days")\
+WaitingForThingPredicate ("waiting for NH placement")\
+VisitPerson -> ActionThingPredicate ("visiting vet")\
+PersonWillVisitPerson -> FutureActionSentence ("daughter will be visiting vet")\
+ActionToFacilitateActionPredicate ("visiting vet later today at CD to talk...")\
+PersonActionToFacilitateActionPredicate ("daughter will be visiting vet later today...")\
+ActionAtPlacePredicate ("visiting vet later today at CD")\
+CommunicateWithPersonAboutThingPredicate ("talk with him about this")\
+\
+AttemptEvent -> Event\
+AttemptXButY -> AttemptXButFail\
+AwareOfPatientNeed -> PropositionalAttitudeAboutThingOrEvent -> Predicate ("aware that patient would need...")\
+CommunicateAboutThing -> CommunicateEvent\
+CommunicateWithThing -> CommunicateEvent\
+PersonWhoPlaysRole  -> ThingThatPredicate -> Thing ("vet's daughter who is also his POA")\
+PersonCommunicateSentence ("daughter stated she recently spoke...") -> Sentence\
+PatientNeedCareSentence ("patient would need NH placement")\
+PersonStateSentence ("vet's daughter stated that it would not be good for her father to come home")\
+IfForInfinitiveSentence ("good for her father to come home") -> Modifier, Predicate\
+PersonToGoSomewhere -> InfiniteSentence -> Sentence ("father to come home")\
+HaveMedicalEvent -> HaveThingPredicate -> Predicate ("had a stroke")\
+WheelchairBound -> ADLLimitationPredicateorProperty -> ("wheelchair bound")\
+\
+\
+\
+\
+Event+Time -> Event\
+Thing+Time -> Thing\
+CommunicateWithPersonToDiscussThingOrEvent -> CommunicateEvent\
+ContactPersonToDiscussThingOrEvent -> CommunicateEvent\
+\
+\
+}

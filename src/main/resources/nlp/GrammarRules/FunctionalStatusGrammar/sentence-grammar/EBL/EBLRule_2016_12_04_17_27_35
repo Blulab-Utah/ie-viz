@@ -1,0 +1,40 @@
+'(
+wordrule
+(
+  (ruleid "AUTO-event-thing-rule-2-2016/12/04 17:26:08") 
+  (debug true)
+  (specialized) 
+  (example-snippet "walk without help") 
+  (ordered true) 
+  (sourceid "event-thing-rule") 
+  (concept ":WALK_WITHOUT_HELP:") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 32.0) 
+  (words 
+    ("@adl-walking-rule@") 
+    ("@AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08@")) 
+  (properties 
+    (event ?0) 
+    (object ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-pre-negation-context-rule-file-3-2016/12/04 17:26:08") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "without help") 
+  (ordered true) 
+  (sourceid "pre-negation-context-rule-file") 
+  (concept "?1") 
+  (stype "<ACTIVITY>") 
+  (window 8.0) 
+  (words 
+    ("without") 
+    ("@help-rule-1@")) 
+  (properties 
+    (directionality negated)) 
+  (tests 
+    (not 
+      ("firstWordBeginsWithUppercase" ?1))))
+
+)

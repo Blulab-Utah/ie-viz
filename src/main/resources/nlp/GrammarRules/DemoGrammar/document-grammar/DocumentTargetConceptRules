@@ -1,0 +1,14 @@
+'(
+wordrule
+
+;; 4/12/2016
+((ruleid document-target-concept-list-rule)
+ (concept ?0)
+ (words (":LIVING_ALONE:" ":NOT_LIVING_ALONE:" ":SUBSTANCE_USE:" 
+ 			":PATIENT_SUBSTANCE_USE:"))
+ (tests (notneg ?0))
+ (actions ("applyModifierProperties" ?rule ?0))  
+ (properties (contains-target true)))
+	
+  
+)

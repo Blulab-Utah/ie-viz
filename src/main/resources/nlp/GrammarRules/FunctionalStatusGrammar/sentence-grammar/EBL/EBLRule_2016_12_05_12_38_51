@@ -1,0 +1,89 @@
+'(
+wordrule
+(
+  (ruleid "AUTO-person-event-rule-4-2016/12/05 12:38:51") 
+  (specialized) 
+  (example-snippet "He needs no help to walk") 
+  (ordered true) 
+  (sourceid "person-event-rule") 
+  (concept ":ADL_NO_DIFFICULTY_AMBULATING:") 
+  (stype "<SENTENCE>") 
+  (window 32.0) 
+  (words 
+    ("@patient-rule-1@") 
+    ("@AUTO-need-to-do-something-rule-5-2016/12/05 12:38:51@")) 
+  (properties 
+    (subject ?0) 
+    (event ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-need-to-do-something-rule-5-2016/12/05 12:38:51") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "needs no help to walk") 
+  (ordered true) 
+  (sourceid "need-to-do-something-rule") 
+  (concept "?1") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 16.0) 
+  (words 
+    ("@need-word-rule-1@") 
+    ("@AUTO-event-thing-rule-6-2016/12/05 12:38:51@")) 
+  (properties 
+    (topic ?1)))
+
+(
+  (ruleid "AUTO-event-thing-rule-6-2016/12/05 12:38:51") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "no help to walk") 
+  (ordered true) 
+  (sourceid "event-thing-rule") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 32.0) 
+  (words 
+    ("@AUTO-pre-negation-context-rule-file-7-2016/12/05 12:38:51@") 
+    ("@AUTO-simple-pp-rule-8-2016/12/05 12:38:51@")) 
+  (properties 
+    (event ?0) 
+    (object ?1)))
+
+(
+  (ruleid "AUTO-pre-negation-context-rule-file-7-2016/12/05 12:38:51") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "no help") 
+  (ordered true) 
+  (sourceid "pre-negation-context-rule-file") 
+  (concept "?1") 
+  (stype "<ACTIVITY>") 
+  (window 8.0) 
+  (words 
+    ("no") 
+    ("@help-rule-1@")) 
+  (properties 
+    (directionality negated)) 
+  (tests 
+    (not 
+      ("firstWordBeginsWithUppercase" ?1))))
+
+(
+  (ruleid "AUTO-simple-pp-rule-8-2016/12/05 12:38:51") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "to walk") 
+  (ordered true) 
+  (sourceid "simple-pp-rule") 
+  (concept "?1") 
+  (stype "<ADL_ACTIVITY>") 
+  (window 16.0) 
+  (words 
+    ("@preposition-word-rule@") 
+    ("@adl-walking-rule@")) 
+  (properties 
+    (object ?1)) 
+  (tests 
+    ("isInterpreted" ?1)))
+
+)

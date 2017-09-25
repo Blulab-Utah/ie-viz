@@ -10,7 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Vector;
 
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -19,10 +21,17 @@ import javax.swing.JOptionPane;
 
 import edu.utah.blulab.commandline.CommandLineException;
 import edu.utah.blulab.commandline.IevizCmd;
+import edu.utah.blulab.evaluationworkbenchmanager.EvaluationWorkbenchManager;
+import moonstone.annotation.Annotation;
 import moonstone.rulebuilder.MoonstoneRuleInterface;
+import tsl.documentanalysis.document.Document;
+import tsl.error.TSLException;
 import tsl.utilities.FUtils;
 import tsl.utilities.ListUtils;
 import tsl.utilities.StrUtils;
+
+import workbench.api.db.MySQLAPI;
+import workbench.api.gui.*;
 
 /**
  *
@@ -31,13 +40,14 @@ import tsl.utilities.StrUtils;
 public class IEVizJFrame extends javax.swing.JFrame implements ActionListener {
 	private MoonstoneRuleInterface msri = null;
 	private IevizCmd iec = null;
-	private String[] ontologyURIs = null;
-	private String[] ontologyNames = null;
-	private String[] annotatorNames = null;
-	private String[] annotationToolNames = null;
-	private String[] corpusNames = null;
-	private String[] runIDs = null;
-	private String[] pipelineNames = null;
+	private String[] ontologyURIs = new String[] { "<undefined>" };
+	private String[] ontologyNames = new String[] { "<undefined>" };
+	private String[] annotatorNames = new String[] { "<undefined>" };
+	private String[] annotationToolNames = new String[] { "<undefined>" };
+	private String[] corpusNames = new String[] { "<undefined>" };
+	private String[] runIDs = new String[] { "<undefined>" };
+	private String[] pipelineNames = new String[] { "<undefined>" };
+	private String[] typeSystemNames = new String[] { "<undefined>" };
 
 	// private String[]
 
@@ -48,35 +58,66 @@ public class IEVizJFrame extends javax.swing.JFrame implements ActionListener {
 		try {
 			this.iec = new IevizCmd();
 			this.msri = new MoonstoneRuleInterface();
+			initComponents();
 			this.gatherComboBoxValues();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		initComponents();
 	}
 
-	private void gatherComboBoxValues() throws Exception {
+	private void gatherComboBoxValues() {
+		try {
+			this.ontologyURIs = IevizCmd.getOntologyInfo("uri");
+			this.ontologyNames = new String[this.ontologyURIs.length + 1];
+			for (int i = 0; i < this.ontologyURIs.length; i++) {
+				String uri = this.ontologyURIs[i];
+				int index = uri.lastIndexOf(File.separatorChar);
+				String oname = uri.substring(index + 1);
+				// this.ontologyNames[i] = oname;
+				this.ontologyNames[i] = uri;
+			}
 
-		this.ontologyURIs = IevizCmd.getOntologyInfo("uri");
-		this.ontologyNames = new String[this.ontologyURIs.length];
-		for (int i = 0; i < this.ontologyURIs.length; i++) {
-			String uri = this.ontologyURIs[i];
-			int index = uri.lastIndexOf(File.separatorChar);
-			String oname = uri.substring(index + 1);
-			this.ontologyNames[i] = oname;
+			ArrayList<String> anames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
+					.getStringsByFields("ieviz.Annotators", "annotatorName", null, null);
+			if (anames != null) {
+				this.annotatorNames = ListUtils.listToStringArray(anames);
+			}
+
+			ArrayList<String> toolnames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
+					.getStringsByFields("ieviz.AnnotationTools", "toolName", null, null);
+			if (toolnames != null) {
+				this.annotationToolNames = ListUtils.listToStringArray(toolnames);
+			}
+
+			ArrayList<String> corpusnames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
+					.getStringsByFields("ieviz.Corpora", "corpusName", null, null);
+			if (corpusnames != null) {
+				this.corpusNames = ListUtils.listToStringArray(corpusnames);
+			}
+
+			ArrayList<String> tsnames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
+					.getStringsByFields("ieviz.Typesystem", "typeSystemName", null, null);
+			if (tsnames != null) {
+				this.typeSystemNames = ListUtils.listToStringArray(tsnames);
+			}
+
+			ArrayList<String> rids = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
+					.getStringsByFields("ieviz.AnnotationRuns", "annotationRunID", null, null);
+			if (rids != null) {
+				this.runIDs = ListUtils.listToStringArray(rids);
+			}
+
+			OntologyCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.ontologyURIs));
+			NLPToolCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.annotationToolNames));
+			CorpusCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.corpusNames));
+			AnnotatorCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.annotatorNames));
+			RunCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.runIDs));
+			PipelineCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.pipelineNames));
+			TypeSystemsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(this.typeSystemNames));
+
+		} catch (CommandLineException e) {
+			e.printStackTrace();
 		}
-		ArrayList<String> anames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
-				.getStringsByFields("ieviz.Annotators", "annotatorName", null, null);
-		this.annotatorNames = ListUtils.listToStringArray(anames);
-
-		ArrayList<String> toolnames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
-				.getStringsByFields("ieviz.AnnotationTools", "toolName", null, null);
-		this.annotationToolNames = ListUtils.listToStringArray(toolnames);
-
-		ArrayList<String> corpusnames = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL()
-				.getStringsByFields("ieviz.Corpora", "corpusName", null, null);
-		this.corpusNames = ListUtils.listToStringArray(corpusnames);
-
 	}
 
 	/**
@@ -88,204 +129,290 @@ public class IEVizJFrame extends javax.swing.JFrame implements ActionListener {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
-	private void initComponents() {
+	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-		jPanel1 = new javax.swing.JPanel();
-		AddCorpusButton = new javax.swing.JButton();
-		AddAnnotatorButton = new javax.swing.JButton();
-		AddNLPToolButton = new javax.swing.JButton();
-		AddPipelineButton = new javax.swing.JButton();
-		RunOntologyButton = new javax.swing.JButton();
-		RunPipelineButton = new javax.swing.JButton();
-		AddOntologyTypeSystem = new javax.swing.JButton();
-		jPanel2 = new javax.swing.JPanel();
-		OntologyCB = new javax.swing.JComboBox<>();
-		NLPToolCB = new javax.swing.JComboBox<>();
-		CorpusCB = new javax.swing.JComboBox<>();
-		AnnotatorCB = new javax.swing.JComboBox<>();
-		RunCB = new javax.swing.JComboBox<>();
-		PipelineCB = new javax.swing.JComboBox<>();
-		OntologyCBLabel = new javax.swing.JLabel();
-		NLPToolCBLabel = new javax.swing.JLabel();
-		CorpusCBLabel = new javax.swing.JLabel();
-		AnnotatorCBLabel = new javax.swing.JLabel();
-		RunCBLabel = new javax.swing.JLabel();
-		PipelineCBLabel = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        AddCorpusButton = new javax.swing.JButton();
+        AddAnnotatorButton = new javax.swing.JButton();
+        AddNLPToolButton = new javax.swing.JButton();
+        AddPipelineButton = new javax.swing.JButton();
+        ApplyOntologyToCorpusButton = new javax.swing.JButton();
+        ViewAnnotationsButton = new javax.swing.JButton();
+        AddOntologyTypeSystemButton = new javax.swing.JButton();
+        ClearDBTablesButton = new javax.swing.JButton();
+        MoonstoneGUIButton = new javax.swing.JToggleButton();
+        jPanel2 = new javax.swing.JPanel();
+        OntologyCB = new javax.swing.JComboBox<>();
+        NLPToolCB = new javax.swing.JComboBox<>();
+        CorpusCB = new javax.swing.JComboBox<>();
+        AnnotatorCB = new javax.swing.JComboBox<>();
+        RunCB = new javax.swing.JComboBox<>();
+        PipelineCB = new javax.swing.JComboBox<>();
+        OntologyCBLabel = new javax.swing.JLabel();
+        NLPToolCBLabel = new javax.swing.JLabel();
+        CorpusCBLabel = new javax.swing.JLabel();
+        AnnotatorCBLabel = new javax.swing.JLabel();
+        RunCBLabel = new javax.swing.JLabel();
+        PipelineCBLabel = new javax.swing.JLabel();
+        TypeSystemsLabel = new javax.swing.JLabel();
+        TypeSystemsComboBox = new javax.swing.JComboBox<>();
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-		jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("IEVizTool Operations"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("IEVizTool Operations"));
 
-		AddCorpusButton.setText("AddCorpus");
-		AddCorpusButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				AddCorpusButtonActionPerformed(evt);
-			}
-		});
+        AddCorpusButton.setText("AddCorpus");
+        AddCorpusButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddCorpusButtonActionPerformed(evt);
+            }
+        });
 
-		AddAnnotatorButton.setText("AddAnnotator");
-		AddAnnotatorButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				AddAnnotatorButtonActionPerformed(evt);
-			}
-		});
+        AddAnnotatorButton.setText("AddAnnotator");
+        AddAnnotatorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddAnnotatorButtonActionPerformed(evt);
+            }
+        });
 
-		AddNLPToolButton.setText("AddNLPTool");
-		AddNLPToolButton.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				AddNLPToolButtonActionPerformed(evt);
-			}
-		});
+        AddNLPToolButton.setText("AddNLPTool");
+        AddNLPToolButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNLPToolButtonActionPerformed(evt);
+            }
+        });
 
-		AddPipelineButton.setText("AddPipeline");
+        AddPipelineButton.setText("AddPipeline");
+        AddPipelineButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddPipelineButtonActionPerformed(evt);
+            }
+        });
 
-		RunOntologyButton.setText("RunOntology");
+        ApplyOntologyToCorpusButton.setText("ApplyOntologyToCorpus");
+        ApplyOntologyToCorpusButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ApplyOntologyToCorpusButtonActionPerformed(evt);
+            }
+        });
 
-		RunPipelineButton.setText("RunPipeline");
+        ViewAnnotationsButton.setText("ViewAnnotations");
+        ViewAnnotationsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewAnnotationsButtonActionPerformed(evt);
+            }
+        });
 
-		AddOntologyTypeSystem.setText("AddOntologyTypeSystem");
-		AddOntologyTypeSystem.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				AddOntologyTypeSystemActionPerformed(evt);
-			}
-		});
+        AddOntologyTypeSystemButton.setText("AddOntologyTypeSystem");
+        AddOntologyTypeSystemButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddOntologyTypeSystemButtonActionPerformed(evt);
+            }
+        });
 
-		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-		jPanel1.setLayout(jPanel1Layout);
-		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addGroup(jPanel1Layout.createSequentialGroup().addComponent(AddCorpusButton)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(AddAnnotatorButton)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(AddNLPToolButton)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(AddPipelineButton)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-										.addComponent(AddOntologyTypeSystem))
-								.addGroup(jPanel1Layout.createSequentialGroup().addComponent(RunOntologyButton)
-										.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-										.addComponent(RunPipelineButton)))
-						.addContainerGap(158, Short.MAX_VALUE)));
-		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel1Layout.createSequentialGroup().addGap(25, 25, 25)
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(AddCorpusButton).addComponent(AddAnnotatorButton)
-								.addComponent(AddNLPToolButton).addComponent(AddPipelineButton)
-								.addComponent(AddOntologyTypeSystem))
-						.addGap(18, 18, 18)
-						.addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(RunOntologyButton).addComponent(RunPipelineButton))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        ClearDBTablesButton.setText("ClearDBTAbles");
+        ClearDBTablesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearDBTablesButtonActionPerformed(evt);
+            }
+        });
 
-		jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("IEVizTool Elements"));
+        MoonstoneGUIButton.setText("MoonstoneGUIButton");
+        MoonstoneGUIButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoonstoneGUIButtonActionPerformed(evt);
+            }
+        });
 
-		OntologyCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.ontologyNames));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(AddCorpusButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AddAnnotatorButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AddNLPToolButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AddPipelineButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AddOntologyTypeSystemButton))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(ApplyOntologyToCorpusButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ViewAnnotationsButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(MoonstoneGUIButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ClearDBTablesButton)))
+                .addContainerGap(173, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddCorpusButton)
+                    .addComponent(AddAnnotatorButton)
+                    .addComponent(AddNLPToolButton)
+                    .addComponent(AddPipelineButton)
+                    .addComponent(AddOntologyTypeSystemButton))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ApplyOntologyToCorpusButton)
+                    .addComponent(ViewAnnotationsButton)
+                    .addComponent(ClearDBTablesButton)
+                    .addComponent(MoonstoneGUIButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-		NLPToolCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.annotationToolNames));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("IEVizTool Elements"));
 
-		CorpusCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.corpusNames));
+        OntologyCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		AnnotatorCB.setModel(new javax.swing.DefaultComboBoxModel<>(this.annotatorNames));
+        NLPToolCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		RunCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Run1" }));
+        CorpusCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		PipelineCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pipeline1" }));
+        AnnotatorCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		OntologyCBLabel.setText("Ontologies");
+        RunCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		NLPToolCBLabel.setText("NLPTool");
+        PipelineCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-		CorpusCBLabel.setText("Corpus");
+        OntologyCBLabel.setText("Ontologies");
 
-		AnnotatorCBLabel.setText("Annotator");
+        NLPToolCBLabel.setText("NLPTool");
 
-		RunCBLabel.setText("Runs");
+        CorpusCBLabel.setText("Corpus");
 
-		PipelineCBLabel.setText("Pipelines");
+        AnnotatorCBLabel.setText("Annotator");
+        AnnotatorCBLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AnnotatorCBLabelMouseClicked(evt);
+            }
+        });
 
-		javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-		jPanel2.setLayout(jPanel2Layout);
-		jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(OntologyCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(OntologyCBLabel))
-						.addGap(18, 18, 18)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(NLPToolCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(NLPToolCBLabel))
-						.addGap(18, 18, 18)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(CorpusCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(CorpusCBLabel))
-						.addGap(18, 18, 18)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(AnnotatorCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(AnnotatorCBLabel))
-						.addGap(18, 18, 18)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(RunCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(RunCBLabel))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-								.addComponent(PipelineCBLabel).addComponent(PipelineCB,
-										javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(jPanel2Layout.createSequentialGroup().addContainerGap()
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(OntologyCBLabel).addComponent(NLPToolCBLabel).addComponent(CorpusCBLabel)
-								.addComponent(AnnotatorCBLabel).addComponent(RunCBLabel).addComponent(PipelineCBLabel))
-						.addGap(3, 3, 3)
-						.addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(OntologyCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(NLPToolCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(CorpusCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(AnnotatorCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(RunCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(PipelineCB, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addContainerGap(261, Short.MAX_VALUE)));
+        RunCBLabel.setText("Runs");
 
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGroup(layout.createSequentialGroup()
-								.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-										javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(0, 0, Short.MAX_VALUE)))
-				.addContainerGap()));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addContainerGap()
-						.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addGap(27, 27, 27)
-						.addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(148, Short.MAX_VALUE)));
+        PipelineCBLabel.setText("Pipelines");
 
-		pack();
-	}// </editor-fold>//GEN-END:initComponents
-	
-	private void AddNLPToolButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        TypeSystemsLabel.setText("TypeSystems");
+
+        TypeSystemsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AnnotatorCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(NLPToolCBLabel))
+                            .addComponent(OntologyCBLabel)
+                            .addComponent(AnnotatorCBLabel)
+                            .addComponent(CorpusCBLabel)
+                            .addComponent(RunCBLabel)
+                            .addComponent(PipelineCBLabel))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(OntologyCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CorpusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NLPToolCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TypeSystemsLabel)
+                    .addComponent(TypeSystemsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PipelineCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RunCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(OntologyCBLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(OntologyCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(AnnotatorCBLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AnnotatorCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(NLPToolCBLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NLPToolCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CorpusCBLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CorpusCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TypeSystemsLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TypeSystemsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RunCBLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(RunCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PipelineCBLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PipelineCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void MoonstoneGUIButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoonstoneGUIButtonActionPerformed
+       this.msri.createRuleBuilderGUI(true);
+       int x = 1;
+       x = 1;
+    }//GEN-LAST:event_MoonstoneGUIButtonActionPerformed
+
+	private void AnnotatorCBLabelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_AnnotatorCBLabelMouseClicked
+		// TODO add your handling code here:
+	}// GEN-LAST:event_AnnotatorCBLabelMouseClicked
+
+	private void AddAnnotatorButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AddAnnotatorButtonActionPerformed
+		workbench.api.db.MySQLAPI wms = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL();
+		String aname = JOptionPane.showInputDialog(new JFrame(), "Annotator Name");
+		wms.storeAnnotator(aname, "<Affiliation Unknown>");
+		this.gatherComboBoxValues();
+	}// GEN-LAST:event_AddAnnotatorButtonActionPerformed
+
+	private void AddNLPToolButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AddNLPToolButtonActionPerformed
 		try {
 			String tname = JOptionPane.showInputDialog(new JFrame(), "Annotation Tool Name");
 			int index = StrUtils.getMatchingStringIndex(this.annotationToolNames, tname);
@@ -299,20 +426,124 @@ public class IEVizJFrame extends javax.swing.JFrame implements ActionListener {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}// GEN-LAST:event_AddNLPToolButtonActionPerformed
+
+	private void AddPipelineButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AddPipelineButtonActionPerformed
+		// TODO add your handling code here:
+	}// GEN-LAST:event_AddPipelineButtonActionPerformed
+
+	private void ViewAnnotationsButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ViewAnnotationsButtonActionPerformed
+		moonstone.io.db.MySQLAPI msq = this.msri.getMoonstoneMySQLAPI();
+		workbench.api.db.MySQLAPI wsq = msq.getWorkbenchMySQL();
+		tsl.dbaccess.mysql.MySQLAPI tsq = wsq.getTSLMySQL();
+		String tsname = this.getSelectedTypeSystemName();
+		String cname = this.getSelectedCorpusName();
+		String toolname = this.getSelectedAnnotationTool();
+		String aname = this.getSelectedAnnotator();
+		int x = 2;
+
+		int primaryRunID = wsq.getMaxAnnotationRun(aname, toolname, cname, tsname);
+		int secondaryRunID = wsq.getMaxAnnotationRun(aname, toolname, cname, tsname);
+		if (primaryRunID >= 0 && secondaryRunID >= 0) {
+			EvaluationWorkbenchManager.loadWBGUIFromDB(tsname, cname, primaryRunID, secondaryRunID);
+			this.msri.setWorkbench(WBGUI.WorkbenchGUI);
+		}
+	}// GEN-LAST:event_ViewAnnotationsButtonActionPerformed
+
+	private void ClearDBTablesButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ClearDBTablesButtonActionPerformed
+		tsl.dbaccess.mysql.MySQLAPI tms = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL().getTSLMySQL();
+		tms.emptyAllTables();
+		this.gatherComboBoxValues();
+	}// GEN-LAST:event_ClearDBTablesButtonActionPerformed
+
+	private void AddOntologyTypeSystemButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ImportTypeSystemButtonActionPerformed
+		String uri = this.getSelectedOntologyURI();
+		String tsname = JOptionPane.showInputDialog(new JFrame(), "Typesystem Name:");
+		if (uri != null && tsname != null) {
+			this.msri.analyzeOWLOntology(uri, false, true);
+			this.msri.getMoonstoneMySQLAPI()
+					.storeAnnotationTypeSystem(this.msri.getKnowledgeEngine().getCurrentOntology(), tsname);
+			this.gatherComboBoxValues();
+		}
 	}
 
-	private void AddOntologyTypeSystemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_ImportTypeSystemButtonActionPerformed
-		String oname = (String) this.OntologyCB.getModel().getSelectedItem();
-		if (oname != null) {
-			
-			int index = StrUtils.getMatchingStringIndex(this.ontologyNames, oname);
-			String uri = this.ontologyURIs[index];
-			this.msri.analyzeOWLOntology(uri, true, true);
-			this.msri.getMoonstoneMySQLAPI()
-					.storeAnnotationTypeSystem(this.msri.getKnowledgeEngine().getCurrentOntology());
+	private void ApplyOntologyToCorpusButtonActionPerformed(java.awt.event.ActionEvent evt) {
+		int x = 1;
+		String uri = this.getSelectedOntologyURI();
+		String tsname = this.getSelectedTypeSystemName();
+		String cname = this.getSelectedCorpusName();
+		String toolname = this.getSelectedAnnotationTool();
+		String aname = this.getSelectedAnnotator();
+		if (uri != null && tsname != null && cname != null && toolname != null && aname != null) {
+			if ("moonstone".equals(toolname)) {
+				ApplyMoonstoneToCorpus(uri, tsname, cname, toolname, aname);
+			}
 		}
+	}
 
-	}// GEN-LAST:event_ImportTypeSystemButtonActionPerformed
+	private void ApplyMoonstoneToCorpus(String uri, String tsname, String cname, String toolname, String aname) {
+		moonstone.io.db.MySQLAPI msq = this.msri.getMoonstoneMySQLAPI();
+		workbench.api.db.MySQLAPI wsq = msq.getWorkbenchMySQL();
+		tsl.dbaccess.mysql.MySQLAPI tsq = wsq.getTSLMySQL();
+		int annid = wsq.storeAnnotator(aname, "<Auto>");
+		Vector<Document> documents = tsq.readCorpusDocuments(cname);
+		if (documents != null) {
+			int runid = wsq.createAnnotationRun(aname, toolname, cname, tsname);
+			for (Document doc : documents) {
+				this.msri.applyNarrativeGrammarToText(doc, true, true, true);
+				Vector<Annotation> annotations = this.msri.getSentenceGrammar().getDisplayedAnnotations();
+				if (annotations != null) {
+					int aid = tsq.getMaxID("ieviz.Annotations", "annotationID");
+					for (Annotation annotation : annotations) {
+						if (annotation.getAnnotationDBID() < 0) {
+							aid = msq.assignAnnotationDBID(annotation, ++aid);
+						}
+					}
+					for (Annotation annotation : annotations) {
+						msq.storeMoonstoneAnnotation(annotation, runid, tsname);
+					}
+				}
+			}
+			this.gatherComboBoxValues();
+		}
+	}
+
+	private String getSelectedAnnotator() {
+		String aname = (String) this.AnnotatorCB.getModel().getSelectedItem();
+		return aname;
+	}
+
+	private String getSelectedAnnotationTool() {
+		String toolname = (String) this.NLPToolCB.getModel().getSelectedItem();
+		return toolname;
+	}
+
+	private String getSelectedCorpusName() {
+		String cname = (String) this.CorpusCB.getModel().getSelectedItem();
+		return cname;
+	}
+
+	private String getSelectedOntologyURI() {
+		String uri = (String) this.OntologyCB.getModel().getSelectedItem();
+		return uri;
+	}
+
+	private String getSelectedOntologyName() {
+		String uri = this.getSelectedOntologyURI();
+		String oname = null;
+		if (uri != null) {
+			int index = uri.lastIndexOf(File.separatorChar);
+			if (index > 0) {
+				oname = uri.substring(index + 1).trim();
+			}
+		}
+		return oname;
+	}
+
+	private String getSelectedTypeSystemName() {
+		String tsname = (String) this.TypeSystemsComboBox.getModel().getSelectedItem();
+		return tsname;
+	}
 
 	private void AddCorpusButtonActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_AddCorpusButtonActionPerformed
 		try {
@@ -327,23 +558,11 @@ public class IEVizJFrame extends javax.swing.JFrame implements ActionListener {
 					JOptionPane.showMessageDialog(new JFrame(), "Unable to store corpus");
 				} else {
 					this.gatherComboBoxValues();
-					DefaultComboBoxModel model = (DefaultComboBoxModel) this.CorpusCB.getModel();
-					model.insertElementAt(dname, model.getSize());
-					// model.removeAllElements();
-					// for (int i = 0; i < this.corpusNames.length; i++) {
-					// model.insertElementAt(this.corpusNames[i], 0);
-					// }
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	private void AddAnnotatorButtonActionPerformed(java.awt.event.ActionEvent evt) {
-		workbench.api.db.MySQLAPI wms = this.msri.getMoonstoneMySQLAPI().getWorkbenchMySQL();
-		String aname = JOptionPane.showInputDialog(new JFrame(), "Annotator Name");
-		wms.storeAnnotator(aname, "<Affiliation Unknown>");
 	}
 
 	/**
@@ -389,29 +608,34 @@ public class IEVizJFrame extends javax.swing.JFrame implements ActionListener {
 		});
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JButton AddAnnotatorButton;
-	private javax.swing.JButton AddCorpusButton;
-	private javax.swing.JButton AddNLPToolButton;
-	private javax.swing.JButton AddOntologyTypeSystem;
-	private javax.swing.JButton AddPipelineButton;
-	private javax.swing.JComboBox<String> AnnotatorCB;
-	private javax.swing.JLabel AnnotatorCBLabel;
-	private javax.swing.JComboBox<String> CorpusCB;
-	private javax.swing.JLabel CorpusCBLabel;
-	private javax.swing.JComboBox<String> NLPToolCB;
-	private javax.swing.JLabel NLPToolCBLabel;
-	private javax.swing.JComboBox<String> OntologyCB;
-	private javax.swing.JLabel OntologyCBLabel;
-	private javax.swing.JComboBox<String> PipelineCB;
-	private javax.swing.JLabel PipelineCBLabel;
-	private javax.swing.JComboBox<String> RunCB;
-	private javax.swing.JLabel RunCBLabel;
-	private javax.swing.JButton RunOntologyButton;
-	private javax.swing.JButton RunPipelineButton;
-	private javax.swing.JPanel jPanel1;
-	private javax.swing.JPanel jPanel2;
-	// End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddAnnotatorButton;
+    private javax.swing.JButton AddCorpusButton;
+    private javax.swing.JButton AddNLPToolButton;
+    private javax.swing.JButton AddOntologyTypeSystemButton;
+    private javax.swing.JButton AddPipelineButton;
+    private javax.swing.JComboBox<String> AnnotatorCB;
+    private javax.swing.JLabel AnnotatorCBLabel;
+    private javax.swing.JButton ApplyOntologyToCorpusButton;
+    private javax.swing.JButton ClearDBTablesButton;
+    private javax.swing.JComboBox<String> CorpusCB;
+    private javax.swing.JLabel CorpusCBLabel;
+    private javax.swing.JToggleButton MoonstoneGUIButton;
+    private javax.swing.JComboBox<String> NLPToolCB;
+    private javax.swing.JLabel NLPToolCBLabel;
+    private javax.swing.JComboBox<String> OntologyCB;
+    private javax.swing.JLabel OntologyCBLabel;
+    private javax.swing.JComboBox<String> PipelineCB;
+    private javax.swing.JLabel PipelineCBLabel;
+    private javax.swing.JComboBox<String> RunCB;
+    private javax.swing.JLabel RunCBLabel;
+    private javax.swing.JComboBox<String> TypeSystemsComboBox;
+    private javax.swing.JLabel TypeSystemsLabel;
+    private javax.swing.JButton ViewAnnotationsButton;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    // End of variables declaration//GEN-END:variables
 
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Action");

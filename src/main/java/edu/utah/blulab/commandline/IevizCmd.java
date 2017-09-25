@@ -19,6 +19,7 @@ import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -63,7 +64,7 @@ public class IevizCmd {
 			{ "iterate", "false", "Allow iterative user input" }, { "workbench", "true", "Start Evaluation Workbench" },
 			{ "mss", "moonstone-simple", "Simple Moonstone Workflow", "<ontology> <corpusdir> <outfile>", "3" },
 
-			{ "ontdb", "extract-annotation-typesystem-to-db", "<ontology-url>", "1" },
+			{ "ontdb", "extract-annotation-typesystem-to-db", "<ontology-url> <typesystem name>", "2" },
 			{ "corpdb", "store-corpus-to-db", "<corpusdir>", "1" },
 			{ "mspipe", "ontology-moonstone-corpus-pipeline", "<ontology-url> <corpusname>", "2" },
 			{ "viewwb", "view-annotations-via-workbench", "<annotator> <corpusname>", "2" },
@@ -93,11 +94,12 @@ public class IevizCmd {
 	private void ontdb(String[] optVals) throws CommandLineException {
 		try {
 			String ontologyURI = optVals[0];
+			String tsname = optVals[1];
 			MoonstoneRuleInterface msri = new MoonstoneRuleInterface();
 			ExtractOWLOntology ont = new ExtractOWLOntology(msri);
 			ont.setDomain(ontologyURI);
 			ont.analyze(false, true);
-			msri.getMoonstoneMySQLAPI().storeAnnotationTypeSystem(msri.getKnowledgeEngine().getCurrentOntology());
+			msri.getMoonstoneMySQLAPI().storeAnnotationTypeSystem(msri.getKnowledgeEngine().getCurrentOntology(), tsname);
 		} catch (Exception e) {
 			throw new CommandLineException("ontdb: " + e.toString());
 		}
@@ -419,6 +421,11 @@ public class IevizCmd {
 			} else {
 				throw new CommandLineException("Unable to gather ontology information: Server returned null string");
 			}
+			// 9/20/2017:  Server doesn't seem to contain any real ontologies.
+			if ("uri".equals(key)) {
+				onamelst.add("http://blulab.chpc.utah.edu/ontologies/examples/pneumonia.owl");
+			}
+			Collections.sort(onamelst);
 			onames = new String[onamelst.size()];
 			for (int i = 0; i < onamelst.size(); i++) {
 				onames[i] = onamelst.get(i);

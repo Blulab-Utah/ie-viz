@@ -1,0 +1,71 @@
+'(demo
+
+(deftype root (isroot))
+(deftype thing (isa root))
+(deftype place (isa thing))
+(deftype event (isa root)) 
+(deftype sentence (isa root))
+(deftype passive_event (isa root))
+(deftype passive_sentence (isa sentence))
+(deftype modifier (isa root))
+(deftype thing_modifier (isa modifier))
+(deftype event_modifier (isa modifier))
+(deftype event_thing (isa event thing)) 
+(deftype state (isa root))
+(deftype person (isa thing))
+(deftype family (isa person))
+(deftype friend (isa person))
+(deftype living_space (isa place))
+(deftype housing_status (isa state thing event))
+(deftype behavior (isa thing event))
+(deftype substance (isa thing))
+(deftype alcohol (isa substance))
+(deftype substance_event (isa behavior))
+(deftype substance_use (isa substance_event))
+(deftype substance_abuse (isa substance_use))
+(deftype alcohol_abuse (isa substance_abuse))
+(deftype substance_program (isa program))
+
+(deftype time_expression (isa time))
+(deftype date (isa time_expression))
+(deftype time_duration (isa time_expression))
+(deftype time_modifier (isa time))
+
+(deftype number (isa root))
+
+;; Person constants
+
+(defstringconstant ":PATIENT:" ":FAMILY:" "<PERSON>")
+
+(defstringconstant ":LIVE_WITH_PERSON:" ":LIVE_AT:" ":MOVE_TO:" 
+		":LIVE_AT_PLACE:" ":MOVE_TO_PLACE:" "<EVENT_THING>")
+
+;; Living arrangement constants
+
+(defstringconstant ":LIVING_SPACE:" ":MARGINAL_LIVING_SPACE:" ":HOME:" 
+		"<LIVING_SPACE>")
+
+(defstringconstant ":LIVING_ALONE:" ":NOT_LIVING_ALONE:" "<HOUSING_STATUS>")
+		
+;; Substance constants
+
+(defstringconstant ":SUBSTANCE_USE:" ":USE_SUBSTANCE:" "<SUBSTANCE_USE>")
+(defstringconstant ":SUBSTANCE_ABUSE:" "<SUBSTANCE_ABUSE>")
+(defstringconstant ":ALCOHOL_ABUSE:" "<ALCOHOL_ABUSE>")
+(defstringconstant ":TOBACCO:" ":PRESCRIPTION_MEDICATION:" ":DRUG:" ":ALCOHOL:" 
+		":SUBSTANCE:" "<SUBSTANCE>")
+(defstringconstant ":SUBSTANCE_QUANTITY:" "<QUANTITY>")
+(defstringconstant ":WITHDRAWAL:" ":DEPENDENCE:" "<SUBSTANCE_EVENT>")
+(defstringconstant ":SUBSTANCE_PROGRAM:" "<SUBSTANCE_PROGRAM>")
+
+;; Time constants
+
+(defstringconstant ":PER_TIME_UNIT:" ":PER_TIME_UNIT:" ":REGULARLY:" 
+			":GENERAL_TIME:" "<TIME_MODIFIER>")
+			
+(defstringconstant ":SPECIFIC_TIME:" ":TIME_UNIT:" "<TIME_EXPRESSION>")
+
+(defstringconstant ":NUMBER:" "<NUMBER>")
+
+)
+

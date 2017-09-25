@@ -1,11 +1,19 @@
 '(
-
+    ("AnnotationIsPrimaryMoonstoneWithEHostValidation"
+        (and ("annotationHasClassification" ?annotation ?value)
+        	 ("annotationIsPrimary" ?annotation)
+        	 ("annotationHasAttributeValue" ?annotation "validation" "correct")
+        	 ("setContainsClassificationMatch" ?annotation)))
+        
 	("AnnotationHasClassification"
 		("annotationHasClassification" ?annotation ?value))
 
 	("AnnotationHasValue"
 		("annotationHasValue" ?annotation ?value))
-
+		
+	("AnnotationTypeIsBodySite"
+	    ("annotationIsUnifiable" ?annotation "bodysite"))
+		
 	("EitherHistoricalOrOther"
 		(and ("annotationHasClassification" ?annotation ?value)
 		     (or ("annotationHasAttributeValue" ?annotation temporality historical)
@@ -19,3 +27,4 @@
 
 )
 
+	

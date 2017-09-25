@@ -1,0 +1,457 @@
+'(readmission
+
+(deftype root (isroot))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Semantics
+
+(deftype semantic-root (isa root))
+(deftype predicate (isa semantic-root))
+(deftype thing (isa semantic-root))
+(deftype property (isa semantic-root))
+(deftype modifier (isa semantic-root))
+(deftype state (isa semantic-root))
+(deftype sentence (isa semantic-root))
+(deftype ability (isa modifier thing))
+(deftype home-modifier (isa modifier))
+(deftype presence (isa modifier thing action))
+(deftype absence (isa modifier thing action))
+(defstringconstant ":LACK:" "<ABSENCE>")
+
+(deftype discharge-predicate (isa predicate))
+(defstringconstant ":DISCHARGE-HOME:" ":DISCHARGE-TO-NURSING-HOME:" ":DISCHARGE-TO-ASSISTED-LIVING:"  "<DISCHARGE-PREDICATE>")
+(deftype discharge-sentence (isa sentence))
+(defstringconstant ":PATIENT-DISCHARGE-HOME:" 
+		":PATIENT-DISCHARGE-TO-NURSING-HOME:" 
+		":PATIENT-DISCHARGE-TO-ASSISTED-LIVING:"  	
+		"<DISCHARGE-SENTENCE>")
+		
+(deftype admit-predicate (isa predicate))
+(defstringconstant ":ADMIT-NURSING-HOME:" ":ADMIT-ASSISTED-LIVING:"  "<ADMIT-PREDICATE>")
+(deftype admit-sentence (isa sentence))
+(defstringconstant ":PATIENT-ADMIT-NURSING-HOME:" ":PATIENT-ADMIT-ASSISTED-LIVING:"  "<ADMIT-SENTENCE>")
+
+;;;;;;;
+
+(deftype facility-interaction-predicate (isa predicate))
+(defstringconstant ":INTERACT-WITH-LIVING-FACILITY:"  ":LIVING-FACILITY-INTERACT-SOMEONE:" "<FACILITY-INTERACTION-PREDICATE>")
+
+(deftype facility-interaction-sentence (isa sentence))
+(defstringconstant ":FF-INTERACT-WITH-LIVING-FACILITY:"  ":LIVING-FACILITY-INTERACT-WITH-PATIENT:" "<FACILITY-INTERACTION-SENTENCE>")
+
+(deftype receive-therapy-predicate (isa predicate))
+(defstringconstant ":RECEIVE-THERAPY:" ":RECEIVE-THERAPY-AT-HOME:" ":RECEIVE-THERAPY-AT-FACILITY:" "<RECEIVE-THERAPY-PREDICATE>")
+
+(deftype receive-therapy-sentence (isa sentence))
+(defstringconstant ":PATIENT-RECEIVE-THERAPY:" ":PATIENT-RECEIVE-THERAPY-AT-HOME:" ":PATIENT-RECEIVE-THERAPY-AT-FACILITY:" "<RECEIVE-THERAPY-SENTENCE>")
+
+
+;;;;;
+
+(deftype being-at-sentence (isa sentence))
+(deftype person-at-place-predicate (isa being-at-sentence))
+(defstringconstant ":PATIENT-AT-HOME:" ":PATIENT-AT-FACILITY:" ":FF-AT-FACILITY:" 
+	":PATIENT-AT-FACILITY:" ":FF-AT-FACILITY:" "<PERSON-AT-PLACE-PREDICATE>")
+(deftype person-with-person-predicate (isa being-at-sentence))
+(defstringconstant ":FF-WITH-PATIENT:" ":FF-AT-BEDSIDE:" "<PERSON-WITH-PERSON-PREDICATE>")
+
+(deftype contact-predicate (isa predicate))
+(defstringconstant ":CONTACT-FF:" ":CONTACT-PROVIDER:" "<CONTACT-PREDICATE>")
+(deftype contact-sentence (isa sentence))
+(defstringconstant ":PROVIDER-CONTACT-FF:" ":FF-CONTACT-PROVIDER:" "<CONTACT-SENTENCE>")
+
+;;;;;
+
+(deftype interact-with-predicate (isa predicate))
+(defstringconstant ":INTERACT-WITH-FF:" ":INTERACT-WITH-PATIENT:" "<INTERACT-WITH-PREDICATE>")
+(deftype interact-with-sentence (isa sentence))
+(defstringconstant ":PATIENT-INTERACT-WITH-FF:" ":FF-INTERACT-WITH-PATIENT:" "<INTERACT-WITH-SENTENCE>")
+
+(deftype social-support-target (isa thing predicate))
+(defstringconstant ":HAVE-SUPPORT:" ":LACK-SUPPORT:" "<SOCIAL-SUPPORT-TARGET>")
+
+(deftype social-support-predicate (isa predicate))
+(deftype social-support-sentence (isa sentence))
+(deftype lack-support-predicate (isa social-support-predicate))
+(defstringconstant ":LACK-HELP:" ":LACK-CARE:" ":LACK-SUPPORT:" ":SOCIALLY-ISOLATED:" ":LACK-CAREGIVER:" 
+	"<LACK-SUPPORT-PREDICATE>")
+(deftype lack-support-sentence (isa social-support-sentence))
+(defstringconstant ":PATIENT-LACK-HELP:" "PATIENT-LACK-SUPPORT:" ":PATIENT-SOCIALLY-ISOLATED:" ":PATIENT-LACK-CAREGIVER:" "<LACK-SUPPORT-SENTENCE>")
+
+(deftype receive-support-predicate (isa social-support-predicate))
+(deftype receive-support-sentence (isa social-support-sentence))
+(defstringconstant ":RECEIVE-HELP:" ":RECEIVE-CARE:" ":HAVE-SUPPORT:" ":HAVE-CAREGIVER:" ":PROVIDE-CARE:" "<receive-support-PREDICATE>")
+(defstringconstant ":PATIENT-RECEIVE-HELP:" ":PATIENT-HAVE-CAREGIVER:" ":FF-PROVIDE-CARE:" ":FF-PROVIDE-CARE-FOR-PATIENT:" "<RECEIVE-SUPPORT-SENTENCE>")
+
+(deftype access-to-community-services-predicate (isa social-support-predicate))
+(deftype access-to-community-services-sentence (isa social-support-sentence))
+(defstringconstant ":ACCESS-TO-COMMUNITY-SERVICES:" "<ACCESS-TO-COMMUNITY-SERVICES>")
+(defstringconstant ":PATIENT-HAS-ACCESS-TO-COMMUNITY-SERVICES:" "<ACCESS-TO-COMMUNITY-SERVICES-SENTENCE>")
+
+(deftype living-predicate (isa predicate))
+(deftype live-at-home-predicate (isa living-predicate))
+(deftype living-sentence (isa sentence))
+(deftype live-at-home-sentence (isa living-sentence))
+
+(defstringconstant ":LIVE-AT-HOME:" ":RETURN-TO-OR-LIVE-AT-HOME:" ":DOES-NOT-LIVE-AT-HOME:" "<LIVE-AT-HOME-PREDICATE>")
+
+(defstringconstant ":PATIENT-LIVE-AT-HOME:" ":PATIENT-RETURN-TO-OR-LIVE-AT-HOME:" ":PATIENT-DOES-NOT-LIVE-AT-HOME:" "<LIVE-AT-HOME-SENTENCE>")
+
+;;;; ????
+(deftype not-homeless-but-other (isa stable-living-predicate))
+(defstringconstant ":NOT-HOMELESS-BUT-OTHER:" "<NOT-HOMELESS-BUT-OTHER>")
+
+(deftype action-with-thing-predicate (isa predicate))
+(deftype live-with-person-predicate (isa action-with-thing-predicate))
+(defstringconstant ":LIVE-WITH-FAMILY:" ":LIVE-WITH-FRIENDS:" ":LIVE-WITH-PERSON:" ":FAMILY-LIVE-WITH:" "<live-with-person>")
+(deftype live-with-person-sentence (isa sentence))
+(defstringconstant ":PATIENT-LIVE-WITH-FAMILY:" ":PATIENT-LIVE-WITH-FRIENDS:" ":PATIENT-LIVE-WITH-PERSON:" ":PATIENT-LIVE-WITH-FAMILY:" ":FAMILY-LIVE-WITH-PATIENT:" "<live-with-person-SENTENCE>")
+
+
+(deftype homeless-predicate (isa living-predicate))
+(deftype homeless-sentence (isa living-sentence))
+(defstringconstant ":HOMELESS:"  ":NOT-HOMELESS:" "<HOMELESS-PREDICATE>")
+(defstringconstant ":PATIENT-HOMELESS:"  ":PATIENT-NOT-HOMELESS:" "<HOMELESS-SENTENCE>")
+
+
+(deftype living-in-marginal-space-predicate (isa living-predicate))
+(defstringconstant ":LIVING-IN-MARGINAL-SPACE:" "<LIVING-IN-MARGINAL-SPACE-PREDICATE>")
+(deftype living-in-marginal-space-sentence (isa living-sentence))
+(defstringconstant ":PATIENT-LIVING-IN-MARGINAL-SPACE:" "<LIVING-IN-MARGINAL-SPACE-SENTENCE>")
+
+;;;;;;;;;;
+
+(deftype live-in-facility-predicate (isa living-predicate))
+(defstringconstant ":LIVES-IN-GROUP-HOME:"  ":LIVES-IN-NURSING-HOME:"  ":LIVES-IN-ASSISTED-LIVING:" "<LIVE-IN-FACILITY-PREDICATE>")
+(deftype live-in-facility-sentence (isa living-sentence))
+(defstringconstant ":PATIENT-LIVES-IN-GROUP-HOME:"  ":PATIENT-LIVES-IN-NURSING-HOME:"  ":PATIENT-LIVES-IN-ASSISTED-LIVING:" "<LIVE-IN-FACILITY-SENTENCE>")
+
+(deftype live-in-sro-predicate (isa living-predicate))
+(defstringconstant ":LIVES-IN-SRO:"  "<LIVE-IN-SRO-PREDICATE>")
+(deftype live-in-sro-sentence (isa living-sentence))
+(defstringconstant ":PATIENT-LIVES-IN-SRO:"  "<LIVE-IN-SRO-SENTENCE>")
+
+(deftype living-alone-predicate (isa living-predicate))
+(defstringconstant ":LIVING-ALONE:" ":NOT-LIVING-ALONE:"  "<LIVING-ALONE-PREDICATE>")
+(deftype living-alone-sentence (isa living-sentence))
+(defstringconstant ":PATIENT-LIVING-ALONE:" ":PATIENT-NOT-LIVING-ALONE:"  "<LIVING-ALONE-SENTENCE>")
+
+
+(deftype adl-predicate (isa predicate))
+(defstringconstant ":ABLE-TO-WALK:" ":UNABLE-TO-WALK:" ":ABLE-TO-EAT:" ":UNABLE-TO-EAT:" 
+	":NEED-HELP-TO-WALK:" ":NEED-HELP-TO-EAT:" "<ADL-PREDICATE>")
+(deftype adl-sentence (isa sentence))
+(defstringconstant ":PATIENT-DO-ADL:" ":PATIENT-WALKING:" ":PATIENT-ABLE-TO-WALK:" 
+	":PATIENT-UNABLE-TO-WALK:" ":PATIENT-ABLE-TO-EAT:" ":PATIENT-UNABLE-TO-EAT:" 
+	":PATIENT-NEED-HELP-TO-WALK:" ":PATIENT-NEED-HELP-TO-EAT:" 
+	":FF-HELP-PATIENT-WITH-ADLS:" ":FF-HELP-PATIENT-WALK:" "<ADL-SENTENCE>")
+
+(deftype transportation-predicate (isa predicate))
+(defstringconstant ":TRANSPORT-PATIENT:" ":SEND-OR-ACCOMPANY-PATIENT:" ":USE-PUBLIC-TRANSPORT:"  "<TRANSPORTATION-PREDICATE>")
+(deftype transportation-sentence (isa sentence))
+(defstringconstant ":FF-TRANSPORT-PATIENT:" ":FF-SEND-OR-ACCOMPANY-PATIENT:" "<TRANSPORTATION-SENTENCE>")
+
+(deftype debt-predicate (isa predicate state))
+(defstringconstant ":UNABLE-TO-PAY-RENT:" ":PAY-RENT:" ":PAY-DEBT:" "<DEBT-PREDICATE>")
+(deftype debt-sentence (isa sentence))
+(defstringconstant ":PATIENT-UNABLE-TO-PAY-RENT:" ":PATIENT-PAY-RENT:" ":PATIENT-PAY-DEBT:" "<DEBT-SENTENCE>")
+
+(deftype reside-action (isa behavior-action))
+(defstringconstant ":STAY-AT:" ":SLEEP-AT:" ":LIVE-AT:" "<RESIDE-ACTION>")
+
+(deftype travel-action (isa behavior-action predicate))
+(defstringconstant ":TRAVEL:" ":RETURN:" ":MOVE-TO:" ":GO:" ":COME:" "<TRAVEL-ACTION>")
+
+;;;;;;;;;;;;
+
+(deftype have-companion-predicate (isa state predicate))
+(defstringconstant ":HAVE-COMPANION:" ":LACK-COMPANION:" "<HAVE-COMPANION-PREDICATE>")
+(deftype have-companion-sentence (isa sentence))
+(defstringconstant ":PATIENT-HAVE-COMPANION:" ":PATIENT-LACK-COMPANION:" "<HAVE-COMPANION-SENTENCE>")
+
+
+;;;;;
+;; Things
+
+
+(deftype thing (isa semantic-root))
+(deftype adl-device (isa thing))
+(defstringconstant ":ADL-WALKER:" ":ADL-CANE:" "<ADL-DEVICE>")
+
+(deftype action (isa semantic-root))
+(deftype adl-action (isa action))
+
+(deftype behavior-action (isa action))
+(defstringconstant ":SLEEP:" ":WALK:" "<BEHAVIOR-ACTION>")
+
+(deftype psychology-action (isa action))
+(defstringconstant ":DESIRE:" ":WANT:" ":PLAN:" ":BELIEVE:" "<PSYCHOLOGY-ACTION>")
+
+(deftype communication-action (isa behavior-action))
+(defstringconstant ":COMMUNICATE:" ":AFFIRMATIVE-COMMUNICATION:" 
+	":NEGATIVE-COMMUNICATION:" "<PSYCHOLOGY-ACTION>")
+
+(deftype therapy (isa thing))
+(defstringconstant ":THERAPY:"  ":PHYSICAL-THERAPY:" "<THERAPY>")
+
+(deftype care-action (isa behavior-action provide-care-predicate))
+(defstringconstant ":CARE:" ":HELP:" ":SUPPORT:" "<CARE-ACTION>")
+
+(deftype care-property (isa property state modifier))
+(defstringconstant ":CARING:" "<CARE-PROPERTY>")
+
+(deftype debt (isa thing))
+(defstringconstant ":DEBT:" "<DEBT>")
+(deftype rent-or-mortgage (isa debt))
+(defstringconstant ":RENT-OR-MORTGAGE:" "<RENT-OR-MORTGAGE>")
+
+
+(deftype transportation-action (isa action thing))
+(defstringconstant ":TRANSPORTATION:" ":TRANSPORT:" ":SEND:" ":ACCOMPANY:" "<TRANSPORTATION-ACTION>")
+
+(deftype person (isa thing))
+(deftype patient (isa person))
+(defstringconstant ":PATIENT:" "<PATIENT>")
+(deftype non-patient (isa person))
+(defstringconstant ":NON-PATIENT:" ":NO-ONE:" "<NON-PATIENT>")
+(deftype friend-or-family (isa non-patient))
+(defstringconstant ":FF:" ":FRIEND:" ":FAMILY:" ":COMPANION:" "<FRIEND-OR-FAMILY>")
+(deftype family (isa friend-or-family))
+(deftype multi-family (isa family))
+(defstringconstant ":MULTI-FAMILY:" ":CHILDREN:" ":GRANDPARENTS:" ":SIBLINGS:" "<MULTI-FAMILY>")
+(deftype single-family (isa family))
+(defstringconstant ":NON-SPOUSE-SINGLE-FAMILY:" ":SPOUSE:" ":SIGNIFICANT-OTHER:" ":CHILD:" ":BROTHER:" ":SISTER:" ":COUSIN:" ":GRANDCHILD:" ":STEPCHILD" "<SINGLE-FAMILY>")
+(deftype neighbor (isa person))
+(defstringconstant ":NEIGHBOR:" "<NEIGHBOR>")
+(deftype medical-provider (isa non-patient))
+(defstringconstant ":NURSE:" ":DOCTOR:" ":THERAPIST:" "SOCIAL-WORKER:" "<MEDICAL-PROVIDER>")
+(deftype care-provider (isa non-patient))
+(defstringconstant ":CAREGIVER:" "<CARE-PROVIDER>")
+(deftype ff-care-provider (isa care-provider))
+(defstringconstant ":FF-CARE-PROVIDER:" "<FF-CARE-PROVIDER>")
+
+
+(deftype place (isa thing))
+(deftype sameplace (isa place))
+(deftype otherplace (isa place))
+(deftype facility (isa place))
+(deftype living-facility (isa place))
+(defstringconstant ":NURSING-HOME:" ":ASSISTED-LIVING:" ":GROUP-HOME:"  
+	":COMMUNITY-LIVING:" ":SENIOR-LIVING:""<LIVING-FACILITY>")
+(deftype temporary-living-facility (isa living-facility))
+(deftype benefit-living-facility (isa living-facility))
+(defstringconstant ":BENEFIT-LIVING-CENTER:" ":CHARITABLE-HOUSING:" "<BENEFIT-LIVING-CENTER>")
+(defstringconstant ":TEMPORARY-LIVING:" ":SHELTER:" "<TEMPORARY-LIVING-FACILITY>")
+(defstringconstant ":STREET:" "<PLACE>")
+(deftype medical-facility (isa facility))
+(defstringconstant ":HOSPITAL:" ":ER:" ":CLINIC:" ":VA:" ":MEDICAL-FACILITY:" "<MEDICAL-FACILITY>")
+
+(deftype living-space (isa place))
+(deftype home (isa living-space))
+(defstringconstant ":HOME:" "<HOME>")
+(deftype patient-home (isa home))
+(defstringconstant ":PATIENT-HOME:" "<PATIENT-HOME>")
+(deftype ff-home (isa home))
+(defstringconstant ":FAMILY-HOME:" "<FAMILY-HOME>")
+(deftype other-home (isa home))
+(defstringconstant ":OTHER-HOME:" "<OTHER-HOME>")
+(deftype non-home-living-space (isa living-space))
+(defstringconstant ":NON-HOME-LIVING-SPACE:" "<NON-HOME-LIVING-SPACE>")
+(deftype marginal-living-space (isa living-space))
+(defstringconstant ":MARGINAL-LIVING-SPACE:" "<MARGINAL-LIVING-SPACE>")
+
+
+(deftype vehicle (isa thing))
+(deftype personal-vehicle (isa vehicle))
+(deftype ff-vehicle (isa personal-vehicle))
+(deftype patient-vehicle (isa personal-vehicle))
+(defstringconstant ":PERSONAL-VEHICLE:" "<PERSONAL-VEHICLE>")
+(defstringconstant ":FF-VEHICLE:" "<FF-VEHICLE>")
+(defstringconstant ":PATIENT-VEHICLE:" "<PATIENT-VEHICLE>")
+(deftype public-vehicle (isa vehicle))
+(defstringconstant ":PUBLIC-TRANSPORT:" "<PUBLIC-VEHICLE>")
+
+(deftype community-services (isa thing))
+(defstringconstant ":MEALS-ON-WHEELS:" "<COMMUNITY-SERVICES>")
+
+(deftype psychological-thing-predicate (isa thing predicate state))
+(deftype emotion-thing-predicate (isa psychological-thing-predicate))
+(deftype behavior-thing-predicate (isa thing predicate state))
+(defstringconstant ":COMMUNICATE:" ":COMMUNICATION:" ":INTERACT-WITH:" ":INTERACTION:" "<BEHAVIOR-THING-predicate">)
+
+(deftype depression-thing-state (isa emotion-thing-predicate))
+(defstringconstant ":DEPRESSED:" ":DEPRESSION:" "<DEPRESSION-THING-STATE>")
+
+(deftype organization (isa thing))
+(deftype church (isa organization))
+(defstringconstant ":CHURCH:" "<CHURCH>")
+
+(deftype location-property (isa property state))
+(defstringconstant ":HERE:" "<LOCATION-PROPERTY>")
+
+(deftype alone-property (isa property state))
+(defstringconstant ":ALONE:" "<ALONE-PROPERTY>")
+
+(deftype furniture (isa thing))
+(defstringconstant ":CHAIR:" ":COUCH:" ":BED:" "<FURNITURE>")
+
+(deftype room-thing (isa place))
+(defstringconstant ":ROOM:" ":BATHROOM:" ":BEDROOM:" "<ROOM-THING>")
+
+(deftype resting-place (isa place))
+(defstringconstant ":BEDSIDE:" "<RESTING-PLACE>")
+
+(deftype charity-property (isa behavior state property))
+(defstringconstant ":CHARITY:" "<CHARITY-PROPERTY>")
+
+(deftype admission-discharge-action (isa thing action))
+(defstringconstant ":ADMIT:" ":ADMISSION:" ":PLACEMENT:" ":PLACE:" ":DISCHARGE:" "<ADMISSION-DISCHARGE-ACTION>")
+
+(deftype examine-action (isa behavior))
+(defstringconstant ":EXAMINE:" ":EXAMINATION:" ":WATCH:" ":OBSERVE:" ":REVIEW-FOR:" "<EXAMINE-ACTION>")
+
+(deftype number (property thing))
+(defstringconstant ":NUMBER:" "<NUMBER>")
+
+(deftype availability-property (property state))
+(defstringconstant ":AVAILABLE:" "<AVAILABILITY-PROPERTY>")
+
+(deftype support-system-thing (isa thing property predicate))
+(defstringconstant ":SUPPORT-SYSTEM:" ":SUPPORT:")
+
+(deftype quality-property (isa property))
+(defstringconstant ":GOOD:" ":POOR:" "<QUALITY-PROPERTY>")
+
+(deftype give-take-action (isa action))
+(defstringconstant ":RECEIVE:" ":GIVE:" ":PROVIDE:" ":TAKE:" "<GIVE-TAKE-ACTION>")
+
+(deftype give-take-thing (isa thing))
+(defstringconstant ":GIFT:" ":RECEIPT:" "<GIVE-TAKE-ACTION>")
+
+(deftype time-expression (isa modifier property thing))
+(deftype time-modifier (isa time-expression))
+(deftype time-unit (isa time-expression))
+(deftype date (isa time-expression))
+(deftype time-duration (isa time-expression))
+(defstringconstant ":GENERAL_TIME:" ":REGULARLY:" ":SPECIFIC_TIME:" ":PER_TIME_UNIT:" "<TIME-MODIFIER>")
+(defstringconstant ":TIME-UNIT:" "<TIME-UNIT>")
+
+(defstringconstant ":TIME:" ":REGULARLY:" ":CURRENTLY:" ":GENERAL-TIME:" "<TIME-EXPRESSION>")
+
+(deftype visit-action (isa behavior thing))
+(defstringconstant ":VISIT:" "<VISIT-ACTION>")
+
+(deftype need-thing (isa thing action))
+(defstringconstant ":NEED:" ":PATIENT-NEED:" ":NO-NEEDS:" "<NEED-THING>")
+
+(deftype history-thing (isa thing))
+(defstringconstant ":HISTORY:" "<HISTORY-THING>")
+
+(deftype involvement-thing (isa thing behavior state))
+(defstringconstant ":INVOLVED:" "<INVOLVEMENT-THING>")
+
+(deftype treatment-thing (isa thing action))
+(defstringconstant ":THERAPY:" ":TREATMENT:" ":TREAT:" "<TREATMENT-THING>")
+
+(deftype substance-thing (isa thing))
+(deftype medication-thing (isa substance-thing))
+(defstringconstant ":PRESCRIPTION-MEDICATION:" "<MEDICATION-THING>")
+
+(deftype adl-activity (isa thing action))
+(defstringconstant ":ADL-THING:" ":CHORES:" ":FOOD:"
+	":COOK:" "<ADL-ACTIVITY>")
+
+(deftype physical-activity-thing (isa behavior))
+(defstringconstant ":PHYSICAL-ACTIVITY:" ":PHYSICAL-EXERCISE:" "<PHYSICAL-ACTIVITY-THING>")
+
+(deftype bedside-place (isa place))
+(defstringconstant ":BEDSIDE:" "<BEDSIDE-PLACE>")
+
+(deftype depression (isa emotion-thing-predicate-state))
+(defstringconstant ":DEPRESSION:" "<DEPRESSION>")
+
+(deftype resource-thing (isa thing))
+(defstringconstant ":RESOURCE:" "<RESOURCE-THING>")
+(deftype financial-resource (isa resource-thing))
+(defstringconstant ":GOVERNMENT-FUNDING:" ":JOB:" ":MONEY:" "<FINANCIAL-RESOURCE>")
+
+(deftype eligibility-state-thing (isa state thing))
+(defstringconstant ":ELIGIBLE:" ":INELIGIBLE:" ":ELIGIBILITY:" "<ELIGIBILITY-STATE-THING>")
+
+(deftype ability-state-thing (isa state thing))
+(defstringconstant ":ABLE:" ":ABILITY:" ":UNABLE:" ":INABILITY:" "<ABILITY-STATE=THING>")
+
+(deftype appropriateness (isa state property))
+(defstringconstant ":APPROPRIATE:" ":INAPPROPRIATE:" "<APPROPRIATENESS>")
+
+(deftype possibility (isa state property thing))
+(defstringconstant ":POSSIBLE:" ":PROBABLE:" ":LIKELY:" "<POSSIBILITY>")
+
+(deftype throwaway-concept (isa thing))
+(defstringconstant ":REVIEW-FOR:" ":LITERATURE:" ":ENCOURAGE:" ":AGREEMENT:" ":CONCERN:" ":SCREEN:" "<THROWAWAY-CONCEPT>")
+
+(deftype inform-predicate (isa predicate))
+(defstringconstant ":EDUCATE:" ":DISCUSS:" "<INFORM-PREDICATE>")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Grammar
+
+(deftype grammar-root (isa root))
+(deftype grammar-sentence (isa grammar-root))
+(deftype passive-sentence (isa grammar-sentence))
+(deftype grammar-predicate (isa grammar-root))
+(deftype grammar-passive-predicate (isa grammar-predicate))
+(deftype grammar-modifier (isa grammar-root))
+(deftype grammar-thing (isa grammar-root))
+(deftype grammar-property (isa grammar-root))
+(deftype grammar-sentence (isa grammar-root))
+(deftype grammar-conjunct (isa grammar-root))
+(deftype grammar-word (isa grammar-root))
+(deftype meta-grammar-thing (isa grammar-root))
+(deftype meta-grammar-property (isa grammar-root))
+
+(deftype action-thing (isa grammar-predicate))
+(deftype action-thing-thing (isa grammar-predicate))
+(deftype action-pp (isa grammar-predicate))
+(deftype action-thing-pp (isa grammar-predicate))
+(deftype action-thing-pp-pp (isa grammar-predicate))
+
+(deftype person-action-thing (isa grammar-sentence))
+(deftype person-action-thing-thing (isa grammar-sentence))
+(deftype person-action-pp (isa grammar-sentence))
+(deftype person-action-thing-pp (isa grammar-sentence))
+(deftype person-action-thing-pp-pp (isa grammar-sentence))
+
+(deftype grammar-state (isa grammar-root))
+(deftype thing-pp (isa grammar-root))
+(deftype thing-is-pp (isa grammar-sentence))
+(deftype state-pp (isa grammar-state))  ;; "alone at home"
+(deftype state-predicate (isa grammar-state))
+(deftype action-state (isa grammar-state))  ;; "live alone"
+(deftype state-action-thing (isa grammar-state))
+(deftype state-action-thing-pp (isa grammar-state))
+(deftype pp (isa grammar-root))
+
+(deftype modifier-thing (isa grammar-modifier grammar-thing)) ;; 2 bedroom, 2 bedroom home
+
+(defstringtype ":CONJ:" ":BUT:" "<GRAMMAR-CONJUNCT>")
+
+(deftype context-word (isa grammar-word) (grammar property state))
+(defstringconstant ":PRE-NEGATION-WORD:" "<CONTEXT-WORD>")
+
+(deftype checkbox-checked (isa meta-grammar-property))
+(defstringconstant ":CHECKBOX-CHECKED:" ":CHECKBOX-UNCHECKED:" "<CHECKBOX-CHECKED>")
+
+(defstringconstant ":BULLET:" ":CHECKBOX:" "<META-GRAMMAR-THING>")
+
+(deftype missing-type (isa root))
+(defstringconstant ":FEAR:" ":GOAL-OR-DESIRE-TO-BE-HOME:" "<MISSING-TYPE>")
+
+
+
+
+)
+
+
+
+

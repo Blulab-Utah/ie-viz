@@ -1,0 +1,197 @@
+'(
+wordrule
+
+
+((ruleid alone-word-rule)
+ (stype "<STATE>")
+ (concept ":ALONE:")
+ (pattern ("alone" "by himself" "by herself" "self")))
+ 
+((ruleid reside-word-rule)
+ (concept ":LIVE_AT:")
+ (pattern ("live" "lives" "living" "stays" "staying" 
+ 			"reside" "resides" "residing" "situated" 			
+ 			"shares home" "living situation" "renting"
+ 			"living arrangement" "living arrangements")))
+			
+((ruleid reside-past-word-rule)
+ (concept ":LIVED_AT:")
+ (pattern ("lived" "was living" "stayed" "was staying" 
+ 			"resided" "was residing" "was situated" 			
+ 			"shared home")))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; PEOPLE
+
+((ruleid family-conjunction-rule)
+ (concept ":FAMILY:")
+ (ordered true)
+ (pattern (":FAMILY:") ("and") (":FAMILY:")))
+ 
+((ruleid family-definition-rule)
+ (concept ":FAMILY:" )
+ (pattern (":SPOUSE:" ":SINGLE_FAMILY_MEMBERS:" ":MULTI_FAMILY_MEMBERS:")))
+ 
+((ruleid single-family-member-word-rule)
+ (stype "<PERSON>")
+ (concept ":SINGLE_FAMILY_MEMBERS:")
+ (pattern (":SPOUSE:" ":NON_SPOUSE_SINGLE_FAMILY_MEMBERS:")))
+	
+((ruleid non-spouse-family-member-rule)
+ (stype "<PERSON>")
+ (concept ":NON_SPOUSE_SINGLE_FAMILY_MEMBERS:")
+ (pattern ("mother" "father" "son"  "daughter"  
+	"sibling"  "brother" "sister" "dtr" "mother's" "father's" "son's" 
+	"daughter's"
+	"sibling's" "brother's" "sister's" "relative" "relative's"  "child" "ex" 
+	"granddaughter" "grandson" "granddaughter's" "grandson's" "grandchildren"
+	"nok" "next of kin" "godson" "nephew" "niece" "grandchild" "grand child"
+	"step son" "step daughter")))
+	
+((ruleid in-law-word-rule)
+ (stype ?0)
+ (concept ?0)
+ (ordered true)
+ (pattern (":SINGLE_FAMILY_MEMBERS:") ("in law" "in-law")))
+
+((ruleid multi-family-member-word-rule)
+ (stype "<PERSON>")
+ (concept ":MULTI_FAMILY_MEMBERS:")
+ (pattern ("family" "family's" "family members" "fam" 
+ 		"friends/relatives" "children" "brothers" "sisters" 
+		"sons" "daughters" "siblings" "relatives" )))
+ 
+((ruleid spouse-word-rule)
+ (stype "<PERSON>")
+ (concept ":SPOUSE:")
+ (pattern ("wife" "wife's" "husband" "husband's" "spouse" "spouse's" 
+		"significant other" "significant other's" "so's" 
+		"spouse/significant other" "vet/spouse")))
+
+;; Need better way to differentiate patient "he" from son, brother, etc.
+((ruleid patient-rule-1)
+ (stype "<PERSON>")
+ (concept ":PATIENT:")
+ (pattern ("he" "him" "she" "her" "patient" "pt" "vet" "veteran" 
+ 			"this veteran" "the veteran")))
+
+((ruleid no-one-rule-1)
+ (stype "<PERSON>")
+ (concept ":NO-ONE:")
+ (pattern ("no one" "nobody")))
+ 
+ ;;;;;;;;;;;;;;;;;;;;;;
+;; SUBSTANCE USE
+
+((ruleid substance-action-rule) 
+ (concept ":USE_SUBSTANCE:")
+  (words 
+    ("drink" "drinks" "drinking" "drank" "drinker" 
+	"smoke" "smokes" "smoked" "smoking" 
+	"consumes" "consumption")))
+	
+((ruleid substance-event-rule-2) 
+  (concept ":SUBSTANCE_USE:")
+  (words 
+    ("alcohol use" "drug use")))
+
+((ruleid substance-rule)
+  (concept ":SUBSTANCE:")
+  (words ("substance")))
+
+((ruleid alcohol-rule)
+  (concept ":ALCOHOL:")
+  (words ("etoh" "ethyl alchohol" "ethanol" "alcohol" 
+	"alcoholic beverage" "alcoholic beverages" 
+	"ethyl" "wine" "beer" "vodka" "rum" "vodka or rum")))
+
+((ruleid alcohol-abuse-rule)
+  (concept ":ALCOHOL_ABUSE:")
+  (words ("alcohol abuse" "abuses alcohol" "alcoholic abuse" 
+	"alcoholism" "drinking binge" "alcohol cravings" "craving alcohol" 
+	"drinking habit" "drinking habits")))
+
+((ruleid tobacco-rule)
+  (concept ":TOBACCO:")
+  (words ("tobacco" "cigarettes" "cigarette")))
+
+((ruleid prescription-medication-rule)
+  (concept ":PRESCRIPTION_MEDICATION:")
+  (words ("medications" "medication" "meds" 
+		"prescription medication" "prescription medications" 
+		"prescription drugs" )))
+		
+((ruleid specific-prescription-medication-rule)
+  (concept ":PRESCRIPTION_MEDICATION:")
+  (words ("ntg" "acetominophen" "vicodin" "ibuprofen" "aspirin")))
+
+((ruleid substance-quantity)
+ (words ("glass" "glasses" "cups" "glasses or cups" "bottle" "bottles" 
+ 			"pack" "packs"))
+ (concept ":SUBSTANCE_QUANTITY:")
+ (relations (quantity ?* ?0)))
+ 
+ ((ruleid drug-rule)
+  (concept ":DRUG:")
+  (words ("drug" "drugs" "cocaine" "heroin" "illegal drugs" 
+		"involved with drugs" "involvement with drugs")))
+	
+((ruleid abuse-word-rule)
+  (concept ":ABUSE:")
+  (words ("abuse" "overdose")))
+
+((ruleid substance-abuse-rule-2)
+  (concept ":SUBSTANCE_ABUSE:")
+  (words ("<SUBSTANCE>") (":ABUSE:")))
+
+((ruleid substance-dependence-rule)
+  (concept ":DEPENDENCE:")
+  (words ("<SUBSTANCE>") 
+	 ("dependence" "abuse/dependence" "addictions" "addiction")))
+
+((ruleid substance-withdrawal-rule)
+  (concept ":WITHDRAWAL:")
+  (words ("withdrawal" "withdrawal seizures")))
+ 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ETC
+ 
+ ;;; PREPOSITIONS, AUXULLIARIES, ETC
+
+((ruleid is-auxilliary-word-rule)
+ (macro "_IS_")
+ (pattern ("is" "was" "are" "were" "has been" "have been"))
+ (inhibit-interstitial))
+ 
+((ruleid isnt-auxilliary-word-rule)
+ (macro ""_ISNT_)
+ (pattern ("isn't" "wasn't" "aren\'t" "weren't" "hasn't been" "haven't been"))
+ (inhibit-interstitial))
+
+
+((ruleid conjunct-word-rule)
+ (concept ":CONJ:")
+ (pattern ("and" "or" "and/or" "as well as" "&")))
+ 
+((ruleid but-word-rule)
+ (concept ":BUT:")
+ (pattern ("but")))
+ 
+((ruleid have-word-rule)
+ (macro "_HAVE_")
+ (pattern ("have" "has" "had")))
+
+((ruleid preposition-word-rule)
+ (macro "_PREP_")
+ (pattern ("w/" "w" "to" "with" "at" "in" "on" "under" "for" "alongside" "through" "@"))
+ (inhibit-interstitial true))
+ 
+((ruleid locational-preposition-word-rule)
+ (macro "_AT_")
+ (pattern ("at" "in" "to"))
+ (inhibit-interstitial true))
+ 
+
+
+
+ )

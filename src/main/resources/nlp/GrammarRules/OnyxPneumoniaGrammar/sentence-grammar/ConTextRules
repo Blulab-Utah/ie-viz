@@ -1,0 +1,16 @@
+'(
+tagrule
+ 
+((ruleid pre-negation-context-rule-FILE)
+  (concept ?1)
+  (ordered true)
+  (window 8)
+  (pattern ("never" "no" "not" "without" "w/o" "can't" 
+  			"never" "doesn't") 
+  		 (?interpreted))
+  (properties (directionality negated))
+  ;; (actions ("applyModifierProperties" ?rule ?1))
+  (tests (notneg ?1)))
+  
+
+)

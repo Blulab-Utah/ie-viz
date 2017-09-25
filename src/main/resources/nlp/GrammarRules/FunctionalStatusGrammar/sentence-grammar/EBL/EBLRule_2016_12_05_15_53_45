@@ -1,0 +1,37 @@
+'(
+wordrule
+(
+  (ruleid "AUTO-help-with-adl-activity-rule-0-2016/12/05 15:53:45") 
+  (specialized) 
+  (example-snippet "walks with help") 
+  (sourceid "help-with-adl-activity-rule") 
+  (concept ":WALK_WITH_HELP:") 
+  (stype "<COMPLEX_EVENT>") 
+  (window 16.0) 
+  (words 
+    ("@AUTO-simple-pp-rule-1-2016/12/05 15:53:45@") 
+    ("@general-adl-activity-rule@")) 
+  (tests 
+    (notneg ?0) 
+    (notneg ?1)) 
+  (removeproperties directionality))
+
+(
+  (ruleid "AUTO-simple-pp-rule-1-2016/12/05 15:53:45") 
+  (specialized) 
+  (intermediate) 
+  (example-snippet "with help") 
+  (ordered true) 
+  (sourceid "simple-pp-rule") 
+  (concept "?1") 
+  (stype "<EVENT_THING>") 
+  (window 16.0) 
+  (words 
+    ("@preposition-word-rule@") 
+    ("@help-rule-1@")) 
+  (properties 
+    (object ?1)) 
+  (tests 
+    ("isInterpreted" ?1)))
+
+)

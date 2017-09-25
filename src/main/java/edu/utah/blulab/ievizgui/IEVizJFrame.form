@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -25,15 +29,10 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -41,9 +40,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="148" max="32767" attributes="0"/>
+              <EmptySpace pref="67" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,15 +72,19 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="AddPipelineButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="AddOntologyTypeSystem" min="-2" max="-2" attributes="0"/>
+                          <Component id="AddOntologyTypeSystemButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="RunOntologyButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="ApplyOntologyToCorpusButton" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="RunPipelineButton" min="-2" max="-2" attributes="0"/>
+                          <Component id="ViewAnnotationsButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="MoonstoneGUIButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ClearDBTablesButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="158" max="32767" attributes="0"/>
+                  <EmptySpace pref="173" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,12 +97,14 @@
                       <Component id="AddAnnotatorButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="AddNLPToolButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="AddPipelineButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AddOntologyTypeSystem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AddOntologyTypeSystemButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="RunOntologyButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RunPipelineButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ApplyOntologyToCorpusButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ViewAnnotationsButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ClearDBTablesButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="MoonstoneGUIButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -119,33 +124,64 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="AddAnnotator"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddAnnotatorButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="AddNLPToolButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="AddNLPTool"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddNLPToolButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="AddPipelineButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="AddPipeline"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddPipelineButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="RunOntologyButton">
+        <Component class="javax.swing.JButton" name="ApplyOntologyToCorpusButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="RunOntology"/>
+            <Property name="text" type="java.lang.String" value="ApplyOntologyToCorpus"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ApplyOntologyToCorpusButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="RunPipelineButton">
+        <Component class="javax.swing.JButton" name="ViewAnnotationsButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="RunPipeline"/>
+            <Property name="text" type="java.lang.String" value="ViewAnnotations"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ViewAnnotationsButtonActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="AddOntologyTypeSystem">
+        <Component class="javax.swing.JButton" name="AddOntologyTypeSystemButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="AddOntologyTypeSystem"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddOntologyTypeSystemActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddOntologyTypeSystemButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="ClearDBTablesButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ClearDBTAbles"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearDBTablesButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="MoonstoneGUIButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="MoonstoneGUIButton"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MoonstoneGUIButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -163,37 +199,36 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="OntologyCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="OntologyCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="NLPToolCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="NLPToolCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="CorpusCB" min="-2" max="-2" attributes="0"/>
-                      <Component id="CorpusCBLabel" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="AnnotatorCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="AnnotatorCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="RunCB" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="RunCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="PipelineCBLabel" min="-2" max="-2" attributes="0"/>
-                      <Component id="PipelineCB" min="-2" max="-2" attributes="0"/>
+                      <Component id="AnnotatorCB" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="NLPToolCBLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="OntologyCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="AnnotatorCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="CorpusCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="RunCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="PipelineCBLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="OntologyCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="CorpusCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="NLPToolCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="TypeSystemsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="TypeSystemsComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="PipelineCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="RunCB" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -201,24 +236,33 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="OntologyCBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NLPToolCBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CorpusCBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AnnotatorCBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RunCBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PipelineCBLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="OntologyCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NLPToolCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="CorpusCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AnnotatorCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RunCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="PipelineCB" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="261" max="32767" attributes="0"/>
+                  <Component id="OntologyCBLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="OntologyCB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="AnnotatorCBLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="AnnotatorCB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="NLPToolCBLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="NLPToolCB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="CorpusCBLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="CorpusCB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="TypeSystemsLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="TypeSystemsComboBox" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="RunCBLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="RunCB" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="PipelineCBLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="PipelineCB" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -333,6 +377,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Annotator"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AnnotatorCBLabelMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="RunCBLabel">
           <Properties>
@@ -343,6 +390,26 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Pipelines"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="TypeSystemsLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TypeSystems"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="TypeSystemsComboBox">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

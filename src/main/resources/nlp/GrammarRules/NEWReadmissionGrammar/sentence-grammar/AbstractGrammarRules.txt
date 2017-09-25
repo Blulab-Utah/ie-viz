@@ -1,0 +1,126 @@
+'(
+wordrule
+ 
+ ;; PREDICATE RULES
+((ruleid action-thing-rule)
+ (stype "<GRAMMAR-ACTION-THING-PREDICATE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<ACTION>") ("<THING>"))
+ (properties (action ?0) (object ?1)))
+
+;; e.g. "Give his son a book"
+((ruleid action-thing-thing-rule)
+ (stype "<GRAMMAR-ACTION-THING-THING-PREDICATE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<ACTION>") ("<THING>") ("<THING>"))
+ (properties (action ?0) (first-object ?1) (second-object ?2)))
+
+((ruleid action-pp-rule)
+ (stype "<GRAMMAR-ACTION-PP-PREDICATE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<ACTION>") ("<PP>"))
+ (properties (action ?0) (object (thing ?1))))
+ 
+((ruleid action-pp-pp-rule)
+ (stype "<GRAMMAR-ACTION-PP-PP-PREDICATE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<ACTION>") ("<PP>") ("<PP>"))
+ (properties (action ?0) 
+ 			(first-pp ?1)
+ 			(second-pp ?2)))
+ 
+ ((ruleid action-thing-pp-rule)
+ (stype "<GRAMMAR-ACTION-THING-PP-PREDICATE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<ACTION>") ("<THING>") ("<PP>"))
+ (properties (action ?0) (first-object ?1) (pp-object (thing ?2))))
+
+((ruleid action-thing-pp-pp-rule)
+ (stype "<GRAMMAR-ACTION-THING-PP-PP-PREDICATE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<ACTION>") ("<THING>") ("<PP>") ("<PP>"))
+ (properties (action ?0) 
+ 	(object ?1) 
+ 	(first-pp-object (thing ?2)) 
+ 	(second-pp-object (thing ?3))))
+ 
+((ruleid infinitive-phrase-predicate-rule)
+ (debug true)
+ (stype "<GRAMMAR-INFINITIVE-PREDICATE>")
+ (concept ?1)
+ (ordered true)
+ (words ("to") ("<PREDICATE>"))
+ ;; (tests ("isRootForm" ("getWord" (action ?1))))
+ (properties (predicate ?1)))
+
+;; SENTENCE RULES
+((ruleid person-action-thing-rule)
+ (stype "<GRAMMAR-PERSON-PREDICATE-SENTENCE>")
+ (complex-concept)
+ (ordered true)
+ (window 32)
+ (words ("<PERSON>") ("<PREDICATE>"))
+ (properties (subject ?0) (predicate ?1)))
+ 
+ ;; wife is at bedside
+((ruleid thing-is-pp-rule)
+ (stype "<GRAMMAR-THING-IS-PP-SENTENCE>")
+ (complex-concept)
+ (ordered true)
+ (words ("<THING>") ("_IS_") ("<PP>"))
+ (properties (subject ?0) (predicate ?2)))
+ 
+;; "wife at bedside"
+((ruleid thing-pp-is-sentence-rule)
+ (stype "<GRAMMAR-THING-PP-SENTENCE>")
+ (complex-concept)
+ (ordered true)
+ (words ("<THING>") ("<PP>"))
+ (properties (subject ?0) (predicate ?1)))
+ 
+;; PP RULES
+
+((ruleid pp-rule)
+ (stype "<PP>")
+ (concept ?1)
+ (ordered true)
+ (words ("_PREP_") ("<THING>"))
+ (properties (thing ?1)))
+
+;; THING RULES
+((ruleid property-thing-rule)
+ (stype ?1)
+ (complex-concept)
+ (ordered true)
+ (words ("<PROPERTY>") ("<THING>"))
+ (properties (property ?0) (thing ?1)))
+  
+((ruleid thing-predicate-thing-rule)
+ (stype "<GRAMMAR-THING-PP-THING>")
+ (complex-concept)
+ (ordered true)
+ (words ("<THING>") ("<PP>"))
+ (properties (object ?0) (modifier (thing ?1))))
+ 
+;; PROPERTY RULES
+((ruleid recursive-genetive-property-rule)
+ (stype ?1)
+ (complex-concept)
+ (ordered true)
+ (words ("<GENITIVE-PROPERTY>") ("<GENITIVE-PROPERTY>"))
+ (properties (genitive ?0) (thing (thing ?1))))
+
+
+)

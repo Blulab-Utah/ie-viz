@@ -1,0 +1,85 @@
+'(
+wordrule
+
+((ruleid there-is-finding-rule)
+ (stype ?1)
+ (concept ?1)
+ (words (":THERE-IS:") ("<PULMFINDING>" "<PULMDISEASE>")))
+
+((ruleid right-upper-lower-lobe-rule)
+ (stype "<LOCALPULMLOC>")
+ (concept ":RIGHT-UPPER-LOBE:")
+ (words (":RIGHT:") (":UPPER:") (":LOBE:")))
+ 
+((ruleid left-upper-lower-lobe-rule)
+ (stype "<LOCALPULMLOC>")
+ (concept ":LEFT-UPPER-LOBE:")
+ (words (":LEFT:") (":UPPER:") (":LOBE:")))
+ 
+ ((ruleid right-lower-lobe-rule)
+ (stype "<LOCALPULMLOC>")
+ (concept ":RIGHT-LOWER-LOBE:")
+ (words (":RIGHT:") (":LOWER:") (":LOBE:")))
+ 
+((ruleid left-lower-lobe-rule)
+ (stype "<LOCALPULMLOC>")
+ (concept ":LEFT-LOWER-LOBE:")
+ (words (":LEFT:") (":LOWER:") (":LOBE:")))
+ 
+((ruleid upper-lobes-rule)
+ (stype "<LOCALPULMLOC>")
+ (concept ":UPPER-LOBE:")
+ (words ("upper lobe" "upper lobes")))
+ 
+((ruleid lower-lobes-rule)
+ (stype "<BILATERALPULMLOC>")
+ (concept ":LOWER-LOBE:")
+ (words ("lower lobe" "lower lobes")))
+ 
+((ruleid lung-rule)
+ (stype "<GENERALPULMLOC>")
+ (concept ":LUNG:")
+ (words ("lung" "lungs")))
+ 
+((ruleid both-lungs-rule)
+ (stype "<GENERALPULMLOC>")
+ (concept ":BOTH-LUNGS:")
+ (words ("both lungs")))
+ 
+((ruleid possible-disease-or-finding-rule)
+  (stype ?1)
+  (concept ?1)
+  (juxtaposed true)
+  (words ("<POSSIBILITY>") ("<PULMFINDING>" "<PULMDISEASE>"))
+  (relations (possibility-of ?1 ?0)))
+  
+((ruleid location-or-modifier-with-disease-or-finding-rule)
+  (stype ?1)
+  (concept ?1)
+  (juxtaposed true)
+  (words ("<PULMLOCMOD>" "<PULMLOC>") ("<PULMFINDING>" "<PULMDISEASE>"))
+  (relations (location-of ?1 ?0)))
+  
+((ruleid disease-or-finding-at-location-or-modifier-rule)
+  (stype ?0)
+  (concept ?0)
+  (ordered true)
+  (words ("<PULMFINDING>" "<PULMDISEASE>") 
+  			("in" "at" "on") 
+  			("<PULMLOCMOD>" "<PULMLOC>"))
+  (relations (location-of ?0 ?2)))
+
+((ruleid pulmonary-location-conjunct-rule)
+  (stype "<PULMLOC>")
+  (concept ":PULMONARY_LOCATIONS:")
+  (words ("<PULMLOC>") (":CONJ:") ("<PULMLOC>"))
+  (flags conj))
+  
+((ruleid pulmonary-location-modifier-conjunct-rule)
+  (stype "<PULMLOCMOD>")
+  (concept ?0)
+  (words ("<PULMLOCMOD>") (":CONJ:") ("<PULMLOCMOD>"))
+  (flags conj))
+
+)
+
