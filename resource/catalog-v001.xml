@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1502984230521" name="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl" uri="smoking.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1502984230521" name="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl" uri="ConText.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1502984230521" name="http://blulab.chpc.utah.edu/ontologies/v2/Modifier.owl" uri="Modifier.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1502984230521" name="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl" uri="Schema.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1502984230521" name="duplicate:http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl" uri="Medication%20MRC_6.13.17.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1502984230521" name="duplicate:http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl" uri="Medication_MRC_6-13-17.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="http://blulab.chpc.utah.edu/ontologies/examples/heartDiseaseInDiabetics.owl" uri="heartDiseaseInDiabetics.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl" uri="smoking.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl" uri="ConText.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="http://blulab.chpc.utah.edu/ontologies/v2/Modifier.owl" uri="Modifier.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl" uri="Schema.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="duplicate:http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl" uri="Medication%20MRC_6.13.17.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1502999414576" name="duplicate:http://blulab.chpc.utah.edu/ontologies/v2/Schema_Boggs.owl" uri="Medication_MRC_6-13-17.owl"/>
     </group>
 </catalog>

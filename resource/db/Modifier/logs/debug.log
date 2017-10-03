@@ -410,3 +410,415 @@ Storage files: (filename : modification date - size)
 2017-07-27 20:19:06.086+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
 2017-07-27 20:19:16.538+0000 ERROR [o.n.k.i.u.w.DefaultFileDeletionEventListener] 'KnolwedgeAuthor' which belongs to the store was deleted while database was running.
 2017-07-27 20:19:51.489+0000 ERROR [o.n.k.i.u.w.DefaultFileDeletionEventListener] 'KnowledgeAuthor' which belongs to the store was deleted while database was running.
+2017-09-27 19:10:10.247+0000 WARN [o.n.i.p.PageCache] The dbms.memory.pagecache.size setting has not been configured. It is recommended that this setting is always explicitly configured, to ensure the system has a balanced configuration. Until then, a computed heuristic value of 6615441408 bytes will be used instead. 
+2017-09-27 19:10:10.315+0000 INFO [o.n.k.i.f.CommunityEditionModule] No locking implementation specified, defaulting to 'community'
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.AvailabilityGuard] Requirement makes database unavailable: Database available
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics START ---
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Neo4j Kernel properties:
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.http.enabled=true
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.security.auth_enabled=true
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.type=BOLT
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] unsupported.dbms.directories.neo4j_home=C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.directories.import=import
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.tls_level=OPTIONAL
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.https.enabled=true
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.http.type=HTTP
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] unsupported.dbms.directories.database=C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.logs.http.enabled=false
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.https.type=HTTP
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.allow_format_migration=true
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] unsupported.dbms.edition=community
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] dbms.connector.bolt.enabled=true
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Diagnostics providers:
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.configuration.Config
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] org.neo4j.kernel.info.DiagnosticsManager
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] SYSTEM_MEMORY
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] JAVA_MEMORY
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] OPERATING_SYSTEM
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] JAVA_VIRTUAL_MACHINE
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] CLASSPATH
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] LIBRARY_PATH
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] SYSTEM_PROPERTIES
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] NETWORK
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] System memory information:
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Total Physical memory: 15.85 GB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Free Physical memory: 11.14 GB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Committed virtual memory: 978.49 MB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Total swap space: 18.22 GB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Free swap space: 12.75 GB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] JVM memory information:
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Free  memory: 375.75 MB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Total memory: 511.00 MB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Max   memory: 3.52 GB
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Garbage Collector: PS Scavenge: [PS Eden Space, PS Survivor Space]
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Garbage Collector: PS MarkSweep: [PS Eden Space, PS Survivor Space, PS Old Gen]
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Memory Pool: Code Cache (Non-heap memory): committed=26.75 MB, used=26.56 MB, max=240.00 MB, threshold=0.00 B
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Memory Pool: Metaspace (Non-heap memory): committed=73.77 MB, used=71.98 MB, max=-1.00 B, threshold=0.00 B
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Memory Pool: Compressed Class Space (Non-heap memory): committed=11.55 MB, used=11.21 MB, max=1.00 GB, threshold=0.00 B
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Memory Pool: PS Eden Space (Heap memory): committed=90.50 MB, used=58.84 MB, max=1.25 GB, threshold=?
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Memory Pool: PS Survivor Space (Heap memory): committed=36.50 MB, used=5.13 MB, max=36.50 MB, threshold=?
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Memory Pool: PS Old Gen (Heap memory): committed=384.00 MB, used=71.28 MB, max=2.64 GB, threshold=0.00 B
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Operating system information:
+2017-09-27 19:10:10.321+0000 INFO [o.n.k.i.DiagnosticsManager] Operating System: Windows 10; version: 10.0; arch: amd64; cpus: 8
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] Process id: 10332@DESKTOP-FKG400I
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] Byte order: LITTLE_ENDIAN
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] Local timezone: America/Los_Angeles
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] JVM information:
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] VM Name: Java HotSpot(TM) 64-Bit Server VM
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] VM Vendor: Oracle Corporation
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] VM Version: 25.91-b15
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] JIT compiler: HotSpot 64-Bit Tiered Compilers
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] VM Arguments: [-Dexe4j.semaphoreName=Local\c:_program_files_neo4j_ce_3.0.4_bin_neo4j-ce.exe, -Dexe4j.isInstall4j=true, -Dexe4j.moduleName=C:\Program Files\Neo4j CE 3.0.4\bin\neo4j-ce.exe, -Dexe4j.tempDir=, -Dexe4j.unextractedPosition=0, -Djava.library.path=C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Dell\DW WLAN Card;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\software_dev\Tools\Maven\apache-maven-3.3.9\bin;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2016b\runtime\win64;C:\Program Files\MATLAB\R2016b\bin;C:\software_dev\Tools\Gradle\gradle-3.2.1\bin;C:\software_dev\Tools\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev0\mingw64\bin;C:\Program Files (x86)\Skype\Phone\;C:\software_dev\Tools\Anaconda3;C:\software_dev\Tools\Anaconda3\Scripts;C:\software_dev\Tools\Anaconda3\Library\bin;C:\Users\Bill\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\Bill\AppData\Local\Programs\Python\Python36-32\;C:\Users\Bill\AppData\Local\Microsoft\WindowsApps;;c:\program files\java\jre1.8.0_91\bin, -Dexe4j.consoleCodepage=cp0, -Dinstall4j.launcherId=24, -Dinstall4j.swt=false]
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] Java classpath:
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/jfxrt.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\sunrsasign.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/zipfs.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\jfr.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/sunmscapi.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/sunpkcs11.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\charsets.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/dnsns.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\rt.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\jsse.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/localedata.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [classpath] C:\Program Files\Neo4j CE 3.0.4\bin\neo4j-desktop-3.2.1.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\classes
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Program%20Files/Neo4j%20CE%203.0.4/bin/neo4j-desktop-3.2.1.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/access-bridge-64.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/sunec.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\jce.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/cldrdata.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [classpath] C:\Program Files\Neo4j CE 3.0.4\.install4j\i4jruntime.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.0] file:/C:/Program%20Files/Neo4j%20CE%203.0.4/.install4j/i4jruntime.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/nashorn.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/sunjce_provider.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [bootstrap] C:\Program Files\Java\jre1.8.0_91\lib\resources.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager]  [loader.1] file:/C:/Program%20Files/Java/jre1.8.0_91/lib/ext/jaccess.jar
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] Library path:
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Docker\Docker\resources\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\ProgramData\Oracle\Java\javapath
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Dell\DW WLAN Card
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Intel\iCLS Client
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Intel\iCLS Client
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows\System32
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows\System32\wbem
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows\System32\WindowsPowerShell\v1.0
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Intel\Intel(R) Management Engine Components\DAL
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Intel\Intel(R) Management Engine Components\IPT
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\WIDCOMM\Bluetooth Software
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\WIDCOMM\Bluetooth Software\syswow64
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\software_dev\Tools\Maven\apache-maven-3.3.9\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Git\cmd
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\MySQL\MySQL Utilities 1.6
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows\System32
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows\System32\wbem
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Windows\System32\WindowsPowerShell\v1.0
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Matlab\R2016b\runtime\win64
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Matlab\R2016b\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\software_dev\Tools\Gradle\gradle-3.2.1\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\software_dev\Tools\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev0\mingw64\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files (x86)\Skype\Phone
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\software_dev\Tools\Anaconda3
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\software_dev\Tools\Anaconda3\Scripts
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\software_dev\Tools\Anaconda3\Library\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Users\Bill\AppData\Local\Programs\Python\Python36-32\Scripts
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Users\Bill\AppData\Local\Programs\Python\Python36-32
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Users\Bill\AppData\Local\Microsoft\WindowsApps
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Neo4j CE 3.0.4\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] C:\Program Files\Java\jre1.8.0_91\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] System.properties:
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.moduleName = C:\Program Files\Neo4j CE 3.0.4\bin\neo4j-ce.exe
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.semaphoreName = Local\c:_program_files_neo4j_ce_3.0.4_bin_neo4j-ce.exe
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.boot.library.path = c:\program files\java\jre1.8.0_91\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.consoleCodepage = cp0
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] path.separator = ;
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] file.encoding.pkg = sun.io
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.country = US
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.script = 
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.os.patch.level = 
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] install4j.exeDir = C:\Program Files\Neo4j CE 3.0.4\bin\
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.dir = C:\Program Files\Neo4j CE 3.0.4\bin
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.variant = 
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.tempDir = 
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.jnu.encoding = Cp1252
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.nio.ch.bugLevel = 
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] unsupported.dbms.udc.source = desktop
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.awt.enableExtraMouseButtons = true
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] install4j.launcherId = 24
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.isInstall4j = true
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] install4j.swt = false
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.home = C:\Users\Bill
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.timezone = America/Los_Angeles
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] file.encoding = Cp1252
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.name = Bill
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.java.command = C:\Program Files\Neo4j CE 3.0.4\bin\neo4j-ce.exe
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.arch.data.model = 64
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.launchName = C:\Program Files\Neo4j CE 3.0.4\bin\neo4j-ce.exe
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] user.language = en
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] awt.toolkit = sun.awt.windows.WToolkit
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] exe4j.unextractedPosition = 0
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] install4j.appDir = C:\Program Files\Neo4j CE 3.0.4\
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] file.separator = \
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.io.unicode.encoding = UnicodeLittle
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.cpu.endian = little
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.desktop = windows
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] sun.cpu.isalist = amd64
+2017-09-27 19:10:10.336+0000 INFO [o.n.k.i.DiagnosticsManager] Network information:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Software Loopback Interface 1:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 127.0.0.1
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 0:0:0:0:0:0:0:1
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Ethernet Adapter:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 10.0.75.1
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:5db2:7cb8:76ad:6c72%eth0
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:c433:887d:f8af:34d2%wlan0
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter #2:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Realtek USB GbE Family Controller:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (IKEv2):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 192.168.0.7
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 2606:6000:c3c7:4300:0:0:0:7
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 2606:6000:c3c7:4300:d56:3992:1d5:d253
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: 2606:6000:c3c7:4300:1c1:43cb:7df6:70f4
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager]     address: fe80:0:0:0:d56:3992:1d5:d253%wlan2
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (PPTP):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (IP):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Switch Extension Adapter:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (PPPOE):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (SSTP):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (IPv6):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (Network Monitor):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Kernel Debug Network Adapter:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface WAN Miniport (L2TP):
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Switch Extension Adapter-Hyper-V Virtual Switch Extension Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Ethernet Adapter-WFP Native MAC Layer LightWeight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Ethernet Adapter-VirtualBox NDIS Light-Weight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Ethernet Adapter-QoS Packet Scheduler-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Hyper-V Virtual Ethernet Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac-WFP Native MAC Layer LightWeight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac-Virtual WiFi Filter Driver-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac-Native WiFi Filter Driver-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac-VirtualBox NDIS Light-Weight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac-QoS Packet Scheduler-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Dell Wireless 1830 802.11ac-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-VirtualBox NDIS Light-Weight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] Interface Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000:
+2017-09-27 19:10:10.383+0000 INFO [o.n.k.i.DiagnosticsManager] --- INITIALIZED diagnostics END ---
+2017-09-27 19:10:10.399+0000 INFO [o.n.b.v.r.WorkerFactory] Bolt Server extension loaded.
+2017-09-27 19:10:10.399+0000 INFO [o.n.b.v.r.WorkerFactory] Bolt enabled on 127.0.0.1:7687.
+2017-09-27 19:10:10.430+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_2[v0.A.8] record format from store C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier
+2017-09-27 19:10:10.446+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Selected RecordFormat:StandardV3_2[v0.A.8] record format from store C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier
+2017-09-27 19:10:10.446+0000 INFO [o.n.k.i.s.f.RecordFormatSelector] Format not configured. Selected format from the store: RecordFormat:StandardV3_2[v0.A.8]
+2017-09-27 19:10:10.586+0000 INFO [o.n.k.i.a.i.IndexingService] IndexingService.init: indexes not specifically mentioned above are null
+2017-09-27 19:10:10.618+0000 INFO [o.n.k.i.i.l.NativeLabelScanStore] Scan store recovery completed: Number of cleaned crashed pointers: 0 Number of pages visited: 2 Time spent: 
+2017-09-27 19:10:10.680+0000 INFO [o.n.k.NeoStoreDataSource] No check point found in transaction log
+2017-09-27 19:10:10.680+0000 INFO [o.n.k.NeoStoreDataSource] Recovery required from position LogPosition{logVersion=0, byteOffset=16}
+2017-09-27 19:10:11.258+0000 INFO [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 19 to [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.counts.db.b], from [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.counts.db.a].
+2017-09-27 19:10:11.274+0000 INFO [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 19 to [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.counts.db.b], from [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.counts.db.a].
+2017-09-27 19:10:11.427+0000 INFO [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.nodestore.db.labels] ...
+2017-09-27 19:10:11.459+0000 INFO [o.n.k.i.s.DynamicArrayStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.nodestore.db.labels] high id=1 (defragged=0)
+2017-09-27 19:10:11.459+0000 INFO [o.n.k.i.s.DynamicArrayStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.nodestore.db.labels rebuild id generator, highId=1 defragged count=0
+2017-09-27 19:10:11.474+0000 INFO [o.n.k.i.s.NodeStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.nodestore.db] ...
+2017-09-27 19:10:11.505+0000 INFO [o.n.k.i.s.NodeStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.nodestore.db] high id=5367 (defragged=0)
+2017-09-27 19:10:11.505+0000 INFO [o.n.k.i.s.NodeStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.nodestore.db rebuild id generator, highId=5367 defragged count=0
+2017-09-27 19:10:11.505+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.index.keys] ...
+2017-09-27 19:10:11.537+0000 INFO [o.n.k.i.s.DynamicStringStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.index.keys] high id=8 (defragged=0)
+2017-09-27 19:10:11.537+0000 INFO [o.n.k.i.s.DynamicStringStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.index.keys rebuild id generator, highId=8 defragged count=0
+2017-09-27 19:10:11.537+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.index] ...
+2017-09-27 19:10:11.568+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.index] high id=7 (defragged=0)
+2017-09-27 19:10:11.568+0000 INFO [o.n.k.i.s.PropertyKeyTokenStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.index rebuild id generator, highId=7 defragged count=0
+2017-09-27 19:10:11.599+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.strings] ...
+2017-09-27 19:10:11.630+0000 INFO [o.n.k.i.s.DynamicStringStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.strings] high id=6083 (defragged=0)
+2017-09-27 19:10:11.630+0000 INFO [o.n.k.i.s.DynamicStringStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.strings rebuild id generator, highId=6083 defragged count=0
+2017-09-27 19:10:11.630+0000 INFO [o.n.k.i.s.DynamicArrayStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.arrays] ...
+2017-09-27 19:10:11.662+0000 INFO [o.n.k.i.s.DynamicArrayStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.arrays] high id=1 (defragged=0)
+2017-09-27 19:10:11.662+0000 INFO [o.n.k.i.s.DynamicArrayStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db.arrays rebuild id generator, highId=1 defragged count=0
+2017-09-27 19:10:11.677+0000 INFO [o.n.k.i.s.PropertyStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db] ...
+2017-09-27 19:10:11.693+0000 INFO [o.n.k.i.s.PropertyStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db] high id=7623 (defragged=0)
+2017-09-27 19:10:11.693+0000 INFO [o.n.k.i.s.PropertyStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.propertystore.db rebuild id generator, highId=7623 defragged count=0
+2017-09-27 19:10:11.709+0000 INFO [o.n.k.i.s.RelationshipStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshipstore.db] ...
+2017-09-27 19:10:11.724+0000 INFO [o.n.k.i.s.RelationshipStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshipstore.db] high id=5658 (defragged=0)
+2017-09-27 19:10:11.724+0000 INFO [o.n.k.i.s.RelationshipStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshipstore.db rebuild id generator, highId=5658 defragged count=0
+2017-09-27 19:10:11.740+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshiptypestore.db.names] ...
+2017-09-27 19:10:11.755+0000 INFO [o.n.k.i.s.DynamicStringStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshiptypestore.db.names] high id=6 (defragged=0)
+2017-09-27 19:10:11.755+0000 INFO [o.n.k.i.s.DynamicStringStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshiptypestore.db.names rebuild id generator, highId=6 defragged count=0
+2017-09-27 19:10:11.771+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshiptypestore.db] ...
+2017-09-27 19:10:11.787+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshiptypestore.db] high id=5 (defragged=0)
+2017-09-27 19:10:11.802+0000 INFO [o.n.k.i.s.RelationshipTypeTokenStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshiptypestore.db rebuild id generator, highId=5 defragged count=0
+2017-09-27 19:10:11.834+0000 INFO [o.n.k.i.s.DynamicStringStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.labeltokenstore.db.names] ...
+2017-09-27 19:10:11.858+0000 INFO [o.n.k.i.s.DynamicStringStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.labeltokenstore.db.names] high id=4 (defragged=0)
+2017-09-27 19:10:11.862+0000 INFO [o.n.k.i.s.DynamicStringStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.labeltokenstore.db.names rebuild id generator, highId=4 defragged count=0
+2017-09-27 19:10:11.866+0000 INFO [o.n.k.i.s.LabelTokenStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.labeltokenstore.db] ...
+2017-09-27 19:10:11.890+0000 INFO [o.n.k.i.s.LabelTokenStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.labeltokenstore.db] high id=3 (defragged=0)
+2017-09-27 19:10:11.890+0000 INFO [o.n.k.i.s.LabelTokenStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.labeltokenstore.db rebuild id generator, highId=3 defragged count=0
+2017-09-27 19:10:11.921+0000 INFO [o.n.k.i.s.SchemaStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.schemastore.db] ...
+2017-09-27 19:10:11.952+0000 INFO [o.n.k.i.s.SchemaStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.schemastore.db] high id=1 (defragged=0)
+2017-09-27 19:10:11.952+0000 INFO [o.n.k.i.s.SchemaStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.schemastore.db rebuild id generator, highId=1 defragged count=0
+2017-09-27 19:10:11.964+0000 INFO [o.n.k.i.s.RelationshipGroupStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshipgroupstore.db] ...
+2017-09-27 19:10:11.985+0000 INFO [o.n.k.i.s.RelationshipGroupStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshipgroupstore.db] high id=16 (defragged=0)
+2017-09-27 19:10:11.989+0000 INFO [o.n.k.i.s.RelationshipGroupStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore.relationshipgroupstore.db rebuild id generator, highId=16 defragged count=0
+2017-09-27 19:10:11.997+0000 INFO [o.n.k.i.s.MetaDataStore] Rebuilding id generator for[C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore] ...
+2017-09-27 19:10:12.018+0000 INFO [o.n.k.i.s.MetaDataStore] [C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore] high id=15 (defragged=0)
+2017-09-27 19:10:12.022+0000 INFO [o.n.k.i.s.MetaDataStore] C:\software_dev\Code\intellij_workspace\ie-viz\resource\db\Modifier\neostore rebuild id generator, highId=15 defragged count=0
+2017-09-27 19:10:12.078+0000 INFO [o.n.k.i.a.i.IndexingService] IndexingService.start: indexes not specifically mentioned above are null
+2017-09-27 19:10:12.115+0000 INFO [o.n.k.NeoStoreDataSource] Recovery completed. 18 transactions, first:2, last:19 recovered
+2017-09-27 19:10:12.115+0000 INFO [o.n.k.i.DatabaseHealth] Database health set to OK
+2017-09-27 19:10:12.146+0000 INFO [o.n.k.AvailabilityGuard] Fulfilling of requirement makes database available: Database available
+2017-09-27 19:10:12.146+0000 INFO [o.n.k.i.f.GraphDatabaseFacadeFactory] Database is now ready
+2017-09-27 19:10:12.146+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions START ---
+2017-09-27 19:10:12.162+0000 INFO [o.n.k.i.DiagnosticsManager] Graph Database: community single StoreId{creationTime=1501186745398, randomId=6612956178114472981, storeVersion=15813456178476550, upgradeTime=1501186745398, upgradeId=1}
+2017-09-27 19:10:12.162+0000 INFO [o.n.k.i.DiagnosticsManager] Kernel version: 3.2.1
+2017-09-27 19:10:12.162+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:Versions END ---
+2017-09-27 19:10:12.162+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS START ---
+2017-09-27 19:10:12.177+0000 INFO [o.n.k.i.DiagnosticsManager] Store versions:
+2017-09-27 19:10:12.177+0000 INFO [o.n.k.i.DiagnosticsManager] Store versions:
+2017-09-27 19:10:12.177+0000 INFO [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.8
+2017-09-27 19:10:12.177+0000 INFO [o.n.k.i.DiagnosticsManager]   NodeStore v0.A.8
+2017-09-27 19:10:12.193+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.8
+2017-09-27 19:10:12.193+0000 INFO [o.n.k.i.DiagnosticsManager]   PropertyIndexStore v0.A.8
+2017-09-27 19:10:12.193+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.8
+2017-09-27 19:10:12.209+0000 INFO [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore v0.A.8
+2017-09-27 19:10:12.209+0000 INFO [o.n.k.i.DiagnosticsManager]   PropertyStore v0.A.8
+2017-09-27 19:10:12.209+0000 INFO [o.n.k.i.DiagnosticsManager]   RelationshipStore v0.A.8
+2017-09-27 19:10:12.209+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.8
+2017-09-27 19:10:12.224+0000 INFO [o.n.k.i.DiagnosticsManager]   RelationshipTypeStore v0.A.8
+2017-09-27 19:10:12.224+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore v0.A.8
+2017-09-27 19:10:12.224+0000 INFO [o.n.k.i.DiagnosticsManager]   LabelTokenStore v0.A.8
+2017-09-27 19:10:12.224+0000 INFO [o.n.k.i.DiagnosticsManager]   SchemaStore v0.A.8
+2017-09-27 19:10:12.240+0000 INFO [o.n.k.i.DiagnosticsManager]   RelationshipGroupStore v0.A.8
+2017-09-27 19:10:12.240+0000 INFO [o.n.k.i.DiagnosticsManager]   NeoStore v0.A.8
+2017-09-27 19:10:12.240+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_VERSIONS END ---
+2017-09-27 19:10:12.240+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE START ---
+2017-09-27 19:10:12.256+0000 INFO [o.n.k.i.DiagnosticsManager] Id usage:
+2017-09-27 19:10:12.256+0000 INFO [o.n.k.i.DiagnosticsManager] Id usage:
+2017-09-27 19:10:12.256+0000 INFO [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore: used=1 high=0
+2017-09-27 19:10:12.256+0000 INFO [o.n.k.i.DiagnosticsManager]   NodeStore: used=5367 high=5366
+2017-09-27 19:10:12.271+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=8 high=7
+2017-09-27 19:10:12.271+0000 INFO [o.n.k.i.DiagnosticsManager]   PropertyIndexStore: used=7 high=6
+2017-09-27 19:10:12.271+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=6083 high=6082
+2017-09-27 19:10:12.271+0000 INFO [o.n.k.i.DiagnosticsManager]   ArrayPropertyStore: used=1 high=0
+2017-09-27 19:10:12.287+0000 INFO [o.n.k.i.DiagnosticsManager]   PropertyStore: used=7623 high=7622
+2017-09-27 19:10:12.287+0000 INFO [o.n.k.i.DiagnosticsManager]   RelationshipStore: used=5658 high=5657
+2017-09-27 19:10:12.287+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=6 high=5
+2017-09-27 19:10:12.302+0000 INFO [o.n.k.i.DiagnosticsManager]   RelationshipTypeStore: used=5 high=4
+2017-09-27 19:10:12.302+0000 INFO [o.n.k.i.DiagnosticsManager]   StringPropertyStore: used=4 high=3
+2017-09-27 19:10:12.302+0000 INFO [o.n.k.i.DiagnosticsManager]   LabelTokenStore: used=3 high=2
+2017-09-27 19:10:12.302+0000 INFO [o.n.k.i.DiagnosticsManager]   SchemaStore: used=1 high=0
+2017-09-27 19:10:12.319+0000 INFO [o.n.k.i.DiagnosticsManager]   RelationshipGroupStore: used=16 high=15
+2017-09-27 19:10:12.323+0000 INFO [o.n.k.i.DiagnosticsManager]   NeoStore: used=15 high=14
+2017-09-27 19:10:12.327+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_ID_USAGE END ---
+2017-09-27 19:10:12.331+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS START ---
+2017-09-27 19:10:12.335+0000 INFO [o.n.k.i.DiagnosticsManager] Neostore records:
+2017-09-27 19:10:12.339+0000 INFO [o.n.k.i.DiagnosticsManager] TIME (Creation time): 1501186745398
+2017-09-27 19:10:12.343+0000 INFO [o.n.k.i.DiagnosticsManager] RANDOM_NUMBER (Random number for store id): 6612956178114472981
+2017-09-27 19:10:12.347+0000 INFO [o.n.k.i.DiagnosticsManager] LOG_VERSION (Current log version): 0
+2017-09-27 19:10:12.351+0000 INFO [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_ID (Last committed transaction): 19
+2017-09-27 19:10:12.355+0000 INFO [o.n.k.i.DiagnosticsManager] STORE_VERSION (Store format version): 15813456178476550
+2017-09-27 19:10:12.359+0000 INFO [o.n.k.i.DiagnosticsManager] FIRST_GRAPH_PROPERTY (First property record containing graph properties): -1
+2017-09-27 19:10:12.364+0000 INFO [o.n.k.i.DiagnosticsManager] LAST_CONSTRAINT_TRANSACTION (Last committed transaction containing constraint changes): 0
+2017-09-27 19:10:12.364+0000 INFO [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_ID (Transaction id most recent upgrade was performed at): 1
+2017-09-27 19:10:12.364+0000 INFO [o.n.k.i.DiagnosticsManager] UPGRADE_TIME (Time of last upgrade): 1501186745398
+2017-09-27 19:10:12.364+0000 INFO [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_CHECKSUM (Checksum of last committed transaction): -163098132576
+2017-09-27 19:10:12.379+0000 INFO [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_CHECKSUM (Checksum of transaction id the most recent upgrade was performed at): 0
+2017-09-27 19:10:12.379+0000 INFO [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_VERSION (Log version where the last transaction commit entry has been written into): 0
+2017-09-27 19:10:12.379+0000 INFO [o.n.k.i.DiagnosticsManager] LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET (Byte offset in the log file where the last transaction commit entry has been written into): 2651289
+2017-09-27 19:10:12.379+0000 INFO [o.n.k.i.DiagnosticsManager] LAST_TRANSACTION_COMMIT_TIMESTAMP (Commit time timestamp for last committed transaction): 1501186791411
+2017-09-27 19:10:12.395+0000 INFO [o.n.k.i.DiagnosticsManager] UPGRADE_TRANSACTION_COMMIT_TIMESTAMP (Commit timestamp of transaction the most recent upgrade was performed at): 0
+2017-09-27 19:10:12.395+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for NEO_STORE_RECORDS END ---
+2017-09-27 19:10:12.395+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE START ---
+2017-09-27 19:10:12.395+0000 INFO [o.n.k.i.DiagnosticsManager] Transaction log:
+2017-09-27 19:10:12.411+0000 INFO [o.n.k.i.DiagnosticsManager] Oldest transaction 2 found in log with version 0
+2017-09-27 19:10:12.411+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for TRANSACTION_RANGE END ---
+2017-09-27 19:10:12.411+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles START ---
+2017-09-27 19:10:12.426+0000 INFO [o.n.k.i.DiagnosticsManager] Disk space on partition (Total / Free / Free %): 510608052224 / 40460943360 / 7
+Storage files: (filename : modification date - size)
+2017-09-27 19:10:12.426+0000 INFO [o.n.k.i.DiagnosticsManager]   certificates:
+2017-09-27 19:10:12.426+0000 INFO [o.n.k.i.DiagnosticsManager]     neo4j.cert: 2017-09-27T12:10:10-0700 - 1002.00 B
+2017-09-27 19:10:12.426+0000 INFO [o.n.k.i.DiagnosticsManager]     neo4j.key: 2017-09-27T12:10:10-0700 - 1.69 kB
+2017-09-27 19:10:12.442+0000 INFO [o.n.k.i.DiagnosticsManager]   - Total: 2017-09-27T12:10:10-0700 - 2.67 kB
+2017-09-27 19:10:12.442+0000 INFO [o.n.k.i.DiagnosticsManager]   data:
+2017-09-27 19:10:12.442+0000 INFO [o.n.k.i.DiagnosticsManager]     dbms:
+2017-09-27 19:10:12.457+0000 INFO [o.n.k.i.DiagnosticsManager]       auth: 2017-09-27T12:10:12-0700 - 137.00 B
+2017-09-27 19:10:12.457+0000 INFO [o.n.k.i.DiagnosticsManager]     - Total: 2017-09-27T12:10:12-0700 - 137.00 B
+2017-09-27 19:10:12.457+0000 INFO [o.n.k.i.DiagnosticsManager]   - Total: 2017-09-27T12:10:12-0700 - 137.00 B
+2017-09-27 19:10:12.457+0000 INFO [o.n.k.i.DiagnosticsManager]   index:
+2017-09-27 19:10:12.457+0000 INFO [o.n.k.i.DiagnosticsManager]     lucene:
+2017-09-27 19:10:12.473+0000 INFO [o.n.k.i.DiagnosticsManager]       node:
+2017-09-27 19:10:12.473+0000 INFO [o.n.k.i.DiagnosticsManager]         index:
+2017-09-27 19:10:12.473+0000 INFO [o.n.k.i.DiagnosticsManager]           _1.cfe: 2017-09-27T12:10:11-0700 - 289.00 B
+2017-09-27 19:10:12.473+0000 INFO [o.n.k.i.DiagnosticsManager]           _1.cfs: 2017-09-27T12:10:11-0700 - 365.54 kB
+2017-09-27 19:10:12.489+0000 INFO [o.n.k.i.DiagnosticsManager]           _1.si: 2017-09-27T12:10:11-0700 - 359.00 B
+2017-09-27 19:10:12.489+0000 INFO [o.n.k.i.DiagnosticsManager]           segments_1: 2017-09-27T12:10:11-0700 - 136.00 B
+2017-09-27 19:10:12.489+0000 INFO [o.n.k.i.DiagnosticsManager]           write.lock: 2017-09-27T12:10:10-0700 - 0.00 B
+2017-09-27 19:10:12.489+0000 INFO [o.n.k.i.DiagnosticsManager]         - Total: 2017-09-27T12:10:11-0700 - 366.31 kB
+2017-09-27 19:10:12.504+0000 INFO [o.n.k.i.DiagnosticsManager]       - Total: 2017-08-10T10:05:13-0700 - 366.31 kB
+2017-09-27 19:10:12.504+0000 INFO [o.n.k.i.DiagnosticsManager]     - Total: 2017-08-10T10:05:13-0700 - 366.31 kB
+2017-09-27 19:10:12.504+0000 INFO [o.n.k.i.DiagnosticsManager]   - Total: 2017-08-10T10:05:13-0700 - 366.31 kB
+2017-09-27 19:10:12.504+0000 INFO [o.n.k.i.DiagnosticsManager]   index.db: 2017-07-27T13:19:49-0700 - 103.00 B
+2017-09-27 19:10:12.520+0000 INFO [o.n.k.i.DiagnosticsManager]   logs:
+2017-09-27 19:10:12.520+0000 INFO [o.n.k.i.DiagnosticsManager]     debug.log: 2017-08-10T10:05:13-0700 - 97.27 kB
+2017-09-27 19:10:12.520+0000 INFO [o.n.k.i.DiagnosticsManager]   - Total: 2017-08-10T10:05:13-0700 - 97.27 kB
+2017-09-27 19:10:12.520+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore: 2017-09-27T12:10:11-0700 - 8.00 kB
+2017-09-27 19:10:12.520+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.counts.db.a: 2017-08-10T10:05:13-0700 - 96.00 B
+2017-09-27 19:10:12.536+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.counts.db.b: 2017-09-27T12:10:11-0700 - 992.00 B
+2017-09-27 19:10:12.536+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.id: 2017-09-27T12:10:12-0700 - 9.00 B
+2017-09-27 19:10:12.536+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.labelscanstore.db: 2017-09-27T12:10:11-0700 - 48.00 kB
+2017-09-27 19:10:12.536+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db: 2017-09-27T12:10:12-0700 - 8.00 kB
+2017-09-27 19:10:12.536+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.551+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names: 2017-09-27T12:10:11-0700 - 8.00 kB
+2017-09-27 19:10:12.551+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.labeltokenstore.db.names.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.551+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db: 2017-09-27T12:10:11-0700 - 79.98 kB
+2017-09-27 19:10:12.567+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.567+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels: 2017-08-10T10:05:13-0700 - 8.00 kB
+2017-09-27 19:10:12.567+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.nodestore.db.labels.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.567+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db: 2017-09-27T12:10:11-0700 - 310.74 kB
+2017-09-27 19:10:12.567+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays: 2017-08-10T10:05:13-0700 - 8.00 kB
+2017-09-27 19:10:12.582+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.arrays.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.582+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.582+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index: 2017-09-27T12:10:12-0700 - 8.00 kB
+2017-09-27 19:10:12.582+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.598+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys: 2017-09-27T12:10:11-0700 - 8.00 kB
+2017-09-27 19:10:12.598+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.index.keys.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.598+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings: 2017-09-27T12:10:11-0700 - 768.00 kB
+2017-09-27 19:10:12.598+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.propertystore.db.strings.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.598+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db: 2017-09-27T12:10:11-0700 - 8.00 kB
+2017-09-27 19:10:12.614+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshipgroupstore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.614+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db: 2017-09-27T12:10:11-0700 - 191.25 kB
+2017-09-27 19:10:12.614+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshipstore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.614+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db: 2017-09-27T12:10:12-0700 - 8.00 kB
+2017-09-27 19:10:12.614+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.629+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names: 2017-09-27T12:10:11-0700 - 8.00 kB
+2017-09-27 19:10:12.629+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.relationshiptypestore.db.names.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.629+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db: 2017-07-27T13:19:05-0700 - 8.00 kB
+2017-09-27 19:10:12.629+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.schemastore.db.id: 2017-09-27T12:10:11-0700 - 9.00 B
+2017-09-27 19:10:12.645+0000 INFO [o.n.k.i.DiagnosticsManager]   neostore.transaction.db.0: 2017-08-10T10:05:13-0700 - 2.53 MB
+2017-09-27 19:10:12.645+0000 INFO [o.n.k.i.DiagnosticsManager]   store_lock: 2017-08-10T10:05:13-0700 - 0.00 B
+2017-09-27 19:10:12.645+0000 INFO [o.n.k.i.DiagnosticsManager] --- STARTED diagnostics for KernelDiagnostics:StoreFiles END ---
+2017-09-27 19:10:12.661+0000 INFO [o.n.k.i.DiagnosticsManager] --- SERVER STARTED START ---
+2017-09-27 19:10:13.036+0000 INFO [o.n.k.i.DiagnosticsManager] --- SERVER STARTED END ---
+2017-09-27 19:16:49.009+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1142ms.
+2017-09-27 19:38:09.619+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1279523ms.
+2017-09-27 19:42:51.546+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 21717ms.
+2017-09-27 20:44:05.546+0000 WARN [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 3524388ms.
+2017-09-27 21:19:24.370+0000 INFO [o.n.k.i.f.GraphDatabaseFacadeFactory] Shutdown started
+2017-09-27 21:19:24.386+0000 INFO [o.n.k.i.f.GraphDatabaseFacadeFactory] Database is now unavailable
+2017-09-27 21:19:24.410+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [19]:  Starting check pointing...
+2017-09-27 21:19:24.422+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [19]:  Starting store flush...
+2017-09-27 21:19:24.438+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [19]:  Store flush completed
+2017-09-27 21:19:24.454+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [19]:  Starting appending check point entry into the tx log...
+2017-09-27 21:19:24.476+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [19]:  Appending check point entry into the tx log completed
+2017-09-27 21:19:24.488+0000 INFO [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by database shutdown [19]:  Check pointing completed
+2017-09-27 21:19:24.488+0000 INFO [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2017-09-27 21:19:24.512+0000 INFO [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2017-09-27 21:19:24.837+0000 INFO [o.n.k.i.DiagnosticsManager] --- STOPPING diagnostics START ---
+2017-09-27 21:19:24.837+0000 INFO [o.n.k.i.DiagnosticsManager] --- STOPPING diagnostics END ---
