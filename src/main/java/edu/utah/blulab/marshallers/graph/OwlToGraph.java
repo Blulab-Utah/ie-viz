@@ -17,8 +17,6 @@ import java.util.*;
  */
 public class OwlToGraph {
 
-
-
     private GraphDatabaseService graphDB = null;
     private String ontologyIRI;
     private final String schemaURI = "http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl";
