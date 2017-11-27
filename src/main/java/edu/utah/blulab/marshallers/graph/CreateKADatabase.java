@@ -1,59 +1,62 @@
 package edu.utah.blulab.marshallers.graph;
 
 import java.io.File;
+import java.util.*;
 
 /**
  * Created by Bill on 7/27/2017.
  */
 public class CreateKADatabase {
+    static Map<OwlToGraph.NodeTypes, Integer> totalLabels = new LinkedHashMap<>();
+
+    static void appendTotals(OwlToGraph otg) {
+
+        for (OwlToGraph.NodeTypes type : otg.labelCounter.keySet()) {
+
+            Integer total = totalLabels.get(type);
+            if (total == null) {
+                total = 0;
+            }
+            total += otg.labelCounter.get(type);
+            totalLabels.put(type, total);
+        }
+    }
+
+    static OwlToGraph makeFiles(String owlPath, OwlToGraph.NodeTypes ontologyType) throws Exception {
+        File ontFile2 = new File(owlPath);
+        String name2 = ontFile2.getName();
+        name2 = name2.substring(0, name2.lastIndexOf("."));
+        File graphFile = new File(ontFile2.getParent() + "/db/" + name2);
+        OwlToGraph mainOnt2 = new OwlToGraph();
+        mainOnt2.createNewDB(graphFile);
+        mainOnt2.createDBfromOnt(ontFile2, ontologyType);
+        mainOnt2.labelDomainOntology();
+        appendTotals(mainOnt2);
+        return mainOnt2;
+    }
 
     public static void main(String[] args) throws Exception {
 
-        String ontFileStr1 = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\smoking.owl";
-        String ontFileStr2 = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\heartDiseaseInDiabetics.owl";
-        String schemaFileStr = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\Schema.owl";
-        String modifierFileStr = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\Modifier.owl";
-        String rootDBName = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\db\\KnowledgeAuthor";
+        String path = "G:\\SeaCore\\Blulab";
+        String ontFileStr1 = path + "\\resource\\smoking.owl";
+        String ontFileStr2 = path + "\\resource\\heartDiseaseInDiabetics.owl";
+        String schemaFileStr = path + "\\resource\\Schema.owl";
+        String modifierFileStr = path + "\\resource\\Modifier.owl";
+        String rootDBName = path + "\\resource\\db\\KnowledgeAuthor";
+
+        List<OwlToGraph> ontGraphs = new ArrayList<>();
 
         // create domain ontology DB
-        File ontFile = new File(ontFileStr1);
-        String name = ontFile.getName();
-        name = name.substring(0, name.lastIndexOf("."));
-        File graphFile = new File(ontFile.getParent() + "/db/" + name);
-        OwlToGraph mainOnt1 = new OwlToGraph();
-        mainOnt1.createNewDB(graphFile);
-        mainOnt1.createDBfromOnt(ontFile);
-        mainOnt1.labelDomainOntology();
+        ontGraphs.add(makeFiles(ontFileStr1, OwlToGraph.NodeTypes.ONTOLOGY));
 
         // create domain ontology 2 DB
-        File ontFile2 = new File(ontFileStr2);
-        String name2 = ontFile2.getName();
-        name2 = name2.substring(0, name2.lastIndexOf("."));
-        graphFile = new File(ontFile2.getParent() + "/db/" + name2);
-        OwlToGraph mainOnt2 = new OwlToGraph();
-        mainOnt2.createNewDB(graphFile);
-        mainOnt2.createDBfromOnt(ontFile2);
-        mainOnt2.labelDomainOntology();
+        ontGraphs.add(makeFiles(ontFileStr2, OwlToGraph.NodeTypes.ONTOLOGY));
 
         // create Schema ontology DB
-        File schemaFile = new File(schemaFileStr);
-        name = schemaFile.getName();
-        name = name.substring(0, name.lastIndexOf("."));
-        graphFile = new File(schemaFile.getParent() + "/db/" + name);
-        OwlToGraph mainSchema = new OwlToGraph();
-        mainSchema.createNewDB(graphFile);
-        mainSchema.createDBfromOnt(schemaFile);
-        mainSchema.labelSchemaOnt();
+        ontGraphs.add(makeFiles(schemaFileStr, OwlToGraph.NodeTypes.SCHEMA_ONTOLOGY));
 
         // create Modifier ontology DB
-        File modifierFile = new File(modifierFileStr);
-        name = modifierFile.getName();
-        name = name.substring(0, name.lastIndexOf("."));
-        graphFile = new File(modifierFile.getParent() + "/db/" + name);
-        OwlToGraph mainModifier = new OwlToGraph();
-        mainModifier.createNewDB(graphFile);
-        mainModifier.createDBfromOnt(modifierFile);
-        mainModifier.labelModifierOnt();
+        ontGraphs.add(makeFiles(modifierFileStr, OwlToGraph.NodeTypes.MODIFIER_ONTOLOGY));
 
         // create root db
         File graphFileRoot = new File(rootDBName);
@@ -61,12 +64,12 @@ public class CreateKADatabase {
         mainRoot.createNewDB(graphFileRoot);
 
         // add ontology databases to root DB
-        mainRoot.makeCopy(mainOnt1.getGraphDB());
-        mainRoot.makeCopy(mainOnt2.getGraphDB());
-        mainRoot.makeCopy(mainSchema.getGraphDB());
-        mainRoot.makeCopy(mainModifier.getGraphDB());
+        for (OwlToGraph otg : ontGraphs) {
+            mainRoot.makeCopy(otg.getGraphDB());
+        }
 
         // delete ontology databases (?)
-
+        System.out.println("\n\n*****TOTAL LABELS");
+        OwlToGraph.printLabels(totalLabels);
     }
 }

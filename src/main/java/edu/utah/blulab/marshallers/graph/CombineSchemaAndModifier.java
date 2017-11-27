@@ -13,7 +13,6 @@ public class CombineSchemaAndModifier {
         String modifierFileStr = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\Modifier.owl";
         String rootDBName = "C:\\software_dev\\Code\\intellij_workspace\\ie-viz\\resource\\db\\KnowledgeAuthor";
 
-
         // create Schema ontology DB
         File schemaFile = new File(schemaFileStr);
         String name = schemaFile.getName();
@@ -21,7 +20,7 @@ public class CombineSchemaAndModifier {
         File graphFile = new File(schemaFile.getParent() + "/db/" + name);
         OwlToGraph mainSchema = new OwlToGraph();
         mainSchema.createNewDB(graphFile);
-        mainSchema.createDBfromOnt(schemaFile);
+        mainSchema.createDBfromOnt(schemaFile, OwlToGraph.NodeTypes.SCHEMA_ONTOLOGY);
         mainSchema.labelSchemaOnt();
 
         // create Modifier ontology DB
@@ -31,7 +30,7 @@ public class CombineSchemaAndModifier {
         graphFile = new File(modifierFile.getParent() + "/db/" + name);
         OwlToGraph mainModifier = new OwlToGraph();
         mainModifier.createNewDB(graphFile);
-        mainModifier.createDBfromOnt(modifierFile);
+        mainModifier.createDBfromOnt(modifierFile, OwlToGraph.NodeTypes.MODIFIER_ONTOLOGY);
         mainModifier.labelModifierOnt();
 
         // create root db
