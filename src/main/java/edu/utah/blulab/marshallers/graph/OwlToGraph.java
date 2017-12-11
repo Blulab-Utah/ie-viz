@@ -155,6 +155,7 @@ public class OwlToGraph {
                             String fillerName = fillerClass.asOWLClass().getIRI().getShortForm();
                             Node fillerNode = getOrCreateNodeWithUniqueFactory(fillerName, graphDB);
                             // newNode.createRelationshipTo(fillerNode, RelationshipType.withName(relation));
+
                             Relationship propRelation = newNode.createRelationshipTo(fillerNode, RelationshipType.withName(relation));
                             propRelation.setProperty("uri", objPropertyExpression.asOWLObjectProperty().getIRI().toString());
 
@@ -203,9 +204,14 @@ public class OwlToGraph {
             addPseudoAnchorLabels();
             addQualifierLabels();
             addSemanticModifierLabels();
-            addSemanticCategoryLabels();
+            //todo This causes double labeling.
+            //            addSemanticCategoryLabels();
             addAnnotationTypeLabels();
+            addDocumentsSectionLabels();
             labelUnlabeled();
+            fixRelations();
+            makeAllOwlEntry();
+            removeSelfReferences();
             tx.success();
             System.out.println("\n\n** Labels in ontology " + ontologyIRI);
             printLabels(this.labelCounter);
@@ -213,6 +219,57 @@ public class OwlToGraph {
         finally {
             tx.close();
         }
+    }
+
+    private void removeSelfReferences() {
+        graphDB.execute("match(n)-[r]->(n) delete r");
+    }
+
+    private void makeAllOwlEntry() {
+        graphDB.execute("MATCH (p) set p:OWL_ENTRY return null");
+
+    }
+
+    private void fixOne(String from, String to) {
+        Transaction tx = graphDB.beginTx();
+        try {
+            Result result = graphDB.execute("MATCH (p)-[:" + from + "]->(q) RETURN p");
+            ResourceIterator<Node> iter = result.columnAs("p");
+            while (iter.hasNext()) {
+                Node fr = iter.next();
+                Iterator<Relationship> riter = fr.getRelationships(RelationshipType.withName(from), Direction.OUTGOING).iterator();
+                Iterator<Relationship> reverse = fr.getRelationships(RelationshipType.withName(to), Direction.INCOMING).iterator();
+                Set<Node> right = new HashSet<>();
+                while (reverse.hasNext()) {
+                    right.add(reverse.next().getStartNode());
+                }
+                while (riter.hasNext()) {
+                    Relationship r = riter.next();
+                    Node end = r.getEndNode();
+                    if (!right.contains(end)) {
+                        end.createRelationshipTo(fr, RelationshipType.withName(to));
+                        //create right relationship
+                    }
+                    r.delete();
+
+                }
+            }
+            tx.success();
+        }
+        catch (QueryExecutionException e) {
+            tx.failure();
+            throw new RuntimeException(e);
+        }
+        finally {
+            tx.close();
+        }
+
+    }
+
+    private void fixRelations() {
+        fixOne("isAnchorOf", "hasAnchor");
+        fixOne("isTerminationOf", "hasTermination");
+        fixOne("isPseudoOf", "hasPseudo");
     }
 
     public void makeCopy(GraphDatabaseService copyDB) {
@@ -292,7 +349,12 @@ public class OwlToGraph {
                     // add relationship properties
                     Map<String, Object> relProperties = relation.getAllProperties();
                     for (String key : relProperties.keySet()) {
-                        propRelation.setProperty(key, relProperties.get(key));
+                        try {
+                            propRelation.setProperty(key, relProperties.get(key));
+                        }
+                        catch (Exception e) {
+                            System.out.println("Can't find property for key " + key);
+                        }
                     }
                     //                String uri;
                     //                try {
@@ -406,6 +468,7 @@ public class OwlToGraph {
         PSEUDO_ANCHOR,
         COMPOUND_ANCHOR,
         SEMANTIC_CATEGORY,
+        DOCUMENT_SECTION,
         ANNOTATION_TYPE;
     }
 
@@ -481,6 +544,10 @@ public class OwlToGraph {
 
     private void addVariableLabels() {
         this.owlHierarchyLabel(NodeTypes.VARIABLE, "Annotation");
+    }
+
+    private void addDocumentsSectionLabels() {
+        this.owlHierarchyLabel(NodeTypes.DOCUMENT_SECTION, "DocumentSection");
     }
 
     private void addNumericModifierLabels() {
