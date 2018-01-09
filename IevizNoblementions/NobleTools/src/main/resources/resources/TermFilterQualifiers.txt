@@ -1,0 +1,42 @@
+disorder
+procedure
+finding
+organism
+substance
+body structure
+product
+qualifier value
+observable entity
+systemic
+manifestation
+physical object
+etiology
+morphologic abnormality
+occupation
+event
+situation
+regime/therapy
+specimen
+unintentional
+dimethylamino
+attribute
+environment
+or disorder
+assessment scale
+allelic variant
+cell
+navigational concept
+geographic location
+combined site
+cell structure
+including anastomotic
+alpha
+bone
+person
+Human
+mechanical
+strain
+chronic
+partial
+acute
+ethnic group
