@@ -60,7 +60,6 @@
             <artifactId>commons-fileupload</artifactId>
             <version>1.2</version>
         </dependency>
-
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -160,6 +159,7 @@
             <artifactId>lucene-analyzers-common</artifactId>
             <version>6.0.0</version>
         </dependency>
+
 
         <dependency>
             <groupId>javax.servlet</groupId>

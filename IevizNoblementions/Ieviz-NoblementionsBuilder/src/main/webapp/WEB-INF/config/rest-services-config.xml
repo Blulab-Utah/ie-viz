@@ -29,12 +29,10 @@
     <context:component-scan base-package="edu.utah.blulab.services"/>
 
 
-
     <!--
          TODO
     -->
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
-
 
 
     <!--

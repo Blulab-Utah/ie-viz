@@ -12,6 +12,14 @@ public class Converters {
         return array.toString();
     }
 
+    public static String tsvToCsv(String tsv) {
+        if (DataUtils.checkDataType(tsv) != DataType.TSV) {
+            throw new InputMismatchException(
+                    "Input String is not in TSV format");
+        }
+        return tsv.replaceAll(",", " ").replaceAll("\t", ",");
+    }
+
     private static ArrayOfJson buildJSONFromString(String text, String separator) {
         String[] lines = text.split("\n");
 

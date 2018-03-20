@@ -264,7 +264,7 @@ public class CSVExporter {
 	private BufferedWriter getCSVWriterForComposition(File out) throws Exception {
 		if(csvWriter == null){
 			csvWriter = new BufferedWriter(new FileWriter(out));
-			csvWriter.write("Document"+S+"Type"+S+"Id"+S+"Annotation Variable"+S+"Property"+S+"Value"+S+"Value Properies"+S+"Annotations\n");
+			csvWriter.write("Document"+S+"Type"+S+"Id"+S+"Annotation_Variable"+S+"Property"+S+"Document_Value"+S+"Value_Properties"+S+"Annotations\n");
 		}
 		return csvWriter;
 	}
