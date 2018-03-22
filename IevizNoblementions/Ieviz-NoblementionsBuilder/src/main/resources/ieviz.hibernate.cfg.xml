@@ -15,6 +15,8 @@
         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=NLP_DATASTORE;integratedSecurity=true</property>
         <mapping class="edu.utah.blulab.db.models.AnnotationResultsDao"/>
         <mapping class="edu.utah.blulab.db.models.DocumentIdentifierDao"/>
+        <mapping class="edu.utah.blulab.db.models.OrganizationsDao"/>
+        <mapping class="edu.utah.blulab.db.models.UsersDao"/>
 
 
     </session-factory>
