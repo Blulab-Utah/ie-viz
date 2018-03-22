@@ -23,6 +23,7 @@
         <module>NoblementionsConnector</module>
         <module>Ieviz-NoblementionsBuilder</module>
         <module>NobleTools</module>
+        <!--<module>OntologyConnector</module>-->
 
     </modules>
 
@@ -43,12 +44,12 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.0.3.Final</version>
+            <version>4.3.5.Final</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.0.3.Final</version>
+            <version>4.3.5.Final</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -159,6 +160,31 @@
             <artifactId>lucene-analyzers-common</artifactId>
             <version>6.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180130</version>
+        </dependency>
+
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+
 
 
         <dependency>

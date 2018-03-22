@@ -22,9 +22,9 @@ import java.util.*;
 
 
 @Controller
-public class ConnectionController {
+public class NoblementionsConnectionController {
 
-    private static final Logger LOGGER = Logger.getLogger(ConnectionController.class);
+    private static final Logger LOGGER = Logger.getLogger(NoblementionsConnectionController.class);
 
     @Autowired
     private INoblementionsConnector noblementionsConnector;
@@ -56,13 +56,15 @@ public class ConnectionController {
 
         }
 
+        scanner.close();
+
         linesList.remove(0);
         DocumentIdentifierDao doc = new DocumentIdentifierDao();
         List<String> documentList = new ArrayList<>();
 
 
         for (String element : linesList) {
-            List<String> objectList = Arrays.asList(element.split(","));
+            List<String> objectList = Arrays.asList(element.split(",", -1));
             LOGGER.debug("\nObject Size: " + objectList.size());
 
             String documentName = objectList.get(0);
@@ -73,18 +75,20 @@ public class ConnectionController {
             }
 
             int id = QueryUtility.getID(documentName);
+            if(objectList.size() == 8)
+            {
+                AnnotationResultsDao entity = new AnnotationResultsDao();
+                entity.setDocumentId(id);
+                entity.setDocumentType(objectList.get(1));
+                entity.setId(objectList.get(2));
+                entity.setAnnotationVariable(objectList.get(3));
+                entity.setProperty(objectList.get(4));
+                entity.setDocumentValue(objectList.get(5));
+                entity.setValueProperties(objectList.get(6));
+                entity.setAnnotations(objectList.get(7));
 
-            AnnotationResultsDao entity = new AnnotationResultsDao();
-            entity.setDocumentId(id);
-            entity.setDocumentType(objectList.get(1));
-            entity.setId(objectList.get(2));
-            entity.setAnnotationVariable(objectList.get(3));
-            entity.setProperty(objectList.get(4));
-            entity.setDocumentValue(objectList.get(5));
-            entity.setValueProperties(objectList.get(6));
-            entity.setAnnotations(objectList.get(7));
-
-            QueryUtility.insertAnnotataions(entity);
+                QueryUtility.insertAnnotataions(entity);
+            }
         }
 
 

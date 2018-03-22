@@ -9,7 +9,7 @@ public class DocumentIdentifierDao {
     private int id;
     private String docName;
 
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
     public int getId() {

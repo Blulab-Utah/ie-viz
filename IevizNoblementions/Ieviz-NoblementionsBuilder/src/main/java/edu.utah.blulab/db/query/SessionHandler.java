@@ -6,7 +6,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-//import org.hibernate.service.ServiceRegistryBuilder;
+//import org.hibernate.services.ServiceRegistryBuilder;
 
 
 public class SessionHandler {
@@ -20,7 +20,7 @@ public class SessionHandler {
         try {
             // Create the SessionFactory from hibernate.cfg.xml
             Configuration configuration = new Configuration();
-            configuration.configure("compliance.hibernate.cfg.xml");
+            configuration.configure("ieviz.hibernate.cfg.xml");
             logger.debug("Hibernate Configuration loaded");
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();

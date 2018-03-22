@@ -34,6 +34,12 @@
     -->
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
 
+    <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+        <!--<property name="prefix" value="/WEB-INF/views/" />-->
+        <!--<property name="suffix" value=".jsp" />-->
+    <!--</bean>-->
+
+
 
     <!--
          Configures view for returning JSON to the client
@@ -57,6 +63,12 @@
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="8000000"/>
     </bean>
+
+    <!--<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">-->
+        <!--<property name="basename" value="messages" />-->
+    <!--</bean>-->
+
+    <!--<bean id="ontologyValidator" class="edu.utah.blulab.validator.OntologyValidator" />-->
 
     <!--
          Converts JSON to POJO and vice versa

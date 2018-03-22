@@ -30,7 +30,7 @@ public class QueryUtility {
         Session session = sessionFactory.openSession();
 
         Criteria docCriteria = session.createCriteria(DocumentIdentifierDao.class);
-        docCriteria.add(Restrictions.eq("Doc_Name", documentName));
+        docCriteria.add(Restrictions.eq("docName", documentName));
 
         List<?> rawResults = docCriteria.list();
         session.close();

@@ -6,6 +6,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "AnnotationResults", schema = "dbo", catalog = "NLP_DATASTORE")
 public class AnnotationResultsDao {
+    private int annotationId;
     private int documentId;
     private String documentType;
     private String id;
@@ -16,6 +17,17 @@ public class AnnotationResultsDao {
     private String annotations;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Annotation_ID", nullable = false)
+    public int getAnnotationId() {
+        return annotationId;
+    }
+
+    public void setAnnotationId(int annotationId) {
+        this.annotationId = annotationId;
+    }
+
+    @Basic
     @Column(name = "Document_ID", nullable = false)
     public int getDocumentId() {
         return documentId;
@@ -100,7 +112,8 @@ public class AnnotationResultsDao {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AnnotationResultsDao that = (AnnotationResultsDao) o;
-        return documentId == that.documentId &&
+        return annotationId == that.annotationId &&
+                documentId == that.documentId &&
                 Objects.equals(documentType, that.documentType) &&
                 Objects.equals(id, that.id) &&
                 Objects.equals(annotationVariable, that.annotationVariable) &&
@@ -113,6 +126,6 @@ public class AnnotationResultsDao {
     @Override
     public int hashCode() {
 
-        return Objects.hash(documentId, documentType, id, annotationVariable, property, documentValue, valueProperties, annotations);
+        return Objects.hash(annotationId, documentId, documentType, id, annotationVariable, property, documentValue, valueProperties, annotations);
     }
 }
