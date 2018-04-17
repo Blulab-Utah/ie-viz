@@ -6,13 +6,21 @@
     <session-factory>
 
         <property name="hibernate.dialect">
-            org.hibernate.dialect.SQLServerDialect
-        </property>
-        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <!-- org.hibernate.dialect.SQLServerDialect -->
+            org.hibernate.dialect.MySQLInnoDBDialect
+    </property>
+    <!-- <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> -->
+        <!--<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property> -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="connection.autocommit">true</property>
 
 
-        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=NLP_DATASTORE;integratedSecurity=true</property>
+        <!-- <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=NLP_DATASTORE;integratedSecurity=true</property> -->
+        <property name="hibernate.connection.url">jdbc:mysql://blulab2.chpc.utah.edu:3306/IE-Viz</property>
+        <property name="hibernate.connection.username">mysqladmin</property>
+        <property name="hibernate.connection.password">vG4c&amp;tS7y</property>
+
+
         <mapping class="edu.utah.blulab.db.models.AnnotationResultsDao"/>
         <mapping class="edu.utah.blulab.db.models.DocumentIdentifierDao"/>
         <mapping class="edu.utah.blulab.db.models.OrganizationsDao"/>

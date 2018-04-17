@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Users", schema = "dbo", catalog = "NLP_DATASTORE")
+@Table(name = "Users")//, schema = "dbo", catalog = "NLP_DATASTORE")
 public class UsersDao {
     private int id;
     private String username;

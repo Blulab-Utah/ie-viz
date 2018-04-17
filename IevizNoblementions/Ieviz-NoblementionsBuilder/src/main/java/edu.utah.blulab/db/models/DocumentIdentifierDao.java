@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "DocumentIdentifier", schema = "dbo", catalog = "NLP_DATASTORE")
+@Table(name = "DocumentIdentifier") //, schema = "dbo", catalog = "NLP_DATASTORE")
 public class DocumentIdentifierDao {
     private int id;
     private String docName;

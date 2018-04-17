@@ -1,0 +1,9 @@
+name:		Anchors
+uri:		http://slidetutor.upmc.edu/curriculum/terminolgies/Anchors
+version:	1.0
+location:	C:\Users\Deep\Documents\noble\ont\smoking.owl.terminologies\Anchors.term
+description:	NobleCoderTerminlogy uses an IndexFinder-like algorithm to map text to concepts.
+configuration:	stem.words=false, strip.digits=false, strip.stop.words=true, max.words.in.term=10, ignore.small.words=true
+
+sources:
+

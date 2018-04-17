@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "AnnotationResults", schema = "dbo", catalog = "NLP_DATASTORE")
+@Table(name = "AnnotationResults")//, schema = "dbo", catalog = "NLP_DATASTORE")
 public class AnnotationResultsDao {
     private int annotationId;
     private int documentId;

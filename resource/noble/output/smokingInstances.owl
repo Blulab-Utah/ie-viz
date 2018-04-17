@@ -1,0 +1,1790 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://blulab.chpc.utah.edu/ontologies/examples/smokingInstances.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://blulab.chpc.utah.edu/ontologies/examples/smokingInstances.owl">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl</Import>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#DefiniteExistence_Certainty"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#DocumentSection"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Duration_gte_12_months"/>
+        <NamedIndividual IRI="#Duration_gte_12_months_evaluation_inst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Duration_gte_1_year"/>
+        <NamedIndividual IRI="#Duration_gte_1_year_evaluation_inst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Duration_lt_12_months"/>
+        <NamedIndividual IRI="#Duration_lt_12_months_evaluation_inst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Duration_lt_1_year"/>
+        <NamedIndividual IRI="#Duration_lt_1_year_evaluation_inst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Duration_lt_52_weeks"/>
+        <NamedIndividual IRI="#Duration_lt_52_weeks_evaluation_inst"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#MentionAnnotation"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#MentionAnnotation"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#NotApplicable_ContextualAspect"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Overlap_DocTimeRel"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Patient_Experiencer"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-20"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-22"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-24"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-27"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-29"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-31"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-33"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-35"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-38"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-40"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-43"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#ProbableExistence_Certainty"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-46"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-25"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-36"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-41"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-44"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/ConText.owl#Quantity"/>
+        <NamedIndividual IRI="#Quantity-5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Smoke"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#Smoke"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#Composition"/>
+        <NamedIndividual IRI="#diag_txt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_before_only_mention"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_before_only_mention"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention_gt_1_yr"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention_gt_1_yr"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention_lt_1_year"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoker_mention_lt_1_year"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoking_but_continues_mention"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#history_of_smoking_but_continues_mention"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#just_quit_smoking_mention"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#just_quit_smoking_mention"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#negated_smoking_mention"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#negated_smoking_mention"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#quit_smoking_mention"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#quit_smoking_mention"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoker_mention"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoker_mention"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoker_mention_with_duration"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoker_mention_with_duration"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoking_started_or_reinitiated_mention"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoking_started_or_reinitiated_mention"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoking_stopped_for_1_year_or_greater_mention"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://blulab.chpc.utah.edu/ontologies/examples/smoking.owl#smoking_stopped_for_1_year_or_greater_mention"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasMentionAnnotation"/>
+        <NamedIndividual IRI="#diag_txt"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasMentionAnnotation"/>
+        <NamedIndividual IRI="#diag_txt"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-33"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-22"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#Quantity-14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-40"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#Quantity-41"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#Quantity-11"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-35"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#Quantity-36"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-29"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-46"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-38"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-20"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-27"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#Quantity-16"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-43"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#Quantity-44"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-31"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#Quantity-25"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnchor"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#MentionAnnotation_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationType"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#MentionAnnotation_Instance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasCertainty"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#DefiniteExistence_Certainty_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasContextualAspect"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#NotApplicable_ContextualAspect_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasExperiencer"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#Patient_Experiencer_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasNumValue"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#Quantity-5"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSection"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#DocumentSection_default"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTemporality"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <NamedIndividual IRI="#Overlap_DocTimeRel_default"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Duration_gte_12_months_evaluation_inst"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Duration_gte_1_year_evaluation_inst"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Duration_lt_12_months_evaluation_inst"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Duration_lt_1_year_evaluation_inst"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-20"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-20"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-22"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-22"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-24"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-24"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-27"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-27"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-29"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-29"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-31"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-31"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-33"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-33"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-35"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-35"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-38"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-38"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-40"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-40"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-43"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-43"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-46"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#ProbableExistence_Certainty-46"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-11"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-11"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-11"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-14"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-14"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-14"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-16"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-16"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-16"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-25"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-25"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-25"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-36"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-36"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-36"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-41"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-41"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-41"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-44"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-44"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">2.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-44"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Quantity-5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasQuantityValue"/>
+        <NamedIndividual IRI="#Quantity-5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">0.6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Quantity-5"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Smoke-19"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#Smoke-2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasTitle"/>
+        <NamedIndividual IRI="#diag_txt"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">diag.txt</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-32"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_before_only_mention-9"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-21"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_mention-3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6 SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-13"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415 441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_gt_1_yr-39"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553 554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6 SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-10"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415 441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoker_mention_lt_1_year-34"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553 554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-28"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#history_of_smoking_but_continues_mention-7"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-17"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#just_quit_smoking_mention-45"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#negated_smoking_mention-12"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#negated_smoking_mention-37"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#quit_smoking_mention-1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#quit_smoking_mention-18"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoker_mention-26"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoker_mention-6"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6 SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-15"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415 441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoker_mention_with_duration-42"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553 554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-30"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoking_started_or_reinitiated_mention-8"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">441:446</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CONSISTENT WITH SMOKES 2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-23"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">518:528 529:533 547:553 554:555</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasAnnotationText"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">0.6 SMOKE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://blulab.chpc.utah.edu/ontologies/v2/Schema.owl#hasSpan"/>
+        <NamedIndividual IRI="#smoking_stopped_for_1_year_or_greater_mention-4"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">412:415 441:446</Literal>
+    </DataPropertyAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

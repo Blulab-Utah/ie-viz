@@ -1,0 +1,177 @@
+Document	Type	Id	Annotation_Variable	Property	Document_Value	Value_Properties	Annotations
+diag.txt	Accepted	1	smoker_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Accepted	1	smoker_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Accepted	1	smoker_mention	hasSection	DocumentSection		
+diag.txt	Accepted	1	smoker_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Accepted	1	smoker_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Accepted	1	smoker_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Accepted	1	smoker_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Accepted	2	smoker_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Accepted	2	smoker_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Accepted	2	smoker_mention	hasSection	DocumentSection		
+diag.txt	Accepted	2	smoker_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Accepted	2	smoker_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Accepted	2	smoker_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Accepted	2	smoker_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	3	quit_smoking_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	3	quit_smoking_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	3	quit_smoking_mention	hasSection	DocumentSection		
+diag.txt	Rejected	3	quit_smoking_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	3	quit_smoking_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	3	quit_smoking_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	3	quit_smoking_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	4	history_of_smoker_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	4	history_of_smoker_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	4	history_of_smoker_mention	hasSection	DocumentSection		
+diag.txt	Rejected	4	history_of_smoker_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	4	history_of_smoker_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	4	history_of_smoker_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	4	history_of_smoker_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasSection	DocumentSection		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	5	smoking_stopped_for_1_year_or_greater_mention	hasNumValue	Quantity	0.6	0.6/412
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasSection	DocumentSection		
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	6	history_of_smoking_but_continues_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasSection	DocumentSection		
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	7	smoking_started_or_reinitiated_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasSection	DocumentSection		
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	8	history_of_smoker_before_only_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasSection	DocumentSection		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	9	history_of_smoker_mention_lt_1_year	hasNumValue	Quantity	0.6	0.6/412
+diag.txt	Rejected	10	negated_smoking_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	10	negated_smoking_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	10	negated_smoking_mention	hasSection	DocumentSection		
+diag.txt	Rejected	10	negated_smoking_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	10	negated_smoking_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	10	negated_smoking_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	10	negated_smoking_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasSection	DocumentSection		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	11	history_of_smoker_mention_gt_1_yr	hasNumValue	Quantity	0.6	0.6/412
+diag.txt	Rejected	12	smoker_mention_with_duration	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	12	smoker_mention_with_duration	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	12	smoker_mention_with_duration	hasSection	DocumentSection		
+diag.txt	Rejected	12	smoker_mention_with_duration	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	12	smoker_mention_with_duration	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	12	smoker_mention_with_duration	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	12	smoker_mention_with_duration	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	12	smoker_mention_with_duration	hasNumValue	Quantity	0.6	0.6/412
+diag.txt	Rejected	13	just_quit_smoking_mention	hasAnchor	Smoke		SMOKE/441
+diag.txt	Rejected	13	just_quit_smoking_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	13	just_quit_smoking_mention	hasSection	DocumentSection		
+diag.txt	Rejected	13	just_quit_smoking_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	13	just_quit_smoking_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	13	just_quit_smoking_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	13	just_quit_smoking_mention	hasCertainty	DefiniteExistence_Certainty		
+diag.txt	Rejected	14	quit_smoking_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	14	quit_smoking_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	14	quit_smoking_mention	hasSection	DocumentSection		
+diag.txt	Rejected	14	quit_smoking_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	14	quit_smoking_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	14	quit_smoking_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	14	quit_smoking_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	15	history_of_smoker_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	15	history_of_smoker_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	15	history_of_smoker_mention	hasSection	DocumentSection		
+diag.txt	Rejected	15	history_of_smoker_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	15	history_of_smoker_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	15	history_of_smoker_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	15	history_of_smoker_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasSection	DocumentSection		
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	16	smoking_stopped_for_1_year_or_greater_mention	hasNumValue	Quantity	2.0	2/554
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasSection	DocumentSection		
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	17	history_of_smoking_but_continues_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasSection	DocumentSection		
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	18	smoking_started_or_reinitiated_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasSection	DocumentSection		
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	19	history_of_smoker_before_only_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasSection	DocumentSection		
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	20	history_of_smoker_mention_lt_1_year	hasNumValue	Quantity	2.0	2/554
+diag.txt	Rejected	21	negated_smoking_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	21	negated_smoking_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	21	negated_smoking_mention	hasSection	DocumentSection		
+diag.txt	Rejected	21	negated_smoking_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	21	negated_smoking_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	21	negated_smoking_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	21	negated_smoking_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasSection	DocumentSection		
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	22	history_of_smoker_mention_gt_1_yr	hasNumValue	Quantity	2.0	2/554
+diag.txt	Rejected	23	smoker_mention_with_duration	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	23	smoker_mention_with_duration	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	23	smoker_mention_with_duration	hasSection	DocumentSection		
+diag.txt	Rejected	23	smoker_mention_with_duration	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	23	smoker_mention_with_duration	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	23	smoker_mention_with_duration	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	23	smoker_mention_with_duration	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
+diag.txt	Rejected	23	smoker_mention_with_duration	hasNumValue	Quantity	2.0	2/554
+diag.txt	Rejected	24	just_quit_smoking_mention	hasAnchor	Smoke		SMOKES/547
+diag.txt	Rejected	24	just_quit_smoking_mention	hasAnnotationType	MentionAnnotation		
+diag.txt	Rejected	24	just_quit_smoking_mention	hasSection	DocumentSection		
+diag.txt	Rejected	24	just_quit_smoking_mention	hasExperiencer	Patient_Experiencer		
+diag.txt	Rejected	24	just_quit_smoking_mention	hasTemporality	Overlap_DocTimeRel		
+diag.txt	Rejected	24	just_quit_smoking_mention	hasContextualAspect	NotApplicable_ContextualAspect		
+diag.txt	Rejected	24	just_quit_smoking_mention	hasCertainty	ProbableExistence_Certainty		CONSISTENT/518, WITH/529
