@@ -16,6 +16,7 @@ CREATE TABLE AnnotationResults (
   Value_Properties    VARCHAR(255) NULL,
   Annotations         VARCHAR(255) NULL,
   PRIMARY KEY (Annotation_ID)
+
 );
 
 -- DELETE
