@@ -6,6 +6,7 @@ CREATE TABLE DocumentIdentifier
 );
 
 CREATE TABLE AnnotationResults (
+  Annotation_ID INT NOT NULL,
   Document_ID         INT          NOT NULL,
   Document_Type       VARCHAR(255) NULL,
   Id                  VARCHAR(255) NULL,
@@ -14,7 +15,7 @@ CREATE TABLE AnnotationResults (
   Document_Value      VARCHAR(255) NULL,
   Value_Properties    VARCHAR(255) NULL,
   Annotations         VARCHAR(255) NULL,
-  PRIMARY KEY (Document_ID)
+  PRIMARY KEY (Annotation_ID)
 );
 
 -- DELETE
