@@ -1,11 +1,12 @@
 package edu.utah.blulab.db.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Organizations")//, schema = "dbo", catalog = "NLP_DATASTORE")
-public class OrganizationsDao {
+@Table(name = "Organizations")//, schema = "IE-Viz", catalog = "")
+public class OrganizationsDao implements Serializable {
     private int id;
     private String organizationName;
 

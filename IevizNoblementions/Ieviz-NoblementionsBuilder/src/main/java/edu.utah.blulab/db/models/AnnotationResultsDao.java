@@ -1,12 +1,12 @@
 package edu.utah.blulab.db.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "AnnotationResults")//, schema = "dbo", catalog = "NLP_DATASTORE")
-public class AnnotationResultsDao {
-    private int annotationId;
+@Table(name = "AnnotationResults")//, schema = "IE-Viz", catalog = "")//,schema = "IE-Viz", catalog = "")
+public class AnnotationResultsDao implements Serializable {
     private int documentId;
     private String documentType;
     private String id;
@@ -15,6 +15,7 @@ public class AnnotationResultsDao {
     private String documentValue;
     private String valueProperties;
     private String annotations;
+    private int annotationId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -112,8 +113,7 @@ public class AnnotationResultsDao {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AnnotationResultsDao that = (AnnotationResultsDao) o;
-        return annotationId == that.annotationId &&
-                documentId == that.documentId &&
+        return documentId == that.documentId &&
                 Objects.equals(documentType, that.documentType) &&
                 Objects.equals(id, that.id) &&
                 Objects.equals(annotationVariable, that.annotationVariable) &&
@@ -126,6 +126,6 @@ public class AnnotationResultsDao {
     @Override
     public int hashCode() {
 
-        return Objects.hash(annotationId, documentId, documentType, id, annotationVariable, property, documentValue, valueProperties, annotations);
+        return Objects.hash(documentId, documentType, id, annotationVariable, property, documentValue, valueProperties, annotations);
     }
 }

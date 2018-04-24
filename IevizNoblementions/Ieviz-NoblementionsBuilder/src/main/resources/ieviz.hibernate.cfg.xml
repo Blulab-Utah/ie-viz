@@ -17,8 +17,8 @@
 
         <!-- <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=NLP_DATASTORE;integratedSecurity=true</property> -->
         <property name="hibernate.connection.url">jdbc:mysql://blulab2.chpc.utah.edu:3306/IE-Viz</property>
-        <property name="hibernate.connection.username">mysqladmin</property>
-        <property name="hibernate.connection.password">vG4c&amp;tS7y</property>
+        <property name="hibernate.connection.username">madmin</property>
+        <property name="hibernate.connection.password">Wbc5qI4eulpvh</property>
 
 
         <mapping class="edu.utah.blulab.db.models.AnnotationResultsDao"/>

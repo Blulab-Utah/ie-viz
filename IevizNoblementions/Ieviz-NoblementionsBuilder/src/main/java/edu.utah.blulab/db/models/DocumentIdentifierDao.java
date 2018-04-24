@@ -1,11 +1,12 @@
 package edu.utah.blulab.db.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "DocumentIdentifier") //, schema = "dbo", catalog = "NLP_DATASTORE")
-public class DocumentIdentifierDao {
+@Table(name = "DocumentIdentifier")//, schema = "IE-Viz", catalog = "")
+public class DocumentIdentifierDao implements Serializable {
     private int id;
     private String docName;
 
