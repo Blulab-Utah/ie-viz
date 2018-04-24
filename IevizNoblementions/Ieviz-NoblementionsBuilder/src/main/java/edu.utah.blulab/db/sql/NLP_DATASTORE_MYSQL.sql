@@ -6,7 +6,7 @@ CREATE TABLE DocumentIdentifier
 );
 
 CREATE TABLE AnnotationResults (
-  Annotation_ID INT NOT NULL,
+  Annotation_ID INT NOT NULL AUTO_INCREMENT,
   Document_ID         INT          NOT NULL,
   Document_Type       VARCHAR(255) NULL,
   Id                  VARCHAR(255) NULL,
