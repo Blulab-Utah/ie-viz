@@ -1,13 +1,13 @@
 package edu.utah.blulab.controller;
 
 import edu.utah.blulab.constants.ServiceConstants;
-
 import edu.utah.blulab.db.models.AnnotationResultsDao;
 import edu.utah.blulab.db.models.DocumentIdentifierDao;
 import edu.utah.blulab.db.query.QueryUtility;
 import edu.utah.blulab.services.INoblementionsConnector;
 import edu.utah.blulab.utilities.Converters;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +18,11 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.*;
 
 
@@ -27,8 +32,6 @@ public class NoblementionsConnectionController {
     private static final Logger LOGGER = Logger.getLogger(NoblementionsConnectionController.class);
 
     @Autowired
-    private INoblementionsConnector noblementionsConnector;
-    @Autowired
     private View jsonView;
 
     @RequestMapping(value = "/uploadMultiplePath", method = RequestMethod.POST)
@@ -37,13 +40,28 @@ public class NoblementionsConnectionController {
                                     @RequestParam("Output") String output) throws Exception {
 
 
-        Map<String, String> pathMap = new HashMap<String, String>();
-        pathMap.put("ont", ontPath);
-        pathMap.put("input", input);
-        pathMap.put("output", output);
 
-        noblementionsConnector.processNobleMentions(pathMap);
+        final URL url = new URL("http://localhost:8080/Ieviz-NoblementionsWS/getAnnotations");
+        final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+        connection.setRequestMethod("POST");
+        connection.setRequestProperty("Accept", "application/json");
+
+        connection.setRequestProperty("Input", input);
+        connection.addRequestProperty("Output", output);
+        connection.addRequestProperty("OntologyPath", ontPath);
+
+        connection.setDoOutput(true);
+
+        OutputStream os = connection.getOutputStream();
+        os.write(input.getBytes());
+        os.flush();
+
+
+        if (connection.getResponseCode() != 200) {
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + connection.getResponseCode());
+        }
 
         String contents = FileUtils.readFileToString(new File(output + "\\RESULTS.tsv"));
         String contentsToCsv = Converters.tsvToCsv(contents);
@@ -55,7 +73,6 @@ public class NoblementionsConnectionController {
             linesList.add(line);
 
         }
-
         scanner.close();
 
         linesList.remove(0);
