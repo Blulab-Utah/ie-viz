@@ -8,19 +8,25 @@ import edu.utah.blulab.services.INoblementionsConnector;
 import edu.utah.blulab.utilities.Converters;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
@@ -35,21 +41,58 @@ public class NoblementionsConnectionController {
     private View jsonView;
 
     @RequestMapping(value = "/uploadMultiplePath", method = RequestMethod.POST)
-    public ModelAndView getFeatures(@RequestParam("OntologyPath") String ontPath,
-                                    @RequestParam("Input") String input,
-                                    @RequestParam("Output") String output) throws Exception {
+    public ModelAndView getFeatures(@RequestParam("input") String input,
+                                    @RequestParam("output") String output,
+                                    @RequestParam("file") MultipartFile[] files) throws Exception {
+
+        File ontologyFile = null;
+        for (MultipartFile file : files) {
+            if (!file.isEmpty()) {
+                if (file.getOriginalFilename().split("\\.")[1].equals("owl")) {
+                    ontologyFile = new File(file.getOriginalFilename());
+                    try {
+                        file.transferTo(ontologyFile);
+                    } catch (IOException e) {
+                        return createErrorResponse(e.getMessage());
+                    }
+                }
+            }
+        }
+
+//        CloseableHttpClient client = HttpClients.createDefault();
+//        HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
+//        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+//        builder.addTextBody("input", input);
+//        builder.addTextBody("output", output);
+        assert ontologyFile != null;
+        String x = ontologyFile.getAbsolutePath();
+        String y = ontologyFile.getPath();
+        String z = ontologyFile.getCanonicalPath();
+//        builder.addTextBody("ont",ontologyFile.getAbsolutePath());
+//        assert ontologyFile != null;
+//        builder.addBinaryBody("file", ontologyFile,
+//                ContentType.APPLICATION_OCTET_STREAM, "file.ext");
+
+//        HttpEntity multipart = builder.build();
+//        httpPost.setEntity(multipart);
+
+//        CloseableHttpResponse response = client.execute(httpPost);
+//        String responseContent =EntityUtils.toString(response.getEntity());
+//        int statusCode = response.getStatusLine().getStatusCode();
+//        LOGGER.debug("\n"+responseContent);
+////        assertThat(response.getStatusLine().getStatusCode(), equalTo(200));
+//        client.close();
 
 
-
-        final URL url = new URL("http://localhost:8080/Ieviz-NoblementionsWS/getAnnotations");
+        final URL url = new URL("http://localhost:8080/NoblementionsWS/getAnnotations");
         final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Accept", "application/json");
 
-        connection.setRequestProperty("Input", input);
-        connection.addRequestProperty("Output", output);
-        connection.addRequestProperty("OntologyPath", ontPath);
+        connection.setRequestProperty("input", input);
+        connection.addRequestProperty("output", output);
+        connection.addRequestProperty("ont", x);
 
         connection.setDoOutput(true);
 
@@ -63,10 +106,18 @@ public class NoblementionsConnectionController {
                     + connection.getResponseCode());
         }
 
-        String contents = FileUtils.readFileToString(new File(output + "\\RESULTS.tsv"));
-        String contentsToCsv = Converters.tsvToCsv(contents);
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuilder contentsToCsv = new StringBuilder();
+        while ((inputLine = in.readLine()) != null) {
+            contentsToCsv.append(inputLine);
+        }
+        in.close();
 
-        Scanner scanner = new Scanner(contentsToCsv);
+
+//        String contents = FileUtils.readFileToString(new File(output + "\\RESULTS.tsv"));
+
+        Scanner scanner = new Scanner(contentsToCsv.toString());
         List<String> linesList = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -92,8 +143,7 @@ public class NoblementionsConnectionController {
             }
 
             int id = QueryUtility.getID(documentName);
-            if(objectList.size() == 8)
-            {
+            if (objectList.size() == 8) {
                 AnnotationResultsDao entity = new AnnotationResultsDao();
                 entity.setDocumentId(id);
                 entity.setDocumentType(objectList.get(1));
@@ -109,8 +159,12 @@ public class NoblementionsConnectionController {
         }
 
 
-        String contentToJson = Converters.tsvToJson(contents);
+        String contentToJson = Converters.csvToJson(contentsToCsv.toString());
 
         return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contentToJson);
+    }
+
+    private ModelAndView createErrorResponse(String sMessage) {
+        return new ModelAndView(jsonView, ServiceConstants.ERROR_FIELD, sMessage);
     }
 }
