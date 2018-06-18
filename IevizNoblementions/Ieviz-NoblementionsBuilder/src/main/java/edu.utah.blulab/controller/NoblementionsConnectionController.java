@@ -41,12 +41,24 @@ public class NoblementionsConnectionController {
     private View jsonView;
 
     @RequestMapping(value = "/uploadMultiplePath", method = RequestMethod.POST)
-    public ModelAndView getFeatures(@RequestParam("input") String input,
-                                    @RequestParam("output") String output,
-                                    @RequestParam("file") MultipartFile[] files) throws Exception {
+    public ModelAndView getFeatures(@RequestParam(value = "inputFile") MultipartFile[] inputFiles,
+                                    @RequestParam(value = "ontFile") MultipartFile[] ontologyFiles) throws Exception {
+        File inputFile = null;
+        for (MultipartFile file : inputFiles) {
+            if (!file.isEmpty()) {
+                if (file.getOriginalFilename().split("\\.")[1].equals("txt")) {
+                    inputFile = new File(file.getOriginalFilename());
+                    try {
+                        file.transferTo(inputFile);
+                    } catch (IOException e) {
+                        return createErrorResponse(e.getMessage());
+                    }
+                }
+            }
+        }
 
         File ontologyFile = null;
-        for (MultipartFile file : files) {
+        for (MultipartFile file : ontologyFiles) {
             if (!file.isEmpty()) {
                 if (file.getOriginalFilename().split("\\.")[1].equals("owl")) {
                     ontologyFile = new File(file.getOriginalFilename());
@@ -59,65 +71,67 @@ public class NoblementionsConnectionController {
             }
         }
 
-//        CloseableHttpClient client = HttpClients.createDefault();
-//        HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
-//        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        CloseableHttpClient client = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 //        builder.addTextBody("input", input);
 //        builder.addTextBody("output", output);
         assert ontologyFile != null;
         String x = ontologyFile.getAbsolutePath();
         String y = ontologyFile.getPath();
         String z = ontologyFile.getCanonicalPath();
-//        builder.addTextBody("ont",ontologyFile.getAbsolutePath());
-//        assert ontologyFile != null;
-//        builder.addBinaryBody("file", ontologyFile,
-//                ContentType.APPLICATION_OCTET_STREAM, "file.ext");
+//        builder.addTextBody("ont", ontologyFile.getAbsolutePath());
+        assert ontologyFile != null;
+        builder.addBinaryBody("inputFile", inputFile,
+                ContentType.APPLICATION_OCTET_STREAM, "file.ext");
+        builder.addBinaryBody("ontFile", ontologyFile,
+                ContentType.APPLICATION_OCTET_STREAM, "file.ext");
 
-//        HttpEntity multipart = builder.build();
-//        httpPost.setEntity(multipart);
+        HttpEntity multipart = builder.build();
+        httpPost.setEntity(multipart);
 
-//        CloseableHttpResponse response = client.execute(httpPost);
-//        String responseContent =EntityUtils.toString(response.getEntity());
-//        int statusCode = response.getStatusLine().getStatusCode();
-//        LOGGER.debug("\n"+responseContent);
-////        assertThat(response.getStatusLine().getStatusCode(), equalTo(200));
-//        client.close();
-
-
-        final URL url = new URL("http://localhost:8080/NoblementionsWS/getAnnotations");
-        final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Accept", "application/json");
-
-        connection.setRequestProperty("input", input);
-        connection.addRequestProperty("output", output);
-        connection.addRequestProperty("ont", x);
-
-        connection.setDoOutput(true);
-
-        OutputStream os = connection.getOutputStream();
-        os.write(input.getBytes());
-        os.flush();
+        CloseableHttpResponse response = client.execute(httpPost);
+        String responseContent = EntityUtils.toString(response.getEntity());
+        int statusCode = response.getStatusLine().getStatusCode();
+        LOGGER.debug("\n" + responseContent);
+//        assertThat(response.getStatusLine().getStatusCode(), equalTo(200));
+        client.close();
 
 
-        if (connection.getResponseCode() != 200) {
-            throw new RuntimeException("Failed : HTTP error code : "
-                    + connection.getResponseCode());
-        }
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        StringBuilder contentsToCsv = new StringBuilder();
-        while ((inputLine = in.readLine()) != null) {
-            contentsToCsv.append(inputLine);
-        }
-        in.close();
+//        final URL url = new URL("http://localhost:8080/NoblementionsWS/getAnnotations");
+//        final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//
+//        connection.setRequestMethod("POST");
+//        connection.setRequestProperty("Accept", "application/json");
+//
+//        connection.setRequestProperty("input", input);
+//        connection.addRequestProperty("output", output);
+//        connection.addRequestProperty("ont", x);
+//
+//        connection.setDoOutput(true);
+//
+//        OutputStream os = connection.getOutputStream();
+//        os.write(input.getBytes());
+//        os.flush();
+//
+//
+//        if (connection.getResponseCode() != 200) {
+//            throw new RuntimeException("Failed : HTTP error code : "
+//                    + connection.getResponseCode());
+//        }
+//
+//        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+//        String inputLine;
+//        StringBuilder contentsToCsv = new StringBuilder();
+//        while ((inputLine = in.readLine()) != null) {
+//            contentsToCsv.append(inputLine);
+//        }
+//        in.close();
 
 
 //        String contents = FileUtils.readFileToString(new File(output + "\\RESULTS.tsv"));
 
-        Scanner scanner = new Scanner(contentsToCsv.toString());
+        Scanner scanner = new Scanner(responseContent.toString());
         List<String> linesList = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
@@ -159,7 +173,7 @@ public class NoblementionsConnectionController {
         }
 
 
-        String contentToJson = Converters.csvToJson(contentsToCsv.toString());
+        String contentToJson = Converters.csvToJson(responseContent.toString());
 
         return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contentToJson);
     }
