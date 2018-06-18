@@ -131,7 +131,7 @@ public class NoblementionsConnectionController {
 
 //        String contents = FileUtils.readFileToString(new File(output + "\\RESULTS.tsv"));
 
-        Scanner scanner = new Scanner(responseContent.toString());
+        Scanner scanner = new Scanner(responseContent);
         List<String> linesList = new ArrayList<>();
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
