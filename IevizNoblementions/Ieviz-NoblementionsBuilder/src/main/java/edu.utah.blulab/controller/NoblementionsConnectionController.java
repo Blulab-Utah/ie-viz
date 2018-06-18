@@ -173,7 +173,7 @@ public class NoblementionsConnectionController {
         }
 
 
-        String contentToJson = Converters.csvToJson(responseContent.toString());
+        String contentToJson = Converters.csvToJson(responseContent);
 
         return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contentToJson);
     }
