@@ -81,11 +81,11 @@ public class NoblementionsConnectionController {
         String y = ontologyFile.getPath();
         String z = ontologyFile.getCanonicalPath();
 //        builder.addTextBody("ont", ontologyFile.getAbsolutePath());
-        assert ontologyFile != null;
+        assert inputFile != null;
         builder.addBinaryBody("inputFile", inputFile,
-                ContentType.APPLICATION_OCTET_STREAM, "file.ext");
+                ContentType.MULTIPART_FORM_DATA, "file.ext");
         builder.addBinaryBody("ontFile", ontologyFile,
-                ContentType.APPLICATION_OCTET_STREAM, "file.ext");
+                ContentType.MULTIPART_FORM_DATA, "file.ext");
 
         HttpEntity multipart = builder.build();
         httpPost.setEntity(multipart);
