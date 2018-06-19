@@ -72,7 +72,8 @@ public class NoblementionsConnectionController {
         }
 
         CloseableHttpClient client = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
+        //HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
+        HttpPost httpPost = new HttpPost("http://blulab2.chpc.utah.edu/NoblementionsWS/getAnnotations");
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
 //        builder.addTextBody("input", input);
 //        builder.addTextBody("output", output);
