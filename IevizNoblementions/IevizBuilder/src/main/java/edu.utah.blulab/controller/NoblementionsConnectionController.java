@@ -4,7 +4,6 @@ import edu.utah.blulab.constants.ServiceConstants;
 import edu.utah.blulab.db.models.AnnotationResultsDao;
 import edu.utah.blulab.db.models.DocumentIdentifierDao;
 import edu.utah.blulab.db.query.QueryUtility;
-import edu.utah.blulab.services.INoblementionsConnector;
 import edu.utah.blulab.utilities.Converters;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -73,15 +72,9 @@ public class NoblementionsConnectionController {
 
         CloseableHttpClient client = HttpClients.createDefault();
         //HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
-        HttpPost httpPost = new HttpPost("http://blulab2.chpc.utah.edu/NoblementionsWS/getAnnotations");
+        HttpPost httpPost = new HttpPost("http://blutc-dev.chpc.utah.edu/NoblementionsWS/getAnnotations");
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-//        builder.addTextBody("input", input);
-//        builder.addTextBody("output", output);
         assert ontologyFile != null;
-        String x = ontologyFile.getAbsolutePath();
-        String y = ontologyFile.getPath();
-        String z = ontologyFile.getCanonicalPath();
-//        builder.addTextBody("ont", ontologyFile.getAbsolutePath());
         assert inputFile != null;
         builder.addBinaryBody("inputFile", inputFile,
                 ContentType.MULTIPART_FORM_DATA, "file.ext");
