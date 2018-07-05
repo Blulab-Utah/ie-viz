@@ -63,7 +63,7 @@ public class AnnotationContainer {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (FeatureContainer fcTemp : features) {
-            sb.append(fcTemp.toString()+ "\n");
+            sb.append(fcTemp.toString()).append("\n");
         }
         return "AnnotationContainer{\n" +
                 "doc='" + doc + '\'' +
