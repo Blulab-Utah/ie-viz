@@ -5,7 +5,7 @@ import java.util.List;
 public class DocumentContainer {
 
     private List<AnnotationContainer> annotations;
-    String docName;
+    private String docName;
 
     public List<AnnotationContainer> getAnnotations() {
         return annotations;

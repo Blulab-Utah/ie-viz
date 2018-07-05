@@ -4,12 +4,12 @@ import java.util.List;
 
 public class AnnotationContainer {
 
-    List<FeatureContainer> features;
-    String doc;
-    int startLoc;
-    int endLoc;
-    String mentionFeatures;
-    String variable;
+    private List<FeatureContainer> features;
+    private String doc;
+    private int startLoc;
+    private int endLoc;
+    private String mentionFeatures;
+    private String variable;
 
     public List<FeatureContainer> getFeatures() {
         return features;
