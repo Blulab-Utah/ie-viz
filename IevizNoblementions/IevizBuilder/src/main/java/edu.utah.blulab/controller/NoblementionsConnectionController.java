@@ -10,6 +10,7 @@ import javax.ws.rs.core.Response;
 import edu.utah.blulab.containers.AnnotationContainer;
 import edu.utah.blulab.containers.DocumentContainer;
 import edu.utah.blulab.db.query.QueryUtility;
+import edu.utah.blulab.utilities.Converters;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
@@ -118,7 +119,9 @@ public class NoblementionsConnectionController {
             return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, e.getMessage());
         }
 
-        return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contents);
+        String jsonContent = Converters.csvToJson(contents);
+
+        return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, jsonContent);
 
     }
 
