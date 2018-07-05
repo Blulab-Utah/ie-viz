@@ -7,6 +7,7 @@ import edu.utah.blulab.db.models.NlpResultDocEntity;
 import edu.utah.blulab.db.models.NlpResultFeaturesEntity;
 import edu.utah.blulab.db.models.NlpResultSnippetEntity;
 import edu.utah.blulab.db.models.NlpRunDefEntity;
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AnnotationProcessor {
+
+    private static final Logger logger = Logger.getLogger(AnnotationProcessor.class);
 
     private static SessionFactory factory;
 
@@ -153,7 +156,7 @@ public class AnnotationProcessor {
                 try {
                     startLoc = Integer.valueOf(annoVals[1].replaceAll(" ", ""));
                 } catch (Exception ex) {
-                    System.out.println("Could not convert " + annoVals[1] + "  to an integer... skipping");
+                    logger.error("Could not convert " + annoVals[1] + "  to an integer... skipping");
                     continue;
                 }
                 int endLoc = startLoc + annoVals[0].length() - 1; // end location is the start location + length of the annotation
