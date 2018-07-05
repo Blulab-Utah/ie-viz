@@ -70,7 +70,7 @@ public class NoblementionsConnectionController {
         }
 
 
-        MultiPart multiPart = null;
+        MultiPart multiPart;
         String contents = null;
 
         try {
@@ -103,15 +103,24 @@ public class NoblementionsConnectionController {
         AnnotationProcessor processor = new AnnotationProcessor();
         List<DocContainer> docList = processor.processOutput(contents);
 
-        int runID = processor.persistRun("RunXXX");
+        try
+        {
+            int runID = processor.persistRun("RunXXX");
 
-        for (DocContainer doc : docList) {
-            processor.persistAnnotation(doc, runID);
-            for (AnnotationContainer annotation : doc.getAnnotations()) {
-                logger.debug(annotation.toString());
+            for (DocContainer doc : docList) {
+                processor.persistAnnotation(doc, runID);
+                for (AnnotationContainer annotation : doc.getAnnotations()) {
+                    logger.debug(annotation.toString());
 
+                }
             }
         }
+        catch (Exception e)
+        {
+            return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, e.getMessage());
+        }
+
+
         return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contents);
 
     }
