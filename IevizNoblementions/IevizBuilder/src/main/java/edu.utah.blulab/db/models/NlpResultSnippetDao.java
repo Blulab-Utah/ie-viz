@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "NLP_RESULT_SNIPPET")
-public class NlpResultSnippetEntity {
+public class NlpResultSnippetDao {
     private Integer snippetId;
     private Integer resultDocId;
     private String snippet1;
@@ -122,7 +122,7 @@ public class NlpResultSnippetEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        NlpResultSnippetEntity that = (NlpResultSnippetEntity) o;
+        NlpResultSnippetDao that = (NlpResultSnippetDao) o;
 
         if (snippetId != null ? !snippetId.equals(that.snippetId) : that.snippetId != null) return false;
         if (resultDocId != null ? !resultDocId.equals(that.resultDocId) : that.resultDocId != null) return false;

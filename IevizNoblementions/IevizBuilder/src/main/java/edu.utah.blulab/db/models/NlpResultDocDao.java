@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "NLP_RESULT_DOC")
-public class NlpResultDocEntity {
+public class NlpResultDocDao {
     private Integer resultDocId;
     private Integer runId;
     private Integer nlpInputId;
@@ -134,7 +134,7 @@ public class NlpResultDocEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        NlpResultDocEntity that = (NlpResultDocEntity) o;
+        NlpResultDocDao that = (NlpResultDocDao) o;
 
         if (resultDocId != null ? !resultDocId.equals(that.resultDocId) : that.resultDocId != null) return false;
         if (runId != null ? !runId.equals(that.runId) : that.runId != null) return false;

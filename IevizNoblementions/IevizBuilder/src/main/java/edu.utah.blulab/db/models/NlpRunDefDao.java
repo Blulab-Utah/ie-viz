@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "NLP_RUN_DEF")
-public class NlpRunDefEntity {
+public class NlpRunDefDao {
     private Integer runId;
     private String runName;
     private String runDescription;
@@ -45,7 +45,7 @@ public class NlpRunDefEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        NlpRunDefEntity that = (NlpRunDefEntity) o;
+        NlpRunDefDao that = (NlpRunDefDao) o;
 
         if (runId != null ? !runId.equals(that.runId) : that.runId != null) return false;
         if (runName != null ? !runName.equals(that.runName) : that.runName != null) return false;

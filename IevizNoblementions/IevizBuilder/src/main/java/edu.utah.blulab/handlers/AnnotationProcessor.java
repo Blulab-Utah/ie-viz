@@ -3,10 +3,10 @@ package edu.utah.blulab.handlers;
 import edu.utah.blulab.containers.AnnotationContainer;
 import edu.utah.blulab.containers.DocumentContainer;
 import edu.utah.blulab.containers.FeatureContainer;
-import edu.utah.blulab.db.models.NlpResultDocEntity;
-import edu.utah.blulab.db.models.NlpResultFeaturesEntity;
-import edu.utah.blulab.db.models.NlpResultSnippetEntity;
-import edu.utah.blulab.db.models.NlpRunDefEntity;
+import edu.utah.blulab.db.models.NlpResultDocDao;
+import edu.utah.blulab.db.models.NlpResultFeaturesDao;
+import edu.utah.blulab.db.models.NlpResultSnippetDao;
+import edu.utah.blulab.db.models.NlpRunDefDao;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -202,7 +202,7 @@ public class AnnotationProcessor {
 
         try {
             tx = session.beginTransaction();
-            NlpRunDefEntity runTable = new NlpRunDefEntity();
+            NlpRunDefDao runTable = new NlpRunDefDao();
             runTable.setRunName(runName);
             runID = (Integer) session.save(runTable);
             tx.commit();
@@ -228,7 +228,7 @@ public class AnnotationProcessor {
         try {
             // add document name to doc table
             tx = session.beginTransaction();
-            NlpResultDocEntity docTable = new NlpResultDocEntity();
+            NlpResultDocDao docTable = new NlpResultDocDao();
             docTable.setDocSrc(doc.getDocName());
             docTable.setRunId(runID);
             docID = (Integer) session.save(docTable);
@@ -240,7 +240,7 @@ public class AnnotationProcessor {
                 // todo: add mention_feature - a string containing all of the features (redundant with feature table
                 // todo: add snippet text to snippet_1 column
 
-                NlpResultSnippetEntity snipTable = new NlpResultSnippetEntity();
+                NlpResultSnippetDao snipTable = new NlpResultSnippetDao();
                 snipTable.setTermSnippet1StartLoc(ac.getStartLoc());
                 snipTable.setTermSnippet1EndLoc(ac.getEndLoc());
                 snipTable.setMentionType(ac.getVariable());
@@ -257,7 +257,7 @@ public class AnnotationProcessor {
                 // write the feature data
                 for (FeatureContainer fc : ac.getFeatures()) {
                     tx = session.beginTransaction();
-                    NlpResultFeaturesEntity featureTable = new NlpResultFeaturesEntity();
+                    NlpResultFeaturesDao featureTable = new NlpResultFeaturesDao();
                     featureTable.setFeatureName(fc.getProperty());
                     featureTable.setFeatureValue(fc.getPropertyValue());
                     featureTable.setFeatureValueNumeric(fc.getPropertyValueNumeric());
