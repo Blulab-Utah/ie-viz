@@ -14,6 +14,13 @@ public class Converters {
         return array.toString();
     }
 
+    public static String csvToTsv(String csv) {
+        if (DataUtils.checkDataType(csv) != DataType.CSV) {
+            throw new InputMismatchException(
+                    "Input String is not in CSV format");
+        }
+        return csv.replaceAll("\t", " ").replaceAll(",", "\t");
+    }
     public static String csvToJson(String csv) {
         if (DataUtils.checkDataType(csv) != DataType.CSV) {
             throw new InputMismatchException(

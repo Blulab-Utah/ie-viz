@@ -64,7 +64,7 @@ public class QueryUtility {
     }
 
     public List<DocumentContainer> processAnnotatedOutput(String content){
-        String separator = ",";
+        String separator = "\t";
 
         String[] lines = content.split("\n");
 

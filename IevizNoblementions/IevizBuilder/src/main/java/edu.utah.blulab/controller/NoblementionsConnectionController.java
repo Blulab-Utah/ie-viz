@@ -101,8 +101,9 @@ public class NoblementionsConnectionController {
             logger.error("Exception has occured "+ e.getMessage());
         }
 
+        String tsvContents = Converters.csvToTsv(contents);
         QueryUtility processor = new QueryUtility();
-        List<DocumentContainer> docList = processor.processAnnotatedOutput(contents);
+        List<DocumentContainer> docList = processor.processAnnotatedOutput(tsvContents);
 
         int runID = processor.persistRun("RunXXX");
         try
