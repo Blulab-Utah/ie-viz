@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 
 import edu.utah.blulab.containers.AnnotationContainer;
 import edu.utah.blulab.containers.DocumentContainer;
-import edu.utah.blulab.handlers.AnnotationProcessor;
+import edu.utah.blulab.db.query.QueryUtility;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
@@ -100,7 +100,7 @@ public class NoblementionsConnectionController {
             logger.error("Exception has occured "+ e.getMessage());
         }
 
-        AnnotationProcessor processor = new AnnotationProcessor();
+        QueryUtility processor = new QueryUtility();
         List<DocumentContainer> docList = processor.processAnnotatedOutput(contents);
 
         int runID = processor.persistRun("RunXXX");
