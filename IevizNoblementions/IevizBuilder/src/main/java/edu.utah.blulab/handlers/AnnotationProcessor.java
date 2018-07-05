@@ -1,7 +1,7 @@
 package edu.utah.blulab.handlers;
 
 import edu.utah.blulab.containers.AnnotationContainer;
-import edu.utah.blulab.containers.DocContainer;
+import edu.utah.blulab.containers.DocumentContainer;
 import edu.utah.blulab.containers.FeatureContainer;
 import edu.utah.blulab.db.models.NlpResultDocEntity;
 import edu.utah.blulab.db.models.NlpResultFeaturesEntity;
@@ -26,7 +26,7 @@ public class AnnotationProcessor {
     }
 
 
-    public List<DocContainer> processAnnotatedOutput(String content){
+    public List<DocumentContainer> processAnnotatedOutput(String content){
         String separator = ",";
 
         String[] lines = content.split("\n");
@@ -44,7 +44,7 @@ public class AnnotationProcessor {
         int valPropColumn = 0;
         int annotationColumn = 0;
 
-        List<DocContainer> docList = new ArrayList<DocContainer>();
+        List<DocumentContainer> docList = new ArrayList<DocumentContainer>();
         List<AnnotationContainer> annotationList = new ArrayList<AnnotationContainer>();
 
         // use header to identify columns
@@ -120,7 +120,7 @@ public class AnnotationProcessor {
             // if a new document is found
             if (!values[docColumn].equals(prevDocName)) {
                 // write out all of the data from the previous id
-                DocContainer doc = new DocContainer();
+                DocumentContainer doc = new DocumentContainer();
                 doc.setDocName(prevDocName);
                 doc.setAnnotations(annotationList);
                 docList.add(doc);
@@ -180,7 +180,7 @@ public class AnnotationProcessor {
                 annotation.setVariable(variableVal);
                 annotationList.add(annotation);
 
-                DocContainer doc = new DocContainer();
+                DocumentContainer doc = new DocumentContainer();
                 doc.setDocName(values[docColumn]);
                 doc.setAnnotations(annotationList);
                 docList.add(doc);
@@ -219,7 +219,7 @@ public class AnnotationProcessor {
             return -1;
     }
 
-    public Integer persistAnnotation(DocContainer doc, int runID){
+    public Integer persistAnnotation(DocumentContainer doc, int runID){
         Session session = factory.openSession();
         Transaction tx = null;
         Integer snippetID = null;

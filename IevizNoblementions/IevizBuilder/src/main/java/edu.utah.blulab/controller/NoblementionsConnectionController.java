@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import edu.utah.blulab.containers.AnnotationContainer;
-import edu.utah.blulab.containers.DocContainer;
+import edu.utah.blulab.containers.DocumentContainer;
 import edu.utah.blulab.handlers.AnnotationProcessor;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
@@ -101,12 +101,12 @@ public class NoblementionsConnectionController {
         }
 
         AnnotationProcessor processor = new AnnotationProcessor();
-        List<DocContainer> docList = processor.processAnnotatedOutput(contents);
+        List<DocumentContainer> docList = processor.processAnnotatedOutput(contents);
 
         int runID = processor.persistRun("RunXXX");
         try
         {
-            for (DocContainer doc : docList) {
+            for (DocumentContainer doc : docList) {
                 processor.persistAnnotation(doc, runID);
                 for (AnnotationContainer annotation : doc.getAnnotations()) {
                     logger.debug(annotation.toString());

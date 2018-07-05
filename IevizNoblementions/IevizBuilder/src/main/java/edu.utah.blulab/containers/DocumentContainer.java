@@ -2,7 +2,7 @@ package edu.utah.blulab.containers;
 
 import java.util.List;
 
-public class DocContainer {
+public class DocumentContainer {
 
     private List<AnnotationContainer> annotations;
     String docName;
