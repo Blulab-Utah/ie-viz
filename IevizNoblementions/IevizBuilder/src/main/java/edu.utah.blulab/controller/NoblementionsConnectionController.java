@@ -102,14 +102,14 @@ public class NoblementionsConnectionController {
         }
 
         String tsvContents = Converters.csvToTsv(contents);
-        QueryUtility processor = new QueryUtility();
-        List<DocumentContainer> docList = processor.processAnnotatedOutput(tsvContents);
+//        QueryUtility processor = new QueryUtility();
+        List<DocumentContainer> docList = QueryUtility.processAnnotatedOutput(tsvContents);
 
-        int runID = processor.persistRun("RunXXX");
+        int runID = QueryUtility.persistRun("RunXXX");
         try
         {
             for (DocumentContainer doc : docList) {
-                processor.persistAnnotation(doc, runID);
+                QueryUtility.persistAnnotation(doc, runID);
                 for (AnnotationContainer annotation : doc.getAnnotations()) {
                     logger.debug(annotation.toString());
 
