@@ -101,12 +101,11 @@ public class NoblementionsConnectionController {
         }
 
         AnnotationProcessor processor = new AnnotationProcessor();
-        List<DocContainer> docList = processor.processOutput(contents);
+        List<DocContainer> docList = processor.processAnnotatedOutput(contents);
 
+        int runID = processor.persistRun("RunXXX");
         try
         {
-            int runID = processor.persistRun("RunXXX");
-
             for (DocContainer doc : docList) {
                 processor.persistAnnotation(doc, runID);
                 for (AnnotationContainer annotation : doc.getAnnotations()) {
@@ -115,11 +114,9 @@ public class NoblementionsConnectionController {
                 }
             }
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, e.getMessage());
         }
-
 
         return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contents);
 

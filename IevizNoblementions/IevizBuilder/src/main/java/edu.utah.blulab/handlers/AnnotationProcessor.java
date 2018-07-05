@@ -23,7 +23,7 @@ public class AnnotationProcessor {
     }
 
 
-    public List<DocContainer> processOutput(String content){
+    public List<DocContainer> processAnnotatedOutput(String content){
         String separator = ",";
 
         String[] lines = content.split("\n");
