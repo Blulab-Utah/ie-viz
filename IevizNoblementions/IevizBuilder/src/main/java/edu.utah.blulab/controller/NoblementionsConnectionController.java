@@ -1,20 +1,20 @@
 package edu.utah.blulab.controller;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import edu.utah.blulab.containers.AnnotationContainer;
+import edu.utah.blulab.containers.DocContainer;
+import edu.utah.blulab.handlers.AnnotationProcessor;
+import org.glassfish.jersey.media.multipart.MultiPart;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
+import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
+
 import edu.utah.blulab.constants.ServiceConstants;
-import edu.utah.blulab.db.models.AnnotationResultsDao;
-import edu.utah.blulab.db.models.DocumentIdentifierDao;
-import edu.utah.blulab.db.query.QueryUtility;
-import edu.utah.blulab.utilities.Converters;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,21 +25,20 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
+
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.*;
 
 
 @Controller
 public class NoblementionsConnectionController {
 
-    private static final Logger LOGGER = Logger.getLogger(NoblementionsConnectionController.class);
+    private static final Logger logger = Logger.getLogger(NoblementionsConnectionController.class);
 
     @Autowired
     private View jsonView;
 
-    @RequestMapping(value = "/uploadMultiplePath", method = RequestMethod.POST)
+    @RequestMapping(value = "/processAnnotations", method = RequestMethod.POST)
     public ModelAndView getFeatures(@RequestParam(value = "inputFile") MultipartFile[] inputFiles,
                                     @RequestParam(value = "ontFile") MultipartFile[] ontologyFiles) throws Exception {
         File inputFile = null;
@@ -70,107 +69,53 @@ public class NoblementionsConnectionController {
             }
         }
 
-        CloseableHttpClient client = HttpClients.createDefault();
-        //HttpPost httpPost = new HttpPost("http://localhost:8080/NoblementionsWS/getAnnotations");
-        HttpPost httpPost = new HttpPost("http://blutc-dev.chpc.utah.edu/NoblementionsWS/getAnnotations");
-        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        assert ontologyFile != null;
-        assert inputFile != null;
-        builder.addBinaryBody("inputFile", inputFile,
-                ContentType.MULTIPART_FORM_DATA, "file.ext");
-        builder.addBinaryBody("ontFile", ontologyFile,
-                ContentType.MULTIPART_FORM_DATA, "file.ext");
 
-        HttpEntity multipart = builder.build();
-        httpPost.setEntity(multipart);
+        MultiPart multiPart = null;
+        String contents = null;
 
-        CloseableHttpResponse response = client.execute(httpPost);
-        String responseContent = EntityUtils.toString(response.getEntity());
-        int statusCode = response.getStatusLine().getStatusCode();
-        LOGGER.debug("\n" + responseContent);
-//        assertThat(response.getStatusLine().getStatusCode(), equalTo(200));
-        client.close();
+        try {
+            Client client = ClientBuilder.newBuilder().
+                    register(MultiPartFeature.class).build();
+            WebTarget server = client.target("http://blutc-dev.chpc.utah.edu/NoblementionsWS/getAnnotations");
+            multiPart = new MultiPart();
 
+            FileDataBodyPart inputBodyPart
+                    = new FileDataBodyPart("inputFile", inputFile,MediaType.TEXT_PLAIN_TYPE);
+            FileDataBodyPart ontBodyPart = new FileDataBodyPart("ontFile", ontologyFile,
+                    MediaType.APPLICATION_XML_TYPE);
 
-//        final URL url = new URL("http://localhost:8080/NoblementionsWS/getAnnotations");
-//        final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//
-//        connection.setRequestMethod("POST");
-//        connection.setRequestProperty("Accept", "application/json");
-//
-//        connection.setRequestProperty("input", input);
-//        connection.addRequestProperty("output", output);
-//        connection.addRequestProperty("ont", x);
-//
-//        connection.setDoOutput(true);
-//
-//        OutputStream os = connection.getOutputStream();
-//        os.write(input.getBytes());
-//        os.flush();
-//
-//
-//        if (connection.getResponseCode() != 200) {
-//            throw new RuntimeException("Failed : HTTP error code : "
-//                    + connection.getResponseCode());
-//        }
-//
-//        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-//        String inputLine;
-//        StringBuilder contentsToCsv = new StringBuilder();
-//        while ((inputLine = in.readLine()) != null) {
-//            contentsToCsv.append(inputLine);
-//        }
-//        in.close();
+            // Add body part
+            multiPart.bodyPart(inputBodyPart);
+            multiPart.bodyPart(ontBodyPart);
 
-
-//        String contents = FileUtils.readFileToString(new File(output + "\\RESULTS.tsv"));
-
-        Scanner scanner = new Scanner(responseContent);
-        List<String> linesList = new ArrayList<>();
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            linesList.add(line);
-
-        }
-        scanner.close();
-
-        linesList.remove(0);
-        DocumentIdentifierDao doc = new DocumentIdentifierDao();
-        List<String> documentList = new ArrayList<>();
-
-
-        for (String element : linesList) {
-            List<String> objectList = Arrays.asList(element.split(",", -1));
-            LOGGER.debug("\nObject Size: " + objectList.size());
-
-            String documentName = objectList.get(0);
-            if (!documentList.contains(documentName)) {
-                documentList.add(documentName);
-                doc.setDocName(documentName);
-                QueryUtility.insertDocumentId(doc);
+            Response response = server.request(MediaType.MULTIPART_FORM_DATA_TYPE)
+                    .post(Entity.entity(multiPart, "multipart/form-data"));
+            if (response.getStatus() == 200) {
+                contents = response.readEntity(String.class);
+                logger.info(contents);
+            } else {
+                logger.error("Response is not ok");
             }
-
-            int id = QueryUtility.getID(documentName);
-            if (objectList.size() == 8) {
-                AnnotationResultsDao entity = new AnnotationResultsDao();
-                entity.setDocumentId(id);
-                entity.setDocumentType(objectList.get(1));
-                entity.setId(objectList.get(2));
-                entity.setAnnotationVariable(objectList.get(3));
-                entity.setProperty(objectList.get(4));
-                entity.setDocumentValue(objectList.get(5));
-                entity.setValueProperties(objectList.get(6));
-                entity.setAnnotations(objectList.get(7));
-
-                QueryUtility.insertAnnotataions(entity);
-            }
+        } catch (Exception e) {
+            logger.error("Exception has occured "+ e.getMessage());
         }
 
+        AnnotationProcessor processor = new AnnotationProcessor();
+        List<DocContainer> docList = processor.processOutput(contents);
 
-        String contentToJson = Converters.csvToJson(responseContent);
+        int runID = processor.persistRun("RunXXX");
 
-        return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contentToJson);
+        for (DocContainer doc : docList) {
+            processor.persistAnnotation(doc, runID);
+            for (AnnotationContainer annotation : doc.getAnnotations()) {
+                logger.debug(annotation.toString());
+
+            }
+        }
+        return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, contents);
+
     }
+
 
     private ModelAndView createErrorResponse(String sMessage) {
         return new ModelAndView(jsonView, ServiceConstants.ERROR_FIELD, sMessage);

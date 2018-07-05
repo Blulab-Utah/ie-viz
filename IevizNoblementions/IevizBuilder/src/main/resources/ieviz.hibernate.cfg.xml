@@ -15,16 +15,16 @@
         <property name="connection.autocommit">true</property>
 
 
-        <!-- <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=NLP_DATASTORE;integratedSecurity=true</property> -->
-        <property name="hibernate.connection.url">jdbc:mysql://blulab2.chpc.utah.edu:3306/IE-Viz</property>
-        <property name="hibernate.connection.username">madmin</property>
-        <property name="hibernate.connection.password">Wbc5qI4eulpvh</property>
+         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;database=NLP_DATASTORE;integratedSecurity=true</property>
+        <!--<property name="hibernate.connection.url">jdbc:mysql://blulab2.chpc.utah.edu:3306/IE-Viz</property>-->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">admin</property>
 
 
-        <mapping class="edu.utah.blulab.db.models.AnnotationResultsDao"/>
-        <mapping class="edu.utah.blulab.db.models.DocumentIdentifierDao"/>
-        <mapping class="edu.utah.blulab.db.models.OrganizationsDao"/>
-        <mapping class="edu.utah.blulab.db.models.UsersDao"/>
+        <mapping class="edu.utah.blulab.db.models.NlpResultDocEntity"/>
+        <mapping class="edu.utah.blulab.db.models.NlpResultFeaturesEntity"/>
+        <mapping class="edu.utah.blulab.db.models.NlpResultSnippetEntity"/>
+        <mapping class="edu.utah.blulab.db.models.NlpRunDefEntity"/>
 
 
     </session-factory>
