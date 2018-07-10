@@ -63,7 +63,7 @@ public class QueryUtility {
         session.close();
     }
 
-    public static List<DocumentContainer> processAnnotatedOutput(String content){
+    public static List<DocumentContainer> processAnnotatedOutput_old(String content){
         String separator = "\t";
 
         String[] lines = content.split("\n");
@@ -235,12 +235,177 @@ public class QueryUtility {
         return docList;
     }
 
+    public static List<DocumentContainer> processAnnotatedOutput(String content){
+        String separator = "\t";
+        //String separator = ",";
+
+        String[] lines = content.split("\n");
+
+        String columns[] = lines[0].split(separator);
+
+        int id = 0;
+        String idPrevLine = "-1";
+        int minLocation = 999999;
+        int maxLocation = -1;
+
+        int typeColumn = 0;
+        int idColumn = 0;
+        int docColumn = 0;
+        int variableColumn = 0;
+        int propertyColumn = 0;
+        int docValColumn = 0;
+        int valPropColumn = 0;
+        int annotationColumn = 0;
+
+        List<DocumentContainer> docList = new ArrayList<>();
+        List<AnnotationContainer> annotationList = new ArrayList<AnnotationContainer>();
+
+        // use header to identify columns
+        //System.out.println(lines[i]);
+        String[] values = lines[0].replaceAll("\r", "").replaceAll("\n", "").split(separator,-1);
+        for (int j = 1; j < values.length; j++) {
+            //System.out.println("HERE1!!!!    " + values[j]);
+            if (values[j].equals("Type")){
+                typeColumn = j;
+                //System.out.println("HERE!!!!");
+            } else if (values[j].equals("Id")){
+                idColumn = j;
+            }  else if (values[j].equals("Document")){
+                docColumn = j;
+            } else if (values[j].equals("Annotation_Variable")){
+                variableColumn = j;
+            } else if (values[j].equals("Property")){
+                propertyColumn = j;
+            } else if (values[j].equals("Document_Value")){
+                docValColumn = j;
+            } else if (values[j].equals("Value_Properties")){
+                valPropColumn = j;
+            } else if (values[j].equals("Annotations")) {
+                annotationColumn = j;
+            }
+        }
+
+        //String typeVal = "";
+        String docVal = "";
+        String variableVal = "";
+        String tempDocName = "***TemporaryName";
+        String prevDocName = tempDocName;
+        String acceptanceVal = "";
+        List<FeatureContainer> fcArray = new ArrayList<FeatureContainer>();
+        boolean firstLine = true;
+        boolean firstLineDoc = true;
+        for (int i = 1; i < lines.length; i++) {
+            values = lines[i].replaceAll("\r", "").replaceAll("\n", "").split(separator,-1);
+
+            // iterate all lines with the same id
+            String annotationVal;
+            if (!values[idColumn].equals(idPrevLine)) { // if a new id is found
+                // write out all of the data from the previous id
+                if (!firstLine) { // don't do this for the very first line of the document
+                    AnnotationContainer annotation = new AnnotationContainer();
+                    annotation.setDoc(docVal);
+                    annotation.setEndLoc(maxLocation);
+                    annotation.setStartLoc(minLocation);
+                    annotation.setFeatures(fcArray);
+                    annotation.setMentionFeatures("");
+                    annotation.setVariable(variableVal);
+                    annotation.setAcceptance(acceptanceVal);
+                    annotationList.add(annotation);
+                } else {
+                    firstLine = false;
+                }
+
+                // reset and increment variables
+                idPrevLine = values[idColumn]; // set the previous line ID to the current line for use next iteration
+                minLocation = 999999;
+                maxLocation = -1;
+                fcArray = new ArrayList<FeatureContainer>();
+
+                // set the variable level values
+                docVal = values[docColumn];
+                acceptanceVal = values[typeColumn];
+                variableVal = values[variableColumn];
+            }
+
+            // if a new document is found
+            if (!values[docColumn].equals(prevDocName)) {
+                DocumentContainer doc = new DocumentContainer();
+                doc.setDocName(prevDocName);
+                doc.setAnnotations(annotationList);
+                docList.add(doc);
+
+
+                // reset variables
+                annotationList = new ArrayList<AnnotationContainer>();
+                prevDocName = values[docColumn];
+            }
+
+            idPrevLine = values[idColumn]; // set the previous line ID to the current line for use next iteration
+            // add the current feature to the feature array for this variable
+            FeatureContainer fc = new FeatureContainer();
+            fc.setProperty(values[propertyColumn]);
+            fc.setPropertyValue(values[docValColumn]);
+            fc.setPropertyValueNumeric(values[valPropColumn]);
+            fcArray.add(fc);
+
+            // calculate the start and stop locations - find the first start and last stop locations for all of a given variables features
+            annotationVal = values[annotationColumn];
+            String[] annoPairs = annotationVal.split(",");
+            int startLoc = 999999;
+            for (String pair : annoPairs) {
+                String[] annoVals = pair.split("/");
+                if (annoVals.length != 2) { // must be a pair - word and integer value
+                    continue;
+                }
+                try {
+                    startLoc = Integer.valueOf(annoVals[1].replaceAll(" ", ""));
+                } catch (Exception ex) {
+                    System.out.println("Could not convert " + annoVals[1] + "  to an integer... skipping");
+                    continue;
+                }
+                int endLoc = startLoc + annoVals[0].length() - 1; // end location is the start location + length of the annotation
+                //System.out.println(annoVals[0] + "-" + annoVals[1] + "     " + startLoc + " - " + endLoc);
+                if (startLoc < minLocation) {
+                    minLocation = startLoc;
+                    //System.out.println("Min location set to : " + startLoc);
+                }
+                if (endLoc > maxLocation) {
+                    maxLocation = endLoc;
+                    //System.out.println("Max location set to: " + endLoc);
+                }
+            }
+
+            // if last line, write the data to the container objects
+            if (i == lines.length - 1){
+                AnnotationContainer annotation = new AnnotationContainer();
+                annotation.setDoc(docVal);
+                annotation.setEndLoc(maxLocation);
+                annotation.setStartLoc(minLocation);
+                annotation.setFeatures(fcArray);
+                annotation.setMentionFeatures("");
+                annotation.setVariable(variableVal);
+                annotation.setAcceptance(acceptanceVal);
+                annotationList.add(annotation);
+
+                DocumentContainer doc = new DocumentContainer();
+                doc.setDocName(values[docColumn]);
+                doc.setAnnotations(annotationList);
+                docList.add(doc);
+
+                // remove the empty document that gets added at the beginning
+                if (docList.get(0).getDocName().equals(tempDocName)){
+                    docList.remove(0);
+                }
+            }
+        }
+        return docList;
+    }
+
     public static int persistRun(String runName){
         SessionFactory sessionFactory = SessionHandler.getSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         Integer runID = null;
-
 
         try {
             tx = session.beginTransaction();
@@ -266,6 +431,7 @@ public class QueryUtility {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         Integer snippetID = null;
+        Integer featureID = null;
         Integer docID = null;
 
         try {
@@ -282,6 +448,11 @@ public class QueryUtility {
 
                 // todo: add mention_feature - a string containing all of the features (redundant with feature table
                 // todo: add snippet text to snippet_1 column
+
+                // skip the rejected annotations
+                if (ac.getAcceptance().equals("Rejected")){
+                    continue;
+                }
 
                 NlpResultSnippetDao snipTable = new NlpResultSnippetDao();
                 snipTable.setTermSnippet1StartLoc(ac.getStartLoc());
@@ -306,14 +477,10 @@ public class QueryUtility {
                     featureTable.setFeatureValueNumeric(fc.getPropertyValueNumeric());
                     featureTable.setResultDocId(docID);
                     featureTable.setSnippetId(snippetID);
+                    featureID = (Integer) session.save(featureTable);
                     tx.commit();
                 }
             }
-
-            // add features to feature table
-            // todo: figure out a way to link snippet results with feature results. Jianlin seems to link through the results_doc table. I wonder why.
-
-
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             e.printStackTrace();

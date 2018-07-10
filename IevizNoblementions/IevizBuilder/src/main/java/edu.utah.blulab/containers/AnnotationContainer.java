@@ -10,6 +10,7 @@ public class AnnotationContainer {
     private int endLoc;
     private String mentionFeatures;
     private String variable;
+    String acceptance;
 
     public List<FeatureContainer> getFeatures() {
         return features;
@@ -59,14 +60,23 @@ public class AnnotationContainer {
         this.variable = variable;
     }
 
+    public String getAcceptance() {
+        return acceptance;
+    }
+
+    public void setAcceptance(String acceptance) {
+        this.acceptance = acceptance;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (FeatureContainer fcTemp : features) {
-            sb.append(fcTemp.toString()).append("\n");
+            sb.append(fcTemp.toString()+ "\n");
         }
         return "AnnotationContainer{\n" +
                 "doc='" + doc + '\'' +
+                "acceptance='" + acceptance + '\'' +
                 ", startLoc=" + startLoc +
                 ", endLoc=" + endLoc +
                 ", mentionFeatures='" + mentionFeatures + '\'' +
