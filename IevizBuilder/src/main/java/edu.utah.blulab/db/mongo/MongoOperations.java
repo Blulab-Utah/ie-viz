@@ -13,7 +13,8 @@ public class MongoOperations {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     public static MongoElementsDao storeInputData(FileContentsDao fileContentsDao) throws Exception {
-        Mongo context = new MongoClient("155.101.208.236",27017);
+        //Mongo context = new MongoClient("155.101.208.236",27017);
+        Mongo context = new MongoClient("localhost",27017);
         DB db = context.getDB("Ieviz");// Use DB
 
         if (null == db)
