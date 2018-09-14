@@ -65,7 +65,7 @@ public class NoblementionsConnectionController {
 
 
         MultiPart multiPart;
-        List<String> contentList = null;
+        String contents = null;
 
         try {
             Client client = ClientBuilder.newBuilder().
@@ -83,21 +83,20 @@ public class NoblementionsConnectionController {
                             file.transferTo(inputFile);
 
                             // TODO: Store in MongoDB
-                            try{
-                                FileContentsDao contents = new FileContentsDao();
-                                contents.setInputContent(FileUtils.readFileToString(inputFile));
-                                MongoElementsDao elements = MongoOperations.storeInputData(contents);
+                            try {
+                                FileContentsDao contentsDao = new FileContentsDao();
+                                contentsDao.setInputContent(FileUtils.readFileToString(inputFile));
+                                MongoElementsDao elements = MongoOperations.storeInputData(contentsDao);
 
                                 //TODO: Elements can be used for SQL.
                                 elements.getDate();
                                 elements.getId();
-                            }
-                            catch (Exception e) {
+                            } catch (Exception e) {
                                 return createErrorResponse(e.getMessage());
                             }
 
                             bodyParts.add(new FileDataBodyPart
-                                    ("inputFile", inputFile, MediaType.TEXT_PLAIN_TYPE));
+                                    ("input", inputFile, MediaType.TEXT_PLAIN_TYPE));
 
                         } catch (IOException e) {
                             return createErrorResponse(e.getMessage());
@@ -122,48 +121,38 @@ public class NoblementionsConnectionController {
             Response response = server.request(MediaType.MULTIPART_FORM_DATA_TYPE)
                     .post(Entity.entity(multiPart, "multipart/form-data"));
             if (response.getStatus() == 200) {
-                contentList = response.readEntity(new GenericType<List<String>>() {
-                });
+                contents = response.readEntity(String.class);
+                logger.info(contents);
             } else {
                 logger.error("Response is not ok");
             }
         } catch (Exception e) {
             logger.error("Exception has occured " + e.getMessage());
         }
-        if (null == contentList) {
-            return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, "No Annotations Received");
-        }
 
-        for (String contents : contentList) {
-            logger.info(contents);
-            String tsvContents = Converters.csvToTsv(contents);
+        logger.info(contents);
+        String tsvContents = Converters.csvToTsv(contents);
 //        QueryUtility processor = new QueryUtility();
-            List<DocumentContainer> docList = QueryUtility.processAnnotatedOutput(tsvContents);
+        List<DocumentContainer> docList = QueryUtility.processAnnotatedOutput(tsvContents);
 
-            int runID = QueryUtility.persistRun("RunXXX");
-            try {
-                for (DocumentContainer doc : docList) {
-                    QueryUtility.persistAnnotation(doc, runID);
-                    for (AnnotationContainer annotation : doc.getAnnotations()) {
-                        logger.debug(annotation.toString());
+        int runID = QueryUtility.persistRun("RunXXX");
+        try {
+            for (DocumentContainer doc : docList) {
+                QueryUtility.persistAnnotation(doc, runID);
+                for (AnnotationContainer annotation : doc.getAnnotations()) {
+                    logger.debug(annotation.toString());
 
-                    }
                 }
-            } catch (Exception e) {
-                return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, e.getMessage());
             }
-
-//            String jsonContent = Converters.csvToJson(contents);
+        } catch (Exception e) {
+            return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, e.getMessage());
         }
 
-        if (!contentList.isEmpty())
-            return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, "Data Successfully added in the database");
-        else
-            return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, "No Annotations Received");
+        String jsonContent = Converters.csvToJson(contents);
 
+        return new ModelAndView(jsonView, ServiceConstants.STATUS_FIELD, jsonContent);
 
     }
-
 
     private ModelAndView createErrorResponse(String sMessage) {
         return new ModelAndView(jsonView, ServiceConstants.ERROR_FIELD, sMessage);
