@@ -12,7 +12,7 @@
 
     <properties>
         <releaseCandidate>1</releaseCandidate>
-        <spring.version>4.2.1.RELEASE</spring.version>
+        <spring.version>4.2.2.RELEASE</spring.version>
         <java.version>1.7</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -99,12 +99,12 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.5.Final</version>
+            <version>4.3.3.Final</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.5.Final</version>
+            <version>4.3.3.Final</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

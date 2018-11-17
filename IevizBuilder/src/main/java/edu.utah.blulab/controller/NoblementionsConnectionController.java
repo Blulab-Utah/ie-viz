@@ -1,13 +1,6 @@
 package edu.utah.blulab.controller;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
+import edu.utah.blulab.constants.ServiceConstants;
 import edu.utah.blulab.containers.AnnotationContainer;
 import edu.utah.blulab.containers.DocumentContainer;
 import edu.utah.blulab.db.models.FileContentsDao;
@@ -16,12 +9,10 @@ import edu.utah.blulab.db.mongo.MongoOperations;
 import edu.utah.blulab.db.query.QueryUtility;
 import edu.utah.blulab.utilities.Converters;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
-
-import edu.utah.blulab.constants.ServiceConstants;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,9 +22,16 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
-
-import java.io.*;
-import java.util.*;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -45,23 +43,8 @@ public class NoblementionsConnectionController {
     private View jsonView;
 
     @RequestMapping(value = "/processAnnotations", method = RequestMethod.POST)
-    public ModelAndView getFeatures(@RequestParam(value = "input") MultipartFile[] inputFiles,
-                                    @RequestParam(value = "ontFile") MultipartFile[] ontologyFiles) throws Exception {
-
-
-        File ontologyFile = null;
-        for (MultipartFile file : ontologyFiles) {
-            if (!file.isEmpty()) {
-                if (file.getOriginalFilename().split("\\.")[1].equals("owl")) {
-                    ontologyFile = new File(file.getOriginalFilename());
-                    try {
-                        file.transferTo(ontologyFile);
-                    } catch (IOException e) {
-                        return createErrorResponse(e.getMessage());
-                    }
-                }
-            }
-        }
+    public ModelAndView getFeatures(@RequestParam(value = "ontFile") MultipartFile[] ontologyFiles,
+                                    @RequestParam(value = "ip") MultipartFile[] inputFiles) throws Exception {
 
 
         MultiPart multiPart;
@@ -73,8 +56,25 @@ public class NoblementionsConnectionController {
             WebTarget server = client.target("http://blutc-dev.chpc.utah.edu/NoblementionsWS/getAnnotations");
             multiPart = new MultiPart();
             List<FileDataBodyPart> bodyParts = new ArrayList<FileDataBodyPart>();
-
             File inputFile = null;
+
+            File ontologyFile = null;
+            for (MultipartFile file : ontologyFiles) {
+                if (!file.isEmpty()) {
+                    if (file.getOriginalFilename().split("\\.")[1].equals("owl")) {
+                        ontologyFile = new File(file.getOriginalFilename());
+                        try {
+                            file.transferTo(ontologyFile);
+                            bodyParts.add(new FileDataBodyPart
+                                    ("ontFile", ontologyFile, MediaType.APPLICATION_XML_TYPE));
+                        } catch (IOException e) {
+                            return createErrorResponse(e.getMessage());
+                        }
+                    }
+                }
+            }
+
+
             for (MultipartFile file : inputFiles) {
                 if (!file.isEmpty()) {
                     if (file.getOriginalFilename().split("\\.")[1].equals("txt")) {
@@ -96,7 +96,7 @@ public class NoblementionsConnectionController {
                             }
 
                             bodyParts.add(new FileDataBodyPart
-                                    ("input", inputFile, MediaType.TEXT_PLAIN_TYPE));
+                                    ("ip", inputFile, MediaType.TEXT_PLAIN_TYPE));
 
                         } catch (IOException e) {
                             return createErrorResponse(e.getMessage());
@@ -107,16 +107,16 @@ public class NoblementionsConnectionController {
 
 //            FileDataBodyPart inputBodyPart
 //                    = new FileDataBodyPart("inputFile", inputFile,MediaType.TEXT_PLAIN_TYPE);
-            FileDataBodyPart ontBodyPart = new FileDataBodyPart("ontFile", ontologyFile,
-                    MediaType.APPLICATION_XML_TYPE);
+//            FileDataBodyPart ontBodyPart = new FileDataBodyPart("ontFile", ontologyFile,
+//                    MediaType.APPLICATION_XML_TYPE);
 
             // Add body part
 //            multiPart.bodyPart(inputBodyPart);
 
+//            multiPart.bodyPart(ontBodyPart);
             for (FileDataBodyPart bp : bodyParts) {
                 multiPart.bodyPart(bp);
             }
-            multiPart.bodyPart(ontBodyPart);
 
             Response response = server.request(MediaType.MULTIPART_FORM_DATA_TYPE)
                     .post(Entity.entity(multiPart, "multipart/form-data"));

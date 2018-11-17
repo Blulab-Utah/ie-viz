@@ -28,6 +28,7 @@
         <mapping class="edu.utah.blulab.db.models.NlpResultFeaturesDao"/>
         <mapping class="edu.utah.blulab.db.models.NlpResultSnippetDao"/>
         <mapping class="edu.utah.blulab.db.models.NlpRunDefDao"/>
+        <mapping class="edu.utah.blulab.db.models.UsersDao"/>
 
 
     </session-factory>
