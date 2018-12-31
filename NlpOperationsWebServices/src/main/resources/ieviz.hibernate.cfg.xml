@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.dialect">
+        <!-- org.hibernate.dialect.SQLServerDialect -->
+            org.hibernate.dialect.MySQLInnoDBDialect
+    </property>
+    <!-- <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> -->
+        <!--<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property> -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.autocommit">true</property>
+
+
+         <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/NLP_DATASTORE</property>-->
+        <!--<property name="hibernate.connection.url">jdbc:mysql://blulab2.chpc.utah.edu:3306/IE-Viz</property>-->
+        <property name="hibernate.connection.url">jdbc:mysql://155.101.208.201:3306/IE-Viz</property>
+        <!--<property name="hibernate.connection.username">madmin</property>-->
+        <!--<property name="hibernate.connection.password">Wbc5qI4eulpvh</property>-->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">910043</property>
+
+
+        <mapping class="edu.utah.blulab.db.models.NlpResultDocDao"/>
+        <mapping class="edu.utah.blulab.db.models.NlpResultFeaturesDao"/>
+        <mapping class="edu.utah.blulab.db.models.NlpResultSnippetDao"/>
+        <mapping class="edu.utah.blulab.db.models.NlpRunDefDao"/>
+        <mapping class="edu.utah.blulab.db.models.UsersDao"/>
+        <mapping class="edu.utah.blulab.db.models.CorpusMetadataDao"/>
+        <mapping class="edu.utah.blulab.db.models.OrganizationsDao"/>
+
+
+    </session-factory>
+</hibernate-configuration>

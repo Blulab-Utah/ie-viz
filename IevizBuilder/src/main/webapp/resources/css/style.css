@@ -1,0 +1,113 @@
+.col-lg-centered{
+    float: none;
+    margin: 0 auto;
+    width:75%;
+}
+.col-md-centered{
+    float: none;
+    margin: 0 auto;
+    width:50%;
+}
+.col-sm-centered{
+    float: none;
+    margin: 0 auto;
+    width:25%;
+}
+
+.img-center {
+}
+
+.tables {
+    /*border: 1px solid black;
+     */
+}
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+}
+.jumbotron {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+}
+
+td {
+    /*padding: 0px 10px 20px 0;*/
+}
+
+.centerTable {
+    margin: auto;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    /*border: 3px solid green;*/
+    padding: 10px 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+pre>div {
+    height:70%;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /*padding: 0px;*/
+}
+.modal-dialog {
+    width: 85%; !important;
+}
+.logo {
+    height:100px;
+    display: block;
+    margin: 20px auto 20px auto;
+}
+#editor {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.btn {
+    padding: 2px 6px;
+    margin: 4px;
+}
+.loadinggif {
+    background: url('resources/images/hourglass.gif') no-repeat center;
+}
+table tr td {
+    /*padding: 0px 10px;*/
+}
+.center {
+    text-align: center;
+}
+.modal-footer {
+    /*padding: 45px;*/
+}
+html, body, .container-table {
+    height: 100%;
+}
+.container-table {
+    display: table;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    vertical-align: middle;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+.nowrap {
+    white-space: nowrap;
+}

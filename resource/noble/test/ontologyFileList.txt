@@ -1,3 +1,0 @@
-heartDiseaseInDiabetics.owl
-Medication_MRC_6-13-17.owl
-smoking.owl
