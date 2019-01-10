@@ -658,6 +658,9 @@ public class QueryUtility {
             String[] annoPairs = annotationVal.split(",");
             int startLoc = 999999;
             for (String pair : annoPairs) {
+                if (values[propertyColumn].equals("hasSection")){ // skip the hasSection value in calculating annotation span because it can be in a very different place than the rest of the annotation
+                    continue;
+                }
                 String[] annoVals = pair.split("/");
                 if (annoVals.length != 2) { // must be a pair - word and integer value
                     continue;
