@@ -29,12 +29,14 @@ public class NlpOperationsController {
 
 
     @RequestMapping(value = "/getOperations", method = RequestMethod.GET)
-    private ModelAndView getOperations(ModelMap model) {
+    private ModelAndView getOperations(ModelMap model) throws Exception {
         model.addAttribute("user", getPrincipal());
         List<String> toolsList = QueryUtility.getNlpApplicationsList();
         List<String> corpusList = QueryUtility.getCorpus();
+        List<String> ontList = MongoOperations.getOntologies();
         model.addAttribute("nlpAppList",toolsList);
         model.addAttribute("corpusList", corpusList);
+        model.addAttribute("ontList", ontList);
         ModelAndView modelAndView = new ModelAndView("operations");
         modelAndView.addObject(model);
         return modelAndView;
@@ -43,24 +45,18 @@ public class NlpOperationsController {
     @RequestMapping(value = "/processAnnotations", method = RequestMethod.POST)
     public @ResponseBody
     ModelAndView processAnnotations(ModelMap model, @RequestParam(value = "appName") String toolName,
-                                 @RequestParam (value = "corpusName") List<String> corpusNameList,
-                                 @RequestParam(value = "ontologies") MultipartFile[] rawOntologyFiles) throws Exception {
+                                 @RequestParam (value = "ontName") List<String> ontList,
+                                 @RequestParam (value = "corpusName") List<String> corpusNameList) throws Exception {
 
         String annotationContent = null;
         if("Noblementions".equals(toolName))
         {
-            List<File> ontologyFiles = IevizUtilities.getOntologyFileList(rawOntologyFiles);
+
+            List<FileContentsDao> ontologyFiles = MongoOperations.queryCollectionByOntologies(ontList);
             List<FileContentsDao> fileContentsDaoList = MongoOperations.queryCollectionByFilter(corpusNameList);
             annotationContent = nlpOperationsWebServices.getAnnotationsFromNoblementions(fileContentsDaoList, ontologyFiles);
         }
-        //        ModelAndView modelAndView = new ModelAndView("status");
 
-//        List<File> rawFileList = IevizUtilities.getRawFileList(files);
-//        model.addAttribute("user", getPrincipal());
-//
-//        String status = corpusManagementWebService.createNewCorpus(corpusName, rawFileList);
-//        model.addAttribute("status", status);
-//        modelAndView.addObject(model);
         ModelAndView modelAndView = new ModelAndView("viewannotations");
         modelAndView.addObject("content",annotationContent);
         model.addAttribute("user", getPrincipal());

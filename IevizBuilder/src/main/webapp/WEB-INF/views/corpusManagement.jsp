@@ -9,7 +9,7 @@
     <meta name="_csrf_header" content="${_csrf.headerName}"/>
     <title>Corpus Management</title>
 
-<body>
+    <>
 Dear <strong>${user}</strong>, Welcome to Corpus Management page.
 <a href="<c:url value="/logout" />">Logout</a>
 
@@ -50,6 +50,11 @@ Dear <strong>${user}</strong>, Welcome to Corpus Management page.
     <br/>
     <input type="submit" value="UpdateCorpus">
 </form>
+    <br/>
+    <form method="post" action="<c:url value="/uploadOntologies"/>" enctype="multipart/form-data">
+        Upload Ontology Files: <input type="file" name="ont" size="600" multiple="multiple"><br/><br/><br/>
+        <input type="submit" value="Upload">
+    </form>
 </body>
 
 

@@ -43,6 +43,25 @@ public class IevizUtilities {
         return rawFileList;
     }
 
+    public static List<File> getRawOntList(MultipartFile[] files) {
+        List<File> rawFileList = new ArrayList<>();
+        for (MultipartFile file : files) {
+            if (!file.isEmpty()) {
+                if (file.getOriginalFilename().split("\\.")[1].equals("owl")) {
+                    File rawFile = new File(file.getOriginalFilename());
+                    try {
+                        file.transferTo(rawFile);
+                        rawFileList.add(rawFile);
+
+                    } catch (IOException e) {
+                        return null;
+                    }
+                }
+            }
+        }
+        return rawFileList;
+    }
+
     public static List<File> getOntologyFileList(MultipartFile[] files) {
         List<File> rawFileList = new ArrayList<>();
         for (MultipartFile file : files) {

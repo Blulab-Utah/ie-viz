@@ -9,6 +9,7 @@ import edu.utah.blulab.db.models.FileContentsDao;
 import edu.utah.blulab.db.models.MongoElementsDao;
 import edu.utah.blulab.db.mongo.MongoOperations;
 import edu.utah.blulab.db.query.QueryUtility;
+import edu.utah.blulab.utilities.IevizUtilities;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -47,25 +48,28 @@ public class CorpusManagementWebService implements ICorpusManagementWebService {
                 return e.getMessage();
             }
 
-            CorpusMetadataDao corpusMetadata = new CorpusMetadataDao();
-            corpusMetadata.setCorpusName(corpusName);
-            corpusMetadata.setFileObjId(elements.getId());
-            corpusMetadata.setTimestamp(elements.getDate());
-            corpusMetadata.setFileName(individualFile.getName());
+            if (!IevizUtilities.isNullOrEmpty(elements.getId())
+                    && corpusName.equalsIgnoreCase("ontologies")) {
+                return "Ontology creation/ update successful";
+            } else {
+                CorpusMetadataDao corpusMetadata = new CorpusMetadataDao();
+                corpusMetadata.setCorpusName(corpusName);
+                corpusMetadata.setFileObjId(elements.getId());
+                corpusMetadata.setTimestamp(elements.getDate());
+                corpusMetadata.setFileName(individualFile.getName());
 
 
-            boolean status;
-            try {
-                status = QueryUtility.insertCorpusMetadata(corpusMetadata);
-            } catch (Exception e) {
-                return e.getMessage();
-            }
-            if (!status) {
-                return "Corpus creation/ update failed";
+                boolean status;
+                try {
+                    status = QueryUtility.insertCorpusMetadata(corpusMetadata);
+                } catch (Exception e) {
+                    return e.getMessage();
+                }
+                if (!status) {
+                    return "Corpus creation/ update failed";
+                }
             }
         }
-
-
         return "Corpus creation/ update successful";
     }
 

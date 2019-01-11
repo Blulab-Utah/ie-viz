@@ -77,4 +77,49 @@ public class MongoOperations {
         }
         return fileContentsDaoList;
     }
+
+    public static List<String> getOntologies() throws Exception {
+        DBCollection collection = getCollection();
+        List<DBObject> rawObjects = new ArrayList<>();
+        BasicDBObject whereQuery = new BasicDBObject();
+        whereQuery.put("corpusName", "ontologies");
+        DBCursor cursor = collection.find(whereQuery);
+        while (cursor.hasNext()) {
+            DBObject value = cursor.next();
+            rawObjects.add(value);
+        }
+
+        List<String> ontList = new ArrayList<>();
+        for (DBObject dbObject : rawObjects) {
+            ontList.add(String.valueOf(dbObject.get("fileName")));
+        }
+        return ontList;
+    }
+
+    public static List<FileContentsDao> queryCollectionByOntologies(List<String> ontList) throws Exception {
+        DBCollection collection = getCollection();
+        List<DBObject> rawObjects = new ArrayList<>();
+
+        for(String ontName: ontList)
+        {
+            BasicDBObject whereQuery = new BasicDBObject();
+            whereQuery.put("fileName", ontName);
+            DBCursor cursor = collection.find(whereQuery);
+            while(cursor.hasNext()) {
+                DBObject value = cursor.next();
+                rawObjects.add(value);
+            }
+        }
+
+        List<FileContentsDao> fileContentsDaoList = new ArrayList<>();
+        for(DBObject dbObject: rawObjects)
+        {
+            FileContentsDao fileContentsDao = new FileContentsDao();
+            fileContentsDao.setCorpusName(String.valueOf(dbObject.get("corpusName")));
+            fileContentsDao.setFileName(String.valueOf(dbObject.get("fileName")));
+            fileContentsDao.setInputContent(String.valueOf(dbObject.get("inputDoc")));
+            fileContentsDaoList.add(fileContentsDao);
+        }
+        return fileContentsDaoList;
+    }
 }

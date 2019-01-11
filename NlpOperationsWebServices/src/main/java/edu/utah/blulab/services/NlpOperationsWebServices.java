@@ -29,7 +29,7 @@ public class NlpOperationsWebServices implements INlpOperationsWebServices {
 
     @Override
     public String getAnnotationsFromNoblementions(List<FileContentsDao> fileContentsDaoList,
-                                                  List<File> ontologyFiles) {
+                                                  List<FileContentsDao> ontologyFilesList) {
         MultiPart multiPart;
         String contents = null;
 
@@ -40,10 +40,20 @@ public class NlpOperationsWebServices implements INlpOperationsWebServices {
             multiPart = new MultiPart();
             List<FileDataBodyPart> bodyParts = new ArrayList<>();
 
-            for(File file:ontologyFiles)
-            {
+//            for(File file:ontologyFiles)
+//            {
+//                bodyParts.add(new FileDataBodyPart
+//                        ("ontFile", file, MediaType.APPLICATION_XML_TYPE));
+//            }
+
+            for (FileContentsDao fileContentsDao : ontologyFilesList) {
+                File ont = new File(fileContentsDao.getFileName());
+                FileUtils.writeStringToFile(ont,
+                        fileContentsDao.getInputContent(), "UTF-8");
+
                 bodyParts.add(new FileDataBodyPart
-                        ("ontFile", file, MediaType.APPLICATION_XML_TYPE));
+                        ("ontFile", ont, MediaType.TEXT_PLAIN_TYPE));
+
             }
 
             for(FileContentsDao fileContentsDao: fileContentsDaoList)

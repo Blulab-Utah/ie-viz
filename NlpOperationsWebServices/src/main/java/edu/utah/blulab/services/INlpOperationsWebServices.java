@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface INlpOperationsWebServices {
 
-    String getAnnotationsFromNoblementions(List<FileContentsDao> fileContentsDaoList, List<File> ontologyFiles);
+    String getAnnotationsFromNoblementions(List<FileContentsDao> fileContentsDaoList, List<FileContentsDao> ontologyFilesList);
 }

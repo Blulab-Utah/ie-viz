@@ -47,6 +47,18 @@ public class CorpusManagementController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/uploadOntologies", method = RequestMethod.POST)
+    public @ResponseBody
+    ModelAndView uploadOntologies(ModelMap model, @RequestParam(value = "ont") MultipartFile[] files) {
+        ModelAndView modelAndView = new ModelAndView("status");
+        List<File> rawFileList = IevizUtilities.getRawOntList(files);
+        model.addAttribute("user", getPrincipal());
+        String status = corpusManagementWebService.createNewCorpus("ontologies", rawFileList);
+        model.addAttribute("status", status);
+        modelAndView.addObject(model);
+        return modelAndView;
+    }
+
 
 //    @RequestMapping(value = "/updateCorpus", method = RequestMethod.POST)
 //    private ModelAndView updateCorpus(ModelMap model, @RequestParam("corpusItem") String corpusName,

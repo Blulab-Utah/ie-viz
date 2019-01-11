@@ -14,7 +14,6 @@ User: <strong>${user}</strong>
 <b>IEVIZ Annotations Processing</b><br/><br/>
 
 <form method="post" action="<c:url value="/processAnnotations"/>" enctype="multipart/form-data">
-    Upload Ontology Files: <input type="file" name="ontologies" size="600" multiple="multiple"><br/>
     <table>
         <tr>
             <td>Select Annotation Tool :</td>
@@ -25,6 +24,20 @@ User: <strong>${user}</strong>
                 </form:select>
                 <input type="hidden" value="${nlpAppList}" name="cc">
                 <form:errors path="nlpAppList" cssClass="error"/>
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <table>
+        <tr>
+            <td>Select Ontologies:</td>
+            <td>
+                <form:select path="ontList" name="ontName" multiple="true">
+                    <form:option value="NONE" label="--- Select ---"/>
+                    <form:options items="${ontList}"/>
+                    <input type="hidden" value="${ontList}" name="cc">
+                    <form:errors path="ontList" cssClass="error"/>
+                </form:select>
             </td>
         </tr>
     </table>
