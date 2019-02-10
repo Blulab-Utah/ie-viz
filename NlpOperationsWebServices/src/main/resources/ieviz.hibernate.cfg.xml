@@ -15,13 +15,6 @@
         <property name="connection.autocommit">true</property>
 
 
-         <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/NLP_DATASTORE</property>-->
-        <!--<property name="hibernate.connection.url">jdbc:mysql://blulab2.chpc.utah.edu:3306/IE-Viz</property>-->
-        <property name="hibernate.connection.url">jdbc:mysql://155.101.208.201:3306/IE-Viz</property>
-        <!--<property name="hibernate.connection.username">madmin</property>-->
-        <!--<property name="hibernate.connection.password">Wbc5qI4eulpvh</property>-->
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">910043</property>
 
 
         <mapping class="edu.utah.blulab.db.models.NlpResultDocDao"/>
